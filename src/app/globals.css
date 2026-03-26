@@ -1,26 +1,199 @@
 @import "tailwindcss";
 
+/* Design system — Software Architect portfolio */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: dark;
+  --bg-base: #0b0f19;
+  --bg-elevated: #111827;
+  --bg-card: rgba(17, 24, 39, 0.65);
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --accent-blue: #3b82f6;
+  --accent-indigo: #6366f1;
+  --accent-purple: #a78bfa;
+  --accent-cyan: #22d3ee;
+  --glow-primary: rgba(99, 102, 241, 0.35);
+  --glow-secondary: rgba(59, 130, 246, 0.2);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --bg-base: #f8fafc;
+  --bg-elevated: #ffffff;
+  --bg-card: rgba(255, 255, 255, 0.8);
+  --border-subtle: rgba(15, 23, 42, 0.08);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --glow-primary: rgba(99, 102, 241, 0.15);
+  --glow-secondary: rgba(59, 130, 246, 0.12);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-bg-base: var(--bg-base);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+::selection {
+  background: rgba(99, 102, 241, 0.35);
+  color: var(--text-primary);
+}
+
+/* Gradient text utility */
+.text-gradient {
+  background: linear-gradient(135deg, #60a5fa 0%, #818cf8 45%, #c084fc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Glass panel */
+.glass {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Subtle grid background */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+[data-theme="light"] .bg-grid {
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.06) 1px, transparent 1px);
+}
+
+@keyframes float-glow {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.05) translate(2%, -2%);
+  }
+}
+
+.animate-float-glow {
+  animation: float-glow 12s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-glow,
+  .animate-pulse-line-slow,
+  .animate-pulse-line-delayed {
+    animation: none;
+  }
+}
+
+@keyframes pulse-line {
+  0%,
+  100% {
+    stroke-opacity: 0.2;
+  }
+  50% {
+    stroke-opacity: 0.55;
+  }
+}
+
+.animate-pulse-line-slow {
+  animation: pulse-line 4s ease-in-out infinite;
+}
+
+.animate-pulse-line-delayed {
+  animation: pulse-line 5s ease-in-out infinite 0.5s;
+}
+
+/* Trust — logo row: staggered idle drift + hover uses Tailwind */
+@keyframes trust-drift {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.trust-logo-drift {
+  animation: trust-drift 5.5s ease-in-out infinite;
+}
+
+.trust-grid > li:nth-child(1) .trust-logo-drift {
+  animation-delay: 0s;
+}
+.trust-grid > li:nth-child(2) .trust-logo-drift {
+  animation-delay: 0.6s;
+}
+.trust-grid > li:nth-child(3) .trust-logo-drift {
+  animation-delay: 1.2s;
+}
+.trust-grid > li:nth-child(4) .trust-logo-drift {
+  animation-delay: 1.8s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trust-logo-drift {
+    animation: none;
+  }
+}
+
+/* Trust — infinite marquee (disabled when prefers-reduced-motion) */
+@keyframes trust-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.trust-marquee-track {
+  animation: trust-marquee 50s linear infinite;
+}
+
+.trust-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trust-marquee-track {
+    animation: none;
+  }
 }
