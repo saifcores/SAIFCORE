@@ -47,13 +47,13 @@ export async function About() {
               </p>
               <div className="mt-8 grid grid-cols-3 gap-4 border-t border-[var(--border-subtle)] pt-8 text-center">
                 <div>
-                  <p className="text-2xl font-bold text-gradient">10+</p>
+                  <p className="text-2xl font-bold text-gradient">5+</p>
                   <p className="mt-1 text-xs text-[var(--text-muted)]">
                     {t("statYears")}
                   </p>
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-gradient">50+</p>
+                  <p className="text-2xl font-bold text-gradient">20+</p>
                   <p className="mt-1 text-xs text-[var(--text-muted)]">
                     {t("statSystems")}
                   </p>
