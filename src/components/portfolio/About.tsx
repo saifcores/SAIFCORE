@@ -1,30 +1,28 @@
+import { getTranslations } from "next-intl/server";
 import { Reveal } from "./Reveal";
 
-export function About() {
+export async function About() {
+  const t = await getTranslations("about");
+
   return (
     <section id="about" className="px-4 py-24 sm:px-6 lg:px-8">
       <div className="mx-auto grid max-w-[1280px] gap-12 lg:grid-cols-2 lg:gap-20 lg:items-center">
         <Reveal>
           <h2 className="text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
-            About
+            {t("title")}
           </h2>
           <p className="mt-6 text-[var(--text-secondary)] leading-relaxed">
-            I&apos;m a software architect and full-stack engineer focused on
-            systems that survive contact with reality — regulation, flaky
-            networks, and teams that grow faster than documentation.
+            {t("p1")}
           </p>
           <p className="mt-4 text-[var(--text-secondary)] leading-relaxed">
-            My mindset is simple:{" "}
+            {t("p2a")}{" "}
             <strong className="font-semibold text-[var(--text-primary)]">
-              clarity over cleverness
+              {t("p2b")}
             </strong>
-            , explicit trade-offs, and architectures your future self will thank
-            you for.
+            {t("p2c")}
           </p>
           <p className="mt-4 text-[var(--text-secondary)] leading-relaxed">
-            I&apos;ve shipped across fintech and SaaS, partnering with founders
-            and enterprise teams to turn ambitious roadmaps into dependable
-            platforms.
+            {t("p3")}
           </p>
         </Reveal>
 
@@ -42,26 +40,28 @@ export function About() {
                 SA
               </div>
               <p className="mt-6 text-sm font-medium uppercase tracking-widest text-[var(--text-muted)]">
-                Software Architect
+                {t("cardRole")}
               </p>
               <p className="mt-2 text-lg font-semibold text-[var(--text-primary)]">
-                Building for longevity
+                {t("cardTagline")}
               </p>
               <div className="mt-8 grid grid-cols-3 gap-4 border-t border-[var(--border-subtle)] pt-8 text-center">
                 <div>
                   <p className="text-2xl font-bold text-gradient">10+</p>
-                  <p className="mt-1 text-xs text-[var(--text-muted)]">Years</p>
+                  <p className="mt-1 text-xs text-[var(--text-muted)]">
+                    {t("statYears")}
+                  </p>
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-gradient">50+</p>
                   <p className="mt-1 text-xs text-[var(--text-muted)]">
-                    Systems
+                    {t("statSystems")}
                   </p>
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-gradient">∞</p>
                   <p className="mt-1 text-xs text-[var(--text-muted)]">
-                    Curiosity
+                    {t("statCuriosity")}
                   </p>
                 </div>
               </div>

@@ -1,7 +1,9 @@
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import { Reveal } from "./Reveal";
 
-export function CtaSection() {
+export async function CtaSection() {
+  const t = await getTranslations("cta");
+
   return (
     <section id="contact" className="px-4 py-24 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-[1280px]">
@@ -18,25 +20,24 @@ export function CtaSection() {
             />
 
             <h2 className="relative text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl lg:text-[2.75rem]">
-              Let&apos;s design your next system.
+              {t("title")}
             </h2>
             <p className="relative mx-auto mt-4 max-w-xl text-[var(--text-secondary)]">
-              Tell me about your product, constraints, and timeline — I&apos;ll
-              reply with a clear path forward.
+              {t("subtitle")}
             </p>
             <div className="relative mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link
+              <a
                 href="mailto:hello@example.com"
                 className="inline-flex h-12 min-w-[180px] items-center justify-center rounded-2xl bg-gradient-to-r from-[#2563eb] to-[#6366f1] px-8 text-base font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:brightness-110 active:scale-[0.98]"
               >
-                Book a call
-              </Link>
-              <Link
+                {t("bookCall")}
+              </a>
+              <a
                 href="mailto:hello@example.com?subject=Project%20inquiry"
                 className="inline-flex h-12 min-w-[180px] items-center justify-center rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-base)]/60 px-8 text-base font-semibold text-[var(--text-primary)] backdrop-blur-sm transition hover:border-[var(--accent-indigo)]/35 active:scale-[0.98]"
               >
-                Start a project
-              </Link>
+                {t("startProject")}
+              </a>
             </div>
           </div>
         </Reveal>

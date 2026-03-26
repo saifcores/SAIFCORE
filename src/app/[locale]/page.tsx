@@ -1,3 +1,5 @@
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import type { Locale } from "next-intl";
 import { About } from "@/components/portfolio/About";
 import { ArchitectureExpertise } from "@/components/portfolio/ArchitectureExpertise";
 import { CtaSection } from "@/components/portfolio/CtaSection";
@@ -11,7 +13,19 @@ import { Trust } from "@/components/portfolio/Trust";
 import { WhatISolve } from "@/components/portfolio/WhatISolve";
 import { getSiteUrl, getSocialLinks } from "@/lib/site";
 
-export default function Home() {
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export default async function Home({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  const t = await getTranslations({
+    locale: locale as Locale,
+    namespace: "meta",
+  });
+
   const siteUrl = getSiteUrl();
   const sameAs = getSocialLinks();
 
@@ -19,9 +33,8 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Manarix",
-    jobTitle: "Software Architect & Full-Stack Engineer",
-    description:
-      "I design scalable systems that solve real business problems — from fintech to SaaS platforms.",
+    jobTitle: t("jsonLdJobTitle"),
+    description: t("jsonLdDescription"),
     url: siteUrl,
   };
 

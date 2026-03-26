@@ -1,0 +1,194 @@
+{
+  "meta": {
+    "title": "Architecte logiciel & ingénieur full-stack | Manarix",
+    "description": "Je conçois des systèmes évolutifs qui répondent à de vrais enjeux métier — de la fintech aux plateformes SaaS.",
+    "ogTitle": "Architecte logiciel & ingénieur full-stack",
+    "ogDescription": "Architecture scalable, systèmes SaaS et intégrations fintech — conçus pour le monde réel.",
+    "twitterDescription": "Systèmes scalables, plateformes SaaS et intégrations fintech.",
+    "jsonLdJobTitle": "Architecte logiciel & ingénieur full-stack",
+    "jsonLdDescription": "Je conçois des systèmes évolutifs qui répondent à de vrais enjeux métier — de la fintech aux plateformes SaaS.",
+    "manifestName": "Manarix — Architecte logiciel & ingénieur full-stack",
+    "manifestDescription": "Systèmes scalables, plateformes SaaS et intégrations fintech — conçus pour le monde réel."
+  },
+  "common": {
+    "skipToContent": "Aller au contenu",
+    "loading": "Chargement…",
+    "readMore": "Lire"
+  },
+  "nav": {
+    "primary": "Principal",
+    "work": "Réalisations",
+    "process": "Méthode",
+    "about": "À propos",
+    "insights": "Articles",
+    "contact": "Contact",
+    "bookCall": "Réserver un appel",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "siteNavigation": "Navigation du site",
+    "language": "Langue",
+    "localeEn": "English",
+    "localeFr": "Français"
+  },
+  "hero": {
+    "badge": "Disponible pour de l’architecture & de la livraison",
+    "titleBefore": "Architecte logiciel &",
+    "titleHighlight": "ingénieur full-stack",
+    "subtitle": "Je conçois des systèmes évolutifs qui répondent à de vrais enjeux métier — de la fintech aux plateformes SaaS.",
+    "ctaPrimary": "Travailler avec moi",
+    "ctaSecondary": "Voir les projets"
+  },
+  "trust": {
+    "heading": "Ils m’ont fait confiance — entreprises et projets concrets"
+  },
+  "whatISolve": {
+    "title": "Ce que je résous",
+    "subtitle": "Des principes jusqu’à la production — une architecture alignée sur vos contraintes métier.",
+    "items": [
+      {
+        "title": "Architecture scalable",
+        "description": "Découpage par domaines, contrats clairs et patterns qui permettent à vos équipes de livrer malgré la complexité."
+      },
+      {
+        "title": "Systèmes SaaS",
+        "description": "Modèles multi-locataires, facturation et outils opérationnels pensés pour la vélocité produit sur la durée."
+      },
+      {
+        "title": "Intégration des paiements",
+        "description": "Flux sécurisés, rapprochements et conformité sur plusieurs régions et fournisseurs."
+      },
+      {
+        "title": "Optimisation des performances",
+        "description": "Budgets de latence, cache et observabilité pour rester rapide sous charge réelle."
+      }
+    ]
+  },
+  "howIThink": {
+    "title": "Ma façon de penser",
+    "subtitle": "Une boucle disciplinée du problème au système résilient — sans cérémonial inutile.",
+    "steps": [
+      {
+        "title": "Comprendre le problème métier",
+        "body": "Parties prenantes, contraintes et métriques de succès avant d’aborder la technique."
+      },
+      {
+        "title": "Concevoir l’architecture",
+        "body": "Frontières claires, interfaces et trajectoires d’évolution que votre équipe peut porter."
+      },
+      {
+        "title": "Construire des systèmes scalables",
+        "body": "Livraison pragmatique avec tests, CI et garde-fous opérationnels."
+      },
+      {
+        "title": "Optimiser pour l’usage réel",
+        "body": "Mesurer, ajuster et renforcer là où ça compte pour les utilisateurs et le chiffre d’affaires."
+      }
+    ],
+    "operatingModel": "Modèle de fonctionnement",
+    "operatingBody": "L’architecture est un produit : décisions documentées, résultats mesurables, et la marge pour que votre équipe fasse évoluer le système sans héroïsme.",
+    "bullets": [
+      "ADR et schémas clairs lorsqu’ils réduisent le risque",
+      "SLO, traçage et alertes alignés sur les parcours utilisateurs",
+      "Sécurité et conformité intégrées dès le départ"
+    ]
+  },
+  "featuredProjects": {
+    "title": "Projets phares",
+    "subtitle": "Un extrait de travaux — anonymisés si nécessaire. L’impact plutôt que les vanity metrics.",
+    "impactLabel": "Impact",
+    "items": [
+      {
+        "title": "SaaS B2B multi-locataire",
+        "context": "Plateforme greenfield avec isolation par org, accès par rôles et facturation à l’usage.",
+        "impact": "Cycle de fonctionnalités ~40 % plus rapide grâce à des domaines modulaires"
+      },
+      {
+        "title": "Hub de paiements transfrontaliers",
+        "context": "Orchestration unifiée entre PSP avec rapprochement et pistes d’audit.",
+        "impact": "Chemin d’authentification sous la seconde aux pics de settlement"
+      },
+      {
+        "title": "Pipeline d’analytique temps réel",
+        "context": "Ingestion d’événements, enrichissement et tableaux de bord pour produit et finance.",
+        "impact": "Insights le jour même au lieu d’exports hebdomadaires"
+      }
+    ]
+  },
+  "architectureExpertise": {
+    "title": "Expertise architecture",
+    "subtitle": "De la profondeur là où les systèmes rencontrent le métier — pas des buzzwords pour des slides.",
+    "tags": [
+      { "label": "Microservices" },
+      { "label": "SaaS multi-locataire" },
+      { "label": "Systèmes événementiels" },
+      { "label": "Intégrations fintech" },
+      { "label": "Conception d’API" },
+      { "label": "PostgreSQL à grande échelle" },
+      { "label": "Cache & CDN" },
+      { "label": "Observabilité" },
+      { "label": "Modèles zero-trust" },
+      { "label": "CI/CD & IaC" }
+    ]
+  },
+  "about": {
+    "title": "À propos",
+    "p1": "Je suis architecte logiciel et ingénieur full-stack, focalisé sur des systèmes qui tiennent face au réel — réglementation, réseaux capricieux et équipes qui grandissent plus vite que la doc.",
+    "p2a": "Ma ligne directrice :",
+    "p2b": "la clarté plutôt que la virtuosité",
+    "p2c": ", des arbitrages explicites et des architectures dont vous vous remercierez plus tard.",
+    "p3": "J’ai livré dans la fintech et le SaaS, avec des fondateurs et des équipes enterprise pour transformer des roadmaps ambitieuses en plateformes fiables.",
+    "cardRole": "Architecte logiciel",
+    "cardTagline": "Construire pour durer",
+    "statYears": "Ans",
+    "statSystems": "Systèmes",
+    "statCuriosity": "Curiosité"
+  },
+  "insights": {
+    "title": "Insights & réflexions",
+    "subtitle": "Notes sur la construction de logiciels sérieux dans des environnements exigeants.",
+    "posts": [
+      {
+        "title": "Pourquoi beaucoup de SaaS échouent en Afrique",
+        "excerpt": "Distribution, paiements et confiance — ce qui change quand on importe une recette telle quelle."
+      },
+      {
+        "title": "Concevoir des systèmes fintech scalables",
+        "excerpt": "Idempotence, grand livre et rapprochements pour que l’argent reste traçable."
+      },
+      {
+        "title": "Les revues d’architecture qui aident vraiment",
+        "excerpt": "Comment mener des ADR et des revues pour que les équipes repartent motivées, pas sur la défensive."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Concevons votre prochain système.",
+    "subtitle": "Parlez-moi de votre produit, de vos contraintes et de votre calendrier — je vous répondrai avec une piste claire.",
+    "bookCall": "Réserver un appel",
+    "startProject": "Lancer un projet"
+  },
+  "footer": {
+    "rights": "© {year} Manarix. Tous droits réservés.",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "error": {
+    "kicker": "Une erreur s’est produite",
+    "title": "Impossible de charger cette page",
+    "description": "Une erreur d’exécution s’est produite. Réessayez ou retournez à l’accueil.",
+    "tryAgain": "Réessayer",
+    "backHome": "Retour à l’accueil"
+  },
+  "notFound": {
+    "kicker": "Erreur 404",
+    "title": "Page introuvable",
+    "description": "La page que vous cherchez n’existe pas ou a été déplacée. Retournez au portfolio pour explorer les réalisations et les options de contact.",
+    "backHome": "Retour à l’accueil",
+    "contact": "Contact"
+  },
+  "theme": {
+    "toggle": "Changer de thème",
+    "toLight": "Passer en mode clair",
+    "toDark": "Passer en mode sombre"
+  }
+}

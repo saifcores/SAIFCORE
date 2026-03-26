@@ -1,8 +1,10 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { useTheme } from "./ThemeProvider";
 
 export function ThemeToggle() {
+  const t = useTranslations("theme");
   const { theme, toggle } = useTheme();
   const isDark = theme === "dark";
 
@@ -11,9 +13,9 @@ export function ThemeToggle() {
       type="button"
       onClick={toggle}
       className="relative flex h-9 w-9 items-center justify-center rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/50 text-[var(--text-secondary)] transition hover:border-[var(--accent-indigo)]/40 hover:text-[var(--text-primary)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-indigo)]"
-      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      aria-label={isDark ? t("toLight") : t("toDark")}
     >
-      <span className="sr-only">Toggle theme</span>
+      <span className="sr-only">{t("toggle")}</span>
       {isDark ? (
         <svg
           className="h-[18px] w-[18px]"

@@ -1,20 +1,23 @@
 "use client";
 
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { useCallback, useEffect, useId, useState } from "react";
+import { Link } from "@/i18n/navigation";
+import { LocaleSwitcher } from "./LocaleSwitcher";
 import { ThemeToggle } from "./ThemeToggle";
 
-const links = [
-  { href: "#work", label: "Work" },
-  { href: "#process", label: "Process" },
-  { href: "#about", label: "About" },
-  { href: "#insights", label: "Insights" },
-  { href: "#contact", label: "Contact" },
-];
-
 export function Navbar() {
+  const t = useTranslations("nav");
   const [open, setOpen] = useState(false);
   const panelId = useId();
+
+  const links = [
+    { href: "#work" as const, labelKey: "work" as const },
+    { href: "#process" as const, labelKey: "process" as const },
+    { href: "#about" as const, labelKey: "about" as const },
+    { href: "#insights" as const, labelKey: "insights" as const },
+    { href: "#contact" as const, labelKey: "contact" as const },
+  ];
 
   const close = useCallback(() => setOpen(false), []);
 
@@ -46,24 +49,31 @@ export function Navbar() {
         >
           Manarix<span className="text-[var(--text-muted)]">.</span>
         </Link>
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
+        <nav
+          className="hidden items-center gap-8 md:flex"
+          aria-label={t("primary")}
+        >
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
               className="text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
             >
-              {l.label}
+              {t(l.labelKey)}
             </a>
           ))}
         </nav>
         <div className="flex items-center gap-2 sm:gap-3">
+          <LocaleSwitcher
+            navLabel={t("language")}
+            labels={{ en: t("localeEn"), fr: t("localeFr") }}
+          />
           <ThemeToggle />
           <a
             href="#contact"
             className="hidden rounded-xl bg-gradient-to-r from-[#3b82f6] to-[#6366f1] px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-indigo-500/25 transition hover:brightness-110 sm:inline-flex"
           >
-            Book a call
+            {t("bookCall")}
           </a>
           <button
             type="button"
@@ -71,7 +81,7 @@ export function Navbar() {
             onClick={() => setOpen((o) => !o)}
             aria-expanded={open}
             aria-controls={panelId}
-            aria-label={open ? "Close menu" : "Open menu"}
+            aria-label={open ? t("closeMenu") : t("openMenu")}
           >
             {open ? (
               <svg
@@ -122,7 +132,7 @@ export function Navbar() {
             className="fixed inset-x-0 top-16 z-50 max-h-[calc(100dvh-4rem)] overflow-y-auto border-b border-[var(--border-subtle)] bg-[var(--bg-base)]/98 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.45)] backdrop-blur-xl md:hidden"
             role="dialog"
             aria-modal="true"
-            aria-label="Site navigation"
+            aria-label={t("siteNavigation")}
           >
             <nav className="mx-auto flex max-w-[1280px] flex-col gap-1 px-4 py-4 sm:px-6">
               {links.map((l) => (
@@ -132,7 +142,7 @@ export function Navbar() {
                   className="rounded-xl px-4 py-3 text-base font-medium text-[var(--text-secondary)] transition hover:bg-[var(--bg-elevated)] hover:text-[var(--text-primary)]"
                   onClick={close}
                 >
-                  {l.label}
+                  {t(l.labelKey)}
                 </a>
               ))}
               <a
@@ -140,7 +150,7 @@ export function Navbar() {
                 className="mt-2 inline-flex h-12 items-center justify-center rounded-2xl bg-gradient-to-r from-[#3b82f6] to-[#6366f1] px-4 text-base font-semibold text-white shadow-lg shadow-indigo-500/25"
                 onClick={close}
               >
-                Book a call
+                {t("bookCall")}
               </a>
             </nav>
           </div>

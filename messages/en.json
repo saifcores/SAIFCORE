@@ -1,0 +1,194 @@
+{
+  "meta": {
+    "title": "Software Architect & Full-Stack Engineer | Manarix",
+    "description": "I design scalable systems that solve real business problems — from fintech to SaaS platforms.",
+    "ogTitle": "Software Architect & Full-Stack Engineer",
+    "ogDescription": "Scalable architecture, SaaS systems, and fintech integrations — built for the real world.",
+    "twitterDescription": "Scalable systems, SaaS platforms, and fintech integrations.",
+    "jsonLdJobTitle": "Software Architect & Full-Stack Engineer",
+    "jsonLdDescription": "I design scalable systems that solve real business problems — from fintech to SaaS platforms.",
+    "manifestName": "Manarix — Software Architect & Full-Stack Engineer",
+    "manifestDescription": "Scalable systems, SaaS platforms, and fintech integrations — built for the real world."
+  },
+  "common": {
+    "skipToContent": "Skip to content",
+    "loading": "Loading…",
+    "readMore": "Read"
+  },
+  "nav": {
+    "primary": "Primary",
+    "work": "Work",
+    "process": "Process",
+    "about": "About",
+    "insights": "Insights",
+    "contact": "Contact",
+    "bookCall": "Book a call",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "siteNavigation": "Site navigation",
+    "language": "Language",
+    "localeEn": "English",
+    "localeFr": "Français"
+  },
+  "hero": {
+    "badge": "Available for architecture & delivery",
+    "titleBefore": "Software Architect &",
+    "titleHighlight": "Full-Stack Engineer",
+    "subtitle": "I design scalable systems that solve real business problems — from fintech to SaaS platforms.",
+    "ctaPrimary": "Work with me",
+    "ctaSecondary": "View projects"
+  },
+  "trust": {
+    "heading": "Trusted by companies and real-world projects"
+  },
+  "whatISolve": {
+    "title": "What I solve",
+    "subtitle": "From first principles to production — architecture that aligns with your business constraints.",
+    "items": [
+      {
+        "title": "Scalable Architecture",
+        "description": "Domain-driven boundaries, clear contracts, and patterns that keep teams shipping as complexity grows."
+      },
+      {
+        "title": "SaaS Systems",
+        "description": "Multi-tenant models, billing hooks, and operational tooling built for long-term product velocity."
+      },
+      {
+        "title": "Payment Integration",
+        "description": "Secure money movement, reconciliation, and compliance-aware flows across regions and providers."
+      },
+      {
+        "title": "Performance Optimization",
+        "description": "Latency budgets, caching strategy, and observability so systems stay fast under real load."
+      }
+    ]
+  },
+  "howIThink": {
+    "title": "How I think",
+    "subtitle": "A disciplined loop from problem to resilient systems — no unnecessary ceremony.",
+    "steps": [
+      {
+        "title": "Understand business problem",
+        "body": "Stakeholders, constraints, and success metrics before touching tech."
+      },
+      {
+        "title": "Design architecture",
+        "body": "Clear boundaries, interfaces, and evolution paths your team can own."
+      },
+      {
+        "title": "Build scalable systems",
+        "body": "Pragmatic delivery with testing, CI, and operational guardrails."
+      },
+      {
+        "title": "Optimize for real-world usage",
+        "body": "Measure, tune, and harden where it matters for users and revenue."
+      }
+    ],
+    "operatingModel": "Operating model",
+    "operatingBody": "Architecture is a product: documented decisions, measurable outcomes, and room for your team to evolve the system without heroics.",
+    "bullets": [
+      "Clear ADRs and diagrams where they reduce risk",
+      "SLOs, tracing, and alerts that match user journeys",
+      "Security and compliance baked in, not bolted on"
+    ]
+  },
+  "featuredProjects": {
+    "title": "Featured projects",
+    "subtitle": "Selected work — anonymized where needed. Impact over vanity metrics.",
+    "impactLabel": "Impact",
+    "items": [
+      {
+        "title": "Multi-tenant B2B SaaS",
+        "context": "Greenfield platform with org isolation, role-based access, and usage-based billing.",
+        "impact": "40% faster feature cycle via modular domains"
+      },
+      {
+        "title": "Cross-border payments hub",
+        "context": "Unified orchestration across PSPs with reconciliation and audit trails.",
+        "impact": "Sub-second auth path at peak settlement windows"
+      },
+      {
+        "title": "Realtime analytics pipeline",
+        "context": "Event ingestion, enrichment, and dashboards for product and finance teams.",
+        "impact": "Same-day insights vs. weekly batch exports"
+      }
+    ]
+  },
+  "architectureExpertise": {
+    "title": "Architecture expertise",
+    "subtitle": "Depth where systems meet business — not buzzwords for slides.",
+    "tags": [
+      { "label": "Microservices" },
+      { "label": "Multi-tenant SaaS" },
+      { "label": "Event-driven systems" },
+      { "label": "Fintech integrations" },
+      { "label": "API design" },
+      { "label": "PostgreSQL at scale" },
+      { "label": "Caching & CDNs" },
+      { "label": "Observability" },
+      { "label": "Zero-trust patterns" },
+      { "label": "CI/CD & IaC" }
+    ]
+  },
+  "about": {
+    "title": "About",
+    "p1": "I'm a software architect and full-stack engineer focused on systems that survive contact with reality — regulation, flaky networks, and teams that grow faster than documentation.",
+    "p2a": "My mindset is simple:",
+    "p2b": "clarity over cleverness",
+    "p2c": ", explicit trade-offs, and architectures your future self will thank you for.",
+    "p3": "I've shipped across fintech and SaaS, partnering with founders and enterprise teams to turn ambitious roadmaps into dependable platforms.",
+    "cardRole": "Software Architect",
+    "cardTagline": "Building for longevity",
+    "statYears": "Years",
+    "statSystems": "Systems",
+    "statCuriosity": "Curiosity"
+  },
+  "insights": {
+    "title": "Insights & thinking",
+    "subtitle": "Notes on building serious software in serious environments.",
+    "posts": [
+      {
+        "title": "Why most SaaS fail in Africa",
+        "excerpt": "Distribution, payments, and trust — what changes when your playbook is imported wholesale."
+      },
+      {
+        "title": "Designing scalable fintech systems",
+        "excerpt": "Idempotency, ledger design, and reconciliation patterns that keep money honest."
+      },
+      {
+        "title": "Architecture reviews that actually help",
+        "excerpt": "How to run ADRs and reviews so engineers leave energized, not defensive."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Let's design your next system.",
+    "subtitle": "Tell me about your product, constraints, and timeline — I'll reply with a clear path forward.",
+    "bookCall": "Book a call",
+    "startProject": "Start a project"
+  },
+  "footer": {
+    "rights": "© {year} Manarix. All rights reserved.",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "error": {
+    "kicker": "Something went wrong",
+    "title": "We couldn't load this page",
+    "description": "A runtime error occurred. You can try again or return to the homepage.",
+    "tryAgain": "Try again",
+    "backHome": "Back to home"
+  },
+  "notFound": {
+    "kicker": "Error 404",
+    "title": "Page not found",
+    "description": "The page you're looking for doesn't exist or was moved. Head back to the portfolio to explore work and contact options.",
+    "backHome": "Back to home",
+    "contact": "Contact"
+  },
+  "theme": {
+    "toggle": "Toggle theme",
+    "toLight": "Switch to light mode",
+    "toDark": "Switch to dark mode"
+  }
+}

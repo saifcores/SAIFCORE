@@ -1,29 +1,11 @@
+import { getTranslations } from "next-intl/server";
 import { Reveal } from "./Reveal";
 
-const steps = [
-  {
-    n: "01",
-    title: "Understand business problem",
-    body: "Stakeholders, constraints, and success metrics before touching tech.",
-  },
-  {
-    n: "02",
-    title: "Design architecture",
-    body: "Clear boundaries, interfaces, and evolution paths your team can own.",
-  },
-  {
-    n: "03",
-    title: "Build scalable systems",
-    body: "Pragmatic delivery with testing, CI, and operational guardrails.",
-  },
-  {
-    n: "04",
-    title: "Optimize for real-world usage",
-    body: "Measure, tune, and harden where it matters for users and revenue.",
-  },
-];
+const stepIds = ["01", "02", "03", "04"] as const;
 
-export function HowIThink() {
+export async function HowIThink() {
+  const t = await getTranslations("howIThink");
+
   return (
     <section
       id="process"
@@ -32,11 +14,10 @@ export function HowIThink() {
       <div className="mx-auto max-w-[1280px]">
         <Reveal>
           <h2 className="text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
-            How I think
+            {t("title")}
           </h2>
           <p className="mt-4 max-w-2xl text-[var(--text-secondary)]">
-            A disciplined loop from problem to resilient systems — no
-            unnecessary ceremony.
+            {t("subtitle")}
           </p>
         </Reveal>
 
@@ -45,13 +26,13 @@ export function HowIThink() {
             <div className="relative rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-base)]/50 p-8 sm:p-10">
               <div className="bg-grid pointer-events-none absolute inset-0 rounded-2xl opacity-40" />
               <ol className="relative space-y-0">
-                {steps.map((s, i) => (
-                  <li key={s.n} className="flex gap-5 sm:gap-6">
+                {stepIds.map((stepId, i) => (
+                  <li key={stepId} className="flex gap-5 sm:gap-6">
                     <div className="flex flex-col items-center">
                       <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[var(--border-subtle)] bg-[var(--bg-elevated)] text-sm font-mono font-semibold text-[var(--accent-cyan)]">
-                        {s.n}
+                        {stepId}
                       </span>
-                      {i < steps.length - 1 ? (
+                      {i < stepIds.length - 1 ? (
                         <span
                           className="my-2 min-h-[40px] w-px flex-1 bg-gradient-to-b from-indigo-500/45 to-transparent sm:min-h-[52px]"
                           aria-hidden
@@ -59,13 +40,13 @@ export function HowIThink() {
                       ) : null}
                     </div>
                     <div
-                      className={`pb-10 pt-0.5 ${i === steps.length - 1 ? "pb-0" : ""}`}
+                      className={`pb-10 pt-0.5 ${i === stepIds.length - 1 ? "pb-0" : ""}`}
                     >
                       <h3 className="font-semibold text-[var(--text-primary)]">
-                        {s.title}
+                        {t(`steps.${i}.title`)}
                       </h3>
                       <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">
-                        {s.body}
+                        {t(`steps.${i}.body`)}
                       </p>
                     </div>
                   </li>
@@ -78,26 +59,18 @@ export function HowIThink() {
             <div className="flex h-full flex-col justify-center">
               <div className="glass rounded-2xl p-8 sm:p-10">
                 <p className="text-sm font-medium uppercase tracking-widest text-[var(--text-muted)]">
-                  Operating model
+                  {t("operatingModel")}
                 </p>
                 <p className="mt-4 text-lg font-medium leading-relaxed text-[var(--text-primary)]">
-                  Architecture is a product: documented decisions, measurable
-                  outcomes, and room for your team to evolve the system without
-                  heroics.
+                  {t("operatingBody")}
                 </p>
                 <ul className="mt-8 space-y-3 text-sm text-[var(--text-secondary)]">
-                  <li className="flex gap-3">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-r from-blue-400 to-indigo-400" />
-                    Clear ADRs and diagrams where they reduce risk
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-r from-blue-400 to-indigo-400" />
-                    SLOs, tracing, and alerts that match user journeys
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-r from-blue-400 to-indigo-400" />
-                    Security and compliance baked in, not bolted on
-                  </li>
+                  {[0, 1, 2].map((i) => (
+                    <li key={i} className="flex gap-3">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-r from-blue-400 to-indigo-400" />
+                      {t(`bullets.${i}`)}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>

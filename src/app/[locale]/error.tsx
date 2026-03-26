@@ -1,7 +1,8 @@
 "use client";
 
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { useEffect } from "react";
+import { Link } from "@/i18n/navigation";
 
 export default function Error({
   error,
@@ -10,6 +11,8 @@ export default function Error({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
+  const t = useTranslations("error");
+
   useEffect(() => {
     console.error(error);
   }, [error]);
@@ -24,13 +27,13 @@ export default function Error({
 
       <div className="relative w-full max-w-md text-center">
         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)]">
-          Something went wrong
+          {t("kicker")}
         </p>
         <h1 className="mt-3 text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
-          We couldn&apos;t load this page
+          {t("title")}
         </h1>
         <p className="mt-4 text-[var(--text-secondary)] leading-relaxed">
-          A runtime error occurred. You can try again or return to the homepage.
+          {t("description")}
         </p>
         <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:justify-center">
           <button
@@ -38,13 +41,13 @@ export default function Error({
             onClick={reset}
             className="inline-flex h-12 items-center justify-center rounded-2xl bg-gradient-to-r from-[#2563eb] to-[#6366f1] px-8 text-base font-semibold text-white shadow-lg shadow-indigo-500/25 transition hover:brightness-110 active:scale-[0.98]"
           >
-            Try again
+            {t("tryAgain")}
           </button>
           <Link
             href="/"
             className="inline-flex h-12 items-center justify-center rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/50 px-8 text-base font-semibold text-[var(--text-primary)] backdrop-blur-sm transition hover:border-[var(--accent-indigo)]/35 active:scale-[0.98]"
           >
-            Back to home
+            {t("backHome")}
           </Link>
         </div>
       </div>
