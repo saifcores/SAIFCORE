@@ -9,7 +9,7 @@ import { Reveal } from "@/components/portfolio/Reveal";
 import { articles, getArticleBlocks, getArticleBySlug } from "@/data/articles";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { getSiteUrl } from "@/lib/site";
+import { getSiteUrl } from "@/site";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;

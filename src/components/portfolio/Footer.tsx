@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { getGithubUrl, getLinkedinUrl } from "@/lib/site";
+import { getGithubUrl, getLinkedinUrl } from "@/site";
 
 export async function Footer() {
   const t = await getTranslations("footer");

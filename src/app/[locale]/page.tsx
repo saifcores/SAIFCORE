@@ -11,7 +11,7 @@ import { Insights } from "@/components/portfolio/Insights";
 import { Navbar } from "@/components/portfolio/Navbar";
 import { Trust } from "@/components/portfolio/Trust";
 import { WhatISolve } from "@/components/portfolio/WhatISolve";
-import { getSiteUrl, getSocialLinks } from "@/lib/site";
+import { getSiteUrl, getSocialLinks } from "@/site";
 
 type Props = {
   params: Promise<{ locale: string }>;

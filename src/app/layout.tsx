@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { getSiteUrl } from "@/lib/site";
+import { getSiteUrl } from "@/site";
 import "./globals.css";
 
 /** Resolves relative OG/Twitter image URLs during build; overridden by `[locale]` metadata where relevant. */

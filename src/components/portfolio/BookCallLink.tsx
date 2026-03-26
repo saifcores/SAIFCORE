@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { getCalendlyUrl } from "@/lib/site";
+import { getCalendlyUrl } from "@/site";
 
 type Props = {
   className?: string;

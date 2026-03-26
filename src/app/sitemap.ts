@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { articles } from "@/data/articles";
 import { routing } from "@/i18n/routing";
-import { getSiteUrl } from "@/lib/site";
+import { getSiteUrl } from "@/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = getSiteUrl();

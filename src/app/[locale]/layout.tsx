@@ -10,7 +10,7 @@ import {
 import { notFound } from "next/navigation";
 import { ThemeProvider } from "@/components/portfolio/ThemeProvider";
 import { routing } from "@/i18n/routing";
-import { getSiteUrl } from "@/lib/site";
+import { getSiteUrl } from "@/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
