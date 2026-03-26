@@ -58,7 +58,7 @@ export async function generateMetadata({
     metadataBase: new URL(siteUrl),
     title: t("title"),
     description: t("description"),
-    applicationName: "Manarix",
+    applicationName: "SAIFCORE",
     alternates: {
       canonical: canonicalPath,
       languages: {
@@ -70,7 +70,7 @@ export async function generateMetadata({
       title: t("ogTitle"),
       description: t("ogDescription"),
       url: canonicalUrl,
-      siteName: "Manarix",
+      siteName: "SAIFCORE",
       locale: locale === "fr" ? "fr_FR" : "en_US",
       type: "website",
     },

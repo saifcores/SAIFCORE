@@ -48,7 +48,7 @@ export function Navbar() {
           className="text-sm font-semibold tracking-tight text-[var(--text-primary)] transition hover:text-[var(--accent-indigo)]"
           onClick={close}
         >
-          Manarix<span className="text-[var(--text-muted)]">.</span>
+          SAIFCORE
         </Link>
         <nav
           className="hidden items-center gap-8 md:flex"

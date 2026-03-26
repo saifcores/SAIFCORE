@@ -34,11 +34,11 @@ export async function generateMetadata({
       ? `/articles/${slug}`
       : `/${locale}/articles/${slug}`;
   return {
-    title: `${article.title[loc]} | Manarix`,
+    title: `${article.title[loc]} | SAIFCORE`,
     description: article.excerpt[loc],
     alternates: { canonical: path },
     openGraph: {
-      title: `${article.title[loc]} | Manarix`,
+      title: `${article.title[loc]} | SAIFCORE`,
       description: article.excerpt[loc],
       url: new URL(path, `${base}/`).toString(),
       type: "article",

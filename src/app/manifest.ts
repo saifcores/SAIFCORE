@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Manarix — Software Architect & Full-Stack Engineer",
-    short_name: "Manarix",
+    name: "SAIFCORE — Software Architect & Full-Stack Engineer",
+    short_name: "SAIFCORE",
     description:
       "Scalable systems, SaaS platforms, and fintech integrations — built for the real world.",
     start_url: "/",

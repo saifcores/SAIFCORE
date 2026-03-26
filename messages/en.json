@@ -1,13 +1,13 @@
 {
   "meta": {
-    "title": "Software Architect & Full-Stack Engineer | Manarix",
+    "title": "Software Architect & Full-Stack Engineer | SAIFCORE",
     "description": "I design scalable systems that solve real business problems — from fintech to SaaS platforms.",
     "ogTitle": "Software Architect & Full-Stack Engineer",
     "ogDescription": "Scalable architecture, SaaS systems, and fintech integrations — built for the real world.",
     "twitterDescription": "Scalable systems, SaaS platforms, and fintech integrations.",
     "jsonLdJobTitle": "Software Architect & Full-Stack Engineer",
     "jsonLdDescription": "I design scalable systems that solve real business problems — from fintech to SaaS platforms.",
-    "manifestName": "Manarix — Software Architect & Full-Stack Engineer",
+    "manifestName": "SAIFCORE — Software Architect & Full-Stack Engineer",
     "manifestDescription": "Scalable systems, SaaS platforms, and fintech integrations — built for the real world."
   },
   "common": {
@@ -149,7 +149,7 @@
     "viewAll": "View all articles"
   },
   "articlesPage": {
-    "metaTitle": "Articles | Manarix",
+    "metaTitle": "Articles | SAIFCORE",
     "metaDescription": "Writing on architecture, SaaS, and fintech — practical notes for serious software.",
     "title": "Articles",
     "subtitle": "Articles, code samples, ADRs, design notes, and document outlines — all in one place.",
@@ -176,7 +176,7 @@
     "startProject": "Start a project"
   },
   "footer": {
-    "rights": "© {year} Manarix. All rights reserved.",
+    "rights": "© {year} SAIFCORE. All rights reserved.",
     "linkedin": "LinkedIn",
     "github": "GitHub"
   },

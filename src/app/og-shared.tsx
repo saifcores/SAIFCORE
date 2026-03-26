@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const OG_SIZE = { width: 1200, height: 630 } as const;
 
-export const ogAlt = "Manarix — Software Architect & Full-Stack Engineer";
+export const ogAlt = "SAIFCORE — Software Architect & Full-Stack Engineer";
 
 export function createOgImageResponse() {
   return new ImageResponse(
@@ -67,7 +67,7 @@ export function createOgImageResponse() {
             lineHeight: 1.02,
           }}
         >
-          Manarix
+          SAIFCORE
         </div>
         <div
           style={{

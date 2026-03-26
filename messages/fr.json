@@ -1,13 +1,13 @@
 {
   "meta": {
-    "title": "Architecte logiciel & ingénieur full-stack | Manarix",
+    "title": "Architecte logiciel & ingénieur full-stack | SAIFCORE",
     "description": "Je conçois des systèmes évolutifs qui répondent à de vrais enjeux métier — de la fintech aux plateformes SaaS.",
     "ogTitle": "Architecte logiciel & ingénieur full-stack",
     "ogDescription": "Architecture scalable, systèmes SaaS et intégrations fintech — conçus pour le monde réel.",
     "twitterDescription": "Systèmes scalables, plateformes SaaS et intégrations fintech.",
     "jsonLdJobTitle": "Architecte logiciel & ingénieur full-stack",
     "jsonLdDescription": "Je conçois des systèmes évolutifs qui répondent à de vrais enjeux métier — de la fintech aux plateformes SaaS.",
-    "manifestName": "Manarix — Architecte logiciel & ingénieur full-stack",
+    "manifestName": "SAIFCORE — Architecte logiciel & ingénieur full-stack",
     "manifestDescription": "Systèmes scalables, plateformes SaaS et intégrations fintech — conçus pour le monde réel."
   },
   "common": {
@@ -149,7 +149,7 @@
     "viewAll": "Voir tous les articles"
   },
   "articlesPage": {
-    "metaTitle": "Articles | Manarix",
+    "metaTitle": "Articles | SAIFCORE",
     "metaDescription": "Textes sur l’architecture, le SaaS et la fintech — des notes concrètes pour du logiciel sérieux.",
     "title": "Articles",
     "subtitle": "Articles, extraits de code, ADR, notes de design et trames documentaires — au même endroit.",
@@ -176,7 +176,7 @@
     "startProject": "Lancer un projet"
   },
   "footer": {
-    "rights": "© {year} Manarix. Tous droits réservés.",
+    "rights": "© {year} SAIFCORE. Tous droits réservés.",
     "linkedin": "LinkedIn",
     "github": "GitHub"
   },

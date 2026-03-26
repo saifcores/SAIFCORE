@@ -32,7 +32,7 @@ export default async function Home({ params }: Props) {
   const jsonLd: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: "Manarix",
+    name: "SAIFCORE",
     jobTitle: t("jsonLdJobTitle"),
     description: t("jsonLdDescription"),
     url: siteUrl,
