@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { Reveal } from "./Reveal";
+import Image from "next/image";
 
 export async function About() {
   const t = await getTranslations("about");
@@ -37,7 +38,14 @@ export async function About() {
                 className="mx-auto flex h-28 w-28 items-center justify-center rounded-2xl bg-gradient-to-br from-[#3b82f6] to-[#6366f1] text-3xl font-bold text-white shadow-lg shadow-indigo-500/30"
                 aria-hidden
               >
-                SA
+                <Image
+                  src="/profile.png"
+                  alt="Saifoulaye Diallo"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                  width={100}
+                  height={100}
+                />
               </div>
               <p className="mt-6 text-sm font-medium uppercase tracking-widest text-[var(--text-muted)]">
                 {t("cardRole")}
