@@ -3,21 +3,22 @@
 import { useTranslations } from "next-intl";
 import { useCallback, useEffect, useId, useState } from "react";
 import { Link } from "@/i18n/navigation";
+import { BookCallLink } from "./BookCallLink";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import { ThemeToggle } from "./ThemeToggle";
+
+const navLinks = [
+  { href: "/#work" as const, labelKey: "work" as const },
+  { href: "/#process" as const, labelKey: "process" as const },
+  { href: "/#about" as const, labelKey: "about" as const },
+  { href: "/articles" as const, labelKey: "insights" as const },
+  { href: "/#contact" as const, labelKey: "contact" as const },
+];
 
 export function Navbar() {
   const t = useTranslations("nav");
   const [open, setOpen] = useState(false);
   const panelId = useId();
-
-  const links = [
-    { href: "#work" as const, labelKey: "work" as const },
-    { href: "#process" as const, labelKey: "process" as const },
-    { href: "#about" as const, labelKey: "about" as const },
-    { href: "#insights" as const, labelKey: "insights" as const },
-    { href: "#contact" as const, labelKey: "contact" as const },
-  ];
 
   const close = useCallback(() => setOpen(false), []);
 
@@ -53,14 +54,14 @@ export function Navbar() {
           className="hidden items-center gap-8 md:flex"
           aria-label={t("primary")}
         >
-          {links.map((l) => (
-            <a
+          {navLinks.map((l) => (
+            <Link
               key={l.href}
               href={l.href}
               className="text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
             >
               {t(l.labelKey)}
-            </a>
+            </Link>
           ))}
         </nav>
         <div className="flex items-center gap-2 sm:gap-3">
@@ -69,12 +70,9 @@ export function Navbar() {
             labels={{ en: t("localeEn"), fr: t("localeFr") }}
           />
           <ThemeToggle />
-          <a
-            href="#contact"
-            className="hidden rounded-xl bg-gradient-to-r from-[#3b82f6] to-[#6366f1] px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-indigo-500/25 transition hover:brightness-110 sm:inline-flex"
-          >
+          <BookCallLink className="hidden rounded-xl bg-gradient-to-r from-[#3b82f6] to-[#6366f1] px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-indigo-500/25 transition hover:brightness-110 sm:inline-flex">
             {t("bookCall")}
-          </a>
+          </BookCallLink>
           <button
             type="button"
             className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/50 text-[var(--text-primary)] transition hover:border-[var(--accent-indigo)]/35 md:hidden"
@@ -135,23 +133,22 @@ export function Navbar() {
             aria-label={t("siteNavigation")}
           >
             <nav className="mx-auto flex max-w-[1280px] flex-col gap-1 px-4 py-4 sm:px-6">
-              {links.map((l) => (
-                <a
+              {navLinks.map((l) => (
+                <Link
                   key={l.href}
                   href={l.href}
                   className="rounded-xl px-4 py-3 text-base font-medium text-[var(--text-secondary)] transition hover:bg-[var(--bg-elevated)] hover:text-[var(--text-primary)]"
                   onClick={close}
                 >
                   {t(l.labelKey)}
-                </a>
+                </Link>
               ))}
-              <a
-                href="#contact"
+              <BookCallLink
                 className="mt-2 inline-flex h-12 items-center justify-center rounded-2xl bg-gradient-to-r from-[#3b82f6] to-[#6366f1] px-4 text-base font-semibold text-white shadow-lg shadow-indigo-500/25"
                 onClick={close}
               >
                 {t("bookCall")}
-              </a>
+              </BookCallLink>
             </nav>
           </div>
         </>

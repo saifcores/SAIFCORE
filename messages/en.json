@@ -146,20 +146,28 @@
   "insights": {
     "title": "Insights & thinking",
     "subtitle": "Notes on building serious software in serious environments.",
-    "posts": [
-      {
-        "title": "Why most SaaS fail in Africa",
-        "excerpt": "Distribution, payments, and trust — what changes when your playbook is imported wholesale."
-      },
-      {
-        "title": "Designing scalable fintech systems",
-        "excerpt": "Idempotency, ledger design, and reconciliation patterns that keep money honest."
-      },
-      {
-        "title": "Architecture reviews that actually help",
-        "excerpt": "How to run ADRs and reviews so engineers leave energized, not defensive."
-      }
-    ]
+    "viewAll": "View all articles"
+  },
+  "articlesPage": {
+    "metaTitle": "Articles | Manarix",
+    "metaDescription": "Writing on architecture, SaaS, and fintech — practical notes for serious software.",
+    "title": "Articles",
+    "subtitle": "Articles, code samples, ADRs, design notes, and document outlines — all in one place.",
+    "backToHome": "Back to home",
+    "readArticle": "Read article",
+    "readExternal": "Read full article",
+    "published": "Published",
+    "kinds": {
+      "writing": "Article",
+      "code": "Code",
+      "design": "Design",
+      "adr": "ADR",
+      "document": "Document"
+    },
+    "adrStatus": "Status",
+    "adrLabelContext": "Context",
+    "adrLabelDecision": "Decision",
+    "adrLabelConsequences": "Consequences"
   },
   "cta": {
     "title": "Let's design your next system.",

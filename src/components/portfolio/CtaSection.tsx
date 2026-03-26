@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { BookCallLink } from "@/components/portfolio/BookCallLink";
 import { Reveal } from "./Reveal";
 
 export async function CtaSection() {
@@ -26,12 +27,9 @@ export async function CtaSection() {
               {t("subtitle")}
             </p>
             <div className="relative mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <a
-                href="mailto:hello@example.com"
-                className="inline-flex h-12 min-w-[180px] items-center justify-center rounded-2xl bg-gradient-to-r from-[#2563eb] to-[#6366f1] px-8 text-base font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:brightness-110 active:scale-[0.98]"
-              >
+              <BookCallLink className="inline-flex h-12 min-w-[180px] items-center justify-center rounded-2xl bg-gradient-to-r from-[#2563eb] to-[#6366f1] px-8 text-base font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:brightness-110 active:scale-[0.98]">
                 {t("bookCall")}
-              </a>
+              </BookCallLink>
               <a
                 href="mailto:hello@example.com?subject=Project%20inquiry"
                 className="inline-flex h-12 min-w-[180px] items-center justify-center rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-base)]/60 px-8 text-base font-semibold text-[var(--text-primary)] backdrop-blur-sm transition hover:border-[var(--accent-indigo)]/35 active:scale-[0.98]"

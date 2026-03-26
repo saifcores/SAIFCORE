@@ -11,7 +11,6 @@ import { notFound } from "next/navigation";
 import { ThemeProvider } from "@/components/portfolio/ThemeProvider";
 import { routing } from "@/i18n/routing";
 import { getSiteUrl } from "@/lib/site";
-import "../globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -50,6 +49,10 @@ export async function generateMetadata({
   });
 
   const canonicalPath = locale === routing.defaultLocale ? "/" : `/${locale}`;
+  const canonicalUrl = new URL(
+    canonicalPath === "/" ? "/" : canonicalPath,
+    `${siteUrl}/`,
+  ).toString();
 
   return {
     metadataBase: new URL(siteUrl),
@@ -66,7 +69,7 @@ export async function generateMetadata({
     openGraph: {
       title: t("ogTitle"),
       description: t("ogDescription"),
-      url: siteUrl,
+      url: canonicalUrl,
       siteName: "Manarix",
       locale: locale === "fr" ? "fr_FR" : "en_US",
       type: "website",

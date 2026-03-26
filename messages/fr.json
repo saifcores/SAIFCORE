@@ -146,20 +146,28 @@
   "insights": {
     "title": "Insights & réflexions",
     "subtitle": "Notes sur la construction de logiciels sérieux dans des environnements exigeants.",
-    "posts": [
-      {
-        "title": "Pourquoi beaucoup de SaaS échouent en Afrique",
-        "excerpt": "Distribution, paiements et confiance — ce qui change quand on importe une recette telle quelle."
-      },
-      {
-        "title": "Concevoir des systèmes fintech scalables",
-        "excerpt": "Idempotence, grand livre et rapprochements pour que l’argent reste traçable."
-      },
-      {
-        "title": "Les revues d’architecture qui aident vraiment",
-        "excerpt": "Comment mener des ADR et des revues pour que les équipes repartent motivées, pas sur la défensive."
-      }
-    ]
+    "viewAll": "Voir tous les articles"
+  },
+  "articlesPage": {
+    "metaTitle": "Articles | Manarix",
+    "metaDescription": "Textes sur l’architecture, le SaaS et la fintech — des notes concrètes pour du logiciel sérieux.",
+    "title": "Articles",
+    "subtitle": "Articles, extraits de code, ADR, notes de design et trames documentaires — au même endroit.",
+    "backToHome": "Retour à l’accueil",
+    "readArticle": "Lire l’article",
+    "readExternal": "Lire l’article complet",
+    "published": "Publié le",
+    "kinds": {
+      "writing": "Article",
+      "code": "Code",
+      "design": "Design",
+      "adr": "ADR",
+      "document": "Document"
+    },
+    "adrStatus": "Statut",
+    "adrLabelContext": "Contexte",
+    "adrLabelDecision": "Décision",
+    "adrLabelConsequences": "Conséquences"
   },
   "cta": {
     "title": "Concevons votre prochain système.",

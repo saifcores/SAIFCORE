@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import { BookCallLink } from "@/components/portfolio/BookCallLink";
 import { SystemDiagram } from "./SystemDiagram";
 
 export async function Hero() {
@@ -35,12 +36,9 @@ export async function Hero() {
           {t("subtitle")}
         </p>
         <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-          <Link
-            href="/#contact"
-            className="inline-flex h-12 items-center justify-center rounded-2xl bg-gradient-to-r from-[#2563eb] to-[#6366f1] px-8 text-base font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:brightness-110 hover:shadow-indigo-500/45 active:scale-[0.98]"
-          >
+          <BookCallLink className="inline-flex h-12 items-center justify-center rounded-2xl bg-gradient-to-r from-[#2563eb] to-[#6366f1] px-8 text-base font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:brightness-110 hover:shadow-indigo-500/45 active:scale-[0.98]">
             {t("ctaPrimary")}
-          </Link>
+          </BookCallLink>
           <Link
             href="/#work"
             className="inline-flex h-12 items-center justify-center rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/50 px-8 text-base font-semibold text-[var(--text-primary)] backdrop-blur-sm transition hover:border-[var(--accent-indigo)]/35 hover:bg-[var(--bg-elevated)] active:scale-[0.98]"
