@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SAIFCORE
 
-## Getting Started
+Site vitrine (portfolio) — Next.js, bilingue **anglais / français**, thème clair / sombre.
 
-First, run the development server:
+## Prérequis
+
+- [Node.js](https://nodejs.org/) (LTS recommandé)
+- npm (fourni avec Node)
+
+## Démarrage
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ouvrir [http://localhost:3000](http://localhost:3000). Les routes localisées sont `/` (locale par défaut) et `/fr`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Commande       | Description              |
+|----------------|--------------------------|
+| `npm run dev`  | Serveur de développement |
+| `npm run build`| Build de production      |
+| `npm run start`| Lancer le build en local |
+| `npm run lint` | ESLint                   |
 
-## Learn More
+## Variables d’environnement
 
-To learn more about Next.js, take a look at the following resources:
+Copier `.env.example` vers `.env.local` et ajuster :
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **`NEXT_PUBLIC_SITE_URL`** — URL canonique (metadata, sitemap, JSON-LD). Sans slash final.
+- **`NEXT_PUBLIC_CALENDLY_URL`** — Lien Calendly pour « Book a call » (optionnel).
+- **`NEXT_PUBLIC_LINKEDIN_URL`** / **`NEXT_PUBLIC_GITHUB_URL`** — Liens profil pour le pied de page et le schéma Person (optionnel).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Structure utile
 
-## Deploy on Vercel
+- `src/app/[locale]/` — Pages App Router (accueil, articles)
+- `src/components/portfolio/` — Composants UI du portfolio
+- `messages/en.json`, `messages/fr.json` — Chaînes i18n
+- `src/data/articles.ts` — Contenu des articles Insights
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Déploiement
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Compatible [Vercel](https://vercel.com/docs) ou tout hébergeur Node exécutant `next build` / `next start`. Définir les variables d’environnement côté hébergement pour la production.
+
+## Licence
+
+Projet privé (`private` dans `package.json`).
