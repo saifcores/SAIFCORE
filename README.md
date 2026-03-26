@@ -18,12 +18,12 @@ Ouvrir [http://localhost:3000](http://localhost:3000). Les routes localisées so
 
 ## Scripts
 
-| Commande       | Description              |
-|----------------|--------------------------|
-| `npm run dev`  | Serveur de développement |
-| `npm run build`| Build de production      |
-| `npm run start`| Lancer le build en local |
-| `npm run lint` | ESLint                   |
+| Commande        | Description              |
+| --------------- | ------------------------ |
+| `npm run dev`   | Serveur de développement |
+| `npm run build` | Build de production      |
+| `npm run start` | Lancer le build en local |
+| `npm run lint`  | ESLint                   |
 
 ## Variables d’environnement
 
