@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "sync:icons": "cp public/profile.png src/app/icon.png && cp public/profile.png src/app/apple-icon.png"
   },
   "dependencies": {
     "next": "16.2.1",

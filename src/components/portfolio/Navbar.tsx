@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { useCallback, useEffect, useId, useState } from "react";
 import { Link } from "@/i18n/navigation";
 import { BookCallLink } from "./BookCallLink";
@@ -45,10 +46,23 @@ export function Navbar() {
       <div className="mx-auto flex h-16 max-w-[1280px] items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="text-sm font-semibold tracking-tight text-[var(--text-primary)] transition hover:text-[var(--accent-indigo)]"
+          className="flex items-center gap-2.5 text-[var(--text-primary)] transition hover:opacity-90"
           onClick={close}
+          aria-label="SAIFCORE — home"
         >
-          SAIFCORE
+          <Image
+            src="/profile.png"
+            alt=""
+            width={80}
+            height={80}
+            className="h-8 w-8 shrink-0 rounded-lg object-cover ring-1 ring-[var(--border-subtle)] sm:h-9 sm:w-9"
+            priority
+            sizes="36px"
+          />
+          <span className="text-sm font-semibold tracking-tight">
+            <span className="text-[var(--text-primary)]">SAIF</span>
+            <span className="text-gradient">CORE</span>
+          </span>
         </Link>
         <nav
           className="hidden items-center gap-8 md:flex"
