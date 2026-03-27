@@ -8,6 +8,7 @@ import {
   setRequestLocale,
 } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { Analytics } from "@vercel/analytics/react";
 import { ThemeProvider } from "@/components/portfolio/ThemeProvider";
 import { routing } from "@/i18n/routing";
 import { getSiteUrl } from "@/site";
@@ -117,6 +118,7 @@ export default async function LocaleLayout({
             {children}
           </ThemeProvider>
         </NextIntlClientProvider>
+        <Analytics />
       </body>
     </html>
   );

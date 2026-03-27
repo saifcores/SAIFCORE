@@ -10,6 +10,7 @@
     "sync:icons": "cp public/profile.png src/app/icon.png && cp public/profile.png src/app/apple-icon.png"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "next": "16.2.1",
     "next-intl": "^4.8.3",
     "react": "19.2.4",
