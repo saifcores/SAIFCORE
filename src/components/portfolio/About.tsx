@@ -1,9 +1,11 @@
 import { getTranslations } from "next-intl/server";
-import { Reveal } from "./Reveal";
 import Image from "next/image";
+import { getProfileDisplayName } from "@/site";
+import { Reveal } from "./Reveal";
 
 export async function About() {
   const t = await getTranslations("about");
+  const displayName = getProfileDisplayName();
 
   return (
     <section id="about" className="px-4 py-24 sm:px-6 lg:px-8">
@@ -25,6 +27,9 @@ export async function About() {
           <p className="mt-4 text-[var(--text-secondary)] leading-relaxed">
             {t("p3")}
           </p>
+          <p className="mt-4 text-[var(--text-secondary)] leading-relaxed">
+            {t("p4")}
+          </p>
         </Reveal>
 
         <Reveal delay={120}>
@@ -40,7 +45,7 @@ export async function About() {
               >
                 <Image
                   src="/profile.png"
-                  alt="Saifoulaye Diallo"
+                  alt={displayName}
                   className="h-full w-full object-cover"
                   loading="lazy"
                   width={100}

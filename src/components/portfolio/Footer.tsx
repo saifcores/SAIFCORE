@@ -1,9 +1,11 @@
 import { getTranslations } from "next-intl/server";
 import { getGithubUrl, getLinkedinUrl } from "@/site";
+import { getResumeUrl, isLocalResume } from "@/server/resume";
 
 export async function Footer() {
   const t = await getTranslations("footer");
   const year = new Date().getFullYear();
+  const resumeUrl = getResumeUrl();
 
   return (
     <footer className="border-t border-[var(--border-subtle)] px-4 py-12 sm:px-6 lg:px-8">
@@ -11,7 +13,7 @@ export async function Footer() {
         <p className="text-sm text-[var(--text-muted)]">
           {t("rights", { year })}
         </p>
-        <div className="flex items-center gap-6">
+        <div className="flex flex-wrap items-center justify-center gap-6">
           <a
             href={getLinkedinUrl()}
             target="_blank"
@@ -28,6 +30,17 @@ export async function Footer() {
           >
             {t("github")}
           </a>
+          {resumeUrl ? (
+            <a
+              href={resumeUrl}
+              className="text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
+              {...(isLocalResume(resumeUrl)
+                ? { download: "SAIFCORE-resume.pdf" }
+                : { target: "_blank", rel: "noopener noreferrer" })}
+            >
+              {t("resume")}
+            </a>
+          ) : null}
         </div>
       </div>
     </footer>

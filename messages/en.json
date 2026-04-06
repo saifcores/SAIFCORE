@@ -1,12 +1,12 @@
 {
   "meta": {
     "title": "Software Architect & Full-Stack Engineer | SAIFCORE",
-    "description": "I design scalable systems that solve real business problems — from fintech to SaaS platforms.",
+    "description": "Software architect & full-stack engineer based in Dakar, Senegal — scalable systems for fintech and SaaS. Open to national and international collaboration.",
     "ogTitle": "Software Architect & Full-Stack Engineer",
     "ogDescription": "Scalable architecture, SaaS systems, and fintech integrations — built for the real world.",
     "twitterDescription": "Scalable systems, SaaS platforms, and fintech integrations.",
     "jsonLdJobTitle": "Software Architect & Full-Stack Engineer",
-    "jsonLdDescription": "I design scalable systems that solve real business problems — from fintech to SaaS platforms.",
+    "jsonLdDescription": "Software architect and full-stack engineer based in Dakar, Senegal. Designs scalable systems for fintech and SaaS; open to remote and hybrid collaboration internationally.",
     "manifestName": "SAIFCORE — Software Architect & Full-Stack Engineer",
     "manifestDescription": "Scalable systems, SaaS platforms, and fintech integrations — built for the real world."
   },
@@ -14,6 +14,10 @@
     "skipToContent": "Skip to content",
     "loading": "Loading…",
     "readMore": "Read"
+  },
+  "actionBar": {
+    "bookCall": "Book a call",
+    "contact": "Contact"
   },
   "nav": {
     "primary": "Primary",
@@ -35,8 +39,12 @@
     "titleBefore": "Software Architect &",
     "titleHighlight": "Full-Stack Engineer",
     "subtitle": "I design scalable systems that solve real business problems — from fintech to SaaS platforms.",
-    "ctaPrimary": "Work with me",
-    "ctaSecondary": "View projects"
+    "ctaPrimary": "Book a 15-min intro",
+    "ctaSecondary": "See selected work",
+    "locationLine": "Based in Dakar, Senegal — available for on-site, hybrid, and remote work across Senegal, Francophone Africa, and internationally (EU/US overlap friendly).",
+    "nextSteps": "Typical path: short intro call → written scope & constraints → proposal or kickoff. No endless back-and-forth.",
+    "jumpToContact": "Go to contact",
+    "jumpToContactHint": "email, CV, and full booking options."
   },
   "trust": {
     "heading": "Trusted by companies and real-world projects"
@@ -94,23 +102,39 @@
   },
   "featuredProjects": {
     "title": "Featured projects",
-    "subtitle": "Selected work — anonymized where needed. Impact over vanity metrics.",
+    "subtitle": "Selected work — including Ecom 360 PME, plus anonymized engagements where needed. Impact over vanity metrics.",
     "impactLabel": "Impact",
+    "bridgeTitle": "Have a similar challenge?",
+    "bridgeSubtitle": "Tell me about your constraints — I’ll suggest a realistic architecture and delivery path.",
+    "bridgeCta": "Start a conversation",
     "items": [
+      {
+        "title": "Ecom 360 PME",
+        "context": "SaaS platform for retail and commerce management — inventory, sales, and day-to-day operations in one product built to help SMEs scale.",
+        "impact": "Guided onboarding and a focused UX so merchants adopt the system without a heavy IT project.",
+        "href": "https://ecom360pme.com/",
+        "linkLabel": "Visit ecom360pme.com"
+      },
       {
         "title": "Multi-tenant B2B SaaS",
         "context": "Greenfield platform with org isolation, role-based access, and usage-based billing.",
-        "impact": "40% faster feature cycle via modular domains"
+        "impact": "40% faster feature cycle via modular domains",
+        "href": "",
+        "linkLabel": ""
       },
       {
         "title": "Cross-border payments hub",
         "context": "Unified orchestration across PSPs with reconciliation and audit trails.",
-        "impact": "Sub-second auth path at peak settlement windows"
+        "impact": "Sub-second auth path at peak settlement windows",
+        "href": "",
+        "linkLabel": ""
       },
       {
         "title": "Realtime analytics pipeline",
         "context": "Event ingestion, enrichment, and dashboards for product and finance teams.",
-        "impact": "Same-day insights vs. weekly batch exports"
+        "impact": "Same-day insights vs. weekly batch exports",
+        "href": "",
+        "linkLabel": ""
       }
     ]
   },
@@ -137,6 +161,7 @@
     "p2b": "clarity over cleverness",
     "p2c": ", explicit trade-offs, and architectures your future self will thank you for.",
     "p3": "I've shipped across fintech and SaaS, partnering with founders and enterprise teams to turn ambitious roadmaps into dependable platforms.",
+    "p4": "I work with teams in Senegal and abroad: async-first communication, clear written specs, and scheduled overlap when decisions need real-time alignment.",
     "cardRole": "Software Architect",
     "cardTagline": "Building for longevity",
     "statYears": "Years",
@@ -146,7 +171,10 @@
   "insights": {
     "title": "Insights & thinking",
     "subtitle": "Notes on building serious software in serious environments.",
-    "viewAll": "View all articles"
+    "viewAll": "View all articles",
+    "endCtaTitle": "Facing a similar challenge in your stack?",
+    "endCtaSubtitle": "These articles are a starting point — the next step is a concrete conversation about your context.",
+    "endCtaButton": "Get in touch"
   },
   "articlesPage": {
     "metaTitle": "Articles | SAIFCORE",
@@ -167,18 +195,29 @@
     "adrStatus": "Status",
     "adrLabelContext": "Context",
     "adrLabelDecision": "Decision",
-    "adrLabelConsequences": "Consequences"
+    "adrLabelConsequences": "Consequences",
+    "endCtaTitle": "Want to apply this to your product?",
+    "endCtaSubtitle": "Share your stack, constraints, and timeline — I’ll say clearly if there’s a fit.",
+    "endCtaButton": "Start a conversation"
   },
   "cta": {
     "title": "Let's design your next system.",
     "subtitle": "Tell me about your product, constraints, and timeline — I'll reply with a clear path forward.",
+    "processTitle": "What happens next",
+    "processStep1": "You book a slot or send a brief — context, goals, and timeline.",
+    "processStep2": "I come back with clarifying questions and, when it fits, a lean scope or options.",
+    "processStep3": "We align on the next step: discovery workshop, architecture sprint, or phased delivery.",
+    "responseHint": "I usually acknowledge messages within two business days (often faster).",
     "bookCall": "Book a call",
-    "startProject": "Start a project"
+    "startProject": "Email a project brief",
+    "emailSubject": "Project inquiry — SAIFCORE",
+    "downloadResume": "Download CV"
   },
   "footer": {
     "rights": "© {year} SAIFCORE. All rights reserved.",
     "linkedin": "LinkedIn",
-    "github": "GitHub"
+    "github": "GitHub",
+    "resume": "Resume"
   },
   "error": {
     "kicker": "Something went wrong",

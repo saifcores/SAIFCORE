@@ -1,6 +1,7 @@
 import { getLocale, getTranslations } from "next-intl/server";
 import { articles } from "@/data/articles";
 import { Link } from "@/i18n/navigation";
+import { ContactBridgeStrip } from "./ContactBridgeStrip";
 import { ArticleKindBadge } from "./ArticleKindBadge";
 import { Reveal } from "./Reveal";
 
@@ -101,6 +102,10 @@ export async function Insights() {
             </Link>
           </div>
         </Reveal>
+
+        <div className="mt-16">
+          <ContactBridgeStrip ns="insights" />
+        </div>
       </div>
     </section>
   );

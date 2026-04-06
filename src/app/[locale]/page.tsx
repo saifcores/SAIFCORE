@@ -11,7 +11,12 @@ import { Insights } from "@/components/portfolio/Insights";
 import { Navbar } from "@/components/portfolio/Navbar";
 import { Trust } from "@/components/portfolio/Trust";
 import { WhatISolve } from "@/components/portfolio/WhatISolve";
-import { getSiteUrl, getSocialLinks } from "@/site";
+import {
+  getProfileDisplayName,
+  getProfileLocation,
+  getSiteUrl,
+  getSocialLinks,
+} from "@/site";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -28,14 +33,28 @@ export default async function Home({ params }: Props) {
 
   const siteUrl = getSiteUrl();
   const sameAs = getSocialLinks();
+  const loc = getProfileLocation();
 
   const jsonLd: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: "SAIFCORE",
+    name: getProfileDisplayName(),
     jobTitle: t("jsonLdJobTitle"),
     description: t("jsonLdDescription"),
     url: siteUrl,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: loc.city,
+      addressCountry: loc.countryCode,
+    },
+    jobLocation: {
+      "@type": "Place",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: loc.city,
+        addressCountry: loc.countryCode,
+      },
+    },
   };
 
   if (sameAs.length > 0) {
@@ -51,7 +70,7 @@ export default async function Home({ params }: Props) {
       <Navbar />
       <main
         id="main-content"
-        className="flex-1 outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base"
+        className="flex-1 pb-24 outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base md:pb-0"
         tabIndex={-1}
       >
         <Hero />

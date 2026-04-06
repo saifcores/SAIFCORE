@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArticleBody } from "@/components/portfolio/ArticleBody";
 import { ArticleKindBadge } from "@/components/portfolio/ArticleKindBadge";
+import { ContactBridgeStrip } from "@/components/portfolio/ContactBridgeStrip";
 import { Footer } from "@/components/portfolio/Footer";
 import { Navbar } from "@/components/portfolio/Navbar";
 import { Reveal } from "@/components/portfolio/Reveal";
@@ -80,7 +81,7 @@ export default async function ArticlePage({ params }: Props) {
       <Navbar />
       <main
         id="main-content"
-        className="flex-1 outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base"
+        className="flex-1 pb-24 outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base md:pb-0"
         tabIndex={-1}
       >
         <article className="border-b border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
@@ -129,6 +130,8 @@ export default async function ArticlePage({ params }: Props) {
             ) : null}
           </div>
         </article>
+
+        <ContactBridgeStrip ns="articlesPage" />
       </main>
       <Footer />
     </div>

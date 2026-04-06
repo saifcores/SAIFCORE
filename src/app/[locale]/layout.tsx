@@ -9,6 +9,7 @@ import {
 } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Analytics } from "@vercel/analytics/react";
+import { StickyActionBar } from "@/components/portfolio/StickyActionBar";
 import { ThemeProvider } from "@/components/portfolio/ThemeProvider";
 import { routing } from "@/i18n/routing";
 import { getSiteUrl } from "@/site";
@@ -116,6 +117,7 @@ export default async function LocaleLayout({
               {tCommon("skipToContent")}
             </a>
             {children}
+            <StickyActionBar />
           </ThemeProvider>
         </NextIntlClientProvider>
         <Analytics />

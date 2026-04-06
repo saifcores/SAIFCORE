@@ -35,6 +35,9 @@ export async function Hero() {
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--text-secondary)] sm:text-xl">
           {t("subtitle")}
         </p>
+        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[var(--text-muted)] sm:text-base">
+          {t("locationLine")}
+        </p>
         <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
           <BookCallLink className="inline-flex h-12 items-center justify-center rounded-2xl bg-gradient-to-r from-[#2563eb] to-[#6366f1] px-8 text-base font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:brightness-110 hover:shadow-indigo-500/45 active:scale-[0.98]">
             {t("ctaPrimary")}
@@ -46,6 +49,21 @@ export async function Hero() {
             {t("ctaSecondary")}
           </Link>
         </div>
+        <p className="mt-5 max-w-2xl text-sm leading-relaxed text-[var(--text-muted)]">
+          {t("nextSteps")}
+        </p>
+        <p className="mt-3 text-sm text-[var(--text-muted)]">
+          <Link
+            href="/#contact"
+            className="font-medium text-[var(--accent-indigo)] underline decoration-indigo-500/35 underline-offset-4 transition hover:decoration-indigo-500/80"
+          >
+            {t("jumpToContact")}
+          </Link>
+          <span className="text-[var(--text-muted)]">
+            {" "}
+            — {t("jumpToContactHint")}
+          </span>
+        </p>
       </div>
     </section>
   );

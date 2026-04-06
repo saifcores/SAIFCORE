@@ -1,12 +1,12 @@
 {
   "meta": {
     "title": "Architecte logiciel & ingénieur full-stack | SAIFCORE",
-    "description": "Je conçois des systèmes évolutifs qui répondent à de vrais enjeux métier — de la fintech aux plateformes SaaS.",
+    "description": "Architecte logiciel & ingénieur full-stack basé à Dakar (Sénégal) — systèmes scalables fintech & SaaS. Ouvert aux collaborations nationales et internationales.",
     "ogTitle": "Architecte logiciel & ingénieur full-stack",
     "ogDescription": "Architecture scalable, systèmes SaaS et intégrations fintech — conçus pour le monde réel.",
     "twitterDescription": "Systèmes scalables, plateformes SaaS et intégrations fintech.",
     "jsonLdJobTitle": "Architecte logiciel & ingénieur full-stack",
-    "jsonLdDescription": "Je conçois des systèmes évolutifs qui répondent à de vrais enjeux métier — de la fintech aux plateformes SaaS.",
+    "jsonLdDescription": "Architecte logiciel et ingénieur full-stack basé à Dakar (Sénégal). Conçoit des systèmes scalables pour la fintech et le SaaS ; ouvert au remote et au hybride à l’international.",
     "manifestName": "SAIFCORE — Architecte logiciel & ingénieur full-stack",
     "manifestDescription": "Systèmes scalables, plateformes SaaS et intégrations fintech — conçus pour le monde réel."
   },
@@ -14,6 +14,10 @@
     "skipToContent": "Aller au contenu",
     "loading": "Chargement…",
     "readMore": "Lire"
+  },
+  "actionBar": {
+    "bookCall": "Réserver un appel",
+    "contact": "Contact"
   },
   "nav": {
     "primary": "Principal",
@@ -35,8 +39,12 @@
     "titleBefore": "Architecte logiciel &",
     "titleHighlight": "ingénieur full-stack",
     "subtitle": "Je conçois des systèmes évolutifs qui répondent à de vrais enjeux métier — de la fintech aux plateformes SaaS.",
-    "ctaPrimary": "Travailler avec moi",
-    "ctaSecondary": "Voir les projets"
+    "ctaPrimary": "Réserver un intro 15 min",
+    "ctaSecondary": "Voir des réalisations",
+    "locationLine": "Basé à Dakar (Sénégal) — missions sur place, en hybride ou en remote : Sénégal, Afrique francophone et international (créneaux compatibles Europe / US).",
+    "nextSteps": "Parcours typique : court échange → cadrage écrit & contraintes → proposition ou lancement. Pas de ping-pong infini.",
+    "jumpToContact": "Aller au contact",
+    "jumpToContactHint": "e-mail, CV et réservation complète."
   },
   "trust": {
     "heading": "Ils m’ont fait confiance — entreprises et projets concrets"
@@ -94,24 +102,41 @@
   },
   "featuredProjects": {
     "title": "Projets phares",
-    "subtitle": "Un extrait de travaux — anonymisés si nécessaire. L’impact plutôt que les vanity metrics.",
+    "subtitle": "Un extrait de travaux — dont Ecom 360 PME, plus des missions anonymisées si nécessaire. L’impact plutôt que les vanity metrics.",
     "impactLabel": "Impact",
+    "bridgeTitle": "Un enjeu comparable ?",
+    "bridgeSubtitle": "Décrivez vos contraintes — je propose une trajectoire d’architecture et de livraison réaliste.",
+    "bridgeCta": "Démarrer la conversation",
     "items": [
+      {
+        "title": "Ecom 360 PME",
+        "context": "Plateforme SaaS de gestion pour le commerce — stocks, ventes et opérations du quotidien dans un même produit pour aider les PME à grandir.",
+        "impact": "Onboarding guidé et UX centrée métier pour une adoption sans projet IT lourd.",
+        "href": "https://ecom360pme.com/",
+        "linkLabel": "Voir ecom360pme.com"
+      },
       {
         "title": "SaaS B2B multi-locataire",
         "context": "Plateforme greenfield avec isolation par org, accès par rôles et facturation à l’usage.",
-        "impact": "Cycle de fonctionnalités ~40 % plus rapide grâce à des domaines modulaires"
+        "impact": "Cycle de fonctionnalités ~40 % plus rapide grâce à des domaines modulaires",
+        "href": "",
+        "linkLabel": ""
       },
       {
         "title": "Hub de paiements transfrontaliers",
         "context": "Orchestration unifiée entre PSP avec rapprochement et pistes d’audit.",
-        "impact": "Chemin d’authentification sous la seconde aux pics de settlement"
+        "impact": "Chemin d’authentification sous la seconde aux pics de settlement",
+        "href": "",
+        "linkLabel": ""
       },
       {
         "title": "Pipeline d’analytique temps réel",
         "context": "Ingestion d’événements, enrichissement et tableaux de bord pour produit et finance.",
-        "impact": "Insights le jour même au lieu d’exports hebdomadaires"
+        "impact": "Insights le jour même au lieu d’exports hebdomadaires",
+        "href": "",
+        "linkLabel": ""
       }
+      
     ]
   },
   "architectureExpertise": {
@@ -137,6 +162,7 @@
     "p2b": "la clarté plutôt que la virtuosité",
     "p2c": ", des arbitrages explicites et des architectures dont vous vous remercierez plus tard.",
     "p3": "J’ai livré dans la fintech et le SaaS, avec des fondateurs et des équipes enterprise pour transformer des roadmaps ambitieuses en plateformes fiables.",
+    "p4": "J’accompagne des équipes au Sénégal et à l’étranger : d’abord en asynchrone, avec des écrits clairs et des créneaux de synchro lorsque les décisions l’exigent.",
     "cardRole": "Architecte logiciel",
     "cardTagline": "Construire pour durer",
     "statYears": "Ans",
@@ -146,7 +172,10 @@
   "insights": {
     "title": "Insights & réflexions",
     "subtitle": "Notes sur la construction de logiciels sérieux dans des environnements exigeants.",
-    "viewAll": "Voir tous les articles"
+    "viewAll": "Voir tous les articles",
+    "endCtaTitle": "Un sujet proche dans votre stack ?",
+    "endCtaSubtitle": "Ces textes posent le cadre — l’étape suivante, c’est un échange concret sur votre contexte.",
+    "endCtaButton": "Me contacter"
   },
   "articlesPage": {
     "metaTitle": "Articles | SAIFCORE",
@@ -167,18 +196,29 @@
     "adrStatus": "Statut",
     "adrLabelContext": "Contexte",
     "adrLabelDecision": "Décision",
-    "adrLabelConsequences": "Conséquences"
+    "adrLabelConsequences": "Conséquences",
+    "endCtaTitle": "Envie d’appliquer ça à votre produit ?",
+    "endCtaSubtitle": "Partagez stack, contraintes et calendrier — je vous dirai franchement si ça colle.",
+    "endCtaButton": "Démarrer la conversation"
   },
   "cta": {
     "title": "Concevons votre prochain système.",
     "subtitle": "Parlez-moi de votre produit, de vos contraintes et de votre calendrier — je vous répondrai avec une piste claire.",
+    "processTitle": "La suite du processus",
+    "processStep1": "Vous réservez un créneau ou envoyez un brief — contexte, objectifs, calendrier.",
+    "processStep2": "Je reviens avec des questions ciblées et, si c’est pertinent, un périmètre court ou des options.",
+    "processStep3": "On aligne la suite : atelier de découverte, sprint d’architecture ou livraison par phases.",
+    "responseHint": "Accusé de réception sous deux jours ouvrés en général (souvent plus vite).",
     "bookCall": "Réserver un appel",
-    "startProject": "Lancer un projet"
+    "startProject": "Envoyer un brief par e-mail",
+    "emailSubject": "Projet — SAIFCORE",
+    "downloadResume": "Télécharger le CV"
   },
   "footer": {
     "rights": "© {year} SAIFCORE. Tous droits réservés.",
     "linkedin": "LinkedIn",
-    "github": "GitHub"
+    "github": "GitHub",
+    "resume": "CV"
   },
   "error": {
     "kicker": "Une erreur s’est produite",

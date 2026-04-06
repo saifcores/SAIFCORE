@@ -49,3 +49,40 @@ export function getCalendlyUrl(): string | null {
     return null;
   }
 }
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+/** Public contact email (mailto, footer). Set `NEXT_PUBLIC_CONTACT_EMAIL`. */
+export function getContactEmail(): string | null {
+  const e = process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim();
+  return e && EMAIL_RE.test(e) ? e : null;
+}
+
+/** Display name for JSON-LD, photo alt, and visible copy. Falls back to brand. */
+export function getProfileDisplayName(): string {
+  const n = process.env.NEXT_PUBLIC_PROFILE_NAME?.trim();
+  return n || "SAIFCORE";
+}
+
+/** Primary work location — used in schema.org and defaults for copy. */
+export function getProfileLocation(): {
+  city: string;
+  country: string;
+  countryCode: string;
+} {
+  return {
+    city: process.env.NEXT_PUBLIC_PROFILE_CITY?.trim() || "Dakar",
+    country: process.env.NEXT_PUBLIC_PROFILE_COUNTRY?.trim() || "Senegal",
+    countryCode: (
+      process.env.NEXT_PUBLIC_PROFILE_COUNTRY_CODE?.trim() || "SN"
+    ).toUpperCase(),
+  };
+}
+
+/** `mailto:` URL with optional subject, or `null` if no verified email. */
+export function getContactMailto(subject: string): string | null {
+  const email = getContactEmail();
+  if (!email) return null;
+  const q = subject ? `?subject=${encodeURIComponent(subject)}` : "";
+  return `mailto:${email}${q}`;
+}
