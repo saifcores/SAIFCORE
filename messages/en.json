@@ -114,28 +114,16 @@
         "context": "SaaS for retail and commerce — stock, sales, and daily ops in one product so SMEs can grow without bolting on five tools.",
         "impact": "Merchants productive in days, not months — onboarding that dodges a big-bang IT programme.",
         "href": "https://ecom360pme.com/",
-        "linkLabel": "Visit ecom360pme.com"
+        "linkLabel": "Visit ecom360pme.com",
+        "stacks": ["Java", "Spring", "TypeScript", "React", "PostgreSQL", "Vercel", "VPS"]
       },
       {
         "title": "Multi-tenant B2B SaaS",
         "context": "Greenfield B2B SaaS — org isolation, roles, usage-based billing, and a domain model you can split as you grow.",
         "impact": "~40% faster feature cadence once modular domains landed — fewer cross-team merges per release.",
         "href": "",
-        "linkLabel": ""
-      },
-      {
-        "title": "Cross-border payments hub",
-        "context": "Cross-border hub — one orchestration layer across PSPs, reconciliation, and audit trails regulators can follow.",
-        "impact": "Sub-second auth paths when settlement windows peaked — latency and correctness under fire.",
-        "href": "",
-        "linkLabel": ""
-      },
-      {
-        "title": "Realtime analytics pipeline",
-        "context": "Realtime pipeline — ingest, enrich, and dashboards so product and finance argue over the same numbers.",
-        "impact": "Answers the same day — not next Friday’s CSV export.",
-        "href": "",
-        "linkLabel": ""
+        "linkLabel": "",
+        "stacks": ["Java", "Spring", "TypeScript", "React", "PostgreSQL", "Vercel", "VPS"]
       }
     ]
   },
