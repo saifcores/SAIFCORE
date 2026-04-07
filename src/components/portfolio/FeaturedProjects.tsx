@@ -3,7 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { Reveal } from "./Reveal";
 
 const stacks = [
-  ["Next.js", "PostgreSQL", "Redis", "Stripe"],
+  ["Java", "Spring Boot", "PostgreSQL", "React", "Vercel"],
   ["Node.js", "Kafka", "PostgreSQL", "Temporal"],
   ["TypeScript", "ClickHouse", "S3", "Airflow"],
   ["Next.js", "TypeScript", "PostgreSQL", "SaaS"],

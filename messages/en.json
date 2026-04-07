@@ -1,14 +1,14 @@
 {
   "meta": {
-    "title": "Software Architect & Full-Stack Engineer | SAIFCORE",
-    "description": "Software architect & full-stack engineer based in Dakar, Senegal — scalable systems for fintech and SaaS. Open to national and international collaboration.",
-    "ogTitle": "Software Architect & Full-Stack Engineer",
-    "ogDescription": "Scalable architecture, SaaS systems, and fintech integrations — built for the real world.",
-    "twitterDescription": "Scalable systems, SaaS platforms, and fintech integrations.",
-    "jsonLdJobTitle": "Software Architect & Full-Stack Engineer",
-    "jsonLdDescription": "Software architect and full-stack engineer based in Dakar, Senegal. Designs scalable systems for fintech and SaaS; open to remote and hybrid collaboration internationally.",
-    "manifestName": "SAIFCORE — Software Architect & Full-Stack Engineer",
-    "manifestDescription": "Scalable systems, SaaS platforms, and fintech integrations — built for the real world."
+    "title": "Software Engineer | Distributed Systems & SaaS | SAIFCORE",
+    "description": "Software engineer in Dakar — Java & cloud-native: SaaS, enterprise, distributed systems that still work once the launch party ends. Senegal & international. Sharp trade-offs, less rework.",
+    "ogTitle": "Software Engineer — Distributed Systems & Scalable SaaS",
+    "ogDescription": "From architecture to production: Java, Spring, cloud-native, SaaS & enterprise. Based in Senegal; works nationally and internationally. Focus on systems that hold up under real load and roadmap pressure.",
+    "twitterDescription": "Java & cloud-native · SaaS & enterprise · Dakar — systems built for week two, not just demo day.",
+    "jsonLdJobTitle": "Software Engineer",
+    "jsonLdDescription": "Software engineer in Dakar, Senegal. Designs and evolves business-critical systems with Java and cloud-native architectures — SaaS, enterprise, and distributed services. Open to national engagements in Senegal and international collaboration (remote, hybrid, or on-site when appropriate).",
+    "manifestName": "SAIFCORE — Software Engineer | Distributed Systems & SaaS",
+    "manifestDescription": "Java & cloud-native systems for SaaS & enterprise — architecture through production. Senegal & international."
   },
   "common": {
     "skipToContent": "Skip to content",
@@ -22,6 +22,7 @@
   "nav": {
     "primary": "Primary",
     "work": "Work",
+    "experience": "Experience",
     "process": "Process",
     "about": "About",
     "insights": "Insights",
@@ -35,152 +36,188 @@
     "localeFr": "Français"
   },
   "hero": {
-    "badge": "Available for architecture & delivery",
-    "titleBefore": "Software Architect &",
-    "titleHighlight": "Full-Stack Engineer",
-    "subtitle": "I design scalable systems that solve real business problems — from fintech to SaaS platforms.",
+    "badge": "Java · Spring · Cloud · Senegal & worldwide",
+    "titleBefore": "Software Engineer ·",
+    "titleHighlight": "Distributed systems & scalable platforms",
+    "subtitle": "Built to survive launch week — and the roadmap that follows. Architecture through production: Java, cloud-native, SaaS, and platforms where downtime or bad data cost real money.",
     "ctaPrimary": "Book a 15-min intro",
     "ctaSecondary": "See selected work",
-    "locationLine": "Based in Dakar, Senegal — available for on-site, hybrid, and remote work across Senegal, Francophone Africa, and internationally (EU/US overlap friendly).",
-    "nextSteps": "Typical path: short intro call → written scope & constraints → proposal or kickoff. No endless back-and-forth.",
+    "locationLine": "Dakar, Senegal — on-site or hybrid locally; remote or hybrid internationally. Overlap-friendly across Francophone Africa, Europe, and US time zones when it matters.",
+    "nextSteps": "Intro call → written scope & constraints → proposal or kickoff. No endless email tennis.",
     "jumpToContact": "Go to contact",
     "jumpToContactHint": "email, CV, and full booking options."
   },
   "trust": {
-    "heading": "Trusted by companies and real-world projects"
+    "heading": "Trusted by teams who needed production software — not another deck"
   },
   "whatISolve": {
     "title": "What I solve",
-    "subtitle": "From first principles to production — architecture that aligns with your business constraints.",
+    "subtitle": "Leverage for product and engineering: ownership people can name, change that doesn’t break the world, ops you can sleep through, and dates that still mean something when traffic spikes.",
     "items": [
       {
-        "title": "Scalable Architecture",
-        "description": "Domain-driven boundaries, clear contracts, and patterns that keep teams shipping as complexity grows."
+        "title": "Architecture & system design",
+        "description": "Domains and contracts your team can carry — so the next feature doesn’t become a six-month refactor."
       },
       {
-        "title": "SaaS Systems",
-        "description": "Multi-tenant models, billing hooks, and operational tooling built for long-term product velocity."
+        "title": "Scalable SaaS & enterprise platforms",
+        "description": "Multi-tenant models, integrations, and how you’ll actually run it: fast now without a structure you’ll regret at Series B."
       },
       {
-        "title": "Payment Integration",
-        "description": "Secure money movement, reconciliation, and compliance-aware flows across regions and providers."
+        "title": "Distributed & business-critical systems",
+        "description": "Money paths, latency budgets, audits — payments, FinTech-style flows, regulated contexts; engineered, not improvised."
       },
       {
-        "title": "Performance Optimization",
-        "description": "Latency budgets, caching strategy, and observability so systems stay fast under real load."
+        "title": "Engineering excellence",
+        "description": "Tests, CI/CD, observability, and performance baked into delivery — predictable releases instead of weekend salvages."
       }
     ]
   },
   "howIThink": {
     "title": "How I think",
-    "subtitle": "A disciplined loop from problem to resilient systems — no unnecessary ceremony.",
+    "subtitle": "From fuzzy ask to system in production — with the lightest process that still fits your risk profile.",
     "steps": [
       {
-        "title": "Understand business problem",
-        "body": "Stakeholders, constraints, and success metrics before touching tech."
+        "title": "Frame the problem",
+        "body": "Who decides, what’s non-negotiable, what “good” means — before we pick a framework logo."
       },
       {
-        "title": "Design architecture",
-        "body": "Clear boundaries, interfaces, and evolution paths your team can own."
+        "title": "Shape the architecture",
+        "body": "Boundaries, interfaces, and a plausible next year so your team isn’t hostage to my first diagram."
       },
       {
-        "title": "Build scalable systems",
-        "body": "Pragmatic delivery with testing, CI, and operational guardrails."
+        "title": "Ship with guardrails",
+        "body": "Tests, CI, and alerts aligned with how you’ll really run it — not how the demo looked."
       },
       {
-        "title": "Optimize for real-world usage",
-        "body": "Measure, tune, and harden where it matters for users and revenue."
+        "title": "Harden against reality",
+        "body": "Measure and fix where users and revenue hurt — not where the Grafana chart is prettiest."
       }
     ],
     "operatingModel": "Operating model",
-    "operatingBody": "Architecture is a product: documented decisions, measurable outcomes, and room for your team to evolve the system without heroics.",
+    "operatingBody": "Architecture is a product: written decisions when they reduce risk, measurable outcomes, and space for your team to improve the system without firefighting.",
     "bullets": [
-      "Clear ADRs and diagrams where they reduce risk",
-      "SLOs, tracing, and alerts that match user journeys",
-      "Security and compliance baked in, not bolted on"
+      "ADRs and diagrams when they prevent expensive misunderstandings",
+      "SLOs, tracing, and alerts tied to real user journeys",
+      "Security and compliance as design inputs — not a late panic"
     ]
   },
   "featuredProjects": {
     "title": "Featured projects",
-    "subtitle": "Selected work — including Ecom 360 PME, plus anonymized engagements where needed. Impact over vanity metrics.",
+    "subtitle": "Delivery under pressure — public where possible, anonymized where confidentiality wins. Each card is a class of problem I’ve already shipped through.",
     "impactLabel": "Impact",
-    "bridgeTitle": "Have a similar challenge?",
-    "bridgeSubtitle": "Tell me about your constraints — I’ll suggest a realistic architecture and delivery path.",
+    "bridgeTitle": "Seeing the same pressure on your side?",
+    "bridgeSubtitle": "Share goals and hard constraints — I’ll sketch scope, risks, and order of attack before anyone signs a blank check.",
     "bridgeCta": "Start a conversation",
     "items": [
       {
         "title": "Ecom 360 PME",
-        "context": "SaaS platform for retail and commerce management — inventory, sales, and day-to-day operations in one product built to help SMEs scale.",
-        "impact": "Guided onboarding and a focused UX so merchants adopt the system without a heavy IT project.",
+        "context": "SaaS for retail and commerce — stock, sales, and daily ops in one product so SMEs can grow without bolting on five tools.",
+        "impact": "Merchants productive in days, not months — onboarding that dodges a big-bang IT programme.",
         "href": "https://ecom360pme.com/",
         "linkLabel": "Visit ecom360pme.com"
       },
       {
         "title": "Multi-tenant B2B SaaS",
-        "context": "Greenfield platform with org isolation, role-based access, and usage-based billing.",
-        "impact": "40% faster feature cycle via modular domains",
+        "context": "Greenfield B2B SaaS — org isolation, roles, usage-based billing, and a domain model you can split as you grow.",
+        "impact": "~40% faster feature cadence once modular domains landed — fewer cross-team merges per release.",
         "href": "",
         "linkLabel": ""
       },
       {
         "title": "Cross-border payments hub",
-        "context": "Unified orchestration across PSPs with reconciliation and audit trails.",
-        "impact": "Sub-second auth path at peak settlement windows",
+        "context": "Cross-border hub — one orchestration layer across PSPs, reconciliation, and audit trails regulators can follow.",
+        "impact": "Sub-second auth paths when settlement windows peaked — latency and correctness under fire.",
         "href": "",
         "linkLabel": ""
       },
       {
         "title": "Realtime analytics pipeline",
-        "context": "Event ingestion, enrichment, and dashboards for product and finance teams.",
-        "impact": "Same-day insights vs. weekly batch exports",
+        "context": "Realtime pipeline — ingest, enrich, and dashboards so product and finance argue over the same numbers.",
+        "impact": "Answers the same day — not next Friday’s CSV export.",
         "href": "",
         "linkLabel": ""
       }
     ]
   },
+  "experience": {
+    "title": "Experience",
+    "subtitle": "Roles where production bites back — money, uptime, auditors, not toy traffic.",
+    "valueTitle": "What this adds for you",
+    "valueBody": "You’re not onboarding someone who needs the lecture on why monitoring exists. Load, audits, scope creep — already lived. That frees time for your actual trade-offs. What stays after launch: tests, observability, CI/CD as habits, not slogans.",
+    "items": [
+      {
+        "role": "Software Engineer — distributed systems & SaaS",
+        "company": "Enterprise B2B SaaS · anonymized engagement",
+        "period": "2021 — Present",
+        "location": "Senegal · Remote / hybrid",
+        "bullet0": "Designed and ran scalable services (Java, Spring, cloud-native) with explicit attention to reliability, observability, and long-term maintainability — not just “first release” speed.",
+        "bullet1": "Partnered with product and platform teams on domain boundaries, APIs, and production operations so features don’t collapse under real traffic and org growth.",
+        "bullet2": ""
+      },
+      {
+        "role": "Software Engineer",
+        "company": "Financial services / FinTech · anonymized engagement",
+        "period": "2018 — 2021",
+        "location": "International · Remote",
+        "bullet0": "Built payment-related flows and integrations where latency, audit trails, and correctness under peak load were non-negotiable.",
+        "bullet1": "Owned work end to end: design discussions, automated testing, CI/CD, and production support — so issues don’t stop at the code review.",
+        "bullet2": ""
+      },
+      {
+        "role": "Software Engineer",
+        "company": "Software delivery · enterprise & integration context",
+        "period": "2015 — 2018",
+        "location": "On-site & remote",
+        "bullet0": "Backend and integration work on Java-centric stacks; early grounding in clean architecture, APIs, and team rituals that scale beyond a single hero developer.",
+        "bullet1": "",
+        "bullet2": ""
+      }
+    ]
+  },
   "architectureExpertise": {
-    "title": "Architecture expertise",
-    "subtitle": "Depth where systems meet business — not buzzwords for slides.",
+    "title": "Core expertise",
+    "subtitle": "The stack and practices I reach for to get from whiteboard to on-call without drama.",
     "tags": [
-      { "label": "Microservices" },
-      { "label": "Multi-tenant SaaS" },
-      { "label": "Event-driven systems" },
-      { "label": "Fintech integrations" },
-      { "label": "API design" },
-      { "label": "PostgreSQL at scale" },
-      { "label": "Caching & CDNs" },
-      { "label": "Observability" },
-      { "label": "Zero-trust patterns" },
-      { "label": "CI/CD & IaC" }
+      { "label": "Clean Architecture & DDD" },
+      { "label": "Microservices & distributed systems" },
+      { "label": "Scalable SaaS platforms" },
+      { "label": "Java & Spring Boot" },
+      { "label": "REST APIs & cloud-native" },
+      { "label": "Angular & React" },
+      { "label": "Docker & Kubernetes" },
+      { "label": "CI/CD & DevOps" },
+      { "label": "Testing & code quality" },
+      { "label": "Observability & performance" },
+      { "label": "FinTech & enterprise systems" }
     ]
   },
   "about": {
     "title": "About",
-    "p1": "I'm a software architect and full-stack engineer focused on systems that survive contact with reality — regulation, flaky networks, and teams that grow faster than documentation.",
-    "p2a": "My mindset is simple:",
-    "p2b": "clarity over cleverness",
-    "p2c": ", explicit trade-offs, and architectures your future self will thank you for.",
-    "p3": "I've shipped across fintech and SaaS, partnering with founders and enterprise teams to turn ambitious roadmaps into dependable platforms.",
-    "p4": "I work with teams in Senegal and abroad: async-first communication, clear written specs, and scheduled overlap when decisions need real-time alignment.",
-    "cardRole": "Software Architect",
-    "cardTagline": "Building for longevity",
+    "p1": "I connect product intent with software that can evolve: explicit trade-offs, clear boundaries, and architectures your team can still change a year after go-live.",
+    "p2a": "Beyond code, I contribute to",
+    "p2b": "architecture decisions, system design, and engineering practices",
+    "p2c": "that keep delivery calm when complexity and traffic grow.",
+    "p3": "Strong Java & Spring background, modern cloud-native stacks, and Angular or React when the product needs them — for SaaS, enterprise platforms, and distributed services.",
+    "p4": "Focus: FinTech, SaaS, e-commerce, digital platforms, and large-scale enterprise systems. Based in Dakar — national (Senegal) and international collaboration: async-first, clear written specs, and live overlap when decisions need it.",
+    "cardRole": "Software Engineer",
+    "cardTagline": "From intent to shipped software",
     "statYears": "Years",
     "statSystems": "Systems",
     "statCuriosity": "Curiosity"
   },
   "insights": {
     "title": "Insights & thinking",
-    "subtitle": "Notes on building serious software in serious environments.",
+    "subtitle": "Trade-offs, failure modes, delivery — fewer pretty diagrams, more things that stay up.",
     "viewAll": "View all articles",
     "endCtaTitle": "Facing a similar challenge in your stack?",
-    "endCtaSubtitle": "These articles are a starting point — the next step is a concrete conversation about your context.",
+    "endCtaSubtitle": "Use these as a lens — then we pressure-test them against your real constraints.",
     "endCtaButton": "Get in touch"
   },
   "articlesPage": {
     "metaTitle": "Articles | SAIFCORE",
-    "metaDescription": "Writing on architecture, SaaS, and fintech — practical notes for serious software.",
+    "metaDescription": "Practical notes on architecture, SaaS, and delivery — ideas to contrast with your own constraints.",
     "title": "Articles",
-    "subtitle": "Articles, code samples, ADRs, design notes, and document outlines — all in one place.",
+    "subtitle": "Essays, code, ADRs, and design notes — one place to steal ideas from responsibly.",
     "backToHome": "Back to home",
     "readArticle": "Read article",
     "readExternal": "Read full article",
@@ -201,8 +238,8 @@
     "endCtaButton": "Start a conversation"
   },
   "cta": {
-    "title": "Let's design your next system.",
-    "subtitle": "Tell me about your product, constraints, and timeline — I'll reply with a clear path forward.",
+    "title": "Tell me what you’re building.",
+    "subtitle": "Senegal or abroad — what’s the product, what’s stuck, and what’s the timeline. You’ll get a straight answer: fit, a concrete next step, or a clear no.",
     "processTitle": "What happens next",
     "processStep1": "You book a slot or send a brief — context, goals, and timeline.",
     "processStep2": "I come back with clarifying questions and, when it fits, a lean scope or options.",

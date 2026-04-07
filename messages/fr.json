@@ -1,14 +1,14 @@
 {
   "meta": {
-    "title": "Architecte logiciel & ingénieur full-stack | SAIFCORE",
-    "description": "Architecte logiciel & ingénieur full-stack basé à Dakar (Sénégal) — systèmes scalables fintech & SaaS. Ouvert aux collaborations nationales et internationales.",
-    "ogTitle": "Architecte logiciel & ingénieur full-stack",
-    "ogDescription": "Architecture scalable, systèmes SaaS et intégrations fintech — conçus pour le monde réel.",
-    "twitterDescription": "Systèmes scalables, plateformes SaaS et intégrations fintech.",
-    "jsonLdJobTitle": "Architecte logiciel & ingénieur full-stack",
-    "jsonLdDescription": "Architecte logiciel et ingénieur full-stack basé à Dakar (Sénégal). Conçoit des systèmes scalables pour la fintech et le SaaS ; ouvert au remote et au hybride à l’international.",
-    "manifestName": "SAIFCORE — Architecte logiciel & ingénieur full-stack",
-    "manifestDescription": "Systèmes scalables, plateformes SaaS et intégrations fintech — conçus pour le monde réel."
+    "title": "Ingénieur logiciel | Systèmes distribués & SaaS | SAIFCORE",
+    "description": "Ingénieur logiciel à Dakar — Java & cloud-native : SaaS, enterprise, systèmes distribués qui tiennent quand le lancement est passé. Sénégal & international. Arbitrages nets, moins de retours en arrière.",
+    "ogTitle": "Ingénieur logiciel — systèmes distribués & SaaS scalable",
+    "ogDescription": "De l’architecture à la production : Java, Spring, cloud-native, SaaS & enterprise. Basé au Sénégal ; missions nationales et internationales. Des systèmes qui résistent à la charge réelle et à la pression roadmap.",
+    "twitterDescription": "Java & cloud-native · SaaS & enterprise · Dakar — des systèmes pour la semaine 2, pas seulement la démo.",
+    "jsonLdJobTitle": "Ingénieur logiciel",
+    "jsonLdDescription": "Ingénieur logiciel à Dakar (Sénégal). Conçoit et fait évoluer des systèmes critiques pour le métier avec Java et des architectures cloud-native — SaaS, enterprise et services distribués. Ouvert aux missions nationales au Sénégal et à la collaboration internationale (remote, hybride ou sur place selon le besoin).",
+    "manifestName": "SAIFCORE — Ingénieur logiciel | Systèmes distribués & SaaS",
+    "manifestDescription": "Systèmes Java & cloud-native pour SaaS & enterprise — de l’architecture à la production. Sénégal & international."
   },
   "common": {
     "skipToContent": "Aller au contenu",
@@ -22,6 +22,7 @@
   "nav": {
     "primary": "Principal",
     "work": "Réalisations",
+    "experience": "Expérience",
     "process": "Méthode",
     "about": "À propos",
     "insights": "Articles",
@@ -35,153 +36,188 @@
     "localeFr": "Français"
   },
   "hero": {
-    "badge": "Disponible pour de l’architecture & de la livraison",
-    "titleBefore": "Architecte logiciel &",
-    "titleHighlight": "ingénieur full-stack",
-    "subtitle": "Je conçois des systèmes évolutifs qui répondent à de vrais enjeux métier — de la fintech aux plateformes SaaS.",
+    "badge": "Java · Spring · Cloud · Sénégal & international",
+    "titleBefore": "Ingénieur logiciel ·",
+    "titleHighlight": "Systèmes distribués & plateformes scalables",
+    "subtitle": "Pensés pour survivre à la semaine de lancement — et à la roadmap d’après. De l’architecture à la production : Java, cloud-native, SaaS et plateformes où panne ou mauvaise donnée coûtent cher.",
     "ctaPrimary": "Réserver un intro 15 min",
     "ctaSecondary": "Voir des réalisations",
-    "locationLine": "Basé à Dakar (Sénégal) — missions sur place, en hybride ou en remote : Sénégal, Afrique francophone et international (créneaux compatibles Europe / US).",
-    "nextSteps": "Parcours typique : court échange → cadrage écrit & contraintes → proposition ou lancement. Pas de ping-pong infini.",
+    "locationLine": "Dakar (Sénégal) — sur place ou hybride en local ; remote ou hybride à l’international. Créneaux compatibles Afrique francophone, Europe et US quand c’est nécessaire.",
+    "nextSteps": "Appel d’intro → cadrage écrit & contraintes → proposition ou lancement. Pas de ping-pong infini par e-mail.",
     "jumpToContact": "Aller au contact",
     "jumpToContactHint": "e-mail, CV et réservation complète."
   },
   "trust": {
-    "heading": "Ils m’ont fait confiance — entreprises et projets concrets"
+    "heading": "Des équipes qui avaient besoin de logiciel en prod — pas d’un deck de plus"
   },
   "whatISolve": {
     "title": "Ce que je résous",
-    "subtitle": "Des principes jusqu’à la production — une architecture alignée sur vos contraintes métier.",
+    "subtitle": "Levier produit et engineering : une propriété qu’on peut nommer, des changements qui ne cassent pas tout, une exploitation qui tient la nuit, et des dates qui veulent encore dire quelque chose quand la charge monte.",
     "items": [
       {
-        "title": "Architecture scalable",
-        "description": "Découpage par domaines, contrats clairs et patterns qui permettent à vos équipes de livrer malgré la complexité."
+        "title": "Architecture & conception système",
+        "description": "Domaines et contrats que votre équipe peut porter — pour que la prochaine fonctionnalité ne devienne pas six mois de refactor."
       },
       {
-        "title": "Systèmes SaaS",
-        "description": "Modèles multi-locataires, facturation et outils opérationnels pensés pour la vélocité produit sur la durée."
+        "title": "SaaS scalable & plateformes enterprise",
+        "description": "Multi-locataire, intégrations et exploitation réelle : rapide maintenant sans une structure qui vous enferme à la prochaine étape de croissance."
       },
       {
-        "title": "Intégration des paiements",
-        "description": "Flux sécurisés, rapprochements et conformité sur plusieurs régions et fournisseurs."
+        "title": "Systèmes distribués & critiques pour le métier",
+        "description": "Flux d’argent, budgets de latence, audits — paiements, contextes type FinTech et réglementés ; conçus, pas bricolés."
       },
       {
-        "title": "Optimisation des performances",
-        "description": "Budgets de latence, cache et observabilité pour rester rapide sous charge réelle."
+        "title": "Excellence d’ingénierie",
+        "description": "Tests, CI/CD, observabilité et performance dans la livraison — des releases prévisibles plutôt que des week-ends de sauvetage."
       }
     ]
   },
   "howIThink": {
     "title": "Ma façon de penser",
-    "subtitle": "Une boucle disciplinée du problème au système résilient — sans cérémonial inutile.",
+    "subtitle": "D’une demande floue au système en production — avec le minimum de processus compatible avec votre niveau de risque.",
     "steps": [
       {
-        "title": "Comprendre le problème métier",
-        "body": "Parties prenantes, contraintes et métriques de succès avant d’aborder la technique."
+        "title": "Cadrer le problème",
+        "body": "Qui décide, ce qui est non négociable, à quoi ressemble le succès — avant de choisir le logo du framework."
       },
       {
-        "title": "Concevoir l’architecture",
-        "body": "Frontières claires, interfaces et trajectoires d’évolution que votre équipe peut porter."
+        "title": "Façonner l’architecture",
+        "body": "Frontières, interfaces et une année suivante plausible — pour que votre équipe ne soit pas otage du premier schéma."
       },
       {
-        "title": "Construire des systèmes scalables",
-        "body": "Livraison pragmatique avec tests, CI et garde-fous opérationnels."
+        "title": "Livrer avec garde-fous",
+        "body": "Tests, CI et alertes alignés sur la façon dont vous allez vraiment l’exploiter — pas sur la démo."
       },
       {
-        "title": "Optimiser pour l’usage réel",
-        "body": "Mesurer, ajuster et renforcer là où ça compte pour les utilisateurs et le chiffre d’affaires."
+        "title": "Durcir face au réel",
+        "body": "Mesurer et corriger là où utilisateurs et revenus souffrent — pas là où le tableau Grafana est le plus joli."
       }
     ],
     "operatingModel": "Modèle de fonctionnement",
-    "operatingBody": "L’architecture est un produit : décisions documentées, résultats mesurables, et la marge pour que votre équipe fasse évoluer le système sans héroïsme.",
+    "operatingBody": "L’architecture est un produit : décisions écrites quand elles réduisent le risque, résultats mesurables, et de la marge pour améliorer le système sans mode pompier permanent.",
     "bullets": [
-      "ADR et schémas clairs lorsqu’ils réduisent le risque",
-      "SLO, traçage et alertes alignés sur les parcours utilisateurs",
-      "Sécurité et conformité intégrées dès le départ"
+      "ADR et schémas quand ils évitent des malentendus coûteux",
+      "SLO, traçage et alertes attachés aux vrais parcours utilisateurs",
+      "Sécurité et conformité comme contraintes de conception — pas une panique de dernière minute"
     ]
   },
   "featuredProjects": {
     "title": "Projets phares",
-    "subtitle": "Un extrait de travaux — dont Ecom 360 PME, plus des missions anonymisées si nécessaire. L’impact plutôt que les vanity metrics.",
+    "subtitle": "Livraison sous pression — public quand c’est possible, anonymisé quand la confidentialité prime. Chaque carte est une classe de problème que j’ai déjà livrée.",
     "impactLabel": "Impact",
-    "bridgeTitle": "Un enjeu comparable ?",
-    "bridgeSubtitle": "Décrivez vos contraintes — je propose une trajectoire d’architecture et de livraison réaliste.",
+    "bridgeTitle": "La même pression chez vous ?",
+    "bridgeSubtitle": "Dites objectifs et contraintes dures — j’esquisse périmètre, risques et ordre d’attaque avant qu’on signe dans le vide.",
     "bridgeCta": "Démarrer la conversation",
     "items": [
       {
         "title": "Ecom 360 PME",
-        "context": "Plateforme SaaS de gestion pour le commerce — stocks, ventes et opérations du quotidien dans un même produit pour aider les PME à grandir.",
-        "impact": "Onboarding guidé et UX centrée métier pour une adoption sans projet IT lourd.",
+        "context": "SaaS pour le commerce — stocks, ventes et opérations du quotidien dans un seul produit pour éviter cinq outils bancalés.",
+        "impact": "Commerçants en route en quelques jours — onboarding qui évite un projet IT « big bang ».",
         "href": "https://ecom360pme.com/",
         "linkLabel": "Voir ecom360pme.com"
       },
       {
         "title": "SaaS B2B multi-locataire",
-        "context": "Plateforme greenfield avec isolation par org, accès par rôles et facturation à l’usage.",
-        "impact": "Cycle de fonctionnalités ~40 % plus rapide grâce à des domaines modulaires",
+        "context": "SaaS B2B greenfield — isolation par org, rôles, facturation à l’usage, modèle de domaines prêt à se scinder.",
+        "impact": "Cadence de features ~40 % plus rapide une fois les domaines modulaires en place — moins de merges énormes à chaque release.",
         "href": "",
         "linkLabel": ""
       },
       {
         "title": "Hub de paiements transfrontaliers",
-        "context": "Orchestration unifiée entre PSP avec rapprochement et pistes d’audit.",
-        "impact": "Chemin d’authentification sous la seconde aux pics de settlement",
+        "context": "Hub transfrontalier — une couche d’orchestration entre PSP, rapprochement et pistes d’audit exploitables.",
+        "impact": "Auth sous la seconde aux pics de settlement — latence et exactitude quand ça compte.",
         "href": "",
         "linkLabel": ""
       },
       {
         "title": "Pipeline d’analytique temps réel",
-        "context": "Ingestion d’événements, enrichissement et tableaux de bord pour produit et finance.",
-        "impact": "Insights le jour même au lieu d’exports hebdomadaires",
+        "context": "Pipeline temps réel — ingestion, enrichissement et tableaux de bord pour que produit et finance parlent des mêmes chiffres.",
+        "impact": "Réponses le jour même — pas l’export CSV du vendredi suivant.",
         "href": "",
         "linkLabel": ""
       }
-      
+    ]
+  },
+  "experience": {
+    "title": "Expérience",
+    "subtitle": "Des rôles où la prod mord — argent, disponibilité, auditeurs, pas du trafic jouet.",
+    "valueTitle": "Valeur ajoutée",
+    "valueBody": "Ce n’est pas une première expérience de prod. Charge, audits, périmètre qui dérape — déjà vécu. On gagne du temps sur les fondamentaux pour parler de vos vrais arbitrages. Après le lancement : tests, observabilité, CI/CD comme habitudes, pas comme slogans.",
+    "items": [
+      {
+        "role": "Ingénieur logiciel — systèmes distribués & SaaS",
+        "company": "SaaS B2B enterprise · mission anonymisée",
+        "period": "2021 — Présent",
+        "location": "Sénégal · Remote / hybride",
+        "bullet0": "Conception et exploitation de services scalables (Java, Spring, cloud-native) avec une exigence explicite sur la fiabilité, l’observabilité et la maintenabilité — pas seulement la vélocité du premier livrable.",
+        "bullet1": "Collaboration produit et plateforme sur les frontières de domaine, les API et la production pour que les fonctionnalités tiennent la charge réelle et la croissance des organisations.",
+        "bullet2": ""
+      },
+      {
+        "role": "Ingénieur logiciel",
+        "company": "Services financiers / FinTech · mission anonymisée",
+        "period": "2018 — 2021",
+        "location": "International · Remote",
+        "bullet0": "Construction de flux et d’intégrations liés aux paiements où latence, pistes d’audit et exactitude aux pics de charge étaient non négociables.",
+        "bullet1": "Responsabilité de bout en bout : conception, tests automatisés, CI/CD et accompagnement production — pour que le sujet ne s’arrête pas à la revue de code.",
+        "bullet2": ""
+      },
+      {
+        "role": "Ingénieur logiciel",
+        "company": "Livraison logicielle · contexte enterprise & intégration",
+        "period": "2015 — 2018",
+        "location": "Sur site & remote",
+        "bullet0": "Backend et intégration sur stacks Java ; bases solides en architecture, API et rituels d’équipe qui passent à l’échelle au-delà d’un contributeur isolé.",
+        "bullet1": "",
+        "bullet2": ""
+      }
     ]
   },
   "architectureExpertise": {
-    "title": "Expertise architecture",
-    "subtitle": "De la profondeur là où les systèmes rencontrent le métier — pas des buzzwords pour des slides.",
+    "title": "Expertise cœur",
+    "subtitle": "La stack et les pratiques que j’utilise pour passer du tableau blanc à l’astreinte sans drame.",
     "tags": [
-      { "label": "Microservices" },
-      { "label": "SaaS multi-locataire" },
-      { "label": "Systèmes événementiels" },
-      { "label": "Intégrations fintech" },
-      { "label": "Conception d’API" },
-      { "label": "PostgreSQL à grande échelle" },
-      { "label": "Cache & CDN" },
-      { "label": "Observabilité" },
-      { "label": "Modèles zero-trust" },
-      { "label": "CI/CD & IaC" }
+      { "label": "Clean Architecture & DDD" },
+      { "label": "Microservices & systèmes distribués" },
+      { "label": "Plateformes SaaS scalables" },
+      { "label": "Java & Spring Boot" },
+      { "label": "API REST & cloud-native" },
+      { "label": "Angular & React" },
+      { "label": "Docker & Kubernetes" },
+      { "label": "CI/CD & DevOps" },
+      { "label": "Tests & qualité de code" },
+      { "label": "Observabilité & performance" },
+      { "label": "FinTech & systèmes enterprise" }
     ]
   },
   "about": {
     "title": "À propos",
-    "p1": "Je suis architecte logiciel et ingénieur full-stack, focalisé sur des systèmes qui tiennent face au réel — réglementation, réseaux capricieux et équipes qui grandissent plus vite que la doc.",
-    "p2a": "Ma ligne directrice :",
-    "p2b": "la clarté plutôt que la virtuosité",
-    "p2c": ", des arbitrages explicites et des architectures dont vous vous remercierez plus tard.",
-    "p3": "J’ai livré dans la fintech et le SaaS, avec des fondateurs et des équipes enterprise pour transformer des roadmaps ambitieuses en plateformes fiables.",
-    "p4": "J’accompagne des équipes au Sénégal et à l’étranger : d’abord en asynchrone, avec des écrits clairs et des créneaux de synchro lorsque les décisions l’exigent.",
-    "cardRole": "Architecte logiciel",
-    "cardTagline": "Construire pour durer",
+    "p1": "Je relie l’intention produit à un logiciel capable d’évoluer : arbitrages explicites, frontières claires, et architectures que votre équipe peut encore faire bouger un an après la mise en ligne.",
+    "p2a": "Au-delà du code, je contribue aux",
+    "p2b": "décisions d’architecture, à la conception système et aux pratiques d’ingénierie",
+    "p2c": "qui gardent une livraison maîtrisée quand la complexité et la charge augmentent.",
+    "p3": "Solide pratique Java & Spring, stacks cloud-native modernes, et Angular ou React quand le produit l’exige — pour SaaS, plateformes enterprise et services distribués.",
+    "p4": "Axes : FinTech, SaaS, e-commerce, plateformes digitales et systèmes enterprise à grande échelle. Basé à Dakar — collaboration nationale (Sénégal) et internationale : d’abord asynchrone, briefs écrits clairs, créneaux communs quand il le faut.",
+    "cardRole": "Ingénieur logiciel",
+    "cardTagline": "De l’intention au logiciel livré",
     "statYears": "Ans",
     "statSystems": "Systèmes",
     "statCuriosity": "Curiosité"
   },
   "insights": {
     "title": "Insights & réflexions",
-    "subtitle": "Notes sur la construction de logiciels sérieux dans des environnements exigeants.",
+    "subtitle": "Arbitrages, modes de défaillance, livraison — moins de beaux schémas, plus de services qui restent debout.",
     "viewAll": "Voir tous les articles",
     "endCtaTitle": "Un sujet proche dans votre stack ?",
-    "endCtaSubtitle": "Ces textes posent le cadre — l’étape suivante, c’est un échange concret sur votre contexte.",
+    "endCtaSubtitle": "Servez-vous-en comme grille de lecture — puis on les confronte à vos vraies contraintes.",
     "endCtaButton": "Me contacter"
   },
   "articlesPage": {
     "metaTitle": "Articles | SAIFCORE",
-    "metaDescription": "Textes sur l’architecture, le SaaS et la fintech — des notes concrètes pour du logiciel sérieux.",
+    "metaDescription": "Notes concrètes sur architecture, SaaS et livraison — des idées à confronter à vos propres contraintes.",
     "title": "Articles",
-    "subtitle": "Articles, extraits de code, ADR, notes de design et trames documentaires — au même endroit.",
+    "subtitle": "Textes, code, ADR, notes de design — un seul endroit pour piquer des idées avec mesure.",
     "backToHome": "Retour à l’accueil",
     "readArticle": "Lire l’article",
     "readExternal": "Lire l’article complet",
@@ -202,8 +238,8 @@
     "endCtaButton": "Démarrer la conversation"
   },
   "cta": {
-    "title": "Concevons votre prochain système.",
-    "subtitle": "Parlez-moi de votre produit, de vos contraintes et de votre calendrier — je vous répondrai avec une piste claire.",
+    "title": "Parlez-moi de ce que vous construisez.",
+    "subtitle": "Au Sénégal ou ailleurs — le produit, le blocage, le calendrier. Réponse directe : adéquation, prochaine étape concrète, ou un non franc.",
     "processTitle": "La suite du processus",
     "processStep1": "Vous réservez un créneau ou envoyez un brief — contexte, objectifs, calendrier.",
     "processStep2": "Je reviens avec des questions ciblées et, si c’est pertinent, un périmètre court ou des options.",

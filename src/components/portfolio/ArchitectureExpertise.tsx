@@ -18,7 +18,7 @@ export async function ArchitectureExpertise() {
 
         <Reveal delay={100}>
           <div className="mt-12 flex flex-wrap gap-3">
-            {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => {
+            {Array.from({ length: 11 }, (_, i) => i).map((i) => {
               const highlight = i < 4;
               const label = t(`tags.${i}.label`);
               return (

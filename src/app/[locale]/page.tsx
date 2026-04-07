@@ -3,6 +3,7 @@ import type { Locale } from "next-intl";
 import { About } from "@/components/portfolio/About";
 import { ArchitectureExpertise } from "@/components/portfolio/ArchitectureExpertise";
 import { CtaSection } from "@/components/portfolio/CtaSection";
+import { Experience } from "@/components/portfolio/Experience";
 import { FeaturedProjects } from "@/components/portfolio/FeaturedProjects";
 import { Footer } from "@/components/portfolio/Footer";
 import { Hero } from "@/components/portfolio/Hero";
@@ -78,6 +79,7 @@ export default async function Home({ params }: Props) {
         <WhatISolve />
         <HowIThink />
         <FeaturedProjects />
+        <Experience />
         <ArchitectureExpertise />
         <About />
         <Insights />
