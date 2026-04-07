@@ -1,15 +1,10 @@
-import { getTranslations } from "next-intl/server";
+import { getMessages, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "./Reveal";
 
-const stacks = [
-  ["Java", "Spring Boot", "PostgreSQL", "React", "Vercel"],
-  ["Node.js", "Kafka", "PostgreSQL", "Temporal"],
-  ["TypeScript", "ClickHouse", "S3", "Airflow"],
-  ["Next.js", "TypeScript", "PostgreSQL", "SaaS"],
-] as const;
-
 export async function FeaturedProjects() {
+  const messages = await getMessages();
+  const items = messages.featuredProjects.items;
   const t = await getTranslations("featuredProjects");
 
   return (
@@ -25,23 +20,23 @@ export async function FeaturedProjects() {
         </Reveal>
 
         <div className="mt-14 grid gap-8 md:grid-cols-2">
-          {[0, 1, 2, 3].map((i) => {
-            const external = t(`items.${i}.href`).trim();
+          {items.map((item, i) => {
+            const external = item.href.trim();
             return (
-              <Reveal key={i} delay={i * 90}>
+              <Reveal key={item.title} delay={i * 90}>
                 <article className="group relative flex h-full flex-col overflow-hidden rounded-[20px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/40 p-8 transition duration-300 hover:-translate-y-2 hover:border-indigo-500/25 hover:shadow-[0_24px_64px_-16px_rgba(79,70,229,0.35)]">
                   <div
                     className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-gradient-to-br from-indigo-600/25 to-cyan-500/10 blur-2xl transition group-hover:opacity-100 opacity-70"
                     aria-hidden
                   />
                   <h3 className="relative text-xl font-semibold text-[var(--text-primary)]">
-                    {t(`items.${i}.title`)}
+                    {item.title}
                   </h3>
                   <p className="relative mt-3 flex-1 text-sm leading-relaxed text-[var(--text-secondary)]">
-                    {t(`items.${i}.context`)}
+                    {item.context}
                   </p>
                   <div className="relative mt-6 flex flex-wrap gap-2">
-                    {stacks[i].map((tech) => (
+                    {item.stacks.map((tech) => (
                       <span
                         key={tech}
                         className="rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-base)]/80 px-2.5 py-1 text-xs font-medium text-[var(--text-muted)]"
@@ -54,7 +49,7 @@ export async function FeaturedProjects() {
                     <span className="text-xs font-semibold uppercase tracking-wider text-[var(--accent-cyan)]">
                       {t("impactLabel")}
                     </span>
-                    <p className="mt-1">{t(`items.${i}.impact`)}</p>
+                    <p className="mt-1">{item.impact}</p>
                   </div>
                   {external ? (
                     <a
@@ -63,7 +58,7 @@ export async function FeaturedProjects() {
                       rel="noopener noreferrer"
                       className="relative mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--accent-cyan)] transition hover:gap-2"
                     >
-                      {t(`items.${i}.linkLabel`)}
+                      {item.linkLabel}
                       <span aria-hidden>→</span>
                     </a>
                   ) : null}

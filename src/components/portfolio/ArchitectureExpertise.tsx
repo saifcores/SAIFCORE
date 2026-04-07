@@ -1,7 +1,10 @@
-import { getTranslations } from "next-intl/server";
+import { getMessages, getTranslations } from "next-intl/server";
+import { ARCHITECTURE_TAG_HIGHLIGHT_COUNT } from "@/types/messages";
 import { Reveal } from "./Reveal";
 
 export async function ArchitectureExpertise() {
+  const messages = await getMessages();
+  const tags = messages.architectureExpertise.tags;
   const t = await getTranslations("architectureExpertise");
 
   return (
@@ -18,19 +21,18 @@ export async function ArchitectureExpertise() {
 
         <Reveal delay={100}>
           <div className="mt-12 flex flex-wrap gap-3">
-            {Array.from({ length: 11 }, (_, i) => i).map((i) => {
-              const highlight = i < 4;
-              const label = t(`tags.${i}.label`);
+            {tags.map((tag, i) => {
+              const highlight = i < ARCHITECTURE_TAG_HIGHLIGHT_COUNT;
               return (
                 <span
-                  key={i}
+                  key={`${tag.label}-${i}`}
                   className={`rounded-full border px-4 py-2 text-sm font-medium transition hover:border-indigo-500/40 hover:text-[var(--text-primary)] ${
                     highlight
                       ? "border-indigo-500/35 bg-gradient-to-r from-indigo-500/15 to-cyan-500/10 text-[var(--text-primary)] shadow-[0_0_24px_-4px_rgba(99,102,241,0.4)]"
                       : "border-[var(--border-subtle)] text-[var(--text-secondary)]"
                   }`}
                 >
-                  {label}
+                  {tag.label}
                 </span>
               );
             })}

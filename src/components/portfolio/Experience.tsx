@@ -1,10 +1,14 @@
-import { getTranslations } from "next-intl/server";
+import { getMessages, getTranslations } from "next-intl/server";
+import type { ExperienceEntry } from "@/types/messages";
 import { Reveal } from "./Reveal";
 
-const ITEM_INDICES = [0, 1, 2] as const;
-const BULLET_INDICES = [0, 1, 2] as const;
+function experienceBullets(entry: ExperienceEntry): string[] {
+  return [entry.bullet0, entry.bullet1, entry.bullet2].filter((b) => b.trim());
+}
 
 export async function Experience() {
+  const messages = await getMessages();
+  const { experience } = messages;
   const t = await getTranslations("experience");
 
   return (
@@ -33,57 +37,47 @@ export async function Experience() {
           </div>
         </Reveal>
 
-        <div className="relative mt-14 sm:mt-16">
-          <div
-            className="pointer-events-none absolute left-[19px] top-3 bottom-3 hidden w-px bg-gradient-to-b from-indigo-500/45 via-indigo-500/20 to-transparent sm:block"
-            aria-hidden
-          />
-          <ol className="space-y-10 sm:space-y-12">
-            {ITEM_INDICES.map((i) => (
-              <Reveal key={i} delay={i * 90}>
-                <li className="relative sm:pl-14">
-                  <span
-                    className="absolute left-0 top-1 hidden h-3 w-3 rounded-full border-2 border-indigo-500/60 bg-[var(--bg-base)] shadow-[0_0_12px_rgba(99,102,241,0.45)] sm:block"
-                    aria-hidden
-                  />
-                  <div className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-base)]/50 p-6 sm:p-8">
-                    <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
-                      <div>
-                        <p className="text-base font-semibold text-[var(--text-primary)]">
-                          {t(`items.${i}.role`)}
-                        </p>
-                        <p className="mt-1 text-sm font-medium text-[var(--accent-cyan)]">
-                          {t(`items.${i}.company`)}
-                        </p>
-                      </div>
-                      <div className="flex min-w-0 flex-col gap-1 text-left text-sm text-[var(--text-muted)] sm:items-end sm:text-right">
-                        <span className="font-mono tabular-nums">
-                          {t(`items.${i}.period`)}
-                        </span>
-                        <span>{t(`items.${i}.location`)}</span>
-                      </div>
+        <ul className="mt-14 grid list-none grid-cols-1 gap-8 p-0 lg:grid-cols-2 lg:gap-x-10 lg:gap-y-10">
+          {experience.items.map((item, i) => (
+            <li key={`${item.company}-${item.period}`} className="h-full">
+              <Reveal delay={i * 90}>
+                <article className="flex h-full flex-col rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-base)]/50 p-6 sm:p-8">
+                  <div className="flex shrink-0 items-start justify-between gap-3 border-b border-[var(--border-subtle)]/80 pb-4">
+                    <span
+                      className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-gradient-to-r from-indigo-500 to-cyan-400 shadow-[0_0_12px_rgba(99,102,241,0.5)]"
+                      aria-hidden
+                    />
+                    <div className="min-w-0 flex-1">
+                      <p className="text-base font-semibold text-[var(--text-primary)]">
+                        {item.role}
+                      </p>
+                      <p className="mt-1 text-sm font-medium text-[var(--accent-cyan)]">
+                        {item.company}
+                      </p>
                     </div>
-                    <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-[var(--text-secondary)]">
-                      {BULLET_INDICES.map((j) => {
-                        const text = t(`items.${i}.bullet${j}`);
-                        if (!text.trim()) return null;
-                        return (
-                          <li key={j} className="flex gap-3">
-                            <span
-                              className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-r from-blue-400 to-indigo-400"
-                              aria-hidden
-                            />
-                            <span>{text}</span>
-                          </li>
-                        );
-                      })}
-                    </ul>
+                    <div className="flex min-w-0 shrink-0 flex-col gap-1 text-right text-xs text-[var(--text-muted)] sm:text-sm">
+                      <span className="font-mono tabular-nums">
+                        {item.period}
+                      </span>
+                      <span className="leading-snug">{item.location}</span>
+                    </div>
                   </div>
-                </li>
+                  <ul className="mt-5 flex-1 space-y-2.5 text-sm leading-relaxed text-[var(--text-secondary)]">
+                    {experienceBullets(item).map((text, bi) => (
+                      <li key={`${i}-${bi}`} className="flex gap-3">
+                        <span
+                          className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-r from-blue-400 to-indigo-400"
+                          aria-hidden
+                        />
+                        <span>{text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
               </Reveal>
-            ))}
-          </ol>
-        </div>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

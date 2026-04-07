@@ -134,10 +134,10 @@
     "valueBody": "You’re not onboarding someone who needs the lecture on why monitoring exists. Load, audits, scope creep — already lived. That frees time for your actual trade-offs. What stays after launch: tests, observability, CI/CD as habits, not slogans.",
     "items": [
       {
-        "role": "Software Engineer — distributed systems & SaaS",
-        "company": "Enterprise B2B SaaS · anonymized engagement",
-        "period": "2021 — Present",
-        "location": "Senegal · Remote / hybrid",
+        "role": "Software Engineer Consultant — B2B SaaS",
+        "company": "BOA Group",
+        "period": "2025 — Present",
+        "location": "Dakar · On-site",
         "bullet0": "Designed and ran scalable services (Java, Spring, cloud-native) with explicit attention to reliability, observability, and long-term maintainability — not just “first release” speed.",
         "bullet1": "Partnered with product and platform teams on domain boundaries, APIs, and production operations so features don’t collapse under real traffic and org growth.",
         "bullet2": ""

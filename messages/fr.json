@@ -134,11 +134,11 @@
     "valueBody": "Ce n’est pas une première expérience de prod. Charge, audits, périmètre qui dérape — déjà vécu. On gagne du temps sur les fondamentaux pour parler de vos vrais arbitrages. Après le lancement : tests, observabilité, CI/CD comme habitudes, pas comme slogans.",
     "items": [
       {
-        "role": "Ingénieur logiciel — systèmes distribués & SaaS",
-        "company": "SaaS B2B enterprise · mission anonymisée",
-        "period": "2021 — Présent",
-        "location": "Sénégal · Remote / hybride",
-        "bullet0": "Conception et exploitation de services scalables (Java, Spring, cloud-native) avec une exigence explicite sur la fiabilité, l’observabilité et la maintenabilité — pas seulement la vélocité du premier livrable.",
+        "role": "Ingénieur logiciel Consultant — B2B SaaS",
+        "company": "BOA Group",
+        "period": "2025 — Présent",
+        "location": "Dakar · Sur place",
+        "bullet0": "Conception et exploitation de services scalables (Java, Spring, cloud-native) avec une exigence explicite sur la fiabilité, l’observabilité et la maintenabilité — pas seulement la vélocité du premier livrable.",        
         "bullet1": "Collaboration produit et plateforme sur les frontières de domaine, les API et la production pour que les fonctionnalités tiennent la charge réelle et la croissance des organisations.",
         "bullet2": ""
       },

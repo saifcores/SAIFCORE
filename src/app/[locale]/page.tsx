@@ -25,7 +25,7 @@ type Props = {
 
 export default async function Home({ params }: Props) {
   const { locale } = await params;
-  setRequestLocale(locale);
+  setRequestLocale(locale as Locale);
 
   const t = await getTranslations({
     locale: locale as Locale,

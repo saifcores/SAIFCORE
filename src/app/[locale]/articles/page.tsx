@@ -1,6 +1,6 @@
+import type { Locale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
-import type { Locale } from "next-intl";
 import { ArticleKindBadge } from "@/components/portfolio/ArticleKindBadge";
 import { ContactBridgeStrip } from "@/components/portfolio/ContactBridgeStrip";
 import { Footer } from "@/components/portfolio/Footer";
@@ -36,7 +36,7 @@ export async function generateMetadata({
 
 export default async function ArticlesPage({ params }: Props) {
   const { locale } = await params;
-  setRequestLocale(locale);
+  setRequestLocale(locale as Locale);
   const t = await getTranslations("articlesPage");
   const loc = locale === "fr" ? "fr" : "en";
 

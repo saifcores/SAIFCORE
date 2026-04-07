@@ -1,4 +1,5 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import type { Locale } from "next-intl";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArticleBody } from "@/components/portfolio/ArticleBody";
@@ -50,7 +51,7 @@ export async function generateMetadata({
 
 export default async function ArticlePage({ params }: Props) {
   const { locale, slug } = await params;
-  setRequestLocale(locale);
+  setRequestLocale(locale as Locale);
   const article = getArticleBySlug(slug);
   if (!article) {
     notFound();

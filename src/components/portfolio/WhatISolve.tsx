@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import { getMessages, getTranslations } from "next-intl/server";
 import { Reveal } from "./Reveal";
 
 const icons = [
@@ -61,6 +61,8 @@ const icons = [
 ];
 
 export async function WhatISolve() {
+  const messages = await getMessages();
+  const items = messages.whatISolve.items;
   const t = await getTranslations("whatISolve");
 
   return (
@@ -75,17 +77,17 @@ export async function WhatISolve() {
           </p>
         </Reveal>
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {[0, 1, 2, 3].map((i) => (
-            <Reveal key={i} delay={i * 80}>
+          {items.map((item, i) => (
+            <Reveal key={item.title} delay={i * 80}>
               <article className="group glass h-full rounded-2xl p-6 transition duration-300 hover:-translate-y-1 hover:shadow-[0_0_0_1px_rgba(99,102,241,0.2),0_24px_48px_-12px_rgba(0,0,0,0.35)]">
                 <div className="mb-5 inline-flex rounded-xl bg-gradient-to-br from-indigo-500/20 to-cyan-500/10 p-3 text-[var(--accent-indigo)] transition group-hover:from-indigo-500/30 group-hover:to-cyan-500/15">
-                  {icons[i]}
+                  {icons[i] ?? null}
                 </div>
                 <h3 className="text-lg font-semibold text-[var(--text-primary)]">
-                  {t(`items.${i}.title`)}
+                  {item.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">
-                  {t(`items.${i}.description`)}
+                  {item.description}
                 </p>
               </article>
             </Reveal>

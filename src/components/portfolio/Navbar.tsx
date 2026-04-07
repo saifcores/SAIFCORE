@@ -4,18 +4,22 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useCallback, useEffect, useId, useState } from "react";
 import { Link } from "@/i18n/navigation";
+import type { NavPrimaryLinkKey } from "@/types/messages";
 import { BookCallLink } from "./BookCallLink";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import { ThemeToggle } from "./ThemeToggle";
 
 const navLinks = [
-  { href: "/#work" as const, labelKey: "work" as const },
-  { href: "/#experience" as const, labelKey: "experience" as const },
-  { href: "/#process" as const, labelKey: "process" as const },
-  { href: "/#about" as const, labelKey: "about" as const },
-  { href: "/articles" as const, labelKey: "insights" as const },
-  { href: "/#contact" as const, labelKey: "contact" as const },
-];
+  { href: "/#work", labelKey: "work" },
+  { href: "/#experience", labelKey: "experience" },
+  { href: "/#process", labelKey: "process" },
+  { href: "/#about", labelKey: "about" },
+  { href: "/articles", labelKey: "insights" },
+  { href: "/#contact", labelKey: "contact" },
+] as const satisfies ReadonlyArray<{
+  href: string;
+  labelKey: NavPrimaryLinkKey;
+}>;
 
 export function Navbar() {
   const t = useTranslations("nav");
