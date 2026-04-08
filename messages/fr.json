@@ -129,36 +129,46 @@
   },
   "experience": {
     "title": "Expérience",
-    "subtitle": "Des rôles où la prod mord — argent, disponibilité, auditeurs, pas du trafic jouet.",
+    "subtitle": "Cœurs bancaires, fintech et produits à fort trafic — livraison Java/Spring, Angular et React dans des environnements réglementés et orientés production.",
     "valueTitle": "Valeur ajoutée",
-    "valueBody": "Ce n’est pas une première expérience de prod. Charge, audits, périmètre qui dérape — déjà vécu. On gagne du temps sur les fondamentaux pour parler de vos vrais arbitrages. Après le lancement : tests, observabilité, CI/CD comme habitudes, pas comme slogans.",
+    "valueBody": "Reporting Jasper, intégrations mobile money, CI/CD GitLab et Angular/Spring à l’échelle — terrain prod, pas de l’architecture pour slides.",
+    "stackLabel": "Stack",
     "items": [
       {
-        "role": "Ingénieur logiciel Consultant — B2B SaaS",
-        "company": "BOA Group",
-        "period": "2025 — Présent",
-        "location": "Dakar · Sur place",
-        "bullet0": "Conception et exploitation de services scalables (Java, Spring, cloud-native) avec une exigence explicite sur la fiabilité, l’observabilité et la maintenabilité — pas seulement la vélocité du premier livrable.",        
-        "bullet1": "Collaboration produit et plateforme sur les frontières de domaine, les API et la production pour que les fonctionnalités tiennent la charge réelle et la croissance des organisations.",
-        "bullet2": ""
+        "role": "Consultant ingénieur logiciel",
+        "company": "BANK OF AFRICA — BOA Services International",
+        "period": "Févr. 2025 — Présent",
+        "location": "Almadies, Dakar, Sénégal",
+        "bullet0": "Modules Java / Spring sur le chemin critique pour le reporting analytique et opérationnel — scalabilité, performance et résilience comme contraintes.",
+        "bullet1": "Jasper Reports pour du reporting actionnable ; travail latence / disponibilité avec les métiers sur des besoins complexes.",
+        "bullet2": "Java, Spring Boot, Jasper Reports, API REST, Docker, CI/CD, architecture distribuée, Agile"
+      },
+      {
+        "role": "Consultant IT",
+        "company": "ENG Technologie Group",
+        "period": "Oct. 2023 — Févr. 2025",
+        "location": "Dakar-Plateau, Sénégal",
+        "bullet0": "Plateforme crédit et transactions digitales avec exigences sécurité et performance ; responsabilité du flux de demandes de bout en bout.",
+        "bullet1": "Intégrations Wave et Orange Money (≈ −60 % sur le traitement) ; CI/CD GitLab (≈ −50 % sur le déploiement) ; couverture tests unitaires, intégration et régression ; partenariat produit serré.",
+        "bullet2": "Java, Spring Boot, Spring Security, PostgreSQL, GitLab CI/CD, Docker, API REST, Swagger, Scrum"
       },
       {
         "role": "Ingénieur logiciel",
-        "company": "Services financiers / FinTech · mission anonymisée",
-        "period": "2018 — 2021",
-        "location": "International · Remote",
-        "bullet0": "Construction de flux et d’intégrations liés aux paiements où latence, pistes d’audit et exactitude aux pics de charge étaient non négociables.",
-        "bullet1": "Responsabilité de bout en bout : conception, tests automatisés, CI/CD et accompagnement production — pour que le sujet ne s’arrête pas à la revue de code.",
-        "bullet2": ""
+        "company": "Mafalia — Ecom & Fintech apps",
+        "period": "Nov. 2023 — Nov. 2024",
+        "location": "Région de Dakar, Sénégal",
+        "bullet0": "Fintech à fort trafic pour PME et commerçants informels ; Angular pour stocks et commandes.",
+        "bullet1": "Perf front (lazy loading, code splitting, cache ; ≈ −60 %) ; services Spring (≈ −30 % sur les APIs) ; refonte UX et docs techniques.",
+        "bullet2": "Angular, TypeScript, Tailwind CSS, Java, Spring Boot, API REST, MySQL, Git, Agile"
       },
       {
-        "role": "Ingénieur logiciel",
-        "company": "Livraison logicielle · contexte enterprise & intégration",
-        "period": "2015 — 2018",
-        "location": "Sur site & remote",
-        "bullet0": "Backend et intégration sur stacks Java ; bases solides en architecture, API et rituels d’équipe qui passent à l’échelle au-delà d’un contributeur isolé.",
-        "bullet1": "",
-        "bullet2": ""
+        "role": "Développeur full-stack",
+        "company": "SarayaTech Senegal",
+        "period": "Déc. 2022 — Févr. 2023",
+        "location": "Sénégal",
+        "bullet0": "Système d’information hospitalier intégré (clinique, pharmacie, labo) — Angular, Spring Boot, REST.",
+        "bullet1": "Cache et traitement asynchrone ; revues de code et standards d’équipe.",
+        "bullet2": "Angular, Spring Boot, API REST, traitement asynchrone, tests"
       }
     ]
   },

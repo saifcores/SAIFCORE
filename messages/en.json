@@ -129,36 +129,46 @@
   },
   "experience": {
     "title": "Experience",
-    "subtitle": "Roles where production bites back — money, uptime, auditors, not toy traffic.",
+    "subtitle": "Banking cores, fintech, and high-traffic products — shipping with Java/Spring, Angular, and React in regulated, production-heavy environments.",
     "valueTitle": "What this adds for you",
-    "valueBody": "You’re not onboarding someone who needs the lecture on why monitoring exists. Load, audits, scope creep — already lived. That frees time for your actual trade-offs. What stays after launch: tests, observability, CI/CD as habits, not slogans.",
+    "valueBody": "Jasper-backed reporting, mobile-money integrations, GitLab-driven delivery, and Angular/Spring at scale — hands-on production work, not architecture theatre.",
+    "stackLabel": "Stack",
     "items": [
       {
-        "role": "Software Engineer Consultant — B2B SaaS",
-        "company": "BOA Group",
-        "period": "2025 — Present",
-        "location": "Dakar · On-site",
-        "bullet0": "Designed and ran scalable services (Java, Spring, cloud-native) with explicit attention to reliability, observability, and long-term maintainability — not just “first release” speed.",
-        "bullet1": "Partnered with product and platform teams on domain boundaries, APIs, and production operations so features don’t collapse under real traffic and org growth.",
-        "bullet2": ""
+        "role": "Software Engineer Consultant",
+        "company": "BANK OF AFRICA — BOA Services International",
+        "period": "Feb 2025 — Present",
+        "location": "Almadies, Dakar, Senegal",
+        "bullet0": "Critical-path Java/Spring banking modules for analytics and operational reporting — scalability, performance, and resilience as first-class constraints.",
+        "bullet1": "Jasper Reports for decision-grade reporting; latency and availability work paired with business stakeholders on complex requirements.",
+        "bullet2": "Java, Spring Boot, Jasper Reports, REST APIs, Docker, CI/CD, distributed architecture, Agile"
+      },
+      {
+        "role": "IT Consultant",
+        "company": "ENG Technologie Group",
+        "period": "Oct 2023 — Feb 2025",
+        "location": "Dakar-Plateau, Senegal",
+        "bullet0": "Credit and digital-transaction platform with strict security and performance targets; owned the end-to-end credit application flow.",
+        "bullet1": "Wave & Orange Money integrations (~60% faster processing); GitLab CI/CD (~50% faster deploys); unit, integration, and regression coverage; close product partnership.",
+        "bullet2": "Java, Spring Boot, Spring Security, PostgreSQL, GitLab CI/CD, Docker, REST APIs, Swagger, Scrum"
       },
       {
         "role": "Software Engineer",
-        "company": "Financial services / FinTech · anonymized engagement",
-        "period": "2018 — 2021",
-        "location": "International · Remote",
-        "bullet0": "Built payment-related flows and integrations where latency, audit trails, and correctness under peak load were non-negotiable.",
-        "bullet1": "Owned work end to end: design discussions, automated testing, CI/CD, and production support — so issues don’t stop at the code review.",
-        "bullet2": ""
+        "company": "Mafalia — Ecom & Fintech apps",
+        "period": "Nov 2023 — Nov 2024",
+        "location": "Dakar Region, Senegal",
+        "bullet0": "High-traffic fintech for SMEs and informal retailers; Angular UIs for stock and order management.",
+        "bullet1": "Frontend performance (lazy loading, code splitting, caching; ~60% faster); Spring services (~30% faster API responses); UX refresh and technical docs.",
+        "bullet2": "Angular, TypeScript, Tailwind CSS, Java, Spring Boot, REST APIs, MySQL, Git, Agile"
       },
       {
-        "role": "Software Engineer",
-        "company": "Software delivery · enterprise & integration context",
-        "period": "2015 — 2018",
-        "location": "On-site & remote",
-        "bullet0": "Backend and integration work on Java-centric stacks; early grounding in clean architecture, APIs, and team rituals that scale beyond a single hero developer.",
-        "bullet1": "",
-        "bullet2": ""
+        "role": "Full-stack Developer",
+        "company": "SarayaTech Senegal",
+        "period": "Dec 2022 — Feb 2023",
+        "location": "Senegal",
+        "bullet0": "Integrated hospital information system (clinic, pharmacy, lab) — Angular, Spring Boot, REST.",
+        "bullet1": "Caching and asynchronous processing; code review and team engineering standards.",
+        "bullet2": "Angular, Spring Boot, REST APIs, asynchronous processing, testing"
       }
     ]
   },
