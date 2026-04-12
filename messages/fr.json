@@ -1,14 +1,14 @@
 {
   "meta": {
     "title": "Ingénieur logiciel | Systèmes distribués & SaaS | SAIFCORE",
-    "description": "Ingénieur logiciel à Dakar — l’intérêt n’est pas le logo du framework ; c’est si le système tient encore après la semaine de lancement. Java, cloud-native, SaaS & enterprise. Sénégal & international.",
+    "description": "Ingénieur logiciel & consultant technique à Dakar — j’accompagne les équipes pour livrer et faire évoluer des systèmes Java / cloud-native (SaaS & enterprise) : architecture plus claire, livraison plus sûre, moins de retours après le go-live. Missions Sénégal & international.",
     "ogTitle": "Ingénieur logiciel — systèmes distribués & SaaS scalable",
-    "ogDescription": "Une architecture qui survive à la charge et aux virages de roadmap — Java, Spring, cloud-native. Basé au Sénégal ; missions nationales et internationales. Et chez vous, ça ressemblerait à quoi ?",
-    "twitterDescription": "Java & cloud-native · Dakar — des systèmes pour la semaine 2, pas le théâtre de la démo.",
+    "ogDescription": "Conseil et delivery sur plateformes SaaS & enterprise — Java, Spring, cloud-native. Basé au Sénégal ; ouvert aux collaborations nationales et internationales. L’adéquation prime sur le pitch.",
+    "twitterDescription": "Java & cloud-native · Dakar — conseil & delivery pour des systèmes qui dépassent la démo.",
     "jsonLdJobTitle": "Ingénieur logiciel",
-    "jsonLdDescription": "Ingénieur logiciel à Dakar (Sénégal). Conçoit et fait évoluer des systèmes critiques pour le métier avec Java et des architectures cloud-native — SaaS, enterprise et services distribués. Ouvert aux missions nationales au Sénégal et à la collaboration internationale (remote, hybride ou sur place selon le besoin).",
+    "jsonLdDescription": "Ingénieur logiciel et consultant à Dakar (Sénégal). Conçoit et livre des systèmes critiques pour le métier avec Java et des architectures cloud-native — SaaS, enterprise et services distribués. Missions en conseil, delivery intégré ou phases successives, au Sénégal et à l’international (remote, hybride ou sur place selon le besoin).",
     "manifestName": "SAIFCORE — Ingénieur logiciel | Systèmes distribués & SaaS",
-    "manifestDescription": "Systèmes Java & cloud-native pour SaaS & enterprise — de l’architecture à la production. Sénégal & international."
+    "manifestDescription": "Systèmes Java & cloud-native pour SaaS & enterprise — conseil et delivery de l’architecture à la production. Sénégal & international."
   },
   "common": {
     "skipToContent": "Aller au contenu",
@@ -39,20 +39,20 @@
     "badge": "Java · Spring · Cloud · Sénégal & international",
     "titleBefore": "Ingénieur logiciel ·",
     "titleHighlight": "Systèmes distribués & plateformes scalables",
-    "subtitle": "Le lancement est facile ; le trimestre d’après, c’est l’examen. Je construis en Java et cloud-native pour le SaaS et l’enterprise — là où un déploiement raté ou une donnée silencieuse fait la une.",
+    "subtitle": "Le lancement n’est qu’un début. J’accompagne produit et engineering sur des systèmes Java et cloud-native — de l’architecture à la production — pour que la roadmap n’efface pas ce qui fonctionne déjà.",
     "ctaPrimary": "Réserver un intro 15 min",
-    "ctaSecondary": "Jeter un œil aux réalisations",
+    "ctaSecondary": "Voir des réalisations types",
     "locationLine": "Dakar (Sénégal) — sur place ou hybride en local ; remote ou hybride à l’international. Créneaux compatibles Afrique francophone, Europe et US quand c’est nécessaire.",
-    "nextSteps": "Appel d’intro → cadrage écrit & contraintes → proposition ou lancement. Pas de ping-pong infini par e-mail.",
+    "nextSteps": "Appel d’intro → cadrage écrit, risques & contraintes → proposition ou lancement. Étapes claires, pas de ping-pong infini par e-mail.",
     "jumpToContact": "Aller au contact",
     "jumpToContactHint": "e-mail, CV et réservation complète."
   },
   "trust": {
-    "heading": "Des équipes qui voulaient du logiciel en prod — pas une slide de plus sur la roadmap"
+    "heading": "Des équipes qui devaient livrer en production — pas un deck de roadmap de plus"
   },
   "whatISolve": {
     "title": "Ce que je résous",
-    "subtitle": "Le milieu ingrat : qui possède quoi, ce qui se passe si la charge double, et si votre prochaine release est un pari ou une habitude.",
+    "subtitle": "Ce que j’apporte en conseil et en collaboration longue : propriété claire, livraisons planifiables, et moins de surprises quand la charge ou la réglementation se resserre.",
     "items": [
       {
         "title": "Architecture & conception système",
@@ -74,7 +74,7 @@
   },
   "howIThink": {
     "title": "Ma façon de penser",
-    "subtitle": "D’un brief flou à quelque chose en prod — avec seulement la cérémonie que votre niveau de risque exige.",
+    "subtitle": "D’un brief flou à quelque chose en production — avec seulement le processus que votre niveau de risque exige.",
     "steps": [
       {
         "title": "Cadrer le problème",
@@ -94,7 +94,7 @@
       }
     ],
     "operatingModel": "Modèle de fonctionnement",
-    "operatingBody": "L’architecture est un produit : décisions écrites quand elles réduisent le risque, résultats mesurables, et de la marge pour améliorer le système sans mode pompier permanent.",
+    "operatingBody": "L’architecture est un produit : décisions écrites quand elles réduisent le risque, résultats mesurables, et une équipe qui peut en prendre la main — un conseil doit vous renforcer, pas vous créer une dépendance.",
     "bullets": [
       "ADR et schémas quand ils évitent des malentendus coûteux",
       "SLO, traçage et alertes attachés aux vrais parcours utilisateurs",
@@ -103,11 +103,11 @@
   },
   "featuredProjects": {
     "title": "Projets phares",
-    "subtitle": "Des livraisons qu’on peut aller voir — noms publics quand les NDA le permettent. Chaque carte, une famille de galères que j’ai déjà traversée ; votre contrainte lui ressemble peut-être.",
+    "subtitle": "Des références vérifiables — noms publics quand les NDA le permettent. Chaque carte reflète un type de mission : contraintes, pression de livraison, résultats qu’on peut discuter avant de cadrer la vôtre.",
     "impactLabel": "Impact",
     "statusLabel": "Statut",
-    "bridgeTitle": "Votre backlog, même musique ?",
-    "bridgeSubtitle": "Envoyez l’objectif et le non-négociable — j’esquisse périmètre, risques et une première coupe crédible avant qu’on signe quoi que ce soit.",
+    "bridgeTitle": "Vous lancez un build, un refactor ou une montée en charge ?",
+    "bridgeSubtitle": "Partagez l’objectif et les contraintes dures — je propose des options, risques et une première étape réaliste pour décider de l’adéquation avant tout engagement formel.",
     "bridgeCta": "Démarrer la conversation",
     "items": [
       {
@@ -141,9 +141,9 @@
   },
   "experience": {
     "title": "Expérience",
-    "subtitle": "Cœurs bancaires, fintech, pics de trafic — le travail se joue là où un mauvais déploiement fait du bruit. Java/Spring, Angular, React ; air réglementé, vrais incidents.",
-    "valueTitle": "Valeur ajoutée",
-    "valueBody": "Jasper en conditions réelles, Wave et Orange Money en prod, pipelines GitLab qu’on ne simule pas, Angular/Spring sous charge — si on n’échange que de l’architecture en slides, ce n’est pas la même conversation.",
+    "subtitle": "Banque, fintech, fort trafic — des contextes où releases, conformité et incidents cohabitent. Java/Spring, Angular, React.",
+    "valueTitle": "Ce que vous gagnez en collaboration",
+    "valueBody": "Expérience terrain sur stacks réglementées, intégrations paiement et pipelines de livraison réels — pour démarrer sur des faits, pas sur des généralités. Utile quand il faut du jugement sous pression, pas un schéma générique.",
     "stackLabel": "Stack",
     "items": [
       {
@@ -186,7 +186,7 @@
   },
   "architectureExpertise": {
     "title": "Expertise cœur",
-    "subtitle": "Ce que je prends vraiment entre tableau blanc et astreinte — tranchant, mais négociable avec des chiffres.",
+    "subtitle": "Outils et pratiques que j’utilise en conseil et en delivery — choisis pour des résultats mesurables par votre équipe, pas pour la mode.",
     "tags": [
       { "label": "Clean Architecture & DDD" },
       { "label": "Microservices & systèmes distribués" },
@@ -208,7 +208,7 @@
     "p2b": "décisions d’architecture, à la conception système et aux pratiques d’ingénierie",
     "p2c": "qui gardent une livraison maîtrisée quand la complexité et la charge augmentent.",
     "p3": "Solide pratique Java & Spring, stacks cloud-native modernes, et Angular ou React quand le produit l’exige — pour SaaS, plateformes enterprise et services distribués.",
-    "p4": "Axes : FinTech, SaaS, e-commerce, plateformes digitales et systèmes enterprise à grande échelle. Basé à Dakar — collaboration nationale (Sénégal) et internationale : d’abord asynchrone, briefs écrits clairs, créneaux communs quand il le faut.",
+    "p4": "Axes : FinTech, SaaS, e-commerce, plateformes digitales et systèmes enterprise. Basé à Dakar — missions au Sénégal et à l’international. Formats : conseil architecture, delivery intégré à votre équipe, ou travail par phases — calibrés sur le risque, le budget et le calendrier. D’abord asynchrone avec briefs écrits clairs ; créneaux communs quand les décisions l’exigent.",
     "cardRole": "Ingénieur logiciel",
     "cardTagline": "De l’intention au logiciel livré",
     "statYears": "Ans",
@@ -217,17 +217,17 @@
   },
   "insights": {
     "title": "Insights & réflexions",
-    "subtitle": "Arbitrages, modes de défaillance, livraison — moins de schémas héroïques, plus de services debout quand quelqu’un clique vraiment.",
+    "subtitle": "Arbitrages, modes de défaillance, livraison — matière à réflexion si vous évaluez une collaboration ou une orientation technique.",
     "viewAll": "Voir tous les articles",
     "endCtaTitle": "Un sujet proche dans votre stack ?",
-    "endCtaSubtitle": "Servez-vous-en comme grille de lecture — puis on les confronte à vos vraies contraintes.",
+    "endCtaSubtitle": "Servez-vous-en comme grille de lecture — puis on pourra les confronter à vos contraintes dans un échange.",
     "endCtaButton": "Me contacter"
   },
   "articlesPage": {
     "metaTitle": "Articles | SAIFCORE",
-    "metaDescription": "Architecture, SaaS, livraison — textes courts à piller, puis à confronter à vos vraies contraintes.",
+    "metaDescription": "Architecture, SaaS, livraison — notes utiles pour les équipes qui construisent ou scalent ; contexte avant un échange conseil.",
     "title": "Articles",
-    "subtitle": "Textes, code, ADR, notes de design — empruntez avec discernement ; si ça casse, c’est votre contexte.",
+    "subtitle": "Textes, code, ADR, notes de design — des idées à adapter à votre contexte, pas à copier-coller.",
     "backToHome": "Retour à l’accueil",
     "readArticle": "Lire l’article",
     "readExternal": "Lire l’article complet",
@@ -248,8 +248,8 @@
     "endCtaButton": "Démarrer la conversation"
   },
   "cta": {
-    "title": "Qu’est-ce que vous construisez — et qu’est-ce qui brûle discrètement ?",
-    "subtitle": "Au Sénégal ou ailleurs : produit, point bloqué, calendrier. Réponse franche — adéquation, prochaine étape, ou un non qui nous évite un mois de perdu.",
+    "title": "Parlez-moi de ce que vous construisez — et de ce qui vous bloque.",
+    "subtitle": "Au Sénégal ou à l’international : produit, contraintes, calendrier. Réponse directe — adéquation, prochaine étape concrète pour une mission, ou un non franc pour ne perdre ni votre temps ni le mien.",
     "processTitle": "La suite du processus",
     "processStep1": "Vous réservez un créneau ou envoyez un brief — contexte, objectifs, calendrier.",
     "processStep2": "Je reviens avec des questions ciblées et, si c’est pertinent, un périmètre court ou des options.",
