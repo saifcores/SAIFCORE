@@ -105,6 +105,7 @@
     "title": "Featured projects",
     "subtitle": "Delivery under pressure — public where possible, anonymized where confidentiality wins. Each card is a class of problem I’ve already shipped through.",
     "impactLabel": "Impact",
+    "statusLabel": "Status",
     "bridgeTitle": "Seeing the same pressure on your side?",
     "bridgeSubtitle": "Share goals and hard constraints — I’ll sketch scope, risks, and order of attack before anyone signs a blank check.",
     "bridgeCta": "Start a conversation",
@@ -120,10 +121,10 @@
       },
       {
         "title": "FitnessOS",
-        "context": "Multi-tenant SaaS for fitness centers — teams manage the gym via a web app, while members use a mobile app.",
-        "impact": "Centralized management, increased efficiency for staff, and smooth member experience — scalable multi-site model.",
+        "context": "Multi-tenant SaaS for gyms — staff run operations from the web, members on mobile. Product in active development; the marketing site is live.",
+        "impact": "One operational layer for staff, members, and multi-site rollouts — built to scale without duct-taping five tools.",
         "href": "https://fitness-os-landing.vercel.app/",
-        "linkLabel": "Visit FitnessOS",
+        "linkLabel": "View landing site",
         "stacks": ["NestJS", "TypeScript", "React", "Flutter", "PostgreSQL", "Vercel", "VPS"],
         "status": "Coming soon"
       },

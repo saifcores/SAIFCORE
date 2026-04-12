@@ -29,9 +29,19 @@ export async function FeaturedProjects() {
                     className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-gradient-to-br from-indigo-600/25 to-cyan-500/10 blur-2xl transition group-hover:opacity-100 opacity-70"
                     aria-hidden
                   />
-                  <h3 className="relative text-xl font-semibold text-[var(--text-primary)]">
-                    {item.title}
-                  </h3>
+                  <div className="relative flex flex-wrap items-center gap-2">
+                    <h3 className="text-xl font-semibold text-[var(--text-primary)]">
+                      {item.title}
+                    </h3>
+                    {item.status ? (
+                      <span
+                        className="rounded-full border border-[var(--border-subtle)] bg-[var(--bg-base)]/90 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-[var(--accent-cyan)]"
+                        title={`${t("statusLabel")}: ${item.status}`}
+                      >
+                        {item.status}
+                      </span>
+                    ) : null}
+                  </div>
                   <p className="relative mt-3 flex-1 text-sm leading-relaxed text-[var(--text-secondary)]">
                     {item.context}
                   </p>

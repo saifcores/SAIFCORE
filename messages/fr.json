@@ -105,6 +105,7 @@
     "title": "Projets phares",
     "subtitle": "Livraison sous pression — public quand c’est possible, anonymisé quand la confidentialité prime. Chaque carte est une classe de problème que j’ai déjà livrée.",
     "impactLabel": "Impact",
+    "statusLabel": "Statut",
     "bridgeTitle": "La même pression chez vous ?",
     "bridgeSubtitle": "Dites objectifs et contraintes dures — j’esquisse périmètre, risques et ordre d’attaque avant qu’on signe dans le vide.",
     "bridgeCta": "Démarrer la conversation",
@@ -114,16 +115,18 @@
         "context": "SaaS pour le commerce — stocks, ventes et opérations du quotidien dans un seul produit pour éviter cinq outils bancalés.",
         "impact": "Commerçants en route en quelques jours — onboarding qui évite un projet IT « big bang ».",
         "href": "https://ecom360pme.com/",
-        "linkLabel": "Voir ecom360pme.com",
-        "stacks": ["Java", "Spring", "TypeScript", "React", "PostgreSQL", "Vercel", "VPS"]
+        "linkLabel": "Voir Ecom 360 PME",
+        "stacks": ["Java", "Spring", "TypeScript", "React", "PostgreSQL", "Vercel", "VPS"],
+        "status": "En production"
       },
       {
         "title": "FitnessOS",
-        "context": "SaaS multi-locataire pour la gestion de salles de sport : les équipes gèrent la salle via une interface web, tandis que les membres bénéficient d’une application mobile.",
-        "impact": "Gestion centralisée, efficacité accrue pour le personnel, et expérience fluide côté adhérents — modèle multi-sites évolutif.",
-        "href": "",
-        "linkLabel": "",
-        "stacks": ["NestJS", "TypeScript", "React", "Flutter", "PostgreSQL", "Vercel", "VPS"]
+        "context": "SaaS multi-locataire pour salles de sport — équipes sur le web, adhérents sur mobile. Produit en développement actif ; la landing marketing est en ligne.",
+        "impact": "Une couche opérationnelle pour le personnel, les adhérents et le multi-sites — pensée pour scaler sans empiler cinq outils.",
+        "href": "https://fitness-os-landing.vercel.app/",
+        "linkLabel": "Voir FitnessOS",
+        "stacks": ["NestJS", "TypeScript", "React", "Flutter", "PostgreSQL", "Vercel", "VPS"],
+        "status": "Bientôt disponible"
       },
       {
         "title": "SaaS B2B multi-locataire",
@@ -131,7 +134,8 @@
         "impact": "Cadence de features ~40 % plus rapide une fois les domaines modulaires en place — moins de merges énormes à chaque release.",
         "href": "",
         "linkLabel": "",
-        "stacks": ["Java", "Spring", "TypeScript", "React", "PostgreSQL", "Vercel", "VPS"]
+        "stacks": ["Java", "Spring", "TypeScript", "React", "PostgreSQL", "Vercel", "VPS"],
+        "status": "En développement"
       }
     ]
   },
