@@ -118,6 +118,14 @@
         "stacks": ["Java", "Spring", "TypeScript", "React", "PostgreSQL", "Vercel", "VPS"]
       },
       {
+        "title": "FitnessOS",
+        "context": "SaaS multi-locataire pour la gestion de salles de sport : les équipes gèrent la salle via une interface web, tandis que les membres bénéficient d’une application mobile.",
+        "impact": "Gestion centralisée, efficacité accrue pour le personnel, et expérience fluide côté adhérents — modèle multi-sites évolutif.",
+        "href": "",
+        "linkLabel": "",
+        "stacks": ["NestJS", "TypeScript", "React", "Flutter", "PostgreSQL", "Vercel", "VPS"]
+      },
+      {
         "title": "SaaS B2B multi-locataire",
         "context": "SaaS B2B greenfield — isolation par org, rôles, facturation à l’usage, modèle de domaines prêt à se scinder.",
         "impact": "Cadence de features ~40 % plus rapide une fois les domaines modulaires en place — moins de merges énormes à chaque release.",

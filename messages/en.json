@@ -114,8 +114,18 @@
         "context": "SaaS for retail and commerce — stock, sales, and daily ops in one product so SMEs can grow without bolting on five tools.",
         "impact": "Merchants productive in days, not months — onboarding that dodges a big-bang IT programme.",
         "href": "https://ecom360pme.com/",
-        "linkLabel": "Visit ecom360pme.com",
-        "stacks": ["Java", "Spring", "TypeScript", "React", "PostgreSQL", "Vercel", "VPS"]
+        "linkLabel": "Visit Ecom 360 PME",
+        "stacks": ["Java", "Spring", "TypeScript", "React", "PostgreSQL", "Vercel", "VPS"],
+        "status": "In production"
+      },
+      {
+        "title": "FitnessOS",
+        "context": "Multi-tenant SaaS for fitness centers — teams manage the gym via a web app, while members use a mobile app.",
+        "impact": "Centralized management, increased efficiency for staff, and smooth member experience — scalable multi-site model.",
+        "href": "https://fitness-os-landing.vercel.app/",
+        "linkLabel": "Visit FitnessOS",
+        "stacks": ["NestJS", "TypeScript", "React", "Flutter", "PostgreSQL", "Vercel", "VPS"],
+        "status": "Coming soon"
       },
       {
         "title": "Multi-tenant B2B SaaS",
@@ -123,7 +133,8 @@
         "impact": "~40% faster feature cadence once modular domains landed — fewer cross-team merges per release.",
         "href": "",
         "linkLabel": "",
-        "stacks": ["Java", "Spring", "TypeScript", "React", "PostgreSQL", "Vercel", "VPS"]
+        "stacks": ["Java", "Spring", "TypeScript", "React", "PostgreSQL", "Vercel", "VPS"],
+        "status": "In development"
       }
     ]
   },
