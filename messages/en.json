@@ -1,10 +1,10 @@
 {
   "meta": {
     "title": "Software Engineer | Distributed Systems & SaaS | SAIFCORE",
-    "description": "Software engineer in Dakar — Java & cloud-native: SaaS, enterprise, distributed systems that still work once the launch party ends. Senegal & international. Sharp trade-offs, less rework.",
+    "description": "Software engineer in Dakar — the interesting part isn’t the framework logo; it’s whether the system still makes sense after launch week. Java, cloud-native, SaaS & enterprise. Senegal & international.",
     "ogTitle": "Software Engineer — Distributed Systems & Scalable SaaS",
-    "ogDescription": "From architecture to production: Java, Spring, cloud-native, SaaS & enterprise. Based in Senegal; works nationally and internationally. Focus on systems that hold up under real load and roadmap pressure.",
-    "twitterDescription": "Java & cloud-native · SaaS & enterprise · Dakar — systems built for week two, not just demo day.",
+    "ogDescription": "Architecture that survives real traffic and awkward roadmap turns — Java, Spring, cloud-native. Based in Senegal; national and international work. Curious what that looks like on your stack?",
+    "twitterDescription": "Java & cloud-native · Dakar — week-two systems, not demo-day theatre.",
     "jsonLdJobTitle": "Software Engineer",
     "jsonLdDescription": "Software engineer in Dakar, Senegal. Designs and evolves business-critical systems with Java and cloud-native architectures — SaaS, enterprise, and distributed services. Open to national engagements in Senegal and international collaboration (remote, hybrid, or on-site when appropriate).",
     "manifestName": "SAIFCORE — Software Engineer | Distributed Systems & SaaS",
@@ -39,42 +39,42 @@
     "badge": "Java · Spring · Cloud · Senegal & worldwide",
     "titleBefore": "Software Engineer ·",
     "titleHighlight": "Distributed systems & scalable platforms",
-    "subtitle": "Built to survive launch week — and the roadmap that follows. Architecture through production: Java, cloud-native, SaaS, and platforms where downtime or bad data cost real money.",
+    "subtitle": "The launch is easy; the quarter after is the exam. I build Java and cloud-native systems for SaaS and enterprise — where a bad deploy or a silent data bug is the story nobody wants to tell.",
     "ctaPrimary": "Book a 15-min intro",
-    "ctaSecondary": "See selected work",
+    "ctaSecondary": "Peek at shipped work",
     "locationLine": "Dakar, Senegal — on-site or hybrid locally; remote or hybrid internationally. Overlap-friendly across Francophone Africa, Europe, and US time zones when it matters.",
     "nextSteps": "Intro call → written scope & constraints → proposal or kickoff. No endless email tennis.",
     "jumpToContact": "Go to contact",
     "jumpToContactHint": "email, CV, and full booking options."
   },
   "trust": {
-    "heading": "Trusted by teams who needed production software — not another deck"
+    "heading": "Teams that needed software in prod — not another roadmap slide"
   },
   "whatISolve": {
     "title": "What I solve",
-    "subtitle": "Leverage for product and engineering: ownership people can name, change that doesn’t break the world, ops you can sleep through, and dates that still mean something when traffic spikes.",
+    "subtitle": "The unglamorous middle: who owns what, what happens when load doubles, and whether your next release is a bet or a habit.",
     "items": [
       {
         "title": "Architecture & system design",
-        "description": "Domains and contracts your team can carry — so the next feature doesn’t become a six-month refactor."
+        "description": "Boundaries your team can explain in a stand-up — so “one more feature” doesn’t quietly become a six-month rewrite."
       },
       {
         "title": "Scalable SaaS & enterprise platforms",
-        "description": "Multi-tenant models, integrations, and how you’ll actually run it: fast now without a structure you’ll regret at Series B."
+        "description": "Multi-tenant reality: integrations, billing, and ops you’ll still recognize after the next funding round."
       },
       {
         "title": "Distributed & business-critical systems",
-        "description": "Money paths, latency budgets, audits — payments, FinTech-style flows, regulated contexts; engineered, not improvised."
+        "description": "Money, latency, audits — the flows where “we’ll patch it later” isn’t an option. Built deliberately, not improvised."
       },
       {
         "title": "Engineering excellence",
-        "description": "Tests, CI/CD, observability, and performance baked into delivery — predictable releases instead of weekend salvages."
+        "description": "Tests, CI/CD, and signals you can trust — so Friday deploys are boring for the right reasons."
       }
     ]
   },
   "howIThink": {
     "title": "How I think",
-    "subtitle": "From fuzzy ask to system in production — with the lightest process that still fits your risk profile.",
+    "subtitle": "From vague brief to something running in prod — with only the ceremony your risk level actually needs.",
     "steps": [
       {
         "title": "Frame the problem",
@@ -103,17 +103,17 @@
   },
   "featuredProjects": {
     "title": "Featured projects",
-    "subtitle": "Delivery under pressure — public where possible, anonymized where confidentiality wins. Each card is a class of problem I’ve already shipped through.",
+    "subtitle": "Shipping stories you can inspect — names public when NDAs allow. Each card is a class of mess I’ve already walked through; your constraint might rhyme with one of them.",
     "impactLabel": "Impact",
     "statusLabel": "Status",
-    "bridgeTitle": "Seeing the same pressure on your side?",
-    "bridgeSubtitle": "Share goals and hard constraints — I’ll sketch scope, risks, and order of attack before anyone signs a blank check.",
+    "bridgeTitle": "Does your backlog sound familiar?",
+    "bridgeSubtitle": "Send the goal and the non-negotiables — I’ll sketch scope, risks, and a credible first cut before anyone writes a check.",
     "bridgeCta": "Start a conversation",
     "items": [
       {
         "title": "Ecom 360 PME",
-        "context": "SaaS for retail and commerce — stock, sales, and daily ops in one product so SMEs can grow without bolting on five tools.",
-        "impact": "Merchants productive in days, not months — onboarding that dodges a big-bang IT programme.",
+        "context": "What if stock, sales, and the messy day-to-day lived in one product instead of five tabs and a spreadsheet? SaaS for retail SMEs — built to retire the accidental tool stack.",
+        "impact": "Merchants productive in days, not quarters — onboarding that sidesteps the “big bang” IT programme while still caring about traceability.",
         "href": "https://ecom360pme.com/",
         "linkLabel": "Visit Ecom 360 PME",
         "stacks": ["Java", "Spring", "TypeScript", "React", "PostgreSQL", "Vercel", "VPS"],
@@ -121,17 +121,17 @@
       },
       {
         "title": "FitnessOS",
-        "context": "Multi-tenant SaaS for gyms — staff run operations from the web, members on mobile. Product in active development; the marketing site is live.",
-        "impact": "One operational layer for staff, members, and multi-site rollouts — built to scale without duct-taping five tools.",
+        "context": "Who owns the gym’s truth — the front desk laptop or the member’s phone? Staff on the web, members on mobile; the product is still baking, but the story is already public.",
+        "impact": "One spine for operations, members, and multi-site expansion — fewer handoffs, fewer “we’ll fix it in the next tool”.",
         "href": "https://fitness-os-landing.vercel.app/",
-        "linkLabel": "View landing site",
+        "linkLabel": "View FitnessOS",
         "stacks": ["NestJS", "TypeScript", "React", "Flutter", "PostgreSQL", "Vercel", "VPS"],
         "status": "Coming soon"
       },
       {
         "title": "Multi-tenant B2B SaaS",
-        "context": "Greenfield B2B SaaS — org isolation, roles, usage-based billing, and a domain model you can split as you grow.",
-        "impact": "~40% faster feature cadence once modular domains landed — fewer cross-team merges per release.",
+        "context": "Greenfield B2B: tenants, roles, usage-based billing — and a domain you can split before the merge queue becomes your roadmap. The interesting question is how modular the first cut is.",
+        "impact": "~40% faster feature cadence once boundaries landed — releases that didn’t need a committee merge every time.",
         "href": "",
         "linkLabel": "",
         "stacks": ["Java", "Spring", "TypeScript", "React", "PostgreSQL", "Vercel", "VPS"],
@@ -141,9 +141,9 @@
   },
   "experience": {
     "title": "Experience",
-    "subtitle": "Banking cores, fintech, and high-traffic products — shipping with Java/Spring, Angular, and React in regulated, production-heavy environments.",
+    "subtitle": "Banking cores, fintech, traffic spikes — the work happens where a bad deploy is news. Java/Spring, Angular, React; regulated air, real incidents.",
     "valueTitle": "What this adds for you",
-    "valueBody": "Jasper-backed reporting, mobile-money integrations, GitLab-driven delivery, and Angular/Spring at scale — hands-on production work, not architecture theatre.",
+    "valueBody": "Jasper in anger, Wave and Orange Money in production, GitLab pipelines you can’t fake, Angular/Spring under load — if we’re only trading slide architecture, we’re not having the same conversation.",
     "stackLabel": "Stack",
     "items": [
       {
@@ -186,7 +186,7 @@
   },
   "architectureExpertise": {
     "title": "Core expertise",
-    "subtitle": "The stack and practices I reach for to get from whiteboard to on-call without drama.",
+    "subtitle": "What I actually reach for between whiteboard and pager — opinionated, but negotiable with data.",
     "tags": [
       { "label": "Clean Architecture & DDD" },
       { "label": "Microservices & distributed systems" },
@@ -203,7 +203,7 @@
   },
   "about": {
     "title": "About",
-    "p1": "I connect product intent with software that can evolve: explicit trade-offs, clear boundaries, and architectures your team can still change a year after go-live.",
+    "p1": "Product intent only matters if the software can still move a year later — explicit trade-offs, boundaries your team can name, and architectures that don’t calcify on day one.",
     "p2a": "Beyond code, I contribute to",
     "p2b": "architecture decisions, system design, and engineering practices",
     "p2c": "that keep delivery calm when complexity and traffic grow.",
@@ -217,7 +217,7 @@
   },
   "insights": {
     "title": "Insights & thinking",
-    "subtitle": "Trade-offs, failure modes, delivery — fewer pretty diagrams, more things that stay up.",
+    "subtitle": "Notes on trade-offs, failure modes, and delivery — fewer hero diagrams, more things that stay up when someone actually clicks.",
     "viewAll": "View all articles",
     "endCtaTitle": "Facing a similar challenge in your stack?",
     "endCtaSubtitle": "Use these as a lens — then we pressure-test them against your real constraints.",
@@ -225,9 +225,9 @@
   },
   "articlesPage": {
     "metaTitle": "Articles | SAIFCORE",
-    "metaDescription": "Practical notes on architecture, SaaS, and delivery — ideas to contrast with your own constraints.",
+    "metaDescription": "Architecture, SaaS, delivery — short reads to steal from, then argue with against your own constraints.",
     "title": "Articles",
-    "subtitle": "Essays, code, ADRs, and design notes — one place to steal ideas from responsibly.",
+    "subtitle": "Essays, code, ADRs, design notes — borrow with judgment; blame your own context if it breaks.",
     "backToHome": "Back to home",
     "readArticle": "Read article",
     "readExternal": "Read full article",
@@ -248,8 +248,8 @@
     "endCtaButton": "Start a conversation"
   },
   "cta": {
-    "title": "Tell me what you’re building.",
-    "subtitle": "Senegal or abroad — what’s the product, what’s stuck, and what’s the timeline. You’ll get a straight answer: fit, a concrete next step, or a clear no.",
+    "title": "What are you building — and what’s quietly on fire?",
+    "subtitle": "Senegal or abroad: product, stuck point, timeline. You’ll get a straight answer — fit, a concrete next step, or a no that saves us both a month.",
     "processTitle": "What happens next",
     "processStep1": "You book a slot or send a brief — context, goals, and timeline.",
     "processStep2": "I come back with clarifying questions and, when it fits, a lean scope or options.",

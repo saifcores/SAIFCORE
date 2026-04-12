@@ -1,10 +1,10 @@
 {
   "meta": {
     "title": "Ingénieur logiciel | Systèmes distribués & SaaS | SAIFCORE",
-    "description": "Ingénieur logiciel à Dakar — Java & cloud-native : SaaS, enterprise, systèmes distribués qui tiennent quand le lancement est passé. Sénégal & international. Arbitrages nets, moins de retours en arrière.",
+    "description": "Ingénieur logiciel à Dakar — l’intérêt n’est pas le logo du framework ; c’est si le système tient encore après la semaine de lancement. Java, cloud-native, SaaS & enterprise. Sénégal & international.",
     "ogTitle": "Ingénieur logiciel — systèmes distribués & SaaS scalable",
-    "ogDescription": "De l’architecture à la production : Java, Spring, cloud-native, SaaS & enterprise. Basé au Sénégal ; missions nationales et internationales. Des systèmes qui résistent à la charge réelle et à la pression roadmap.",
-    "twitterDescription": "Java & cloud-native · SaaS & enterprise · Dakar — des systèmes pour la semaine 2, pas seulement la démo.",
+    "ogDescription": "Une architecture qui survive à la charge et aux virages de roadmap — Java, Spring, cloud-native. Basé au Sénégal ; missions nationales et internationales. Et chez vous, ça ressemblerait à quoi ?",
+    "twitterDescription": "Java & cloud-native · Dakar — des systèmes pour la semaine 2, pas le théâtre de la démo.",
     "jsonLdJobTitle": "Ingénieur logiciel",
     "jsonLdDescription": "Ingénieur logiciel à Dakar (Sénégal). Conçoit et fait évoluer des systèmes critiques pour le métier avec Java et des architectures cloud-native — SaaS, enterprise et services distribués. Ouvert aux missions nationales au Sénégal et à la collaboration internationale (remote, hybride ou sur place selon le besoin).",
     "manifestName": "SAIFCORE — Ingénieur logiciel | Systèmes distribués & SaaS",
@@ -39,42 +39,42 @@
     "badge": "Java · Spring · Cloud · Sénégal & international",
     "titleBefore": "Ingénieur logiciel ·",
     "titleHighlight": "Systèmes distribués & plateformes scalables",
-    "subtitle": "Pensés pour survivre à la semaine de lancement — et à la roadmap d’après. De l’architecture à la production : Java, cloud-native, SaaS et plateformes où panne ou mauvaise donnée coûtent cher.",
+    "subtitle": "Le lancement est facile ; le trimestre d’après, c’est l’examen. Je construis en Java et cloud-native pour le SaaS et l’enterprise — là où un déploiement raté ou une donnée silencieuse fait la une.",
     "ctaPrimary": "Réserver un intro 15 min",
-    "ctaSecondary": "Voir des réalisations",
+    "ctaSecondary": "Jeter un œil aux réalisations",
     "locationLine": "Dakar (Sénégal) — sur place ou hybride en local ; remote ou hybride à l’international. Créneaux compatibles Afrique francophone, Europe et US quand c’est nécessaire.",
     "nextSteps": "Appel d’intro → cadrage écrit & contraintes → proposition ou lancement. Pas de ping-pong infini par e-mail.",
     "jumpToContact": "Aller au contact",
     "jumpToContactHint": "e-mail, CV et réservation complète."
   },
   "trust": {
-    "heading": "Des équipes qui avaient besoin de logiciel en prod — pas d’un deck de plus"
+    "heading": "Des équipes qui voulaient du logiciel en prod — pas une slide de plus sur la roadmap"
   },
   "whatISolve": {
     "title": "Ce que je résous",
-    "subtitle": "Levier produit et engineering : une propriété qu’on peut nommer, des changements qui ne cassent pas tout, une exploitation qui tient la nuit, et des dates qui veulent encore dire quelque chose quand la charge monte.",
+    "subtitle": "Le milieu ingrat : qui possède quoi, ce qui se passe si la charge double, et si votre prochaine release est un pari ou une habitude.",
     "items": [
       {
         "title": "Architecture & conception système",
-        "description": "Domaines et contrats que votre équipe peut porter — pour que la prochaine fonctionnalité ne devienne pas six mois de refactor."
+        "description": "Des frontières que l’équipe peut expliquer en stand-up — pour que « une feature de plus » ne devienne pas six mois de réécriture."
       },
       {
         "title": "SaaS scalable & plateformes enterprise",
-        "description": "Multi-locataire, intégrations et exploitation réelle : rapide maintenant sans une structure qui vous enferme à la prochaine étape de croissance."
+        "description": "Multi-locataire pour de vrai : intégrations, facturation, exploitation — une structure encore reconnaissable après la prochaine levée."
       },
       {
         "title": "Systèmes distribués & critiques pour le métier",
-        "description": "Flux d’argent, budgets de latence, audits — paiements, contextes type FinTech et réglementés ; conçus, pas bricolés."
+        "description": "Argent, latence, audits — les flux où « on corrigera plus tard » n’existe pas. Conçus, pas bricolés."
       },
       {
         "title": "Excellence d’ingénierie",
-        "description": "Tests, CI/CD, observabilité et performance dans la livraison — des releases prévisibles plutôt que des week-ends de sauvetage."
+        "description": "Tests, CI/CD, signaux de confiance — pour que le vendredi en prod soit ennuyeux pour les bonnes raisons."
       }
     ]
   },
   "howIThink": {
     "title": "Ma façon de penser",
-    "subtitle": "D’une demande floue au système en production — avec le minimum de processus compatible avec votre niveau de risque.",
+    "subtitle": "D’un brief flou à quelque chose en prod — avec seulement la cérémonie que votre niveau de risque exige.",
     "steps": [
       {
         "title": "Cadrer le problème",
@@ -103,17 +103,17 @@
   },
   "featuredProjects": {
     "title": "Projets phares",
-    "subtitle": "Livraison sous pression — public quand c’est possible, anonymisé quand la confidentialité prime. Chaque carte est une classe de problème que j’ai déjà livrée.",
+    "subtitle": "Des livraisons qu’on peut aller voir — noms publics quand les NDA le permettent. Chaque carte, une famille de galères que j’ai déjà traversée ; votre contrainte lui ressemble peut-être.",
     "impactLabel": "Impact",
     "statusLabel": "Statut",
-    "bridgeTitle": "La même pression chez vous ?",
-    "bridgeSubtitle": "Dites objectifs et contraintes dures — j’esquisse périmètre, risques et ordre d’attaque avant qu’on signe dans le vide.",
+    "bridgeTitle": "Votre backlog, même musique ?",
+    "bridgeSubtitle": "Envoyez l’objectif et le non-négociable — j’esquisse périmètre, risques et une première coupe crédible avant qu’on signe quoi que ce soit.",
     "bridgeCta": "Démarrer la conversation",
     "items": [
       {
         "title": "Ecom 360 PME",
-        "context": "SaaS pour le commerce — stocks, ventes et opérations du quotidien dans un seul produit pour éviter cinq outils bancalés.",
-        "impact": "Commerçants en route en quelques jours — onboarding qui évite un projet IT « big bang ».",
+        "context": "Et si stock, ventes et quotidien tenaient dans un seul produit — sans cinq onglets et un tableur ? SaaS retail pour PME : fait pour remplacer la stack d’outils tombée en panne.",
+        "impact": "Commerçants en route en jours, pas en trimestres — onboarding qui évite le projet IT « big bang » tout en gardant la traçabilité en tête.",
         "href": "https://ecom360pme.com/",
         "linkLabel": "Voir Ecom 360 PME",
         "stacks": ["Java", "Spring", "TypeScript", "React", "PostgreSQL", "Vercel", "VPS"],
@@ -121,17 +121,17 @@
       },
       {
         "title": "FitnessOS",
-        "context": "SaaS multi-locataire pour salles de sport — équipes sur le web, adhérents sur mobile. Produit en développement actif ; la landing marketing est en ligne.",
-        "impact": "Une couche opérationnelle pour le personnel, les adhérents et le multi-sites — pensée pour scaler sans empiler cinq outils.",
+        "context": "Où vit la vérité de la salle — sur le PC de l’accueil ou dans la poche du membre ? Équipes sur le web, adhérents sur mobile ; le produit mijote encore, mais le récit est déjà public.",
+        "impact": "Une colonne vertébrale pour l’opérationnel, les adhérents et le multi-sites — moins de relais, moins de « on règlera ça dans l’outil suivant ».",
         "href": "https://fitness-os-landing.vercel.app/",
-        "linkLabel": "Voir FitnessOS",
+        "linkLabel": "Voir la landing",
         "stacks": ["NestJS", "TypeScript", "React", "Flutter", "PostgreSQL", "Vercel", "VPS"],
         "status": "Bientôt disponible"
       },
       {
         "title": "SaaS B2B multi-locataire",
-        "context": "SaaS B2B greenfield — isolation par org, rôles, facturation à l’usage, modèle de domaines prêt à se scinder.",
-        "impact": "Cadence de features ~40 % plus rapide une fois les domaines modulaires en place — moins de merges énormes à chaque release.",
+        "context": "Greenfield B2B : locataires, rôles, facturation à l’usage — et un domaine qu’on peut scinder avant que la file de merge devienne votre roadmap. La vraie question : à quel point la première coupe est modulaire.",
+        "impact": "Cadence de features ~40 % plus rapide une fois les frontières posées — des releases sans comité de fusion à chaque fois.",
         "href": "",
         "linkLabel": "",
         "stacks": ["Java", "Spring", "TypeScript", "React", "PostgreSQL", "Vercel", "VPS"],
@@ -141,9 +141,9 @@
   },
   "experience": {
     "title": "Expérience",
-    "subtitle": "Cœurs bancaires, fintech et produits à fort trafic — livraison Java/Spring, Angular et React dans des environnements réglementés et orientés production.",
+    "subtitle": "Cœurs bancaires, fintech, pics de trafic — le travail se joue là où un mauvais déploiement fait du bruit. Java/Spring, Angular, React ; air réglementé, vrais incidents.",
     "valueTitle": "Valeur ajoutée",
-    "valueBody": "Reporting Jasper, intégrations mobile money, CI/CD GitLab et Angular/Spring à l’échelle — terrain prod, pas de l’architecture pour slides.",
+    "valueBody": "Jasper en conditions réelles, Wave et Orange Money en prod, pipelines GitLab qu’on ne simule pas, Angular/Spring sous charge — si on n’échange que de l’architecture en slides, ce n’est pas la même conversation.",
     "stackLabel": "Stack",
     "items": [
       {
@@ -186,7 +186,7 @@
   },
   "architectureExpertise": {
     "title": "Expertise cœur",
-    "subtitle": "La stack et les pratiques que j’utilise pour passer du tableau blanc à l’astreinte sans drame.",
+    "subtitle": "Ce que je prends vraiment entre tableau blanc et astreinte — tranchant, mais négociable avec des chiffres.",
     "tags": [
       { "label": "Clean Architecture & DDD" },
       { "label": "Microservices & systèmes distribués" },
@@ -203,7 +203,7 @@
   },
   "about": {
     "title": "À propos",
-    "p1": "Je relie l’intention produit à un logiciel capable d’évoluer : arbitrages explicites, frontières claires, et architectures que votre équipe peut encore faire bouger un an après la mise en ligne.",
+    "p1": "L’intention produit ne compte que si le logiciel bouge encore un an après — arbitrages explicites, frontières nommables, architectures qui ne se figent pas au jour J.",
     "p2a": "Au-delà du code, je contribue aux",
     "p2b": "décisions d’architecture, à la conception système et aux pratiques d’ingénierie",
     "p2c": "qui gardent une livraison maîtrisée quand la complexité et la charge augmentent.",
@@ -217,7 +217,7 @@
   },
   "insights": {
     "title": "Insights & réflexions",
-    "subtitle": "Arbitrages, modes de défaillance, livraison — moins de beaux schémas, plus de services qui restent debout.",
+    "subtitle": "Arbitrages, modes de défaillance, livraison — moins de schémas héroïques, plus de services debout quand quelqu’un clique vraiment.",
     "viewAll": "Voir tous les articles",
     "endCtaTitle": "Un sujet proche dans votre stack ?",
     "endCtaSubtitle": "Servez-vous-en comme grille de lecture — puis on les confronte à vos vraies contraintes.",
@@ -225,9 +225,9 @@
   },
   "articlesPage": {
     "metaTitle": "Articles | SAIFCORE",
-    "metaDescription": "Notes concrètes sur architecture, SaaS et livraison — des idées à confronter à vos propres contraintes.",
+    "metaDescription": "Architecture, SaaS, livraison — textes courts à piller, puis à confronter à vos vraies contraintes.",
     "title": "Articles",
-    "subtitle": "Textes, code, ADR, notes de design — un seul endroit pour piquer des idées avec mesure.",
+    "subtitle": "Textes, code, ADR, notes de design — empruntez avec discernement ; si ça casse, c’est votre contexte.",
     "backToHome": "Retour à l’accueil",
     "readArticle": "Lire l’article",
     "readExternal": "Lire l’article complet",
@@ -248,8 +248,8 @@
     "endCtaButton": "Démarrer la conversation"
   },
   "cta": {
-    "title": "Parlez-moi de ce que vous construisez.",
-    "subtitle": "Au Sénégal ou ailleurs — le produit, le blocage, le calendrier. Réponse directe : adéquation, prochaine étape concrète, ou un non franc.",
+    "title": "Qu’est-ce que vous construisez — et qu’est-ce qui brûle discrètement ?",
+    "subtitle": "Au Sénégal ou ailleurs : produit, point bloqué, calendrier. Réponse franche — adéquation, prochaine étape, ou un non qui nous évite un mois de perdu.",
     "processTitle": "La suite du processus",
     "processStep1": "Vous réservez un créneau ou envoyez un brief — contexte, objectifs, calendrier.",
     "processStep2": "Je reviens avec des questions ciblées et, si c’est pertinent, un périmètre court ou des options.",
