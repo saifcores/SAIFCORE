@@ -153,7 +153,7 @@
         "location": "Almadies, Dakar, Senegal",
         "bullet0": "Critical-path Java/Spring banking modules for analytics and operational reporting — scalability, performance, and resilience as first-class constraints.",
         "bullet1": "Jasper Reports for decision-grade reporting; latency and availability work paired with business stakeholders on complex requirements.",
-        "bullet2": "Java, Spring Boot, Jasper Reports, REST APIs, Docker, CI/CD, distributed architecture, Agile"
+        "bullet2": "Java, Spring Boot, Jasper Reports, REST APIs, Agile (Scrum)"
       },
       {
         "role": "IT Consultant",
@@ -205,9 +205,9 @@
     "title": "About",
     "p1": "Product intent only matters if the software can still move a year later — explicit trade-offs, boundaries your team can name, and architectures that don’t calcify on day one.",
     "p2a": "Beyond code, I contribute to",
-    "p2b": "architecture decisions, system design, and engineering practices",
+    "p2b": "architecture decisions, system design, junior engineers mentoring and engineering practices",
     "p2c": "that keep delivery calm when complexity and traffic grow.",
-    "p3": "Strong Java & Spring background, modern cloud-native stacks, and Angular or React when the product needs them — for SaaS, enterprise platforms, and distributed services.",
+    "p3": "Strong Java & Spring background, modern cloud-native stacks, and JavaScript frameworks when the product needs them — for SaaS, enterprise platforms, mobile applications and web applications.",
     "p4": "Focus: FinTech, SaaS, e-commerce, digital platforms, and large-scale enterprise. Based in Dakar — engagements in Senegal and internationally. Formats: architecture advisory, embedded delivery with your team, or phased work — scoped to your risk, budget, and timeline. Async-first with clear written specs; live overlap when decisions need it.",
     "cardRole": "Software Engineer",
     "cardTagline": "From intent to shipped software",
