@@ -116,7 +116,7 @@
         "impact": "Merchants productive in days, not quarters — onboarding that sidesteps the “big bang” IT programme while still caring about traceability.",
         "href": "https://ecom360pme.com/",
         "linkLabel": "Visit Ecom 360 PME",
-        "stacks": ["Java", "Spring", "TypeScript", "React", "PostgreSQL", "Vercel", "VPS"],
+        "stacks": ["Java", "Spring Boot", "Kafka", "TypeScript", "React", "PostgreSQL", "Vercel", "VPS"],
         "status": "In production"
       },
       {
@@ -134,7 +134,7 @@
         "impact": "~40% faster feature cadence once boundaries landed — releases that didn’t need a committee merge every time.",
         "href": "",
         "linkLabel": "",
-        "stacks": ["Java", "Spring", "TypeScript", "React", "PostgreSQL", "Vercel", "VPS"],
+        "stacks": ["Java", "Spring Boot", "Kafka", "TypeScript", "React", "PostgreSQL", "Vercel", "VPS"],
         "status": "In development"
       }
     ]
