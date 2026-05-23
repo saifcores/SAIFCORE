@@ -49,7 +49,7 @@ export function ServicesSection({ title, subtitle, cta, items }: Props) {
               <MotionReveal key={item.title} delay={i * 60}>
                 <motion.article
                   whileHover={reduce ? undefined : { y: -4 }}
-                  className="group flex h-full flex-col rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 p-6 transition hover:border-white/12 hover:bg-[var(--bg-elevated)]/45"
+                  className="group flex h-full flex-col rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 p-6 transition hover:border-[var(--border-hover)] hover:bg-[var(--bg-elevated)]/45"
                 >
                   <div className="mb-4 inline-flex rounded-xl border border-blue-500/20 bg-gradient-to-br from-blue-500/12 to-emerald-500/8 p-2.5 text-blue-400">
                     <Icon className="h-5 w-5" strokeWidth={1.6} aria-hidden />

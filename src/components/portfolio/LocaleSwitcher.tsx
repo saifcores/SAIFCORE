@@ -28,8 +28,8 @@ export function LocaleSwitcher({ labels, navLabel }: Props) {
             locale={loc}
             className={`rounded-lg px-2.5 py-1.5 transition ${
               active
-                ? "bg-[var(--bg-base)] text-[var(--text-primary)] shadow-sm"
-                : "text-[var(--text-muted)] hover:text-[var(--text-primary)]"
+                ? "bg-[var(--bg-elevated)] text-[var(--text-primary)] shadow-[var(--shadow-card)] ring-1 ring-[var(--border-subtle)]"
+                : "text-[var(--text-muted)] hover:bg-[var(--bg-elevated)]/60 hover:text-[var(--text-primary)]"
             }`}
             hrefLang={loc}
           >

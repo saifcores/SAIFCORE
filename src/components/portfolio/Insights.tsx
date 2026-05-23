@@ -86,14 +86,14 @@ export async function Insights({ teaser = false }: Props) {
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex h-full flex-col rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-6 transition hover:-translate-y-1 hover:border-white/12 hover:bg-[var(--bg-elevated)]/40"
+                    className="group flex h-full flex-col rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-6 transition hover:-translate-y-1 hover:border-[var(--border-hover)] hover:bg-[var(--bg-elevated)]/40"
                   >
                     <CardContent />
                   </a>
                 ) : (
                   <Link
                     href={href}
-                    className="group flex h-full flex-col rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-6 transition hover:-translate-y-1 hover:border-white/12 hover:bg-[var(--bg-elevated)]/40"
+                    className="group flex h-full flex-col rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-6 transition hover:-translate-y-1 hover:border-[var(--border-hover)] hover:bg-[var(--bg-elevated)]/40"
                   >
                     <CardContent />
                   </Link>
@@ -120,7 +120,7 @@ export async function Insights({ teaser = false }: Props) {
             <div className="mt-8 flex justify-center">
               <Link
                 href="/articles"
-                className="inline-flex items-center gap-2 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 px-6 py-3 text-sm font-semibold text-[var(--text-secondary)] transition hover:border-white/15 hover:text-[var(--text-primary)]"
+                className="inline-flex items-center gap-2 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 px-6 py-3 text-sm font-semibold text-[var(--text-secondary)] transition hover:border-[var(--border-hover)] hover:text-[var(--text-primary)]"
               >
                 {t("viewAll")}
                 <span aria-hidden>→</span>

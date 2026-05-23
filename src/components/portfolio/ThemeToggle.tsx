@@ -15,25 +15,19 @@ export function ThemeToggle() {
       role="switch"
       aria-checked={!isDark}
       aria-label={isDark ? t("toLight") : t("toDark")}
-      className={`relative flex h-[30px] w-[54px] shrink-0 cursor-pointer items-center rounded-full border p-[3px] transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-blue)] ${
-        isDark
-          ? "border-white/10 bg-[#18181f]"
-          : "border-black/10 bg-[#e4e8f0] shadow-[inset_0_1px_2px_rgba(0,0,0,0.08)]"
-      }`}
+      className="theme-toggle relative flex h-[30px] w-[54px] shrink-0 cursor-pointer items-center rounded-full border border-[var(--toggle-track-border)] bg-[var(--toggle-track)] p-[3px] transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-blue)]"
     >
       <span className="sr-only">{t("toggle")}</span>
 
-      {/* Sliding thumb */}
       <span
         className={`relative flex h-6 w-6 items-center justify-center rounded-full shadow-sm transition-all duration-300 ${
           isDark
-            ? "translate-x-0 bg-[#1e293b] text-[#94a3b8]"
-            : "translate-x-[24px] bg-white text-amber-500 shadow-[0_1px_4px_rgba(0,0,0,0.15)]"
+            ? "translate-x-0 bg-[var(--toggle-thumb)] text-[var(--toggle-thumb-text)]"
+            : "translate-x-[24px] bg-[var(--toggle-thumb)] text-[var(--toggle-thumb-text)] shadow-[0_1px_4px_rgba(0,0,0,0.12)]"
         }`}
         aria-hidden
       >
         {isDark ? (
-          /* Moon */
           <svg
             className="h-[13px] w-[13px]"
             viewBox="0 0 20 20"
@@ -43,7 +37,6 @@ export function ThemeToggle() {
             <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
           </svg>
         ) : (
-          /* Sun */
           <svg
             className="h-[13px] w-[13px]"
             viewBox="0 0 20 20"

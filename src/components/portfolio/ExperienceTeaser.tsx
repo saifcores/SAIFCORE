@@ -90,7 +90,7 @@ export async function ExperienceTeaser() {
           <div className="mt-8 flex justify-center border-t border-[var(--border-subtle)] pt-8">
             <Link
               href="/experience"
-              className="inline-flex items-center gap-2 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 px-6 py-3 text-sm font-semibold text-[var(--text-secondary)] transition hover:border-white/15 hover:text-[var(--text-primary)]"
+              className="inline-flex items-center gap-2 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 px-6 py-3 text-sm font-semibold text-[var(--text-secondary)] transition hover:border-[var(--border-hover)] hover:text-[var(--text-primary)]"
             >
               {t("viewAll")}
               <span aria-hidden>→</span>

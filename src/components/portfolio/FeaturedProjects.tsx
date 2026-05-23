@@ -37,7 +37,7 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
 
             return (
               <Reveal key={item.title} delay={i * 100}>
-                <article className="group relative overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 transition duration-300 hover:border-white/12 hover:bg-[var(--bg-elevated)]/50">
+                <article className="group relative overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 transition duration-300 hover:border-[var(--border-hover)] hover:bg-[var(--bg-elevated)]/50">
                   {/* Left accent line */}
                   <div
                     className="absolute inset-y-0 left-0 w-[3px] rounded-l-2xl bg-gradient-to-b from-[#2563EB] to-[#10B981] opacity-0 transition duration-300 group-hover:opacity-100"
@@ -191,7 +191,7 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
                           href={external}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-[#2563EB] transition hover:text-blue-400"
+                          className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-[var(--accent-blue)] transition hover:text-[var(--accent-blue-light)]"
                         >
                           {item.linkLabel}
                           <span aria-hidden>→</span>

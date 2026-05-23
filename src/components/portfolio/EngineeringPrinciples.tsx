@@ -36,7 +36,7 @@ export function EngineeringPrinciples({ title, subtitle, items }: Props) {
               <MotionReveal key={item.title} delay={i * 70}>
                 <motion.article
                   whileHover={reduce ? undefined : { y: -4 }}
-                  className="h-full rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-6 transition hover:border-white/12"
+                  className="h-full rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-6 transition hover:border-[var(--border-hover)]"
                 >
                   <Icon
                     className="mb-4 h-5 w-5 text-emerald-400"

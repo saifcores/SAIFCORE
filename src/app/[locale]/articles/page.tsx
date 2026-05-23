@@ -84,7 +84,7 @@ export default async function ArticlesPage({ params }: Props) {
                 const external = !!article.externalUrl;
                 return (
                   <Reveal key={article.slug} delay={i * 60}>
-                    <article className="group flex h-full flex-col rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-8 transition hover:-translate-y-1 hover:border-white/12 hover:bg-[var(--bg-elevated)]/40">
+                    <article className="group flex h-full flex-col rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-8 transition hover:-translate-y-1 hover:border-[var(--border-hover)] hover:bg-[var(--bg-elevated)]/40">
                       <div className="flex flex-wrap items-center gap-2">
                         <ArticleKindBadge
                           kind={article.kind}

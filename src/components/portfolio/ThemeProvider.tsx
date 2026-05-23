@@ -1,8 +1,16 @@
 "use client";
 
-import { createContext, useCallback, useContext, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 type Theme = "dark" | "light";
+
+const STORAGE_KEY = "theme";
 
 const ThemeContext = createContext<{
   theme: Theme;
@@ -12,8 +20,6 @@ const ThemeContext = createContext<{
 /**
  * Reads the theme that was already applied to <html> by the inline FOUT-
  * prevention script in layout.tsx. Falls back to dark if not yet set.
- * This runs as a lazy useState initializer — only on the client, after the
- * inline script has already run.
  */
 function getInitialTheme(): Theme {
   if (typeof window === "undefined") return "dark";
@@ -22,20 +28,46 @@ function getInitialTheme(): Theme {
   return "dark";
 }
 
+function applyTheme(next: Theme) {
+  document.documentElement.dataset.theme = next;
+  try {
+    localStorage.setItem(STORAGE_KEY, next);
+  } catch {
+    // localStorage unavailable (private browsing, storage quota, etc.)
+  }
+}
+
+function getSystemTheme(): Theme {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+}
+
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>(getInitialTheme);
 
   const toggle = useCallback(() => {
     setTheme((current) => {
       const next = current === "dark" ? "light" : "dark";
-      document.documentElement.dataset.theme = next;
-      try {
-        localStorage.setItem("theme", next);
-      } catch {
-        // localStorage unavailable (private browsing, storage quota, etc.)
-      }
+      applyTheme(next);
       return next;
     });
+  }, []);
+
+  useEffect(() => {
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    const onChange = () => {
+      try {
+        if (localStorage.getItem(STORAGE_KEY)) return;
+      } catch {
+        return;
+      }
+      const next = getSystemTheme();
+      setTheme(next);
+      applyTheme(next);
+    };
+    media.addEventListener("change", onChange);
+    return () => media.removeEventListener("change", onChange);
   }, []);
 
   return (

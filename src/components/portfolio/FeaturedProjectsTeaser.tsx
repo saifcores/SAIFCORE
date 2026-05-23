@@ -44,7 +44,7 @@ export async function FeaturedProjectsTeaser() {
               <Reveal key={item.title} delay={i * 80}>
                 <Link
                   href="/systems"
-                  className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 transition duration-300 hover:-translate-y-1 hover:border-white/12 hover:bg-[var(--bg-elevated)]/40"
+                  className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 transition duration-300 hover:-translate-y-1 hover:border-[var(--border-hover)] hover:bg-[var(--bg-elevated)]/40"
                 >
                   <div
                     className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-[#2563EB] to-[#10B981] opacity-0 transition duration-300 group-hover:opacity-100"
@@ -53,7 +53,7 @@ export async function FeaturedProjectsTeaser() {
 
                   <div className="relative flex aspect-[16/9] items-center justify-center border-b border-[var(--border-subtle)] bg-gradient-to-br from-blue-500/8 via-[var(--bg-base)]/80 to-emerald-500/8">
                     <div className="bg-grid absolute inset-0 opacity-40" />
-                    <div className="relative w-[88%] max-w-sm rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/80 p-4 shadow-lg backdrop-blur-sm transition group-hover:border-white/15">
+                    <div className="relative w-[88%] max-w-sm rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/80 p-4 shadow-lg backdrop-blur-sm transition group-hover:border-[var(--border-hover)]">
                       <div className="flex gap-1.5">
                         <span className="h-2 w-2 rounded-full bg-red-400/70" />
                         <span className="h-2 w-2 rounded-full bg-amber-400/70" />
@@ -136,7 +136,7 @@ export async function FeaturedProjectsTeaser() {
           <div className="mt-10 flex justify-center">
             <Link
               href="/systems"
-              className="inline-flex items-center gap-2 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 px-6 py-3 text-sm font-semibold text-[var(--text-secondary)] transition hover:border-white/15 hover:text-[var(--text-primary)]"
+              className="inline-flex items-center gap-2 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 px-6 py-3 text-sm font-semibold text-[var(--text-secondary)] transition hover:border-[var(--border-hover)] hover:text-[var(--text-primary)]"
             >
               {t("viewAll")}
               <span aria-hidden>→</span>

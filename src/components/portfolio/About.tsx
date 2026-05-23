@@ -116,7 +116,7 @@ export async function About({ extended = false }: Props) {
                   {engagements.map((item) => (
                     <article
                       key={item.title}
-                      className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 p-6 transition hover:border-white/12"
+                      className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 p-6 transition hover:border-[var(--border-hover)]"
                     >
                       <h3 className="font-semibold text-[var(--text-primary)]">
                         {item.title}

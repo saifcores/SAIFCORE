@@ -80,9 +80,9 @@ function BlockRenderer({
       );
     case "code":
       return (
-        <figure className="overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-[#0a0d14] shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
+        <figure className="code-block overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-code)] shadow-[inset_0_1px_0_var(--border-code)]">
           {block.title ? (
-            <figcaption className="border-b border-white/[0.06] px-4 py-2.5 text-xs font-medium text-[var(--text-muted)]">
+            <figcaption className="border-b border-[var(--border-code)] px-4 py-2.5 text-xs font-medium text-[var(--text-muted)]">
               {t(block.title)}
             </figcaption>
           ) : null}

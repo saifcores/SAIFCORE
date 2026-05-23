@@ -174,7 +174,7 @@ export function Navbar() {
             </button>
             {moreOpen ? (
               <div
-                className="absolute right-0 top-full z-50 mt-2 min-w-[180px] rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-base)]/98 py-1.5 shadow-xl backdrop-blur-xl"
+                className="absolute right-0 top-full z-50 mt-2 min-w-[180px] rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)] py-1.5 shadow-[var(--shadow-dropdown)] backdrop-blur-xl"
                 role="menu"
               >
                 {moreNav.map((l) => (
@@ -204,7 +204,7 @@ export function Navbar() {
           </BookCallLink>
           <button
             type="button"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/50 text-[var(--text-primary)] transition hover:border-white/15 lg:hidden"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/50 text-[var(--text-primary)] transition hover:border-[var(--border-hover)] lg:hidden"
             onClick={() => setOpen((o) => !o)}
             aria-expanded={open}
             aria-controls={panelId}
@@ -249,14 +249,14 @@ export function Navbar() {
         <>
           <button
             type="button"
-            className="fixed inset-0 top-16 z-40 bg-black/60 backdrop-blur-[2px] lg:hidden"
+            className="fixed inset-0 top-16 z-40 bg-[var(--overlay-scrim)] backdrop-blur-[2px] lg:hidden"
             aria-hidden
             tabIndex={-1}
             onClick={close}
           />
           <div
             id={panelId}
-            className="fixed inset-x-0 top-16 z-50 max-h-[calc(100dvh-4rem)] overflow-y-auto border-b border-[var(--border-subtle)] bg-[var(--bg-base)]/98 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.6)] backdrop-blur-xl lg:hidden"
+            className="fixed inset-x-0 top-16 z-50 max-h-[calc(100dvh-4rem)] overflow-y-auto border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)] shadow-[var(--shadow-panel)] backdrop-blur-xl lg:hidden"
             role="dialog"
             aria-modal="true"
             aria-label={t("siteNavigation")}

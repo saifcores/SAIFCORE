@@ -17,13 +17,13 @@ export async function Hero() {
       >
         {t("ctaPrimary")}
       </Link>
-      <BookCallLink className="inline-flex h-12 items-center justify-center rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/50 px-8 text-sm font-semibold text-[var(--text-primary)] backdrop-blur-sm transition hover:border-white/15 hover:bg-[var(--bg-elevated)] active:scale-[0.98]">
+      <BookCallLink className="btn-outline inline-flex h-12 items-center justify-center rounded-xl px-8 text-sm font-semibold">
         {t("ctaBookCall")}
       </BookCallLink>
       {resumeUrl ? (
         <a
           href={resumeUrl}
-          className="inline-flex h-12 items-center justify-center rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/50 px-8 text-sm font-semibold text-[var(--text-primary)] backdrop-blur-sm transition hover:border-white/15 hover:bg-[var(--bg-elevated)] active:scale-[0.98]"
+          className="btn-outline inline-flex h-12 items-center justify-center rounded-xl px-8 text-sm font-semibold"
           {...(isLocalResume(resumeUrl)
             ? { download: "SAIFCORE-resume.pdf" }
             : { target: "_blank", rel: "noopener noreferrer" })}
@@ -33,7 +33,7 @@ export async function Hero() {
       ) : (
         <Link
           href="/#contact"
-          className="inline-flex h-12 items-center justify-center rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/50 px-8 text-sm font-semibold text-[var(--text-primary)] backdrop-blur-sm transition hover:border-white/15 hover:bg-[var(--bg-elevated)] active:scale-[0.98]"
+          className="btn-outline inline-flex h-12 items-center justify-center rounded-xl px-8 text-sm font-semibold"
         >
           {t("ctaResume")}
         </Link>
@@ -45,11 +45,11 @@ export async function Hero() {
     <section className="relative overflow-hidden border-b border-[var(--border-subtle)] px-4 pb-28 pt-20 sm:px-6 sm:pb-36 sm:pt-28 lg:px-8">
       <div className="bg-grid pointer-events-none absolute inset-0 opacity-100" />
       <div
-        className="pointer-events-none absolute -left-1/3 top-0 h-[600px] w-[70%] rounded-full bg-gradient-to-br from-blue-600/20 via-blue-500/8 to-transparent blur-3xl animate-float-glow"
+        className="ambient-glow pointer-events-none absolute -left-1/3 top-0 h-[600px] w-[70%] rounded-full bg-gradient-to-br from-blue-600/20 via-blue-500/8 to-transparent blur-3xl animate-float-glow"
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute -right-1/4 bottom-0 h-[500px] w-[55%] rounded-full bg-gradient-to-tl from-emerald-500/12 via-emerald-400/5 to-transparent blur-3xl animate-float-glow"
+        className="ambient-glow pointer-events-none absolute -right-1/4 bottom-0 h-[500px] w-[55%] rounded-full bg-gradient-to-tl from-emerald-500/12 via-emerald-400/5 to-transparent blur-3xl animate-float-glow"
         style={{ animationDelay: "-5s" }}
         aria-hidden
       />

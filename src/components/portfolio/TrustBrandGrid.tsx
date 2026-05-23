@@ -12,7 +12,7 @@ export function TrustBrandGrid({ brands }: Props) {
       {brands.map(({ name, logo }, i) => (
         <li key={name}>
           <Reveal delay={i * 80}>
-            <figure className="group relative flex h-full flex-col items-center gap-3 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 px-3 py-5 text-center transition duration-300 hover:-translate-y-1 hover:border-white/12 hover:bg-[var(--bg-elevated)]/50">
+            <figure className="group relative flex h-full flex-col items-center gap-3 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 px-3 py-5 text-center transition duration-300 hover:-translate-y-1 hover:border-[var(--border-hover)] hover:bg-[var(--bg-elevated)]/50">
               <div className="trust-logo-drift relative flex min-h-[44px] w-full max-w-[180px] items-center justify-center sm:min-h-[52px]">
                 <div className="relative flex h-10 w-full items-center justify-center overflow-hidden rounded-xl sm:h-12">
                   <Image

@@ -57,7 +57,7 @@ function CompanyLogo({ logo, company, featured = false }: CompanyLogoProps) {
       className={`relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border shadow-sm transition duration-300 ${
         featured
           ? "h-[4.5rem] w-[4.5rem] border-blue-500/35 bg-[var(--bg-base)]/80 shadow-blue-500/10 sm:h-20 sm:w-20"
-          : "h-16 w-16 border-[var(--border-subtle)] bg-[var(--bg-elevated)]/60 group-hover:border-white/15 group-hover:bg-[var(--bg-elevated)]/80 sm:h-[4.5rem] sm:w-[4.5rem]"
+          : "h-16 w-16 border-[var(--border-subtle)] bg-[var(--bg-elevated)]/60 group-hover:border-[var(--border-hover)] group-hover:bg-[var(--bg-elevated)]/80 sm:h-[4.5rem] sm:w-[4.5rem]"
       }`}
     >
       {featured ? (
@@ -142,7 +142,7 @@ function ExperienceCard({
             className={`relative min-w-0 flex-1 overflow-hidden rounded-2xl border p-6 transition duration-300 sm:p-8 ${
               isCurrent
                 ? "border-blue-500/25 bg-gradient-to-br from-blue-500/[0.07] via-[var(--bg-elevated)]/25 to-[var(--bg-elevated)]/10 shadow-[0_0_0_1px_rgba(59,130,246,0.06)]"
-                : "border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 hover:border-white/12 hover:bg-[var(--bg-elevated)]/35 hover:shadow-lg hover:shadow-black/5"
+                : "border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 hover:border-[var(--border-hover)] hover:bg-[var(--bg-elevated)]/35 hover:shadow-lg hover:shadow-[var(--shadow-card)]"
             }`}
             aria-labelledby={titleId}
           >
@@ -234,7 +234,7 @@ function ExperienceCard({
                         className={`inline-block rounded-full border px-3 py-1 text-xs font-medium transition duration-300 ${
                           isCurrent
                             ? "border-blue-500/20 bg-blue-500/5 text-blue-200/90"
-                            : "border-[var(--border-subtle)] bg-[var(--bg-base)]/40 text-[var(--text-muted)] group-hover:border-white/10 group-hover:text-[var(--text-secondary)]"
+                            : "border-[var(--border-subtle)] bg-[var(--bg-base)]/40 text-[var(--text-muted)] group-hover:border-[var(--border-hover)] group-hover:text-[var(--text-secondary)]"
                         }`}
                       >
                         {tech}
@@ -302,7 +302,7 @@ export function ExperienceTimeline({
             <button
               type="button"
               onClick={() => setExpanded(true)}
-              className="inline-flex items-center gap-2 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/40 px-6 py-3 text-sm font-semibold text-[var(--text-secondary)] transition hover:border-white/15 hover:bg-[var(--bg-elevated)]/60 hover:text-[var(--text-primary)]"
+              className="inline-flex items-center gap-2 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/40 px-6 py-3 text-sm font-semibold text-[var(--text-secondary)] transition hover:border-[var(--border-hover)] hover:bg-[var(--bg-elevated)]/60 hover:text-[var(--text-primary)]"
             >
               {showMoreLabel}
               <span aria-hidden>↓</span>

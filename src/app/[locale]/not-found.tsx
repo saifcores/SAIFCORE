@@ -12,7 +12,7 @@ export default async function NotFound() {
     <div className="relative flex min-h-[70vh] flex-col items-center justify-center overflow-hidden px-4 py-16">
       <div className="bg-grid pointer-events-none absolute inset-0 opacity-40" />
       <div
-        className="pointer-events-none absolute -top-24 left-1/2 h-72 w-[min(90vw,480px)] -translate-x-1/2 rounded-full bg-gradient-to-br from-blue-600/20 via-blue-500/8 to-transparent blur-3xl"
+        className="ambient-glow pointer-events-none absolute -top-24 left-1/2 h-72 w-[min(90vw,480px)] -translate-x-1/2 rounded-full bg-gradient-to-br from-blue-600/20 via-blue-500/8 to-transparent blur-3xl"
         aria-hidden
       />
 
@@ -35,7 +35,7 @@ export default async function NotFound() {
           </Link>
           <Link
             href="/#contact"
-            className="inline-flex h-12 items-center justify-center rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/50 px-8 text-sm font-semibold text-[var(--text-primary)] backdrop-blur-sm transition hover:border-white/15 active:scale-[0.98]"
+            className="btn-outline inline-flex h-12 items-center justify-center rounded-xl px-8 text-sm font-semibold"
           >
             {t("contact")}
           </Link>

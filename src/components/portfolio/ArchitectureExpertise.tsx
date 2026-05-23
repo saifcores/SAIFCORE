@@ -26,7 +26,7 @@ export async function ArchitectureExpertise() {
               return (
                 <span
                   key={`${tag.label}-${i}`}
-                  className={`rounded-full border px-4 py-2 text-sm font-medium transition hover:border-white/15 hover:text-[var(--text-primary)] ${
+                  className={`rounded-full border px-4 py-2 text-sm font-medium transition hover:border-[var(--border-hover)] hover:text-[var(--text-primary)] ${
                     highlight
                       ? "border-blue-500/30 bg-gradient-to-r from-blue-500/12 to-emerald-500/8 text-[var(--text-primary)]"
                       : "border-[var(--border-subtle)] text-[var(--text-secondary)]"

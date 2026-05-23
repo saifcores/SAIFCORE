@@ -208,7 +208,7 @@ export async function ArchitectureSection() {
                     return (
                       <span
                         key={tech}
-                        className={`rounded-full border px-3.5 py-1.5 text-xs font-medium transition hover:border-white/15 ${
+                        className={`rounded-full border px-3.5 py-1.5 text-xs font-medium transition hover:border-[var(--border-hover)] ${
                           isPrimary
                             ? "border-blue-500/30 bg-gradient-to-r from-blue-500/12 to-emerald-500/8 text-[var(--text-primary)]"
                             : "border-[var(--border-subtle)] text-[var(--text-secondary)]"

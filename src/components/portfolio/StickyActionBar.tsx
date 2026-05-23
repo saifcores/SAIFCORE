@@ -33,7 +33,7 @@ export function StickyActionBar() {
         </BookCallLink>
         <Link
           href="/#contact"
-          className="inline-flex min-h-12 min-w-0 flex-1 items-center justify-center rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/80 px-3 text-sm font-semibold text-[var(--text-primary)] transition hover:border-white/15 active:scale-[0.98]"
+          className="btn-outline inline-flex min-h-12 min-w-0 flex-1 items-center justify-center rounded-xl bg-[var(--bg-elevated)]/80 px-3 text-sm font-semibold"
         >
           {t("contact")}
         </Link>

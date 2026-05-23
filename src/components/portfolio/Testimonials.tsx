@@ -37,7 +37,7 @@ export function Testimonials({ title, subtitle, items }: Props) {
             <MotionReveal key={item.company} delay={i * 90}>
               <motion.blockquote
                 whileHover={reduce ? undefined : { y: -4 }}
-                className="flex h-full flex-col rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 p-8 transition hover:border-white/12"
+                className="flex h-full flex-col rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 p-8 transition hover:border-[var(--border-hover)]"
               >
                 <Quote
                   className="h-8 w-8 text-blue-400/40"

@@ -29,7 +29,7 @@ export async function Trust() {
                   className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
                     isHighlight
                       ? "border-blue-500/30 bg-gradient-to-r from-blue-500/12 to-emerald-500/8 text-[var(--text-primary)]"
-                      : "border-[var(--border-subtle)] text-[var(--text-secondary)] hover:border-white/15 hover:text-[var(--text-primary)]"
+                      : "border-[var(--border-subtle)] text-[var(--text-secondary)] hover:border-[var(--border-hover)] hover:text-[var(--text-primary)]"
                   }`}
                 >
                   {industry}

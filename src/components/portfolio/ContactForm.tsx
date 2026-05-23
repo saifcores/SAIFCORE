@@ -127,7 +127,7 @@ export function ContactForm({
 
       <aside className="flex flex-col gap-6">
         <div className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-base)]/50 p-6 backdrop-blur-sm">
-          <BookCallLink className="inline-flex h-12 w-full items-center justify-center rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/60 px-6 text-sm font-semibold text-[var(--text-primary)] transition hover:border-white/15">
+          <BookCallLink className="inline-flex h-12 w-full items-center justify-center rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/60 px-6 text-sm font-semibold text-[var(--text-primary)] transition hover:border-[var(--border-hover)]">
             {bookCall}
           </BookCallLink>
           <p className="mt-3 text-center text-xs text-[var(--text-muted)]">
