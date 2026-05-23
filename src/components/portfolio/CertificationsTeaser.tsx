@@ -1,13 +1,24 @@
 import { getMessages, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { certificationsMeta } from "@/data/certifications";
-import { CertificationIcon } from "./CertificationIcon";
+import { getTeaserCertifications } from "@/data/certifications";
+import {
+  CertificationIcon,
+  CertificationStatusPill,
+  getStatusLabelKey,
+} from "./CertificationIcon";
 import { MotionReveal } from "@/components/portfolio/motion/MotionReveal";
 
 export async function CertificationsTeaser() {
   const t = await getTranslations("certifications");
   const messages = await getMessages();
-  const featured = certificationsMeta.filter((c) => c.featured);
+  const teaserItems = getTeaserCertifications();
+
+  if (teaserItems.length === 0) {
+    return null;
+  }
+
+  const statusLabel = (status: (typeof teaserItems)[number]["status"]) =>
+    t(getStatusLabelKey(status));
 
   return (
     <section
@@ -36,21 +47,31 @@ export async function CertificationsTeaser() {
         </MotionReveal>
 
         <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {featured.map((cert, i) => {
+          {teaserItems.map((cert, i) => {
             const copy = messages.certifications.items[cert.id];
             return (
               <li key={cert.id}>
                 <MotionReveal delay={i * 50}>
-                  <div className="card-interactive flex h-full items-center gap-3 rounded-2xl bg-[var(--bg-elevated)]/20 p-4">
-                    <CertificationIcon kind={cert.kind} />
-                    <div className="min-w-0">
-                      <p className="text-sm font-semibold leading-snug text-[var(--text-primary)]">
-                        {copy.name}
-                      </p>
-                      <p className="mt-0.5 truncate text-[11px] text-[var(--text-muted)]">
-                        {copy.issuer}
-                      </p>
+                  <div className="card-interactive flex h-full flex-col gap-3 rounded-2xl bg-[var(--bg-elevated)]/20 p-4">
+                    <div className="flex items-center gap-3">
+                      <CertificationIcon
+                        kind={cert.kind}
+                        status={cert.status}
+                        statusLabel={statusLabel(cert.status)}
+                      />
+                      <div className="min-w-0 flex-1">
+                        <p className="text-sm font-semibold leading-snug text-[var(--text-primary)]">
+                          {copy.name}
+                        </p>
+                        <p className="mt-0.5 truncate text-[11px] text-[var(--text-muted)]">
+                          {copy.issuer}
+                        </p>
+                      </div>
                     </div>
+                    <CertificationStatusPill
+                      status={cert.status}
+                      label={statusLabel(cert.status)}
+                    />
                   </div>
                 </MotionReveal>
               </li>

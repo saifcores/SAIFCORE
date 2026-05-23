@@ -2,6 +2,9 @@
 export const certificationIds = [
   "awsSolutionsArchitect",
   "awsDeveloper",
+  "comptiaSecurityPlus",
+  "azureAiEngineer",
+  "confluentKafkaDeveloper",
   "kubernetes",
   "docker",
   "springProfessional",
@@ -13,18 +16,23 @@ export type CertificationId = (typeof certificationIds)[number];
 
 export type CertificationKind =
   | "aws"
+  | "security"
+  | "azure"
+  | "kafka"
   | "kubernetes"
   | "docker"
   | "spring"
   | "ai"
   | "domain";
 
+/** Credential progress — edit per cert in `certificationsMeta`. */
+export type CertificationStatus = "obtained" | "inProgress" | "notStarted";
+
 export type CertificationMeta = {
   id: CertificationId;
   kind: CertificationKind;
-  /** Shown on homepage teaser */
-  featured: boolean;
-  /** AWS Credly / issuer verify URL — add when available */
+  status: CertificationStatus;
+  /** Credly / issuer verify URL — add when available */
   verifyUrl?: string;
 };
 
@@ -32,37 +40,52 @@ export const certificationsMeta: CertificationMeta[] = [
   {
     id: "awsSolutionsArchitect",
     kind: "aws",
-    featured: false,
+    status: "notStarted",
   },
   {
     id: "awsDeveloper",
     kind: "aws",
-    featured: false,
+    status: "notStarted",
+  },
+  {
+    id: "comptiaSecurityPlus",
+    kind: "security",
+    status: "notStarted",
+  },
+  {
+    id: "azureAiEngineer",
+    kind: "azure",
+    status: "notStarted",
+  },
+  {
+    id: "confluentKafkaDeveloper",
+    kind: "kafka",
+    status: "notStarted",
   },
   {
     id: "kubernetes",
     kind: "kubernetes",
-    featured: false,
+    status: "notStarted",
   },
   {
     id: "docker",
     kind: "docker",
-    featured: false,
+    status: "notStarted",
   },
   {
     id: "springProfessional",
     kind: "spring",
-    featured: false,
+    status: "notStarted",
   },
   {
     id: "aiIntegration",
     kind: "ai",
-    featured: false,
+    status: "notStarted",
   },
   {
     id: "paymentSystems",
     kind: "domain",
-    featured: false,
+    status: "notStarted",
   },
 ];
 
@@ -70,4 +93,9 @@ export function getCertificationMeta(id: CertificationId): CertificationMeta {
   const meta = certificationsMeta.find((c) => c.id === id);
   if (!meta) throw new Error(`Unknown certification id: ${id}`);
   return meta;
+}
+
+/** Homepage teaser — certified + actively pursuing (excludes planned only). */
+export function getTeaserCertifications(): CertificationMeta[] {
+  return certificationsMeta.filter((cert) => cert.status !== "notStarted");
 }

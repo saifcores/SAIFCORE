@@ -3,9 +3,15 @@ import {
   certificationIds,
   getCertificationMeta,
   type CertificationId,
+  type CertificationStatus,
 } from "@/data/certifications";
 import type { AppMessages } from "@/types/messages";
-import { CertificationIcon } from "./CertificationIcon";
+import {
+  CertificationIcon,
+  CertificationStatusPill,
+  certificationCardClassName,
+  getStatusLabelKey,
+} from "./CertificationIcon";
 import { Reveal } from "./Reveal";
 
 type ItemCopy = AppMessages["certifications"]["items"][CertificationId];
@@ -28,6 +34,9 @@ export async function CertificationsSection({ compact = false }: Props) {
   const formal = items.filter((item) => item.group === "formal");
   const expertise = items.filter((item) => item.group === "expertise");
 
+  const statusLabel = (status: CertificationStatus) =>
+    t(getStatusLabelKey(status));
+
   return (
     <section
       id="certifications"
@@ -49,6 +58,22 @@ export async function CertificationsSection({ compact = false }: Props) {
             <p className="mt-4 max-w-2xl text-[var(--text-secondary)]">
               {t("intro")}
             </p>
+            <ul className="mt-6 flex flex-wrap gap-2">
+              {(
+                [
+                  "obtained",
+                  "inProgress",
+                  "notStarted",
+                ] as CertificationStatus[]
+              ).map((status) => (
+                <li key={status}>
+                  <CertificationStatusPill
+                    status={status}
+                    label={statusLabel(status)}
+                  />
+                </li>
+              ))}
+            </ul>
           </Reveal>
         ) : null}
 
@@ -57,12 +82,14 @@ export async function CertificationsSection({ compact = false }: Props) {
             label={t("formalLabel")}
             items={formal}
             verifyLabel={t("verify")}
+            statusLabel={statusLabel}
             delay={compact ? 0 : 80}
           />
           <CertGroup
             label={t("expertiseLabel")}
             items={expertise}
             verifyLabel={t("verify")}
+            statusLabel={statusLabel}
             delay={compact ? 80 : 160}
           />
         </div>
@@ -75,6 +102,7 @@ function CertGroup({
   label,
   items,
   verifyLabel,
+  statusLabel,
   delay,
 }: {
   label: string;
@@ -82,10 +110,12 @@ function CertGroup({
     ItemCopy & {
       id: CertificationId;
       kind: ReturnType<typeof getCertificationMeta>["kind"];
+      status: CertificationStatus;
       verifyUrl?: string;
     }
   >;
   verifyLabel: string;
+  statusLabel: (status: CertificationStatus) => string;
   delay: number;
 }) {
   if (items.length === 0) return null;
@@ -98,19 +128,31 @@ function CertGroup({
       <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((item) => (
           <li key={item.id}>
-            <article className="card-interactive flex h-full gap-4 rounded-2xl bg-[var(--bg-elevated)]/20 p-5">
-              <CertificationIcon kind={item.kind} />
+            <article
+              className={`card-interactive flex h-full gap-4 rounded-2xl bg-[var(--bg-elevated)]/20 p-5 ${certificationCardClassName(item.status)}`}
+            >
+              <CertificationIcon
+                kind={item.kind}
+                status={item.status}
+                statusLabel={statusLabel(item.status)}
+              />
               <div className="min-w-0 flex-1">
-                <h3 className="font-semibold leading-snug text-[var(--text-primary)]">
-                  {item.name}
-                </h3>
+                <div className="flex flex-wrap items-start justify-between gap-2">
+                  <h3 className="font-semibold leading-snug text-[var(--text-primary)]">
+                    {item.name}
+                  </h3>
+                  <CertificationStatusPill
+                    status={item.status}
+                    label={statusLabel(item.status)}
+                  />
+                </div>
                 <p className="mt-0.5 text-xs font-medium text-[var(--text-muted)]">
                   {item.issuer}
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">
                   {item.description}
                 </p>
-                {item.verifyUrl ? (
+                {item.verifyUrl && item.status === "obtained" ? (
                   <a
                     href={item.verifyUrl}
                     target="_blank"

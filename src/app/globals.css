@@ -313,6 +313,26 @@ nav,
   background: var(--bg-elevated);
 }
 
+@keyframes cert-status-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(245, 158, 11, 0);
+  }
+}
+
+.cert-status-pulse {
+  animation: cert-status-pulse 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cert-status-pulse {
+    animation: none;
+  }
+}
+
 /* Subtle grid background */
 .bg-grid {
   background-image:

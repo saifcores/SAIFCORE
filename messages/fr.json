@@ -502,53 +502,84 @@
     "title": "Certifications",
     "subtitle": "Certifications et expertise éprouvée en production",
     "teaserHeading": "Une expertise validée et vérifiable",
-    "intro": "Certifications AWS officielles et maîtrise opérationnelle des plateformes cloud-native, de l'écosystème Spring, de l'intégration IA et des systèmes de paiement — le socle des systèmes que je livre en mission.",
+    "intro": "Certifications cloud, sécurité, IA et streaming d'événements — plus une expertise opérationnelle Spring, Kubernetes et systèmes de paiement pour la fintech en production.",
     "formalLabel": "Certifications industrie",
     "expertiseLabel": "Expertise professionnelle",
     "viewAll": "Voir toutes les certifications",
-    "verify": "Vérifier sur AWS",
+    "verify": "Vérifier la certification",
+    "statusObtained": "Obtenue",
+    "statusInProgress": "En cours",
+    "statusNotStarted": "Prévue",
     "items": {
       "awsSolutionsArchitect": {
         "name": "AWS Certified Solutions Architect — Associate",
         "issuer": "Amazon Web Services",
         "description": "Conception de charges résilientes, sécurisées et optimisées sur AWS — alignée avec l'architecture de plateformes fintech et APIs en production.",
-        "group": "formal"
+        "group": "formal",
+        "featured": false
       },
       "awsDeveloper": {
         "name": "AWS Certified Developer — Associate",
         "issuer": "Amazon Web Services",
         "description": "Construction et exploitation de services cloud-native, CI/CD et observabilité AWS pour backends à fort débit.",
-        "group": "formal"
+        "group": "formal",
+        "featured": false
+      },
+      "comptiaSecurityPlus": {
+        "name": "CompTIA Security+",
+        "issuer": "CompTIA",
+        "description": "Pratiques de sécurité pour systèmes en production — gestion des risques, identité, cryptographie et architecture sécurisée pour workloads fintech régulés.",
+        "group": "formal",
+        "featured": false
+      },
+      "azureAiEngineer": {
+        "name": "Microsoft Certified: Azure AI Engineer Associate (AI-102)",
+        "issuer": "Microsoft",
+        "description": "Conception et déploiement de solutions IA sur Azure — services cognitifs, intégration Azure OpenAI et pipelines ML prêts pour la production.",
+        "group": "formal",
+        "featured": false
+      },
+      "confluentKafkaDeveloper": {
+        "name": "Confluent Certified Developer for Apache Kafka",
+        "issuer": "Confluent",
+        "description": "Systèmes event-driven avec Kafka — producteurs, consommateurs, schémas et stream processing pour pipelines de paiement et grands livres.",
+        "group": "formal",
+        "featured": false
       },
       "kubernetes": {
-        "name": "Kubernetes",
+        "name": "Certified Kubernetes Application Developer (CKAD)",
         "issuer": "Plateformes cloud-native",
         "description": "Orchestration en production — déploiements, réseau, secrets et patterns de fiabilité pour systèmes de paiement distribués.",
-        "group": "expertise"
+        "group": "expertise",
+        "featured": false
       },
       "docker": {
-        "name": "Docker",
+        "name": "Docker Certified Associate",
         "issuer": "Conteneurs",
         "description": "Pipelines d'images, environnements de dev containerisés et services intégrés au CI/CD et à Kubernetes.",
-        "group": "expertise"
+        "group": "expertise",
+        "featured": false
       },
       "springProfessional": {
-        "name": "Spring Professional",
+        "name": "Spring Certified Professional",
         "issuer": "Écosystème Spring",
         "description": "Livraison Java enterprise avec Spring Boot, Security et Cloud — base de la plupart des backends bancaires et fintech que je construis.",
-        "group": "expertise"
+        "group": "expertise",
+        "featured": false
       },
       "aiIntegration": {
         "name": "Intégration IA",
         "issuer": "Ingénierie appliquée",
         "description": "Intégration LLM et automatisation dans les produits — APIs maîtrisées, observabilité et connexion pragmatique aux backends existants.",
-        "group": "expertise"
+        "group": "expertise",
+        "featured": false
       },
       "paymentSystems": {
         "name": "Expertise systèmes de paiement",
         "issuer": "Spécialisation métier",
         "description": "Rails de paiement de bout en bout — mobile money, idempotence, règlement, réconciliation et intégrations partenaires en conditions réelles.",
-        "group": "expertise"
+        "group": "expertise",
+        "featured": false
       }
     }
   },
