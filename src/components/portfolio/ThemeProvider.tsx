@@ -5,75 +5,108 @@ import {
   useCallback,
   useContext,
   useEffect,
+  useMemo,
   useState,
 } from "react";
 
-type Theme = "dark" | "light";
+export type ThemePreference = "light" | "dark" | "system";
+export type ResolvedTheme = "light" | "dark";
 
 const STORAGE_KEY = "theme";
 
 const ThemeContext = createContext<{
-  theme: Theme;
-  toggle: () => void;
+  preference: ThemePreference;
+  theme: ResolvedTheme;
+  setPreference: (next: ThemePreference) => void;
 } | null>(null);
 
-/**
- * Reads the theme that was already applied to <html> by the inline FOUT-
- * prevention script in layout.tsx. Falls back to dark if not yet set.
- */
-function getInitialTheme(): Theme {
-  if (typeof window === "undefined") return "dark";
-  const applied = document.documentElement.dataset.theme;
-  if (applied === "light" || applied === "dark") return applied;
-  return "dark";
-}
-
-function applyTheme(next: Theme) {
-  document.documentElement.dataset.theme = next;
-  try {
-    localStorage.setItem(STORAGE_KEY, next);
-  } catch {
-    // localStorage unavailable (private browsing, storage quota, etc.)
-  }
-}
-
-function getSystemTheme(): Theme {
+function getSystemTheme(): ResolvedTheme {
   return window.matchMedia("(prefers-color-scheme: dark)").matches
     ? "dark"
     : "light";
 }
 
-export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>(getInitialTheme);
+function readStoredPreference(): ThemePreference {
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored === "light" || stored === "dark" || stored === "system") {
+      return stored;
+    }
+  } catch {
+    // localStorage unavailable
+  }
+  return "system";
+}
 
-  const toggle = useCallback(() => {
-    setTheme((current) => {
-      const next = current === "dark" ? "light" : "dark";
-      applyTheme(next);
-      return next;
+function resolveTheme(preference: ThemePreference): ResolvedTheme {
+  if (preference === "system") return getSystemTheme();
+  return preference;
+}
+
+function applyTheme(preference: ThemePreference) {
+  const resolved = resolveTheme(preference);
+  document.documentElement.dataset.theme = resolved;
+  document.documentElement.dataset.themePreference = preference;
+  try {
+    localStorage.setItem(STORAGE_KEY, preference);
+  } catch {
+    // localStorage unavailable
+  }
+}
+
+function getInitialState(): {
+  preference: ThemePreference;
+  theme: ResolvedTheme;
+} {
+  if (typeof window === "undefined") {
+    return { preference: "system", theme: "dark" };
+  }
+
+  const preference = readStoredPreference();
+  const applied = document.documentElement.dataset.theme;
+  const theme: ResolvedTheme =
+    applied === "light" || applied === "dark"
+      ? applied
+      : resolveTheme(preference);
+
+  return { preference, theme };
+}
+
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
+  const [state, setState] = useState(getInitialState);
+
+  const setPreference = useCallback((next: ThemePreference) => {
+    applyTheme(next);
+    setState({
+      preference: next,
+      theme: resolveTheme(next),
     });
   }, []);
 
   useEffect(() => {
     const media = window.matchMedia("(prefers-color-scheme: dark)");
     const onChange = () => {
-      try {
-        if (localStorage.getItem(STORAGE_KEY)) return;
-      } catch {
-        return;
-      }
-      const next = getSystemTheme();
-      setTheme(next);
-      applyTheme(next);
+      const preference = readStoredPreference();
+      if (preference !== "system") return;
+      const resolved = getSystemTheme();
+      document.documentElement.dataset.theme = resolved;
+      setState({ preference: "system", theme: resolved });
     };
     media.addEventListener("change", onChange);
     return () => media.removeEventListener("change", onChange);
   }, []);
 
+  const value = useMemo(
+    () => ({
+      preference: state.preference,
+      theme: state.theme,
+      setPreference,
+    }),
+    [setPreference, state.preference, state.theme],
+  );
+
   return (
-    <ThemeContext.Provider value={{ theme, toggle }}>
-      {children}
-    </ThemeContext.Provider>
+    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
   );
 }
 
@@ -81,4 +114,13 @@ export function useTheme() {
   const ctx = useContext(ThemeContext);
   if (!ctx) throw new Error("useTheme must be used within ThemeProvider");
   return ctx;
+}
+
+/** @deprecated Use `useTheme().setPreference` — kept for any legacy callers. */
+export function useThemeToggle() {
+  const { theme, setPreference } = useTheme();
+  return {
+    theme,
+    toggle: () => setPreference(theme === "dark" ? "light" : "dark"),
+  };
 }

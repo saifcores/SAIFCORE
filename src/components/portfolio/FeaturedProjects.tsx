@@ -40,7 +40,7 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
                 <article className="group relative overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 transition duration-300 hover:border-[var(--border-hover)] hover:bg-[var(--bg-elevated)]/50">
                   {/* Left accent line */}
                   <div
-                    className="absolute inset-y-0 left-0 w-[3px] rounded-l-2xl bg-gradient-to-b from-[#2563EB] to-[#10B981] opacity-0 transition duration-300 group-hover:opacity-100"
+                    className="absolute inset-y-0 left-0 w-[3px] rounded-l-2xl bg-gradient-to-b from-[var(--accent-blue)] to-[var(--accent-emerald)] opacity-0 transition duration-300 group-hover:opacity-100"
                     aria-hidden
                   />
 
@@ -218,7 +218,7 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
             </div>
             <Link
               href="/#contact"
-              className="inline-flex shrink-0 items-center justify-center rounded-xl bg-gradient-to-r from-[#2563EB] to-[#10B981] px-8 py-3 text-sm font-semibold text-white shadow-[0_0_24px_-6px_rgba(37,99,235,0.45)] transition hover:brightness-110 active:scale-[0.98]"
+              className="btn-primary inline-flex shrink-0 items-center justify-center px-8 py-3 text-sm"
             >
               {t("bridgeCta")}
             </Link>

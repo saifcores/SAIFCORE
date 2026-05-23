@@ -48,7 +48,7 @@ export async function AboutTeaser() {
 
             <Link
               href="/about"
-              className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-blue-400 transition hover:text-blue-300"
+              className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-accent transition hover:text-[var(--accent-blue-light)]"
             >
               {t("readMore")}
               <span aria-hidden>→</span>
@@ -62,7 +62,7 @@ export async function AboutTeaser() {
                 aria-hidden
               />
               <div className="glass relative overflow-hidden rounded-2xl p-8 text-center">
-                <div className="mx-auto h-24 w-24 overflow-hidden rounded-xl bg-gradient-to-br from-[#2563EB] to-[#10B981] shadow-lg">
+                <div className="mx-auto h-24 w-24 overflow-hidden rounded-xl bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-emerald)] shadow-lg">
                   <Image
                     src="/profile.png"
                     alt={displayName}

@@ -40,7 +40,7 @@ export function Testimonials({ title, subtitle, items }: Props) {
                 className="flex h-full flex-col rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 p-8 transition hover:border-[var(--border-hover)]"
               >
                 <Quote
-                  className="h-8 w-8 text-blue-400/40"
+                  className="h-8 w-8 text-accent/40"
                   strokeWidth={1.2}
                   aria-hidden
                 />
@@ -54,7 +54,7 @@ export function Testimonials({ title, subtitle, items }: Props) {
                   <p className="mt-1 text-xs text-[var(--text-muted)]">
                     {item.role}
                   </p>
-                  <p className="mt-0.5 text-xs font-medium text-blue-400/90">
+                  <p className="mt-0.5 text-xs font-medium text-accent/90">
                     {item.company}
                   </p>
                 </footer>

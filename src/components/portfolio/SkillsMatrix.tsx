@@ -3,7 +3,7 @@ import { Reveal } from "./Reveal";
 
 const GROUP_STYLES = [
   {
-    accent: "text-blue-400",
+    accent: "text-accent",
     bg: "from-blue-500/10 to-blue-500/4",
     border: "border-blue-500/20",
     highlight:

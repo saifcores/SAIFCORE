@@ -97,7 +97,7 @@ export default async function ArticlesPage({ params }: Props) {
                           {formatDate(article.publishedAt)}
                         </time>
                       </div>
-                      <h2 className="mt-4 text-xl font-semibold tracking-tight text-[var(--text-primary)] transition group-hover:text-blue-400">
+                      <h2 className="mt-4 text-xl font-semibold tracking-tight text-[var(--text-primary)] transition group-hover:text-accent">
                         {article.title[loc]}
                       </h2>
                       <p className="mt-3 flex-1 text-sm leading-relaxed text-[var(--text-secondary)]">
@@ -109,7 +109,7 @@ export default async function ArticlesPage({ params }: Props) {
                             href={href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-400 transition group-hover:gap-2.5"
+                            className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent transition group-hover:gap-2.5"
                           >
                             {t("readExternal")}
                             <span aria-hidden>→</span>
@@ -117,7 +117,7 @@ export default async function ArticlesPage({ params }: Props) {
                         ) : (
                           <Link
                             href={href}
-                            className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-400 transition group-hover:gap-2.5"
+                            className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent transition group-hover:gap-2.5"
                           >
                             {t("readArticle")}
                             <span aria-hidden>→</span>

@@ -117,14 +117,14 @@ export default async function LocaleLayout({
          */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem("theme");if(!t)t=matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";if(t==="light"||t==="dark")document.documentElement.dataset.theme=t;}catch(e){}})();`,
+            __html: `(function(){try{var p=localStorage.getItem("theme");if(p!=="light"&&p!=="dark"&&p!=="system")p="system";var r=p;if(p==="system")r=matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.dataset.theme=r;document.documentElement.dataset.themePreference=p;}catch(e){}})();`,
           }}
         />
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider>
             <a
               href="#main-content"
-              className="fixed left-4 top-4 z-100 -translate-y-16 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white opacity-0 transition focus:translate-y-0 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-white/50"
+              className="fixed left-4 top-4 z-100 -translate-y-16 rounded-lg bg-[var(--accent-blue)] px-4 py-2 text-sm font-semibold text-white opacity-0 transition focus:translate-y-0 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-[var(--focus-ring)]"
             >
               {tCommon("skipToContent")}
             </a>

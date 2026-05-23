@@ -35,7 +35,7 @@ export function TechStackSection({ title, subtitle, categories }: Props) {
                 viewport={{ once: true }}
                 className="glass h-full rounded-2xl p-6"
               >
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-400">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
                   {cat.label}
                 </p>
                 <motion.div

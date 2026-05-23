@@ -15,7 +15,7 @@ const METRIC_COLORS = [
     glow: "rgba(16,185,129,0.15)",
   },
   {
-    accent: "text-blue-400",
+    accent: "text-accent",
     bg: "from-blue-500/10 to-blue-500/4",
     border: "border-blue-500/20",
     glow: "rgba(37,99,235,0.15)",

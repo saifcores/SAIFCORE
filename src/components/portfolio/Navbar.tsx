@@ -199,7 +199,7 @@ export function Navbar() {
             labels={{ en: t("localeEn"), fr: t("localeFr") }}
           />
           <ThemeToggle />
-          <BookCallLink className="hidden rounded-xl bg-gradient-to-r from-[#2563EB] to-[#10B981] px-4 py-2 text-sm font-semibold text-white shadow-[0_0_20px_-6px_rgba(37,99,235,0.5)] transition hover:brightness-110 sm:inline-flex">
+          <BookCallLink className="btn-primary hidden px-4 py-2 text-sm sm:inline-flex">
             {t("bookCall")}
           </BookCallLink>
           <button
@@ -295,7 +295,7 @@ export function Navbar() {
               </Link>
 
               <BookCallLink
-                className="mt-3 inline-flex h-12 w-full items-center justify-center rounded-xl bg-gradient-to-r from-[#2563EB] to-[#10B981] px-4 text-base font-semibold text-white shadow-[0_0_24px_-6px_rgba(37,99,235,0.45)]"
+                className="btn-primary inline-flex h-12 w-full items-center justify-center px-4 text-base"
                 onClick={close}
               >
                 {t("bookCall")}

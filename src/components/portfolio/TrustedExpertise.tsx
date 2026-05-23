@@ -14,7 +14,7 @@ import { MotionReveal } from "@/components/portfolio/motion/MotionReveal";
 const ICONS = [CreditCard, Layers, Network, Globe, Cloud, Smartphone] as const;
 
 const ACCENTS = [
-  "from-blue-500/15 to-blue-500/5 border-blue-500/20 text-blue-400",
+  "from-blue-500/15 to-blue-500/5 border-blue-500/20 text-accent",
   "from-indigo-500/15 to-indigo-500/5 border-indigo-500/20 text-indigo-400",
   "from-violet-500/15 to-violet-500/5 border-violet-500/20 text-violet-400",
   "from-amber-500/15 to-amber-500/5 border-amber-500/20 text-amber-400",

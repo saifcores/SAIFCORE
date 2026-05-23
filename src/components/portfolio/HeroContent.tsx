@@ -42,7 +42,7 @@ export function HeroContent({
       >
         <span className="inline-flex items-center gap-2.5 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/60 px-4 py-2 text-xs font-medium tracking-[0.14em] uppercase text-[var(--text-muted)] backdrop-blur-sm">
           <span
-            className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-[#2563EB] to-[#10B981]"
+            className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-emerald)]"
             aria-hidden
           />
           {badge}

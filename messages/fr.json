@@ -162,7 +162,7 @@
         "href": "",
         "linkLabel": "",
         "stacks": ["Java", "Spring Boot", "Redis", "Kafka", "PostgreSQL"],
-        "status": "En production",
+        "status": "En cours de développement", 
         "metrics": [
           { "value": "3+", "label": "Fournisseurs unifiés" },
           { "value": "60%", "label": "Intégration plus rapide" }
@@ -179,7 +179,7 @@
         "href": "",
         "linkLabel": "",
         "stacks": ["Java", "Spring Boot", "PostgreSQL", "Kafka"],
-        "status": "En production",
+        "status": "En cours de développement",
         "metrics": [
           { "value": "100%", "label": "Couverture audit" },
           { "value": "0", "label": "Incidents ledger" }
@@ -196,7 +196,7 @@
         "href": "",
         "linkLabel": "",
         "stacks": ["Spring Cloud", "Kafka", "PostgreSQL", "Docker", "AWS"],
-        "status": "En production",
+        "status": "En cours de développement", 
         "metrics": [
           { "value": "3", "label": "Intégrations partenaires" },
           { "value": "99.9%", "label": "Cible uptime" }
@@ -589,7 +589,10 @@
     "contact": "Contact"
   },
   "theme": {
-    "toggle": "Changer le thème",
+    "toggle": "Thème",
+    "light": "Mode clair",
+    "dark": "Mode sombre",
+    "system": "Thème système",
     "toLight": "Passer en mode clair",
     "toDark": "Passer en mode sombre"
   },

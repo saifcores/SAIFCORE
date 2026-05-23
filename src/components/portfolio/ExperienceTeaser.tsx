@@ -30,7 +30,7 @@ export async function ExperienceTeaser() {
             </div>
             <Link
               href="/experience"
-              className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-blue-400 transition hover:text-blue-300"
+              className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-accent transition hover:text-[var(--accent-blue-light)]"
             >
               {t("viewAll")}
               <span aria-hidden>→</span>
@@ -60,7 +60,7 @@ export async function ExperienceTeaser() {
                       <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-1">
                         <div>
                           <span
-                            className={`text-sm font-semibold ${isFirst ? "text-blue-400" : "text-[var(--text-secondary)]"}`}
+                            className={`text-sm font-semibold ${isFirst ? "text-accent" : "text-[var(--text-secondary)]"}`}
                           >
                             {item.company}
                           </span>

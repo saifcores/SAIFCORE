@@ -29,7 +29,7 @@ export default async function NotFound() {
         <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:justify-center">
           <Link
             href="/"
-            className="inline-flex h-12 items-center justify-center rounded-xl bg-gradient-to-r from-[#2563EB] to-[#10B981] px-8 text-sm font-semibold text-white shadow-[0_0_24px_-6px_rgba(37,99,235,0.45)] transition hover:brightness-110 active:scale-[0.98]"
+            className="btn-primary inline-flex h-12 items-center justify-center px-8 text-sm"
           >
             {t("backHome")}
           </Link>

@@ -179,7 +179,7 @@ function ExperienceCard({
 
                 <p
                   className={`mt-1.5 text-sm font-medium leading-snug sm:text-base ${
-                    isCurrent ? "text-blue-400" : "text-[var(--text-secondary)]"
+                    isCurrent ? "text-accent" : "text-[var(--text-secondary)]"
                   }`}
                 >
                   {item.company}
@@ -203,7 +203,7 @@ function ExperienceCard({
                     <span
                       className={`mt-2 flex h-4 w-4 shrink-0 items-center justify-center rounded-full ${
                         isCurrent
-                          ? "bg-blue-500/15 text-blue-400"
+                          ? "bg-blue-500/15 text-accent"
                           : "bg-[var(--bg-base)]/80 text-[var(--text-muted)]"
                       }`}
                       aria-hidden

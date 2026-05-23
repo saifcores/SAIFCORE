@@ -28,7 +28,7 @@ export function StickyActionBar() {
       aria-hidden={!visible}
     >
       <div className="mx-auto flex max-w-[1280px] gap-2 px-4">
-        <BookCallLink className="inline-flex min-h-12 min-w-0 flex-1 items-center justify-center rounded-xl bg-gradient-to-r from-[#2563EB] to-[#10B981] px-3 text-sm font-semibold text-white shadow-[0_0_24px_-6px_rgba(37,99,235,0.45)] transition hover:brightness-110 active:scale-[0.98]">
+        <BookCallLink className="btn-primary inline-flex min-h-12 min-w-0 flex-1 items-center justify-center px-3 text-sm">
           {t("bookCall")}
         </BookCallLink>
         <Link

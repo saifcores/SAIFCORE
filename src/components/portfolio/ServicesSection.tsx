@@ -51,7 +51,7 @@ export function ServicesSection({ title, subtitle, cta, items }: Props) {
                   whileHover={reduce ? undefined : { y: -4 }}
                   className="group flex h-full flex-col rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 p-6 transition hover:border-[var(--border-hover)] hover:bg-[var(--bg-elevated)]/45"
                 >
-                  <div className="mb-4 inline-flex rounded-xl border border-blue-500/20 bg-gradient-to-br from-blue-500/12 to-emerald-500/8 p-2.5 text-blue-400">
+                  <div className="mb-4 inline-flex rounded-xl border border-blue-500/20 bg-gradient-to-br from-blue-500/12 to-emerald-500/8 p-2.5 text-accent">
                     <Icon className="h-5 w-5" strokeWidth={1.6} aria-hidden />
                   </div>
                   <h3 className="text-base font-semibold text-[var(--text-primary)]">
@@ -70,7 +70,7 @@ export function ServicesSection({ title, subtitle, cta, items }: Props) {
           <div className="mt-10 flex justify-center">
             <Link
               href="/#contact"
-              className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#2563EB] to-[#10B981] px-8 py-3 text-sm font-semibold text-white shadow-[0_0_24px_-6px_rgba(37,99,235,0.45)] transition hover:brightness-110"
+              className="btn-primary inline-flex items-center gap-2 px-8 py-3 text-sm"
             >
               {cta}
               <ArrowRight className="h-4 w-4" aria-hidden />

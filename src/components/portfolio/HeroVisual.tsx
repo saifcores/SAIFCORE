@@ -119,7 +119,7 @@ export function HeroVisual({
                   <span
                     className={`shrink-0 font-mono text-[10px] font-semibold ${
                       entry.type === "request"
-                        ? "text-blue-400"
+                        ? "text-accent"
                         : entry.type === "step-violet"
                           ? "text-violet-400"
                           : "text-emerald-400"
@@ -135,7 +135,7 @@ export function HeroVisual({
                   <span
                     className={`font-mono text-[10px] font-semibold ${
                       entry.type === "request"
-                        ? "text-blue-400"
+                        ? "text-accent"
                         : entry.type === "step-violet"
                           ? "text-violet-400"
                           : "text-emerald-400"

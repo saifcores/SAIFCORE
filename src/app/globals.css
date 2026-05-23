@@ -20,6 +20,9 @@
   --accent-blue: #2563eb;
   --accent-emerald: #10b981;
   --accent-blue-light: #3b82f6;
+  --accent-text: #60a5fa;
+  --focus-ring: rgba(59, 130, 246, 0.28);
+  --focus-border: rgba(59, 130, 246, 0.45);
   --glow-primary: rgba(37, 99, 235, 0.3);
   --glow-secondary: rgba(16, 185, 129, 0.2);
   --overlay-scrim: rgba(0, 0, 0, 0.62);
@@ -54,10 +57,12 @@
   --text-secondary: #3f3f46;
   --text-muted: #64748b;
 
-  /* Accent colors stay the same — vivid on both themes */
   --accent-blue: #2563eb;
   --accent-emerald: #10b981;
-  --accent-blue-light: #3b82f6;
+  --accent-blue-light: #1d4ed8;
+  --accent-text: #2563eb;
+  --focus-ring: rgba(37, 99, 235, 0.22);
+  --focus-border: rgba(37, 99, 235, 0.45);
 
   /* Glows — more visible on light backgrounds */
   --glow-primary: rgba(37, 99, 235, 0.2);
@@ -216,6 +221,96 @@ nav,
 
 .card-interactive:hover {
   border-color: var(--border-hover);
+}
+
+/* Brand gradient CTA */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-emerald));
+  font-weight: 600;
+  color: #ffffff;
+  box-shadow: 0 0 24px -6px var(--glow-primary);
+  transition:
+    filter 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.08);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-primary:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.btn-primary-lg {
+  box-shadow: 0 0 32px -8px var(--glow-primary);
+}
+
+.btn-primary-lg:hover {
+  box-shadow: 0 0 40px -8px var(--glow-primary);
+}
+
+.bg-brand-gradient {
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-emerald));
+}
+
+.text-accent {
+  color: var(--accent-text);
+}
+
+.link-accent {
+  color: var(--accent-text);
+  transition: color 0.2s ease;
+}
+
+.link-accent:hover {
+  color: var(--accent-blue-light);
+}
+
+.surface-panel {
+  border: 1px solid var(--border-subtle);
+  background: color-mix(in srgb, var(--bg-elevated) 45%, var(--bg-base));
+  backdrop-filter: blur(8px);
+}
+
+[data-theme="light"] .surface-panel {
+  box-shadow: var(--shadow-card);
+}
+
+.input-field {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-subtle);
+  background: color-mix(in srgb, var(--bg-elevated) 55%, transparent);
+  color: var(--text-primary);
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.input-field::placeholder {
+  color: var(--text-muted);
+}
+
+.input-field:focus {
+  border-color: var(--focus-border);
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+[data-theme="light"] .input-field {
+  background: var(--bg-elevated);
 }
 
 /* Subtle grid background */

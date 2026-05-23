@@ -54,7 +54,7 @@ export async function About({ extended = false }: Props) {
               />
               <div className="relative overflow-hidden rounded-[24px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/60 p-10 text-center backdrop-blur-sm">
                 <div
-                  className="mx-auto flex h-28 w-28 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-[#2563EB] to-[#10B981] shadow-lg shadow-blue-500/25"
+                  className="mx-auto flex h-28 w-28 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-emerald)] shadow-lg shadow-blue-500/25"
                   aria-hidden
                 >
                   <Image
@@ -140,7 +140,7 @@ export async function About({ extended = false }: Props) {
                 </p>
                 <Link
                   href="/#contact"
-                  className="mt-8 inline-flex h-12 min-w-[200px] items-center justify-center rounded-xl bg-gradient-to-r from-[#2563EB] to-[#10B981] px-8 text-sm font-semibold text-white shadow-[0_0_32px_-8px_rgba(37,99,235,0.45)] transition hover:brightness-110 active:scale-[0.98]"
+                  className="btn-primary btn-primary-lg inline-flex h-12 min-w-[200px] items-center justify-center px-8 text-sm"
                 >
                   {t("endCtaButton")}
                 </Link>

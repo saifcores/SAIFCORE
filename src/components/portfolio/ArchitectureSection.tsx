@@ -90,7 +90,7 @@ const LAYER_BORDER_COLORS = [
 ];
 
 const LAYER_TEXT_COLORS = [
-  "text-blue-400",
+  "text-accent",
   "text-indigo-400",
   "text-violet-400",
   "text-amber-400",

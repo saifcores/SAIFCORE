@@ -24,7 +24,7 @@ export default async function GlobalNotFound() {
         <div className="mt-10 flex justify-center">
           <Link
             href="/"
-            className="inline-flex h-12 items-center justify-center rounded-2xl bg-gradient-to-r from-[#2563eb] to-[#6366f1] px-8 text-base font-semibold text-white shadow-lg shadow-indigo-500/25 transition hover:brightness-110 active:scale-[0.98]"
+            className="btn-primary inline-flex h-12 items-center justify-center rounded-2xl px-8 text-base"
           >
             {t("backHome")}
           </Link>

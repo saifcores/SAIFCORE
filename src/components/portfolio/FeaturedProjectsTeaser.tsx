@@ -28,7 +28,7 @@ export async function FeaturedProjectsTeaser() {
             </div>
             <Link
               href="/systems"
-              className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-blue-400 transition hover:text-blue-300"
+              className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-accent transition hover:text-[var(--accent-blue-light)]"
             >
               {t("viewAll")}
               <span aria-hidden>→</span>
@@ -47,7 +47,7 @@ export async function FeaturedProjectsTeaser() {
                   className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 transition duration-300 hover:-translate-y-1 hover:border-[var(--border-hover)] hover:bg-[var(--bg-elevated)]/40"
                 >
                   <div
-                    className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-[#2563EB] to-[#10B981] opacity-0 transition duration-300 group-hover:opacity-100"
+                    className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-emerald)] opacity-0 transition duration-300 group-hover:opacity-100"
                     aria-hidden
                   />
 
@@ -89,7 +89,7 @@ export async function FeaturedProjectsTeaser() {
                       ) : null}
                     </div>
 
-                    <h3 className="mt-3 text-lg font-semibold leading-snug text-[var(--text-primary)] transition group-hover:text-blue-400">
+                    <h3 className="mt-3 text-lg font-semibold leading-snug text-[var(--text-primary)] transition group-hover:text-accent">
                       {item.title}
                     </h3>
 

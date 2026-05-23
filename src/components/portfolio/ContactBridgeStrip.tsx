@@ -25,7 +25,7 @@ export async function ContactBridgeStrip({ ns }: { ns: Namespace }) {
           </p>
           <Link
             href="/#contact"
-            className="mt-8 inline-flex h-12 min-w-[200px] items-center justify-center rounded-xl bg-gradient-to-r from-[#2563EB] to-[#10B981] px-8 text-sm font-semibold text-white shadow-[0_0_32px_-8px_rgba(37,99,235,0.45)] transition hover:brightness-110 active:scale-[0.98]"
+            className="btn-primary btn-primary-lg inline-flex h-12 min-w-[200px] items-center justify-center px-8 text-sm"
           >
             {t("endCtaButton")}
           </Link>

@@ -72,7 +72,7 @@ const CARD_ACCENTS = [
 ];
 
 const ICON_COLORS = [
-  "text-blue-400",
+  "text-accent",
   "text-indigo-400",
   "text-violet-400",
   "text-emerald-400",

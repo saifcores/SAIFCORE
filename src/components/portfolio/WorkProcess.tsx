@@ -39,7 +39,7 @@ export function WorkProcess({ title, subtitle, steps }: Props) {
                     whileHover={reduce ? undefined : { y: -2 }}
                     className="relative flex gap-5 border-l border-[var(--border-subtle)] py-8 pl-8 md:border-l-0 md:border-t md:pl-0 md:pt-10 md:first:pl-0"
                   >
-                    <span className="absolute -left-3 top-8 flex h-6 w-6 items-center justify-center rounded-full border border-blue-500/30 bg-[var(--bg-base)] font-mono text-[10px] font-semibold text-blue-400 md:-top-3 md:left-0">
+                    <span className="absolute -left-3 top-8 flex h-6 w-6 items-center justify-center rounded-full border border-blue-500/30 bg-[var(--bg-base)] font-mono text-[10px] font-semibold text-accent md:-top-3 md:left-0">
                       {stepId}
                     </span>
                     <div className="md:mt-4">

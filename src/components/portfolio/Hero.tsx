@@ -13,7 +13,7 @@ export async function Hero() {
     <>
       <Link
         href="/#work"
-        className="inline-flex h-12 items-center justify-center rounded-xl bg-gradient-to-r from-[#2563EB] to-[#10B981] px-8 text-sm font-semibold text-white shadow-[0_0_32px_-8px_rgba(37,99,235,0.5)] transition hover:brightness-110 hover:shadow-[0_0_40px_-8px_rgba(37,99,235,0.65)] active:scale-[0.98]"
+        className="btn-primary btn-primary-lg inline-flex h-12 items-center justify-center px-8 text-sm"
       >
         {t("ctaPrimary")}
       </Link>

@@ -40,7 +40,7 @@ export async function Insights({ teaser = false }: Props) {
             {teaser ? (
               <Link
                 href="/articles"
-                className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-blue-400 transition hover:text-blue-300"
+                className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-accent transition hover:text-[var(--accent-blue-light)]"
               >
                 {t("viewAll")}
                 <span aria-hidden>→</span>
@@ -59,7 +59,7 @@ export async function Insights({ teaser = false }: Props) {
                   kind={article.kind}
                   label={tArticles(`kinds.${article.kind}`)}
                 />
-                <h3 className="mt-4 text-base font-semibold leading-snug text-[var(--text-primary)] transition group-hover:text-blue-400">
+                <h3 className="mt-4 text-base font-semibold leading-snug text-[var(--text-primary)] transition group-hover:text-accent">
                   {article.title[loc]}
                 </h3>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-[var(--text-secondary)] line-clamp-3">
@@ -69,7 +69,7 @@ export async function Insights({ teaser = false }: Props) {
                   <span className="font-mono text-xs text-[var(--text-muted)]">
                     {article.publishedAt}
                   </span>
-                  <span className="inline-flex items-center gap-1 text-xs font-semibold text-blue-400 transition group-hover:gap-2">
+                  <span className="inline-flex items-center gap-1 text-xs font-semibold text-accent transition group-hover:gap-2">
                     {external
                       ? tArticles("readExternal")
                       : tArticles("readArticle")}
