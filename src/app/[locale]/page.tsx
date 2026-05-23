@@ -13,6 +13,7 @@ import { Footer } from "@/components/portfolio/Footer";
 import { Hero } from "@/components/portfolio/Hero";
 import { Navbar } from "@/components/portfolio/Navbar";
 import { ServicesSection } from "@/components/portfolio/ServicesSection";
+import { CertificationsTeaser } from "@/components/portfolio/CertificationsTeaser";
 import { TechStackSection } from "@/components/portfolio/TechStackSection";
 import { Testimonials } from "@/components/portfolio/Testimonials";
 import { TrustedExpertise } from "@/components/portfolio/TrustedExpertise";
@@ -130,6 +131,7 @@ export default async function Home({ params }: Props) {
           subtitle={ts.subtitle}
           categories={[...ts.categories]}
         />
+        <CertificationsTeaser />
         <EngineeringPrinciples
           title={ep.title}
           subtitle={ep.subtitle}

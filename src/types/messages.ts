@@ -32,6 +32,11 @@ export type FeaturedProjectItem =
 
 export type ExperienceEntry = AppMessages["experience"]["items"][number];
 
+export type CertificationId = keyof AppMessages["certifications"]["items"];
+
+export type CertificationItem =
+  AppMessages["certifications"]["items"][CertificationId];
+
 export type HowIThinkStep = AppMessages["howIThink"]["steps"][number];
 
 export type ArchitectureTag =

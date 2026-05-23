@@ -498,9 +498,63 @@
     "stat3Value": "GMT",
     "stat3Label": "Dakar · Remote"
   },
+  "certifications": {
+    "title": "Certifications",
+    "subtitle": "Certifications et expertise éprouvée en production",
+    "teaserHeading": "Une expertise validée et vérifiable",
+    "intro": "Certifications AWS officielles et maîtrise opérationnelle des plateformes cloud-native, de l'écosystème Spring, de l'intégration IA et des systèmes de paiement — le socle des systèmes que je livre en mission.",
+    "formalLabel": "Certifications industrie",
+    "expertiseLabel": "Expertise professionnelle",
+    "viewAll": "Voir toutes les certifications",
+    "verify": "Vérifier sur AWS",
+    "items": {
+      "awsSolutionsArchitect": {
+        "name": "AWS Certified Solutions Architect — Associate",
+        "issuer": "Amazon Web Services",
+        "description": "Conception de charges résilientes, sécurisées et optimisées sur AWS — alignée avec l'architecture de plateformes fintech et APIs en production.",
+        "group": "formal"
+      },
+      "awsDeveloper": {
+        "name": "AWS Certified Developer — Associate",
+        "issuer": "Amazon Web Services",
+        "description": "Construction et exploitation de services cloud-native, CI/CD et observabilité AWS pour backends à fort débit.",
+        "group": "formal"
+      },
+      "kubernetes": {
+        "name": "Kubernetes",
+        "issuer": "Plateformes cloud-native",
+        "description": "Orchestration en production — déploiements, réseau, secrets et patterns de fiabilité pour systèmes de paiement distribués.",
+        "group": "expertise"
+      },
+      "docker": {
+        "name": "Docker",
+        "issuer": "Conteneurs",
+        "description": "Pipelines d'images, environnements de dev containerisés et services intégrés au CI/CD et à Kubernetes.",
+        "group": "expertise"
+      },
+      "springProfessional": {
+        "name": "Spring Professional",
+        "issuer": "Écosystème Spring",
+        "description": "Livraison Java enterprise avec Spring Boot, Security et Cloud — base de la plupart des backends bancaires et fintech que je construis.",
+        "group": "expertise"
+      },
+      "aiIntegration": {
+        "name": "Intégration IA",
+        "issuer": "Ingénierie appliquée",
+        "description": "Intégration LLM et automatisation dans les produits — APIs maîtrisées, observabilité et connexion pragmatique aux backends existants.",
+        "group": "expertise"
+      },
+      "paymentSystems": {
+        "name": "Expertise systèmes de paiement",
+        "issuer": "Spécialisation métier",
+        "description": "Rails de paiement de bout en bout — mobile money, idempotence, règlement, réconciliation et intégrations partenaires en conditions réelles.",
+        "group": "expertise"
+      }
+    }
+  },
   "aboutPage": {
     "metaTitle": "À propos | Ingénieur Fintech Freelance | SAIFCORE",
-    "metaDescription": "Ingénieur backend & fintech indépendant — infrastructure de paiement, APIs et systèmes distribués. Basé à Dakar, missions freelance et contrat international.",
+    "metaDescription": "Ingénieur backend & fintech indépendant — certifié AWS, infrastructure de paiement, APIs et systèmes distribués. Basé à Dakar, missions freelance et contrat international.",
     "title": "À propos",
     "subtitle": "Ingénieur senior, orienté freelance — infrastructure financière fiable pour startups et entreprises worldwide.",
     "backToHome": "Retour à l'accueil"

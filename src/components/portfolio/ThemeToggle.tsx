@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import type { ThemePreference } from "./ThemeProvider";
 import { useTheme } from "./ThemeProvider";
@@ -56,12 +57,20 @@ function ThemeIcon({ mode }: { mode: ThemePreference }) {
 export function ThemeToggle() {
   const t = useTranslations("theme");
   const { preference, setPreference } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const labels: Record<ThemePreference, string> = {
     light: t("light"),
     dark: t("dark"),
     system: t("system"),
   };
+
+  /** Avoid hydration mismatch — active state only after client sync. */
+  const activePreference = mounted ? preference : null;
 
   return (
     <div
@@ -70,7 +79,7 @@ export function ThemeToggle() {
       aria-label={t("toggle")}
     >
       {OPTIONS.map((mode) => {
-        const active = preference === mode;
+        const active = activePreference === mode;
         return (
           <button
             key={mode}

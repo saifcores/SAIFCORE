@@ -54,26 +54,36 @@ function applyTheme(preference: ThemePreference) {
   }
 }
 
-function getInitialState(): {
+function readPreferenceFromDocument(): ThemePreference | null {
+  const stored = document.documentElement.dataset.themePreference;
+  if (stored === "light" || stored === "dark" || stored === "system") {
+    return stored;
+  }
+  return null;
+}
+
+function readClientState(): {
   preference: ThemePreference;
   theme: ResolvedTheme;
 } {
-  if (typeof window === "undefined") {
-    return { preference: "system", theme: "dark" };
-  }
-
-  const preference = readStoredPreference();
+  const preference = readPreferenceFromDocument() ?? readStoredPreference();
   const applied = document.documentElement.dataset.theme;
   const theme: ResolvedTheme =
     applied === "light" || applied === "dark"
       ? applied
       : resolveTheme(preference);
-
   return { preference, theme };
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [state, setState] = useState(getInitialState);
+  /** SSR-safe default — synced from inline script + storage after mount. */
+  const [state, setState] = useState<{
+    preference: ThemePreference;
+    theme: ResolvedTheme;
+  }>({
+    preference: "system",
+    theme: "dark",
+  });
 
   const setPreference = useCallback((next: ThemePreference) => {
     applyTheme(next);
@@ -81,6 +91,10 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       preference: next,
       theme: resolveTheme(next),
     });
+  }, []);
+
+  useEffect(() => {
+    setState(readClientState());
   }, []);
 
   useEffect(() => {

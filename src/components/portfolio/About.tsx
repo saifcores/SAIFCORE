@@ -2,6 +2,7 @@ import { getMessages, getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { getProfileDisplayName } from "@/site";
+import { CertificationsSection } from "./CertificationsSection";
 import { Reveal } from "./Reveal";
 
 type Props = {
@@ -104,6 +105,12 @@ export async function About({ extended = false }: Props) {
             </div>
           </Reveal>
         </div>
+
+        {extended ? (
+          <div className="mt-20 border-t border-[var(--border-subtle)] pt-16">
+            <CertificationsSection compact />
+          </div>
+        ) : null}
 
         {extended && engagements ? (
           <>
