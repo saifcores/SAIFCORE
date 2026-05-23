@@ -155,9 +155,7 @@
           "Spring Boot",
           "Spring Security",
           "Spring Cloud",
-          "Micronaut",
-          "Quarkus",
-          "Node.js"
+          "NestJS"
         ]
       },
       {
@@ -179,7 +177,6 @@
           "Redis",
           "MongoDB",
           "SQL",
-          "TimescaleDB",
           "Kafka Streams"
         ]
       },
@@ -202,8 +199,6 @@
           "Kubernetes",
           "AWS",
           "Google Cloud",
-          "Terraform",
-          "ArgoCD",
           "GitLab CI/CD",
           "GitHub Actions"
         ]

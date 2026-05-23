@@ -737,8 +737,7 @@
           "Spring Boot",
           "Spring Security",
           "Spring Cloud",
-          "Micronaut",
-          "Node.js"
+          "NestJS"
         ]
       },
       {
@@ -759,7 +758,6 @@
           "MySQL",
           "Redis",
           "MongoDB",
-          "TimescaleDB",
           "SQL"
         ]
       },
@@ -781,12 +779,9 @@
           "Docker",
           "Kubernetes",
           "AWS",
-          "Azure",
           "Google Cloud",
-          "Terraform",
           "GitLab CI/CD",
-          "GitHub Actions",
-          "ArgoCD"
+          "GitHub Actions"
         ]
       },
       {
