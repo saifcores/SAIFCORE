@@ -52,15 +52,16 @@ export default async function ArticlesPage({ params }: Props) {
       <Navbar />
       <main
         id="main-content"
-        className="flex-1 pb-24 outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base md:pb-0"
+        className="flex-1 pb-24 outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base md:pb-0"
         tabIndex={-1}
       >
+        {/* Header */}
         <section className="border-b border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
           <div className="mx-auto max-w-[1280px]">
             <Reveal>
               <Link
                 href="/"
-                className="text-sm font-medium text-[var(--accent-cyan)] transition hover:text-[var(--text-primary)]"
+                className="text-sm font-medium text-[var(--text-muted)] transition hover:text-[var(--text-primary)]"
               >
                 ← {t("backToHome")}
               </Link>
@@ -74,15 +75,16 @@ export default async function ArticlesPage({ params }: Props) {
           </div>
         </section>
 
+        {/* Article grid */}
         <section className="px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-[1280px]">
-            <div className="grid gap-8 lg:grid-cols-2">
+            <div className="grid gap-6 lg:grid-cols-2">
               {articles.map((article, i) => {
                 const href = article.externalUrl ?? `/articles/${article.slug}`;
                 const external = !!article.externalUrl;
                 return (
                   <Reveal key={article.slug} delay={i * 60}>
-                    <article className="group flex h-full flex-col rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/40 p-8 transition hover:border-indigo-500/25 hover:shadow-[0_24px_48px_-12px_rgba(79,70,229,0.2)]">
+                    <article className="group flex h-full flex-col rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-8 transition hover:-translate-y-1 hover:border-white/12 hover:bg-[var(--bg-elevated)]/40">
                       <div className="flex flex-wrap items-center gap-2">
                         <ArticleKindBadge
                           kind={article.kind}
@@ -90,36 +92,38 @@ export default async function ArticlesPage({ params }: Props) {
                         />
                         <time
                           dateTime={article.publishedAt}
-                          className="text-xs font-medium uppercase tracking-widest text-[var(--text-muted)]"
+                          className="font-mono text-xs text-[var(--text-muted)]"
                         >
-                          {t("published")} {formatDate(article.publishedAt)}
+                          {formatDate(article.publishedAt)}
                         </time>
                       </div>
-                      <h2 className="mt-4 text-xl font-semibold text-[var(--text-primary)]">
+                      <h2 className="mt-4 text-xl font-semibold tracking-tight text-[var(--text-primary)] transition group-hover:text-blue-400">
                         {article.title[loc]}
                       </h2>
-                      <p className="mt-3 flex-1 text-[var(--text-secondary)] leading-relaxed">
+                      <p className="mt-3 flex-1 text-sm leading-relaxed text-[var(--text-secondary)]">
                         {article.excerpt[loc]}
                       </p>
-                      {external ? (
-                        <a
-                          href={href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-[var(--accent-cyan)] transition group-hover:gap-2"
-                        >
-                          {t("readExternal")}
-                          <span aria-hidden>→</span>
-                        </a>
-                      ) : (
-                        <Link
-                          href={href}
-                          className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-[var(--accent-cyan)] transition group-hover:gap-2"
-                        >
-                          {t("readArticle")}
-                          <span aria-hidden>→</span>
-                        </Link>
-                      )}
+                      <div className="mt-6 flex items-center justify-between border-t border-[var(--border-subtle)] pt-4">
+                        {external ? (
+                          <a
+                            href={href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-400 transition group-hover:gap-2.5"
+                          >
+                            {t("readExternal")}
+                            <span aria-hidden>→</span>
+                          </a>
+                        ) : (
+                          <Link
+                            href={href}
+                            className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-400 transition group-hover:gap-2.5"
+                          >
+                            {t("readArticle")}
+                            <span aria-hidden>→</span>
+                          </Link>
+                        )}
+                      </div>
                     </article>
                   </Reveal>
                 );
@@ -128,7 +132,12 @@ export default async function ArticlesPage({ params }: Props) {
           </div>
         </section>
 
-        <ContactBridgeStrip ns="articlesPage" />
+        {/* CTA */}
+        <div className="px-4 pb-16 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-[1280px]">
+            <ContactBridgeStrip ns="articlesPage" />
+          </div>
+        </div>
       </main>
       <Footer />
     </div>

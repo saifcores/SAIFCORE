@@ -29,7 +29,7 @@ export function TrustMarquee({ brands }: Props) {
           {loop.map((b, i) => (
             <div
               key={`${b.name}-${i}`}
-              className="flex w-[140px] shrink-0 flex-col items-center justify-center gap-2 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 px-4 py-4 shadow-[0_0_0_1px_rgba(255,255,255,0.02)] sm:w-[160px]"
+              className="flex w-[140px] shrink-0 flex-col items-center justify-center gap-2 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 px-4 py-4 sm:w-[160px]"
             >
               <div className="relative flex h-10 w-full items-center justify-center sm:h-11">
                 <Image
@@ -37,7 +37,7 @@ export function TrustMarquee({ brands }: Props) {
                   alt=""
                   width={200}
                   height={80}
-                  className="h-8 w-auto max-w-full object-contain object-center opacity-90 sm:h-9"
+                  className="h-8 w-auto max-w-full object-contain object-center opacity-65 transition-opacity duration-300 hover:opacity-90 sm:h-9"
                   sizes="160px"
                   unoptimized
                 />

@@ -4,22 +4,19 @@ import { Reveal } from "./Reveal";
 
 type Namespace = "articlesPage" | "insights";
 
-/**
- * Shared “next step” strip toward `#contact` — keeps conversion paths on inner pages.
- */
 export async function ContactBridgeStrip({ ns }: { ns: Namespace }) {
   const t = await getTranslations(ns);
 
   return (
     <section
-      className="rounded-[24px] border border-[var(--border-subtle)] bg-gradient-to-br from-indigo-600/10 via-[var(--bg-base)]/40 to-cyan-500/5 px-4 py-12 sm:px-8 sm:py-14"
+      className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 px-6 py-12 sm:px-10 sm:py-14"
       aria-labelledby={`contact-bridge-${ns}`}
     >
       <Reveal>
-        <div className="mx-auto max-w-[720px] text-center">
+        <div className="mx-auto max-w-[680px] text-center">
           <h2
             id={`contact-bridge-${ns}`}
-            className="text-xl font-semibold tracking-tight text-[var(--text-primary)] sm:text-2xl"
+            className="text-xl font-bold tracking-tight text-[var(--text-primary)] sm:text-2xl"
           >
             {t("endCtaTitle")}
           </h2>
@@ -28,7 +25,7 @@ export async function ContactBridgeStrip({ ns }: { ns: Namespace }) {
           </p>
           <Link
             href="/#contact"
-            className="mt-6 inline-flex h-12 min-w-[200px] items-center justify-center rounded-2xl bg-gradient-to-r from-[#2563eb] to-[#6366f1] px-8 text-sm font-semibold text-white shadow-lg shadow-indigo-500/25 transition hover:brightness-110 active:scale-[0.98]"
+            className="mt-8 inline-flex h-12 min-w-[200px] items-center justify-center rounded-xl bg-gradient-to-r from-[#2563EB] to-[#10B981] px-8 text-sm font-semibold text-white shadow-[0_0_32px_-8px_rgba(37,99,235,0.45)] transition hover:brightness-110 active:scale-[0.98]"
           >
             {t("endCtaButton")}
           </Link>

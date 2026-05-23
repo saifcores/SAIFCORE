@@ -79,10 +79,16 @@ export function getProfileLocation(): {
   };
 }
 
-/** `mailto:` URL with optional subject, or `null` if no verified email. */
-export function getContactMailto(subject: string): string | null {
+/** `mailto:` URL with optional subject and body, or `null` if no verified email. */
+export function getContactMailto(
+  subject: string,
+  body?: string,
+): string | null {
   const email = getContactEmail();
   if (!email) return null;
-  const q = subject ? `?subject=${encodeURIComponent(subject)}` : "";
-  return `mailto:${email}${q}`;
+  const params = new URLSearchParams();
+  if (subject) params.set("subject", subject);
+  if (body) params.set("body", body);
+  const q = params.toString();
+  return `mailto:${email}${q ? `?${q}` : ""}`;
 }

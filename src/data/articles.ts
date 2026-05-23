@@ -262,6 +262,94 @@ export async function createPaymentIntent(cmd: CreatePayment) {
     ],
   },
   {
+    slug: "mobile-money-integration-patterns",
+    kind: "code",
+    publishedAt: "2025-03-18",
+    title: {
+      en: "Mobile money integration patterns for African fintech",
+      fr: "Patterns d'intégration Mobile Money pour la fintech africaine",
+    },
+    excerpt: {
+      en: "Wave, Orange Money, Free Money: the API gaps, callback traps, and idempotency pitfalls that production systems expose — and how to architect around them.",
+      fr: "Wave, Orange Money, Free Money : les lacunes d'API, pièges de callback et problèmes d'idempotence que la production expose — et comment architecturer autour.",
+    },
+    blocks: [
+      {
+        type: "paragraph",
+        en: "Mobile money rails in West Africa are not uniform. Wave, Orange Money, and Free Money each expose different callback semantics, settlement windows, and retry behaviours. A payment marked `SUCCESS` by the provider SDK is not always a settled transaction — and building as though it is will surface as a reconciliation nightmare six months into production.",
+        fr: "Les rails mobile money en Afrique de l'Ouest ne sont pas uniformes. Wave, Orange Money et Free Money exposent chacun une sémantique de callback, des fenêtres de règlement et des comportements de retry différents. Un paiement marqué `SUCCESS` par le SDK du fournisseur n'est pas toujours une transaction réglée — et construire comme si c'était le cas se manifestera comme un cauchemar de rapprochement six mois en production.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        en: "The callback problem",
+        fr: "Le problème du callback",
+      },
+      {
+        type: "paragraph",
+        en: "Most providers deliver a webhook callback asynchronously — sometimes seconds after the payment, sometimes minutes later, occasionally not at all if the endpoint was unavailable. Your architecture must decouple payment initiation from payment confirmation: store the intent immediately, update state only when a verified callback arrives, and run a reconciliation job that polls the provider status endpoint for any intents still pending after a configurable timeout.",
+        fr: "La plupart des fournisseurs livrent un webhook de callback de façon asynchrone — parfois quelques secondes après le paiement, parfois plusieurs minutes plus tard, et parfois jamais si l'endpoint était indisponible. Votre architecture doit découpler l'initiation du paiement de la confirmation : stocker l'intention immédiatement, mettre à jour l'état uniquement quand un callback vérifié arrive, et exécuter un job de rapprochement qui interroge l'endpoint de statut du fournisseur pour toute intention encore en attente après un timeout configurable.",
+      },
+      {
+        type: "code",
+        language: "java",
+        title: {
+          en: "Payment intent state machine — Spring state transitions",
+          fr: "Machine d'état de l'intention de paiement — transitions Spring",
+        },
+        code: `public enum PaymentStatus {
+  INITIATED,      // intent saved, provider call pending
+  PROVIDER_SENT,  // request dispatched to provider API
+  PENDING,        // provider acknowledged, awaiting callback
+  SUCCESS,        // verified callback received
+  FAILED,         // provider failure or timeout reconciliation
+  REFUNDED        // post-settlement reversal
+}
+
+@Transactional
+public PaymentIntent handleCallback(CallbackPayload payload) {
+  PaymentIntent intent = repository
+    .findByProviderRef(payload.getReference())
+    .orElseThrow(() -> new UnknownReferenceException(payload.getReference()));
+
+  // Reject replays: idempotency on callback
+  if (intent.getStatus() == PaymentStatus.SUCCESS
+      || intent.getStatus() == PaymentStatus.FAILED) {
+    return intent; // already terminal — discard duplicate
+  }
+
+  intent.setStatus(payload.isSuccessful()
+    ? PaymentStatus.SUCCESS : PaymentStatus.FAILED);
+  intent.setSettledAt(Instant.now());
+  auditLog.record(intent, "callback", payload.getRawBody());
+  return repository.save(intent);
+}`,
+      },
+      {
+        type: "callout",
+        variant: "info",
+        en: "Always verify the callback signature against the provider's HMAC key before updating state. Spoofed callbacks that mark a payment as `SUCCESS` without actual settlement are a real attack vector in the wild.",
+        fr: "Vérifiez toujours la signature du callback contre la clé HMAC du fournisseur avant de mettre à jour l'état. Les callbacks falsifiés qui marquent un paiement comme `SUCCESS` sans règlement réel sont un vecteur d'attaque concret dans la pratique.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        en: "Reconciliation as a first-class job",
+        fr: "Le rapprochement comme job de première classe",
+      },
+      {
+        type: "paragraph",
+        en: "Run a scheduled reconciliation job — every 5 minutes for active intents, every hour for the prior-day batch. For each intent in `PENDING` status beyond the provider's typical settlement window, query the provider status API directly. Treat divergence as an alert: if your ledger says `PENDING` but the provider says `SUCCESS`, apply the state transition and page on-call; if the provider says `FAILED`, trigger the refund workflow and notify the user before they notice.",
+        fr: "Exécutez un job de rapprochement planifié — toutes les 5 minutes pour les intentions actives, toutes les heures pour le lot du jour précédent. Pour chaque intention en statut `PENDING` au-delà de la fenêtre de règlement typique du fournisseur, interrogez directement l'API de statut du fournisseur. Traitez toute divergence comme une alerte : si votre grand livre dit `PENDING` mais que le fournisseur dit `SUCCESS`, appliquez la transition d'état et pagez l'astreinte ; si le fournisseur dit `FAILED`, déclenchez le workflow de remboursement et notifiez l'utilisateur avant qu'il ne s'en aperçoive.",
+      },
+      {
+        type: "paragraph",
+        en: "The systems that scale to millions of transactions without breaking finance operations are not the ones with the fastest provider integrations — they are the ones where every money state is explicit, observable, and recoverable without manual intervention.",
+        fr: "Les systèmes qui passent à des millions de transactions sans briser les opérations financières ne sont pas ceux qui ont les intégrations fournisseur les plus rapides — ce sont ceux où chaque état monétaire est explicite, observable et récupérable sans intervention manuelle.",
+      },
+    ],
+  },
+  {
     slug: "product-brief-template",
     kind: "document",
     publishedAt: "2024-10-01",

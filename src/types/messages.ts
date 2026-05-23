@@ -13,7 +13,18 @@ export type NavLinkKey = keyof NavMessages;
 /** Primary site nav (excludes `primary`, `bookCall`, menu toggles, etc.) */
 export type NavPrimaryLinkKey = Extract<
   NavLinkKey,
-  "work" | "experience" | "process" | "about" | "insights" | "contact"
+  | "work"
+  | "services"
+  | "expertise"
+  | "experience"
+  | "process"
+  | "about"
+  | "insights"
+  | "contact"
+  | "more"
+  | "groupExplore"
+  | "groupProfile"
+  | "groupConnect"
 >;
 
 export type FeaturedProjectItem =

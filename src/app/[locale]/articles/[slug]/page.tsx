@@ -82,7 +82,7 @@ export default async function ArticlePage({ params }: Props) {
       <Navbar />
       <main
         id="main-content"
-        className="flex-1 pb-24 outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base md:pb-0"
+        className="flex-1 pb-24 outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base md:pb-0"
         tabIndex={-1}
       >
         <article className="border-b border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
@@ -91,7 +91,7 @@ export default async function ArticlePage({ params }: Props) {
               <nav aria-label="Breadcrumb">
                 <Link
                   href="/articles"
-                  className="text-sm font-medium text-[var(--accent-cyan)] transition hover:text-[var(--text-primary)]"
+                  className="text-sm font-medium text-[var(--text-muted)] transition hover:text-[var(--text-primary)]"
                 >
                   ← {t("title")}
                 </Link>
@@ -119,7 +119,7 @@ export default async function ArticlePage({ params }: Props) {
                   href={external}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-8 inline-flex h-12 items-center justify-center rounded-2xl bg-gradient-to-r from-[#2563eb] to-[#6366f1] px-8 text-base font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:brightness-110"
+                  className="mt-8 inline-flex h-12 items-center justify-center rounded-xl bg-gradient-to-r from-[#2563EB] to-[#10B981] px-8 text-sm font-semibold text-white shadow-[0_0_32px_-8px_rgba(37,99,235,0.45)] transition hover:brightness-110"
                 >
                   {t("readExternal")}
                 </a>
@@ -132,7 +132,11 @@ export default async function ArticlePage({ params }: Props) {
           </div>
         </article>
 
-        <ContactBridgeStrip ns="articlesPage" />
+        <div className="px-4 pb-16 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-[720px]">
+            <ContactBridgeStrip ns="articlesPage" />
+          </div>
+        </div>
       </main>
       <Footer />
     </div>

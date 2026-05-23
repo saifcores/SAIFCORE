@@ -28,12 +28,12 @@ export function StickyActionBar() {
       aria-hidden={!visible}
     >
       <div className="mx-auto flex max-w-[1280px] gap-2 px-4">
-        <BookCallLink className="inline-flex min-h-12 min-w-0 flex-1 items-center justify-center rounded-xl bg-gradient-to-r from-[#2563eb] to-[#6366f1] px-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/25 transition hover:brightness-110 active:scale-[0.98]">
+        <BookCallLink className="inline-flex min-h-12 min-w-0 flex-1 items-center justify-center rounded-xl bg-gradient-to-r from-[#2563EB] to-[#10B981] px-3 text-sm font-semibold text-white shadow-[0_0_24px_-6px_rgba(37,99,235,0.45)] transition hover:brightness-110 active:scale-[0.98]">
           {t("bookCall")}
         </BookCallLink>
         <Link
           href="/#contact"
-          className="inline-flex min-h-12 min-w-0 flex-1 items-center justify-center rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/80 px-3 text-sm font-semibold text-[var(--text-primary)] transition hover:border-[var(--accent-indigo)]/35 active:scale-[0.98]"
+          className="inline-flex min-h-12 min-w-0 flex-1 items-center justify-center rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/80 px-3 text-sm font-semibold text-[var(--text-primary)] transition hover:border-white/15 active:scale-[0.98]"
         >
           {t("contact")}
         </Link>

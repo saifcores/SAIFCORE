@@ -31,8 +31,8 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#0b0f19" },
-    { media: "(prefers-color-scheme: light)", color: "#f8fafc" },
+    { media: "(prefers-color-scheme: dark)", color: "#0A0A0A" },
+    { media: "(prefers-color-scheme: light)", color: "#FAFAFA" },
   ],
 };
 
@@ -109,6 +109,17 @@ export default async function LocaleLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full bg-bg-base text-text-primary">
+        {/*
+         * FOUT prevention — runs synchronously before React hydrates.
+         * Reads localStorage (or falls back to prefers-color-scheme) and
+         * sets data-theme on <html> so the correct CSS variables are active
+         * before any content paints.
+         */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("theme");if(!t)t=matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";if(t==="light"||t==="dark")document.documentElement.dataset.theme=t;}catch(e){}})();`,
+          }}
+        />
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider>
             <a

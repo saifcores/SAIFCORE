@@ -42,6 +42,54 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     });
 
+    const systemsUrl = `${base}${prefix}/systems`;
+    entries.push({
+      url: systemsUrl,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+      alternates: {
+        languages: Object.fromEntries(
+          routing.locales.map((loc) => {
+            const p = loc === routing.defaultLocale ? "" : `/${loc}`;
+            return [loc, `${base}${p}/systems`] as const;
+          }),
+        ),
+      },
+    });
+
+    const experienceUrl = `${base}${prefix}/experience`;
+    entries.push({
+      url: experienceUrl,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.85,
+      alternates: {
+        languages: Object.fromEntries(
+          routing.locales.map((loc) => {
+            const p = loc === routing.defaultLocale ? "" : `/${loc}`;
+            return [loc, `${base}${p}/experience`] as const;
+          }),
+        ),
+      },
+    });
+
+    const aboutUrl = `${base}${prefix}/about`;
+    entries.push({
+      url: aboutUrl,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+      alternates: {
+        languages: Object.fromEntries(
+          routing.locales.map((loc) => {
+            const p = loc === routing.defaultLocale ? "" : `/${loc}`;
+            return [loc, `${base}${p}/about`] as const;
+          }),
+        ),
+      },
+    });
+
     for (const article of articles) {
       const articleUrl = `${base}${prefix}/articles/${article.slug}`;
       entries.push({

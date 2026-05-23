@@ -2,9 +2,38 @@ import { ImageResponse } from "next/og";
 
 export const OG_SIZE = { width: 1200, height: 630 } as const;
 
-export const ogAlt = "SAIFCORE — Software Architect & Full-Stack Engineer";
+export type OgLocale = "en" | "fr";
 
-export function createOgImageResponse() {
+const OG_COPY: Record<
+  OgLocale,
+  { alt: string; badge: string; line1: string; line2: string; line3: string }
+> = {
+  en: {
+    alt: "SAIFCORE — Freelance Fintech Engineer | Payment & Backend Systems",
+    badge: "Freelance Fintech Engineer · Remote Worldwide",
+    line1: "Scalable payment",
+    line2: "infrastructure &",
+    line3: "enterprise backends",
+  },
+  fr: {
+    alt: "SAIFCORE — Ingénieur Fintech Freelance | Paiements & Backend",
+    badge: "Ingénieur Fintech Freelance · Remote International",
+    line1: "Infrastructure de",
+    line2: "paiement scalable &",
+    line3: "backends enterprise",
+  },
+};
+
+/** @deprecated Use getOgAlt(locale) */
+export const ogAlt = OG_COPY.en.alt;
+
+export function getOgAlt(locale: OgLocale): string {
+  return OG_COPY[locale].alt;
+}
+
+export function createOgImageResponse(locale: OgLocale = "en") {
+  const copy = OG_COPY[locale];
+
   return new ImageResponse(
     <div
       style={{
@@ -13,10 +42,10 @@ export function createOgImageResponse() {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        padding: 64,
-        background:
-          "linear-gradient(145deg, #0b0f19 0%, #111827 42%, #0c1222 100%)",
+        padding: 72,
+        background: "#0A0A0A",
         position: "relative",
+        overflow: "hidden",
       }}
     >
       <div
@@ -24,87 +53,143 @@ export function createOgImageResponse() {
           position: "absolute",
           inset: 0,
           backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px)",
-          backgroundSize: "48px 48px",
+            "linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)",
+          backgroundSize: "56px 56px",
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          left: -160,
+          top: -120,
+          width: 520,
+          height: 520,
+          background:
+            "radial-gradient(circle at center, rgba(37,99,235,0.35) 0%, transparent 65%)",
+          borderRadius: "50%",
         }}
       />
       <div
         style={{
           position: "absolute",
           right: -100,
-          top: -100,
-          width: 440,
-          height: 440,
+          bottom: -100,
+          width: 400,
+          height: 400,
           background:
-            "radial-gradient(circle at center, rgba(99,102,241,0.5) 0%, rgba(34,211,238,0.08) 45%, transparent 68%)",
+            "radial-gradient(circle at center, rgba(16,185,129,0.25) 0%, transparent 65%)",
+          borderRadius: "50%",
         }}
       />
-      <div
-        style={{
-          position: "absolute",
-          left: -60,
-          bottom: -60,
-          width: 320,
-          height: 320,
-          background:
-            "radial-gradient(circle at center, rgba(59,130,246,0.25) 0%, transparent 65%)",
-        }}
-      />
+
       <div
         style={{
           display: "flex",
           flexDirection: "column",
-          gap: 18,
           zIndex: 1,
+          position: "relative",
         }}
       >
         <div
           style={{
-            fontSize: 78,
-            fontWeight: 700,
-            letterSpacing: "-0.045em",
-            color: "#f8fafc",
-            lineHeight: 1.02,
-          }}
-        >
-          SAIFCORE
-        </div>
-        <div
-          style={{
-            fontSize: 34,
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 10,
+            fontSize: 14,
             fontWeight: 500,
-            color: "#94a3b8",
-            maxWidth: 860,
-            lineHeight: 1.35,
+            letterSpacing: "0.12em",
+            textTransform: "uppercase",
+            color: "#52525B",
+            marginBottom: 28,
           }}
         >
-          Software Architect & Full-Stack Engineer
+          <div
+            style={{
+              width: 6,
+              height: 6,
+              borderRadius: "50%",
+              background: "linear-gradient(135deg, #2563EB, #10B981)",
+            }}
+          />
+          {copy.badge}
+        </div>
+
+        <div
+          style={{
+            fontSize: 60,
+            fontWeight: 700,
+            letterSpacing: "-0.04em",
+            color: "#FAFAFA",
+            lineHeight: 1.08,
+            marginBottom: 8,
+          }}
+        >
+          {copy.line1}
         </div>
         <div
           style={{
-            marginTop: 28,
-            height: 5,
-            width: 140,
-            borderRadius: 6,
-            background: "linear-gradient(90deg, #3b82f6, #6366f1, #c084fc)",
+            fontSize: 60,
+            fontWeight: 700,
+            letterSpacing: "-0.04em",
+            color: "#FAFAFA",
+            lineHeight: 1.08,
+            marginBottom: 8,
+          }}
+        >
+          {copy.line2}
+        </div>
+        <div
+          style={{
+            fontSize: 60,
+            fontWeight: 700,
+            letterSpacing: "-0.04em",
+            background: "linear-gradient(135deg, #2563EB 0%, #10B981 100%)",
+            backgroundClip: "text",
+            color: "transparent",
+            lineHeight: 1.08,
+          }}
+        >
+          {copy.line3}
+        </div>
+
+        <div
+          style={{
+            marginTop: 36,
+            height: 4,
+            width: 160,
+            borderRadius: 4,
+            background: "linear-gradient(90deg, #2563EB, #10B981)",
           }}
         />
       </div>
+
       <div
         style={{
           position: "absolute",
-          bottom: 52,
-          left: 64,
-          fontSize: 22,
-          color: "#64748b",
-          letterSpacing: "0.02em",
+          bottom: 56,
+          left: 72,
+          fontSize: 18,
+          color: "#52525B",
+          letterSpacing: "0.04em",
         }}
       >
-        Scalable systems · SaaS · Fintech
+        saifcore.com
+      </div>
+
+      <div
+        style={{
+          position: "absolute",
+          bottom: 56,
+          right: 72,
+          fontSize: 18,
+          fontWeight: 700,
+          letterSpacing: "-0.01em",
+          color: "#71717A",
+        }}
+      >
+        SAIFCORE
       </div>
     </div>,
-    {
-      ...OG_SIZE,
-    },
+    { ...OG_SIZE },
   );
 }

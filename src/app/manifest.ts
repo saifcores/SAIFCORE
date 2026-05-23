@@ -2,14 +2,14 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "SAIFCORE — Software Architect & Full-Stack Engineer",
+    name: "SAIFCORE — Freelance Fintech & Backend Engineer",
     short_name: "SAIFCORE",
     description:
-      "Scalable systems, SaaS platforms, and fintech integrations — built for the real world.",
+      "Payment infrastructure, enterprise backends, and API architecture — freelance & contract engagements worldwide.",
     start_url: "/",
     display: "standalone",
-    background_color: "#0b0f19",
-    theme_color: "#0b0f19",
+    background_color: "#0A0A0A",
+    theme_color: "#0A0A0A",
     orientation: "portrait-primary",
     icons: [
       {

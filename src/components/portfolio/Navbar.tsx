@@ -2,31 +2,73 @@
 
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { useCallback, useEffect, useId, useState } from "react";
+import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { Link } from "@/i18n/navigation";
 import type { NavPrimaryLinkKey } from "@/types/messages";
 import { BookCallLink } from "./BookCallLink";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import { ThemeToggle } from "./ThemeToggle";
 
-const navLinks = [
-  { href: "/#work", labelKey: "work" },
-  { href: "/#experience", labelKey: "experience" },
-  { href: "/#process", labelKey: "process" },
-  { href: "/#about", labelKey: "about" },
-  { href: "/articles", labelKey: "insights" },
-  { href: "/#contact", labelKey: "contact" },
-] as const satisfies ReadonlyArray<{
+type NavItem = {
   href: string;
   labelKey: NavPrimaryLinkKey;
-}>;
+};
+
+const primaryNav: NavItem[] = [
+  { href: "/#work", labelKey: "work" },
+  { href: "/#services", labelKey: "services" },
+  { href: "/#expertise", labelKey: "expertise" },
+  { href: "/#process", labelKey: "process" },
+  { href: "/#contact", labelKey: "contact" },
+];
+
+const moreNav: NavItem[] = [
+  { href: "/about", labelKey: "about" },
+  { href: "/experience", labelKey: "experience" },
+  { href: "/articles", labelKey: "insights" },
+];
+
+const mobileGroups: {
+  labelKey: "groupExplore" | "groupProfile";
+  links: NavItem[];
+}[] = [
+  {
+    labelKey: "groupExplore",
+    links: [
+      { href: "/#work", labelKey: "work" },
+      { href: "/#services", labelKey: "services" },
+      { href: "/#expertise", labelKey: "expertise" },
+      { href: "/#process", labelKey: "process" },
+    ],
+  },
+  {
+    labelKey: "groupProfile",
+    links: [
+      { href: "/about", labelKey: "about" },
+      { href: "/experience", labelKey: "experience" },
+      { href: "/articles", labelKey: "insights" },
+    ],
+  },
+];
 
 export function Navbar() {
   const t = useTranslations("nav");
   const [open, setOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const panelId = useId();
+  const moreRef = useRef<HTMLDivElement>(null);
 
-  const close = useCallback(() => setOpen(false), []);
+  const close = useCallback(() => {
+    setOpen(false);
+    setMoreOpen(false);
+  }, []);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     if (!open) return;
@@ -46,8 +88,30 @@ export function Navbar() {
     return () => window.removeEventListener("keydown", onKey);
   }, [open, close]);
 
+  useEffect(() => {
+    if (!moreOpen) return;
+    const onPointer = (e: MouseEvent) => {
+      if (moreRef.current && !moreRef.current.contains(e.target as Node)) {
+        setMoreOpen(false);
+      }
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMoreOpen(false);
+    };
+    document.addEventListener("mousedown", onPointer);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onPointer);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [moreOpen]);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--border-subtle)] bg-[var(--bg-base)]/75 backdrop-blur-xl backdrop-saturate-150">
+    <header
+      className={`sticky top-0 z-50 border-b border-[var(--border-subtle)] backdrop-blur-xl backdrop-saturate-150 transition-colors duration-200 ${
+        scrolled ? "bg-[var(--bg-base)]/90" : "bg-[var(--bg-base)]/60"
+      }`}
+    >
       <div className="mx-auto flex h-16 max-w-[1280px] items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
@@ -64,37 +128,83 @@ export function Navbar() {
             priority
             sizes="36px"
           />
-          <span className="text-sm font-semibold tracking-tight">
+          <span className="text-sm font-bold tracking-tight">
             <span className="text-[var(--text-primary)]">SAIF</span>
             <span className="text-gradient">CORE</span>
           </span>
         </Link>
+
         <nav
-          className="hidden items-center gap-8 md:flex"
+          className="hidden items-center gap-6 lg:flex"
           aria-label={t("primary")}
         >
-          {navLinks.map((l) => (
+          {primaryNav.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
+              className="text-sm font-medium text-[var(--text-muted)] transition hover:text-[var(--text-primary)]"
             >
               {t(l.labelKey)}
             </Link>
           ))}
+
+          <div ref={moreRef} className="relative">
+            <button
+              type="button"
+              className="inline-flex items-center gap-1 text-sm font-medium text-[var(--text-muted)] transition hover:text-[var(--text-primary)]"
+              aria-expanded={moreOpen}
+              aria-haspopup="true"
+              onClick={() => setMoreOpen((o) => !o)}
+            >
+              {t("more")}
+              <svg
+                className={`h-3.5 w-3.5 transition ${moreOpen ? "rotate-180" : ""}`}
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                aria-hidden
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 9l6 6 6-6"
+                />
+              </svg>
+            </button>
+            {moreOpen ? (
+              <div
+                className="absolute right-0 top-full z-50 mt-2 min-w-[180px] rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-base)]/98 py-1.5 shadow-xl backdrop-blur-xl"
+                role="menu"
+              >
+                {moreNav.map((l) => (
+                  <Link
+                    key={l.href}
+                    href={l.href}
+                    role="menuitem"
+                    className="block px-4 py-2.5 text-sm font-medium text-[var(--text-secondary)] transition hover:bg-[var(--bg-elevated)] hover:text-[var(--text-primary)]"
+                    onClick={() => setMoreOpen(false)}
+                  >
+                    {t(l.labelKey)}
+                  </Link>
+                ))}
+              </div>
+            ) : null}
+          </div>
         </nav>
+
         <div className="flex items-center gap-2 sm:gap-3">
           <LocaleSwitcher
             navLabel={t("language")}
             labels={{ en: t("localeEn"), fr: t("localeFr") }}
           />
           <ThemeToggle />
-          <BookCallLink className="hidden rounded-xl bg-gradient-to-r from-[#3b82f6] to-[#6366f1] px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-indigo-500/25 transition hover:brightness-110 sm:inline-flex">
+          <BookCallLink className="hidden rounded-xl bg-gradient-to-r from-[#2563EB] to-[#10B981] px-4 py-2 text-sm font-semibold text-white shadow-[0_0_20px_-6px_rgba(37,99,235,0.5)] transition hover:brightness-110 sm:inline-flex">
             {t("bookCall")}
           </BookCallLink>
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/50 text-[var(--text-primary)] transition hover:border-[var(--accent-indigo)]/35 md:hidden"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/50 text-[var(--text-primary)] transition hover:border-white/15 lg:hidden"
             onClick={() => setOpen((o) => !o)}
             aria-expanded={open}
             aria-controls={panelId}
@@ -102,11 +212,11 @@ export function Navbar() {
           >
             {open ? (
               <svg
-                className="h-5 w-5"
+                className="h-4 w-4"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                strokeWidth={1.8}
+                strokeWidth={2}
                 aria-hidden
               >
                 <path
@@ -117,11 +227,11 @@ export function Navbar() {
               </svg>
             ) : (
               <svg
-                className="h-5 w-5"
+                className="h-4 w-4"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                strokeWidth={1.8}
+                strokeWidth={2}
                 aria-hidden
               >
                 <path
@@ -139,31 +249,53 @@ export function Navbar() {
         <>
           <button
             type="button"
-            className="fixed inset-0 top-16 z-40 bg-black/50 backdrop-blur-[2px] md:hidden"
+            className="fixed inset-0 top-16 z-40 bg-black/60 backdrop-blur-[2px] lg:hidden"
             aria-hidden
             tabIndex={-1}
             onClick={close}
           />
           <div
             id={panelId}
-            className="fixed inset-x-0 top-16 z-50 max-h-[calc(100dvh-4rem)] overflow-y-auto border-b border-[var(--border-subtle)] bg-[var(--bg-base)]/98 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.45)] backdrop-blur-xl md:hidden"
+            className="fixed inset-x-0 top-16 z-50 max-h-[calc(100dvh-4rem)] overflow-y-auto border-b border-[var(--border-subtle)] bg-[var(--bg-base)]/98 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.6)] backdrop-blur-xl lg:hidden"
             role="dialog"
             aria-modal="true"
             aria-label={t("siteNavigation")}
           >
-            <nav className="mx-auto flex max-w-[1280px] flex-col gap-1 px-4 py-4 sm:px-6">
-              {navLinks.map((l) => (
-                <Link
-                  key={l.href}
-                  href={l.href}
-                  className="rounded-xl px-4 py-3 text-base font-medium text-[var(--text-secondary)] transition hover:bg-[var(--bg-elevated)] hover:text-[var(--text-primary)]"
-                  onClick={close}
-                >
-                  {t(l.labelKey)}
-                </Link>
+            <nav className="mx-auto max-w-[1280px] px-4 py-4 sm:px-6">
+              {mobileGroups.map((group) => (
+                <div key={group.labelKey} className="mb-4 last:mb-0">
+                  <p className="px-4 pb-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
+                    {t(group.labelKey)}
+                  </p>
+                  <ul className="space-y-0.5">
+                    {group.links.map((l) => (
+                      <li key={l.href}>
+                        <Link
+                          href={l.href}
+                          className="block rounded-xl px-4 py-3 text-base font-medium text-[var(--text-secondary)] transition hover:bg-[var(--bg-elevated)] hover:text-[var(--text-primary)]"
+                          onClick={close}
+                        >
+                          {t(l.labelKey)}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
+
+              <p className="mt-2 px-4 pb-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
+                {t("groupConnect")}
+              </p>
+              <Link
+                href="/#contact"
+                className="block rounded-xl px-4 py-3 text-base font-medium text-[var(--text-secondary)] transition hover:bg-[var(--bg-elevated)] hover:text-[var(--text-primary)]"
+                onClick={close}
+              >
+                {t("contact")}
+              </Link>
+
               <BookCallLink
-                className="mt-2 inline-flex h-12 items-center justify-center rounded-2xl bg-gradient-to-r from-[#3b82f6] to-[#6366f1] px-4 text-base font-semibold text-white shadow-lg shadow-indigo-500/25"
+                className="mt-3 inline-flex h-12 w-full items-center justify-center rounded-xl bg-gradient-to-r from-[#2563EB] to-[#10B981] px-4 text-base font-semibold text-white shadow-[0_0_24px_-6px_rgba(37,99,235,0.45)]"
                 onClick={close}
               >
                 {t("bookCall")}
