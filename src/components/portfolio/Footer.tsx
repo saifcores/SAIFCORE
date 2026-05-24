@@ -10,6 +10,7 @@ export async function Footer() {
 
   const pageLinks = [
     { href: "/about" as const, label: t("about") },
+    { href: "/certifications" as const, label: t("credentials") },
     { href: "/systems" as const, label: t("systems") },
     { href: "/experience" as const, label: t("experience") },
     { href: "/articles" as const, label: t("articles") },

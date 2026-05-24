@@ -7,6 +7,7 @@ import { Navbar } from "@/components/portfolio/Navbar";
 import { Reveal } from "@/components/portfolio/Reveal";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
+import { buildBreadcrumbJsonLd, buildPageMetadata } from "@/seo";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -26,19 +27,31 @@ export async function generateMetadata({
     locale: locale as Locale,
     namespace: "systemsPage",
   });
-  return {
+  return buildPageMetadata({
+    locale,
+    path: "/systems",
     title: t("metaTitle"),
     description: t("metaDescription"),
-  };
+  });
 }
 
 export default async function SystemsPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale as Locale);
   const t = await getTranslations("systemsPage");
+  const tCommon = await getTranslations("common");
+
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd(locale, [
+    { name: tCommon("home"), path: "/" },
+    { name: t("title"), path: "/systems" },
+  ]);
 
   return (
     <div className="flex min-h-full flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Navbar />
       <main
         id="main-content"

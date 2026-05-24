@@ -18,12 +18,15 @@ const primaryNav: NavItem[] = [
   { href: "/#work", labelKey: "work" },
   { href: "/#services", labelKey: "services" },
   { href: "/#expertise", labelKey: "expertise" },
+  { href: "/#certifications", labelKey: "credentials" },
   { href: "/#process", labelKey: "process" },
   { href: "/#contact", labelKey: "contact" },
 ];
 
 const moreNav: NavItem[] = [
   { href: "/about", labelKey: "about" },
+  { href: "/certifications", labelKey: "credentials" },
+  { href: "/systems", labelKey: "systems" },
   { href: "/experience", labelKey: "experience" },
   { href: "/articles", labelKey: "insights" },
 ];
@@ -38,6 +41,7 @@ const mobileGroups: {
       { href: "/#work", labelKey: "work" },
       { href: "/#services", labelKey: "services" },
       { href: "/#expertise", labelKey: "expertise" },
+      { href: "/#certifications", labelKey: "credentials" },
       { href: "/#process", labelKey: "process" },
     ],
   },
@@ -45,6 +49,8 @@ const mobileGroups: {
     labelKey: "groupProfile",
     links: [
       { href: "/about", labelKey: "about" },
+      { href: "/certifications", labelKey: "credentials" },
+      { href: "/systems", labelKey: "systems" },
       { href: "/experience", labelKey: "experience" },
       { href: "/articles", labelKey: "insights" },
     ],

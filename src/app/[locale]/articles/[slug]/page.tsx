@@ -11,7 +11,7 @@ import { Reveal } from "@/components/portfolio/Reveal";
 import { articles, getArticleBlocks, getArticleBySlug } from "@/data/articles";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { getSiteUrl } from "@/site";
+import { buildPageMetadata } from "@/seo";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -30,23 +30,16 @@ export async function generateMetadata({
   const article = getArticleBySlug(slug);
   if (!article) return {};
   const loc = locale === "fr" ? "fr" : "en";
-  const base = getSiteUrl();
-  const path =
-    locale === routing.defaultLocale
-      ? `/articles/${slug}`
-      : `/${locale}/articles/${slug}`;
-  return {
-    title: `${article.title[loc]} | SAIFCORE`,
+  const title = `${article.title[loc]} | SAIFCORE`;
+
+  return buildPageMetadata({
+    locale,
+    path: `/articles/${slug}`,
+    title,
     description: article.excerpt[loc],
-    alternates: { canonical: path },
-    openGraph: {
-      title: `${article.title[loc]} | SAIFCORE`,
-      description: article.excerpt[loc],
-      url: new URL(path, `${base}/`).toString(),
-      type: "article",
-      publishedTime: `${article.publishedAt}T12:00:00.000Z`,
-    },
-  };
+    openGraphType: "article",
+    publishedTime: `${article.publishedAt}T12:00:00.000Z`,
+  });
 }
 
 export default async function ArticlePage({ params }: Props) {

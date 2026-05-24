@@ -37,7 +37,7 @@ export async function CertificationsTeaser() {
               </h2>
             </div>
             <Link
-              href="/about#certifications"
+              href="/certifications"
               className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-accent transition hover:text-[var(--accent-blue-light)]"
             >
               {t("viewAll")}

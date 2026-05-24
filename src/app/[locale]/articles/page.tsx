@@ -9,6 +9,7 @@ import { Reveal } from "@/components/portfolio/Reveal";
 import { articles } from "@/data/articles";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
+import { buildBreadcrumbJsonLd, buildPageMetadata } from "@/seo";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -24,21 +25,25 @@ export async function generateMetadata({
     locale: locale as Locale,
     namespace: "articlesPage",
   });
-  return {
+  return buildPageMetadata({
+    locale,
+    path: "/articles",
     title: t("metaTitle"),
     description: t("metaDescription"),
-    alternates: {
-      canonical:
-        locale === routing.defaultLocale ? "/articles" : `/${locale}/articles`,
-    },
-  };
+  });
 }
 
 export default async function ArticlesPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale as Locale);
   const t = await getTranslations("articlesPage");
+  const tCommon = await getTranslations("common");
   const loc = locale === "fr" ? "fr" : "en";
+
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd(locale, [
+    { name: tCommon("home"), path: "/" },
+    { name: t("title"), path: "/articles" },
+  ]);
 
   const formatDate = (iso: string) =>
     new Intl.DateTimeFormat(loc === "fr" ? "fr-FR" : "en-US", {
@@ -49,6 +54,10 @@ export default async function ArticlesPage({ params }: Props) {
 
   return (
     <div className="flex min-h-full flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Navbar />
       <main
         id="main-content"

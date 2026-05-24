@@ -1,13 +1,19 @@
 import type { Locale } from "next-intl";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import {
+  getMessages,
+  getTranslations,
+  setRequestLocale,
+} from "next-intl/server";
 import type { Metadata } from "next";
-import { About } from "@/components/portfolio/About";
+import { CertificationsSection } from "@/components/portfolio/CertificationsSection";
 import { Footer } from "@/components/portfolio/Footer";
 import { Navbar } from "@/components/portfolio/Navbar";
 import { Reveal } from "@/components/portfolio/Reveal";
+import { certificationIds, getCertificationMeta } from "@/data/certifications";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { buildBreadcrumbJsonLd, buildPageMetadata } from "@/seo";
+import { getProfileDisplayName } from "@/site";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -25,33 +31,72 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({
     locale: locale as Locale,
-    namespace: "aboutPage",
+    namespace: "certificationsPage",
   });
+
   return buildPageMetadata({
     locale,
-    path: "/about",
+    path: "/certifications",
     title: t("metaTitle"),
     description: t("metaDescription"),
   });
 }
 
-export default async function AboutPage({ params }: Props) {
+export default async function CertificationsPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale as Locale);
-  const t = await getTranslations("aboutPage");
-  const tCommon = await getTranslations("common");
 
-  const breadcrumbJsonLd = buildBreadcrumbJsonLd(locale, [
-    { name: tCommon("home"), path: "/" },
-    { name: t("title"), path: "/about" },
-  ]);
+  const t = await getTranslations("certificationsPage");
+  const tCommon = await getTranslations("common");
+  const messages = await getMessages();
+  const displayName = getProfileDisplayName();
+
+  const credentials = certificationIds.map((id) => {
+    const copy = messages.certifications.items[id];
+    const meta = getCertificationMeta(id);
+    return { ...copy, ...meta, id };
+  });
+
+  const jsonLd: Record<string, unknown>[] = [
+    buildBreadcrumbJsonLd(locale, [
+      { name: tCommon("home"), path: "/" },
+      { name: t("title"), path: "/certifications" },
+    ]),
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      name: t("metaTitle"),
+      description: t("metaDescription"),
+      mainEntity: {
+        "@type": "Person",
+        name: displayName,
+        hasCredential: credentials.map((item) => ({
+          "@type": "EducationalOccupationalCredential",
+          name: item.name,
+          description: item.description,
+          credentialCategory:
+            item.group === "formal" ? "certification" : "expertise",
+          recognizedBy: {
+            "@type": "Organization",
+            name: item.issuer,
+          },
+          ...(item.verifyUrl && item.status === "obtained"
+            ? { url: item.verifyUrl }
+            : {}),
+        })),
+      },
+    },
+  ];
 
   return (
     <div className="flex min-h-full flex-col">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
+      {jsonLd.map((data, index) => (
+        <script
+          key={index}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+        />
+      ))}
       <Navbar />
       <main
         id="main-content"
@@ -77,7 +122,7 @@ export default async function AboutPage({ params }: Props) {
           </div>
         </section>
 
-        <About extended />
+        <CertificationsSection compact />
       </main>
       <Footer />
     </div>

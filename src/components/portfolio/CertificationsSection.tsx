@@ -37,9 +37,12 @@ export async function CertificationsSection({ compact = false }: Props) {
   const statusLabel = (status: CertificationStatus) =>
     t(getStatusLabelKey(status));
 
+  const headingId = "certifications-heading";
+
   return (
     <section
       id="certifications"
+      aria-labelledby={compact ? undefined : headingId}
       className={
         compact
           ? ""
@@ -52,7 +55,10 @@ export async function CertificationsSection({ compact = false }: Props) {
             <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
               {t("title")}
             </p>
-            <h2 className="max-w-2xl text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
+            <h2
+              id={headingId}
+              className="max-w-2xl text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl"
+            >
               {t("subtitle")}
             </h2>
             <p className="mt-4 max-w-2xl text-[var(--text-secondary)]">

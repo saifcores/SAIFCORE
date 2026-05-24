@@ -13,7 +13,8 @@
   "common": {
     "skipToContent": "Skip to content",
     "loading": "Loading…",
-    "readMore": "Read"
+    "readMore": "Read",
+    "home": "Home"
   },
   "actionBar": {
     "bookCall": "Book a call",
@@ -28,6 +29,8 @@
     "process": "Process",
     "about": "About",
     "insights": "Insights",
+    "credentials": "Credentials",
+    "systems": "Case studies",
     "contact": "Contact",
     "bookCall": "Book a call",
     "openMenu": "Open menu",
@@ -744,6 +747,13 @@
       }
     }
   },
+  "certificationsPage": {
+    "metaTitle": "Credentials & Certifications | Freelance Fintech Engineer | SAIFCORE",
+    "metaDescription": "Industry certifications and production-proven expertise — AWS, security, Azure AI, Kafka, Kubernetes, Spring, and payment systems engineering for fintech backends.",
+    "title": "Credentials",
+    "subtitle": "Industry certifications across cloud, security, AI, and event streaming — plus hands-on depth in Spring, Kubernetes, and payment infrastructure.",
+    "backToHome": "Back to home"
+  },
   "aboutPage": {
     "metaTitle": "About | Freelance Fintech Engineer | SAIFCORE",
     "metaDescription": "Independent backend & fintech engineer — AWS certified, payment infrastructure, APIs, and distributed systems. Based in Dakar, available for international freelance and contract work.",
@@ -816,6 +826,7 @@
     "experience": "Experience",
     "articles": "Articles",
     "about": "About",
+    "credentials": "Credentials",
     "pagesLabel": "Pages",
     "connectLabel": "Connect",
     "contact": "Contact"

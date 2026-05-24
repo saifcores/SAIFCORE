@@ -20,6 +20,8 @@ export type NavPrimaryLinkKey = Extract<
   | "process"
   | "about"
   | "insights"
+  | "credentials"
+  | "systems"
   | "contact"
   | "more"
   | "groupExplore"
