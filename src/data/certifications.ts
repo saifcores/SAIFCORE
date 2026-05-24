@@ -95,6 +95,11 @@ export function getCertificationMeta(id: CertificationId): CertificationMeta {
   return meta;
 }
 
+/** True when at least one credential is verified — gates nav, sitemap, and /certifications. */
+export function hasObtainedCertifications(): boolean {
+  return certificationsMeta.some((cert) => cert.status === "obtained");
+}
+
 /** Homepage teaser — certified + actively pursuing (excludes planned only). */
 export function getTeaserCertifications(): CertificationMeta[] {
   return certificationsMeta.filter((cert) => cert.status !== "notStarted");

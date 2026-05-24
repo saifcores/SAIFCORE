@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { articles } from "@/data/articles";
+import { hasObtainedCertifications } from "@/data/certifications";
 import { routing } from "@/i18n/routing";
 import { getSiteUrl } from "@/site";
 
@@ -90,21 +91,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     });
 
-    const certificationsUrl = `${base}${prefix}/certifications`;
-    entries.push({
-      url: certificationsUrl,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.82,
-      alternates: {
-        languages: Object.fromEntries(
-          routing.locales.map((loc) => {
-            const p = loc === routing.defaultLocale ? "" : `/${loc}`;
-            return [loc, `${base}${p}/certifications`] as const;
-          }),
-        ),
-      },
-    });
+    if (hasObtainedCertifications()) {
+      const certificationsUrl = `${base}${prefix}/certifications`;
+      entries.push({
+        url: certificationsUrl,
+        lastModified: new Date(),
+        changeFrequency: "monthly",
+        priority: 0.82,
+        alternates: {
+          languages: Object.fromEntries(
+            routing.locales.map((loc) => {
+              const p = loc === routing.defaultLocale ? "" : `/${loc}`;
+              return [loc, `${base}${p}/certifications`] as const;
+            }),
+          ),
+        },
+      });
+    }
 
     for (const article of articles) {
       const articleUrl = `${base}${prefix}/articles/${article.slug}`;

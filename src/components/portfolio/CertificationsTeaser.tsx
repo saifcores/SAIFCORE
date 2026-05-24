@@ -1,6 +1,9 @@
 import { getMessages, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { getTeaserCertifications } from "@/data/certifications";
+import {
+  getTeaserCertifications,
+  hasObtainedCertifications,
+} from "@/data/certifications";
 import {
   CertificationIcon,
   CertificationStatusPill,
@@ -36,13 +39,15 @@ export async function CertificationsTeaser() {
                 {t("teaserHeading")}
               </h2>
             </div>
-            <Link
-              href="/certifications"
-              className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-accent transition hover:text-[var(--accent-blue-light)]"
-            >
-              {t("viewAll")}
-              <span aria-hidden>→</span>
-            </Link>
+            {hasObtainedCertifications() ? (
+              <Link
+                href="/certifications"
+                className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-accent transition hover:text-[var(--accent-blue-light)]"
+              >
+                {t("viewAll")}
+                <span aria-hidden>→</span>
+              </Link>
+            ) : null}
           </div>
         </MotionReveal>
 

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { Link } from "@/i18n/navigation";
 import type { NavPrimaryLinkKey } from "@/types/messages";
+import { hasObtainedCertifications } from "@/data/certifications";
 import { BookCallLink } from "./BookCallLink";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import { ThemeToggle } from "./ThemeToggle";
@@ -14,22 +15,29 @@ type NavItem = {
   labelKey: NavPrimaryLinkKey;
 };
 
-const primaryNav: NavItem[] = [
+const showCredentialsNav = hasObtainedCertifications();
+
+function navWithoutCredentials(items: NavItem[]): NavItem[] {
+  return showCredentialsNav
+    ? items
+    : items.filter((item) => item.labelKey !== "credentials");
+}
+
+const primaryNav = navWithoutCredentials([
   { href: "/#work", labelKey: "work" },
   { href: "/#services", labelKey: "services" },
   { href: "/#expertise", labelKey: "expertise" },
   { href: "/#certifications", labelKey: "credentials" },
   { href: "/#process", labelKey: "process" },
   { href: "/#contact", labelKey: "contact" },
-];
+]);
 
-const moreNav: NavItem[] = [
+const moreNav = navWithoutCredentials([
   { href: "/about", labelKey: "about" },
-  { href: "/certifications", labelKey: "credentials" },
   { href: "/systems", labelKey: "systems" },
   { href: "/experience", labelKey: "experience" },
   { href: "/articles", labelKey: "insights" },
-];
+]);
 
 const mobileGroups: {
   labelKey: "groupExplore" | "groupProfile";
@@ -37,23 +45,21 @@ const mobileGroups: {
 }[] = [
   {
     labelKey: "groupExplore",
-    links: [
+    links: navWithoutCredentials([
       { href: "/#work", labelKey: "work" },
       { href: "/#services", labelKey: "services" },
       { href: "/#expertise", labelKey: "expertise" },
-      { href: "/#certifications", labelKey: "credentials" },
       { href: "/#process", labelKey: "process" },
-    ],
+    ]),
   },
   {
     labelKey: "groupProfile",
-    links: [
+    links: navWithoutCredentials([
       { href: "/about", labelKey: "about" },
-      { href: "/certifications", labelKey: "credentials" },
       { href: "/systems", labelKey: "systems" },
       { href: "/experience", labelKey: "experience" },
       { href: "/articles", labelKey: "insights" },
-    ],
+    ]),
   },
 ];
 

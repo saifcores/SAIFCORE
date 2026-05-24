@@ -5,11 +5,16 @@ import {
   setRequestLocale,
 } from "next-intl/server";
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { CertificationsSection } from "@/components/portfolio/CertificationsSection";
 import { Footer } from "@/components/portfolio/Footer";
 import { Navbar } from "@/components/portfolio/Navbar";
 import { Reveal } from "@/components/portfolio/Reveal";
-import { certificationIds, getCertificationMeta } from "@/data/certifications";
+import {
+  certificationIds,
+  getCertificationMeta,
+  hasObtainedCertifications,
+} from "@/data/certifications";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { buildBreadcrumbJsonLd, buildPageMetadata } from "@/seo";
@@ -20,6 +25,7 @@ type Props = {
 };
 
 export async function generateStaticParams() {
+  if (!hasObtainedCertifications()) return [];
   return routing.locales.map((locale) => ({ locale }));
 }
 
@@ -28,6 +34,8 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
+  if (!hasObtainedCertifications()) return {};
+
   const { locale } = await params;
   const t = await getTranslations({
     locale: locale as Locale,
@@ -43,6 +51,10 @@ export async function generateMetadata({
 }
 
 export default async function CertificationsPage({ params }: Props) {
+  if (!hasObtainedCertifications()) {
+    notFound();
+  }
+
   const { locale } = await params;
   setRequestLocale(locale as Locale);
 
