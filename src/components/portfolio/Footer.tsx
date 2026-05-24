@@ -22,7 +22,7 @@ export async function Footer() {
   return (
     <footer className="border-t border-[var(--border-subtle)] px-4 py-12 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-[1280px]">
-        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
+        <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
             <p className="text-sm font-bold tracking-tight">
               <span className="text-[var(--text-primary)]">SAIF</span>
@@ -36,7 +36,7 @@ export async function Footer() {
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-12 sm:gap-16">
+          <div className="grid grid-cols-2 gap-8 sm:flex sm:flex-wrap sm:gap-12 md:gap-16">
             <nav aria-label={t("pagesLabel")}>
               <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
                 {t("pagesLabel")}

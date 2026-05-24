@@ -13,17 +13,17 @@ export async function Hero() {
     <>
       <Link
         href="/#work"
-        className="btn-primary btn-primary-lg inline-flex h-12 items-center justify-center px-8 text-sm"
+        className="btn-primary btn-primary-lg inline-flex h-12 w-full items-center justify-center px-6 text-sm sm:w-auto sm:px-8"
       >
         {t("ctaPrimary")}
       </Link>
-      <BookCallLink className="btn-outline inline-flex h-12 items-center justify-center rounded-xl px-8 text-sm font-semibold">
+      <BookCallLink className="btn-outline inline-flex h-12 w-full items-center justify-center rounded-xl px-6 text-sm font-semibold sm:w-auto sm:px-8">
         {t("ctaBookCall")}
       </BookCallLink>
       {resumeUrl ? (
         <a
           href={resumeUrl}
-          className="btn-outline inline-flex h-12 items-center justify-center rounded-xl px-8 text-sm font-semibold"
+          className="btn-outline inline-flex h-12 w-full items-center justify-center rounded-xl px-6 text-sm font-semibold sm:w-auto sm:px-8"
           {...(isLocalResume(resumeUrl)
             ? { download: "SAIFCORE-resume.pdf" }
             : { target: "_blank", rel: "noopener noreferrer" })}
@@ -33,7 +33,7 @@ export async function Hero() {
       ) : (
         <Link
           href="/#contact"
-          className="btn-outline inline-flex h-12 items-center justify-center rounded-xl px-8 text-sm font-semibold"
+          className="btn-outline inline-flex h-12 w-full items-center justify-center rounded-xl px-6 text-sm font-semibold sm:w-auto sm:px-8"
         >
           {t("ctaResume")}
         </Link>
@@ -42,7 +42,7 @@ export async function Hero() {
   );
 
   return (
-    <section className="relative overflow-hidden border-b border-[var(--border-subtle)] px-4 pb-28 pt-20 sm:px-6 sm:pb-36 sm:pt-28 lg:px-8">
+    <section className="relative overflow-hidden border-b border-[var(--border-subtle)] px-4 pb-24 pt-16 sm:px-6 sm:pb-32 sm:pt-24 md:pb-36 md:pt-28 lg:px-8">
       <div className="bg-grid pointer-events-none absolute inset-0 opacity-100" />
       <div
         className="ambient-glow pointer-events-none absolute -left-1/3 top-0 h-[600px] w-[70%] rounded-full bg-gradient-to-br from-blue-600/20 via-blue-500/8 to-transparent blur-3xl animate-float-glow"
@@ -59,7 +59,7 @@ export async function Hero() {
       />
 
       <div className="relative mx-auto max-w-[1280px]">
-        <div className="grid items-center gap-16 lg:grid-cols-[1fr_420px] xl:gap-24">
+        <div className="grid items-center gap-10 md:grid-cols-2 md:gap-12 lg:grid-cols-[1fr_minmax(280px,420px)] xl:gap-24">
           <HeroContent
             badge={t("badge")}
             titleLine1={t("titleLine1")}

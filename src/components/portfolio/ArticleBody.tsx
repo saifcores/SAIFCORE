@@ -40,7 +40,7 @@ export function ArticleBody({ blocks, locale, labels }: Props) {
   const items = (i: { en: string[]; fr: string[] }) => i[locale];
 
   return (
-    <div className="mt-12 space-y-8">
+    <div className="mt-8 space-y-6 sm:mt-12 sm:space-y-8">
       {blocks.map((block, i) => (
         <Reveal key={i} delay={Math.min(i * 40, 400)}>
           <BlockRenderer block={block} labels={labels} t={t} items={items} />
@@ -107,7 +107,7 @@ function BlockRenderer({
       );
     case "adr":
       return (
-        <div className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/50 p-6 sm:p-8">
+        <div className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/50 p-5 sm:p-6 md:p-8">
           <p className="text-xs font-semibold uppercase tracking-widest text-[var(--accent-cyan)]">
             {labels.adrStatus} · {t(block.status)}
           </p>

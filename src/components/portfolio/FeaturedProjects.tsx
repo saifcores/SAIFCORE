@@ -13,7 +13,7 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
   const t = await getTranslations("featuredProjects");
 
   return (
-    <section id="work" className="px-4 py-24 sm:px-6 lg:px-8">
+    <section id="work" className="px-4 py-16 sm:py-20 lg:py-24 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-[1280px]">
         {!showDetail ? (
           <Reveal>
@@ -44,7 +44,7 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
                     aria-hidden
                   />
 
-                  <div className="p-8 sm:p-10 lg:p-12">
+                  <div className="p-6 sm:p-8 lg:p-12">
                     {/* Header row */}
                     <div className="flex flex-wrap items-start justify-between gap-4">
                       <div className="flex items-start gap-6">
@@ -68,7 +68,7 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
                       </div>
 
                       {/* Stack badges — desktop */}
-                      <div className="hidden flex-wrap gap-2 lg:flex">
+                      <div className="hidden flex-wrap gap-2 md:flex">
                         {item.stacks.slice(0, 4).map((tech) => (
                           <span
                             key={tech}
@@ -86,7 +86,7 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
                     </div>
 
                     {/* Core narrative — Problem / Solution / Architecture */}
-                    <div className="mt-8 grid gap-6 border-t border-[var(--border-subtle)] pt-8 lg:grid-cols-3 lg:gap-8">
+                    <div className="mt-8 grid gap-6 border-t border-[var(--border-subtle)] pt-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
                       <div>
                         <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)]">
                           {t("problemLabel")}
@@ -175,7 +175,7 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
                       </div>
 
                       {/* Mobile stack badges */}
-                      <div className="flex flex-wrap gap-2 lg:hidden">
+                      <div className="flex flex-wrap gap-2 md:hidden">
                         {item.stacks.map((tech) => (
                           <span
                             key={tech}

@@ -10,7 +10,7 @@ export async function FeaturedProjectsTeaser() {
   return (
     <section
       id="work"
-      className="border-b border-[var(--border-subtle)] px-4 py-24 sm:px-6 lg:px-8"
+      className="border-b border-[var(--border-subtle)] px-4 py-16 sm:py-20 lg:py-24 sm:px-6 lg:px-8"
     >
       <div className="mx-auto max-w-[1280px]">
         <Reveal>
@@ -53,7 +53,7 @@ export async function FeaturedProjectsTeaser() {
 
                   <div className="relative flex aspect-[16/9] items-center justify-center border-b border-[var(--border-subtle)] bg-gradient-to-br from-blue-500/8 via-[var(--bg-base)]/80 to-emerald-500/8">
                     <div className="bg-grid absolute inset-0 opacity-40" />
-                    <div className="relative w-[88%] max-w-sm rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/80 p-4 shadow-lg backdrop-blur-sm transition group-hover:border-[var(--border-hover)]">
+                    <div className="relative w-[92%] max-w-xs rounded-lg border sm:w-[88%] sm:max-w-sm border-[var(--border-subtle)] bg-[var(--bg-elevated)]/80 p-4 shadow-lg backdrop-blur-sm transition group-hover:border-[var(--border-hover)]">
                       <div className="flex gap-1.5">
                         <span className="h-2 w-2 rounded-full bg-red-400/70" />
                         <span className="h-2 w-2 rounded-full bg-amber-400/70" />
@@ -73,7 +73,7 @@ export async function FeaturedProjectsTeaser() {
                     </span>
                   </div>
 
-                  <div className="flex flex-1 flex-col p-6">
+                  <div className="flex flex-1 flex-col p-5 sm:p-6">
                     <div className="flex items-start justify-between gap-3">
                       <span className="font-mono text-[11px] font-semibold tracking-[0.15em] text-[var(--text-muted)]">
                         {indexStr}

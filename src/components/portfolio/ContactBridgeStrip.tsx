@@ -9,7 +9,7 @@ export async function ContactBridgeStrip({ ns }: { ns: Namespace }) {
 
   return (
     <section
-      className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 px-6 py-12 sm:px-10 sm:py-14"
+      className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 px-4 py-10 sm:px-10 sm:py-14"
       aria-labelledby={`contact-bridge-${ns}`}
     >
       <Reveal>
@@ -25,7 +25,7 @@ export async function ContactBridgeStrip({ ns }: { ns: Namespace }) {
           </p>
           <Link
             href="/#contact"
-            className="btn-primary btn-primary-lg inline-flex h-12 min-w-[200px] items-center justify-center px-8 text-sm"
+            className="btn-primary btn-primary-lg inline-flex h-12 w-full max-w-xs items-center justify-center px-8 text-sm sm:w-auto sm:min-w-[200px]"
           >
             {t("endCtaButton")}
           </Link>

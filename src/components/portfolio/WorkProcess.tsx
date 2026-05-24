@@ -17,7 +17,7 @@ export function WorkProcess({ title, subtitle, steps }: Props) {
   return (
     <section
       id="process"
-      className="border-b border-[var(--border-subtle)] px-4 py-24 sm:px-6 lg:px-8"
+      className="border-b border-[var(--border-subtle)] px-4 py-16 sm:py-20 lg:py-24 sm:px-6 lg:px-8"
     >
       <div className="mx-auto max-w-[1280px]">
         <MotionReveal>

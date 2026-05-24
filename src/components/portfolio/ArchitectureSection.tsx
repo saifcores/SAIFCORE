@@ -105,7 +105,7 @@ export async function ArchitectureSection() {
   return (
     <section
       id="architecture"
-      className="border-y border-[var(--border-subtle)] bg-[var(--bg-elevated)]/15 px-4 py-24 sm:px-6 lg:px-8"
+      className="border-y border-[var(--border-subtle)] bg-[var(--bg-elevated)]/15 px-4 py-16 sm:py-20 lg:py-24 sm:px-6 lg:px-8"
     >
       <div className="mx-auto max-w-[1280px]">
         <Reveal>
@@ -117,7 +117,7 @@ export async function ArchitectureSection() {
           </h2>
         </Reveal>
 
-        <div className="mt-16 grid gap-12 lg:grid-cols-[1fr_400px] lg:gap-16">
+        <div className="mt-16 grid gap-10 md:grid-cols-[1fr_minmax(280px,400px)] md:gap-12 lg:gap-16">
           {/* Architecture diagram */}
           <Reveal>
             <div className="relative">

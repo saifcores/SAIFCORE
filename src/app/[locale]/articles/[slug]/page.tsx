@@ -101,10 +101,10 @@ export default async function ArticlePage({ params }: Props) {
                   {t("published")} {formatDate(article.publishedAt)}
                 </time>
               </div>
-              <h1 className="mt-4 text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl sm:leading-tight">
+              <h1 className="mt-4 text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl sm:leading-tight">
                 {article.title[loc]}
               </h1>
-              <p className="mt-6 text-lg leading-relaxed text-[var(--text-secondary)]">
+              <p className="mt-6 text-base leading-relaxed text-[var(--text-secondary)] sm:text-lg">
                 {article.excerpt[loc]}
               </p>
               {external ? (
@@ -112,7 +112,7 @@ export default async function ArticlePage({ params }: Props) {
                   href={external}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-primary btn-primary-lg inline-flex h-12 items-center justify-center px-8 text-sm"
+                  className="btn-primary btn-primary-lg inline-flex h-12 w-full items-center justify-center px-8 text-sm sm:w-auto"
                 >
                   {t("readExternal")}
                 </a>

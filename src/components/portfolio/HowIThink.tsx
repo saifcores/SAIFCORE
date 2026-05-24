@@ -9,7 +9,7 @@ export async function HowIThink() {
   return (
     <section
       id="process"
-      className="border-b border-[var(--border-subtle)] px-4 py-24 sm:px-6 lg:px-8"
+      className="border-b border-[var(--border-subtle)] px-4 py-16 sm:py-20 lg:py-24 sm:px-6 lg:px-8"
     >
       <div className="mx-auto max-w-[1280px]">
         <Reveal>
@@ -21,10 +21,10 @@ export async function HowIThink() {
           </h2>
         </Reveal>
 
-        <div className="mt-16 grid gap-8 lg:grid-cols-2 lg:gap-14">
+        <div className="mt-16 grid gap-8 md:grid-cols-2 md:gap-10 lg:gap-14">
           {/* Steps */}
           <Reveal>
-            <div className="relative rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-8 sm:p-10">
+            <div className="relative rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-6 sm:p-8 md:p-10">
               <ol className="relative space-y-0">
                 {steps.map((step, i) => {
                   const stepId = String(i + 1).padStart(2, "0");
@@ -61,7 +61,7 @@ export async function HowIThink() {
           {/* Philosophy */}
           <Reveal delay={120}>
             <div className="flex h-full flex-col justify-center">
-              <div className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-8 sm:p-10">
+              <div className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-6 sm:p-8 md:p-10">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
                   {t("operatingModel")}
                 </p>

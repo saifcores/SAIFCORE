@@ -147,14 +147,18 @@ export function Navbar() {
         </Link>
 
         <nav
-          className="hidden items-center gap-6 lg:flex"
+          className="hidden items-center gap-3 md:flex xl:gap-6"
           aria-label={t("primary")}
         >
           {primaryNav.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-[var(--text-muted)] transition hover:text-[var(--text-primary)]"
+              className={`shrink-0 text-xs font-medium text-[var(--text-muted)] transition hover:text-[var(--text-primary)] xl:text-sm ${
+                l.labelKey === "process" || l.labelKey === "credentials"
+                  ? "hidden xl:inline"
+                  : ""
+              }`}
             >
               {t(l.labelKey)}
             </Link>
@@ -211,12 +215,12 @@ export function Navbar() {
             labels={{ en: t("localeEn"), fr: t("localeFr") }}
           />
           <ThemeToggle />
-          <BookCallLink className="btn-primary hidden px-4 py-2 text-sm sm:inline-flex">
+          <BookCallLink className="btn-primary hidden px-3 py-2 text-xs md:inline-flex xl:px-4 xl:text-sm">
             {t("bookCall")}
           </BookCallLink>
           <button
             type="button"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/50 text-[var(--text-primary)] transition hover:border-[var(--border-hover)] lg:hidden"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/50 text-[var(--text-primary)] transition hover:border-[var(--border-hover)] md:hidden"
             onClick={() => setOpen((o) => !o)}
             aria-expanded={open}
             aria-controls={panelId}
@@ -261,14 +265,14 @@ export function Navbar() {
         <>
           <button
             type="button"
-            className="fixed inset-0 top-16 z-40 bg-[var(--overlay-scrim)] backdrop-blur-[2px] lg:hidden"
+            className="fixed inset-0 top-16 z-40 bg-[var(--overlay-scrim)] backdrop-blur-[2px] md:hidden"
             aria-hidden
             tabIndex={-1}
             onClick={close}
           />
           <div
             id={panelId}
-            className="fixed inset-x-0 top-16 z-50 max-h-[calc(100dvh-4rem)] overflow-y-auto border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)] shadow-[var(--shadow-panel)] backdrop-blur-xl lg:hidden"
+            className="fixed inset-x-0 top-16 z-50 max-h-[calc(100dvh-4rem)] overflow-y-auto border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)] shadow-[var(--shadow-panel)] backdrop-blur-xl md:hidden"
             role="dialog"
             aria-modal="true"
             aria-label={t("siteNavigation")}

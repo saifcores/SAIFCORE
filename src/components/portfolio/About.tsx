@@ -19,10 +19,10 @@ export async function About({ extended = false }: Props) {
   return (
     <section
       id="about"
-      className={`px-4 py-24 sm:px-6 lg:px-8 ${extended ? "" : "border-b border-[var(--border-subtle)]"}`}
+      className={`px-4 py-16 sm:py-20 lg:py-24 sm:px-6 lg:px-8 ${extended ? "" : "border-b border-[var(--border-subtle)]"}`}
     >
       <div className="mx-auto max-w-[1280px]">
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-20">
+        <div className="grid gap-12 md:grid-cols-2 md:items-center md:gap-16 lg:gap-20">
           <Reveal>
             {!extended ? (
               <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
@@ -53,7 +53,7 @@ export async function About({ extended = false }: Props) {
                 className="absolute -inset-4 rounded-[28px] bg-gradient-to-br from-blue-600/20 via-blue-500/8 to-emerald-500/15 blur-2xl"
                 aria-hidden
               />
-              <div className="relative overflow-hidden rounded-[24px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/60 p-10 text-center backdrop-blur-sm">
+              <div className="relative overflow-hidden rounded-[24px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/60 p-6 text-center backdrop-blur-sm sm:p-10">
                 <div
                   className="mx-auto flex h-28 w-28 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-emerald)] shadow-lg shadow-blue-500/25"
                   aria-hidden
@@ -75,28 +75,28 @@ export async function About({ extended = false }: Props) {
                   {t("cardTagline")}
                 </p>
 
-                <div className="mt-8 grid grid-cols-3 gap-4 border-t border-[var(--border-subtle)] pt-8 text-center">
+                <div className="mt-8 grid grid-cols-3 gap-2 border-t border-[var(--border-subtle)] pt-8 text-center sm:gap-4">
                   <div>
-                    <p className="text-gradient text-2xl font-bold">
+                    <p className="text-gradient text-xl font-bold sm:text-2xl">
                       {t("statYearsValue")}
                     </p>
-                    <p className="mt-1 text-xs text-[var(--text-muted)]">
+                    <p className="mt-1 text-[10px] text-[var(--text-muted)] sm:text-xs">
                       {t("statYears")}
                     </p>
                   </div>
                   <div>
-                    <p className="text-gradient text-2xl font-bold">
+                    <p className="text-gradient text-xl font-bold sm:text-2xl">
                       {t("statSystemsValue")}
                     </p>
-                    <p className="mt-1 text-xs text-[var(--text-muted)]">
+                    <p className="mt-1 text-[10px] text-[var(--text-muted)] sm:text-xs">
                       {t("statSystems")}
                     </p>
                   </div>
                   <div>
-                    <p className="text-gradient text-2xl font-bold">
+                    <p className="text-gradient text-xl font-bold sm:text-2xl">
                       {t("statCuriosityValue")}
                     </p>
-                    <p className="mt-1 text-xs text-[var(--text-muted)]">
+                    <p className="mt-1 text-[10px] text-[var(--text-muted)] sm:text-xs">
                       {t("statCuriosity")}
                     </p>
                   </div>
@@ -147,7 +147,7 @@ export async function About({ extended = false }: Props) {
                 </p>
                 <Link
                   href="/#contact"
-                  className="btn-primary btn-primary-lg inline-flex h-12 min-w-[200px] items-center justify-center px-8 text-sm"
+                  className="btn-primary btn-primary-lg inline-flex h-12 w-full max-w-xs items-center justify-center px-8 text-sm sm:w-auto sm:min-w-[200px]"
                 >
                   {t("endCtaButton")}
                 </Link>

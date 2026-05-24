@@ -38,9 +38,9 @@ export function HeroContent({
         initial={reduce ? false : { opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.55, ease }}
-        className="mb-10 flex flex-wrap items-center gap-3"
+        className="mb-8 flex flex-wrap items-center gap-2 sm:mb-10 sm:gap-3"
       >
-        <span className="inline-flex items-center gap-2.5 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/60 px-4 py-2 text-xs font-medium tracking-[0.14em] uppercase text-[var(--text-muted)] backdrop-blur-sm">
+        <span className="inline-flex items-center gap-2.5 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/60 px-3 py-1.5 text-[10px] font-medium tracking-[0.14em] uppercase text-[var(--text-muted)] backdrop-blur-sm sm:px-4 sm:py-2 sm:text-xs">
           <span
             className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-emerald)]"
             aria-hidden
@@ -59,13 +59,13 @@ export function HeroContent({
         transition={{ duration: 0.6, delay: 0.08, ease }}
         className="max-w-3xl font-bold tracking-tight text-[var(--text-primary)]"
       >
-        <span className="block text-5xl leading-[1.06] sm:text-6xl lg:text-[3.5rem] xl:text-[4rem]">
+        <span className="block text-[1.75rem] leading-[1.08] min-[480px]:text-4xl sm:text-5xl md:text-[2.75rem] lg:text-[3.5rem] xl:text-[4rem]">
           {titleLine1}
         </span>
-        <span className="block text-5xl leading-[1.06] sm:text-6xl lg:text-[3.5rem] xl:text-[4rem]">
+        <span className="block text-[1.75rem] leading-[1.08] min-[480px]:text-4xl sm:text-5xl md:text-[2.75rem] lg:text-[3.5rem] xl:text-[4rem]">
           {titleLine2}
         </span>
-        <span className="text-gradient block text-5xl leading-[1.06] sm:text-6xl lg:text-[3.5rem] xl:text-[4rem]">
+        <span className="text-gradient block text-[1.75rem] leading-[1.08] min-[480px]:text-4xl sm:text-5xl md:text-[2.75rem] lg:text-[3.5rem] xl:text-[4rem]">
           {titleLine3}
         </span>
       </motion.h1>
@@ -74,7 +74,7 @@ export function HeroContent({
         initial={reduce ? false : { opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.55, delay: 0.16, ease }}
-        className="mt-8 max-w-xl text-lg leading-relaxed text-[var(--text-secondary)] sm:text-xl"
+        className="mt-6 max-w-xl text-base leading-relaxed text-[var(--text-secondary)] sm:mt-8 sm:text-lg md:text-xl"
       >
         {subtitle}
       </motion.p>
@@ -99,7 +99,7 @@ export function HeroContent({
         initial={reduce ? false : { opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.28, ease }}
-        className="mt-12 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center"
+        className="mt-8 flex flex-col gap-3 sm:mt-12 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4"
       >
         {ctas}
       </motion.div>

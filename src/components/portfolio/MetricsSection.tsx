@@ -40,7 +40,7 @@ export async function MetricsSection() {
   const { metrics, principles } = messages.metricsSection;
 
   return (
-    <section className="border-b border-[var(--border-subtle)] px-4 py-24 sm:px-6 lg:px-8">
+    <section className="border-b border-[var(--border-subtle)] px-4 py-16 sm:py-20 lg:py-24 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-[1280px]">
         <Reveal>
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
@@ -72,7 +72,7 @@ export async function MetricsSection() {
                     aria-hidden
                   />
                   <p
-                    className={`relative text-4xl font-bold tracking-tight sm:text-[2.75rem] ${color.accent}`}
+                    className={`relative text-3xl font-bold tracking-tight sm:text-4xl md:text-[2.75rem] ${color.accent}`}
                   >
                     {metric.value}
                   </p>
@@ -89,7 +89,7 @@ export async function MetricsSection() {
         </div>
 
         {/* System health + Infrastructure principles */}
-        <div className="mt-8 grid gap-6 lg:grid-cols-[1fr_400px]">
+        <div className="mt-8 grid gap-6 md:grid-cols-[1fr_minmax(260px,400px)]">
           {/* Uptime chart */}
           <Reveal>
             <div className="glass rounded-2xl p-6">

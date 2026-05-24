@@ -127,7 +127,7 @@ export default async function CertificationsPage({ params }: Props) {
               <h1 className="mt-8 text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
                 {t("title")}
               </h1>
-              <p className="mt-4 max-w-2xl text-lg text-[var(--text-secondary)]">
+              <p className="mt-4 max-w-2xl text-base text-[var(--text-secondary)] sm:text-lg">
                 {t("subtitle")}
               </p>
             </Reveal>

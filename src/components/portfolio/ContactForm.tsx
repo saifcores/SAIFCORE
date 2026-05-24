@@ -62,7 +62,7 @@ export function ContactForm({
   const directMail = getContactMailto(subject);
 
   return (
-    <div className="grid gap-10 lg:grid-cols-[1fr_280px] lg:gap-12">
+    <div className="grid gap-8 md:grid-cols-[1fr_minmax(220px,280px)] md:gap-10 lg:gap-12">
       <form
         onSubmit={handleSubmit}
         className="surface-panel rounded-2xl p-6 text-left sm:p-8"

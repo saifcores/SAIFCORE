@@ -16,9 +16,9 @@ export async function AboutTeaser() {
   ] as const;
 
   return (
-    <section className="border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)]/10 px-4 py-24 sm:px-6 lg:px-8">
+    <section className="border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)]/10 px-4 py-16 sm:py-20 lg:py-24 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-[1280px]">
-        <div className="grid items-center gap-12 lg:grid-cols-[1fr_320px] lg:gap-16">
+        <div className="grid items-center gap-12 md:grid-cols-2 md:gap-10 lg:grid-cols-[1fr_320px] lg:gap-16">
           <MotionReveal>
             <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
               {t("title")}
@@ -33,7 +33,7 @@ export async function AboutTeaser() {
               {about("p4")}
             </p>
 
-            <div className="mt-10 flex flex-wrap gap-8">
+            <div className="mt-10 grid grid-cols-3 gap-4 sm:flex sm:flex-wrap sm:gap-8">
               {stats.map((stat) => (
                 <div key={stat.label}>
                   <p className="text-gradient text-2xl font-bold">

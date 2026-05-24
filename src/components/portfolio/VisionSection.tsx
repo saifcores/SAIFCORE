@@ -95,7 +95,7 @@ export async function VisionSection() {
 
         {/* Stats */}
         <Reveal delay={200}>
-          <div className="mt-16 grid grid-cols-3 gap-6 sm:gap-10">
+          <div className="mt-16 grid grid-cols-1 gap-6 min-[480px]:grid-cols-3 sm:gap-10">
             {stats.map((stat, i) => (
               <div key={i} className="text-center">
                 <p className="text-gradient text-3xl font-bold sm:text-4xl">

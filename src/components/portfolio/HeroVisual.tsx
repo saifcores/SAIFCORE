@@ -64,7 +64,13 @@ export function HeroVisual({
   const reduce = useReducedMotion();
 
   return (
-    <div className="hidden lg:block" aria-hidden>
+    <motion.div
+      initial={reduce ? false : { opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.2 }}
+      className="mx-auto hidden w-full max-w-md md:block lg:max-w-none lg:mx-0"
+      aria-hidden
+    >
       <div className="relative space-y-4">
         <motion.div
           initial={reduce ? false : { opacity: 0, scale: 0.96 }}
@@ -80,7 +86,7 @@ export function HeroVisual({
           transition={{ duration: 0.65, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
           className="glass relative overflow-hidden rounded-2xl"
         >
-          <div className="flex items-center justify-between border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)]/40 px-5 py-3.5">
+          <div className="flex items-center justify-between border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)]/40 px-4 py-3 sm:px-5 sm:py-3.5">
             <div className="flex items-center gap-2.5">
               <span
                 className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"
@@ -100,7 +106,7 @@ export function HeroVisual({
             </div>
           </div>
 
-          <div className="space-y-0 p-5">
+          <div className="space-y-0 p-4 sm:p-5">
             {TERMINAL_ENTRIES.map((entry, i) => (
               <motion.div
                 key={i}
@@ -159,7 +165,7 @@ export function HeroVisual({
           className="glass relative overflow-hidden rounded-2xl"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-emerald-500/5" />
-          <div className="relative flex flex-col gap-4 p-6">
+          <div className="relative flex flex-col gap-4 p-4 sm:p-6">
             <div className="flex items-center justify-between">
               <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)]">
                 {mockupLabel}
@@ -210,6 +216,6 @@ export function HeroVisual({
           </div>
         </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 }

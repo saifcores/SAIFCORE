@@ -20,7 +20,7 @@ export async function Insights({ teaser = false }: Props) {
   return (
     <section
       id="insights"
-      className={`px-4 py-24 sm:px-6 lg:px-8 ${teaser ? "border-b border-[var(--border-subtle)]" : "border-b border-[var(--border-subtle)]"}`}
+      className={`px-4 py-16 sm:py-20 lg:py-24 sm:px-6 lg:px-8 ${teaser ? "border-b border-[var(--border-subtle)]" : "border-b border-[var(--border-subtle)]"}`}
     >
       <div className="mx-auto max-w-[1280px]">
         <Reveal>
@@ -49,7 +49,7 @@ export async function Insights({ teaser = false }: Props) {
           </div>
         </Reveal>
 
-        <div className="mt-14 grid gap-5 md:grid-cols-3">
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {preview.map((article, i) => {
             const href = article.externalUrl ?? `/articles/${article.slug}`;
             const external = !!article.externalUrl;

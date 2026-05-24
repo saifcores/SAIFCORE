@@ -77,7 +77,7 @@ export default async function ArticlesPage({ params }: Props) {
               <h1 className="mt-8 text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
                 {t("title")}
               </h1>
-              <p className="mt-4 max-w-2xl text-lg text-[var(--text-secondary)]">
+              <p className="mt-4 max-w-2xl text-base text-[var(--text-secondary)] sm:text-lg">
                 {t("subtitle")}
               </p>
             </Reveal>
@@ -87,13 +87,13 @@ export default async function ArticlesPage({ params }: Props) {
         {/* Article grid */}
         <section className="px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-[1280px]">
-            <div className="grid gap-6 lg:grid-cols-2">
+            <div className="grid gap-6 md:grid-cols-2">
               {articles.map((article, i) => {
                 const href = article.externalUrl ?? `/articles/${article.slug}`;
                 const external = !!article.externalUrl;
                 return (
                   <Reveal key={article.slug} delay={i * 60}>
-                    <article className="group flex h-full flex-col rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-8 transition hover:-translate-y-1 hover:border-[var(--border-hover)] hover:bg-[var(--bg-elevated)]/40">
+                    <article className="group flex h-full flex-col rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-6 transition sm:p-8 hover:-translate-y-1 hover:border-[var(--border-hover)] hover:bg-[var(--bg-elevated)]/40">
                       <div className="flex flex-wrap items-center gap-2">
                         <ArticleKindBadge
                           kind={article.kind}

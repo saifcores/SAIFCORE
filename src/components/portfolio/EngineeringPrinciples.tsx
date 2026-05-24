@@ -18,7 +18,7 @@ export function EngineeringPrinciples({ title, subtitle, items }: Props) {
   const reduce = useReducedMotion();
 
   return (
-    <section className="border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)]/10 px-4 py-24 sm:px-6 lg:px-8">
+    <section className="border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)]/10 px-4 py-16 sm:py-20 lg:py-24 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-[1280px]">
         <MotionReveal>
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">

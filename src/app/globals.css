@@ -87,10 +87,12 @@
   --color-accent-emerald: var(--accent-emerald);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --breakpoint-xs: 30rem;
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -111,9 +113,53 @@ body {
   background-color: var(--bg-base);
   color: var(--text-primary);
   font-family: var(--font-sans);
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.65;
+  overflow-x: clip;
 }
+
+@media (min-width: 640px) {
+  body {
+    font-size: 17px;
+  }
+}
+
+/* Shared responsive page rail */
+.page-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@media (min-width: 640px) {
+  .page-container {
+    padding-inline: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-container {
+    padding-inline: 2rem;
+  }
+}
+
+.section-y {
+  padding-block: 4rem;
+}
+
+@media (min-width: 640px) {
+  .section-y {
+    padding-block: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-y {
+    padding-block: 6rem;
+  }
+}
+
 
 /* Borders and card backgrounds also transition smoothly */
 section,

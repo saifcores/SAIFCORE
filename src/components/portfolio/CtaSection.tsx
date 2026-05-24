@@ -9,10 +9,10 @@ export async function CtaSection() {
   const resumeUrl = getResumeUrl();
 
   return (
-    <section id="contact" className="px-4 py-24 sm:px-6 lg:px-8">
+    <section id="contact" className="px-4 py-16 sm:py-20 lg:py-24 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-[1280px]">
         <MotionReveal>
-          <div className="relative overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 px-6 py-12 sm:px-10 sm:py-16 lg:px-14">
+          <div className="relative overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 px-4 py-10 sm:px-10 sm:py-16 lg:px-14">
             <div className="bg-grid pointer-events-none absolute inset-0 opacity-60" />
             <div
               className="pointer-events-none absolute -left-24 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-blue-600/20 blur-3xl"

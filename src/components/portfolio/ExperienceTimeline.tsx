@@ -123,7 +123,7 @@ function ExperienceCard({
   return (
     <li className={`relative ${isLast ? "" : "pb-10 sm:pb-12"}`}>
       <Reveal delay={revealDelay(index)}>
-        <div className="group relative flex gap-5 sm:gap-8">
+        <div className="group relative flex gap-4 min-[480px]:gap-5 sm:gap-8">
           <div className="relative z-10 flex shrink-0 flex-col items-center">
             <CompanyLogo
               logo={item.logo}
@@ -139,7 +139,7 @@ function ExperienceCard({
           </div>
 
           <article
-            className={`relative min-w-0 flex-1 overflow-hidden rounded-2xl border p-6 transition duration-300 sm:p-8 ${
+            className={`relative min-w-0 flex-1 overflow-hidden rounded-2xl border p-5 transition duration-300 sm:p-6 md:p-8 ${
               isCurrent
                 ? "border-blue-500/25 bg-gradient-to-br from-blue-500/[0.07] via-[var(--bg-elevated)]/25 to-[var(--bg-elevated)]/10 shadow-[0_0_0_1px_rgba(59,130,246,0.06)]"
                 : "border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 hover:border-[var(--border-hover)] hover:bg-[var(--bg-elevated)]/35 hover:shadow-lg hover:shadow-[var(--shadow-card)]"
@@ -280,7 +280,7 @@ export function ExperienceTimeline({
     <>
       <ol className="relative mx-auto max-w-4xl list-none p-0">
         <div
-          className="absolute left-8 top-10 bottom-10 hidden w-px bg-gradient-to-b from-blue-500/50 via-[var(--border-subtle)] to-transparent sm:left-9 sm:block"
+          className="absolute left-7 top-10 bottom-10 hidden w-px bg-gradient-to-b from-blue-500/50 via-[var(--border-subtle)] to-transparent min-[480px]:left-8 sm:left-9 sm:block"
           aria-hidden
         />
 
