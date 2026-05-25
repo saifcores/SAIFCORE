@@ -705,14 +705,13 @@
     "title": "Expérience professionnelle",
     "subtitle": "Travail concret dans des contextes bancaires régulés, fintech et entreprise — là où la fiabilité et la correction ne sont pas négociables.",
     "backToHome": "Retour à l'accueil",
-    "skillsTitle": "Compétences techniques",
-    "skillsSubtitle": "Langages, frameworks et infrastructure utilisés en production bancaire et fintech."
+    "skillsTitle": "Stack production",
+    "skillsSubtitle": "Technologies et pratiques derrière la banque, la fintech et les backends distribués — issues de la livraison réelle, pas d'une liste de mots-clés."
   },
   "skillsMatrix": {
     "languages": [
       "Java 17",
       "TypeScript",
-      "JavaScript",
       "SQL"
     ],
     "languagesLabel": "Langages",
@@ -721,76 +720,74 @@
       "Spring Security",
       "Spring Cloud",
       "Angular",
-      "Next.js",
-      "Tailwind CSS"
+      "Next.js"
     ],
-    "frameworksLabel": "Frameworks & Bibliothèques",
+    "frameworksLabel": "Backend & Frontend",
     "infrastructure": [
       "PostgreSQL",
-      "MySQL",
       "Redis",
       "Apache Kafka",
       "Docker",
-      "AWS",
       "Kubernetes",
+      "AWS",
       "GitLab CI/CD"
     ],
-    "infrastructureLabel": "Infrastructure & DevOps",
+    "infrastructureLabel": "Infra & DevOps",
     "tools": [
-      "REST APIs",
       "OpenAPI",
-      "Jasper Reports",
+      "REST APIs",
+      "Webhooks",
       "Wave",
       "Orange Money",
-      "Git",
+      "Jasper Reports",
       "JUnit",
-      "Scrum / Agile",
       "DDD",
-      "Architecture propre"
+      "Architecture propre",
+      "Conception event-driven"
     ],
-    "toolsLabel": "Outils & Pratiques"
+    "toolsLabel": "Fintech & modèles"
   },
   "trustedExpertise": {
-    "title": "Expertise reconnue",
-    "subtitle": "Capacités de niveau enterprise, plébiscitées par des startups et entreprises qui construisent des produits financiers à l'échelle.",
-    "techLabel": "Technologies",
-    "conceptsLabel": "Architecture",
+    "title": "Domaines d'expertise",
+    "subtitle": "Là où les systèmes fintech production se jouent — six domaines de profondeur, du grand livre au mobile money à l'échelle.",
+    "techLabel": "Stack",
+    "conceptsLabel": "Modèles",
     "items": [
       {
         "title": "Systèmes de paiement",
-        "description": "Flux de bout en bout — règlement, réconciliation et orchestration fournisseurs, conçus pour la charge production.",
+        "description": "Rails collecte, règlement et réconciliation — conçus pour l'idempotence, avec routage multi-fournisseur calibré pour la charge production.",
         "technologies": ["Java", "Spring Boot", "PostgreSQL", "Redis"],
-        "concepts": ["Idempotence", "Sémantique exactly-once", "Patterns ledger"]
+        "concepts": ["Grand livre partie double", "Écriture idempotente", "Fenêtres de règlement"]
       },
       {
         "title": "Ingénierie backend",
-        "description": "Services orientés domaine, frontières claires et APIs pensées pour des plateformes fintech durables.",
-        "technologies": ["Spring Boot", "REST APIs", "Apache Kafka", "Docker"],
-        "concepts": ["Clean Architecture", "DDD", "Ports hexagonaux"]
+        "description": "Services pérennes aux frontières métier nettes — un backend que votre équipe peut faire évoluer des années après le lancement.",
+        "technologies": ["Java 17", "Spring Boot", "PostgreSQL", "Apache Kafka"],
+        "concepts": ["Contextes bornés", "Clean Architecture", "Intégrité transactionnelle"]
       },
       {
         "title": "Architecture API",
-        "description": "APIs versionnées et observables — gateways, webhooks et intégrations partenaires avec contrats stricts.",
-        "technologies": ["OpenAPI", "Spring Cloud Gateway", "JWT", "HMAC"],
-        "concepts": ["API gateways", "Rate limiting", "Évolution de schémas"]
+        "description": "APIs contract-first pour partenaires et équipes internes — versionnées, authentifiées et observables dès le jour un.",
+        "technologies": ["OpenAPI", "Spring Cloud Gateway", "JWT", "Webhooks"],
+        "concepts": ["Rétrocompatibilité", "Limitation de débit", "Callbacks signés"]
       },
       {
         "title": "Systèmes distribués",
-        "description": "Microservices event-driven qui restent cohérents quand le réseau faillit et le trafic explose.",
+        "description": "Services event-driven qui restent corrects quand les fournisseurs timeout, les files saturent et le trafic explose sans prévenir.",
         "technologies": ["Apache Kafka", "Docker", "Kubernetes", "AWS"],
-        "concepts": ["Event sourcing", "CQRS", "Orchestration saga"]
+        "concepts": ["Pattern outbox", "Compensation saga", "Disjoncteurs"]
       },
       {
         "title": "Cloud & DevOps",
-        "description": "Livraison cloud-native avec CI/CD, observabilité et infrastructure qui scale avec votre produit.",
-        "technologies": ["AWS", "Docker", "Kubernetes", "GitLab CI/CD"],
-        "concepts": ["Apps 12-factor", "SLOs", "Déploiements sans interruption"]
+        "description": "Infrastructure opérable par votre équipe — CI/CD, observabilité et environnements pensés pour des releases sans interruption.",
+        "technologies": ["AWS", "Kubernetes", "Docker", "GitLab CI/CD"],
+        "concepts": ["Ops pilotés par SLO", "Livraison GitOps", "Déploiements sans interruption"]
       },
       {
         "title": "Intégrations mobile money",
-        "description": "Orange Money, Wave et wallets régionaux — une API pour votre équipe produit.",
+        "description": "Orange Money, Wave et wallets régionaux derrière une API stable — spécificités, retries et écarts de réconciliation pris en charge.",
         "technologies": ["Wave", "Orange Money", "Spring Security", "PostgreSQL"],
-        "concepts": ["Abstraction fournisseur", "Politiques de retry", "Pistes d'audit"]
+        "concepts": ["Adaptateurs fournisseur", "Normalisation des webhooks", "Pistes d'audit"]
       }
     ]
   },
@@ -826,77 +823,92 @@
     "cta": "Discuter de votre projet"
   },
   "techStack": {
-    "title": "Stack technique",
-    "subtitle": "Technologies de production pour la banque, la fintech et les backends distribués — alignées sur la livraison réelle.",
+    "title": "Stack production",
+    "subtitle": "Ce que je livre en banque, fintech et backends distribués — sélectionné depuis la production réelle, pas une liste de mots-clés.",
     "categories": [
       {
         "label": "Backend",
         "items": [
-          "Java 17",
+          "Java 17/21+",
           "Spring Boot",
           "Spring Security",
           "Spring Cloud",
+          "Spring Batch",
           "NestJS"
         ]
       },
       {
         "label": "Frontend",
         "items": [
-          "Angular",
-          "TypeScript",
           "React",
           "Next.js",
+          "Angular",
+          "React",
+          "TypeScript",
           "Tailwind CSS",
-          "Vite"
+          "Redux",
+          "Jest"
         ]
       },
       {
         "label": "Données & cache",
         "items": [
           "PostgreSQL",
-          "MySQL",
-          "Redis",
           "MongoDB",
-          "SQL"
+          "Redis",
+          "MySQL",
+          "Elasticsearch",
+          "Flyway & Liquibase"  
         ]
       },
       {
-        "label": "Messagerie & APIs",
+        "label": "Messagerie et APIs",
         "items": [
           "Apache Kafka",
           "RabbitMQ",
-          "REST APIs",
-          "GraphQL",
-          "OpenAPI",
           "gRPC",
-          "Webhooks"
+          "GraphQL",
+          "OpenAPI (Swagger)",
+          "RESTful APIs",
+          "Webhooks",
+          "Spring Cloud Gateway",
+          "API Management",
+          "AsyncAPI"
         ]
       },
       {
-        "label": "Cloud & livraison",
+        "label": "Cloud & CI/CD",
         "items": [
           "Docker",
           "Kubernetes",
-          "AWS",
-          "Google Cloud",
+          "AWS (ECS, S3, RDS, Lambda)",
+          "Google Cloud Platform",
+          "DigitalOcean",
+          "GitHub Actions",
           "GitLab CI/CD",
-          "GitHub Actions"
+          "Jenkins",
+          "Vercel",
+          "Netlify",
+          "Prometheus & Grafana"
         ]
       },
       {
-        "label": "Fintech & pratiques",
+        "label": "Fintech & patterns",
         "items": [
-          "Wave",
-          "Orange Money",
-          "Jasper Reports",
-          "ISO 20022",
-          "PCI-DSS",
-          "DDD",
+           "PCI DSS Compliance",
+          "GDPR/HIPAA Compliance",
+          "ISO 8583 & ISO 20022 Messaging",
+          "Domain-Driven Design (DDD)",
           "Clean Architecture",
-          "Architecture événementielle",
-          "Event-driven design",
-          "CQRS",
-          "Provider abstraction"
+          "Hexagonal (Ports & Adapters) Architecture",
+          "Event-Driven Architecture",
+          "CQRS & Event Sourcing",
+          "Provider Abstraction & Modularization",
+          "Payment Integration Patterns",
+          "Regulatory Sandbox Testing",
+          "Saga & Outbox Patterns",
+          "Resilience Patterns (Circuit Breaker, Bulkhead)",
+          "Open Banking APIs"
         ]
       }
     ]
