@@ -48,9 +48,9 @@ export function TechStackSection({ title, subtitle, categories }: Props) {
                     show: { transition: { staggerChildren: 0.04 } },
                   }}
                 >
-                  {cat.items.map((tech) => (
+                  {cat.items.map((tech, ti) => (
                     <motion.span
-                      key={tech}
+                      key={`${cat.label}-${tech}-${ti}`}
                       variants={{
                         hidden: reduce ? {} : { opacity: 0, scale: 0.92 },
                         show: { opacity: 1, scale: 1 },

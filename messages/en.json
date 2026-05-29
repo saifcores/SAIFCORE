@@ -149,91 +149,65 @@
   },
   "techStack": {
     "title": "Production stack",
-    "subtitle": "What I ship with in banking, fintech, and distributed backends — curated from live delivery, not a job-board keyword dump.",
+    "subtitle": "A focused delivery stack for freelance and consulting engagements — chosen for reliable fintech backends, partner integrations, and handoff-ready systems.",
     "categories": [
       {
         "label": "Backend",
         "items": [
-          "Java 17/21+",
+          "Java 17",
           "Spring Boot",
           "Spring Security",
-          "Spring Cloud",
-          "Spring Batch",
-          "NestJS"
+          "Spring Cloud"
         ]
       },
       {
         "label": "Frontend",
         "items": [
-          "React",
-          "Next.js",
           "Angular",
-          "React",
           "TypeScript",
-          "Tailwind CSS",
-          "Redux",
-          "Jest"
+          "Next.js",
+          "Tailwind CSS"
         ]
       },
       {
-        "label": "Data, Caching & Search",
+        "label": "Data & cache",
         "items": [
           "PostgreSQL",
-          "MongoDB",
           "Redis",
-          "MySQL",
-          "Elasticsearch",
-          "Flyway & Liquibase"
+          "MySQL"
         ]
       },
       {
         "label": "Messaging & APIs",
         "items": [
           "Apache Kafka",
-          "RabbitMQ",
-          "gRPC",
-          "GraphQL",
-          "OpenAPI (Swagger)",
-          "RESTful APIs",
+          "OpenAPI",
+          "REST APIs",
           "Webhooks",
-          "Spring Cloud Gateway",
-          "API Management",
-          "AsyncAPI"
+          "Spring Cloud Gateway"
         ]
       },
       {
-        "label": "Cloud, DevOps & Delivery",
+        "label": "Cloud & delivery",
         "items": [
           "Docker",
           "Kubernetes",
-          "AWS (ECS, S3, RDS, Lambda)",
-          "Google Cloud Platform",
-          "DigitalOcean",
-          "GitHub Actions",
+          "AWS",
           "GitLab CI/CD",
-          "Jenkins",
-          "Vercel",
-          "Netlify",
-          "Prometheus & Grafana"
+          "Observability"
         ]
       },
       {
-        "label": "Fintech & Architecture Patterns",
+        "label": "Fintech & consulting",
         "items": [
-          "PCI DSS Compliance",
-          "GDPR/HIPAA Compliance",
-          "ISO 8583 & ISO 20022 Messaging",
-          "Domain-Driven Design (DDD)",
+          "Wave",
+          "Orange Money",
+          "Jasper Reports",
+          "ISO 20022",
+          "DDD",
           "Clean Architecture",
-          "Hexagonal (Ports & Adapters) Architecture",
-          "Event-Driven Architecture",
-          "CQRS & Event Sourcing",
-          "Provider Abstraction & Modularization",
-          "Payment Integration Patterns",
-          "Regulatory Sandbox Testing",
-          "Saga & Outbox Patterns",
-          "Resilience Patterns (Circuit Breaker, Bulkhead)",
-          "Open Banking APIs"
+          "Event-driven design",
+          "Outbox & saga patterns"
         ]
       }
     ]

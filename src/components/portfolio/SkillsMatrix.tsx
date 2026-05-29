@@ -70,9 +70,9 @@ export async function SkillsMatrix() {
                     {group.labelKey}
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {(group.items as readonly string[]).map((skill) => (
+                    {(group.items as readonly string[]).map((skill, si) => (
                       <span
-                        key={skill}
+                        key={`${group.labelKey}-${skill}-${si}`}
                         className={`rounded-full border px-3 py-1 text-xs font-medium transition hover:brightness-110 ${style.highlight}`}
                       >
                         {skill}

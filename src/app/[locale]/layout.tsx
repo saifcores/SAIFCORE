@@ -109,7 +109,10 @@ export default async function LocaleLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full bg-bg-base text-text-primary">
+      <body
+        className="min-h-full bg-bg-base text-text-primary"
+        suppressHydrationWarning
+      >
         {/*
          * FOUT prevention — runs synchronously before React hydrates.
          * Reads localStorage (or falls back to prefers-color-scheme) and
