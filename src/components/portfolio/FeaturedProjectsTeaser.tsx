@@ -1,6 +1,116 @@
 import { getMessages, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import type { FeaturedProjectItem } from "@/types/messages";
 import { Reveal } from "./Reveal";
+
+type TeaserCardProps = {
+  item: FeaturedProjectItem;
+  indexStr: string;
+  metrics: FeaturedProjectItem["metrics"];
+  screenshotLabel: string;
+  externalLabel?: string;
+};
+
+function ProjectTeaserCard({
+  item,
+  indexStr,
+  metrics,
+  screenshotLabel,
+  externalLabel,
+}: TeaserCardProps) {
+  return (
+    <>
+      <div
+        className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-emerald)] opacity-0 transition duration-300 group-hover:opacity-100"
+        aria-hidden
+      />
+
+      <div className="relative flex aspect-[16/9] items-center justify-center border-b border-[var(--border-subtle)] bg-gradient-to-br from-blue-500/8 via-[var(--bg-base)]/80 to-emerald-500/8">
+        <div className="bg-grid absolute inset-0 opacity-40" />
+        <div className="relative w-[92%] max-w-xs rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/80 p-4 shadow-lg backdrop-blur-sm transition group-hover:border-[var(--border-hover)] sm:w-[88%] sm:max-w-sm">
+          <div className="flex gap-1.5">
+            <span className="h-2 w-2 rounded-full bg-red-400/70" />
+            <span className="h-2 w-2 rounded-full bg-amber-400/70" />
+            <span className="h-2 w-2 rounded-full bg-emerald-400/70" />
+          </div>
+          <div className="mt-3 space-y-2">
+            <div className="h-2 w-3/4 rounded bg-[var(--border-subtle)]" />
+            <div className="h-2 w-1/2 rounded bg-[var(--border-subtle)]" />
+            <div className="mt-3 flex gap-2">
+              <div className="h-8 flex-1 rounded bg-blue-500/15" />
+              <div className="h-8 flex-1 rounded bg-emerald-500/15" />
+            </div>
+          </div>
+        </div>
+        <span className="absolute bottom-3 right-3 font-mono text-[10px] uppercase tracking-wider text-[var(--text-muted)]">
+          {screenshotLabel}
+        </span>
+      </div>
+
+      <div className="flex flex-1 flex-col p-5 sm:p-6">
+        <div className="flex items-start justify-between gap-3">
+          <span className="font-mono text-[11px] font-semibold tracking-[0.15em] text-[var(--text-muted)]">
+            {indexStr}
+          </span>
+          {item.status ? (
+            <span className="inline-flex items-center gap-1 text-[11px] font-medium text-emerald-400">
+              <span
+                className="h-1.5 w-1.5 rounded-full bg-emerald-400"
+                aria-hidden
+              />
+              {item.status}
+            </span>
+          ) : null}
+        </div>
+
+        <h3 className="mt-3 text-lg font-semibold leading-snug text-[var(--text-primary)] transition group-hover:text-accent">
+          {item.title}
+        </h3>
+
+        <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-[var(--text-secondary)]">
+          {item.solution}
+        </p>
+
+        {Array.isArray(metrics) && metrics.length > 0 ? (
+          <div className="mt-5 grid grid-cols-2 gap-3">
+            {metrics.map((m) => (
+              <div
+                key={m.label}
+                className="rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-base)]/50 px-3 py-2"
+              >
+                <p className="font-mono text-sm font-semibold text-emerald-400">
+                  {m.value}
+                </p>
+                <p className="text-[10px] text-[var(--text-muted)]">
+                  {m.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        ) : null}
+
+        <div className="mt-5 flex flex-wrap items-center justify-between gap-2 border-t border-[var(--border-subtle)] pt-4">
+          <div className="flex flex-wrap gap-1.5">
+            {item.stacks.slice(0, 4).map((tech) => (
+              <span
+                key={tech}
+                className="rounded-md border border-[var(--border-subtle)] bg-[var(--bg-base)]/60 px-2 py-0.5 text-[11px] font-medium text-[var(--text-muted)]"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+          {externalLabel ? (
+            <span className="text-xs font-semibold text-[var(--accent-blue)]">
+              {externalLabel}
+              <span aria-hidden> ↗</span>
+            </span>
+          ) : null}
+        </div>
+      </div>
+    </>
+  );
+}
 
 export async function FeaturedProjectsTeaser() {
   const messages = await getMessages();
@@ -39,94 +149,38 @@ export async function FeaturedProjectsTeaser() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2">
           {items.map((item, i) => {
             const indexStr = String(i + 1).padStart(2, "0");
-            const metrics = "metrics" in item ? item.metrics : [];
+            const metrics = item.metrics;
+            const external = item.href.trim();
+            const cardClassName =
+              "group relative flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 transition duration-300 hover:-translate-y-1 hover:border-[var(--border-hover)] hover:bg-[var(--bg-elevated)]/40";
+
             return (
               <Reveal key={item.title} delay={i * 80}>
-                <Link
-                  href="/systems"
-                  className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 transition duration-300 hover:-translate-y-1 hover:border-[var(--border-hover)] hover:bg-[var(--bg-elevated)]/40"
-                >
-                  <div
-                    className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-emerald)] opacity-0 transition duration-300 group-hover:opacity-100"
-                    aria-hidden
-                  />
-
-                  <div className="relative flex aspect-[16/9] items-center justify-center border-b border-[var(--border-subtle)] bg-gradient-to-br from-blue-500/8 via-[var(--bg-base)]/80 to-emerald-500/8">
-                    <div className="bg-grid absolute inset-0 opacity-40" />
-                    <div className="relative w-[92%] max-w-xs rounded-lg border sm:w-[88%] sm:max-w-sm border-[var(--border-subtle)] bg-[var(--bg-elevated)]/80 p-4 shadow-lg backdrop-blur-sm transition group-hover:border-[var(--border-hover)]">
-                      <div className="flex gap-1.5">
-                        <span className="h-2 w-2 rounded-full bg-red-400/70" />
-                        <span className="h-2 w-2 rounded-full bg-amber-400/70" />
-                        <span className="h-2 w-2 rounded-full bg-emerald-400/70" />
-                      </div>
-                      <div className="mt-3 space-y-2">
-                        <div className="h-2 w-3/4 rounded bg-[var(--border-subtle)]" />
-                        <div className="h-2 w-1/2 rounded bg-[var(--border-subtle)]" />
-                        <div className="mt-3 flex gap-2">
-                          <div className="h-8 flex-1 rounded bg-blue-500/15" />
-                          <div className="h-8 flex-1 rounded bg-emerald-500/15" />
-                        </div>
-                      </div>
-                    </div>
-                    <span className="absolute bottom-3 right-3 font-mono text-[10px] uppercase tracking-wider text-[var(--text-muted)]">
-                      {t("screenshotLabel")}
-                    </span>
-                  </div>
-
-                  <div className="flex flex-1 flex-col p-5 sm:p-6">
-                    <div className="flex items-start justify-between gap-3">
-                      <span className="font-mono text-[11px] font-semibold tracking-[0.15em] text-[var(--text-muted)]">
-                        {indexStr}
-                      </span>
-                      {item.status ? (
-                        <span className="inline-flex items-center gap-1 text-[11px] font-medium text-emerald-400">
-                          <span
-                            className="h-1.5 w-1.5 rounded-full bg-emerald-400"
-                            aria-hidden
-                          />
-                          {item.status}
-                        </span>
-                      ) : null}
-                    </div>
-
-                    <h3 className="mt-3 text-lg font-semibold leading-snug text-[var(--text-primary)] transition group-hover:text-accent">
-                      {item.title}
-                    </h3>
-
-                    <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)] line-clamp-2">
-                      {item.solution}
-                    </p>
-
-                    {Array.isArray(metrics) && metrics.length > 0 ? (
-                      <div className="mt-5 grid grid-cols-2 gap-3">
-                        {metrics.map((m) => (
-                          <div
-                            key={m.label}
-                            className="rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-base)]/50 px-3 py-2"
-                          >
-                            <p className="font-mono text-sm font-semibold text-emerald-400">
-                              {m.value}
-                            </p>
-                            <p className="text-[10px] text-[var(--text-muted)]">
-                              {m.label}
-                            </p>
-                          </div>
-                        ))}
-                      </div>
-                    ) : null}
-
-                    <div className="mt-5 flex flex-wrap gap-1.5 border-t border-[var(--border-subtle)] pt-4">
-                      {item.stacks.slice(0, 4).map((tech) => (
-                        <span
-                          key={tech}
-                          className="rounded-md border border-[var(--border-subtle)] bg-[var(--bg-base)]/60 px-2 py-0.5 text-[11px] font-medium text-[var(--text-muted)]"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </Link>
+                {external ? (
+                  <a
+                    href={external}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={cardClassName}
+                  >
+                    <ProjectTeaserCard
+                      item={item}
+                      indexStr={indexStr}
+                      metrics={metrics}
+                      screenshotLabel={t("screenshotLabel")}
+                      externalLabel={item.linkLabel}
+                    />
+                  </a>
+                ) : (
+                  <Link href="/systems" className={cardClassName}>
+                    <ProjectTeaserCard
+                      item={item}
+                      indexStr={indexStr}
+                      metrics={metrics}
+                      screenshotLabel={t("screenshotLabel")}
+                    />
+                  </Link>
+                )}
               </Reveal>
             );
           })}

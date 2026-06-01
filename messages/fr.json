@@ -155,6 +155,32 @@
     "bridgeCta": "Démarrer une conversation",
     "items": [
       {
+        "title": "Ecom 360 PME",
+        "problem": "Les commerçants africains géraient leur activité au carnet, sur Excel ou à la caisse improvisée — erreurs de caisse, stock inconnu, crédits clients oubliés et bilans de fin de journée refaits à la main.",
+        "solution": "Plateforme tout-en-un : POS tactile, stocks en temps réel avec alertes, Wave & Orange Money liés à chaque vente, multi-boutiques, crédits clients et exports PDF/Excel pour le comptable.",
+        "architecture": "SPA Angular pour la caisse et les tableaux de bord ; API REST Spring Boot multi-tenant ; jobs async pour rapports et imports ; inventaire par boutique et accès staff par rôles.",
+        "security": "TLS en transit, données sensibles chiffrées, sauvegardes automatiques, isolation par commerçant et permissions caissiers / responsables.",
+        "scale": "Chaînes multi-magasins avec reporting consolidé ; UX mobile-first au comptoir et en déplacement ; stock mis à jour à chaque vente sans recomptage manuel.",
+        "impact": "500+ commerces actifs au Sénégal et en Afrique de l'Ouest ; heures gagnées chaque semaine à la clôture ; mobile money enregistré avec chaque transaction.",
+        "href": "https://ecom360pme.com/",
+        "linkLabel": "Voir ecom360pme.com",
+        "stacks": [
+          "React",
+          "Spring Boot",
+          "PostgreSQL",
+          "Wave",
+          "Orange Money",
+          "REST APIs",
+          "Vercel",
+          "VPS Linux"
+        ],
+        "status": "En production",
+        "metrics": [
+          { "value": "500+", "label": "Commerces actifs" },
+          { "value": "< 5 min", "label": "Pour démarrer" }
+        ]
+      },
+      {
         "title": "SDK Paiement Pan-Africain",
         "problem": "Les produits nécessitaient des intégrations séparées Orange Money, Wave et Free Money — lancements lents et gestion d'erreurs incohérente.",
         "solution": "SDK unifié exposant une API pour initier, confirmer et réconcilier — adaptateurs fournisseurs derrière un contrat stable.",
@@ -261,7 +287,7 @@
         "logo": "mafalia.jpeg",
         "period": "Nov 2023 — Nov 2024",
         "location": "Région de Dakar, Sénégal",
-        "bullet0": "Fintech à fort trafic pour les PME et les commerçants informels ; interfaces Angular pour la gestion des stocks et des commandes.",
+        "bullet0": "Fintech à fort trafic pour les PME — dont Ecom 360 PME (ecom360pme.com) : caisse, stocks et Wave & Orange Money pour 500+ commerces.",
         "bullet1": "Performance frontend (~60% plus rapide) ; services Spring (~30% de réponses API plus rapides) ; refonte UX et documentation technique.",
         "bullet2": "Angular, TypeScript, Tailwind CSS, Java, Spring Boot, REST APIs, MySQL, Git, Scrum"
       },
@@ -368,7 +394,7 @@
         "label": "Années de build"
       },
       {
-        "value": "3",
+        "value": "4",
         "label": "Plateformes fintech"
       },
       {
@@ -403,9 +429,9 @@
         "description": "Incidents de sécurité post-lancement sur toutes les plateformes"
       },
       {
-        "value": "3+",
+        "value": "4+",
         "label": "Plateformes live",
-        "description": "Systèmes fintech actuellement en production"
+        "description": "Systèmes fintech et commerce actuellement en production"
       }
     ],
     "principles": [
