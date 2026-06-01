@@ -32,7 +32,13 @@ export async function Footer() {
               {t("tagline")}
             </p>
             <p className="mt-4 text-xs text-[var(--text-muted)]">
-              {t("rights", { year })}
+              {t("rights", { year })} <span aria-hidden="true">·</span>{" "}
+              <Link
+                href="/license"
+                className="underline-offset-2 transition hover:text-[var(--text-secondary)] hover:underline"
+              >
+                {t("license")}
+              </Link>
             </p>
           </div>
 

@@ -91,6 +91,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     });
 
+    const licenseUrl = `${base}${prefix}/license`;
+    entries.push({
+      url: licenseUrl,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
+      alternates: {
+        languages: Object.fromEntries(
+          routing.locales.map((loc) => {
+            const p = loc === routing.defaultLocale ? "" : `/${loc}`;
+            return [loc, `${base}${p}/license`] as const;
+          }),
+        ),
+      },
+    });
+
     if (hasObtainedCertifications()) {
       const certificationsUrl = `${base}${prefix}/certifications`;
       entries.push({

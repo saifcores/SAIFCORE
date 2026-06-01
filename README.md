@@ -8,19 +8,29 @@ Bilingual portfolio and lead-generation site for **SAIFCORE** — senior backend
 
 ## Table of contents
 
-- [Features](#features)
-- [Tech stack](#tech-stack)
-- [Getting started](#getting-started)
-- [Scripts](#scripts)
-- [Environment variables](#environment-variables)
-- [Project structure](#project-structure)
-- [Routing & pages](#routing--pages)
-- [Internationalization](#internationalization)
-- [Content & copy](#content--copy)
-- [SEO & metadata](#seo--metadata)
-- [Theming & UI](#theming--ui)
-- [Deployment](#deployment)
-- [License](#license)
+- [SAIFCORE](#saifcore)
+  - [Table of contents](#table-of-contents)
+  - [Features](#features)
+  - [Tech stack](#tech-stack)
+  - [Getting started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Install \& run](#install--run)
+    - [Production build locally](#production-build-locally)
+  - [Scripts](#scripts)
+  - [Environment variables](#environment-variables)
+  - [Project structure](#project-structure)
+  - [Routing \& pages](#routing--pages)
+  - [Internationalization](#internationalization)
+  - [Content \& copy](#content--copy)
+    - [UI strings → `messages/*.json`](#ui-strings--messagesjson)
+    - [Articles → `src/data/articles.ts`](#articles--srcdataarticlests)
+    - [Certifications → `src/data/certifications.ts` + `messages/*.json`](#certifications--srcdatacertificationsts--messagesjson)
+    - [Featured projects / experience](#featured-projects--experience)
+    - [Trust logos](#trust-logos)
+  - [SEO \& metadata](#seo--metadata)
+  - [Theming \& UI](#theming--ui)
+  - [Deployment](#deployment)
+  - [License](#license)
 
 ---
 
@@ -271,4 +281,7 @@ Optimized for [Vercel](https://vercel.com/) (zero config for Next.js). Any Node 
 
 ## License
 
-Private project (`"private": true` in `package.json`).
+This project is licensed under the MIT License.
+
+See the [LICENSE](LICENSE) file for details.
+

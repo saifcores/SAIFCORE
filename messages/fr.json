@@ -1,14 +1,14 @@
 {
   "meta": {
-    "title": "Ingénieur Fintech Freelance | Paiements & Backend | SAIFCORE",
-    "description": "Ingénieur backend & fintech indépendant pour missions internationales — infrastructure de paiement, APIs, systèmes distribués et intégrations mobile money. Livraison enterprise depuis Dakar, remote worldwide.",
-    "ogTitle": "Ingénieur Fintech Freelance — Paiements & Systèmes Backend Scalables",
-    "ogDescription": "Ingénieur freelance senior spécialisé paiements, APIs, backends distribués et architecture cloud-native. Disponible en contrat à distance.",
-    "twitterDescription": "Ingénieur fintech freelance · Infrastructure paiements · APIs · Remote international.",
-    "jsonLdJobTitle": "Ingénieur Backend & Fintech Freelance",
-    "jsonLdDescription": "Ingénieur logiciel indépendant — infrastructure fintech, systèmes de paiement, backends distribués et architecture API. Missions freelance et contrat à l'international.",
-    "manifestName": "SAIFCORE — Ingénieur Fintech & Backend Freelance",
-    "manifestDescription": "Portfolio freelance premium — infrastructure fintech, paiements et ingénierie backend enterprise."
+    "title": "Consultant Backend & Fintech | Infrastructure Paiement | SAIFCORE",
+    "description": "Consultant backend & fintech indépendant — infrastructure de paiement, intégrations partenaires et systèmes backend scalables pour fintechs, banques et entreprises digitales. Remote worldwide depuis Dakar.",
+    "ogTitle": "Consultant Backend & Fintech — Infrastructure Paiement & Intégrations",
+    "ogDescription": "Consultant senior — infrastructure de paiement, intégrations partenaires et systèmes backend scalables pour fintechs, banques et entreprises digitales. Missions remote à l'international.",
+    "twitterDescription": "Consultant backend & fintech · Infrastructure paiement · Intégrations partenaires · Remote international.",
+    "jsonLdJobTitle": "Consultant Backend & Fintech",
+    "jsonLdDescription": "Consultant indépendant — infrastructure de paiement, intégrations partenaires, stratégie API et systèmes backend scalables pour fintechs, banques et entreprises digitales.",
+    "manifestName": "SAIFCORE — Consultant Backend & Fintech",
+    "manifestDescription": "Portfolio conseil premium — infrastructure de paiement, intégrations partenaires et systèmes backend scalables."
   },
   "common": {
     "skipToContent": "Aller au contenu",
@@ -47,18 +47,18 @@
     "groupConnect": "Contact"
   },
   "hero": {
-    "badge": "Ingénieur Fintech Indépendant · Freelance & Contrat · Remote International",
-    "titleLine1": "Infrastructure de paiement",
-    "titleLine2": "scalable & systèmes",
-    "titleLine3": "backend enterprise",
-    "subtitle": "Ingénieur Backend & Fintech spécialisé APIs, systèmes distribués, intégrations mobile money et architectures cloud-native.",
+    "badge": "Consultant Backend & Fintech Indépendant · Freelance & Contrat · Remote International",
+    "titleLine1": "Consultant Backend",
+    "titleLine2": "& Fintech",
+    "titleLine3": "Infrastructure & Intégrations",
+    "subtitle": "Infrastructure de paiement, intégrations partenaires et systèmes backend scalables pour les entreprises tech et fintech.",
     "specializations": [
-      "Systèmes de paiement",
-      "Systèmes distribués",
-      "Architecture API",
-      "Mobile Money"
+      "Mobile Money",
+      "Couche d'intégration paiement",
+      "MVP Fintech",
+      "Revue d'architecture"
     ],
-    "ctaPrimary": "Voir les projets",
+    "ctaPrimary": "Voir les services",
     "ctaBookCall": "Réserver un appel",
     "ctaResume": "Télécharger le CV",
     "locationLine": "Dakar, Sénégal (GMT) — missions freelance & contrat à l'international.",
@@ -165,7 +165,7 @@
         "href": "",
         "linkLabel": "",
         "stacks": ["Java", "Spring Boot", "Redis", "Kafka", "PostgreSQL"],
-        "status": "En cours de développement", 
+        "status": "", 
         "metrics": [
           { "value": "3+", "label": "Fournisseurs unifiés" },
           { "value": "60%", "label": "Intégration plus rapide" }
@@ -182,7 +182,7 @@
         "href": "",
         "linkLabel": "",
         "stacks": ["Java", "Spring Boot", "PostgreSQL", "Kafka"],
-        "status": "En cours de développement",
+        "status": "",
         "metrics": [
           { "value": "100%", "label": "Couverture audit" },
           { "value": "0", "label": "Incidents ledger" }
@@ -199,7 +199,7 @@
         "href": "",
         "linkLabel": "",
         "stacks": ["Spring Cloud", "Kafka", "PostgreSQL", "Docker", "AWS"],
-        "status": "En cours de développement", 
+        "status": "", 
         "metrics": [
           { "value": "3", "label": "Intégrations partenaires" },
           { "value": "99.9%", "label": "Cible uptime" }
@@ -456,14 +456,14 @@
   },
   "about": {
     "title": "À propos",
-    "p1": "Je suis ingénieur backend et fintech indépendant, spécialisé systèmes de paiement, backends distribués et APIs enterprise — pour l'Afrique et des clients internationaux qui exigent une livraison production.",
+    "p1": "Je suis consultant backend et fintech indépendant, spécialisé infrastructure de paiement, intégrations partenaires et systèmes backend scalables — pour fintechs, banques et entreprises digitales qui exigent une livraison production.",
     "p2a": "Au-delà de l'écriture de code, je contribue à",
     "p2b": "l'architecture système, la conception d'API, les standards d'ingénierie et le mentorat des ingénieurs juniors",
     "p2c": "— le travail qui permet aux équipes de livrer de manière fiable quand la complexité et le trafic augmentent.",
     "p3": "Solide background Java & Spring Boot, architectures événementielles avec Kafka, et Angular/TypeScript pour la livraison full-stack quand c'est nécessaire.",
     "p4": "Basé à Dakar, Sénégal (GMT). Disponible en missions freelance et contrat à l'international. Intérêt à long terme : construire des produits d'infrastructure financière de zéro.",
-    "cardRole": "Ingénieur Backend & Fintech Freelance",
-    "cardTagline": "Infrastructure de paiement · Missions internationales",
+    "cardRole": "Consultant Backend & Fintech",
+    "cardTagline": "Infrastructure de paiement · Intégrations partenaires",
     "statYearsValue": "4+",
     "statYears": "Années",
     "statSystemsValue": "20+",
@@ -491,8 +491,8 @@
   },
   "aboutTeaser": {
     "title": "À propos",
-    "heading": "Ingénieur fintech senior, orienté freelance",
-    "excerpt": "Spécialiste indépendant en infrastructure de paiement et backends enterprise — livraison à distance pour startups et équipes régulées worldwide.",
+    "heading": "Consultant backend & fintech, orienté freelance",
+    "excerpt": "Infrastructure de paiement, intégrations partenaires et systèmes backend scalables pour fintechs, banques et entreprises digitales worldwide.",
     "readMore": "Profil complet",
     "stat1Value": "4+",
     "stat1Label": "Années en production",
@@ -587,17 +587,17 @@
     }
   },
   "certificationsPage": {
-    "metaTitle": "Certifications & Expertise | Ingénieur Fintech Freelance | SAIFCORE",
+    "metaTitle": "Certifications & Expertise | Consultant Backend & Fintech | SAIFCORE",
     "metaDescription": "Certifications industrielles et expertise éprouvée en production — AWS, sécurité, Azure AI, Kafka, Kubernetes, Spring et ingénierie de systèmes de paiement fintech.",
     "title": "Certifications",
     "subtitle": "Certifications cloud, sécurité, IA et event streaming — plus une expertise terrain en Spring, Kubernetes et infrastructure de paiement.",
     "backToHome": "Retour à l'accueil"
   },
   "aboutPage": {
-    "metaTitle": "À propos | Ingénieur Fintech Freelance | SAIFCORE",
-    "metaDescription": "Ingénieur backend & fintech indépendant — certifié AWS, infrastructure de paiement, APIs et systèmes distribués. Basé à Dakar, missions freelance et contrat international.",
+    "metaTitle": "À propos | Consultant Backend & Fintech | SAIFCORE",
+    "metaDescription": "Consultant backend & fintech indépendant — infrastructure de paiement, intégrations partenaires et systèmes backend scalables. Basé à Dakar, missions freelance et contrat international.",
     "title": "À propos",
-    "subtitle": "Ingénieur senior, orienté freelance — infrastructure financière fiable pour startups et entreprises worldwide.",
+    "subtitle": "Consultant senior, orienté freelance — infrastructure de paiement et intégrations partenaires pour fintechs, banques et entreprises digitales worldwide.",
     "backToHome": "Retour à l'accueil"
   },
   "insights": {
@@ -655,9 +655,19 @@
     "socialTitle": "Réseaux",
     "calendlyHint": "Planifier un appel découverte de 30 minutes"
   },
+  "licensePage": {
+    "metaTitle": "Licence",
+    "metaDescription": "Licence MIT du site portfolio SAIFCORE et du code open source.",
+    "title": "Licence",
+    "backToHome": "Retour à l'accueil",
+    "intro": "Ce site portfolio et son code source sont publiés sous licence MIT. Vous pouvez utiliser, modifier et distribuer le code avec attribution, selon les conditions ci-dessous.",
+    "mitHeading": "Licence MIT (texte intégral)",
+    "contentNote": "Les contenus rédigés, études de cas et éléments de marque restent © SAIFCORE sauf mention contraire. La licence MIT s'applique au code source du site."
+  },
   "footer": {
     "rights": "© {year} SAIFCORE. Tous droits réservés.",
-    "tagline": "Ingénieur fintech freelance — infrastructure de paiement & backend enterprise.",
+    "license": "Licence MIT",
+    "tagline": "Consultant backend & fintech — infrastructure de paiement, intégrations partenaires & systèmes backend scalables.",
     "linkedin": "LinkedIn",
     "github": "GitHub",
     "resume": "CV",
@@ -700,7 +710,7 @@
     "backToHome": "Retour à l'accueil"
   },
   "experiencePage": {
-    "metaTitle": "Expérience | Ingénieur Fintech Freelance | SAIFCORE",
+    "metaTitle": "Expérience | Consultant Backend & Fintech | SAIFCORE",
     "metaDescription": "Parcours professionnel — banque, fintech et livraison enterprise en Afrique. Missions conseil et contrat sur systèmes de paiement et crédit en production.",
     "title": "Expérience professionnelle",
     "subtitle": "Travail concret dans des contextes bancaires régulés, fintech et entreprise — là où la fiabilité et la correction ne sont pas négociables.",
@@ -793,34 +803,35 @@
   },
   "services": {
     "title": "Services",
-    "subtitle": "Missions à fort impact pour les équipes qui ont besoin d'un senior fintech — pas d'une dev shop générique.",
+    "audience": "Pour les entreprises tech et fintech",
+    "subtitle": "Missions backend et paiement cadrées pour les équipes produit qui construisent de l'infrastructure financière — lancer, intégrer ou sécuriser avant de scaler.",
     "items": [
       {
-        "title": "Développement systèmes fintech",
-        "description": "Greenfield ou modernisation legacy — rails de paiement, moteurs de crédit et workflows financiers livrés avec rigueur production."
+        "title": "Intégration mobile money unifiée",
+        "description": "Pour les produits fintech en expansion en Afrique — mise en production sur Orange Money, Wave et wallets régionaux via une API unique, flux idempotents et réconciliation incluse."
       },
       {
-        "title": "Intégration passerelle de paiement",
-        "description": "Connexion banques, wallets et PSP — webhooks sécurisés, réconciliation et tableaux de bord opérationnels."
+        "title": "Couche d'intégration paiement",
+        "description": "Pour les équipes tech lassées des intégrations one-shot — une couche adaptateur stable derrière un contrat unique pour shipper du produit, pas débugger les PSP."
       },
       {
-        "title": "Développement API backend",
-        "description": "APIs REST et event-driven avec OpenAPI, auth, observabilité et performance calibrée sur le trafic réel."
+        "title": "MVP Fintech — paiements inclus",
+        "description": "Pour les startups fintech en early stage — un MVP finançable avec de vrais rails de paiement, backend prêt pour le grand livre, pistes d'audit et documentation extensible."
       },
       {
-        "title": "Infrastructure cloud",
-        "description": "Fondations AWS/Kubernetes, pipelines CI/CD et environnements que votre équipe peut exploiter en confiance."
+        "title": "Revue d'architecture avant de scaler",
+        "description": "Pour les équipes tech et fintech avant une levée ou un lancement majeur — audit à scope fixe, lacunes d'intégration et feuille de route priorisée sur 90 jours."
       },
       {
-        "title": "Conseil en architecture",
-        "description": "Discovery, ADR et architectures de référence — réduire le risque avant d'engager le budget."
+        "title": "Passerelle API partenaires",
+        "description": "Pour les plateformes fintech qui onboardent banques et PSP — une gateway sécurisée avec auth, routage, rate limits et journalisation sans exposer le core."
       },
       {
-        "title": "Intégration mobile money",
-        "description": "Orange Money, Wave et patterns multi-fournisseurs — mise en production plus rapide, moins de surprises."
+        "title": "Due diligence technique",
+        "description": "Pour investisseurs et acquéreurs évaluant une cible tech ou fintech — codebase, intégrations et infra évaluées avec constats clairs et niveaux de risque."
       }
     ],
-    "cta": "Discuter de votre projet"
+    "cta": "Cadrer votre projet"
   },
   "techStack": {
     "title": "Stack production",

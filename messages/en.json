@@ -1,14 +1,14 @@
 {
   "meta": {
-    "title": "Freelance Fintech Engineer | Payment Systems & Backend | SAIFCORE",
-    "description": "Independent backend & fintech engineer for international freelance contracts — payment infrastructure, APIs, distributed systems, and mobile money integrations. Enterprise-grade delivery from Dakar, remote worldwide.",
-    "ogTitle": "Freelance Fintech Engineer — Scalable Payment & Backend Systems",
-    "ogDescription": "Senior freelance engineer specialized in payment systems, APIs, distributed backends, and cloud-native fintech architecture. Available for remote contracts globally.",
-    "twitterDescription": "Freelance fintech engineer · Payment infrastructure · APIs · Remote worldwide.",
-    "jsonLdJobTitle": "Freelance Backend & Fintech Engineer",
-    "jsonLdDescription": "Independent software engineer specializing in fintech infrastructure, payment systems, distributed backends, and API architecture. Available for international freelance and contract engagements.",
-    "manifestName": "SAIFCORE — Freelance Fintech & Backend Engineer",
-    "manifestDescription": "Premium freelance portfolio — fintech infrastructure, payment systems, and enterprise backend engineering."
+    "title": "Backend & Fintech Consultant | Payment Infrastructure | SAIFCORE",
+    "description": "Independent backend & fintech consultant — payment infrastructure, partner integrations, and scalable backend systems for fintechs, banks, and digital businesses. Remote worldwide from Dakar.",
+    "ogTitle": "Backend & Fintech Consultant — Payment Infrastructure & Integrations",
+    "ogDescription": "Senior consultant building payment infrastructure, partner integrations, and scalable backend systems for fintechs, banks, and digital businesses. Available for remote engagements globally.",
+    "twitterDescription": "Backend & fintech consultant · Payment infrastructure · Partner integrations · Remote worldwide.",
+    "jsonLdJobTitle": "Backend & Fintech Consultant",
+    "jsonLdDescription": "Independent consultant specializing in payment infrastructure, partner integrations, API strategy, and scalable backend systems for fintechs, banks, and digital businesses.",
+    "manifestName": "SAIFCORE — Backend & Fintech Consultant",
+    "manifestDescription": "Premium consulting portfolio — payment infrastructure, partner integrations, and scalable backend systems."
   },
   "common": {
     "skipToContent": "Skip to content",
@@ -45,18 +45,18 @@
     "groupConnect": "Connect"
   },
   "hero": {
-    "badge": "Independent Fintech Engineer · Freelance & Contract · Remote Worldwide",
-    "titleLine1": "Building Scalable Payment",
-    "titleLine2": "Infrastructure & Enterprise",
-    "titleLine3": "Backend Systems",
-    "subtitle": "Backend & Fintech Engineer specialized in APIs, distributed systems, mobile money integrations, and cloud-native architectures.",
+    "badge": "Independent Backend & Fintech Consultant · Freelance & Contract · Remote Worldwide",
+    "titleLine1": "Backend & Fintech",
+    "titleLine2": "Consultant",
+    "titleLine3": "Infrastructure & Integrations",
+    "subtitle": "Building payment infrastructure, partner integrations, and scalable backend systems for tech and fintech companies.",
     "specializations": [
-      "Payment Systems",
-      "Distributed Systems",
-      "API Architecture",
-      "Mobile Money"
+      "Mobile Money",
+      "Payment Integration Layer",
+      "Fintech MVP",
+      "Architecture Review"
     ],
-    "ctaPrimary": "View Projects",
+    "ctaPrimary": "View Services",
     "ctaBookCall": "Book a Call",
     "ctaResume": "Download Resume",
     "locationLine": "Dakar, Senegal (GMT) — open to international freelance & contract engagements.",
@@ -118,34 +118,35 @@
   },
   "services": {
     "title": "Services",
-    "subtitle": "Clear, high-impact engagements for teams that need senior backend and fintech delivery — not generic dev shop output.",
+    "audience": "For tech & fintech companies",
+    "subtitle": "Scoped backend and payment engagements for product teams building financial infrastructure — launch, integrate, or de-risk before you scale.",
     "items": [
       {
-        "title": "Fintech System Development",
-        "description": "Greenfield or legacy modernization — payment rails, credit engines, and core financial workflows delivered with production rigor."
+        "title": "Unified Mobile Money Integration",
+        "description": "For fintech products expanding across Africa — go live on Orange Money, Wave, and regional wallets with one API, idempotent flows, and reconciliation built in."
       },
       {
-        "title": "Payment Gateway Integration",
-        "description": "Connect banks, wallets, and PSPs with secure webhooks, reconciliation, and operational dashboards."
+        "title": "Payment Integration Layer",
+        "description": "For tech teams tired of one-off provider work — a stable adapter layer behind one contract so engineering ships product instead of debugging PSP quirks."
       },
       {
-        "title": "Backend API Development",
-        "description": "REST and event-driven APIs with OpenAPI contracts, auth, observability, and performance tuned for real traffic."
+        "title": "Fintech MVP — Payments Included",
+        "description": "For early-stage fintech startups — a fundable MVP with real payment rails, ledger-ready backend, audit trails, and documentation your team can extend."
       },
       {
-        "title": "Cloud Infrastructure",
-        "description": "AWS/Kubernetes foundations, CI/CD pipelines, and environments your team can operate confidently."
+        "title": "Architecture Review Before You Scale",
+        "description": "For tech and fintech teams before a fundraise or major launch — fixed-scope audit, integration gaps, and a prioritized 90-day roadmap."
       },
       {
-        "title": "Architecture Consulting",
-        "description": "Discovery, ADRs, and reference architectures — de-risk major technical decisions before you commit budget."
+        "title": "Partner API Gateway",
+        "description": "For fintech platforms onboarding banks and PSPs — one secure gateway with auth, routing, rate limits, and audit logging without exposing fragile core systems."
       },
       {
-        "title": "Mobile Money Integration",
-        "description": "Orange Money, Wave, and multi-provider SDK patterns — faster go-live with fewer production surprises."
+        "title": "Technical Due Diligence",
+        "description": "For investors and acquirers evaluating a tech or fintech target — codebase, integrations, and infra assessed with clear findings and risk ratings."
       }
     ],
-    "cta": "Discuss your project"
+    "cta": "Scope your project"
   },
   "techStack": {
     "title": "Production stack",
@@ -606,14 +607,14 @@
   },
   "about": {
     "title": "About",
-    "p1": "I am an independent backend and fintech engineer focused on payment systems, distributed backends, and enterprise APIs — built for Africa's realities and trusted by international clients who need production-grade delivery.",
+    "p1": "I am an independent backend and fintech consultant focused on payment infrastructure, partner integrations, and scalable backend systems — for fintechs, banks, and digital businesses that need production-grade delivery.",
     "p2a": "Beyond writing code, I contribute to",
     "p2b": "system architecture, API design, engineering standards, and junior engineer mentorship",
     "p2c": "— the work that keeps teams shipping reliably when complexity and traffic grow.",
     "p3": "Strong Java & Spring Boot background, event-driven architectures with Kafka, and Angular/TypeScript for full-stack delivery when needed.",
     "p4": "Based in Dakar, Senegal (GMT). Available for international freelance and contract engagements. Long-term interest: building financial infrastructure products from the ground up.",
-    "cardRole": "Freelance Backend & Fintech Engineer",
-    "cardTagline": "Payment infrastructure · International contracts",
+    "cardRole": "Backend & Fintech Consultant",
+    "cardTagline": "Payment infrastructure · Partner integrations",
     "statYearsValue": "4+",
     "statYears": "Years",
     "statSystemsValue": "20+",
@@ -641,8 +642,8 @@
   },
   "aboutTeaser": {
     "title": "About",
-    "heading": "Senior fintech engineer, freelance-first",
-    "excerpt": "Independent specialist in payment infrastructure and enterprise backends — delivering remotely for startups and regulated teams worldwide.",
+    "heading": "Backend & fintech consultant, freelance-first",
+    "excerpt": "Building payment infrastructure, partner integrations, and scalable backend systems for fintechs, banks, and digital businesses worldwide.",
     "readMore": "Full profile",
     "stat1Value": "4+",
     "stat1Label": "Years in production",
@@ -737,17 +738,17 @@
     }
   },
   "certificationsPage": {
-    "metaTitle": "Credentials & Certifications | Freelance Fintech Engineer | SAIFCORE",
+    "metaTitle": "Credentials & Certifications | Backend & Fintech Consultant | SAIFCORE",
     "metaDescription": "Industry certifications and production-proven expertise — AWS, security, Azure AI, Kafka, Kubernetes, Spring, and payment systems engineering for fintech backends.",
     "title": "Credentials",
     "subtitle": "Industry certifications across cloud, security, AI, and event streaming — plus hands-on depth in Spring, Kubernetes, and payment infrastructure.",
     "backToHome": "Back to home"
   },
   "aboutPage": {
-    "metaTitle": "About | Freelance Fintech Engineer | SAIFCORE",
-    "metaDescription": "Independent backend & fintech engineer — AWS certified, payment infrastructure, APIs, and distributed systems. Based in Dakar, available for international freelance and contract work.",
+    "metaTitle": "About | Backend & Fintech Consultant | SAIFCORE",
+    "metaDescription": "Independent backend & fintech consultant — payment infrastructure, partner integrations, and scalable backend systems. Based in Dakar, available for international freelance and contract work.",
     "title": "About",
-    "subtitle": "Senior engineer, freelance-first — building reliable financial infrastructure for startups and enterprises worldwide.",
+    "subtitle": "Senior consultant, freelance-first — payment infrastructure and partner integrations for fintechs, banks, and digital businesses worldwide.",
     "backToHome": "Back to home"
   },
   "insights": {
@@ -805,9 +806,19 @@
     "socialTitle": "Connect",
     "calendlyHint": "Schedule a 30-minute discovery call"
   },
+  "licensePage": {
+    "metaTitle": "License",
+    "metaDescription": "MIT License for the SAIFCORE portfolio site and open-source code.",
+    "title": "License",
+    "backToHome": "Back to home",
+    "intro": "This portfolio site and its source code are released under the MIT License. You may use, modify, and distribute the code with attribution, subject to the terms below.",
+    "mitHeading": "MIT License (full text)",
+    "contentNote": "Written content, case studies, and branding on this site remain © SAIFCORE unless otherwise noted. The MIT License applies to the site’s source code."
+  },
   "footer": {
     "rights": "© {year} SAIFCORE. All rights reserved.",
-    "tagline": "Freelance fintech engineer — payment infrastructure & enterprise backend systems.",
+    "license": "MIT License",
+    "tagline": "Backend & fintech consultant — payment infrastructure, partner integrations & scalable backend systems.",
     "linkedin": "LinkedIn",
     "github": "GitHub",
     "resume": "Resume",
@@ -850,7 +861,7 @@
     "backToHome": "Back to home"
   },
   "experiencePage": {
-    "metaTitle": "Experience | Freelance Fintech Engineer | SAIFCORE",
+    "metaTitle": "Experience | Backend & Fintech Consultant | SAIFCORE",
     "metaDescription": "Professional track record — banking, fintech, and enterprise delivery across Africa. Consultant and contract roles with production payment and credit systems.",
     "title": "Professional Experience",
     "subtitle": "Hands-on work in regulated banking, fintech, and enterprise contexts — where reliability and correctness are non-negotiable.",

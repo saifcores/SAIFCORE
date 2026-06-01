@@ -122,6 +122,7 @@ export default async function Home({ params }: Props) {
         <FeaturedProjectsTeaser />
         <ServicesSection
           title={sv.title}
+          audience={sv.audience}
           subtitle={sv.subtitle}
           cta={sv.cta}
           items={[...sv.items]}

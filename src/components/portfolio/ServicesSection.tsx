@@ -3,28 +3,42 @@
 import { motion, useReducedMotion } from "framer-motion";
 import {
   ArrowRight,
-  Cloud,
-  Code2,
+  ClipboardCheck,
+  FileSearch,
   Landmark,
-  MessageSquare,
+  Layers,
+  Rocket,
   Smartphone,
-  Wallet,
 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { MotionReveal } from "@/components/portfolio/motion/MotionReveal";
 
-const ICONS = [Wallet, Landmark, Code2, Cloud, MessageSquare, Smartphone];
+const ICONS = [
+  Smartphone,
+  Layers,
+  Rocket,
+  ClipboardCheck,
+  Landmark,
+  FileSearch,
+];
 
 type ServiceItem = { title: string; description: string };
 
 type Props = {
   title: string;
+  audience: string;
   subtitle: string;
   cta: string;
   items: ServiceItem[];
 };
 
-export function ServicesSection({ title, subtitle, cta, items }: Props) {
+export function ServicesSection({
+  title,
+  audience,
+  subtitle,
+  cta,
+  items,
+}: Props) {
   const reduce = useReducedMotion();
 
   return (
@@ -37,7 +51,10 @@ export function ServicesSection({ title, subtitle, cta, items }: Props) {
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
             {title}
           </p>
-          <h2 className="max-w-2xl text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
+          <span className="inline-flex rounded-full border border-blue-500/25 bg-blue-500/10 px-3.5 py-1 text-xs font-medium text-accent">
+            {audience}
+          </span>
+          <h2 className="mt-4 max-w-2xl text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
             {subtitle}
           </h2>
         </MotionReveal>

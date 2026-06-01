@@ -12,7 +12,7 @@ export async function Hero() {
   const ctas = (
     <>
       <Link
-        href="/#work"
+        href="/#services"
         className="btn-primary btn-primary-lg inline-flex h-12 w-full items-center justify-center px-6 text-sm sm:w-auto sm:px-8"
       >
         {t("ctaPrimary")}
