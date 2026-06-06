@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import type { TrustBrand } from "@/data/trust-brands";
+import { TrustLogo } from "./TrustLogo";
 
 type Props = {
   brands: TrustBrand[];
@@ -32,14 +32,12 @@ export function TrustMarquee({ brands }: Props) {
               className="flex w-[140px] shrink-0 flex-col items-center justify-center gap-2 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 px-4 py-4 sm:w-[160px]"
             >
               <div className="relative flex h-10 w-full items-center justify-center sm:h-11">
-                <Image
-                  src={`/trust/${b.logo}`}
-                  alt=""
+                <TrustLogo
+                  logo={b.logo}
                   width={200}
                   height={80}
                   className="h-8 w-auto max-w-full object-contain object-center opacity-65 transition-opacity duration-300 hover:opacity-90 sm:h-9"
                   sizes="160px"
-                  unoptimized
                 />
               </div>
               <p className="line-clamp-2 text-center text-[11px] font-medium leading-tight text-[var(--text-muted)] sm:text-xs">

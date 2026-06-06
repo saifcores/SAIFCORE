@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { resolveTrustLogoSrc } from "@/data/trust-brands";
 import type { ExperienceEntry } from "@/types/messages";
 import { Reveal } from "./Reveal";
 
@@ -69,7 +70,7 @@ function CompanyLogo({ logo, company, featured = false }: CompanyLogoProps) {
       <div className="relative flex h-full w-full items-center justify-center p-2.5 sm:p-3">
         {hasLogo ? (
           <Image
-            src={`/trust/${logo}`}
+            src={resolveTrustLogoSrc(logo)}
             alt=""
             width={80}
             height={80}
