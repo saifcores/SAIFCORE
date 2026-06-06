@@ -163,7 +163,7 @@
         "scale": "Chaînes multi-magasins avec reporting consolidé ; UX mobile-first au comptoir et en déplacement ; stock mis à jour à chaque vente sans recomptage manuel.",
         "impact": "500+ commerces actifs au Sénégal et en Afrique de l'Ouest ; heures gagnées chaque semaine à la clôture ; mobile money enregistré avec chaque transaction.",
         "href": "https://ecom360pme.com/",
-        "linkLabel": "Voir ecom360pme.com",
+        "linkLabel": "Visiter Ecom 360 PME",
         "stacks": [
           "React",
           "Spring Boot",
@@ -178,6 +178,30 @@
         "metrics": [
           { "value": "500+", "label": "Commerces actifs" },
           { "value": "< 5 min", "label": "Pour démarrer" }
+        ]
+      },
+      {
+        "title": "Smart Cash Africa",
+        "problem": "Les finances personnelles éclatées entre mobile money, apps bancaires et espèces — aucune vue unifiée, budgets tenus au carnet et objectifs d'épargne sans conseils adaptés aux réalités africaines.",
+        "solution": "Plateforme de Personal Finance Management (PFM) : consolidation des actifs, suivi des dépenses, gestion budgétaire, épargne intelligente et recommandations financières assistées par IA depuis un seul tableau de bord.",
+        "architecture": "Services Spring Boot modulaires (comptes, transactions, budgets) ; couche d'agrégation normalisant wallets et relevés ; pipeline async de catégorisation ; moteur de recommandations LLM avec garde-fous et sorties explicables.",
+        "security": "Identifiants chiffrés pour comptes liés, isolation stricte par utilisateur, minimisation des PII dans les prompts IA et journal d'audit sur chaque accès aux données financières.",
+        "scale": "Ingestion événementielle des dépenses ; agrégats en cache pour le dashboard ; jobs de recommandation découplés des écritures transactionnelles temps réel.",
+        "impact": "Vue unique pour les foyers multi-wallets ; catégorisation automatique à la place des tableurs ; incitations à l'épargne basées sur le flux de trésorerie réel.",
+        "href": "https://smart-cash-africa-lp.vercel.app",
+        "linkLabel": "Visiter Smart Cash Africa",
+        "stacks": [
+          "React",
+          "Spring Boot",
+          "PostgreSQL",
+          "Redis",
+          "REST APIs",
+          "LLM"
+        ],
+        "status": "En développement",
+        "metrics": [
+          { "value": "5", "label": "Modules PFM" },
+          { "value": "IA", "label": "Recommandations" }
         ]
       },
       {

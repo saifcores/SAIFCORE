@@ -386,7 +386,7 @@
         "scale": "Multi-store chains with consolidated reporting; mobile-first UX for counter, warehouse, and field; stock decremented on every sale without manual recounts.",
         "impact": "500+ active merchants across Senegal and West Africa; hours saved weekly on closing; local wallets recorded with every transaction instead of manual reconciliation.",
         "href": "https://ecom360pme.com/",
-        "linkLabel": "Visit ecom360pme.com",
+        "linkLabel": "View Ecom 360 PME",
         "stacks": [
           "Angular",
           "Spring Boot",
@@ -399,6 +399,30 @@
         "metrics": [
           { "value": "500+", "label": "Active merchants" },
           { "value": "< 5 min", "label": "Time to start" }
+        ]
+      },
+      {
+        "title": "Smart Cash Africa",
+        "problem": "Personal finances scattered across mobile wallets, bank apps, and cash — no unified view, budgets tracked in notebooks, and savings goals without guidance adapted to African income rhythms.",
+        "solution": "Personal Finance Management (PFM) platform: consolidated asset view, expense tracking, budget management, smart savings rules, and AI-assisted recommendations users can act on from one dashboard.",
+        "architecture": "Modular Spring Boot services for accounts, transactions, and budgets; aggregation layer normalizing wallet and bank feeds; async categorization pipeline; LLM-backed recommendation engine with guardrails and explainable outputs.",
+        "security": "Encrypted credentials for linked accounts, strict tenant isolation, PII minimization in AI prompts, and audit logs on every access to financial data.",
+        "scale": "Event-driven expense ingestion; cached aggregates for dashboard reads; recommendation jobs decoupled from real-time transaction writes.",
+        "impact": "One pane for multi-wallet households; automated categorization replacing manual spreadsheets; savings nudges grounded in actual cash flow instead of generic tips.",
+        "href": "https://smart-cash-africa-lp.vercel.app",
+        "linkLabel": "View Smart Cash Africa",
+        "stacks": [
+          "React",
+          "Spring Boot",
+          "PostgreSQL",
+          "Redis",
+          "REST APIs",
+          "LLM"
+        ],
+        "status": "In development",
+        "metrics": [
+          { "value": "5", "label": "Core PFM modules" },
+          { "value": "AI", "label": "Guided insights" }
         ]
       },
       {
