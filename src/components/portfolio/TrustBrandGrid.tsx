@@ -1,6 +1,8 @@
+"use client";
+
 import type { TrustBrand } from "@/data/trust-brands";
 import { Reveal } from "./Reveal";
-import { TrustLogo } from "@/components/portfolio/TrustLogo"; 
+import { TrustLogo } from "@/components/portfolio/TrustLogo";
 
 type Props = {
   brands: TrustBrand[];

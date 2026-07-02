@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import { resolveTrustLogoSrc } from "@/data/trust-brands";
 
@@ -27,14 +26,16 @@ export function TrustLogo({
   }
 
   return (
-    <Image
+    // eslint-disable-next-line @next/next/no-img-element -- static local logos; avoids Image constructor conflicts in client trees
+    <img
       src={src}
       alt=""
       width={width}
       height={height}
       className={className}
       sizes={sizes}
-      unoptimized
+      loading="lazy"
+      decoding="async"
       onError={() => setHasError(true)}
     />
   );

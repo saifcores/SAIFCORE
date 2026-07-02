@@ -59,12 +59,13 @@ export default async function Home({ params }: Props) {
     description: t("jsonLdDescription"),
     url: siteUrl,
     knowsAbout: [
+      "Enterprise platforms",
       "Payment systems",
-      "Fintech infrastructure",
+      "FinTech",
       "Distributed systems",
       "API architecture",
-      "Mobile money integrations",
-      "Kubernetes",
+      "Microservices",
+      "Cloud infrastructure",
     ],
     address: {
       "@type": "PostalAddress",
@@ -83,9 +84,9 @@ export default async function Home({ params }: Props) {
       "@type": "Offer",
       itemOffered: {
         "@type": "Service",
-        name: "Freelance backend & fintech engineering",
+        name: "Enterprise platform & payment engineering",
         description:
-          "Payment infrastructure, API development, architecture consulting, and mobile money integrations for international clients.",
+          "Backend systems, APIs, distributed architectures, and payment solutions for enterprise and fintech platforms.",
       },
       availableAtOrFrom: {
         "@type": "Place",

@@ -91,7 +91,7 @@ function ProjectTeaserCard({
 
         <div className="mt-5 flex flex-wrap items-center justify-between gap-2 border-t border-[var(--border-subtle)] pt-4">
           <div className="flex flex-wrap gap-1.5">
-            {item.stacks.slice(0, 4).map((tech) => (
+            {item.stacks.slice(0, 5).map((tech) => (
               <span
                 key={tech}
                 className="rounded-md border border-[var(--border-subtle)] bg-[var(--bg-base)]/60 px-2 py-0.5 text-[11px] font-medium text-[var(--text-muted)]"
