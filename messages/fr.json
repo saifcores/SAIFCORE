@@ -1154,6 +1154,9 @@
     "backToHome": "← Retour à l'accueil",
     "readArticle": "Lire l'article",
     "readExternal": "Lire l'article complet",
+    "readMore": "Lire la suite",
+    "author": "SAIFCORE",
+    "blogCta": "Lire sur le blog SAIFCORE",
     "published": "Publié",
     "kinds": {
       "writing": "Insight",
@@ -1209,6 +1212,7 @@
     "tagline": "Construction de plateformes robustes — paiements, fintech et excellence backend moderne.",
     "linkedin": "Se connecter sur LinkedIn",
     "github": "Voir GitHub",
+    "blog": "Blog SAIFCORE",
     "resume": "Voir le CV",
     "systems": "Études de cas projets",
     "experience": "Expérience professionnelle",

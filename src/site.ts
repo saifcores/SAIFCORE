@@ -16,7 +16,8 @@ export function getSiteUrl(): string {
 export function getSocialLinks(): string[] {
   const linkedin = process.env.NEXT_PUBLIC_LINKEDIN_URL?.trim();
   const github = process.env.NEXT_PUBLIC_GITHUB_URL?.trim();
-  return [linkedin, github].filter(
+  const blog = getBlogUrl();
+  return [linkedin, github, blog].filter(
     (u): u is string => !!u && /^https?:\/\//i.test(u),
   );
 }
@@ -91,4 +92,34 @@ export function getContactMailto(
   if (body) params.set("body", body);
   const q = params.toString();
   return `mailto:${email}${q ? `?${q}` : ""}`;
+}
+
+/**
+ * SAIFCORE Blog origin (no trailing slash).
+ * Set `NEXT_PUBLIC_BLOG_URL` (e.g. https://blog.saifcore.tech).
+ */
+export function getBlogUrl(): string | null {
+  const raw = process.env.NEXT_PUBLIC_BLOG_URL?.trim();
+  if (raw && /^https?:\/\//i.test(raw)) {
+    return raw.replace(/\/$/, "");
+  }
+  return null;
+}
+
+/** Blog home for a locale (`/` or `/fr`), or `null` if blog URL is not configured. */
+export function getBlogIndexUrl(locale: "en" | "fr"): string | null {
+  const blog = getBlogUrl();
+  if (!blog) return null;
+  return locale === "fr" ? `${blog}/fr` : blog;
+}
+
+/** Full article URL on the blog, or `null` if blog URL is not configured. */
+export function getBlogArticleUrl(
+  slug: string,
+  locale: "en" | "fr",
+): string | null {
+  const blog = getBlogUrl();
+  if (!blog) return null;
+  const prefix = locale === "fr" ? "/fr" : "";
+  return `${blog}${prefix}/articles/${slug}`;
 }

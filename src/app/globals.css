@@ -160,7 +160,6 @@ body {
   }
 }
 
-
 /* Borders and card backgrounds also transition smoothly */
 section,
 header,
@@ -655,5 +654,40 @@ nav,
 @media (prefers-reduced-motion: reduce) {
   .hero-particles {
     animation: none;
+  }
+}
+
+/* Ghost-style post cards */
+.post-card-image-link {
+  isolation: isolate;
+}
+
+.post-card-image {
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.post-card:hover .post-card-image,
+.post-card:focus-within .post-card-image {
+  transform: scale(1.06);
+}
+
+.post-card-title a {
+  text-decoration: none;
+}
+
+.post-card-excerpt {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .post-card-image {
+    transition: none;
+  }
+
+  .post-card:hover .post-card-image,
+  .post-card:focus-within .post-card-image {
+    transform: none;
   }
 }

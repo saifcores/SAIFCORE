@@ -1,7 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "next-intl";
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { ArticleBody } from "@/components/portfolio/ArticleBody";
 import { ArticleKindBadge } from "@/components/portfolio/ArticleKindBadge";
 import { ContactBridgeStrip } from "@/components/portfolio/ContactBridgeStrip";
@@ -11,6 +11,7 @@ import { Reveal } from "@/components/portfolio/Reveal";
 import { articles, getArticleBlocks, getArticleBySlug } from "@/data/articles";
 import { Link } from "@/i18n/navigation";
 import { buildPageMetadata } from "@/seo";
+import { getBlogArticleUrl } from "@/site";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -30,8 +31,9 @@ export async function generateMetadata({
   if (!article) return {};
   const loc = locale === "fr" ? "fr" : "en";
   const title = `${article.title[loc]} | SAIFCORE`;
+  const blogUrl = getBlogArticleUrl(slug, loc);
 
-  return buildPageMetadata({
+  const meta = buildPageMetadata({
     locale,
     path: `/articles/${slug}`,
     title,
@@ -39,6 +41,18 @@ export async function generateMetadata({
     openGraphType: "article",
     publishedTime: `${article.publishedAt}T12:00:00.000Z`,
   });
+
+  if (blogUrl) {
+    return {
+      ...meta,
+      alternates: {
+        ...meta.alternates,
+        canonical: blogUrl,
+      },
+    };
+  }
+
+  return meta;
 }
 
 export default async function ArticlePage({ params }: Props) {
@@ -49,8 +63,13 @@ export default async function ArticlePage({ params }: Props) {
     notFound();
   }
 
-  const t = await getTranslations("articlesPage");
   const loc = locale === "fr" ? "fr" : "en";
+  const blogUrl = getBlogArticleUrl(slug, loc);
+  if (blogUrl) {
+    redirect(blogUrl);
+  }
+
+  const t = await getTranslations("articlesPage");
 
   const formatDate = (iso: string) =>
     new Intl.DateTimeFormat(loc === "fr" ? "fr-FR" : "en-US", {
@@ -111,7 +130,7 @@ export default async function ArticlePage({ params }: Props) {
                   href={external}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-primary btn-primary-lg inline-flex h-12 w-full items-center justify-center px-8 text-sm sm:w-auto"
+                  className="btn-primary btn-primary-lg mt-8 inline-flex h-12 w-full items-center justify-center px-8 text-sm sm:w-auto"
                 >
                   {t("readExternal")}
                 </a>

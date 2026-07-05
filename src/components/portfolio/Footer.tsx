@@ -1,7 +1,13 @@
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { hasObtainedCertifications } from "@/data/certifications";
-import { getGithubUrl, getLinkedinUrl, getProfileDisplayName } from "@/site";
+import {
+  getBlogIndexUrl,
+  getBlogUrl,
+  getGithubUrl,
+  getLinkedinUrl,
+  getProfileDisplayName,
+} from "@/site";
 import {
   getResumeUrl,
   getResumeDownloadFilename,
@@ -10,23 +16,37 @@ import {
 
 export async function Footer() {
   const t = await getTranslations("footer");
+  const locale = await getLocale();
+  const loc = locale === "fr" ? "fr" : "en";
   const year = new Date().getFullYear();
   const resumeUrl = getResumeUrl();
   const resumeDownload = getResumeDownloadFilename();
   const profileName = getProfileDisplayName();
+  const blogUrl = getBlogUrl();
+  const blogIndexUrl = getBlogIndexUrl(loc);
   const ownerLabel =
     profileName !== "SAIFCORE"
       ? t("rightsOwner", { name: profileName })
       : "SAIFCORE";
 
   const pageLinks = [
-    { href: "/about" as const, label: t("about") },
+    { href: "/about" as const, label: t("about"), external: false },
     ...(hasObtainedCertifications()
-      ? [{ href: "/certifications" as const, label: t("credentials") }]
+      ? [
+          {
+            href: "/certifications" as const,
+            label: t("credentials"),
+            external: false,
+          },
+        ]
       : []),
-    { href: "/systems" as const, label: t("systems") },
-    { href: "/experience" as const, label: t("experience") },
-    { href: "/articles" as const, label: t("articles") },
+    { href: "/systems" as const, label: t("systems"), external: false },
+    { href: "/experience" as const, label: t("experience"), external: false },
+    {
+      href: blogIndexUrl ?? "/articles",
+      label: t("articles"),
+      external: !!blogIndexUrl,
+    },
   ];
 
   return (
@@ -61,12 +81,23 @@ export async function Footer() {
               <ul className="mt-4 space-y-2.5">
                 {pageLinks.map((link) => (
                   <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
-                    >
-                      {link.label}
-                    </Link>
+                    {link.external ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
+                      >
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className="text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
+                      >
+                        {link.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
                 <li>
@@ -105,6 +136,18 @@ export async function Footer() {
                     {t("github")}
                   </a>
                 </li>
+                {blogUrl ? (
+                  <li>
+                    <a
+                      href={blogIndexUrl ?? blogUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
+                    >
+                      {t("blog")}
+                    </a>
+                  </li>
+                ) : null}
                 {resumeUrl ? (
                   <li>
                     <a

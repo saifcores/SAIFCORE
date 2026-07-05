@@ -2,11 +2,13 @@ import type { MetadataRoute } from "next";
 import { articles } from "@/data/articles";
 import { hasObtainedCertifications } from "@/data/certifications";
 import { routing } from "@/i18n/routing";
-import { getSiteUrl } from "@/site";
+import { getBlogUrl, getSiteUrl } from "@/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = getSiteUrl();
   const entries: MetadataRoute.Sitemap = [];
+
+  const blogUrl = getBlogUrl();
 
   for (const locale of routing.locales) {
     const prefix = locale === routing.defaultLocale ? "" : `/${locale}`;
@@ -125,22 +127,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       });
     }
 
-    for (const article of articles) {
-      const articleUrl = `${base}${prefix}/articles/${article.slug}`;
-      entries.push({
-        url: articleUrl,
-        lastModified: new Date(article.publishedAt),
-        changeFrequency: "monthly",
-        priority: 0.75,
-        alternates: {
-          languages: Object.fromEntries(
-            routing.locales.map((loc) => {
-              const p = loc === routing.defaultLocale ? "" : `/${loc}`;
-              return [loc, `${base}${p}/articles/${article.slug}`] as const;
-            }),
-          ),
-        },
-      });
+    if (!blogUrl) {
+      for (const article of articles) {
+        const articleUrl = `${base}${prefix}/articles/${article.slug}`;
+        entries.push({
+          url: articleUrl,
+          lastModified: new Date(article.publishedAt),
+          changeFrequency: "monthly",
+          priority: 0.75,
+          alternates: {
+            languages: Object.fromEntries(
+              routing.locales.map((loc) => {
+                const p = loc === routing.defaultLocale ? "" : `/${loc}`;
+                return [loc, `${base}${p}/articles/${article.slug}`] as const;
+              }),
+            ),
+          },
+        });
+      }
     }
   }
 

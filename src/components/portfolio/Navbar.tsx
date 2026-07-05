@@ -1,11 +1,19 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import Image from "next/image";
-import { useCallback, useEffect, useId, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useId,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { Link } from "@/i18n/navigation";
 import type { NavPrimaryLinkKey } from "@/types/messages";
 import { hasObtainedCertifications } from "@/data/certifications";
+import { getBlogIndexUrl } from "@/site";
 import { BookCallLink } from "./BookCallLink";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import { ThemeToggle } from "./ThemeToggle";
@@ -13,9 +21,18 @@ import { ThemeToggle } from "./ThemeToggle";
 type NavItem = {
   href: string;
   labelKey: NavPrimaryLinkKey;
+  external?: boolean;
 };
 
 const showCredentialsNav = hasObtainedCertifications();
+
+function articlesNavItem(locale: "en" | "fr"): NavItem {
+  const blogUrl = getBlogIndexUrl(locale);
+  if (blogUrl) {
+    return { href: blogUrl, labelKey: "insights", external: true };
+  }
+  return { href: "/articles", labelKey: "insights" };
+}
 
 function navWithoutCredentials(items: NavItem[]): NavItem[] {
   return showCredentialsNav
@@ -33,40 +50,52 @@ const primaryNav = navWithoutCredentials([
   { href: "/#contact", labelKey: "contact" },
 ]);
 
-const moreNav = navWithoutCredentials([
-  { href: "/about", labelKey: "about" },
-  { href: "/systems", labelKey: "systems" },
-  { href: "/experience", labelKey: "experience" },
-  { href: "/articles", labelKey: "insights" },
-]);
-
-const mobileGroups: {
-  labelKey: "groupExplore" | "groupProfile";
+const mobileExploreGroup: {
+  labelKey: "groupExplore";
   links: NavItem[];
-}[] = [
-  {
-    labelKey: "groupExplore",
-    links: navWithoutCredentials([
-      { href: "/#experience", labelKey: "experience" },
-      { href: "/#work", labelKey: "work" },
-      { href: "/#services", labelKey: "services" },
-      { href: "/#expertise", labelKey: "expertise" },
-      { href: "/#process", labelKey: "process" },
-    ]),
-  },
-  {
-    labelKey: "groupProfile",
-    links: navWithoutCredentials([
-      { href: "/about", labelKey: "about" },
-      { href: "/systems", labelKey: "systems" },
-      { href: "/experience", labelKey: "experience" },
-      { href: "/articles", labelKey: "insights" },
-    ]),
-  },
-];
+} = {
+  labelKey: "groupExplore",
+  links: navWithoutCredentials([
+    { href: "/#experience", labelKey: "experience" },
+    { href: "/#work", labelKey: "work" },
+    { href: "/#services", labelKey: "services" },
+    { href: "/#expertise", labelKey: "expertise" },
+    { href: "/#process", labelKey: "process" },
+  ]),
+};
 
 export function Navbar() {
   const t = useTranslations("nav");
+  const locale = useLocale();
+  const loc = locale === "fr" ? "fr" : "en";
+  const resolvedMoreNav = useMemo(
+    () =>
+      navWithoutCredentials([
+        { href: "/about", labelKey: "about" },
+        { href: "/systems", labelKey: "systems" },
+        { href: "/experience", labelKey: "experience" },
+        articlesNavItem(loc),
+      ]),
+    [loc],
+  );
+  const resolvedMobileGroups = useMemo(
+    (): {
+      labelKey: "groupExplore" | "groupProfile";
+      links: NavItem[];
+    }[] => [
+      mobileExploreGroup,
+      {
+        labelKey: "groupProfile",
+        links: navWithoutCredentials([
+          { href: "/about", labelKey: "about" },
+          { href: "/systems", labelKey: "systems" },
+          { href: "/experience", labelKey: "experience" },
+          articlesNavItem(loc),
+        ]),
+      },
+    ],
+    [loc],
+  );
   const [open, setOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -195,17 +224,31 @@ export function Navbar() {
                 className="absolute right-0 top-full z-50 mt-2 min-w-[180px] rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)] py-1.5 shadow-[var(--shadow-dropdown)] backdrop-blur-xl"
                 role="menu"
               >
-                {moreNav.map((l) => (
-                  <Link
-                    key={l.href}
-                    href={l.href}
-                    role="menuitem"
-                    className="block px-4 py-2.5 text-sm font-medium text-[var(--text-secondary)] transition hover:bg-[var(--bg-elevated)] hover:text-[var(--text-primary)]"
-                    onClick={() => setMoreOpen(false)}
-                  >
-                    {t(l.labelKey)}
-                  </Link>
-                ))}
+                {resolvedMoreNav.map((l) =>
+                  l.external ? (
+                    <a
+                      key={l.href}
+                      href={l.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      role="menuitem"
+                      className="block px-4 py-2.5 text-sm font-medium text-[var(--text-secondary)] transition hover:bg-[var(--bg-elevated)] hover:text-[var(--text-primary)]"
+                      onClick={() => setMoreOpen(false)}
+                    >
+                      {t(l.labelKey)}
+                    </a>
+                  ) : (
+                    <Link
+                      key={l.href}
+                      href={l.href}
+                      role="menuitem"
+                      className="block px-4 py-2.5 text-sm font-medium text-[var(--text-secondary)] transition hover:bg-[var(--bg-elevated)] hover:text-[var(--text-primary)]"
+                      onClick={() => setMoreOpen(false)}
+                    >
+                      {t(l.labelKey)}
+                    </Link>
+                  ),
+                )}
               </div>
             ) : null}
           </div>
@@ -280,7 +323,7 @@ export function Navbar() {
             aria-label={t("siteNavigation")}
           >
             <nav className="mx-auto max-w-[1280px] px-4 py-4 sm:px-6">
-              {mobileGroups.map((group) => (
+              {resolvedMobileGroups.map((group) => (
                 <div key={group.labelKey} className="mb-4 last:mb-0">
                   <p className="px-4 pb-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
                     {t(group.labelKey)}
@@ -288,13 +331,25 @@ export function Navbar() {
                   <ul className="space-y-0.5">
                     {group.links.map((l) => (
                       <li key={l.href}>
-                        <Link
-                          href={l.href}
-                          className="block rounded-xl px-4 py-3 text-base font-medium text-[var(--text-secondary)] transition hover:bg-[var(--bg-elevated)] hover:text-[var(--text-primary)]"
-                          onClick={close}
-                        >
-                          {t(l.labelKey)}
-                        </Link>
+                        {l.external ? (
+                          <a
+                            href={l.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block rounded-xl px-4 py-3 text-base font-medium text-[var(--text-secondary)] transition hover:bg-[var(--bg-elevated)] hover:text-[var(--text-primary)]"
+                            onClick={close}
+                          >
+                            {t(l.labelKey)}
+                          </a>
+                        ) : (
+                          <Link
+                            href={l.href}
+                            className="block rounded-xl px-4 py-3 text-base font-medium text-[var(--text-secondary)] transition hover:bg-[var(--bg-elevated)] hover:text-[var(--text-primary)]"
+                            onClick={close}
+                          >
+                            {t(l.labelKey)}
+                          </Link>
+                        )}
                       </li>
                     ))}
                   </ul>

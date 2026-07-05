@@ -1,14 +1,16 @@
 import type { Locale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
-import { ArticleKindBadge } from "@/components/portfolio/ArticleKindBadge";
+import { ArticlePostCard } from "@/components/portfolio/ArticlePostCard";
 import { ContactBridgeStrip } from "@/components/portfolio/ContactBridgeStrip";
 import { Footer } from "@/components/portfolio/Footer";
 import { Navbar } from "@/components/portfolio/Navbar";
 import { Reveal } from "@/components/portfolio/Reveal";
 import { articles } from "@/data/articles";
+import { getArticleLink } from "@/lib/article-links";
 import { Link } from "@/i18n/navigation";
 import { buildBreadcrumbJsonLd, buildPageMetadata } from "@/seo";
+import { getBlogIndexUrl } from "@/site";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -38,18 +40,12 @@ export default async function ArticlesPage({ params }: Props) {
   const t = await getTranslations("articlesPage");
   const tCommon = await getTranslations("common");
   const loc = locale === "fr" ? "fr" : "en";
+  const blogUrl = getBlogIndexUrl(loc);
 
   const breadcrumbJsonLd = buildBreadcrumbJsonLd(locale, [
     { name: tCommon("home"), path: "/" },
     { name: t("title"), path: "/articles" },
   ]);
-
-  const formatDate = (iso: string) =>
-    new Intl.DateTimeFormat(loc === "fr" ? "fr-FR" : "en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    }).format(new Date(iso));
 
   return (
     <div className="flex min-h-full flex-col">
@@ -63,7 +59,6 @@ export default async function ArticlesPage({ params }: Props) {
         className="flex-1 pb-24 outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base md:pb-0"
         tabIndex={-1}
       >
-        {/* Header */}
         <section className="border-b border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
           <div className="mx-auto max-w-[1280px]">
             <Reveal>
@@ -79,60 +74,36 @@ export default async function ArticlesPage({ params }: Props) {
               <p className="mt-4 max-w-2xl text-base text-[var(--text-secondary)] sm:text-lg">
                 {t("subtitle")}
               </p>
+              {blogUrl ? (
+                <a
+                  href={blogUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary mt-6 inline-flex px-4 py-2.5 text-sm"
+                >
+                  {t("blogCta")} ↗
+                </a>
+              ) : null}
             </Reveal>
           </div>
         </section>
 
-        {/* Article grid */}
-        <section className="px-4 py-16 sm:px-6 lg:px-8">
+        <section className="px-4 py-16 sm:py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-[1280px]">
-            <div className="grid gap-6 md:grid-cols-2">
+            <div className="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
               {articles.map((article, i) => {
-                const href = article.externalUrl ?? `/articles/${article.slug}`;
-                const external = !!article.externalUrl;
+                const link = getArticleLink(article, loc);
                 return (
                   <Reveal key={article.slug} delay={i * 60}>
-                    <article className="group flex h-full flex-col rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-6 transition sm:p-8 hover:-translate-y-1 hover:border-[var(--border-hover)] hover:bg-[var(--bg-elevated)]/40">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <ArticleKindBadge
-                          kind={article.kind}
-                          label={t(`kinds.${article.kind}`)}
-                        />
-                        <time
-                          dateTime={article.publishedAt}
-                          className="font-mono text-xs text-[var(--text-muted)]"
-                        >
-                          {formatDate(article.publishedAt)}
-                        </time>
-                      </div>
-                      <h2 className="mt-4 text-xl font-semibold tracking-tight text-[var(--text-primary)] transition group-hover:text-accent">
-                        {article.title[loc]}
-                      </h2>
-                      <p className="mt-3 flex-1 text-sm leading-relaxed text-[var(--text-secondary)]">
-                        {article.excerpt[loc]}
-                      </p>
-                      <div className="mt-6 flex items-center justify-between border-t border-[var(--border-subtle)] pt-4">
-                        {external ? (
-                          <a
-                            href={href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent transition group-hover:gap-2.5"
-                          >
-                            {t("readExternal")}
-                            <span aria-hidden>→</span>
-                          </a>
-                        ) : (
-                          <Link
-                            href={href}
-                            className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent transition group-hover:gap-2.5"
-                          >
-                            {t("readArticle")}
-                            <span aria-hidden>→</span>
-                          </Link>
-                        )}
-                      </div>
-                    </article>
+                    <ArticlePostCard
+                      article={article}
+                      locale={loc}
+                      href={link.href}
+                      external={link.external}
+                      tagLabel={t(`kinds.${article.kind}`)}
+                      authorLabel={t("author")}
+                      readMoreLabel={t("readMore")}
+                    />
                   </Reveal>
                 );
               })}
@@ -140,7 +111,6 @@ export default async function ArticlesPage({ params }: Props) {
           </div>
         </section>
 
-        {/* CTA */}
         <div className="px-4 pb-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-[1280px]">
             <ContactBridgeStrip ns="articlesPage" />
