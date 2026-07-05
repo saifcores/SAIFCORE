@@ -1,13 +1,23 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { hasObtainedCertifications } from "@/data/certifications";
-import { getGithubUrl, getLinkedinUrl } from "@/site";
-import { getResumeUrl, isLocalResume } from "@/server/resume";
+import { getGithubUrl, getLinkedinUrl, getProfileDisplayName } from "@/site";
+import {
+  getResumeUrl,
+  getResumeDownloadFilename,
+  isLocalResume,
+} from "@/server/resume";
 
 export async function Footer() {
   const t = await getTranslations("footer");
   const year = new Date().getFullYear();
   const resumeUrl = getResumeUrl();
+  const resumeDownload = getResumeDownloadFilename();
+  const profileName = getProfileDisplayName();
+  const ownerLabel =
+    profileName !== "SAIFCORE"
+      ? t("rightsOwner", { name: profileName })
+      : "SAIFCORE";
 
   const pageLinks = [
     { href: "/about" as const, label: t("about") },
@@ -32,7 +42,8 @@ export async function Footer() {
               {t("tagline")}
             </p>
             <p className="mt-4 text-xs text-[var(--text-muted)]">
-              {t("rights", { year })} <span aria-hidden="true">·</span>{" "}
+              {t("rights", { year, owner: ownerLabel })}{" "}
+              <span aria-hidden="true">·</span>{" "}
               <Link
                 href="/license"
                 className="underline-offset-2 transition hover:text-[var(--text-secondary)] hover:underline"
@@ -100,7 +111,7 @@ export async function Footer() {
                       href={resumeUrl}
                       className="text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
                       {...(isLocalResume(resumeUrl)
-                        ? { download: "SAIFCORE-resume.pdf" }
+                        ? { download: resumeDownload }
                         : {
                             target: "_blank",
                             rel: "noopener noreferrer",

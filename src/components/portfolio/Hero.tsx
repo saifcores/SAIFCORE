@@ -3,11 +3,16 @@ import { Link } from "@/i18n/navigation";
 import { BookCallLink } from "@/components/portfolio/BookCallLink";
 import { HeroContent } from "@/components/portfolio/HeroContent";
 import { HeroVisual } from "@/components/portfolio/HeroVisual";
-import { getResumeUrl, isLocalResume } from "@/server/resume";
+import {
+  getResumeUrl,
+  getResumeDownloadFilename,
+  isLocalResume,
+} from "@/server/resume";
 
 export async function Hero() {
   const t = await getTranslations("hero");
   const resumeUrl = getResumeUrl();
+  const resumeDownload = getResumeDownloadFilename();
 
   const ctas = (
     <>
@@ -25,7 +30,7 @@ export async function Hero() {
           href={resumeUrl}
           className="btn-outline inline-flex h-12 w-full items-center justify-center rounded-xl px-6 text-sm font-semibold sm:w-auto sm:px-8"
           {...(isLocalResume(resumeUrl)
-            ? { download: "SAIFCORE-resume.pdf" }
+            ? { download: resumeDownload }
             : { target: "_blank", rel: "noopener noreferrer" })}
         >
           {t("ctaResume")}

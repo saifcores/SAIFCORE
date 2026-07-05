@@ -1,6 +1,8 @@
 import type { Locale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
+import { ArchitectureSection } from "@/components/portfolio/ArchitectureSection";
+import { BankingLeadership } from "@/components/portfolio/BankingLeadership";
 import { FeaturedProjects } from "@/components/portfolio/FeaturedProjects";
 import { Footer } from "@/components/portfolio/Footer";
 import { Navbar } from "@/components/portfolio/Navbar";
@@ -78,8 +80,10 @@ export default async function SystemsPage({ params }: Props) {
           </div>
         </section>
 
+        <ArchitectureSection />
         {/* Full case studies with security + scale detail */}
         <FeaturedProjects showDetail />
+        <BankingLeadership />
       </main>
       <Footer />
     </div>

@@ -24,6 +24,99 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "banking-middleware-multi-subsidiary",
+    kind: "writing",
+    publishedAt: "2025-04-28",
+    title: {
+      en: "Designing a banking middleware for multi-subsidiary organizations",
+      fr: "Concevoir un middleware bancaire multi-filiales",
+    },
+    excerpt: {
+      en: "How to protect core banking systems while exposing governed APIs, partner integrations, and observable money flows across multiple entities.",
+      fr: "Comment protéger les systèmes core banking tout en exposant des APIs gouvernées, des intégrations partenaires et des flux financiers observables sur plusieurs entités.",
+    },
+    blocks: [
+      {
+        type: "paragraph",
+        en: "A multi-subsidiary bank does not need another thin API layer. It needs a controlled boundary between fragile core systems, fast-moving product teams, and external partners. The middleware has to normalize identity, contracts, rate limits, audit trails, and operational visibility without becoming a dumping ground for every exception.",
+        fr: "Une banque multi-filiales n'a pas besoin d'une simple couche API de plus. Elle a besoin d'une frontière contrôlée entre des systèmes core fragiles, des équipes produit qui avancent vite et des partenaires externes. Le middleware doit normaliser identité, contrats, rate limits, audit et visibilité opérationnelle sans devenir le réceptacle de toutes les exceptions.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        en: "Start from governance, not endpoints",
+        fr: "Commencer par la gouvernance, pas par les endpoints",
+      },
+      {
+        type: "paragraph",
+        en: "The first design decision is ownership: who can publish an API, who approves a breaking change, and where the canonical OpenAPI contract lives. Once this is explicit, the gateway can enforce versioning, authentication, input validation, and request correlation before traffic reaches domain services or the core banking adapter.",
+        fr: "La première décision de conception concerne la responsabilité : qui peut publier une API, qui valide un breaking change et où vit le contrat OpenAPI canonique. Une fois cela explicite, la passerelle peut appliquer versioning, authentification, validation des entrées et corrélation des requêtes avant que le trafic n'atteigne les services domaine ou l'adaptateur core banking.",
+      },
+      {
+        type: "callout",
+        variant: "info",
+        en: "A banking middleware is successful when incidents become traceable: partner request, gateway decision, domain event, core response, and audit record all share the same correlation story.",
+        fr: "Un middleware bancaire réussit quand les incidents deviennent traçables : requête partenaire, décision gateway, événement domaine, réponse core et trace d'audit racontent la même histoire de corrélation.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        en: "Design for subsidiary variance",
+        fr: "Concevoir pour la variance entre filiales",
+      },
+      {
+        type: "paragraph",
+        en: "Subsidiaries rarely run with identical rules: limits, compliance checks, partner SLAs, and settlement windows vary. Keep those differences in policy and configuration layers, not in forked services. The architecture should make local rules explicit while preserving a shared platform core.",
+        fr: "Les filiales fonctionnent rarement avec les mêmes règles : plafonds, contrôles conformité, SLA partenaires et fenêtres de settlement varient. Gardez ces différences dans des couches de politiques et de configuration, pas dans des services forkés. L'architecture doit rendre les règles locales explicites tout en conservant un socle plateforme commun.",
+      },
+    ],
+  },
+  {
+    slug: "adr-double-entry-ledger-payments",
+    kind: "adr",
+    publishedAt: "2025-04-12",
+    title: {
+      en: "ADR: Why a double-entry ledger for payment systems",
+      fr: "ADR : pourquoi un grand livre en partie double pour les paiements",
+    },
+    excerpt: {
+      en: "A short architecture decision record for choosing accounting correctness, auditability, and reconciliation over a simple mutable balance table.",
+      fr: "Une courte ADR pour choisir l'exactitude comptable, l'auditabilité et le rapprochement plutôt qu'une simple table de soldes mutables.",
+    },
+    blocks: [
+      {
+        type: "paragraph",
+        en: "Mutable balances are attractive because they are simple to query. They are also dangerous when money moves through retries, reversals, provider callbacks, and delayed settlement. The moment finance asks why a balance changed, a single current-value table stops being enough.",
+        fr: "Les soldes mutables sont séduisants parce qu'ils sont simples à lire. Ils deviennent dangereux quand l'argent passe par des retries, annulations, callbacks fournisseur et settlements différés. Dès que la finance demande pourquoi un solde a changé, une table de valeur courante ne suffit plus.",
+      },
+      {
+        type: "adr",
+        status: {
+          en: "Accepted · 2025-04-12",
+          fr: "Accepté · 2025-04-12",
+        },
+        context: {
+          en: "The payment platform must support wallet integrations, provider callbacks, refunds, partner settlement, and finance reconciliation. Auditors need an immutable trail for every posted movement.",
+          fr: "La plateforme de paiement doit supporter intégrations wallet, callbacks fournisseur, remboursements, settlement partenaire et rapprochement finance. Les auditeurs ont besoin d'une trace immuable pour chaque mouvement posté.",
+        },
+        decision: {
+          en: "Use a double-entry ledger with append-only postings. Every movement creates balanced debit and credit entries inside a transaction; derived balances can be cached, but the journal remains the source of truth.",
+          fr: "Utiliser un grand livre en partie double avec écritures append-only. Chaque mouvement crée des écritures débit et crédit équilibrées dans une transaction ; les soldes dérivés peuvent être cachés, mais le journal reste la source de vérité.",
+        },
+        consequences: {
+          en: "**Positive:** reconciliation and audit become explainable from data. **Negative:** engineers must model accounting events explicitly, and write paths need stronger transactional discipline.",
+          fr: "**Positif :** rapprochement et audit deviennent explicables depuis les données. **Négatif :** les ingénieurs doivent modéliser les événements comptables explicitement, et les écritures exigent une discipline transactionnelle plus forte.",
+        },
+      },
+      {
+        type: "callout",
+        variant: "warning",
+        en: "A ledger is not a reporting feature. It is the contract that lets product, finance, support, and compliance agree on what happened to money.",
+        fr: "Un grand livre n'est pas une fonctionnalité de reporting. C'est le contrat qui permet au produit, à la finance, au support et à la conformité de s'accorder sur ce qui est arrivé à l'argent.",
+      },
+    ],
+  },
+  {
     slug: "why-saas-fail-africa",
     kind: "writing",
     publishedAt: "2025-02-10",

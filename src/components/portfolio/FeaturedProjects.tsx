@@ -1,11 +1,87 @@
 import { getMessages, getTranslations } from "next-intl/server";
+import type { ReactNode } from "react";
 import { Link } from "@/i18n/navigation";
+import type { FeaturedProjectItem } from "@/types/messages";
 import { Reveal } from "./Reveal";
 
 type Props = {
   /** When true, renders the Security and Scale fields (used on /systems page). */
   showDetail?: boolean;
 };
+
+type ProjectDecision = FeaturedProjectItem["decisions"][number];
+
+function DetailLabel({ children }: { children: ReactNode }) {
+  return (
+    <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)]">
+      {children}
+    </p>
+  );
+}
+
+function DetailList({ items }: { items: string[] }) {
+  return (
+    <ul className="space-y-2">
+      {items.map((item) => (
+        <li
+          key={item}
+          className="flex gap-2 text-sm leading-relaxed text-[var(--text-secondary)]"
+        >
+          <span
+            className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400"
+            aria-hidden
+          />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function DecisionList({ decisions }: { decisions: ProjectDecision[] }) {
+  return (
+    <div className="space-y-3">
+      {decisions.map((decision) => (
+        <div key={decision.title}>
+          <p className="text-sm font-semibold text-[var(--text-primary)]">
+            {decision.title}
+          </p>
+          <p className="mt-1 text-sm leading-relaxed text-[var(--text-secondary)]">
+            {decision.body}
+          </p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function ArchitectureFlow({
+  label,
+  steps,
+}: {
+  label: string;
+  steps: string[];
+}) {
+  return (
+    <div className="mt-6 border-t border-[var(--border-subtle)] pt-6">
+      <DetailLabel>{label}</DetailLabel>
+      <div className="flex flex-wrap items-center gap-2">
+        {steps.map((step, i) => (
+          <div key={`${step}-${i}`} className="flex items-center gap-2">
+            <span className="rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-base)]/70 px-3 py-1.5 text-xs font-medium text-[var(--text-secondary)]">
+              {step}
+            </span>
+            {i < steps.length - 1 ? (
+              <span className="text-xs text-[var(--text-muted)]" aria-hidden>
+                →
+              </span>
+            ) : null}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export async function FeaturedProjects({ showDetail = false }: Props) {
   const messages = await getMessages();
@@ -113,54 +189,84 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
                       </div>
                     </div>
 
-                    {/* Detail rows — Security + Scale (systems page only) */}
+                    {/* Detail rows — systems page only */}
                     {showDetail ? (
-                      <div className="mt-6 grid gap-6 border-t border-[var(--border-subtle)] pt-6 lg:grid-cols-2 lg:gap-8">
-                        <div>
-                          <p className="mb-3 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-violet-400">
-                            <svg
-                              viewBox="0 0 16 16"
-                              fill="none"
-                              className="h-3.5 w-3.5"
-                              stroke="currentColor"
-                              strokeWidth="1.5"
-                              aria-hidden
-                            >
-                              <path
-                                d="M8 1.5L2 4v4c0 3.3 2.5 5.8 6 6.5 3.5-.7 6-3.2 6-6.5V4L8 1.5z"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                            </svg>
-                            {t("securityLabel")}
-                          </p>
-                          <p className="text-sm leading-relaxed text-[var(--text-secondary)]">
-                            {item.security}
-                          </p>
+                      <>
+                        <div className="mt-6 grid gap-6 border-t border-[var(--border-subtle)] pt-6 lg:grid-cols-2 lg:gap-8">
+                          <div>
+                            <p className="mb-3 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-violet-400">
+                              <svg
+                                viewBox="0 0 16 16"
+                                fill="none"
+                                className="h-3.5 w-3.5"
+                                stroke="currentColor"
+                                strokeWidth="1.5"
+                                aria-hidden
+                              >
+                                <path
+                                  d="M8 1.5L2 4v4c0 3.3 2.5 5.8 6 6.5 3.5-.7 6-3.2 6-6.5V4L8 1.5z"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                />
+                              </svg>
+                              {t("securityLabel")}
+                            </p>
+                            <p className="text-sm leading-relaxed text-[var(--text-secondary)]">
+                              {item.security}
+                            </p>
+                          </div>
+                          <div>
+                            <p className="mb-3 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-amber-400">
+                              <svg
+                                viewBox="0 0 16 16"
+                                fill="none"
+                                className="h-3.5 w-3.5"
+                                stroke="currentColor"
+                                strokeWidth="1.5"
+                                aria-hidden
+                              >
+                                <path
+                                  d="M2 12l4-4 3 3 5-6"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                />
+                              </svg>
+                              {t("scaleLabel")}
+                            </p>
+                            <p className="text-sm leading-relaxed text-[var(--text-secondary)]">
+                              {item.scale}
+                            </p>
+                          </div>
                         </div>
-                        <div>
-                          <p className="mb-3 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-amber-400">
-                            <svg
-                              viewBox="0 0 16 16"
-                              fill="none"
-                              className="h-3.5 w-3.5"
-                              stroke="currentColor"
-                              strokeWidth="1.5"
-                              aria-hidden
-                            >
-                              <path
-                                d="M2 12l4-4 3 3 5-6"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                            </svg>
-                            {t("scaleLabel")}
-                          </p>
-                          <p className="text-sm leading-relaxed text-[var(--text-secondary)]">
-                            {item.scale}
-                          </p>
+                        <ArchitectureFlow
+                          label={t("architectureFlowLabel")}
+                          steps={item.architectureFlow}
+                        />
+                        <div className="mt-6 grid gap-6 border-t border-[var(--border-subtle)] pt-6 lg:grid-cols-2 lg:gap-8">
+                          <div>
+                            <DetailLabel>{t("constraintsLabel")}</DetailLabel>
+                            <DetailList items={item.constraints} />
+                          </div>
+                          <div>
+                            <DetailLabel>{t("decisionsLabel")}</DetailLabel>
+                            <DecisionList decisions={item.decisions} />
+                          </div>
+                          <div>
+                            <DetailLabel>{t("tradeoffsLabel")}</DetailLabel>
+                            <p className="text-sm leading-relaxed text-[var(--text-secondary)]">
+                              {item.tradeoffs}
+                            </p>
+                          </div>
+                          <div>
+                            <DetailLabel>
+                              {t("bankingOutcomeLabel")}
+                            </DetailLabel>
+                            <p className="text-sm leading-relaxed text-[var(--text-secondary)]">
+                              {item.bankingOutcome}
+                            </p>
+                          </div>
                         </div>
-                      </div>
+                      </>
                     ) : null}
 
                     {/* Impact callout */}

@@ -1,7 +1,11 @@
 import type { Locale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
+import { ArchitectureExpertise } from "@/components/portfolio/ArchitectureExpertise";
 import { Experience } from "@/components/portfolio/Experience";
+import { EducationSection } from "@/components/portfolio/EducationSection";
+import { HowIThink } from "@/components/portfolio/HowIThink";
+import { WhatISolve } from "@/components/portfolio/WhatISolve";
 import { Footer } from "@/components/portfolio/Footer";
 import { Navbar } from "@/components/portfolio/Navbar";
 import { Reveal } from "@/components/portfolio/Reveal";
@@ -82,8 +86,14 @@ export default async function ExperiencePage({ params }: Props) {
         {/* Full experience timeline */}
         <Experience />
 
+        <EducationSection />
+
+        <HowIThink />
+
         {/* Technical skills matrix */}
         <SkillsMatrix />
+        <ArchitectureExpertise />
+        <WhatISolve />
       </main>
       <Footer />
     </div>

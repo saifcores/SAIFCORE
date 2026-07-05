@@ -7,6 +7,7 @@ import { Navbar } from "@/components/portfolio/Navbar";
 import { Reveal } from "@/components/portfolio/Reveal";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
+import { getProfileDisplayName, getSiteUrl } from "@/site";
 import { buildBreadcrumbJsonLd, buildPageMetadata } from "@/seo";
 
 type Props = {
@@ -40,17 +41,47 @@ export default async function AboutPage({ params }: Props) {
   setRequestLocale(locale as Locale);
   const t = await getTranslations("aboutPage");
   const tCommon = await getTranslations("common");
+  const tMeta = await getTranslations("meta");
 
   const breadcrumbJsonLd = buildBreadcrumbJsonLd(locale, [
     { name: tCommon("home"), path: "/" },
     { name: t("title"), path: "/about" },
   ]);
 
+  const profileJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    name: t("metaTitle"),
+    description: t("metaDescription"),
+    url: new URL(
+      locale === routing.defaultLocale ? "/about" : `/${locale}/about`,
+      `${getSiteUrl()}/`,
+    ).toString(),
+    mainEntity: {
+      "@type": "Person",
+      name: getProfileDisplayName(),
+      jobTitle: tMeta("jsonLdJobTitle"),
+      description: tMeta("jsonLdDescription"),
+      alumniOf: {
+        "@type": "CollegeOrUniversity",
+        name: "Université numérique Cheikh Hamidou KANE (UN-CHK)",
+      },
+      knowsLanguage: [
+        { "@type": "Language", name: "French" },
+        { "@type": "Language", name: "English" },
+      ],
+    },
+  };
+
   return (
     <div className="flex min-h-full flex-col">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(profileJsonLd) }}
       />
       <Navbar />
       <main

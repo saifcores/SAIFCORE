@@ -40,7 +40,10 @@ export async function MetricsSection() {
   const { metrics, principles } = messages.metricsSection;
 
   return (
-    <section className="border-b border-[var(--border-subtle)] px-4 py-16 sm:py-20 lg:py-24 sm:px-6 lg:px-8">
+    <section
+      id="metrics"
+      className="border-b border-[var(--border-subtle)] px-4 py-16 sm:py-20 lg:py-24 sm:px-6 lg:px-8"
+    >
       <div className="mx-auto max-w-[1280px]">
         <Reveal>
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">

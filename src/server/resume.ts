@@ -1,5 +1,6 @@
 import { existsSync } from "node:fs";
 import { join } from "node:path";
+import { getProfileDisplayName } from "@/site";
 
 /**
  * CV download URL for recruiters: optional `NEXT_PUBLIC_RESUME_URL` (https),
@@ -24,4 +25,18 @@ export function getResumeUrl(): string | null {
 /** True when the resume is served from this site (enables `download` attribute). */
 export function isLocalResume(url: string | null): boolean {
   return url === "/resume.pdf";
+}
+
+/** Suggested filename when downloading the hosted CV. */
+export function getResumeDownloadFilename(): string {
+  const name = getProfileDisplayName();
+  if (name !== "SAIFCORE") {
+    const slug = name
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-zA-Z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
+    return slug ? `${slug}-resume.pdf` : "SAIFCORE-resume.pdf";
+  }
+  return "SAIFCORE-resume.pdf";
 }

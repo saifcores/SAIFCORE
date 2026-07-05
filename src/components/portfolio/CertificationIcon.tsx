@@ -7,6 +7,11 @@ const kindStyles: Record<
   CertificationKind,
   { label: string; className: string }
 > = {
+  academic: {
+    label: "Cert",
+    className:
+      "border-indigo-500/30 bg-gradient-to-br from-indigo-500/15 to-violet-500/10 text-indigo-300",
+  },
   aws: {
     label: "AWS",
     className:

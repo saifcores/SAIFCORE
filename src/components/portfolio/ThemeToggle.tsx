@@ -1,11 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { useTranslations } from "next-intl";
 import type { ThemePreference } from "./ThemeProvider";
 import { useTheme } from "./ThemeProvider";
 
 const OPTIONS: ThemePreference[] = ["light", "system", "dark"];
+
+const subscribeToHydration = () => () => {};
+const getClientSnapshot = () => true;
+const getServerSnapshot = () => false;
 
 function ThemeIcon({ mode }: { mode: ThemePreference }) {
   if (mode === "light") {
@@ -57,11 +61,11 @@ function ThemeIcon({ mode }: { mode: ThemePreference }) {
 export function ThemeToggle() {
   const t = useTranslations("theme");
   const { preference, setPreference } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useSyncExternalStore(
+    subscribeToHydration,
+    getClientSnapshot,
+    getServerSnapshot,
+  );
 
   const labels: Record<ThemePreference, string> = {
     light: t("light"),

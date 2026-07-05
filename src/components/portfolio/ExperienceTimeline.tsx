@@ -104,6 +104,7 @@ type ExperienceCardProps = {
   index: number;
   isLast: boolean;
   stackLabel: string;
+  clientLabel: string;
   currentRoleLabel: string;
 };
 
@@ -112,6 +113,7 @@ function ExperienceCard({
   index,
   isLast,
   stackLabel,
+  clientLabel,
   currentRoleLabel,
 }: ExperienceCardProps) {
   const highlights = experienceHighlights(item);
@@ -185,6 +187,14 @@ function ExperienceCard({
                 >
                   {item.company}
                 </p>
+                {item.client?.trim() ? (
+                  <p className="mt-1 text-xs leading-snug text-[var(--text-muted)] sm:text-sm">
+                    <span className="font-medium text-[var(--text-secondary)]">
+                      {clientLabel}:
+                    </span>{" "}
+                    {item.client}
+                  </p>
+                ) : null}
               </div>
 
               <div className="flex shrink-0 flex-col gap-1.5 sm:items-end">
@@ -255,6 +265,7 @@ function ExperienceCard({
 export type ExperienceTimelineProps = {
   items: ExperienceEntry[];
   stackLabel: string;
+  clientLabel: string;
   currentRoleLabel: string;
   showMoreLabel: string;
   showLessLabel: string;
@@ -265,6 +276,7 @@ export type ExperienceTimelineProps = {
 export function ExperienceTimeline({
   items,
   stackLabel,
+  clientLabel,
   currentRoleLabel,
   showMoreLabel,
   showLessLabel,
@@ -292,6 +304,7 @@ export function ExperienceTimeline({
             index={i}
             isLast={i === visibleItems.length - 1 && hiddenCount === 0}
             stackLabel={stackLabel}
+            clientLabel={clientLabel}
             currentRoleLabel={currentRoleLabel}
           />
         ))}

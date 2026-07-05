@@ -1,5 +1,9 @@
 /** Stable ids — copy keys must exist in `messages/*.json` → `certifications.items`. */
 export const certificationIds = [
+  "javaIntermediate",
+  "softwareDesign",
+  "softwareEngineeringEssentials",
+  "digitalBankingFundamentals",
   "awsSolutionsArchitect",
   "awsDeveloper",
   "comptiaSecurityPlus",
@@ -15,6 +19,7 @@ export const certificationIds = [
 export type CertificationId = (typeof certificationIds)[number];
 
 export type CertificationKind =
+  | "academic"
   | "aws"
   | "security"
   | "azure"
@@ -37,6 +42,26 @@ export type CertificationMeta = {
 };
 
 export const certificationsMeta: CertificationMeta[] = [
+  {
+    id: "javaIntermediate",
+    kind: "academic",
+    status: "obtained",
+  },
+  {
+    id: "softwareDesign",
+    kind: "academic",
+    status: "obtained",
+  },
+  {
+    id: "softwareEngineeringEssentials",
+    kind: "academic",
+    status: "obtained",
+  },
+  {
+    id: "digitalBankingFundamentals",
+    kind: "academic",
+    status: "obtained",
+  },
   {
     id: "awsSolutionsArchitect",
     kind: "aws",

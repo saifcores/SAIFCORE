@@ -2,8 +2,11 @@ import { getMessages, getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { getProfileDisplayName } from "@/site";
+import { BankingLeadership } from "./BankingLeadership";
 import { CertificationsSection } from "./CertificationsSection";
+import { EducationSection } from "./EducationSection";
 import { Reveal } from "./Reveal";
+import { VisionSection } from "./VisionSection";
 
 type Props = {
   /** Full about page: engagements grid + contact CTA */
@@ -27,6 +30,11 @@ export async function About({ extended = false }: Props) {
             {!extended ? (
               <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
                 {t("title")}
+              </p>
+            ) : null}
+            {extended ? (
+              <p className="mb-4 text-sm font-medium text-[var(--text-secondary)]">
+                {t("legalName")}
               </p>
             ) : null}
             <p className="leading-relaxed text-[var(--text-secondary)]">
@@ -109,6 +117,49 @@ export async function About({ extended = false }: Props) {
         {extended ? (
           <div className="mt-20 border-t border-[var(--border-subtle)] pt-16">
             <CertificationsSection compact />
+          </div>
+        ) : null}
+
+        {extended ? (
+          <div className="mt-20 border-t border-[var(--border-subtle)] pt-16">
+            <Reveal delay={120}>
+              <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
+                {t("languagesTitle")}
+              </p>
+              <ul className="grid gap-3 sm:grid-cols-2">
+                {messages.about.languages.map((lang) => (
+                  <li
+                    key={lang.name}
+                    className="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 px-4 py-3"
+                  >
+                    <p className="font-semibold text-[var(--text-primary)]">
+                      {lang.name}
+                    </p>
+                    <p className="mt-1 text-sm text-[var(--text-secondary)]">
+                      {lang.level}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
+        ) : null}
+
+        {extended ? (
+          <div className="mt-20 border-t border-[var(--border-subtle)]">
+            <EducationSection />
+          </div>
+        ) : null}
+
+        {extended ? (
+          <div className="border-b border-[var(--border-subtle)]">
+            <VisionSection />
+          </div>
+        ) : null}
+
+        {extended ? (
+          <div className="border-b border-[var(--border-subtle)]">
+            <BankingLeadership />
           </div>
         ) : null}
 

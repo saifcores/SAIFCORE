@@ -1,15 +1,23 @@
 import { getTranslations } from "next-intl/server";
 import { ContactForm } from "@/components/portfolio/ContactForm";
-import { getResumeUrl, isLocalResume } from "@/server/resume";
+import {
+  getResumeUrl,
+  getResumeDownloadFilename,
+  isLocalResume,
+} from "@/server/resume";
 import { MotionReveal } from "@/components/portfolio/motion/MotionReveal";
 
 export async function CtaSection() {
   const t = await getTranslations("cta");
   const tFooter = await getTranslations("footer");
   const resumeUrl = getResumeUrl();
+  const resumeDownload = getResumeDownloadFilename();
 
   return (
-    <section id="contact" className="px-4 py-16 sm:py-20 lg:py-24 sm:px-6 lg:px-8">
+    <section
+      id="contact"
+      className="px-4 py-16 sm:py-20 lg:py-24 sm:px-6 lg:px-8"
+    >
       <div className="mx-auto max-w-[1280px]">
         <MotionReveal>
           <div className="relative overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 px-4 py-10 sm:px-10 sm:py-16 lg:px-14">
@@ -61,7 +69,7 @@ export async function CtaSection() {
                     href={resumeUrl}
                     className="text-sm font-semibold text-[var(--text-muted)] underline decoration-white/15 underline-offset-4 transition hover:text-[var(--text-primary)]"
                     {...(isLocalResume(resumeUrl)
-                      ? { download: "SAIFCORE-resume.pdf" }
+                      ? { download: resumeDownload }
                       : { target: "_blank", rel: "noopener noreferrer" })}
                   >
                     {t("downloadResume")}

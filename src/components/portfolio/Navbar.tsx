@@ -24,6 +24,7 @@ function navWithoutCredentials(items: NavItem[]): NavItem[] {
 }
 
 const primaryNav = navWithoutCredentials([
+  { href: "/#experience", labelKey: "experience" },
   { href: "/#work", labelKey: "work" },
   { href: "/#services", labelKey: "services" },
   { href: "/#expertise", labelKey: "expertise" },
@@ -46,6 +47,7 @@ const mobileGroups: {
   {
     labelKey: "groupExplore",
     links: navWithoutCredentials([
+      { href: "/#experience", labelKey: "experience" },
       { href: "/#work", labelKey: "work" },
       { href: "/#services", labelKey: "services" },
       { href: "/#expertise", labelKey: "expertise" },

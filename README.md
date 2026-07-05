@@ -26,17 +26,17 @@ Bilingual portfolio and lead-generation site for **SAIFCORE** — senior backend
 
 ## Features
 
-| Area          | Details                                                                                                                                                       |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Locales**   | English (default) and French; locale prefix `as-needed` (`/` vs `/fr`)                                                                                        |
-| **Theme**     | Light / dark / system; persisted in `localStorage`; no flash on load                                                                                          |
-| **Home**      | Long-scroll landing: hero, trust, expertise, work teaser, services, stack, certifications, principles, process, testimonials, insights, about teaser, contact |
-| **Sub-pages** | About, Experience (+ skills matrix), Systems (case studies), Articles, License, Certifications (gated)                                                        |
-| **Articles**  | Structured content blocks (prose, code, ADR, design notes, lists); internal routes + optional external URLs                                                   |
-| **Contact**   | Mailto form, Calendly “Book a call”, LinkedIn / GitHub / resume links                                                                                         |
-| **Mobile**    | Responsive layouts; sticky bottom CTA bar on small screens                                                                                                    |
-| **SEO**       | Per-page metadata, hreflang, sitemap, robots, JSON-LD (Person, breadcrumbs, ProfilePage)                                                                      |
-| **Analytics** | Vercel Analytics (`@vercel/analytics`)                                                                                                                        |
+| Area          | Details                                                                                                                                                                                   |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Locales**   | English (default) and French; locale prefix `as-needed` (`/` vs `/fr`)                                                                                                                    |
+| **Theme**     | Light / dark / system; persisted in `localStorage`; no flash on load                                                                                                                      |
+| **Home**      | Long-scroll landing: hero, trust, experience, expertise, metrics, work teaser, services, stack, certifications, principles, process, engagement patterns, insights, about teaser, contact |
+| **Sub-pages** | About (+ vision, leadership), Experience (+ education, skills, architecture), Systems (architecture + case studies), Articles, License, Certifications                                    |
+| **Articles**  | Structured content blocks (prose, code, ADR, design notes, lists); internal routes + optional external URLs                                                                               |
+| **Contact**   | Mailto form, Calendly “Book a call”, LinkedIn / GitHub / resume links                                                                                                                     |
+| **Mobile**    | Responsive layouts; sticky bottom CTA bar on small screens                                                                                                                                |
+| **SEO**       | Per-page metadata, hreflang, sitemap, robots, JSON-LD (Person, breadcrumbs, ProfilePage)                                                                                                  |
+| **Analytics** | Vercel Analytics (`@vercel/analytics`)                                                                                                                                                    |
 
 There is **no database** and **no CMS** — UI copy lives in JSON message files; structured content lives in TypeScript data modules.
 

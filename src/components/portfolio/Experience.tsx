@@ -37,6 +37,7 @@ export async function Experience() {
           <ExperienceTimeline
             items={experience.items}
             stackLabel={t("stackLabel")}
+            clientLabel={t("clientLabel")}
             currentRoleLabel={t("currentRole")}
             showMoreLabel={t("showMore", { count: hiddenCount })}
             showLessLabel={t("showLess")}

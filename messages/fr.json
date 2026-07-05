@@ -1,14 +1,14 @@
 {
   "meta": {
-    "title": "Ingénieur Logiciel | Plateformes Enterprise · Paiements · FinTech | SAIFCORE",
-    "description": "Ingénieur logiciel construisant des plateformes enterprise, systèmes bancaires et solutions de paiement. Backend, APIs, architectures distribuées et Cloud — avec fiabilité, sécurité et performance au cœur.",
-    "ogTitle": "Ingénieur Logiciel — Plateformes Enterprise · Paiements · FinTech",
-    "ogDescription": "Je construis les systèmes qui permettent aux entreprises d'opérer, aux services de communiquer et aux transactions financières de circuler en toute confiance.",
-    "twitterDescription": "Ingénieur logiciel · Plateformes enterprise · Paiements · FinTech · Backend & Full-Stack.",
-    "jsonLdJobTitle": "Ingénieur Logiciel",
-    "jsonLdDescription": "Ingénieur logiciel spécialisé dans les plateformes enterprise, systèmes bancaires et solutions de paiement — backend, APIs, architectures distribuées, microservices et Cloud.",
-    "manifestName": "SAIFCORE — Ingénieur Logiciel",
-    "manifestDescription": "Portfolio — plateformes enterprise, paiements, FinTech, backend et full-stack."
+    "title": "Ingénieur Logiciel Backend | Plateformes Enterprise · Paiements · FinTech | SAIFCORE",
+    "description": "Ingénieur logiciel backend construisant des plateformes enterprise, systèmes bancaires et infrastructure de paiement. Java, Spring Boot, systèmes distribués et AWS — fiabilité, sécurité et évolution durable.",
+    "ogTitle": "Ingénieur Logiciel Backend — Plateformes Enterprise · Infrastructure de Paiement",
+    "ogDescription": "Je construis des plateformes backend qui propulsent les applications enterprise, les systèmes bancaires et l'infrastructure de paiement — fiables, scalables et conçues pour une évolution durable.",
+    "twitterDescription": "Ingénieur logiciel backend · Plateformes enterprise · Infrastructure de paiement · Java · Spring Boot · AWS.",
+    "jsonLdJobTitle": "Ingénieur Logiciel Backend",
+    "jsonLdDescription": "Ingénieur logiciel backend spécialisé dans les plateformes enterprise, systèmes bancaires et infrastructure de paiement — Java, Spring Boot, systèmes distribués, microservices et AWS.",
+    "manifestName": "SAIFCORE — Ingénieur Logiciel Backend",
+    "manifestDescription": "Portfolio — plateformes enterprise, infrastructure de paiement, systèmes bancaires et ingénierie backend."
   },
   "common": {
     "skipToContent": "Aller au contenu",
@@ -45,16 +45,16 @@
     "groupConnect": "Contact"
   },
   "hero": {
-    "badge": "Ingénieur Logiciel · Plateformes Enterprise · Paiements · FinTech · Backend & Full-Stack",
-    "titleLine1": "Ingénieur Logiciel",
+    "badge": "Ingénieur Logiciel Backend · Plateformes Enterprise · Infrastructure de Paiement · Systèmes Distribués · Java · Spring Boot · AWS",
+    "titleLine1": "Ingénieur Logiciel Backend",
     "titleLine2": "Plateformes Enterprise",
-    "titleLine3": "Paiements · FinTech · Backend",
-    "subtitle": "Je construis les systèmes qui permettent aux entreprises d'opérer, aux services de communiquer et aux transactions financières de circuler en toute confiance.",
+    "titleLine3": "Paiements · FinTech · Systèmes Distribués",
+    "subtitle": "Je construis des plateformes backend qui propulsent les applications enterprise, les systèmes bancaires et l'infrastructure de paiement — fiables, scalables et conçues pour une évolution durable.",
     "specializations": [
       "Plateformes Enterprise",
-      "Paiements",
-      "FinTech",
-      "Backend & Full-Stack"
+      "Infrastructure de Paiement",
+      "Systèmes Distribués",
+      "Java & Spring Boot"
     ],
     "ctaPrimary": "Voir les services",
     "ctaBookCall": "Réserver un appel",
@@ -381,27 +381,83 @@
       }
     ]
   },
-  "testimonials": {
-    "title": "Confiance client",
-    "subtitle": "Retours d'équipes ayant eu besoin d'une livraison fintech senior — sous pression réglementaire et délais serrés.",
+  "bankingLeadership": {
+    "eyebrow": "Leadership technique",
+    "title": "Comment je pilote des systèmes bancaires critiques",
+    "subtitle": "Au-delà du code : cadrage, décisions, gouvernance API et rituels de livraison qui réduisent le risque dans les environnements régulés — appliqués sur des missions conseil comme la delivery Synapse pour le Groupe Bank of Africa.",
+    "leadershipLabel": "Conduite projet",
+    "playbookLabel": "Architecture playbook",
+    "adrLabel": "ADR & gouvernance",
     "items": [
       {
-        "quote": "Livraison de nos flux crédit et mobile money avec la rigueur d'un environnement régulé. Temps d'intégration fortement réduit et zéro incident critique post-lancement.",
-        "name": "Lead technique",
-        "role": "Fintech · Afrique de l'Ouest",
-        "company": "Plateforme de crédit digital"
+        "title": "Requirement analysis",
+        "body": "Clarifier objectifs métier, contraintes réglementaires, dépendances core banking et critères d'acceptation avant l'estimation."
       },
       {
-        "quote": "Fort instinct architecture — APIs et frontières événementielles définies avant le code, ce qui nous a évité des mois de rework à l'échelle des partenaires.",
-        "name": "Engineering Manager",
-        "role": "Banque & middleware",
-        "company": "Services financiers enterprise"
+        "title": "API governance",
+        "body": "Définir contrats OpenAPI, versioning, règles d'erreur, idempotence et politiques d'accès avant l'exposition partenaire."
       },
       {
-        "quote": "Communication claire avec produit et conformité. Exactement ce qu'il nous fallait pour une mission freelance backend senior.",
-        "name": "CTO",
-        "role": "SaaS · Éducation",
-        "company": "Plateforme de gestion scolaire"
+        "title": "Risk assessment",
+        "body": "Identifier les risques transactionnels : double débit, callback perdu, dérive de rapprochement, dette d'audit ou indisponibilité fournisseur."
+      },
+      {
+        "title": "Delivery control",
+        "body": "Découper en incréments vérifiables avec revues d'architecture, code reviews, CI/CD, observabilité et handoff opérable."
+      }
+    ],
+    "playbook": [
+      {
+        "title": "Money movement",
+        "body": "Séparer initiation, confirmation, settlement, remboursement et rapprochement."
+      },
+      {
+        "title": "Auditability",
+        "body": "Tracer chaque commande sensible avec correlation ID, acteur, état avant/après et source de vérité."
+      },
+      {
+        "title": "Idempotency",
+        "body": "Traiter les retries comme un cas normal, pas comme une exception réseau."
+      },
+      {
+        "title": "Reconciliation",
+        "body": "Automatiser les contrôles entre événements internes, ledger et relevés fournisseur."
+      },
+      {
+        "title": "Security",
+        "body": "Appliquer moindre privilège, signatures webhook, validation stricte et journaux d'audit."
+      },
+      {
+        "title": "Observability",
+        "body": "Rendre les états ambigus visibles avec métriques, traces, alertes et runbooks."
+      }
+    ],
+    "adr": {
+      "title": "Décisions traçables",
+      "body": "Chaque choix structurant doit être défendu par une ADR courte : contexte, décision, conséquences et condition de révision. C'est ce qui permet à une équipe banque de comprendre pourquoi un système existe dans cet état, même six mois plus tard."
+    }
+  },
+  "testimonials": {
+    "title": "Modèles d'engagement",
+    "subtitle": "Ce que les équipes attendent typiquement d'une delivery backend senior — résultats représentatifs, pas des citations clients attribuées.",
+    "items": [
+      {
+        "quote": "Flux crédit et mobile money livrés avec la rigueur d'un environnement régulé — cycles d'intégration plus courts et exploitation stable post-lancement.",
+        "name": "Delivery FinTech",
+        "role": "Crédit digital & wallets",
+        "company": "Afrique de l'Ouest"
+      },
+      {
+        "quote": "Frontières API et événementielles définies avant l'implémentation — moins de rework quand les intégrations partenaires et le périmètre multi-entités grandissent.",
+        "name": "Banque & middleware",
+        "role": "Programmes API enterprise",
+        "company": "Services financiers régulés"
+      },
+      {
+        "quote": "Communication claire avec produit, intégration et conformité — adapté aux missions contract et freelance backend senior.",
+        "name": "Ingénierie en contrat",
+        "role": "Embed backend senior",
+        "company": "Équipes SaaS & plateformes"
       }
     ]
   },
@@ -479,6 +535,11 @@
     "architectureLabel": "Architecture",
     "securityLabel": "Sécurité",
     "scaleLabel": "Échelle",
+    "architectureFlowLabel": "Flux d'architecture",
+    "constraintsLabel": "Contraintes",
+    "decisionsLabel": "Décisions",
+    "tradeoffsLabel": "Compromis",
+    "bankingOutcomeLabel": "Signal bancaire",
     "screenshotLabel": "Aperçu produit",
     "viewAll": "Voir les études de cas complètes",
     "bridgeTitle": "Vous construisez quelque chose de similaire ?",
@@ -492,6 +553,24 @@
         "architecture": "SPA Angular pour la caisse et les tableaux de bord ; API REST Spring Boot multi-tenant ; jobs async pour rapports et imports ; inventaire par boutique et accès staff par rôles.",
         "security": "TLS en transit, données sensibles chiffrées, sauvegardes automatiques, isolation par commerçant et permissions caissiers / responsables.",
         "scale": "Chaînes multi-magasins avec reporting consolidé ; UX mobile-first au comptoir et en déplacement ; stock mis à jour à chaque vente sans recomptage manuel.",
+        "architectureFlow": ["POS", "API REST", "Inventaire", "Mobile Money", "Reporting"],
+        "constraints": [
+          "Fonctionnement fiable au comptoir, même avec réseau instable.",
+          "Séparation stricte des données par commerçant et par boutique.",
+          "Traçabilité des ventes, crédits clients et paiements mobile money."
+        ],
+        "decisions": [
+          {
+            "title": "Modèle multi-tenant",
+            "body": "Centraliser la plateforme tout en isolant les opérations, rôles et inventaires par marchand."
+          },
+          {
+            "title": "Jobs async",
+            "body": "Sortir les exports, imports et rapports du chemin de caisse pour préserver la rapidité de vente."
+          }
+        ],
+        "tradeoffs": "Priorité donnée à la robustesse opérationnelle plutôt qu'à des fonctionnalités analytiques avancées dès la première version.",
+        "bankingOutcome": "Montre une capacité à gérer des flux financiers, du rapprochement local et des opérations multi-sites avec audit minimal.",
         "impact": "500+ commerces actifs au Sénégal et en Afrique de l'Ouest ; heures gagnées chaque semaine à la clôture ; mobile money enregistré avec chaque transaction au lieu d'une réconciliation manuelle.",
         "href": "https://ecom360pme.com/",
         "linkLabel": "Voir Ecom 360 PME",
@@ -516,6 +595,24 @@
         "architecture": "Pattern adaptateur avec services Spring Boot, clés d'idempotence Redis et événements Kafka pour notifications de règlement async.",
         "security": "Requêtes signées, validation HMAC webhooks et clés API par tenant avec permissions limitées.",
         "scale": "API stateless horizontalement scalable ; latence fournisseur isolée via files async sans bloquer les threads clients.",
+        "architectureFlow": ["Client API", "SDK", "Adapters", "Wallet Providers", "Kafka"],
+        "constraints": [
+          "APIs fournisseurs hétérogènes avec statuts et callbacks incohérents.",
+          "Retries nécessaires sans double débit ni double notification.",
+          "Observabilité commune sur plusieurs corridors de paiement."
+        ],
+        "decisions": [
+          {
+            "title": "Contrat unifié",
+            "body": "Exposer une API stable et cacher les différences Wave, Orange Money et Free Money derrière des adaptateurs."
+          },
+          {
+            "title": "Idempotence explicite",
+            "body": "Traiter chaque commande de paiement avec une clé métier stable pour sécuriser les retries."
+          }
+        ],
+        "tradeoffs": "La couche adaptateur ajoute du code, mais elle réduit fortement le coût d'intégration et les divergences de comportement entre fournisseurs.",
+        "bankingOutcome": "Signal direct pour banques et fintechs : intégrations unifiées Wave, Orange Money et wallets — patterns éprouvés sur la delivery FinTech ENG Technologie et applicables aux corridors bancaires multi-fournisseurs.",
         "impact": "~60% d'intégration plus rapide pour nouveaux wallets ; surface d'observabilité unique sur 3+ fournisseurs live.",
         "href": "",
         "linkLabel": "",
@@ -533,6 +630,24 @@
         "architecture": "PostgreSQL avec transactions sérialisables pour les écritures ; store d'audit append-only ; jobs de réconciliation pour dérive fournisseur.",
         "security": "Accès par rôles, piste d'audit immuable et aucune mise à jour destructive sur écritures postées.",
         "scale": "Schéma partitionnable et réconciliation batch pour corridors mobile money à fort volume.",
+        "architectureFlow": ["Payment Events", "Ledger Commands", "Double Entry", "Audit Log", "Reconciliation"],
+        "constraints": [
+          "Aucun solde ne doit dépendre d'une mise à jour destructive.",
+          "Chaque mouvement doit rester explicable pour finance, audit et conformité.",
+          "La réconciliation doit détecter les écarts fournisseur avant les utilisateurs."
+        ],
+        "decisions": [
+          {
+            "title": "Append-only ledger",
+            "body": "Enregistrer les écritures comme événements immuables pour conserver l'historique complet."
+          },
+          {
+            "title": "Transactions sérialisables",
+            "body": "Favoriser la cohérence financière sur les chemins critiques, même au prix d'une gestion plus stricte de concurrence."
+          }
+        ],
+        "tradeoffs": "Le modèle impose plus de discipline métier qu'une table de soldes simple, mais il évite les corrections opaques et les écarts non traçables.",
+        "bankingOutcome": "Signal fort pour décideurs bancaires : exactitude comptable, auditabilité, rapprochement et contrôle des mouvements — patterns appliqués sur la delivery bancaire multi-entités Synapse.",
         "impact": "Auditabilité complète pour régulateurs et équipes finance ; zéro écart de solde en réconciliation production.",
         "href": "",
         "linkLabel": "",
@@ -545,11 +660,29 @@
       },
       {
         "title": "Passerelle API Unifiée",
-        "problem": "Une banque et ses partenaires avaient besoin d'un point d'entrée unique vers les fournisseurs de paiement africains sans exposer des systèmes core fragiles.",
-        "solution": "Passerelle enterprise centralisant auth, routage, rate limits et orchestration fournisseurs derrière des APIs REST versionnées.",
+        "problem": "Un groupe bancaire multi-entités et ses partenaires avaient besoin d'un point d'entrée unique vers les fournisseurs de paiement et services internes — sans exposer des systèmes core fragiles. Patterns issus de la delivery conseil Synapse pour les filiales du Groupe Bank of Africa.",
+        "solution": "Passerelle enterprise centralisant auth, routage, rate limits et orchestration fournisseurs derrière des APIs REST versionnées — gouvernance de niveau conseil pour intégrations bancaires régulées.",
         "architecture": "Spring Cloud Gateway + microservices domaine ; Kafka pour événements domaine ; Jasper/reporting découplé du chemin transactionnel.",
         "security": "JWT en périphérie, RBAC, validation des entrées avant contact core, journalisation d'audit complète des requêtes.",
         "scale": "Tier gateway stateless ; Kafka absorbe les pics analytics sans bloquer les paiements.",
+        "architectureFlow": ["Partners", "API Gateway", "Domain Services", "Core Banking", "Audit"],
+        "constraints": [
+          "Protéger les systèmes core tout en ouvrant des APIs partenaires.",
+          "Versionner les contrats sans casser les intégrations existantes.",
+          "Tracer chaque requête sensible pour support, audit et conformité."
+        ],
+        "decisions": [
+          {
+            "title": "Gateway comme frontière",
+            "body": "Centraliser authentification, rate limits, validation et routage avant tout contact avec les systèmes internes."
+          },
+          {
+            "title": "Événements découplés",
+            "body": "Publier les événements métier hors du chemin transactionnel pour reporting et observabilité."
+          }
+        ],
+        "tradeoffs": "La passerelle devient un point de gouvernance critique ; elle demande discipline sur versioning, monitoring et politiques d'accès.",
+        "bankingOutcome": "Aligné avec la delivery bancaire multi-filiales : gouvernance API, protection du core, audit des flux et onboarding partenaire plus rapide à l'échelle du groupe.",
         "impact": "3 intégrations partenaires live ; ~40% d'onboarding partenaire plus rapide ; 12+ mois de déploiements sans interruption.",
         "href": "",
         "linkLabel": "",
@@ -567,6 +700,24 @@
         "architecture": "Angular + Spring Boot REST ; jobs async pour opérations bulk ; domaines modulaires par établissement.",
         "security": "Isolation tenant, enregistrements sensibles chiffrés, accès staff par rôles.",
         "scale": "Traitement async pour rapports et notifications ; plateforme partagée servant des réseaux scolaires en croissance.",
+        "architectureFlow": ["Portails", "API REST", "Domaines modulaires", "Jobs async", "Reporting"],
+        "constraints": [
+          "Données sensibles élèves, familles et finances à isoler par établissement.",
+          "Processus administratifs variables selon les écoles.",
+          "Besoin de reporting sans bloquer les opérations quotidiennes."
+        ],
+        "decisions": [
+          {
+            "title": "Domaines modulaires",
+            "body": "Séparer admissions, facturation, personnel et reporting pour faire évoluer chaque bloc indépendamment."
+          },
+          {
+            "title": "Plateforme partagée",
+            "body": "Servir plusieurs établissements avec une base technique commune et des règles par tenant."
+          }
+        ],
+        "tradeoffs": "Le SaaS partagé accélère la livraison, mais impose des frontières tenant solides et une configuration claire par établissement.",
+        "bankingOutcome": "Même hors banque, ce cas démontre gestion multi-tenant, données sensibles, facturation et opérations administratives structurées.",
         "impact": "~35% de temps de handoff admin en moins ; dossiers unifiés entre départements.",
         "href": "",
         "linkLabel": "",
@@ -586,49 +737,75 @@
     "valueTitle": "Ce que vous obtenez",
     "valueBody": "Expérience concrète avec des stacks régulés, des intégrations mobile money et de vrais pipelines de livraison.",
     "stackLabel": "Stack",
+    "clientLabel": "Client",
     "currentRole": "Actuel",
     "showMore": "Afficher {count} rôles de plus",
     "showLess": "Afficher moins",
     "items": [
       {
-        "role": "Consultant Ingénieur Logiciel Senior",
-        "company": "BANK OF AFRICA — BOA Services International",
-        "logo": "boa.jpeg",
+        "role": "Ingénieur Backend — Systèmes Bancaires",
+        "company": "Synapse Groupe",
+        "client": "Bank of Africa — Groupe Bank of Africa",
+        "logo": "synapse.jpeg",
         "period": "Fév 2025 — Présent",
-        "location": "Almadies, Dakar, Sénégal",
-        "bullet0": "Pilotage stratégique de la transformation digitale des plateformes bancaires multi-entités du Groupe Bank of Africa — impulsion de l'évolution technologique avec un focus sur résilience, sécurité et conformité réglementaire.",
-        "bullet1": "Architecture API robuste pour intégration fluide entre systèmes métier, middleware et partenaires externes — garantissant gouvernance optimale des flux et interopérabilité complète.",
-        "bullet2": "Leadership stack enterprise : Java, Spring Boot, Spring Security, Spring Batch, Oracle, Docker, REST APIs, OpenAPI, Scrum — accompagnement des équipes dans un environnement agile et fortement régulé."
+        "location": "Ngor, Dakar, Sénégal",
+        "bullet0": "Conception et évolution de services backend pour les paiements, virements et le traitement des transactions — au service des plateformes bancaires enterprise sur plus de 11 filiales Bank of Africa.",
+        "bullet1": "Construction d'APIs enterprise pour l'intégration sécurisée entre applications bancaires, middleware et systèmes tiers. Modernisation des services pour la maintenabilité, la fiabilité et la résilience opérationnelle en environnement haute disponibilité.",
+        "bullet2": "Java, Spring Boot, API Design, Docker, Kubernetes, CI/CD, JasperReports, Microservices, Clean Architecture, Agile (Scrum)"
       },
       {
-        "role": "Consultant IT — Stratégie et Delivery",
+        "role": "Ingénieur Logiciel — FinTech & Paiements",
         "company": "ENG Technologie Group",
+        "client": "",
         "logo": "eng.jpeg",
-        "period": "Oct 2023 — Fév 2025",
+        "period": "Juil 2023 — Fév 2025",
         "location": "Dakar-Plateau, Sénégal",
-        "bullet0": "Contribution clé à la définition et la conception d'une plateforme FinTech modulaire pour la gestion avancée du crédit et des paiements digitaux — alignée sur les exigences du secteur financier.",
-        "bullet1": "Ownership du développement de microservices backend, conception de parcours transactionnels sécurisés, orchestration des opérations client et automatisation des flux financiers critiques.",
-        "bullet2": "Java, Spring Boot, Spring Security, PostgreSQL, intégrations mobile money (Wave, Orange Money), GitLab CI/CD, Docker, REST APIs, OpenAPI — dans des contextes à exigences renforcées de conformité et sécurité."
+        "bullet0": "Contribution à une plateforme FinTech pour le crédit digital, le traitement des paiements et les opérations financières — conception et implémentation de microservices backend pour l'onboarding client et les workflows de paiement.",
+        "bullet1": "Intégration des services Wave et Orange Money pour automatiser le traitement des paiements. Mise en place de patterns de traitement asynchrone et renforcement de la sécurité API avec Spring Security.",
+        "bullet2": "Java, Spring Boot, AWS, PostgreSQL, Apache Kafka, Docker, GitLab CI/CD, API Design, Agile Scrum"
       },
       {
-        "role": "Ingénieur Logiciel — Plateformes PME & Fintech",
+        "role": "Ingénieur Logiciel — Plateforme SaaS",
         "company": "Mafalia — Applications Ecom & Fintech",
+        "client": "",
         "logo": "mafalia.jpeg",
-        "period": "Nov 2023 — Nov 2024",
+        "period": "Juin 2022 — Nov 2023",
         "location": "Région de Dakar, Sénégal",
-        "bullet0": "Contribution clé à une plateforme SaaS scalable pour PME et commerçants — couvrant administration des ventes, inventaire et opérations financières, alignée sur les bonnes pratiques de digitalisation retail.",
-        "bullet1": "Optimisation structurelle des services backend et APIs, avec une réduction mesurée de 30% des temps de réponse. Patterns de cache et traitement asynchrone pour garantir performance et résilience en période de pic.",
-        "bullet2": "Angular, TypeScript, Tailwind CSS, Java, Spring Boot, REST APIs, MySQL, Git, Scrum"
+        "bullet0": "Construction de services backend et APIs REST pour la gestion des stocks, le traitement des commandes, les ventes et les workflows financiers d'une plateforme SaaS pour les PME.",
+        "bullet1": "Amélioration des performances par l'optimisation des requêtes et du traitement métier, avec une réduction d'environ 30% des temps de réponse. Mise en cache et traitement asynchrone pour la scalabilité.",
+        "bullet2": "Java, Spring Boot, MySQL, Angular, TypeScript, REST APIs, Agile XP"
       },
       {
-        "role": "Développeur Full-stack — Systèmes Santé",
+        "role": "Ingénieur Logiciel",
         "company": "SarayaTech Sénégal",
+        "client": "",
         "logo": "saraya.jpeg",
-        "period": "Déc 2022 — Fév 2023",
+        "period": "Déc 2021 — Mai 2022",
         "location": "Sénégal",
-        "bullet0": "Développement stratégique d'un système d'information hospitalier intégré (clinique, pharmacie, laboratoire) — modernisation de la gestion des processus médicaux et logistiques sur une plateforme unifiée.",
-        "bullet1": "Mécanismes avancés de cache et traitement asynchrone. Participation active aux standards d'ingénierie et revue de code pour garantir la qualité logicielle.",
-        "bullet2": "Stack polyvalente : Angular, Spring Boot, PostgreSQL, Redis, REST APIs, JUnit, Git — adaptation rapide à des environnements critiques à fortes exigences de conformité."
+        "bullet0": "Développement de services backend et fonctionnalités full-stack pour la gestion des patients, consultations, prescriptions et workflows de santé sur une plateforme clinique.",
+        "bullet1": "Conception d'APIs REST sécurisées et scalables à travers plusieurs modules métier. Amélioration des performances via cache et traitement asynchrone ; participation aux revues de code et aux tests.",
+        "bullet2": "Java, Spring Boot, Angular, REST APIs, Scrum, Jira"
+      }
+    ]
+  },
+  "education": {
+    "title": "Formation",
+    "subtitle": "Formation formelle et apprentissage continu en ingénierie logicielle.",
+    "items": [
+      {
+        "degree": "Master, Ingénierie Logicielle",
+        "institution": "Université numérique Cheikh Hamidou KANE (UN-CHK)",
+        "period": "Mai 2024"
+      },
+      {
+        "degree": "Licence, Mathématiques & Informatique",
+        "institution": "Université numérique Cheikh Hamidou KANE (UN-CHK)",
+        "period": "Jan 2020 — Mai 2024"
+      },
+      {
+        "degree": "BootCamp Programmation Informatique",
+        "institution": "SarayaTech",
+        "period": "Jan 2022 — Oct 2022"
       }
     ]
   },
@@ -728,18 +905,34 @@
     "dividerText": "Dakar, Sénégal · Construire pour l'Afrique"
   },
   "metricsSection": {
-    "label": "Performance système",
-    "title": "Conçu pour la fiabilité, la sécurité et l'échelle.",
-    "subtitle": "Les chiffres derrière une infrastructure financière de niveau production.",
-    "uptimeChartLabel": "Disponibilité système — 30 jours",
-    "uptimeStatus": "Opérationnel",
-    "uptimeSummary": "30 jours · 99,9% de disponibilité moyenne",
+    "label": "Résultats de delivery",
+    "title": "Impact mesuré dans des environnements régulés.",
+    "subtitle": "Résultats alignés sur le profil en banque, fintech et SaaS — pas de vanity metrics sur la disponibilité.",
+    "uptimeChartLabel": "Standard de fiabilité",
+    "uptimeStatus": "Production-ready",
+    "uptimeSummary": "Posture cible pour backends mission-critical",
     "principlesTitle": "Principes d'infrastructure",
     "metrics": [
-      { "value": "99.9%", "label": "SLA de disponibilité", "description": "Fiabilité des systèmes mission-critical" },
-      { "value": "60%", "label": "Traitement plus rapide", "description": "Vitesse de paiement avec intégrations Wave & Orange Money" },
-      { "value": "0", "label": "Incidents critiques", "description": "Incidents de sécurité post-lancement sur toutes les plateformes" },
-      { "value": "4+", "label": "Plateformes live", "description": "Systèmes fintech et commerce actuellement en production" }
+      {
+        "value": "4+",
+        "label": "Années en production",
+        "description": "Delivery backend en banque, fintech, santé et plateformes SaaS"
+      },
+      {
+        "value": "11+",
+        "label": "Filiales bancaires",
+        "description": "Plateformes bancaires enterprise via Synapse pour le Groupe Bank of Africa"
+      },
+      {
+        "value": "30%",
+        "label": "Réponses API plus rapides",
+        "description": "Amélioration mesurée sur le backend SaaS Mafalia et l'optimisation base de données"
+      },
+      {
+        "value": "4",
+        "label": "Certifications obtenues",
+        "description": "Java, software design, ingénierie logicielle et fondamentaux banque digitale"
+      }
     ],
     "principles": [
       "Idempotence par défaut — toute opération d'écriture est sûre à retenter",
@@ -753,28 +946,34 @@
     "subtitle": "Outils, patterns et plateformes pour construire des systèmes financiers résilients.",
     "tags": [
       { "label": "Java (17+) & Spring Boot" },
+      { "label": "Spring Batch & JasperReports" },
       { "label": "Systèmes distribués & architecture event-driven" },
       { "label": "Paiements, mobile money & intégrations" },
       { "label": "Apache Kafka & stream processing" },
+      { "label": "Développement plateformes SaaS" },
       { "label": "PostgreSQL, Redis & modélisation de données" },
       { "label": "Clean Architecture, DDD & Hexagonal" },
       { "label": "Docker, Kubernetes & Cloud (AWS)" },
       { "label": "API-first : REST, OpenAPI & microservices" },
-      { "label": "CI/CD, pipelines GitLab & DevOps" },
-      { "label": "Security by Design (Spring Security, Zero-Trust)" },
-      { "label": "Frontend : Angular, React & TypeScript" }
+      { "label": "CI/CD, pipelines GitLab & DevOps" }
     ]
   },
   "about": {
     "title": "À propos",
-    "p1": "Je conçois et construis des systèmes robustes qui propulsent les opérations métier, connectent les services et garantissent des transactions financières fluides et sécurisées à l'échelle.",
-    "p2a": "Avec plus de 4 ans d'expérience terrain, j'ai architecturé, livré et fait évoluer des plateformes enterprise, infrastructures bancaires et solutions de paiement innovantes — en priorisant toujours",
-    "p2b": "la fiabilité, la sécurité et la haute performance",
-    "p2c": ".",
-    "p3": "Mon expertise couvre l'ingénierie backend, les APIs modernes, les architectures distribuées et event-driven, les microservices et les environnements cloud-native. J'apporte une expertise particulière en FinTech, Paiements et écosystèmes logiciels enterprise complexes.",
-    "p4": "Je m'épanouis en résolvant des défis métier complexes en transformant les exigences en logiciel scalable et maintenable — et en façonnant activement la stratégie d'architecture pour débloquer la croissance future.",
-    "cardRole": "Ingénieur Backend & Plateforme",
-    "cardTagline": "Systèmes Enterprise · Paiements Scalables · FinTech",
+    "legalName": "Saïfoulaye Diallo",
+    "languagesTitle": "Langues",
+    "languages": [
+      { "name": "Français", "level": "Professionnel" },
+      { "name": "Anglais", "level": "Intermédiaire" }
+    ],
+    "p1": "Je construis des plateformes backend qui propulsent les applications enterprise, les systèmes bancaires et l'infrastructure de paiement — des logiciels fiables, scalables et conçus pour une évolution durable.",
+    "p2a": "Depuis plus de 4 ans, je me spécialise en Java, Spring Boot, systèmes distribués et architectures cloud-native — en livrant",
+    "p2b": "la conception d'APIs, les intégrations enterprise, les systèmes de paiement et des backends event-driven",
+    "p2c": " que les équipes peuvent exploiter en production en toute confiance.",
+    "p3": "Mon travail couvre la delivery bancaire régulée (Synapse → Groupe Bank of Africa), les rails de paiement FinTech (Wave, Orange Money, Kafka) et les plateformes SaaS pour PME — en simplifiant les systèmes complexes et en améliorant la fiabilité.",
+    "p4": "Je suis passionné par l'ingénierie backend, les plateformes enterprise, la FinTech et l'architecture logicielle — et j'aime collaborer avec les équipes produit, intégration et engineering pour livrer des solutions prêtes pour la production.",
+    "cardRole": "Ingénieur Logiciel Backend",
+    "cardTagline": "Plateformes Enterprise · Infrastructure de Paiement · Systèmes Bancaires",
     "statYearsValue": "4+",
     "statYears": "Années en production",
     "statSystemsValue": "20+",
@@ -802,8 +1001,8 @@
   },
   "aboutTeaser": {
     "title": "À propos",
-    "heading": "Ingénieur Logiciel Enterprise — Construction de systèmes financiers et enterprise scalables et sécurisés",
-    "excerpt": "J'architecte, construis et livre des systèmes résilients qui propulsent les opérations métier, permettent une intégration fluide des services et garantissent des flux de paiement rapides et sécurisés à l'échelle.",
+    "heading": "Ingénieur Logiciel Backend — Plateformes Enterprise, Banque & Infrastructure de Paiement",
+    "excerpt": "Je construis des plateformes backend qui propulsent les applications enterprise, les systèmes bancaires et l'infrastructure de paiement — avec un focus sur fiabilité, scalabilité et évolution durable.",
     "readMore": "Voir le profil complet",
     "stat1Value": "4+",
     "stat1Label": "Années en production",
@@ -816,7 +1015,7 @@
     "title": "Certifications",
     "subtitle": "Certifications et expertise éprouvée en production",
     "teaserHeading": "Une expertise validée et vérifiable",
-    "intro": "Certifications industrielles cloud, sécurité, IA et streaming d'événements — plus une expertise terrain en Spring, Kubernetes et infrastructure de paiement pour systèmes fintech en production.",
+    "intro": "Certifications obtenues en Java, software design, ingénierie logicielle et banque digitale — plus une expertise terrain en Spring, Kubernetes, Kafka et infrastructure de paiement pour systèmes fintech en production.",
     "formalLabel": "Certifications industrie",
     "expertiseLabel": "Expertise professionnelle",
     "viewAll": "Voir toutes les certifications",
@@ -825,6 +1024,34 @@
     "statusInProgress": "En cours",
     "statusNotStarted": "Prévue",
     "items": {
+      "javaIntermediate": {
+        "name": "Java Intermediate",
+        "issuer": "Certification professionnelle",
+        "description": "Programmation Java intermédiaire — conception orientée objet, collections, concurrence et patterns d'applications production.",
+        "group": "formal",
+        "featured": true
+      },
+      "softwareDesign": {
+        "name": "Software Design : From Requirements to Release",
+        "issuer": "Certification professionnelle",
+        "description": "Conception logicielle de bout en bout — analyse des besoins, décisions d'architecture, implémentation et planification de release.",
+        "group": "formal",
+        "featured": true
+      },
+      "softwareEngineeringEssentials": {
+        "name": "Software Engineering Essentials",
+        "issuer": "Certification professionnelle",
+        "description": "Pratiques fondamentales d'ingénierie logicielle — cycle de vie, qualité, tests et livraison collaborative en production.",
+        "group": "formal",
+        "featured": true
+      },
+      "digitalBankingFundamentals": {
+        "name": "Digital Banking Fundamentals",
+        "issuer": "Certification professionnelle",
+        "description": "Fondamentaux de la banque digitale — paiements, systèmes bancaires centraux, contexte réglementaire et plateformes financières modernes.",
+        "group": "formal",
+        "featured": true
+      },
       "awsSolutionsArchitect": {
         "name": "AWS Certified Solutions Architect — Associate",
         "issuer": "Amazon Web Services",
@@ -898,17 +1125,17 @@
     }
   },
   "certificationsPage": {
-    "metaTitle": "Certifications & Expertise | Ingénieur Logiciel | SAIFCORE",
-    "metaDescription": "Certifications industrielles et expertise éprouvée en production — AWS, sécurité, Azure AI, Kafka, Kubernetes, Spring et ingénierie de systèmes de paiement pour backends fintech.",
+    "metaTitle": "Certifications & Expertise | Ingénieur Logiciel Backend | SAIFCORE",
+    "metaDescription": "Certifications obtenues en Java, software design, banque digitale et ingénierie logicielle — plus expertise production en Spring, Kubernetes, Kafka et systèmes de paiement.",
     "title": "Certifications",
-    "subtitle": "Certifications industrielles cloud, sécurité, IA et streaming d'événements — plus une expertise terrain en Spring, Kubernetes et infrastructure de paiement.",
+    "subtitle": "Certifications vérifiées et credentials cloud, sécurité et streaming en cours — avec expertise terrain Spring et infrastructure de paiement.",
     "backToHome": "Retour à l'accueil"
   },
   "aboutPage": {
-    "metaTitle": "À propos | Ingénieur Logiciel & Spécialiste Paiements | SAIFCORE",
-    "metaDescription": "Ingénieur logiciel expérimenté spécialisé dans la construction de plateformes scalables pour banque, paiements et solutions enterprise. Expert en systèmes backend, APIs, architecture distribuée et livraison cloud-native.",
+    "metaTitle": "À propos | Ingénieur Logiciel Backend | SAIFCORE",
+    "metaDescription": "Ingénieur logiciel backend construisant des plateformes enterprise, systèmes bancaires et infrastructure de paiement. Java, Spring Boot, systèmes distribués et AWS pour environnements régulés.",
     "title": "À propos",
-    "subtitle": "Plus de quatre ans à résoudre des défis d'ingénierie complexes — conception de plateformes de paiement et bancaires robustes axées sur fiabilité, sécurité et valeur métier tangible. Expérience terrain sur backends mission-critical, architectures event-driven et technologies cloud modernes.",
+    "subtitle": "Plus de quatre ans de delivery backend pour la banque, la fintech et l'enterprise — fiabilité, sécurité et résultats métier mesurables au centre.",
     "backToHome": "Retour à l'accueil"
   },
   "insights": {
@@ -976,7 +1203,8 @@
     "contentNote": "Les contenus rédigés, études de cas et éléments de marque restent © SAIFCORE sauf mention contraire. La licence MIT s'applique au code source du site."
   },
   "footer": {
-    "rights": "© {year} SAIFCORE. Tous droits réservés.",
+    "rights": "© {year} {owner}. Tous droits réservés.",
+    "rightsOwner": "{name} · SAIFCORE",
     "license": "Licence MIT",
     "tagline": "Construction de plateformes robustes — paiements, fintech et excellence backend moderne.",
     "linkedin": "Se connecter sur LinkedIn",
@@ -1014,15 +1242,15 @@
     "toDark": "Passer en mode sombre"
   },
   "systemsPage": {
-    "metaTitle": "Études de cas | Projets Fintech | SAIFCORE",
-    "metaDescription": "Études de cas complètes — SDK paiement pan-africain, grand livre en partie double, passerelle API unifiée et SaaS scolaire. Architecture, sécurité, échelle et résultats production.",
+    "metaTitle": "Études de cas | Backends Banque & Fintech | SAIFCORE",
+    "metaDescription": "Études de cas backend — SDK paiement, grand livre en partie double, passerelle API unifiée et plateformes SaaS. Architecture, sécurité, échelle et patterns de delivery bancaire type Synapse.",
     "title": "Projets & études de cas",
-    "subtitle": "Problème, architecture, sécurité, échelle et impact mesurable — le détail derrière chaque livraison.",
+    "subtitle": "Problème, architecture, sécurité, échelle et impact mesurable — dont des patterns issus de la delivery Synapse pour le Groupe Bank of Africa et des intégrations FinTech.",
     "backToHome": "Retour à l'accueil"
   },
   "experiencePage": {
-    "metaTitle": "Expérience | Ingénieur Logiciel Senior | SAIFCORE",
-    "metaDescription": "Parcours éprouvé en livraison de plateformes enterprise, banque régulée, fintech et solutions de paiement scalables. Backend, API et architectures distribuées de niveau production.",
+    "metaTitle": "Expérience | Ingénieur Logiciel Backend | SAIFCORE",
+    "metaDescription": "Parcours : delivery Synapse pour le Groupe Bank of Africa, FinTech ENG Technologie, SaaS Mafalia et santé SarayaTech — Java, Spring Boot, Kafka et backends cloud-native.",
     "title": "Expérience professionnelle",
     "subtitle": "Résolution de défis complexes en banque, fintech et environnements enterprise — là où fiabilité, sécurité et exactitude sont primordiales.",
     "backToHome": "Retour à l'accueil",
@@ -1042,6 +1270,8 @@
       "Spring Security",
       "Spring Batch & Cloud",
       "Spring Data & Integration",
+      "JasperReports",
+      "Développement plateformes SaaS",
       "React",
       "Angular",
       "NestJS",
@@ -1062,7 +1292,9 @@
     "tools": [
       "OpenAPI/Swagger",
       "RESTful APIs",
+      "Spring Batch",
       "Webhooks & Payment APIs",
+      "Développement plateformes SaaS",
       "Domain-Driven Design (DDD)",
       "Clean/Hexagonal Architecture",
       "Architecture event-driven",

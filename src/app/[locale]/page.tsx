@@ -5,12 +5,14 @@ import {
 } from "next-intl/server";
 import type { Locale } from "next-intl";
 import { AboutTeaser } from "@/components/portfolio/AboutTeaser";
+import { ExperienceTeaser } from "@/components/portfolio/ExperienceTeaser";
 import { Insights } from "@/components/portfolio/Insights";
 import { CtaSection } from "@/components/portfolio/CtaSection";
 import { EngineeringPrinciples } from "@/components/portfolio/EngineeringPrinciples";
 import { FeaturedProjectsTeaser } from "@/components/portfolio/FeaturedProjectsTeaser";
 import { Footer } from "@/components/portfolio/Footer";
 import { Hero } from "@/components/portfolio/Hero";
+import { MetricsSection } from "@/components/portfolio/MetricsSection";
 import { Navbar } from "@/components/portfolio/Navbar";
 import { ServicesSection } from "@/components/portfolio/ServicesSection";
 import { CertificationsTeaser } from "@/components/portfolio/CertificationsTeaser";
@@ -20,6 +22,7 @@ import { TrustedExpertise } from "@/components/portfolio/TrustedExpertise";
 import { Trust } from "@/components/portfolio/Trust";
 import { WorkProcess } from "@/components/portfolio/WorkProcess";
 import {
+  getContactEmail,
   getProfileDisplayName,
   getProfileLocation,
   getSiteUrl,
@@ -50,6 +53,7 @@ export default async function Home({ params }: Props) {
   const siteUrl = getSiteUrl();
   const sameAs = getSocialLinks();
   const loc = getProfileLocation();
+  const contactEmail = getContactEmail();
 
   const jsonLd: Record<string, unknown> = {
     "@context": "https://schema.org",
@@ -59,14 +63,22 @@ export default async function Home({ params }: Props) {
     description: t("jsonLdDescription"),
     url: siteUrl,
     knowsAbout: [
+      "Java",
+      "Spring Boot",
       "Enterprise platforms",
-      "Payment systems",
+      "Banking systems",
+      "Payment infrastructure",
       "FinTech",
       "Distributed systems",
+      "Apache Kafka",
       "API architecture",
       "Microservices",
-      "Cloud infrastructure",
+      "AWS",
     ],
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: "Université numérique Cheikh Hamidou KANE (UN-CHK)",
+    },
     address: {
       "@type": "PostalAddress",
       addressLocality: loc.city,
@@ -99,6 +111,10 @@ export default async function Home({ params }: Props) {
     jsonLd.sameAs = sameAs;
   }
 
+  if (contactEmail) {
+    jsonLd.email = contactEmail;
+  }
+
   return (
     <div className="flex min-h-full flex-col">
       <script
@@ -113,6 +129,7 @@ export default async function Home({ params }: Props) {
       >
         <Hero />
         <Trust />
+        <ExperienceTeaser />
         <TrustedExpertise
           title={te.title}
           subtitle={te.subtitle}
@@ -120,6 +137,7 @@ export default async function Home({ params }: Props) {
           conceptsLabel={te.conceptsLabel}
           items={[...te.items]}
         />
+        <MetricsSection />
         <FeaturedProjectsTeaser />
         <ServicesSection
           title={sv.title}
