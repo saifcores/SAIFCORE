@@ -1,7 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "next-intl";
 import type { Metadata } from "next";
-import { notFound, redirect } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { ArticleBody } from "@/components/portfolio/ArticleBody";
 import { ArticleKindBadge } from "@/components/portfolio/ArticleKindBadge";
 import { ContactBridgeStrip } from "@/components/portfolio/ContactBridgeStrip";
@@ -11,7 +11,7 @@ import { Reveal } from "@/components/portfolio/Reveal";
 import { articles, getArticleBlocks, getArticleBySlug } from "@/data/articles";
 import { Link } from "@/i18n/navigation";
 import { buildPageMetadata } from "@/seo";
-import { getBlogArticleUrl } from "@/site";
+import { getBlogArticleLanguageAlternates, getBlogArticleUrl } from "@/site";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -43,11 +43,16 @@ export async function generateMetadata({
   });
 
   if (blogUrl) {
+    const languages = getBlogArticleLanguageAlternates(slug);
     return {
       ...meta,
       alternates: {
-        ...meta.alternates,
         canonical: blogUrl,
+        ...(languages ? { languages } : {}),
+      },
+      openGraph: {
+        ...meta.openGraph,
+        url: blogUrl,
       },
     };
   }
@@ -64,9 +69,14 @@ export default async function ArticlePage({ params }: Props) {
   }
 
   const loc = locale === "fr" ? "fr" : "en";
+
+  if (article.externalUrl) {
+    permanentRedirect(article.externalUrl);
+  }
+
   const blogUrl = getBlogArticleUrl(slug, loc);
   if (blogUrl) {
-    redirect(blogUrl);
+    permanentRedirect(blogUrl);
   }
 
   const t = await getTranslations("articlesPage");

@@ -30,20 +30,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
 
     const articlesIndexUrl = `${base}${prefix}/articles`;
-    entries.push({
-      url: articlesIndexUrl,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.85,
-      alternates: {
-        languages: Object.fromEntries(
-          routing.locales.map((loc) => {
-            const p = loc === routing.defaultLocale ? "" : `/${loc}`;
-            return [loc, `${base}${p}/articles`] as const;
-          }),
-        ),
-      },
-    });
+    if (!blogUrl) {
+      entries.push({
+        url: articlesIndexUrl,
+        lastModified: new Date(),
+        changeFrequency: "weekly",
+        priority: 0.85,
+        alternates: {
+          languages: Object.fromEntries(
+            routing.locales.map((loc) => {
+              const p = loc === routing.defaultLocale ? "" : `/${loc}`;
+              return [loc, `${base}${p}/articles`] as const;
+            }),
+          ),
+        },
+      });
+    }
 
     const systemsUrl = `${base}${prefix}/systems`;
     entries.push({

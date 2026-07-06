@@ -14,7 +14,8 @@
     "skipToContent": "Aller au contenu",
     "loading": "Chargement…",
     "readMore": "Lire",
-    "home": "Accueil"
+    "home": "Accueil",
+    "opensInNewTab": "s'ouvre dans un nouvel onglet"
   },
   "actionBar": {
     "bookCall": "Réserver un appel",

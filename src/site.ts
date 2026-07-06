@@ -123,3 +123,24 @@ export function getBlogArticleUrl(
   const prefix = locale === "fr" ? "/fr" : "";
   return `${blog}${prefix}/articles/${slug}`;
 }
+
+/** hreflang map for a blog article, or `null` when blog URL is not configured. */
+export function getBlogArticleLanguageAlternates(
+  slug: string,
+): Record<string, string> | null {
+  const en = getBlogArticleUrl(slug, "en");
+  const fr = getBlogArticleUrl(slug, "fr");
+  if (!en || !fr) return null;
+  return { en, fr };
+}
+
+/** hreflang map for the blog home, or `null` when blog URL is not configured. */
+export function getBlogIndexLanguageAlternates(): Record<
+  string,
+  string
+> | null {
+  const en = getBlogIndexUrl("en");
+  const fr = getBlogIndexUrl("fr");
+  if (!en || !fr) return null;
+  return { en, fr };
+}

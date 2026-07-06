@@ -1,6 +1,6 @@
 import { getLocale, getTranslations } from "next-intl/server";
 import { articles } from "@/data/articles";
-import { getArticleLink } from "@/lib/article-links";
+import { getArticleLink } from "@/blog/article-links";
 import { Link } from "@/i18n/navigation";
 import { getBlogIndexUrl } from "@/site";
 import { ArticlePostCard } from "./ArticlePostCard";
@@ -15,12 +15,14 @@ type Props = {
 export async function Insights({ teaser = false }: Props) {
   const t = await getTranslations("insights");
   const tArticles = await getTranslations("articlesPage");
+  const tCommon = await getTranslations("common");
   const locale = await getLocale();
   const loc = locale === "fr" ? "fr" : "en";
   const preview = articles.slice(0, 3);
   const blogIndexUrl = getBlogIndexUrl(loc);
   const viewAllHref = blogIndexUrl ?? "/articles";
   const viewAllExternal = !!blogIndexUrl;
+  const opensInNewTab = tCommon("opensInNewTab");
 
   return (
     <section
@@ -48,6 +50,7 @@ export async function Insights({ teaser = false }: Props) {
                   href={viewAllHref}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`${t("viewAll")} (${opensInNewTab})`}
                   className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-accent transition hover:text-[var(--accent-blue-light)]"
                 >
                   {t("viewAll")}
@@ -79,6 +82,7 @@ export async function Insights({ teaser = false }: Props) {
                   tagLabel={tArticles(`kinds.${article.kind}`)}
                   authorLabel={tArticles("author")}
                   readMoreLabel={tArticles("readMore")}
+                  opensInNewTabLabel={opensInNewTab}
                 />
               </Reveal>
             );
@@ -93,6 +97,7 @@ export async function Insights({ teaser = false }: Props) {
                   href={viewAllHref}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`${t("viewAll")} (${opensInNewTab})`}
                   className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
                 >
                   {t("viewAll")}
@@ -117,6 +122,7 @@ export async function Insights({ teaser = false }: Props) {
                   href={viewAllHref}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`${t("viewAll")} (${opensInNewTab})`}
                   className="inline-flex items-center gap-2 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 px-6 py-3 text-sm font-semibold text-[var(--text-secondary)] transition hover:border-[var(--border-hover)] hover:text-[var(--text-primary)]"
                 >
                   {t("viewAll")}

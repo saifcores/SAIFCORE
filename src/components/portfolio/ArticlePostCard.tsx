@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { Article } from "@/data/articles";
-import { getBlogArticleCover } from "@/lib/article-covers";
+import { getBlogArticleCover } from "@/blog/article-covers";
 import { Link } from "@/i18n/navigation";
 
 type Props = {
@@ -11,6 +11,7 @@ type Props = {
   tagLabel: string;
   authorLabel: string;
   readMoreLabel: string;
+  opensInNewTabLabel: string;
 };
 
 function CardAnchor({
@@ -20,6 +21,7 @@ function CardAnchor({
   children,
   tabIndex,
   ariaHidden,
+  ariaLabel,
 }: {
   href: string;
   external: boolean;
@@ -27,6 +29,7 @@ function CardAnchor({
   children: React.ReactNode;
   tabIndex?: number;
   ariaHidden?: boolean;
+  ariaLabel?: string;
 }) {
   if (external) {
     return (
@@ -37,6 +40,7 @@ function CardAnchor({
         className={className}
         tabIndex={tabIndex}
         aria-hidden={ariaHidden}
+        aria-label={ariaLabel}
       >
         {children}
       </a>
@@ -63,9 +67,17 @@ export function ArticlePostCard({
   tagLabel,
   authorLabel,
   readMoreLabel,
+  opensInNewTabLabel,
 }: Props) {
   const loc = locale;
   const coverSrc = getBlogArticleCover(article.slug);
+  const title = article.title[loc];
+  const externalTitleLabel = external
+    ? `${title} (${opensInNewTabLabel})`
+    : undefined;
+  const externalReadMoreLabel = external
+    ? `${readMoreLabel} (${opensInNewTabLabel})`
+    : undefined;
 
   const formatDate = (iso: string) =>
     new Intl.DateTimeFormat(loc === "fr" ? "fr-FR" : "en-US", {
@@ -113,8 +125,9 @@ export function ArticlePostCard({
             href={href}
             external={external}
             className="transition group-hover:text-accent"
+            ariaLabel={externalTitleLabel}
           >
-            {article.title[loc]}
+            {title}
           </CardAnchor>
         </h3>
 
@@ -138,6 +151,7 @@ export function ArticlePostCard({
             href={href}
             external={external}
             className="shrink-0 text-sm font-semibold text-accent transition hover:text-[var(--accent-blue-light)]"
+            ariaLabel={externalReadMoreLabel}
           >
             {readMoreLabel}
           </CardAnchor>

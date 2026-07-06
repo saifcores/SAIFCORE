@@ -14,7 +14,8 @@
     "skipToContent": "Skip to content",
     "loading": "Loading…",
     "readMore": "Read",
-    "home": "Home"
+    "home": "Home",
+    "opensInNewTab": "opens in new tab"
   },
   "actionBar": {
     "bookCall": "Book a call",

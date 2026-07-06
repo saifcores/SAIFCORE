@@ -3,7 +3,6 @@ import { Link } from "@/i18n/navigation";
 import { hasObtainedCertifications } from "@/data/certifications";
 import {
   getBlogIndexUrl,
-  getBlogUrl,
   getGithubUrl,
   getLinkedinUrl,
   getProfileDisplayName,
@@ -16,14 +15,15 @@ import {
 
 export async function Footer() {
   const t = await getTranslations("footer");
+  const tCommon = await getTranslations("common");
   const locale = await getLocale();
   const loc = locale === "fr" ? "fr" : "en";
   const year = new Date().getFullYear();
   const resumeUrl = getResumeUrl();
   const resumeDownload = getResumeDownloadFilename();
   const profileName = getProfileDisplayName();
-  const blogUrl = getBlogUrl();
   const blogIndexUrl = getBlogIndexUrl(loc);
+  const opensInNewTab = tCommon("opensInNewTab");
   const ownerLabel =
     profileName !== "SAIFCORE"
       ? t("rightsOwner", { name: profileName })
@@ -86,6 +86,7 @@ export async function Footer() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label={`${link.label} (${opensInNewTab})`}
                         className="text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
                       >
                         {link.label}
@@ -121,6 +122,7 @@ export async function Footer() {
                     href={getLinkedinUrl()}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`${t("linkedin")} (${opensInNewTab})`}
                     className="text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
                   >
                     {t("linkedin")}
@@ -131,23 +133,12 @@ export async function Footer() {
                     href={getGithubUrl()}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`${t("github")} (${opensInNewTab})`}
                     className="text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
                   >
                     {t("github")}
                   </a>
                 </li>
-                {blogUrl ? (
-                  <li>
-                    <a
-                      href={blogIndexUrl ?? blogUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
-                    >
-                      {t("blog")}
-                    </a>
-                  </li>
-                ) : null}
                 {resumeUrl ? (
                   <li>
                     <a

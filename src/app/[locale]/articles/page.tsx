@@ -1,16 +1,17 @@
 import type { Locale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
+import { permanentRedirect } from "next/navigation";
 import { ArticlePostCard } from "@/components/portfolio/ArticlePostCard";
 import { ContactBridgeStrip } from "@/components/portfolio/ContactBridgeStrip";
 import { Footer } from "@/components/portfolio/Footer";
 import { Navbar } from "@/components/portfolio/Navbar";
 import { Reveal } from "@/components/portfolio/Reveal";
 import { articles } from "@/data/articles";
-import { getArticleLink } from "@/lib/article-links";
+import { getArticleLink } from "@/blog/article-links";
 import { Link } from "@/i18n/navigation";
 import { buildBreadcrumbJsonLd, buildPageMetadata } from "@/seo";
-import { getBlogIndexUrl } from "@/site";
+import { getBlogIndexLanguageAlternates, getBlogIndexUrl } from "@/site";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -26,6 +27,21 @@ export async function generateMetadata({
     locale: locale as Locale,
     namespace: "articlesPage",
   });
+  const loc = locale === "fr" ? "fr" : "en";
+  const blogUrl = getBlogIndexUrl(loc);
+  const blogAlternates = getBlogIndexLanguageAlternates();
+
+  if (blogUrl && blogAlternates) {
+    return {
+      title: t("metaTitle"),
+      description: t("metaDescription"),
+      alternates: {
+        canonical: blogUrl,
+        languages: blogAlternates,
+      },
+    };
+  }
+
   return buildPageMetadata({
     locale,
     path: "/articles",
@@ -37,10 +53,15 @@ export async function generateMetadata({
 export default async function ArticlesPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale as Locale);
-  const t = await getTranslations("articlesPage");
-  const tCommon = await getTranslations("common");
   const loc = locale === "fr" ? "fr" : "en";
   const blogUrl = getBlogIndexUrl(loc);
+
+  if (blogUrl) {
+    permanentRedirect(blogUrl);
+  }
+
+  const t = await getTranslations("articlesPage");
+  const tCommon = await getTranslations("common");
 
   const breadcrumbJsonLd = buildBreadcrumbJsonLd(locale, [
     { name: tCommon("home"), path: "/" },
@@ -74,16 +95,6 @@ export default async function ArticlesPage({ params }: Props) {
               <p className="mt-4 max-w-2xl text-base text-[var(--text-secondary)] sm:text-lg">
                 {t("subtitle")}
               </p>
-              {blogUrl ? (
-                <a
-                  href={blogUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary mt-6 inline-flex px-4 py-2.5 text-sm"
-                >
-                  {t("blogCta")} ↗
-                </a>
-              ) : null}
             </Reveal>
           </div>
         </section>
@@ -103,6 +114,7 @@ export default async function ArticlesPage({ params }: Props) {
                       tagLabel={t(`kinds.${article.kind}`)}
                       authorLabel={t("author")}
                       readMoreLabel={t("readMore")}
+                      opensInNewTabLabel={tCommon("opensInNewTab")}
                     />
                   </Reveal>
                 );
