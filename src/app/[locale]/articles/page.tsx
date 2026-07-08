@@ -31,23 +31,29 @@ export async function generateMetadata({
   const blogUrl = getBlogIndexUrl(loc);
   const blogAlternates = getBlogIndexLanguageAlternates();
 
-  if (blogUrl && blogAlternates) {
-    return {
-      title: t("metaTitle"),
-      description: t("metaDescription"),
-      alternates: {
-        canonical: blogUrl,
-        languages: blogAlternates,
-      },
-    };
-  }
-
-  return buildPageMetadata({
+  const meta = buildPageMetadata({
     locale,
     path: "/articles",
     title: t("metaTitle"),
     description: t("metaDescription"),
   });
+
+  if (blogUrl) {
+    return {
+      ...meta,
+      alternates: {
+        ...meta.alternates,
+        canonical: blogUrl,
+        languages: blogAlternates ?? meta.alternates?.languages,
+      },
+      openGraph: {
+        ...meta.openGraph,
+        url: blogUrl,
+      },
+    };
+  }
+
+  return meta;
 }
 
 export default async function ArticlesPage({ params }: Props) {

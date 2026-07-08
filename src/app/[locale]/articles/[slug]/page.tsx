@@ -47,8 +47,9 @@ export async function generateMetadata({
     return {
       ...meta,
       alternates: {
+        ...meta.alternates,
         canonical: blogUrl,
-        ...(languages ? { languages } : {}),
+        languages: languages ?? meta.alternates?.languages,
       },
       openGraph: {
         ...meta.openGraph,
