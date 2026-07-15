@@ -8,7 +8,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "sync:icons": "cp public/profile.png src/app/icon.png && cp public/profile.png src/app/apple-icon.png"
+    "sync:icons": "cp public/profile.png src/app/icon.png && cp public/profile.png src/app/apple-icon.png",
+    "cv:build": "node scripts/build-cv.mjs",
+    "cv:watch": "node scripts/build-cv.mjs --watch"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

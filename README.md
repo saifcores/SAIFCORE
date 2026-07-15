@@ -97,6 +97,8 @@ npm run start
 | `npm run start`      | Serve production build                                            |
 | `npm run lint`       | ESLint (Next.js config)                                           |
 | `npm run sync:icons` | Copy `public/profile.png` → `src/app/icon.png` & `apple-icon.png` |
+| `npm run cv:build`   | Compile `cv/*.tex` → `public/resume-{en,fr}.pdf` (needs tectonic) |
+| `npm run cv:watch`   | Rebuild CV PDFs whenever a `cv/*.tex` file changes                |
 
 ---
 
