@@ -1025,13 +1025,6 @@
     "statusInProgress": "En cours",
     "statusNotStarted": "Prévue",
     "items": {
-      "javaIntermediate": {
-        "name": "Java Intermediate",
-        "issuer": "Certification professionnelle",
-        "description": "Programmation Java intermédiaire — conception orientée objet, collections, concurrence et patterns d'applications production.",
-        "group": "formal",
-        "featured": true
-      },
       "softwareDesign": {
         "name": "Software Design : From Requirements to Release",
         "issuer": "Certification professionnelle",

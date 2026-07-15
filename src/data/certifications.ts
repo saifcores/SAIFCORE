@@ -1,6 +1,5 @@
 /** Stable ids — copy keys must exist in `messages/*.json` → `certifications.items`. */
 export const certificationIds = [
-  "javaIntermediate",
   "softwareDesign",
   "softwareEngineeringEssentials",
   "digitalBankingFundamentals",
@@ -42,11 +41,6 @@ export type CertificationMeta = {
 };
 
 export const certificationsMeta: CertificationMeta[] = [
-  {
-    id: "javaIntermediate",
-    kind: "academic",
-    status: "obtained",
-  },
   {
     id: "softwareDesign",
     kind: "academic",

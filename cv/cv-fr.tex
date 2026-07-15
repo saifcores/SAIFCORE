@@ -1,71 +1,67 @@
 \documentclass[10.5pt,a4paper]{article}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Mise en page
+%% Mise en page — ATS, une colonne
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage[left=0.65in,
-            right=0.65in,
-            top=0.55in,
-            bottom=0.55in]{geometry}
+\usepackage[left=0.6in,
+            right=0.6in,
+            top=0.5in,
+            bottom=0.5in]{geometry}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{titlesec}
 \usepackage{enumitem}
-\usepackage{tabularx}
-\usepackage{array}
 \usepackage{hyperref}
 \usepackage{parskip}
-\usepackage{ragged2e}
 
-\newcommand{\iconEmail}{\textbf{Email~:}}
-\newcommand{\iconPhone}{\textbf{T\'el.~:}}
-\newcommand{\iconLinkedin}{\textbf{LinkedIn~:}}
-\newcommand{\iconGlobe}{\textbf{Web~:}}
+\newcommand{\iconEmail}{Email~:}
+\newcommand{\iconPhone}{T\'el.~:}
+\newcommand{\iconLinkedin}{LinkedIn~:}
+\newcommand{\iconGlobe}{Web~:}
 
 \pagestyle{empty}
 
 \definecolor{primary}{HTML}{1A365D}
-\definecolor{text}{HTML}{2D3748}
 \definecolor{light}{HTML}{718096}
 
 \hypersetup{
     colorlinks=true,
     urlcolor=primary,
     linkcolor=primary,
-    pdftitle={Saifoulaye Diallo - CV},
+    pdftitle={Saifoulaye Diallo - CV Ingenieur Logiciel Backend},
     pdfauthor={Saifoulaye Diallo}
 }
 
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{3pt}
+\setlength{\parskip}{2pt}
 
 \titleformat{\section}
-    {\Large\bfseries\color{primary}}
+    {\large\bfseries\color{primary}\uppercase}
     {}
     {0em}
     {}
-    [\titlerule]
+    [\vspace{1pt}\titlerule]
 
 \titlespacing*{\section}
     {0pt}
-    {10pt}
-    {5pt}
+    {9pt}
+    {4pt}
 
 \newcommand{\resumeItem}[1]{
     \item {\small #1}
 }
 
 \newcommand{\resumeSubheading}[4]{
-    {\large\textbf{#1}} \hfill {\small #4}\\
-    {\color{light}#2} \hfill \textit{\small #3}
-    \vspace{3pt}
+    {\textbf{#1}} \hfill {\small #4}\\
+    {\color{light}\small #2} \hfill \textit{\small #3}
+    \vspace{2pt}
 }
 
 \newenvironment{resumeItemize}{
-    \begin{itemize}[leftmargin=*, itemsep=1pt, topsep=2pt, parsep=0pt]
+    \begin{itemize}[leftmargin=*, itemsep=1pt, topsep=1pt, parsep=0pt]
 }{
     \end{itemize}
 }
@@ -75,103 +71,107 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{center}
+    {\LARGE \textbf{SAIFOULAYE DIALLO}}
 
-    {\Huge \textbf{SAIFOULAYE DIALLO}}
+    \vspace{3pt}
+
+    {\large Ing\'enieur Logiciel Backend \textbar\
+    Plateformes Enterprise · Paiements · Banque}
 
     \vspace{4pt}
 
-    {\Large Ing\'enieur Logiciel Backend}
-
-    \vspace{2pt}
-
-    Plateformes Enterprise \textbullet\ Infrastructure de Paiement
-    \textbullet\ Cloud \textbullet\ FinTech
-
-    \vspace{5pt}
-
+    {\small
     \iconEmail\
     \href{mailto:saifoulaye.diallo0512@gmail.com}{saifoulaye.diallo0512@gmail.com}
-    \quad
+    \quad\textbar\quad
     \iconPhone\ +221~77~124~41~51
-    \quad
+    \quad\textbar\quad
     \iconLinkedin\
     \href{https://www.linkedin.com/in/sayfoulaye-diallo}{linkedin.com/in/sayfoulaye-diallo}
-
-    \vspace{2pt}
-
+    \quad\textbar\quad
     \iconGlobe\ \href{https://saifcore.tech}{saifcore.tech}
-
+    }
 \end{center}
 
 \section{R\'esum\'e Professionnel}
 
-Ing\'enieur Logiciel Backend avec plus de 4 ans d'exp\'erience dans la
-conception de plateformes enterprise scalables, de syst\`emes bancaires et
-d'infrastructure de paiement. Sp\'ecialis\'e dans les API haute performance
-et les backends distribu\'es avec Java, Spring Boot, AWS, Docker et les
-pratiques cloud-native. Exp\'erience de livraison de logiciels s\'ecuris\'es
-et maintenables en environnements FinTech et bancaires multi-filiales, avec
-un focus sur la fiabilit\'e, l'architecture propre et l'\'evolution durable.
+Ing\'enieur Logiciel Backend sp\'ecialis\'e dans l'infrastructure de paiement,
+les plateformes bancaires et les APIs enterprise. Plus de 4 ans \`a livrer des
+syst\`emes Java / Spring Boot en production pour banques multi-filiales et
+produits FinTech --- rails de paiement, int\'egrations Mobile Money et services
+haute disponibilit\'e. Solide en conception d'API, backends distribu\'es,
+architecture propre et livraison avec des \'equipes pluridisciplinaires.
+Ouvert aux collaborations en delivery freelance, mission contractuelle
+embarqu\'ee et conseil en architecture.
+
+\section{Mots-Cl\'es Cl\'es}
+
+{\small Java, Spring Boot, Spring Security, API REST, Microservices, Traitement
+des Paiements, Mobile Money, Wave, Orange Money, Syst\`emes Bancaires, FinTech,
+Kafka, PostgreSQL, Oracle, Redis, Docker, Kubernetes, AWS, CI/CD,
+Domain-Driven Design, Clean Architecture, OpenAPI, OAuth2, JWT, Agile}
 
 \section{Exp\'erience Professionnelle}
 
 \resumeSubheading
     {Ing\'enieur Backend --- Syst\`emes Bancaires}
     {Synapse Groupe --- Client : Groupe Bank of Africa}
-    {Ngor, Dakar, S\'en\'egal}
+    {Dakar, S\'en\'egal}
     {F\'ev. 2025 -- Pr\'esent}
 
 \begin{resumeItemize}
-    \resumeItem{Conception et \'evolution de services backend pour les
-    paiements, virements et le traitement des transactions --- au service des
+    \resumeItem{Concevoir et faire \'evoluer des services backend pour
+    paiements, virements et traitement des transactions au service de
     plateformes bancaires enterprise sur plus de 11 filiales Bank of Africa.}
-    \resumeItem{Construction d'APIs enterprise pour l'int\'egration
-    s\'ecuris\'ee entre applications bancaires, middleware et syst\`emes
-    tiers ; modernisation pour la maintenabilit\'e et la r\'esilience haute
-    disponibilit\'e.}
-    \resumeItem{\textit{Environnement~:} Java, Spring Boot, Docker,
-    Kubernetes, CI/CD, JasperReports, Microservices, Clean Architecture,
-    Agile Scrum.}
+    \resumeItem{Livrer des APIs enterprise s\'ecuris\'ees reliant applications
+    bancaires, middleware et syst\`emes tiers sous contraintes strictes de
+    disponibilit\'e et de conformit\'e.}
+    \resumeItem{Moderniser des services critiques pour la maintenabilit\'e et
+    la r\'esilience op\'erationnelle ; collaborer avec produit, QA et
+    plusieurs \'equipes techniques en Agile.}
+    \resumeItem{\textit{Environnement~:} Java, Spring Boot, Docker, Kubernetes,
+    CI/CD, JasperReports, Microservices, Clean Architecture, Scrum.}
 \end{resumeItemize}
 
-\vspace{4pt}
+\vspace{3pt}
 
 \resumeSubheading
     {Ing\'enieur Logiciel --- FinTech \& Paiements}
     {ENG Technologie Group}
-    {Dakar-Plateau, S\'en\'egal}
+    {Dakar, S\'en\'egal}
     {Juil. 2023 -- F\'ev. 2025}
 
 \begin{resumeItemize}
-    \resumeItem{Contribution \`a une plateforme FinTech pour le cr\'edit
-    digital et le traitement des paiements --- microservices backend pour
-    l'onboarding client et les workflows de paiement.}
-    \resumeItem{Int\'egration Wave et Orange Money pour automatiser les
-    paiements ; patterns asynchrones et Spring Security pour renforcer les
-    API.}
+    \resumeItem{Construire des microservices backend pour le cr\'edit digital,
+    l'onboarding client et les workflows de paiement sur une plateforme
+    FinTech.}
+    \resumeItem{Int\'egrer Wave et Orange Money pour automatiser les paiements ;
+    appliquer des patterns asynchrones et des flux \'ev\'enementiels orient\'es
+    Kafka.}
+    \resumeItem{Renforcer les APIs avec Spring Security et am\'eliorer la
+    fiabilit\'e des op\'erations de paiement en production.}
     \resumeItem{\textit{Environnement~:} Java, Spring Boot, AWS, PostgreSQL,
-    Kafka, Docker, GitLab CI/CD, Agile Scrum.}
+    Apache Kafka, Docker, GitLab CI/CD, Scrum.}
 \end{resumeItemize}
 
-\vspace{4pt}
+\vspace{3pt}
 
 \resumeSubheading
     {Ing\'enieur Logiciel --- Plateforme SaaS}
     {Mafalia --- Applications Ecom \& Fintech}
-    {R\'egion de Dakar, S\'en\'egal}
+    {Dakar, S\'en\'egal}
     {Juin 2022 -- Nov. 2023}
 
 \begin{resumeItemize}
-    \resumeItem{Construction de services backend et APIs REST pour stocks,
-    commandes, ventes et workflows financiers d'une plateforme SaaS PME.}
-    \resumeItem{Am\'elioration des performances (environ 30\% de r\'eduction
-    des temps de r\'eponse) via optimisation des requ\^etes, cache et
-    traitement asynchrone.}
+    \resumeItem{Prendre en charge services backend et APIs REST pour stocks,
+    commandes, ventes et workflows financiers d'un SaaS multi-tenant pour PME.}
+    \resumeItem{R\'eduire les temps de r\'eponse d'environ 30\% via optimisation
+    des requ\^etes, cache et traitement asynchrone.}
     \resumeItem{\textit{Environnement~:} Java, Spring Boot, MySQL, Angular,
-    TypeScript, REST APIs, Agile XP.}
+    TypeScript, API REST, Agile XP.}
 \end{resumeItemize}
 
-\vspace{4pt}
+\vspace{3pt}
 
 \resumeSubheading
     {Ing\'enieur Logiciel}
@@ -180,67 +180,70 @@ un focus sur la fiabilit\'e, l'architecture propre et l'\'evolution durable.
     {D\'ec. 2021 -- Mai 2022}
 
 \begin{resumeItemize}
-    \resumeItem{D\'eveloppement de services backend et fonctionnalit\'es
-    full-stack pour la gestion des patients, consultations et prescriptions
-    sur une plateforme clinique.}
-    \resumeItem{Conception d'APIs REST s\'ecuris\'ees et scalables ;
-    am\'elioration des performances via cache et traitement asynchrone.}
-    \resumeItem{\textit{Environnement~:} Java, Spring Boot, Angular, REST
-    APIs, Scrum.}
+    \resumeItem{Livrer services backend et fonctionnalit\'es full-stack pour
+    gestion des patients, consultations et prescriptions sur une plateforme
+    clinique.}
+    \resumeItem{Concevoir des APIs REST s\'ecuris\'ees et scalables \`a travers
+    plusieurs modules m\'etier ; am\'eliorer les performances via cache et
+    traitement asynchrone.}
+    \resumeItem{\textit{Environnement~:} Java, Spring Boot, Angular, API REST,
+    Scrum.}
 \end{resumeItemize}
 
-\section{Projets d'Ing\'enierie S\'electionn\'es}
+\section{Projets S\'electionn\'es}
 
-\textbf{\large SDK Paiement Pan-Africain} \hfill {\small Projet personnel}
-
-\vspace{2pt}
+\textbf{SDK Paiement Pan-Africain} \hfill {\small Infrastructure de Paiement}
 
 \begin{resumeItemize}
-    \resumeItem{SDK unifi\'e exposant une API pour initier, confirmer et
+    \resumeItem{SDK unifi\'e avec une API pour initier, confirmer et
     r\'econcilier les paiements Orange Money, Wave et Free Money via
     adaptateurs fournisseurs.}
-    \resumeItem{Pattern Adapter avec Spring Boot, cl\'es d'idempotence Redis
-    et \'ev\'enements Kafka ; requ\^etes sign\'ees et validation HMAC des
-    webhooks.}
-    \resumeItem{\textit{Technologies~:} Java, Spring Boot, Redis, Kafka, API
-    REST, JWT, OpenAPI.}
+    \resumeItem{Adaptateurs Spring Boot, cl\'es d'idempotence Redis,
+    \'ev\'enements Kafka de settlement, requ\^etes sign\'ees et validation HMAC
+    des webhooks.}
 \end{resumeItemize}
 
-\vspace{4pt}
+\vspace{2pt}
 
-\textbf{\large Ecom 360 PME --- Plateforme de Gestion Commerciale}
-\hfill {\small Produit SaaS}
+\textbf{Passerelle API Unifi\'ee} \hfill {\small Enterprise / Int\'egrations Bancaires}
+
+\begin{resumeItemize}
+    \resumeItem{Pattern de gateway enterprise centralisant auth, routage,
+    rate limiting et orchestration fournisseurs pour int\'egrations bancaires
+    multi-entit\'es.}
+    \resumeItem{JWT en edge, RBAC, journalisation d'audit des requ\^etes et
+    contrats REST versionn\'es pour prot\'eger le core tout en ouvrant les
+    APIs partenaires.}
+\end{resumeItemize}
 
 \vspace{2pt}
+
+\textbf{Ecom 360 PME} \hfill {\small Plateforme SaaS Commerce}
 
 \begin{resumeItemize}
     \resumeItem{Plateforme tout-en-un : POS, stocks temps r\'eel, Wave \&
     Orange Money li\'es \`a chaque vente, multi-boutiques et exports
     comptables.}
     \resumeItem{SPA Angular avec API REST Spring Boot multi-tenant, jobs
-    asynchrones pour les rapports, isolation par boutique et contr\^ole
-    d'acc\`es par r\^oles.}
-    \resumeItem{\textit{Technologies~:} Java, Spring Boot, Angular, MySQL,
-    Docker, Mobile Money.}
+    asynchrones de reporting et contr\^ole d'acc\`es par r\^oles.}
 \end{resumeItemize}
 
 \section{Comp\'etences Techniques}
 
-\begin{tabularx}{\textwidth}{>{\bfseries}p{3.6cm} X}
-    Langages & Java (8--21), TypeScript, JavaScript (ES6+), SQL \\[2pt]
-    Backend & Spring Boot, Spring Security, Spring Data JPA, NestJS,
-        API REST, OAuth2, JWT, OpenAPI \\[2pt]
-    Frontend & React, Next.js, Angular, TypeScript, HTML5, CSS3,
-        Tailwind CSS \\[2pt]
-    Cloud \& DevOps & AWS, Docker, Kubernetes, Terraform, GitHub Actions,
-        GitLab CI, Jenkins, Maven, Git \\[2pt]
-    Architecture & Microservices, Monolithe Modulaire, Architecture
-        Clean / Hexagonale, DDD, Event-Driven, API-First \\[2pt]
-    Donn\'ees \& Messagerie & PostgreSQL, Oracle, MySQL, Redis, MongoDB,
-        Kafka, RabbitMQ \\[2pt]
-    Domaines & Syst\`emes Bancaires, FinTech, Paiements, Mobile Money,
-        Int\'egrations Enterprise \\
-\end{tabularx}
+{\small
+\textbf{Langages~:} Java (8--21), TypeScript, JavaScript (ES6+), SQL \\
+\textbf{Backend~:} Spring Boot, Spring Security, Spring Data JPA, NestJS, API
+REST, GraphQL, OAuth2, JWT, OpenAPI / Swagger \\
+\textbf{Frontend~:} React, Next.js, Angular, TypeScript, HTML5, CSS3, Tailwind CSS \\
+\textbf{Cloud \& DevOps~:} AWS, Docker, Kubernetes, Terraform, GitHub Actions,
+GitLab CI, Jenkins, Maven, Git \\
+\textbf{Architecture~:} Microservices, Monolithe Modulaire, Architecture
+Clean / Hexagonale, DDD, Event-Driven, API-First \\
+\textbf{Donn\'ees \& Messagerie~:} PostgreSQL, Oracle, MySQL, Redis, MongoDB,
+Kafka, RabbitMQ \\
+\textbf{Domaines~:} Syst\`emes Bancaires, FinTech, Traitement des Paiements,
+Mobile Money, Int\'egrations Enterprise
+}
 
 \section{Formation}
 
@@ -250,7 +253,7 @@ un focus sur la fiabilit\'e, l'architecture propre et l'\'evolution durable.
     {Dakar, S\'en\'egal}
     {Mai 2024}
 
-\vspace{2pt}
+\vspace{1pt}
 
 \resumeSubheading
     {Licence, Math\'ematiques \& Informatique}
@@ -258,7 +261,7 @@ un focus sur la fiabilit\'e, l'architecture propre et l'\'evolution durable.
     {Dakar, S\'en\'egal}
     {Jan 2020 -- Mai 2024}
 
-\vspace{2pt}
+\vspace{1pt}
 
 \resumeSubheading
     {BootCamp Programmation Informatique}
@@ -268,25 +271,13 @@ un focus sur la fiabilit\'e, l'architecture propre et l'\'evolution durable.
 
 \section{Certifications}
 
-\begin{resumeItemize}
-    \resumeItem{Java Intermediate --- Obtenue}
-    \resumeItem{Software Design: From Requirements to Release --- Obtenue}
-    \resumeItem{Software Engineering Essentials --- Obtenue}
-    \resumeItem{Digital Banking Fundamentals --- Obtenue}
-    \resumeItem{AWS Certified Solutions Architect --- Associate (en cours)}
-\end{resumeItemize}
+{\small Java Intermediate ; Software Design: From Requirements to Release ;
+Software Engineering Essentials ; Digital Banking Fundamentals.
+AWS Certified Solutions Architect --- Associate (en cours).}
 
 \section{Langues}
 
-\begin{tabularx}{\textwidth}{>{\bfseries}p{3cm} X}
-    Fran\c{c}ais & Professionnel (langue maternelle) \\[2pt]
-    Anglais & Interm\'ediaire \\
-\end{tabularx}
-
-\section{Centres d'Int\'er\^et Professionnels}
-
-Architecture Logicielle \textbullet\ Syst\`emes Distribu\'es
-\textbullet\ FinTech \textbullet\ Cloud Computing
-\textbullet\ Infrastructure de Paiement \textbullet\ Exp\'erience D\'eveloppeur
+{\small Fran\c{c}ais --- Professionnel courant \quad\textbar\quad
+Anglais --- Professionnel courant (\'ecrit business / technique)}
 
 \end{document}

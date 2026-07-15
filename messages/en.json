@@ -1027,13 +1027,6 @@
     "statusInProgress": "In progress",
     "statusNotStarted": "Planned",
     "items": {
-      "javaIntermediate": {
-        "name": "Java Intermediate",
-        "issuer": "Professional certification",
-        "description": "Intermediate Java programming — object-oriented design, collections, concurrency, and production-ready application patterns.",
-        "group": "formal",
-        "featured": true
-      },
       "softwareDesign": {
         "name": "Software Design: From Requirements to Release",
         "issuer": "Professional certification",
