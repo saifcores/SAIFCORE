@@ -117,7 +117,7 @@ Copy [`.env.example`](.env.example) to `.env.local`. All public vars use the `NE
 | `NEXT_PUBLIC_PROFILE_COUNTRY`      | Optional        | Schema location (default: `Senegal`)                             |
 | `NEXT_PUBLIC_PROFILE_COUNTRY_CODE` | Optional        | ISO country code (default: `SN`)                                 |
 
-Helpers: [`src/site.ts`](src/site.ts) (client-safe env) and [`src/server/resume.ts`](src/server/resume.ts) (server-only resume resolution via `fs`).
+Helpers: [`src/site.ts`](src/site.ts) (client-safe env) and [`src/server/resume.ts`](src/server/resume.ts) (locale CV URLs; PDFs in `public/`).
 
 ---
 

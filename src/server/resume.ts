@@ -1,5 +1,3 @@
-import { existsSync } from "node:fs";
-import { join } from "node:path";
 import { getProfileDisplayName } from "@/site";
 
 type ResumeLocale = "en" | "fr";
@@ -12,14 +10,14 @@ function localResumePath(locale: ResumeLocale): string {
   return locale === "fr" ? "/resume-fr.pdf" : "/resume-en.pdf";
 }
 
-function localResumeFile(locale: ResumeLocale): string {
-  return locale === "fr" ? "resume-fr.pdf" : "resume-en.pdf";
-}
-
 /**
  * CV download URL for recruiters: optional `NEXT_PUBLIC_RESUME_URL` (https),
- * otherwise `/resume-en.pdf` or `/resume-fr.pdf` if present in `public/`.
- * Server-only (uses `fs`) — do not import from client components.
+ * otherwise the locale PDF shipped in `public/` (`/resume-en.pdf` /
+ * `/resume-fr.pdf`).
+ *
+ * Do not use `fs.existsSync` on `public/` — those files are CDN static assets
+ * on Vercel and are not present in the serverless runtime filesystem, which
+ * made the download CTA fall back to `/#contact`.
  */
 export function getResumeUrl(locale?: string): string | null {
   const external = process.env.NEXT_PUBLIC_RESUME_URL?.trim();
@@ -32,19 +30,7 @@ export function getResumeUrl(locale?: string): string | null {
     }
   }
 
-  const loc = normalizeResumeLocale(locale);
-  const preferred = join(process.cwd(), "public", localResumeFile(loc));
-  if (existsSync(preferred)) return localResumePath(loc);
-
-  // Fallback: other locale, then legacy single file
-  const fallbackLoc: ResumeLocale = loc === "fr" ? "en" : "fr";
-  const fallback = join(process.cwd(), "public", localResumeFile(fallbackLoc));
-  if (existsSync(fallback)) return localResumePath(fallbackLoc);
-
-  const legacy = join(process.cwd(), "public", "resume.pdf");
-  if (existsSync(legacy)) return "/resume.pdf";
-
-  return null;
+  return localResumePath(normalizeResumeLocale(locale));
 }
 
 /** True when the resume is served from this site (enables `download` attribute). */
