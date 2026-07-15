@@ -19,8 +19,8 @@ export async function Footer() {
   const locale = await getLocale();
   const loc = locale === "fr" ? "fr" : "en";
   const year = new Date().getFullYear();
-  const resumeUrl = getResumeUrl();
-  const resumeDownload = getResumeDownloadFilename();
+  const resumeUrl = getResumeUrl(locale);
+  const resumeDownload = getResumeDownloadFilename(locale);
   const profileName = getProfileDisplayName();
   const blogIndexUrl = getBlogIndexUrl(loc);
   const opensInNewTab = tCommon("opensInNewTab");

@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { BookCallLink } from "@/components/portfolio/BookCallLink";
 import { HeroContent } from "@/components/portfolio/HeroContent";
@@ -11,8 +11,9 @@ import {
 
 export async function Hero() {
   const t = await getTranslations("hero");
-  const resumeUrl = getResumeUrl();
-  const resumeDownload = getResumeDownloadFilename();
+  const locale = await getLocale();
+  const resumeUrl = getResumeUrl(locale);
+  const resumeDownload = getResumeDownloadFilename(locale);
 
   const ctas = (
     <>

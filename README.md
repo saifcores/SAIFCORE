@@ -111,7 +111,7 @@ Copy [`.env.example`](.env.example) to `.env.local`. All public vars use the `NE
 | `NEXT_PUBLIC_CALENDLY_URL`         | Optional        | “Book a call” links (`https://calendly.com/...` only)            |
 | `NEXT_PUBLIC_LINKEDIN_URL`         | Optional        | Footer + Person schema `sameAs`                                  |
 | `NEXT_PUBLIC_GITHUB_URL`           | Optional        | Footer + Person schema `sameAs`                                  |
-| `NEXT_PUBLIC_RESUME_URL`           | Optional        | External CV; else `public/resume.pdf` if present                 |
+| `NEXT_PUBLIC_RESUME_URL`           | Optional        | External CV override; else `public/resume-{en,fr}.pdf` by locale |
 | `NEXT_PUBLIC_PROFILE_NAME`         | Optional        | Display name (default: `SAIFCORE`)                               |
 | `NEXT_PUBLIC_PROFILE_CITY`         | Optional        | Schema location (default: `Dakar`)                               |
 | `NEXT_PUBLIC_PROFILE_COUNTRY`      | Optional        | Schema location (default: `Senegal`)                             |
@@ -129,9 +129,14 @@ manarix/
 ├── messages/
 │   ├── en.json              # English UI (source of truth for types)
 │   └── fr.json              # French UI (same keys as en.json)
+├── cv/
+│   ├── cv-en.tex            # English CV source (LaTeX)
+│   ├── cv-fr.tex            # French CV source (LaTeX)
+│   └── README.md            # How to rebuild PDFs with tectonic
 ├── public/
 │   ├── profile.png          # Avatar / favicon source
-│   ├── resume.pdf           # Optional local CV
+│   ├── resume-en.pdf        # English CV (served to EN visitors)
+│   ├── resume-fr.pdf        # French CV (served to FR visitors)
 │   └── trust/               # Company logos (experience / trust)
 ├── src/
 │   ├── app/
@@ -267,7 +272,7 @@ Optimized for [Vercel](https://vercel.com/). Any Node host that runs `next build
 
 1. Set `NEXT_PUBLIC_SITE_URL` to your production domain
 2. Set `NEXT_PUBLIC_CONTACT_EMAIL` and optional Calendly / social URLs
-3. Add `public/resume.pdf` or `NEXT_PUBLIC_RESUME_URL`
+3. Add `public/resume-en.pdf` + `public/resume-fr.pdf` (see [`cv/README.md`](cv/README.md)) or `NEXT_PUBLIC_RESUME_URL`
 4. Run `npm run build` in CI before deploy
 5. Mark certifications as `obtained` when ready (unlocks `/certifications`)
 6. Run `npm run sync:icons` after updating `public/profile.png`

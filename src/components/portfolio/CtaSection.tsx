@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { ContactForm } from "@/components/portfolio/ContactForm";
 import {
   getResumeUrl,
@@ -10,8 +10,9 @@ import { MotionReveal } from "@/components/portfolio/motion/MotionReveal";
 export async function CtaSection() {
   const t = await getTranslations("cta");
   const tFooter = await getTranslations("footer");
-  const resumeUrl = getResumeUrl();
-  const resumeDownload = getResumeDownloadFilename();
+  const locale = await getLocale();
+  const resumeUrl = getResumeUrl(locale);
+  const resumeDownload = getResumeDownloadFilename(locale);
 
   return (
     <section
