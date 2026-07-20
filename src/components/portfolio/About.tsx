@@ -1,10 +1,10 @@
 import { getMessages, getTranslations } from "next-intl/server";
 import Image from "next/image";
-import { Link } from "@/i18n/navigation";
 import { getProfileDisplayName } from "@/site";
 import { BankingLeadership } from "./BankingLeadership";
 import { CertificationsSection } from "./CertificationsSection";
 import { EducationSection } from "./EducationSection";
+import { ProfileExploreLinks } from "./ProfileExploreLinks";
 import { Reveal } from "./Reveal";
 import { VisionSection } from "./VisionSection";
 
@@ -22,10 +22,10 @@ export async function About({ extended = false }: Props) {
   return (
     <section
       id="about"
-      className={`px-4 py-16 sm:py-20 lg:py-24 sm:px-6 lg:px-8 ${extended ? "" : "border-b border-[var(--border-subtle)]"}`}
+      className={`px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24 ${extended ? "" : "border-b border-[var(--border-subtle)]"}`}
     >
       <div className="mx-auto max-w-[1280px]">
-        <div className="grid gap-12 md:grid-cols-2 md:items-center md:gap-16 lg:gap-20">
+        <div className="grid gap-10 md:grid-cols-2 md:items-center md:gap-16 lg:gap-20">
           <Reveal>
             {!extended ? (
               <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
@@ -37,20 +37,20 @@ export async function About({ extended = false }: Props) {
                 {t("legalName")}
               </p>
             ) : null}
-            <p className="leading-relaxed text-[var(--text-secondary)]">
+            <p className="text-pretty text-sm leading-relaxed text-[var(--text-secondary)] sm:text-base">
               {t("p1")}
             </p>
-            <p className="mt-4 leading-relaxed text-[var(--text-secondary)]">
+            <p className="mt-3 text-pretty text-sm leading-relaxed text-[var(--text-secondary)] sm:mt-4 sm:text-base">
               {t("p2a")}{" "}
               <strong className="font-semibold text-[var(--text-primary)]">
                 {t("p2b")}
               </strong>
               {t("p2c")}
             </p>
-            <p className="mt-4 leading-relaxed text-[var(--text-secondary)]">
+            <p className="mt-3 text-pretty text-sm leading-relaxed text-[var(--text-secondary)] sm:mt-4 sm:text-base">
               {t("p3")}
             </p>
-            <p className="mt-4 leading-relaxed text-[var(--text-secondary)]">
+            <p className="mt-3 text-pretty text-sm leading-relaxed text-[var(--text-secondary)] sm:mt-4 sm:text-base">
               {t("p4")}
             </p>
           </Reveal>
@@ -61,9 +61,9 @@ export async function About({ extended = false }: Props) {
                 className="absolute -inset-4 rounded-[28px] bg-gradient-to-br from-blue-600/20 via-blue-500/8 to-emerald-500/15 blur-2xl"
                 aria-hidden
               />
-              <div className="relative overflow-hidden rounded-[24px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/60 p-6 text-center backdrop-blur-sm sm:p-10">
+              <div className="relative overflow-hidden rounded-[24px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/60 p-5 text-center backdrop-blur-sm sm:p-8 md:p-10">
                 <div
-                  className="mx-auto flex h-28 w-28 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-emerald)] shadow-lg shadow-blue-500/25"
+                  className="mx-auto flex h-24 w-24 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-emerald)] shadow-lg shadow-blue-500/25 sm:h-28 sm:w-28"
                   aria-hidden
                 >
                   <Image
@@ -115,13 +115,19 @@ export async function About({ extended = false }: Props) {
         </div>
 
         {extended ? (
-          <div className="mt-20 border-t border-[var(--border-subtle)] pt-16">
+          <div className="mt-12 border-t border-[var(--border-subtle)] pt-10 sm:mt-16 sm:pt-14 md:mt-20 md:pt-16">
+            <ProfileExploreLinks excludePath="/about" />
+          </div>
+        ) : null}
+
+        {extended ? (
+          <div className="mt-12 border-t border-[var(--border-subtle)] pt-10 sm:mt-16 sm:pt-14 md:mt-20 md:pt-16">
             <CertificationsSection compact />
           </div>
         ) : null}
 
         {extended ? (
-          <div className="mt-20 border-t border-[var(--border-subtle)] pt-16">
+          <div className="mt-12 border-t border-[var(--border-subtle)] pt-10 sm:mt-16 sm:pt-14 md:mt-20 md:pt-16">
             <Reveal delay={120}>
               <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
                 {t("languagesTitle")}
@@ -166,15 +172,15 @@ export async function About({ extended = false }: Props) {
         {extended && engagements ? (
           <>
             <Reveal delay={160}>
-              <div className="mt-20 border-t border-[var(--border-subtle)] pt-16">
+              <div className="mt-12 border-t border-[var(--border-subtle)] pt-10 sm:mt-16 sm:pt-14 md:mt-20 md:pt-16">
                 <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
                   {t("engagementsTitle")}
                 </p>
-                <div className="grid gap-5 sm:grid-cols-3">
+                <div className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
                   {engagements.map((item) => (
                     <article
                       key={item.title}
-                      className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 p-6 transition hover:border-[var(--border-hover)]"
+                      className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 p-5 transition hover:border-[var(--border-hover)] sm:p-6"
                     >
                       <h3 className="font-semibold text-[var(--text-primary)]">
                         {item.title}
@@ -185,23 +191,6 @@ export async function About({ extended = false }: Props) {
                     </article>
                   ))}
                 </div>
-              </div>
-            </Reveal>
-
-            <Reveal delay={240}>
-              <div className="mt-12 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 px-6 py-12 text-center sm:px-10">
-                <h2 className="text-xl font-bold tracking-tight text-[var(--text-primary)] sm:text-2xl">
-                  {t("endCtaTitle")}
-                </h2>
-                <p className="mx-auto mt-3 max-w-lg text-sm text-[var(--text-secondary)] sm:text-base">
-                  {t("endCtaSubtitle")}
-                </p>
-                <Link
-                  href="/#contact"
-                  className="btn-primary btn-primary-lg inline-flex h-12 w-full max-w-xs items-center justify-center px-8 text-sm sm:w-auto sm:min-w-[200px]"
-                >
-                  {t("endCtaButton")}
-                </Link>
               </div>
             </Reveal>
           </>

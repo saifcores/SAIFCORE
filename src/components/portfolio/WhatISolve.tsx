@@ -86,23 +86,23 @@ export async function WhatISolve() {
   return (
     <section
       id="capabilities"
-      className="border-b border-[var(--border-subtle)] px-4 py-16 sm:py-20 lg:py-24 sm:px-6 lg:px-8"
+      className="border-b border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24"
     >
       <div className="mx-auto max-w-[1280px]">
         <Reveal>
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
             {t("title")}
           </p>
-          <h2 className="max-w-2xl text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
+          <h2 className="max-w-2xl text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl">
             {t("subtitle")}
           </h2>
         </Reveal>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
           {items.map((item, i) => (
             <Reveal key={item.title} delay={i * 80}>
               <article
-                className={`group h-full rounded-2xl border bg-gradient-to-br ${CARD_ACCENTS[i]} p-6 transition duration-300 hover:-translate-y-1 hover:brightness-110`}
+                className={`group h-full rounded-2xl border bg-gradient-to-br ${CARD_ACCENTS[i]} p-5 transition duration-300 hover:-translate-y-1 hover:brightness-110 sm:p-6`}
               >
                 <div className={`mb-5 inline-flex ${ICON_COLORS[i]}`}>
                   {icons[i] ?? null}

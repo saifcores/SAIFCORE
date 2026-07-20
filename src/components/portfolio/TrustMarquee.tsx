@@ -29,7 +29,7 @@ export function TrustMarquee({ brands }: Props) {
           {loop.map((b, i) => (
             <div
               key={`${b.name}-${i}`}
-              className="flex w-[140px] shrink-0 flex-col items-center justify-center gap-2 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 px-4 py-4 sm:w-[160px]"
+              className="flex w-[120px] shrink-0 flex-col items-center justify-center gap-2 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 px-3 py-3 sm:w-[140px] sm:px-4 sm:py-4 md:w-[160px]"
             >
               <div className="relative flex h-10 w-full items-center justify-center sm:h-11">
                 <TrustLogo

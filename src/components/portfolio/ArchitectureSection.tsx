@@ -105,19 +105,19 @@ export async function ArchitectureSection() {
   return (
     <section
       id="architecture"
-      className="border-y border-[var(--border-subtle)] bg-[var(--bg-elevated)]/15 px-4 py-16 sm:py-20 lg:py-24 sm:px-6 lg:px-8"
+      className="border-y border-[var(--border-subtle)] bg-[var(--bg-elevated)]/15 px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24"
     >
       <div className="mx-auto max-w-[1280px]">
         <Reveal>
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
             {t("title")}
           </p>
-          <h2 className="max-w-2xl text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
+          <h2 className="max-w-2xl text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl">
             {t("subtitle")}
           </h2>
         </Reveal>
 
-        <div className="mt-16 grid gap-10 md:grid-cols-[1fr_minmax(280px,400px)] md:gap-12 lg:gap-16">
+        <div className="mt-10 grid gap-8 md:mt-14 md:grid-cols-[1fr_minmax(280px,400px)] md:gap-12 lg:gap-16">
           {/* Architecture diagram */}
           <Reveal>
             <div className="relative">

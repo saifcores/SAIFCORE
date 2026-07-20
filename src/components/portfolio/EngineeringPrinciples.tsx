@@ -18,25 +18,25 @@ export function EngineeringPrinciples({ title, subtitle, items }: Props) {
   const reduce = useReducedMotion();
 
   return (
-    <section className="border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)]/10 px-4 py-16 sm:py-20 lg:py-24 sm:px-6 lg:px-8">
+    <section className="border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)]/10 px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-[1280px]">
         <MotionReveal>
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
             {title}
           </p>
-          <h2 className="max-w-2xl text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
+          <h2 className="max-w-2xl text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl">
             {subtitle}
           </h2>
         </MotionReveal>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
           {items.map((item, i) => {
             const Icon = ICONS[i % ICONS.length];
             return (
               <MotionReveal key={item.title} delay={i * 70}>
                 <motion.article
                   whileHover={reduce ? undefined : { y: -4 }}
-                  className="h-full rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-6 transition hover:border-[var(--border-hover)]"
+                  className="h-full rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-5 transition hover:border-[var(--border-hover)] sm:p-6"
                 >
                   <Icon
                     className="mb-4 h-5 w-5 text-emerald-400"

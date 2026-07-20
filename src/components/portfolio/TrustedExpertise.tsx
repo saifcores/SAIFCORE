@@ -49,19 +49,19 @@ export function TrustedExpertise({
   return (
     <section
       id="expertise"
-      className="border-b border-[var(--border-subtle)] px-4 py-16 sm:py-20 lg:py-24 sm:px-6 lg:px-8"
+      className="border-b border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24"
     >
       <div className="mx-auto max-w-[1280px]">
         <MotionReveal>
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
             {title}
           </p>
-          <h2 className="max-w-2xl text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
+          <h2 className="max-w-2xl text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl">
             {subtitle}
           </h2>
         </MotionReveal>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
           {items.map((item, i) => {
             const Icon = ICONS[i % ICONS.length];
             const accent = ACCENTS[i % ACCENTS.length];
@@ -70,7 +70,7 @@ export function TrustedExpertise({
                 <motion.article
                   whileHover={reduce ? undefined : { y: -6 }}
                   transition={{ type: "spring", stiffness: 380, damping: 28 }}
-                  className={`group h-full rounded-2xl border bg-gradient-to-br ${accent} p-6`}
+                  className={`group h-full rounded-2xl border bg-gradient-to-br ${accent} p-5 sm:p-6`}
                 >
                   <div className="mb-5 inline-flex rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-base)]/50 p-2.5">
                     <Icon className="h-5 w-5" strokeWidth={1.6} aria-hidden />

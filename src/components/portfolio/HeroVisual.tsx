@@ -68,7 +68,7 @@ export function HeroVisual({
       initial={reduce ? false : { opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.2 }}
-      className="mx-auto hidden w-full max-w-md md:block lg:max-w-none lg:mx-0"
+      className="mx-auto hidden w-full max-w-sm md:block lg:max-w-none lg:mx-0"
       aria-hidden
     >
       <div className="relative space-y-4">
@@ -106,14 +106,14 @@ export function HeroVisual({
             </div>
           </div>
 
-          <div className="space-y-0 p-4 sm:p-5">
+          <div className="space-y-0 p-3 md:p-4 lg:p-5">
             {TERMINAL_ENTRIES.map((entry, i) => (
               <motion.div
                 key={i}
                 initial={reduce ? false : { opacity: 0, x: -12 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.7 + i * 0.08, duration: 0.4 }}
-                className="flex items-center justify-between gap-3 py-1.5"
+                className="flex items-center justify-between gap-2 py-1.5 md:gap-3"
                 style={{
                   borderBottom:
                     i < TERMINAL_ENTRIES.length - 1
@@ -133,7 +133,7 @@ export function HeroVisual({
                   >
                     {entry.method}
                   </span>
-                  <span className="truncate font-mono text-[11px] text-[var(--text-muted)]">
+                  <span className="truncate font-mono text-[10px] text-[var(--text-muted)] md:text-[11px]">
                     {entry.path}
                   </span>
                 </div>
@@ -165,7 +165,7 @@ export function HeroVisual({
           className="glass relative overflow-hidden rounded-2xl"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-emerald-500/5" />
-          <div className="relative flex flex-col gap-4 p-4 sm:p-6">
+          <div className="relative flex flex-col gap-3 p-3 md:gap-4 md:p-4 lg:p-6">
             <div className="flex items-center justify-between">
               <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)]">
                 {mockupLabel}
@@ -175,25 +175,25 @@ export function HeroVisual({
                 {mockupStatus}
               </span>
             </div>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-2 md:gap-3">
               {metrics.map((metric, i) => (
                 <motion.div
                   key={metric.label}
                   initial={reduce ? false : { opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1 + i * 0.08, duration: 0.4 }}
-                  className="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-base)]/60 p-4"
+                  className="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-base)]/60 p-3 md:p-4"
                 >
-                  <p className="font-mono text-xl font-bold text-[var(--text-primary)]">
+                  <p className="font-mono text-lg font-bold text-[var(--text-primary)] lg:text-xl">
                     {metric.value}
                   </p>
-                  <p className="mt-1 text-[11px] text-[var(--text-muted)]">
+                  <p className="mt-1 text-[10px] leading-snug text-[var(--text-muted)] md:text-[11px]">
                     {metric.label}
                   </p>
                 </motion.div>
               ))}
             </div>
-            <div className="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-base)]/40 p-4">
+            <div className="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-base)]/40 p-3 md:p-4">
               <div className="flex items-end gap-1">
                 {[40, 65, 45, 80, 55, 90, 70, 85, 60, 95].map((h, i) => (
                   <motion.div

@@ -1,12 +1,17 @@
 {
   "meta": {
     "title": "Ingénieur Logiciel Backend | Plateformes Enterprise · Paiements · FinTech | SAIFCORE",
-    "description": "Ingénieur logiciel backend construisant des plateformes enterprise, systèmes bancaires et infrastructure de paiement. Java, Spring Boot, systèmes distribués et AWS — fiabilité, sécurité et évolution durable.",
+    "description": "Ingénieur logiciel backend (FR/EN) construisant des plateformes enterprise, systèmes bancaires et infrastructure de paiement depuis Dakar — remote international. Java, Spring Boot, Kafka, AWS pour fintech et environnements réglementés.",
     "ogTitle": "Ingénieur Logiciel Backend — Plateformes Enterprise · Infrastructure de Paiement",
-    "ogDescription": "Je construis des plateformes backend qui propulsent les applications enterprise, les systèmes bancaires et l'infrastructure de paiement — fiables, scalables et conçues pour une évolution durable.",
-    "twitterDescription": "Ingénieur logiciel backend · Plateformes enterprise · Infrastructure de paiement · Java · Spring Boot · AWS.",
+    "ogDescription": "Je construis des plateformes backend qui propulsent les applications enterprise, les systèmes bancaires et l'infrastructure de paiement — fiables, scalables et conçues pour une évolution durable. Ouvert aux missions freelance et contrat à l'international.",
+    "twitterDescription": "Ingénieur logiciel backend · Plateformes enterprise · Infrastructure de paiement · Java · Spring Boot · AWS · Remote international.",
     "jsonLdJobTitle": "Ingénieur Logiciel Backend",
-    "jsonLdDescription": "Ingénieur logiciel backend spécialisé dans les plateformes enterprise, systèmes bancaires et infrastructure de paiement — Java, Spring Boot, systèmes distribués, microservices et AWS.",
+    "jsonLdDescription": "Ingénieur logiciel backend spécialisé dans les plateformes enterprise, systèmes bancaires et infrastructure de paiement — Java, Spring Boot, systèmes distribués, microservices et AWS. Basé à Dakar, ouvert aux missions remote internationales.",
+    "jsonLdServiceName": "Ingénierie de plateformes enterprise et de paiement",
+    "jsonLdServiceDescription": "Systèmes backend, APIs, architectures distribuées et solutions de paiement pour plateformes enterprise et fintech — dont mobile money et intégrations bancaires réglementées.",
+    "jsonLdAvailability": "Remote international",
+    "jsonLdAreaServed": "Monde entier",
+    "keywords": "ingénieur logiciel backend, Spring Boot, Java, infrastructure de paiement, fintech, systèmes bancaires, systèmes distribués, Kafka, AWS, mobile money, Afrique de l'Ouest, ingénieur remote, freelance backend, SAIFCORE",
     "manifestName": "SAIFCORE — Ingénieur Logiciel Backend",
     "manifestDescription": "Portfolio — plateformes enterprise, infrastructure de paiement, systèmes bancaires et ingénierie backend."
   },
@@ -15,14 +20,18 @@
     "loading": "Chargement…",
     "readMore": "Lire",
     "home": "Accueil",
-    "opensInNewTab": "s'ouvre dans un nouvel onglet"
+    "opensInNewTab": "s'ouvre dans un nouvel onglet",
+    "backToTop": "Retour en haut"
   },
   "actionBar": {
     "bookCall": "Réserver un appel",
-    "contact": "Contact"
+    "contact": "Contact",
+    "resume": "CV"
   },
   "nav": {
     "primary": "Principal",
+    "brandRole": "Backend · Banque · Paiements",
+    "brandHomeLabel": "SAIFCORE — accueil",
     "work": "Projets",
     "services": "Services",
     "expertise": "Expertise",
@@ -30,10 +39,14 @@
     "process": "Processus",
     "about": "À propos",
     "insights": "Articles",
+    "blog": "Blog",
     "credentials": "Certifications",
     "systems": "Études de cas",
     "contact": "Contact",
+    "resume": "CV",
+    "linkedin": "LinkedIn",
     "bookCall": "Réserver un appel",
+    "github": "GitHub",
     "openMenu": "Ouvrir le menu",
     "closeMenu": "Fermer le menu",
     "siteNavigation": "Navigation du site",
@@ -41,16 +54,30 @@
     "localeEn": "English",
     "localeFr": "Français",
     "more": "Plus",
+    "groupPriority": "Pages clés",
+    "groupMore": "Plus",
     "groupExplore": "Explorer",
     "groupProfile": "Profil",
     "groupConnect": "Contact"
   },
+  "profileExplore": {
+    "label": "Parcourir le profil",
+    "title": "Explorer ce profil"
+  },
+  "pageHeader": {
+    "factsLabel": "Points clés du profil",
+    "factYears": "4+ ans en production",
+    "factBanking": "Delivery Groupe Bank of Africa",
+    "factRemote": "Remote international",
+    "factBilingual": "Bilingue FR / EN",
+    "linkedin": "LinkedIn"
+  },
   "hero": {
-    "badge": "Ingénieur Logiciel Backend · Plateformes Enterprise · Infrastructure de Paiement · Systèmes Distribués · Java · Spring Boot · AWS",
+    "badge": "Backend · Banque & FinTech · Remote International",
     "titleLine1": "Ingénieur Logiciel Backend",
     "titleLine2": "Plateformes Enterprise",
     "titleLine3": "Paiements · FinTech · Systèmes Distribués",
-    "subtitle": "Je construis des plateformes backend qui propulsent les applications enterprise, les systèmes bancaires et l'infrastructure de paiement — fiables, scalables et conçues pour une évolution durable.",
+    "subtitle": "Je conçois et livre des plateformes backend pour la banque, les paiements et les produits enterprise — Java, Spring Boot et systèmes distribués pensés pour la fiabilité, la conformité et l'évolution durable.",
     "specializations": [
       "Plateformes Enterprise",
       "Infrastructure de Paiement",
@@ -60,8 +87,9 @@
     "ctaPrimary": "Voir les services",
     "ctaBookCall": "Réserver un appel",
     "ctaResume": "Télécharger le CV",
-    "locationLine": "Dakar, Sénégal (GMT) — ouvert aux missions freelance et contrat à l'international.",
-    "availability": "Disponible pour nouveaux projets",
+    "proofLine": "Delivery avec Bank of Africa Group · Synapse · ENG Technologie · Fintech Afrique de l'Ouest",
+    "locationLine": "Dakar, Sénégal (GMT) — bilingue FR/EN · ouvert aux missions freelance et contrat remote à l'international.",
+    "availability": "Ouvert aux nouvelles missions",
     "jumpToContact": "Démarrer un projet",
     "terminalTitle": "Moteur de paiement",
     "terminalVersion": "v2.4.1",
@@ -199,8 +227,8 @@
   },
   "services": {
     "title": "Services",
-    "audience": "Pour entreprises, fintechs et équipes produit ambitieuses",
-    "subtitle": "Services experts en backend et intégration paiement — architecturer, intégrer ou moderniser des systèmes financiers et enterprise critiques, livrés par un consultant expérimenté.",
+    "audience": "Pour banques, fintechs et équipes produit — remote international",
+    "subtitle": "Architecture backend, intégrations paiement et modernisation de plateformes pour systèmes régulés et à enjeux élevés — freelance, contrat ou conseil.",
     "items": [
       {
         "title": "Architecture backend enterprise & modernisation",
@@ -230,8 +258,8 @@
     "cta": "Discuter de vos besoins backend"
   },
   "techStack": {
-    "title": "Stack production stratégique",
-    "subtitle": "Suite technologique expertement sélectionnée pour projets freelance et conseil à enjeux élevés — conçue pour plateformes fintech robustes, intégrations partenaires pérennes et handoff fluide vers vos équipes.",
+    "title": "Stack production",
+    "subtitle": "Outils utilisés sur des backends bancaires et fintech live — choisis pour la fiabilité, l'opérabilité et un handoff propre vers votre équipe.",
     "categories": [
       {
         "label": "Backend",
@@ -439,8 +467,8 @@
     }
   },
   "testimonials": {
-    "title": "Modèles d'engagement",
-    "subtitle": "Ce que les équipes attendent typiquement d'une delivery backend senior — résultats représentatifs, pas des citations clients attribuées.",
+    "title": "Comment les équipes m'engagent",
+    "subtitle": "Résultats typiques en banque, fintech et plateformes — patterns représentatifs (pas de témoignages nominatifs).",
     "items": [
       {
         "quote": "Flux crédit et mobile money livrés avec la rigueur d'un environnement régulé — cycles d'intégration plus courts et exploitation stable post-lancement.",
@@ -463,7 +491,7 @@
     ]
   },
   "trust": {
-    "heading": "La confiance d'équipes dans des secteurs exigeants",
+    "heading": "La confiance de la banque, de la fintech et des livraisons à enjeux élevés",
     "industriesLabel": "Secteurs",
     "industries": [
       "Banque",
@@ -472,7 +500,7 @@
       "Santé",
       "SaaS Entreprise"
     ],
-    "companiesLabel": "Entreprises"
+    "companiesLabel": "Entreprises & partenaires"
   },
   "whatISolve": {
     "title": "Systèmes que je livre",
@@ -527,8 +555,8 @@
   },
   "featuredProjects": {
     "title": "Projets phares",
-    "heading": "Études de cas conçues pour la crédibilité enterprise.",
-    "subtitle": "Récits prêts investisseurs — problème, architecture, sécurité, échelle et résultats mesurables.",
+    "heading": "Systèmes livrés et études de cas production.",
+    "subtitle": "Produits live et patterns d'architecture issus de la delivery banque et fintech — problème, sécurité, échelle et résultats.",
     "impactLabel": "Impact métier",
     "statusLabel": "Statut",
     "problemLabel": "Problème",
@@ -543,9 +571,12 @@
     "bankingOutcomeLabel": "Signal bancaire",
     "screenshotLabel": "Aperçu produit",
     "viewAll": "Voir les études de cas complètes",
+    "readCaseStudy": "Lire l'étude de cas",
+    "viewProduct": "Voir le produit live",
     "bridgeTitle": "Vous construisez quelque chose de similaire ?",
     "bridgeSubtitle": "Partagez l'objectif et les contraintes — j'esquisse options, risques et une première étape réaliste.",
     "bridgeCta": "Démarrer une conversation",
+    "detailsSummary": "Architecture, sécurité & détails de delivery",
     "items": [
       {
         "title": "Ecom 360 PME",
@@ -736,7 +767,7 @@
     "subtitle": "Banque, fintech et systèmes d'entreprise — des contextes où la correction, la conformité et la fiabilité ne sont pas négociables.",
     "viewAll": "Expérience complète",
     "valueTitle": "Ce que vous obtenez",
-    "valueBody": "Expérience concrète avec des stacks régulés, des intégrations mobile money et de vrais pipelines de livraison.",
+    "valueBody": "Delivery concrète en banque et fintech régulées — mobile money, APIs enterprise et pipelines production en Afrique de l'Ouest.",
     "stackLabel": "Stack",
     "clientLabel": "Client",
     "currentRole": "Actuel",
@@ -964,17 +995,17 @@
     "legalName": "Saïfoulaye Diallo",
     "languagesTitle": "Langues",
     "languages": [
-      { "name": "Français", "level": "Professionnel" },
-      { "name": "Anglais", "level": "Intermédiaire" }
+      { "name": "Français", "level": "Natif / bilingue professionnel" },
+      { "name": "Anglais", "level": "Professionnel (écrit)" }
     ],
-    "p1": "Je construis des plateformes backend qui propulsent les applications enterprise, les systèmes bancaires et l'infrastructure de paiement — des logiciels fiables, scalables et conçus pour une évolution durable.",
-    "p2a": "Depuis plus de 4 ans, je me spécialise en Java, Spring Boot, systèmes distribués et architectures cloud-native — en livrant",
-    "p2b": "la conception d'APIs, les intégrations enterprise, les systèmes de paiement et des backends event-driven",
+    "p1": "Je conçois et livre des plateformes backend pour la banque, les paiements et les produits enterprise — des systèmes fiables et scalables, pensés pour les environnements régulés et l'évolution durable.",
+    "p2a": "Depuis plus de 4 ans, je me spécialise en Java, Spring Boot, systèmes distribués et delivery cloud-native — en livrant",
+    "p2b": "des APIs, intégrations enterprise, rails de paiement et backends event-driven",
     "p2c": " que les équipes peuvent exploiter en production en toute confiance.",
-    "p3": "Mon travail couvre la delivery bancaire régulée (Synapse → Groupe Bank of Africa), les rails de paiement FinTech (Wave, Orange Money, Kafka) et les plateformes SaaS pour PME — en simplifiant les systèmes complexes et en améliorant la fiabilité.",
-    "p4": "Je suis passionné par l'ingénierie backend, les plateformes enterprise, la FinTech et l'architecture logicielle — et j'aime collaborer avec les équipes produit, intégration et engineering pour livrer des solutions prêtes pour la production.",
+    "p3": "Livraisons récentes : plateformes bancaires régulées (Synapse → Groupe Bank of Africa, 11+ filiales), rails FinTech (Wave, Orange Money, Kafka) et SaaS multi-tenant pour PME.",
+    "p4": "Basé à Dakar (GMT), bilingue FR/EN, ouvert aux missions freelance, contrat et conseil en remote à l'international — en partenariat avec produit, intégration et engineering.",
     "cardRole": "Ingénieur Logiciel Backend",
-    "cardTagline": "Plateformes Enterprise · Infrastructure de Paiement · Systèmes Bancaires",
+    "cardTagline": "Plateformes Enterprise · Paiements · Banque · Remote International",
     "statYearsValue": "4+",
     "statYears": "Années en production",
     "statSystemsValue": "20+",
@@ -985,38 +1016,38 @@
     "engagements": [
       {
         "title": "Livraison freelance",
-        "description": "Construction ou modernisation complète de rails de paiement, APIs et workflows core — de la discovery à la livraison, avec jalons clairs et handoff approfondi."
+        "description": "Construction ou modernisation de rails de paiement, APIs et workflows core — de la discovery au handoff production, avec jalons clairs."
       },
       {
         "title": "Ingénierie en contrat",
-        "description": "Expertise backend senior intégrée à vos équipes produit — sprints pilotés par la roadmap, CI/CD et stewardship production complet."
+        "description": "Capacité backend senior embarquée dans vos équipes produit — sprints roadmap, CI/CD et ownership production en contexte régulé."
       },
       {
         "title": "Conseil architecture",
-        "description": "Discovery early-stage, décisions architecturales et designs de référence — réduction des risques pour intégrations, conformité et scaling."
+        "description": "Discovery, ADR et designs de référence pour réduire les risques d'intégration, de conformité et d'échelle avant de s'engager."
       }
     ],
-    "endCtaTitle": "Prêt à concevoir votre prochain système ?",
-    "endCtaSubtitle": "Partagez vos objectifs et contraintes — je réponds rapidement avec une évaluation transparente et des prochaines étapes actionnables.",
+    "endCtaTitle": "Un projet backend, paiements ou plateforme en vue ?",
+    "endCtaSubtitle": "Partagez objectifs et contraintes — je réponds avec une évaluation claire et des prochaines étapes concrètes.",
     "endCtaButton": "Démarrer une conversation"
   },
   "aboutTeaser": {
     "title": "À propos",
-    "heading": "Ingénieur Logiciel Backend — Plateformes Enterprise, Banque & Infrastructure de Paiement",
-    "excerpt": "Je construis des plateformes backend qui propulsent les applications enterprise, les systèmes bancaires et l'infrastructure de paiement — avec un focus sur fiabilité, scalabilité et évolution durable.",
+    "heading": "Ingénieur backend pour la banque, les paiements et les plateformes enterprise",
+    "excerpt": "Basé à Dakar, bilingue FR/EN — livraison de systèmes Java / Spring Boot pour banques régulées, rails FinTech et SaaS. Ouvert aux missions freelance et contrat remote à l'international.",
     "readMore": "Voir le profil complet",
     "stat1Value": "4+",
     "stat1Label": "Années en production",
     "stat2Value": "20+",
     "stat2Label": "Plateformes lancées",
     "stat3Value": "GMT",
-    "stat3Label": "Basé à Dakar · Travail international"
+    "stat3Label": "Dakar · Remote international"
   },
   "certifications": {
     "title": "Certifications",
-    "subtitle": "Certifications et expertise éprouvée en production",
-    "teaserHeading": "Une expertise validée et vérifiable",
-    "intro": "Certifications obtenues en Java, software design, ingénierie logicielle et banque digitale — plus une expertise terrain en Spring, Kubernetes, Kafka et infrastructure de paiement pour systèmes fintech en production.",
+    "subtitle": "Credentials académiques vérifiés et profondeur production",
+    "teaserHeading": "Credentials vérifiés — et compétences prouvées en production",
+    "intro": "Credentials obtenus en conception logicielle, fondamentaux d'ingénierie logicielle et banque digitale. La profondeur quotidienne vient de livraisons Spring, Kafka, cloud et paiements en environnements régulés — les certifications industrie ci-dessous sont la feuille de route.",
     "formalLabel": "Certifications industrie",
     "expertiseLabel": "Expertise professionnelle",
     "viewAll": "Voir toutes les certifications",
@@ -1123,19 +1154,27 @@
     "metaDescription": "Certifications obtenues en Java, software design, banque digitale et ingénierie logicielle — plus expertise production en Spring, Kubernetes, Kafka et systèmes de paiement.",
     "title": "Certifications",
     "subtitle": "Certifications vérifiées et credentials cloud, sécurité et streaming en cours — avec expertise terrain Spring et infrastructure de paiement.",
-    "backToHome": "Retour à l'accueil"
+    "backToHome": "Retour à l'accueil",
+    "endCtaTitle": "Besoin d'une profondeur backend vérifiée sur votre initiative ?",
+    "endCtaSubtitle": "Credentials et delivery production en banque, paiements et plateformes — partagez votre contexte et calendrier.",
+    "endCtaButton": "Démarrer la conversation"
   },
   "aboutPage": {
     "metaTitle": "À propos | Ingénieur Logiciel Backend | SAIFCORE",
-    "metaDescription": "Ingénieur logiciel backend construisant des plateformes enterprise, systèmes bancaires et infrastructure de paiement. Java, Spring Boot, systèmes distribués et AWS pour environnements régulés.",
+    "metaDescription": "Saïfoulaye Diallo (SAIFCORE) — ingénieur backend bilingue FR/EN à Dakar, ouvert au remote international. Plateformes enterprise, systèmes bancaires et infrastructure de paiement avec Java & Spring Boot.",
     "title": "À propos",
     "subtitle": "Plus de quatre ans de delivery backend pour la banque, la fintech et l'enterprise — fiabilité, sécurité et résultats métier mesurables au centre.",
-    "backToHome": "Retour à l'accueil"
+    "backToHome": "Retour à l'accueil",
+    "endCtaTitle": "Envie de travailler ensemble sur du backend ou des paiements ?",
+    "endCtaSubtitle": "Freelance, contrat ou conseil — remote international. Parlez-moi de votre équipe, stack et contraintes.",
+    "endCtaButton": "Me contacter"
   },
   "insights": {
     "title": "Articles d'ingénierie",
     "subtitle": "Analyses approfondies sur la construction de systèmes de paiement résilients, la mise à l'échelle des backends et les leçons terrain des paysages fintech africains.",
     "viewAll": "Parcourir tous les articles",
+    "blogPromoTitle": "Blog SAIFCORE",
+    "blogPromoBody": "Articles d'ingénierie approfondis sur les paiements, les backends et la fintech — publiés sur le blog dédié.",
     "endCtaTitle": "Vous faites face à des obstacles techniques similaires ?",
     "endCtaSubtitle": "Parlez-moi de votre plateforme, stack et contexte métier — testons ensemble les solutions dans votre environnement réel.",
     "endCtaButton": "Démarrer la conversation"
@@ -1165,12 +1204,18 @@
     "adrLabelConsequences": "Arbitrages & conséquences",
     "endCtaTitle": "Vous voulez obtenir ces résultats sur votre plateforme ?",
     "endCtaSubtitle": "Décrivez votre paysage technique et vos contraintes — je vous donnerai un avis direct s'il y a un fit technique.",
-    "endCtaButton": "Prendre contact"
+    "endCtaButton": "Prendre contact",
+    "breadcrumbLabel": "Fil d'Ariane",
+    "relatedTitle": "Lectures associées",
+    "relatedSubtitle": "Plus sur les paiements, l'architecture backend et les systèmes financiers.",
+    "relatedCaseStudiesTitle": "Études de cas associées",
+    "relatedCaseStudiesSubtitle": "Patterns production issus de la delivery banque, paiements et plateformes.",
+    "viewAllArticles": "Voir tous les articles"
   },
   "cta": {
     "label": "Contact",
-    "title": "Construisons ensemble des systèmes exceptionnels et scalables",
-    "subtitle": "Vous cherchez un partenaire qui allie profondeur technique et compréhension métier ? Partagez votre système, défis et calendrier — recevez une réponse franche et sur mesure.",
+    "title": "Prêt à parler backend, paiements ou plateforme ?",
+    "subtitle": "Partagez objectifs, contraintes et calendrier — je réponds avec des prochaines étapes claires. Idéal pour missions freelance, contrat et consulting (remote international).",
     "processTitle": "Comment ça marche",
     "processStep1": "Partagez votre brief : objectifs, architecture, défis et contraintes.",
     "processStep2": "Je réponds avec des questions ciblées et une roadmap pratique.",
@@ -1186,9 +1231,11 @@
     "formMessage": "Résumé du projet",
     "formMessagePlaceholder": "Partagez les détails de votre projet, objectifs, stack technique et principales contraintes…",
     "formSubmit": "Envoyer votre brief",
-    "formNote": "Cela ouvrira votre client mail avec un message pré-rempli. Ou réservez directement via Calendly.",
+    "formNote": "Ouvre votre client mail avec un message pré-rempli. Préférez un appel ? Utilisez le bouton de réservation.",
+    "formUnavailable": "Le formulaire email est temporairement indisponible — réservez un appel ou contactez-moi sur LinkedIn.",
     "socialTitle": "Restons en contact",
-    "calendlyHint": "Planifier une consultation gratuite de 30 minutes"
+    "calendlyHint": "Appel discovery gratuit de 30 minutes — choisissez un créneau",
+    "calendlyFallbackHint": "Utilisez le formulaire ci-contre, ou connectez-vous sur LinkedIn"
   },
   "licensePage": {
     "metaTitle": "Licence",
@@ -1203,7 +1250,7 @@
     "rights": "© {year} {owner}. Tous droits réservés.",
     "rightsOwner": "{name} · SAIFCORE",
     "license": "Licence MIT",
-    "tagline": "Construction de plateformes robustes — paiements, fintech et excellence backend moderne.",
+    "tagline": "Backends enterprise pour la banque, les paiements et la fintech — conçus à Dakar, livrés à l'international.",
     "linkedin": "Se connecter sur LinkedIn",
     "github": "Voir GitHub",
     "blog": "Blog SAIFCORE",
@@ -1213,6 +1260,12 @@
     "articles": "Articles & Insights",
     "about": "À propos de SAIFCORE",
     "credentials": "Certifications & Expertise",
+    "homeSectionsLabel": "Page d'accueil",
+    "work": "Projets phares",
+    "services": "Services",
+    "expertise": "Expertise",
+    "process": "Processus",
+    "insights": "Aperçu articles",
     "pagesLabel": "Explorer",
     "connectLabel": "Nous contacter",
     "contact": "Me contacter"
@@ -1229,7 +1282,8 @@
     "title": "Page non trouvée",
     "description": "La page que vous recherchez n'existe pas ou a été déplacée.",
     "backHome": "Retour à l'accueil",
-    "contact": "Contact"
+    "contact": "Contact",
+    "exploreLabel": "Pages populaires"
   },
   "theme": {
     "toggle": "Thème",
@@ -1241,19 +1295,25 @@
   },
   "systemsPage": {
     "metaTitle": "Études de cas | Backends Banque & Fintech | SAIFCORE",
-    "metaDescription": "Études de cas backend — SDK paiement, grand livre en partie double, passerelle API unifiée et plateformes SaaS. Architecture, sécurité, échelle et patterns de delivery bancaire type Synapse.",
+    "metaDescription": "Études de cas backend paiements, grands livres, passerelles API et SaaS — architecture, sécurité et échelle issus de Bank of Africa / Synapse et de la fintech ouest-africaine.",
     "title": "Projets & études de cas",
     "subtitle": "Problème, architecture, sécurité, échelle et impact mesurable — dont des patterns issus de la delivery Synapse pour le Groupe Bank of Africa et des intégrations FinTech.",
-    "backToHome": "Retour à l'accueil"
+    "backToHome": "Retour à l'accueil",
+    "endCtaTitle": "Besoin de patterns d'architecture similaires sur votre plateforme ?",
+    "endCtaSubtitle": "Partagez votre contexte — paiements, grands livres, API ou SaaS — je réponds avec des prochaines étapes concrètes.",
+    "endCtaButton": "Discuter de votre projet"
   },
   "experiencePage": {
     "metaTitle": "Expérience | Ingénieur Logiciel Backend | SAIFCORE",
-    "metaDescription": "Parcours : delivery Synapse pour le Groupe Bank of Africa, FinTech ENG Technologie, SaaS Mafalia et santé SarayaTech — Java, Spring Boot, Kafka et backends cloud-native.",
+    "metaDescription": "Parcours backend : Synapse pour le Groupe Bank of Africa, FinTech ENG, SaaS Mafalia, SarayaTech — Java, Spring Boot, Kafka. Basé à Dakar, ouvert au remote international.",
     "title": "Expérience professionnelle",
-    "subtitle": "Résolution de défis complexes en banque, fintech et environnements enterprise — là où fiabilité, sécurité et exactitude sont primordiales.",
+    "subtitle": "Delivery banque, fintech et enterprise — là où fiabilité, sécurité et exactitude sont non négociables.",
     "backToHome": "Retour à l'accueil",
     "skillsTitle": "Stack technologique production",
-    "skillsSubtitle": "Outils et patterns architecturaux éprouvés en production pour backends bancaires et fintech mission-critical — pas une simple collection de buzzwords."
+    "skillsSubtitle": "Outils et patterns utilisés sur des backends bancaires et fintech live — pas une liste de buzzwords.",
+    "endCtaTitle": "Vous cherchez ce profil pour votre équipe ou projet ?",
+    "endCtaSubtitle": "Freelance, contrat ou conseil — remote international. Partagez le rôle, la stack et le calendrier.",
+    "endCtaButton": "Me contacter"
   },
   "skillsMatrix": {
     "languages": [

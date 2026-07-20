@@ -1,6 +1,13 @@
 import type { Locale } from "next-intl";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import {
+  getMessages,
+  getTranslations,
+  setRequestLocale,
+} from "next-intl/server";
 import type { Metadata } from "next";
+import { ContactBridgeStrip } from "@/components/portfolio/ContactBridgeStrip";
+import { PageHeader } from "@/components/portfolio/PageHeader";
+import { ProfileExploreLinks } from "@/components/portfolio/ProfileExploreLinks";
 import { ArchitectureExpertise } from "@/components/portfolio/ArchitectureExpertise";
 import { Experience } from "@/components/portfolio/Experience";
 import { EducationSection } from "@/components/portfolio/EducationSection";
@@ -8,11 +15,9 @@ import { HowIThink } from "@/components/portfolio/HowIThink";
 import { WhatISolve } from "@/components/portfolio/WhatISolve";
 import { Footer } from "@/components/portfolio/Footer";
 import { Navbar } from "@/components/portfolio/Navbar";
-import { Reveal } from "@/components/portfolio/Reveal";
 import { SkillsMatrix } from "@/components/portfolio/SkillsMatrix";
-import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { buildBreadcrumbJsonLd, buildPageMetadata } from "@/seo";
+import { buildPageMetadata, buildProfilePageGraph } from "@/seo";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -45,43 +50,48 @@ export default async function ExperiencePage({ params }: Props) {
   setRequestLocale(locale as Locale);
   const t = await getTranslations("experiencePage");
   const tCommon = await getTranslations("common");
+  const tMeta = await getTranslations("meta");
+  const messages = await getMessages();
 
-  const breadcrumbJsonLd = buildBreadcrumbJsonLd(locale, [
-    { name: tCommon("home"), path: "/" },
-    { name: t("title"), path: "/experience" },
-  ]);
+  const pageJsonLd = buildProfilePageGraph({
+    locale,
+    path: "/experience",
+    pageName: t("metaTitle"),
+    pageDescription: t("metaDescription"),
+    jobTitle: tMeta("jsonLdJobTitle"),
+    personDescription: tMeta("jsonLdDescription"),
+    breadcrumb: [
+      { name: tCommon("home"), path: "/" },
+      { name: t("title"), path: "/experience" },
+    ],
+    personExtras: {
+      hasOccupation: messages.experience.items.map((item) => ({
+        "@type": "Occupation",
+        name: item.role,
+        occupationalCategory: item.client || item.company,
+        description: item.bullet0,
+      })),
+    },
+  });
 
   return (
     <div className="flex min-h-full flex-col">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
       />
       <Navbar />
       <main
         id="main-content"
-        className="flex-1 pb-24 outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base md:pb-0"
+        className="flex-1 pb-28 outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base xl:pb-0"
         tabIndex={-1}
       >
-        {/* Page header */}
-        <section className="border-b border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-          <div className="mx-auto max-w-[1280px]">
-            <Reveal>
-              <Link
-                href="/"
-                className="text-sm font-medium text-[var(--text-muted)] transition hover:text-[var(--text-primary)]"
-              >
-                ← {t("backToHome")}
-              </Link>
-              <h1 className="mt-8 text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
-                {t("title")}
-              </h1>
-              <p className="mt-4 max-w-2xl text-base text-[var(--text-secondary)] sm:text-lg">
-                {t("subtitle")}
-              </p>
-            </Reveal>
-          </div>
-        </section>
+        <PageHeader
+          title={t("title")}
+          subtitle={t("subtitle")}
+          backLabel={t("backToHome")}
+          showFacts
+        />
 
         {/* Full experience timeline */}
         <Experience />
@@ -94,6 +104,13 @@ export default async function ExperiencePage({ params }: Props) {
         <SkillsMatrix />
         <ArchitectureExpertise />
         <WhatISolve />
+
+        <div className="px-4 pb-16 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-[1280px] space-y-8">
+            <ProfileExploreLinks excludePath="/experience" />
+            <ContactBridgeStrip ns="experiencePage" />
+          </div>
+        </div>
       </main>
       <Footer />
     </div>

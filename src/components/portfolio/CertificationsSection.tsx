@@ -46,7 +46,7 @@ export async function CertificationsSection({ compact = false }: Props) {
       className={
         compact
           ? ""
-          : "border-b border-[var(--border-subtle)] px-4 py-16 sm:py-20 lg:py-24 sm:px-6 lg:px-8"
+          : "border-b border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24"
       }
     >
       <div className={compact ? "" : "mx-auto max-w-[1280px]"}>
@@ -57,11 +57,11 @@ export async function CertificationsSection({ compact = false }: Props) {
             </p>
             <h2
               id={headingId}
-              className="max-w-2xl text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl"
+              className="max-w-2xl text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl"
             >
               {t("subtitle")}
             </h2>
-            <p className="mt-4 max-w-2xl text-[var(--text-secondary)]">
+            <p className="mt-3 max-w-2xl text-pretty text-sm text-[var(--text-secondary)] sm:mt-4 sm:text-base">
               {t("intro")}
             </p>
             <ul className="mt-6 flex flex-wrap gap-2">
@@ -131,11 +131,11 @@ function CertGroup({
       <p className="mb-5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
         {label}
       </p>
-      <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
         {items.map((item) => (
           <li key={item.id}>
             <article
-              className={`card-interactive flex h-full gap-4 rounded-2xl bg-[var(--bg-elevated)]/20 p-5 ${certificationCardClassName(item.status)}`}
+              className={`card-interactive flex h-full flex-col gap-3 rounded-2xl bg-[var(--bg-elevated)]/20 p-4 sm:flex-row sm:gap-4 sm:p-5 ${certificationCardClassName(item.status)}`}
             >
               <CertificationIcon
                 kind={item.kind}
@@ -143,7 +143,7 @@ function CertGroup({
                 statusLabel={statusLabel(item.status)}
               />
               <div className="min-w-0 flex-1">
-                <div className="flex flex-wrap items-start justify-between gap-2">
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                   <h3 className="font-semibold leading-snug text-[var(--text-primary)]">
                     {item.name}
                   </h3>
@@ -163,7 +163,7 @@ function CertGroup({
                     href={item.verifyUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="link-accent mt-3 inline-flex items-center gap-1 text-xs font-semibold"
+                    className="link-accent mt-3 inline-flex min-h-11 items-center gap-1 text-xs font-semibold sm:min-h-0"
                   >
                     {verifyLabel}
                     <span aria-hidden>↗</span>

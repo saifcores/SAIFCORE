@@ -120,7 +120,7 @@ export function ArticlePostCard({
           {tagLabel}
         </CardAnchor>
 
-        <h3 className="post-card-title mt-3 text-xl font-bold leading-snug tracking-tight text-[var(--text-primary)] sm:text-[1.35rem]">
+        <h3 className="post-card-title mt-3 text-lg font-bold leading-snug tracking-tight text-[var(--text-primary)] sm:text-xl md:text-[1.35rem]">
           <CardAnchor
             href={href}
             external={external}
@@ -135,7 +135,7 @@ export function ArticlePostCard({
           {article.excerpt[loc]}
         </p>
 
-        <footer className="post-card-meta mt-5 flex items-center justify-between gap-4 border-t border-[var(--border-subtle)] pt-4">
+        <footer className="post-card-meta mt-5 flex flex-col gap-3 border-t border-[var(--border-subtle)] pt-4 min-[420px]:flex-row min-[420px]:items-center min-[420px]:justify-between min-[420px]:gap-4">
           <div className="min-w-0">
             <p className="truncate text-sm font-semibold text-[var(--text-primary)]">
               {authorLabel}
@@ -150,7 +150,7 @@ export function ArticlePostCard({
           <CardAnchor
             href={href}
             external={external}
-            className="shrink-0 text-sm font-semibold text-accent transition hover:text-[var(--accent-blue-light)]"
+            className="inline-flex min-h-11 shrink-0 items-center text-sm font-semibold text-accent transition hover:text-[var(--accent-blue-light)] min-[420px]:min-h-0"
             ariaLabel={externalReadMoreLabel}
           >
             {readMoreLabel}

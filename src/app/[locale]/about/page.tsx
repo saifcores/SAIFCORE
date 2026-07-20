@@ -2,13 +2,12 @@ import type { Locale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import { About } from "@/components/portfolio/About";
+import { ContactBridgeStrip } from "@/components/portfolio/ContactBridgeStrip";
 import { Footer } from "@/components/portfolio/Footer";
 import { Navbar } from "@/components/portfolio/Navbar";
-import { Reveal } from "@/components/portfolio/Reveal";
-import { Link } from "@/i18n/navigation";
+import { PageHeader } from "@/components/portfolio/PageHeader";
 import { routing } from "@/i18n/routing";
-import { getProfileDisplayName, getSiteUrl } from "@/site";
-import { buildBreadcrumbJsonLd, buildPageMetadata } from "@/seo";
+import { buildPageMetadata, buildProfilePageGraph } from "@/seo";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -43,72 +42,55 @@ export default async function AboutPage({ params }: Props) {
   const tCommon = await getTranslations("common");
   const tMeta = await getTranslations("meta");
 
-  const breadcrumbJsonLd = buildBreadcrumbJsonLd(locale, [
-    { name: tCommon("home"), path: "/" },
-    { name: t("title"), path: "/about" },
-  ]);
-
-  const profileJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ProfilePage",
-    name: t("metaTitle"),
-    description: t("metaDescription"),
-    url: new URL(
-      locale === routing.defaultLocale ? "/about" : `/${locale}/about`,
-      `${getSiteUrl()}/`,
-    ).toString(),
-    mainEntity: {
-      "@type": "Person",
-      name: getProfileDisplayName(),
-      jobTitle: tMeta("jsonLdJobTitle"),
-      description: tMeta("jsonLdDescription"),
+  const pageJsonLd = buildProfilePageGraph({
+    locale,
+    path: "/about",
+    pageName: t("metaTitle"),
+    pageDescription: t("metaDescription"),
+    jobTitle: tMeta("jsonLdJobTitle"),
+    personDescription: tMeta("jsonLdDescription"),
+    breadcrumb: [
+      { name: tCommon("home"), path: "/" },
+      { name: t("title"), path: "/about" },
+    ],
+    personExtras: {
       alumniOf: {
         "@type": "CollegeOrUniversity",
         name: "Université numérique Cheikh Hamidou KANE (UN-CHK)",
       },
       knowsLanguage: [
-        { "@type": "Language", name: "French" },
-        { "@type": "Language", name: "English" },
+        { "@type": "Language", name: "French", alternateName: "fr" },
+        { "@type": "Language", name: "English", alternateName: "en" },
       ],
     },
-  };
+  });
 
   return (
     <div className="flex min-h-full flex-col">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(profileJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
       />
       <Navbar />
       <main
         id="main-content"
-        className="flex-1 pb-24 outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base md:pb-0"
+        className="flex-1 pb-28 outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base xl:pb-0"
         tabIndex={-1}
       >
-        <section className="border-b border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-          <div className="mx-auto max-w-[1280px]">
-            <Reveal>
-              <Link
-                href="/"
-                className="text-sm font-medium text-[var(--text-muted)] transition hover:text-[var(--text-primary)]"
-              >
-                ← {t("backToHome")}
-              </Link>
-              <h1 className="mt-8 text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
-                {t("title")}
-              </h1>
-              <p className="mt-4 max-w-2xl text-base text-[var(--text-secondary)] sm:text-lg">
-                {t("subtitle")}
-              </p>
-            </Reveal>
-          </div>
-        </section>
+        <PageHeader
+          title={t("title")}
+          subtitle={t("subtitle")}
+          backLabel={t("backToHome")}
+          showFacts
+        />
 
         <About extended />
+
+        <div className="px-4 pb-16 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-[1280px]">
+            <ContactBridgeStrip ns="aboutPage" />
+          </div>
+        </div>
       </main>
       <Footer />
     </div>

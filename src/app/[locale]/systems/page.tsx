@@ -1,15 +1,25 @@
 import type { Locale } from "next-intl";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import {
+  getMessages,
+  getTranslations,
+  setRequestLocale,
+} from "next-intl/server";
 import type { Metadata } from "next";
+import { ContactBridgeStrip } from "@/components/portfolio/ContactBridgeStrip";
+import { PageHeader } from "@/components/portfolio/PageHeader";
+import { ProfileExploreLinks } from "@/components/portfolio/ProfileExploreLinks";
 import { ArchitectureSection } from "@/components/portfolio/ArchitectureSection";
 import { BankingLeadership } from "@/components/portfolio/BankingLeadership";
 import { FeaturedProjects } from "@/components/portfolio/FeaturedProjects";
 import { Footer } from "@/components/portfolio/Footer";
 import { Navbar } from "@/components/portfolio/Navbar";
-import { Reveal } from "@/components/portfolio/Reveal";
-import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { buildBreadcrumbJsonLd, buildPageMetadata } from "@/seo";
+import {
+  buildPageMetadata,
+  buildSystemsPageGraph,
+  caseStudySlug,
+  getLocalePageUrl,
+} from "@/seo";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -42,48 +52,61 @@ export default async function SystemsPage({ params }: Props) {
   setRequestLocale(locale as Locale);
   const t = await getTranslations("systemsPage");
   const tCommon = await getTranslations("common");
+  const messages = await getMessages();
+  const pageUrl = getLocalePageUrl(locale, "/systems");
+  const caseStudies = messages.featuredProjects.items.map((item) => {
+    const slug = caseStudySlug(item.title);
 
-  const breadcrumbJsonLd = buildBreadcrumbJsonLd(locale, [
-    { name: tCommon("home"), path: "/" },
-    { name: t("title"), path: "/systems" },
-  ]);
+    return {
+      name: item.title,
+      description: item.solution,
+      url: `${pageUrl}#case-${slug}`,
+      externalUrl: item.href.trim() || undefined,
+      keywords: item.stacks,
+    };
+  });
+
+  const pageJsonLd = buildSystemsPageGraph({
+    locale,
+    pageName: t("metaTitle"),
+    pageDescription: t("metaDescription"),
+    breadcrumb: [
+      { name: tCommon("home"), path: "/" },
+      { name: t("title"), path: "/systems" },
+    ],
+    caseStudies,
+  });
 
   return (
     <div className="flex min-h-full flex-col">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
       />
       <Navbar />
       <main
         id="main-content"
-        className="flex-1 pb-24 outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base md:pb-0"
+        className="flex-1 pb-28 outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base xl:pb-0"
         tabIndex={-1}
       >
-        {/* Page header */}
-        <section className="border-b border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-          <div className="mx-auto max-w-[1280px]">
-            <Reveal>
-              <Link
-                href="/"
-                className="text-sm font-medium text-[var(--text-muted)] transition hover:text-[var(--text-primary)]"
-              >
-                ← {t("backToHome")}
-              </Link>
-              <h1 className="mt-8 text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
-                {t("title")}
-              </h1>
-              <p className="mt-4 max-w-2xl text-base text-[var(--text-secondary)] sm:text-lg">
-                {t("subtitle")}
-              </p>
-            </Reveal>
-          </div>
-        </section>
+        <PageHeader
+          title={t("title")}
+          subtitle={t("subtitle")}
+          backLabel={t("backToHome")}
+          showFacts
+        />
 
         <ArchitectureSection />
         {/* Full case studies with security + scale detail */}
         <FeaturedProjects showDetail />
         <BankingLeadership />
+
+        <div className="px-4 pb-16 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-[1280px] space-y-8">
+            <ProfileExploreLinks excludePath="/systems" />
+            <ContactBridgeStrip ns="systemsPage" />
+          </div>
+        </div>
       </main>
       <Footer />
     </div>

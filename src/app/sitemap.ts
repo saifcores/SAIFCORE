@@ -4,6 +4,20 @@ import { hasObtainedCertifications } from "@/data/certifications";
 import { routing } from "@/i18n/routing";
 import { getBlogUrl, getSiteUrl } from "@/site";
 
+function localeAlternates(base: string, path: string): Record<string, string> {
+  const suffix = path === "/" ? "" : path;
+  const languages = Object.fromEntries(
+    routing.locales.map((loc) => {
+      const prefix = loc === routing.defaultLocale ? "" : `/${loc}`;
+      return [loc, `${base}${prefix}${suffix || "/"}`] as const;
+    }),
+  );
+  return {
+    ...languages,
+    "x-default": `${base}${suffix || "/"}`,
+  };
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = getSiteUrl();
   const entries: MetadataRoute.Sitemap = [];
@@ -20,12 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: locale === routing.defaultLocale ? 1 : 0.9,
       alternates: {
-        languages: Object.fromEntries(
-          routing.locales.map((loc) => {
-            const p = loc === routing.defaultLocale ? "" : `/${loc}`;
-            return [loc, `${base}${p || "/"}`] as const;
-          }),
-        ),
+        languages: localeAlternates(base, "/"),
       },
     });
 
@@ -37,12 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: "weekly",
         priority: 0.85,
         alternates: {
-          languages: Object.fromEntries(
-            routing.locales.map((loc) => {
-              const p = loc === routing.defaultLocale ? "" : `/${loc}`;
-              return [loc, `${base}${p}/articles`] as const;
-            }),
-          ),
+          languages: localeAlternates(base, "/articles"),
         },
       });
     }
@@ -54,12 +58,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
       alternates: {
-        languages: Object.fromEntries(
-          routing.locales.map((loc) => {
-            const p = loc === routing.defaultLocale ? "" : `/${loc}`;
-            return [loc, `${base}${p}/systems`] as const;
-          }),
-        ),
+        languages: localeAlternates(base, "/systems"),
       },
     });
 
@@ -70,12 +69,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.85,
       alternates: {
-        languages: Object.fromEntries(
-          routing.locales.map((loc) => {
-            const p = loc === routing.defaultLocale ? "" : `/${loc}`;
-            return [loc, `${base}${p}/experience`] as const;
-          }),
-        ),
+        languages: localeAlternates(base, "/experience"),
       },
     });
 
@@ -86,12 +80,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
       alternates: {
-        languages: Object.fromEntries(
-          routing.locales.map((loc) => {
-            const p = loc === routing.defaultLocale ? "" : `/${loc}`;
-            return [loc, `${base}${p}/about`] as const;
-          }),
-        ),
+        languages: localeAlternates(base, "/about"),
       },
     });
 
@@ -102,12 +91,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.3,
       alternates: {
-        languages: Object.fromEntries(
-          routing.locales.map((loc) => {
-            const p = loc === routing.defaultLocale ? "" : `/${loc}`;
-            return [loc, `${base}${p}/license`] as const;
-          }),
-        ),
+        languages: localeAlternates(base, "/license"),
       },
     });
 
@@ -119,12 +103,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: "monthly",
         priority: 0.82,
         alternates: {
-          languages: Object.fromEntries(
-            routing.locales.map((loc) => {
-              const p = loc === routing.defaultLocale ? "" : `/${loc}`;
-              return [loc, `${base}${p}/certifications`] as const;
-            }),
-          ),
+          languages: localeAlternates(base, "/certifications"),
         },
       });
     }
@@ -138,12 +117,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
           changeFrequency: "monthly",
           priority: 0.75,
           alternates: {
-            languages: Object.fromEntries(
-              routing.locales.map((loc) => {
-                const p = loc === routing.defaultLocale ? "" : `/${loc}`;
-                return [loc, `${base}${p}/articles/${article.slug}`] as const;
-              }),
-            ),
+            languages: localeAlternates(base, `/articles/${article.slug}`),
           },
         });
       }

@@ -42,29 +42,29 @@ export async function MetricsSection() {
   return (
     <section
       id="metrics"
-      className="border-b border-[var(--border-subtle)] px-4 py-16 sm:py-20 lg:py-24 sm:px-6 lg:px-8"
+      className="border-b border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24"
     >
       <div className="mx-auto max-w-[1280px]">
         <Reveal>
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
             {t("label")}
           </p>
-          <h2 className="max-w-2xl text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
+          <h2 className="max-w-2xl text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl">
             {t("title")}
           </h2>
-          <p className="mt-4 max-w-xl text-[var(--text-secondary)]">
+          <p className="mt-3 max-w-xl text-pretty text-sm text-[var(--text-secondary)] sm:mt-4 sm:text-base">
             {t("subtitle")}
           </p>
         </Reveal>
 
         {/* Metrics grid */}
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
           {metrics.map((metric, i) => {
             const color = METRIC_COLORS[i % METRIC_COLORS.length];
             return (
               <Reveal key={metric.label} delay={i * 80}>
                 <div
-                  className={`group relative overflow-hidden rounded-2xl border bg-gradient-to-br ${color.bg} ${color.border} p-6 transition duration-300 hover:brightness-110`}
+                  className={`group relative overflow-hidden rounded-2xl border bg-gradient-to-br ${color.bg} ${color.border} p-5 transition duration-300 hover:brightness-110 sm:p-6`}
                 >
                   {/* Subtle glow on hover */}
                   <div
@@ -75,7 +75,7 @@ export async function MetricsSection() {
                     aria-hidden
                   />
                   <p
-                    className={`relative text-3xl font-bold tracking-tight sm:text-4xl md:text-[2.75rem] ${color.accent}`}
+                    className={`relative text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl ${color.accent}`}
                   >
                     {metric.value}
                   </p>
@@ -92,11 +92,11 @@ export async function MetricsSection() {
         </div>
 
         {/* System health + Infrastructure principles */}
-        <div className="mt-8 grid gap-6 md:grid-cols-[1fr_minmax(260px,400px)]">
+        <div className="mt-6 grid gap-5 sm:mt-8 md:grid-cols-[1fr_minmax(260px,400px)] md:gap-6">
           {/* Uptime chart */}
           <Reveal>
-            <div className="glass rounded-2xl p-6">
-              <div className="flex items-center justify-between">
+            <div className="glass rounded-2xl p-5 sm:p-6">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
                   {t("uptimeChartLabel")}
                 </p>
@@ -132,11 +132,11 @@ export async function MetricsSection() {
               </div>
 
               {/* Chart footer */}
-              <div className="mt-3 flex items-center justify-between">
+              <div className="mt-3 flex flex-col gap-2 sm:mt-3 sm:flex-row sm:items-center sm:justify-between">
                 <p className="text-xs text-[var(--text-muted)]">
                   {t("uptimeSummary")}
                 </p>
-                <div className="flex items-center gap-4 text-[11px] text-[var(--text-muted)]">
+                <div className="flex flex-wrap items-center gap-3 text-[11px] text-[var(--text-muted)] sm:gap-4">
                   <span className="flex items-center gap-1.5">
                     <span className="h-2 w-2 rounded-sm bg-emerald-500/55" />
                     100%
@@ -152,7 +152,7 @@ export async function MetricsSection() {
 
           {/* Infrastructure principles */}
           <Reveal delay={100}>
-            <div className="glass rounded-2xl p-6">
+            <div className="glass rounded-2xl p-5 sm:p-6">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
                 {t("principlesTitle")}
               </p>

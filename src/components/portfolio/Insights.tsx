@@ -1,5 +1,5 @@
 import { getLocale, getTranslations } from "next-intl/server";
-import { articles } from "@/data/articles";
+import { getLatestArticles } from "@/data/articles";
 import { getArticleLink } from "@/blog/article-links";
 import { Link } from "@/i18n/navigation";
 import { getBlogIndexUrl } from "@/site";
@@ -18,7 +18,7 @@ export async function Insights({ teaser = false }: Props) {
   const tCommon = await getTranslations("common");
   const locale = await getLocale();
   const loc = locale === "fr" ? "fr" : "en";
-  const preview = articles.slice(0, 3);
+  const preview = getLatestArticles(3);
   const blogIndexUrl = getBlogIndexUrl(loc);
   const viewAllHref = blogIndexUrl ?? "/articles";
   const viewAllExternal = !!blogIndexUrl;
@@ -27,20 +27,26 @@ export async function Insights({ teaser = false }: Props) {
   return (
     <section
       id="insights"
-      className="border-b border-[var(--border-subtle)] px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
+      aria-labelledby="insights-heading"
+      className="border-b border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24"
     >
       <div className="mx-auto max-w-[1280px]">
         <Reveal>
           <div
             className={
-              teaser ? "flex flex-wrap items-end justify-between gap-4" : ""
+              teaser
+                ? "flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between"
+                : ""
             }
           >
             <div>
               <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
                 {t("title")}
               </p>
-              <h2 className="max-w-2xl text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
+              <h2
+                id="insights-heading"
+                className="max-w-2xl text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl"
+              >
                 {t("subtitle")}
               </h2>
             </div>
@@ -51,7 +57,7 @@ export async function Insights({ teaser = false }: Props) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${t("viewAll")} (${opensInNewTab})`}
-                  className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-accent transition hover:text-[var(--accent-blue-light)]"
+                  className="inline-flex min-h-11 w-full shrink-0 items-center justify-center gap-1.5 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 px-4 text-sm font-semibold text-accent transition hover:border-[var(--border-hover)] hover:text-[var(--accent-blue-light)] sm:w-auto sm:border-0 sm:bg-transparent sm:px-0"
                 >
                   {t("viewAll")}
                   <span aria-hidden>↗</span>
@@ -59,7 +65,7 @@ export async function Insights({ teaser = false }: Props) {
               ) : (
                 <Link
                   href={viewAllHref}
-                  className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-accent transition hover:text-[var(--accent-blue-light)]"
+                  className="inline-flex min-h-11 w-full shrink-0 items-center justify-center gap-1.5 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 px-4 text-sm font-semibold text-accent transition hover:border-[var(--border-hover)] hover:text-[var(--accent-blue-light)] sm:w-auto sm:border-0 sm:bg-transparent sm:px-0"
                 >
                   {t("viewAll")}
                   <span aria-hidden>→</span>
@@ -69,7 +75,34 @@ export async function Insights({ teaser = false }: Props) {
           </div>
         </Reveal>
 
-        <div className="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+        {blogIndexUrl ? (
+          <Reveal delay={60}>
+            <a
+              href={blogIndexUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${t("blogPromoTitle")} (${opensInNewTab})`}
+              className="mt-8 flex flex-col gap-4 rounded-2xl border border-blue-500/20 bg-gradient-to-br from-blue-500/10 to-emerald-500/5 p-5 transition hover:border-blue-500/35 sm:mt-10 sm:flex-row sm:items-center sm:justify-between sm:p-6"
+            >
+              <div className="min-w-0">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">
+                  {t("blogPromoTitle")}
+                </p>
+                <p className="mt-2 text-pretty text-sm leading-relaxed text-[var(--text-secondary)] sm:text-base">
+                  {t("blogPromoBody")}
+                </p>
+              </div>
+              <span className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/40 px-4 text-sm font-semibold text-accent">
+                {tArticles("blogCta")}
+                <span aria-hidden className="ml-1.5">
+                  ↗
+                </span>
+              </span>
+            </a>
+          </Reveal>
+        ) : null}
+
+        <div className="mt-10 grid gap-x-6 gap-y-10 sm:mt-14 sm:grid-cols-2 sm:gap-y-12 lg:grid-cols-3">
           {preview.map((article, i) => {
             const link = getArticleLink(article, loc);
             return (
@@ -116,14 +149,14 @@ export async function Insights({ teaser = false }: Props) {
           </Reveal>
         ) : (
           <Reveal delay={240}>
-            <div className="mt-8 flex justify-center">
+            <div className="mt-8 flex justify-center sm:mt-10">
               {viewAllExternal ? (
                 <a
                   href={viewAllHref}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${t("viewAll")} (${opensInNewTab})`}
-                  className="inline-flex items-center gap-2 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 px-6 py-3 text-sm font-semibold text-[var(--text-secondary)] transition hover:border-[var(--border-hover)] hover:text-[var(--text-primary)]"
+                  className="inline-flex min-h-12 w-full max-w-sm items-center justify-center gap-2 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 px-6 py-3 text-sm font-semibold text-[var(--text-secondary)] transition hover:border-[var(--border-hover)] hover:text-[var(--text-primary)] sm:w-auto"
                 >
                   {t("viewAll")}
                   <span aria-hidden>↗</span>
@@ -131,7 +164,7 @@ export async function Insights({ teaser = false }: Props) {
               ) : (
                 <Link
                   href={viewAllHref}
-                  className="inline-flex items-center gap-2 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 px-6 py-3 text-sm font-semibold text-[var(--text-secondary)] transition hover:border-[var(--border-hover)] hover:text-[var(--text-primary)]"
+                  className="inline-flex min-h-12 w-full max-w-sm items-center justify-center gap-2 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 px-6 py-3 text-sm font-semibold text-[var(--text-secondary)] transition hover:border-[var(--border-hover)] hover:text-[var(--text-primary)] sm:w-auto"
                 >
                   {t("viewAll")}
                   <span aria-hidden>→</span>

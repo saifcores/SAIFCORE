@@ -7,7 +7,7 @@ export async function VisionSection() {
   const t = await getTranslations("visionSection");
 
   return (
-    <section className="relative overflow-hidden px-4 py-28 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-28">
       {/* Ambient orbs */}
       <div
         className="pointer-events-none absolute left-1/4 top-0 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-blue-600/20 to-transparent blur-3xl animate-orb"
@@ -22,17 +22,15 @@ export async function VisionSection() {
         <Reveal>
           <div className="mx-auto max-w-3xl text-center">
             {/* Label */}
-            <p className="mb-8 text-xs font-medium uppercase tracking-[0.25em] text-[var(--text-muted)]">
+            <p className="mb-6 text-xs font-medium uppercase tracking-[0.25em] text-[var(--text-muted)] sm:mb-8">
               {t("label")}
             </p>
 
-            {/* Main statement */}
-            <h2 className="text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl lg:text-5xl lg:leading-[1.1]">
+            <h2 className="text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl lg:text-5xl lg:leading-[1.1]">
               {t("title")}
             </h2>
 
-            {/* Body */}
-            <p className="mt-8 text-lg leading-relaxed text-[var(--text-secondary)] sm:text-xl">
+            <p className="mt-6 text-pretty text-base leading-relaxed text-[var(--text-secondary)] sm:mt-8 sm:text-lg md:text-xl">
               {t("body")}
             </p>
           </div>
@@ -40,12 +38,15 @@ export async function VisionSection() {
 
         {/* Positioning path */}
         <Reveal delay={120}>
-          <div className="mt-16 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-0">
+          <div className="mt-12 flex flex-col items-stretch justify-center gap-3 sm:mt-16 sm:flex-row sm:items-center sm:gap-0">
             {positioning.map((step, i) => (
-              <div key={step} className="flex items-center">
-                <div className="relative">
+              <div
+                key={step}
+                className="flex flex-col items-center sm:flex-row"
+              >
+                <div className="relative w-full sm:w-auto">
                   <div
-                    className={`rounded-full border px-5 py-2.5 text-sm font-semibold transition ${
+                    className={`rounded-full border px-4 py-2 text-center text-sm font-semibold transition sm:px-5 sm:py-2.5 ${
                       i === 0
                         ? "border-blue-500/30 bg-gradient-to-r from-blue-500/15 to-blue-500/5 text-[var(--text-primary)]"
                         : i === 1
@@ -95,10 +96,10 @@ export async function VisionSection() {
 
         {/* Stats */}
         <Reveal delay={200}>
-          <div className="mt-16 grid grid-cols-1 gap-6 min-[480px]:grid-cols-3 sm:gap-10">
+          <div className="mt-12 grid grid-cols-1 gap-8 min-[480px]:grid-cols-3 sm:mt-16 sm:gap-10">
             {stats.map((stat, i) => (
               <div key={i} className="text-center">
-                <p className="text-gradient text-3xl font-bold sm:text-4xl">
+                <p className="text-gradient text-2xl font-bold sm:text-3xl md:text-4xl">
                   {stat.value}
                 </p>
                 <p className="mt-2 text-sm text-[var(--text-muted)]">
@@ -111,12 +112,12 @@ export async function VisionSection() {
 
         {/* Divider line with tagline */}
         <Reveal delay={260}>
-          <div className="mt-16 flex items-center gap-6">
-            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[var(--border-subtle)] to-transparent" />
-            <p className="text-xs font-medium tracking-[0.18em] text-[var(--text-muted)] uppercase">
+          <div className="mt-12 flex flex-col items-center gap-4 sm:mt-16 sm:flex-row sm:gap-6">
+            <div className="hidden h-px flex-1 bg-gradient-to-r from-transparent via-[var(--border-subtle)] to-transparent sm:block" />
+            <p className="text-center text-[10px] font-medium tracking-[0.18em] text-[var(--text-muted)] uppercase sm:text-xs">
               {t("dividerText")}
             </p>
-            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[var(--border-subtle)] to-transparent" />
+            <div className="hidden h-px flex-1 bg-gradient-to-r from-transparent via-[var(--border-subtle)] to-transparent sm:block" />
           </div>
         </Reveal>
       </div>

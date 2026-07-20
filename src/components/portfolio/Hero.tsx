@@ -17,19 +17,19 @@ export async function Hero() {
 
   const ctas = (
     <>
+      <BookCallLink className="btn-primary btn-primary-lg inline-flex min-h-12 w-full items-center justify-center px-4 text-sm sm:w-auto sm:px-8">
+        {t("ctaBookCall")}
+      </BookCallLink>
       <Link
         href="/#services"
-        className="btn-primary btn-primary-lg inline-flex h-12 w-full items-center justify-center px-6 text-sm sm:w-auto sm:px-8"
+        className="btn-outline inline-flex min-h-12 w-full items-center justify-center rounded-xl px-4 text-sm font-semibold sm:w-auto sm:px-8"
       >
         {t("ctaPrimary")}
       </Link>
-      <BookCallLink className="btn-outline inline-flex h-12 w-full items-center justify-center rounded-xl px-6 text-sm font-semibold sm:w-auto sm:px-8">
-        {t("ctaBookCall")}
-      </BookCallLink>
       {resumeUrl ? (
         <a
           href={resumeUrl}
-          className="btn-outline inline-flex h-12 w-full items-center justify-center rounded-xl px-6 text-sm font-semibold sm:w-auto sm:px-8"
+          className="btn-outline inline-flex min-h-12 w-full items-center justify-center rounded-xl px-4 text-sm font-semibold sm:w-auto sm:px-8"
           {...(isLocalResume(resumeUrl)
             ? { download: resumeDownload }
             : { target: "_blank", rel: "noopener noreferrer" })}
@@ -39,7 +39,7 @@ export async function Hero() {
       ) : (
         <Link
           href="/#contact"
-          className="btn-outline inline-flex h-12 w-full items-center justify-center rounded-xl px-6 text-sm font-semibold sm:w-auto sm:px-8"
+          className="btn-outline inline-flex min-h-12 w-full items-center justify-center rounded-xl px-4 text-sm font-semibold sm:w-auto sm:px-8"
         >
           {t("ctaResume")}
         </Link>
@@ -48,7 +48,7 @@ export async function Hero() {
   );
 
   return (
-    <section className="relative overflow-hidden border-b border-[var(--border-subtle)] px-4 pb-24 pt-16 sm:px-6 sm:pb-32 sm:pt-24 md:pb-36 md:pt-28 lg:px-8">
+    <section className="relative overflow-hidden border-b border-[var(--border-subtle)] px-4 pb-28 pt-12 sm:px-6 sm:pb-32 sm:pt-20 md:pb-36 md:pt-24 lg:px-8 xl:pb-36">
       <div className="bg-grid pointer-events-none absolute inset-0 opacity-100" />
       <div
         className="ambient-glow pointer-events-none absolute -left-1/3 top-0 h-[600px] w-[70%] rounded-full bg-gradient-to-br from-blue-600/20 via-blue-500/8 to-transparent blur-3xl animate-float-glow"
@@ -78,6 +78,7 @@ export async function Hero() {
               t("specializations.2"),
               t("specializations.3"),
             ]}
+            proofLine={t("proofLine")}
             availability={t("availability")}
             locationLine={t("locationLine")}
             jumpToContact={t("jumpToContact")}

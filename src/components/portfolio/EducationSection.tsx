@@ -10,7 +10,7 @@ export async function EducationSection() {
     <section
       id="education"
       aria-labelledby="education-heading"
-      className="border-t border-[var(--border-subtle)] px-4 py-16 sm:py-20 lg:py-24 sm:px-6 lg:px-8"
+      className="border-t border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24"
     >
       <div className="mx-auto max-w-[1280px]">
         <Reveal>
@@ -19,13 +19,13 @@ export async function EducationSection() {
           </p>
           <h2
             id="education-heading"
-            className="max-w-2xl text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl"
+            className="max-w-2xl text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl"
           >
             {t("subtitle")}
           </h2>
         </Reveal>
 
-        <ul className="mt-12 list-none space-y-0 divide-y divide-[var(--border-subtle)] p-0">
+        <ul className="mt-8 list-none space-y-0 divide-y divide-[var(--border-subtle)] p-0 sm:mt-12">
           {education.items.map((item, i) => (
             <li key={`${item.degree}|${item.institution}`}>
               <Reveal delay={i * 60}>

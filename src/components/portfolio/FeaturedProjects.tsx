@@ -1,7 +1,9 @@
 import { getMessages, getTranslations } from "next-intl/server";
 import type { ReactNode } from "react";
 import { Link } from "@/i18n/navigation";
+import { caseStudySlug } from "@/seo";
 import type { FeaturedProjectItem } from "@/types/messages";
+import { FeaturedProjectDetails } from "./FeaturedProjectDetails";
 import { Reveal } from "./Reveal";
 
 type Props = {
@@ -89,46 +91,51 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
   const t = await getTranslations("featuredProjects");
 
   return (
-    <section id="work" className="px-4 py-16 sm:py-20 lg:py-24 sm:px-6 lg:px-8">
+    <section id="work" className="px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-[1280px]">
         {!showDetail ? (
           <Reveal>
             <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
               {t("title")}
             </p>
-            <h2 className="max-w-2xl text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
+            <h2 className="max-w-2xl text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl">
               {t("heading")}
             </h2>
-            <p className="mt-4 max-w-2xl text-[var(--text-secondary)]">
+            <p className="mt-3 max-w-2xl text-pretty text-sm text-[var(--text-secondary)] sm:mt-4 sm:text-base">
               {t("subtitle")}
             </p>
           </Reveal>
         ) : null}
 
         {/* Case study cards */}
-        <div className={`space-y-8 ${!showDetail ? "mt-16" : ""}`}>
+        <div
+          className={`space-y-6 sm:space-y-8 ${!showDetail ? "mt-10 sm:mt-14" : ""}`}
+        >
           {items.map((item, i) => {
             const external = item.href.trim();
             const indexStr = String(i + 1).padStart(2, "0");
 
             return (
               <Reveal key={item.title} delay={i * 100}>
-                <article className="group relative overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 transition duration-300 hover:border-[var(--border-hover)] hover:bg-[var(--bg-elevated)]/50">
+                <article
+                  id={`case-${caseStudySlug(item.title)}`}
+                  className="group relative scroll-mt-28 overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 transition duration-300 hover:border-[var(--border-hover)] hover:bg-[var(--bg-elevated)]/50 xl:scroll-mt-24"
+                >
                   {/* Left accent line */}
                   <div
                     className="absolute inset-y-0 left-0 w-[3px] rounded-l-2xl bg-gradient-to-b from-[var(--accent-blue)] to-[var(--accent-emerald)] opacity-0 transition duration-300 group-hover:opacity-100"
                     aria-hidden
                   />
 
-                  <div className="p-6 sm:p-8 lg:p-12">
+                  <div className="p-5 sm:p-8 lg:p-12">
                     {/* Header row */}
-                    <div className="flex flex-wrap items-start justify-between gap-4">
-                      <div className="flex items-start gap-6">
+                    <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-start sm:justify-between">
+                      <div className="flex min-w-0 items-start gap-3 sm:gap-6">
                         <span className="shrink-0 font-mono text-[11px] font-semibold tracking-[0.15em] text-[var(--text-muted)]">
                           {indexStr}
                         </span>
-                        <div>
-                          <h3 className="text-xl font-bold tracking-tight text-[var(--text-primary)] sm:text-2xl">
+                        <div className="min-w-0">
+                          <h3 className="text-lg font-bold tracking-tight text-[var(--text-primary)] sm:text-xl md:text-2xl">
                             {item.title}
                           </h3>
                           {item.status ? (
@@ -162,28 +169,28 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
                     </div>
 
                     {/* Core narrative — Problem / Solution / Architecture */}
-                    <div className="mt-8 grid gap-6 border-t border-[var(--border-subtle)] pt-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+                    <div className="mt-5 grid gap-4 border-t border-[var(--border-subtle)] pt-5 sm:mt-8 sm:grid-cols-2 sm:gap-6 sm:pt-8 lg:grid-cols-3 lg:gap-8">
                       <div>
-                        <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)]">
+                        <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)] sm:mb-3">
                           {t("problemLabel")}
                         </p>
-                        <p className="text-sm leading-relaxed text-[var(--text-secondary)]">
+                        <p className="text-pretty text-sm leading-relaxed text-[var(--text-secondary)]">
                           {item.problem}
                         </p>
                       </div>
                       <div>
-                        <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)]">
+                        <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)] sm:mb-3">
                           {t("solutionLabel")}
                         </p>
-                        <p className="text-sm leading-relaxed text-[var(--text-secondary)]">
+                        <p className="text-pretty text-sm leading-relaxed text-[var(--text-secondary)]">
                           {item.solution}
                         </p>
                       </div>
                       <div>
-                        <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)]">
+                        <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)] sm:mb-3">
                           {t("architectureLabel")}
                         </p>
-                        <p className="text-sm leading-relaxed text-[var(--text-secondary)]">
+                        <p className="text-pretty text-sm leading-relaxed text-[var(--text-secondary)]">
                           {item.architecture}
                         </p>
                       </div>
@@ -191,8 +198,8 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
 
                     {/* Detail rows — systems page only */}
                     {showDetail ? (
-                      <>
-                        <div className="mt-6 grid gap-6 border-t border-[var(--border-subtle)] pt-6 lg:grid-cols-2 lg:gap-8">
+                      <FeaturedProjectDetails summary={t("detailsSummary")}>
+                        <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
                           <div>
                             <p className="mb-3 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-violet-400">
                               <svg
@@ -266,7 +273,7 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
                             </p>
                           </div>
                         </div>
-                      </>
+                      </FeaturedProjectDetails>
                     ) : null}
 
                     {/* Impact callout */}
@@ -297,7 +304,7 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
                           href={external}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-[var(--accent-blue)] transition hover:text-[var(--accent-blue-light)]"
+                          className="inline-flex min-h-11 shrink-0 items-center gap-1.5 text-sm font-semibold text-[var(--accent-blue)] transition hover:text-[var(--accent-blue-light)]"
                         >
                           {item.linkLabel}
                           <span aria-hidden>→</span>
@@ -313,9 +320,9 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
 
         {/* Bridge CTA */}
         <Reveal delay={320}>
-          <div className="mt-12 flex flex-col items-center justify-center gap-5 rounded-2xl border border-dashed border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 px-6 py-10 text-center sm:flex-row sm:gap-10 sm:px-12">
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 rounded-2xl border border-dashed border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 px-4 py-8 text-center sm:mt-12 sm:flex-row sm:gap-10 sm:px-8 sm:py-10 lg:px-12">
             <div className="max-w-md">
-              <p className="text-base font-semibold text-[var(--text-primary)]">
+              <p className="text-pretty text-sm font-semibold text-[var(--text-primary)] sm:text-base">
                 {t("bridgeTitle")}
               </p>
               <p className="mt-2 text-sm text-[var(--text-secondary)]">
@@ -324,7 +331,7 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
             </div>
             <Link
               href="/#contact"
-              className="btn-primary inline-flex shrink-0 items-center justify-center px-8 py-3 text-sm"
+              className="btn-primary inline-flex min-h-12 w-full shrink-0 items-center justify-center px-8 py-3 text-sm sm:w-auto"
             >
               {t("bridgeCta")}
             </Link>

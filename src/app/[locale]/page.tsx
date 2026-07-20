@@ -21,7 +21,18 @@ import { Testimonials } from "@/components/portfolio/Testimonials";
 import { TrustedExpertise } from "@/components/portfolio/TrustedExpertise";
 import { Trust } from "@/components/portfolio/Trust";
 import { WorkProcess } from "@/components/portfolio/WorkProcess";
+import { getLatestArticles } from "@/data/articles";
 import {
+  buildArticleItemListJsonLd,
+  buildExternalItemListJsonLd,
+  buildJsonLdGraph,
+  caseStudySlug,
+  getLocaleHomeUrl,
+  getLocalePageUrl,
+} from "@/seo";
+import {
+  getBlogArticleUrl,
+  getBlogIndexUrl,
   getContactEmail,
   getProfileDisplayName,
   getProfileLocation,
@@ -41,6 +52,9 @@ export default async function Home({ params }: Props) {
     locale: locale as Locale,
     namespace: "meta",
   });
+  const tInsights = await getTranslations("insights");
+  const tFeatured = await getTranslations("featuredProjects");
+  const contentLoc = locale === "fr" ? "fr" : "en";
 
   const messages = await getMessages();
   const te = messages.trustedExpertise;
@@ -55,13 +69,19 @@ export default async function Home({ params }: Props) {
   const loc = getProfileLocation();
   const contactEmail = getContactEmail();
 
-  const jsonLd: Record<string, unknown> = {
-    "@context": "https://schema.org",
+  const jsonLdPerson: Record<string, unknown> = {
     "@type": "Person",
+    "@id": `${getLocaleHomeUrl(locale)}#person`,
     name: getProfileDisplayName(),
+    alternateName: "SAIFCORE",
     jobTitle: t("jsonLdJobTitle"),
     description: t("jsonLdDescription"),
     url: siteUrl,
+    image: new URL("/profile.png", `${siteUrl}/`).toString(),
+    knowsLanguage: [
+      { "@type": "Language", name: "French", alternateName: "fr" },
+      { "@type": "Language", name: "English", alternateName: "en" },
+    ],
     knowsAbout: [
       "Java",
       "Spring Boot",
@@ -74,6 +94,7 @@ export default async function Home({ params }: Props) {
       "API architecture",
       "Microservices",
       "AWS",
+      "Mobile money",
     ],
     alumniOf: {
       "@type": "CollegeOrUniversity",
@@ -92,39 +113,111 @@ export default async function Home({ params }: Props) {
         addressCountry: loc.countryCode,
       },
     },
+    worksFor: {
+      "@type": "Organization",
+      name: "SAIFCORE",
+      url: siteUrl,
+    },
     makesOffer: {
       "@type": "Offer",
       itemOffered: {
         "@type": "Service",
-        name: "Enterprise platform & payment engineering",
-        description:
-          "Backend systems, APIs, distributed architectures, and payment solutions for enterprise and fintech platforms.",
+        name: t("jsonLdServiceName"),
+        description: t("jsonLdServiceDescription"),
       },
       availableAtOrFrom: {
         "@type": "Place",
-        name: "Remote worldwide",
+        name: t("jsonLdAvailability"),
       },
+      areaServed: t("jsonLdAreaServed"),
     },
   };
 
   if (sameAs.length > 0) {
-    jsonLd.sameAs = sameAs;
+    jsonLdPerson.sameAs = sameAs;
   }
 
   if (contactEmail) {
-    jsonLd.email = contactEmail;
+    jsonLdPerson.email = contactEmail;
   }
+
+  const homeUrl = getLocaleHomeUrl(locale);
+  const personId = `${homeUrl}#person`;
+
+  const jsonLdWebPage = {
+    "@type": "WebPage",
+    "@id": `${homeUrl}#webpage`,
+    url: homeUrl,
+    name: t("ogTitle"),
+    description: t("description"),
+    inLanguage: locale === "fr" ? "fr-FR" : "en-US",
+    isPartOf: {
+      "@type": "WebSite",
+      name: "SAIFCORE",
+      url: siteUrl,
+    },
+    about: { "@id": personId },
+    mainEntity: { "@id": personId },
+  };
+
+  const blogIndexUrl = getBlogIndexUrl(contentLoc);
+  const latestArticles = getLatestArticles(3);
+  const insightsItemListJsonLd = blogIndexUrl
+    ? buildExternalItemListJsonLd({
+        name: tInsights("title"),
+        items: latestArticles.flatMap((article) => {
+          const url = getBlogArticleUrl(article.slug, contentLoc);
+          return url ? [{ name: article.title[contentLoc], url }] : [];
+        }),
+      })
+    : buildArticleItemListJsonLd(locale, {
+        name: tInsights("title"),
+        items: latestArticles.map((article) => ({
+          name: article.title[contentLoc],
+          slug: article.slug,
+        })),
+      });
+
+  const graphNodes: Record<string, unknown>[] = [jsonLdPerson, jsonLdWebPage];
+  if (
+    insightsItemListJsonLd.itemListElement &&
+    Array.isArray(insightsItemListJsonLd.itemListElement) &&
+    insightsItemListJsonLd.itemListElement.length > 0
+  ) {
+    const { "@context": _context, ...itemListNode } = insightsItemListJsonLd;
+    graphNodes.push(itemListNode);
+  }
+
+  const systemsUrl = getLocalePageUrl(locale, "/systems");
+  const caseStudiesItemListJsonLd = buildExternalItemListJsonLd({
+    name: tFeatured("heading"),
+    items: messages.featuredProjects.items.map((item) => ({
+      name: item.title,
+      url: `${systemsUrl}#case-${caseStudySlug(item.title)}`,
+    })),
+  });
+  if (
+    caseStudiesItemListJsonLd.itemListElement &&
+    Array.isArray(caseStudiesItemListJsonLd.itemListElement) &&
+    caseStudiesItemListJsonLd.itemListElement.length > 0
+  ) {
+    const { "@context": _caseContext, ...caseListNode } =
+      caseStudiesItemListJsonLd;
+    graphNodes.push(caseListNode);
+  }
+
+  const homeJsonLd = buildJsonLdGraph(...graphNodes);
 
   return (
     <div className="flex min-h-full flex-col">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
       />
       <Navbar />
       <main
         id="main-content"
-        className="flex-1 pb-24 outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base md:pb-0"
+        className="flex-1 pb-28 outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base xl:pb-0"
         tabIndex={-1}
       >
         <Hero />

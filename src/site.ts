@@ -22,15 +22,16 @@ export function getSocialLinks(): string[] {
   );
 }
 
-/** Footer / nav — falls back to generic roots if env not set. */
-export function getLinkedinUrl(): string {
+/** LinkedIn profile URL, or `null` when unset (hide the link). */
+export function getLinkedinUrl(): string | null {
   const u = process.env.NEXT_PUBLIC_LINKEDIN_URL?.trim();
-  return u && /^https?:\/\//i.test(u) ? u : "https://www.linkedin.com";
+  return u && /^https?:\/\//i.test(u) ? u : null;
 }
 
-export function getGithubUrl(): string {
+/** GitHub profile URL, or `null` when unset (hide the link). */
+export function getGithubUrl(): string | null {
   const u = process.env.NEXT_PUBLIC_GITHUB_URL?.trim();
-  return u && /^https?:\/\//i.test(u) ? u : "https://github.com";
+  return u && /^https?:\/\//i.test(u) ? u : null;
 }
 
 /**
@@ -131,7 +132,7 @@ export function getBlogArticleLanguageAlternates(
   const en = getBlogArticleUrl(slug, "en");
   const fr = getBlogArticleUrl(slug, "fr");
   if (!en || !fr) return null;
-  return { en, fr };
+  return { en, fr, "x-default": en };
 }
 
 /** hreflang map for the blog home, or `null` when blog URL is not configured. */
@@ -142,5 +143,5 @@ export function getBlogIndexLanguageAlternates(): Record<
   const en = getBlogIndexUrl("en");
   const fr = getBlogIndexUrl("fr");
   if (!en || !fr) return null;
-  return { en, fr };
+  return { en, fr, "x-default": en };
 }

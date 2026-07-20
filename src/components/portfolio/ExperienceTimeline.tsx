@@ -57,8 +57,8 @@ function CompanyLogo({ logo, company, featured = false }: CompanyLogoProps) {
     <div
       className={`relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border shadow-sm transition duration-300 ${
         featured
-          ? "h-[4.5rem] w-[4.5rem] border-blue-500/35 bg-[var(--bg-base)]/80 shadow-blue-500/10 sm:h-20 sm:w-20"
-          : "h-16 w-16 border-[var(--border-subtle)] bg-[var(--bg-elevated)]/60 group-hover:border-[var(--border-hover)] group-hover:bg-[var(--bg-elevated)]/80 sm:h-[4.5rem] sm:w-[4.5rem]"
+          ? "h-14 w-14 border-blue-500/35 bg-[var(--bg-base)]/80 shadow-blue-500/10 sm:h-20 sm:w-20"
+          : "h-14 w-14 border-[var(--border-subtle)] bg-[var(--bg-elevated)]/60 group-hover:border-[var(--border-hover)] group-hover:bg-[var(--bg-elevated)]/80 sm:h-[4.5rem] sm:w-[4.5rem]"
       }`}
     >
       {featured ? (
@@ -126,7 +126,7 @@ function ExperienceCard({
   return (
     <li className={`relative ${isLast ? "" : "pb-10 sm:pb-12"}`}>
       <Reveal delay={revealDelay(index)}>
-        <div className="group relative flex gap-4 min-[480px]:gap-5 sm:gap-8">
+        <div className="group relative flex gap-3 min-[480px]:gap-5 sm:gap-8">
           <div className="relative z-10 flex shrink-0 flex-col items-center">
             <CompanyLogo
               logo={item.logo}
@@ -142,7 +142,7 @@ function ExperienceCard({
           </div>
 
           <article
-            className={`relative min-w-0 flex-1 overflow-hidden rounded-2xl border p-5 transition duration-300 sm:p-6 md:p-8 ${
+            className={`relative min-w-0 flex-1 overflow-hidden rounded-2xl border p-4 transition duration-300 sm:p-6 md:p-8 ${
               isCurrent
                 ? "border-blue-500/25 bg-gradient-to-br from-blue-500/[0.07] via-[var(--bg-elevated)]/25 to-[var(--bg-elevated)]/10 shadow-[0_0_0_1px_rgba(59,130,246,0.06)]"
                 : "border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 hover:border-[var(--border-hover)] hover:bg-[var(--bg-elevated)]/35 hover:shadow-lg hover:shadow-[var(--shadow-card)]"
@@ -156,7 +156,7 @@ function ExperienceCard({
               aria-hidden
             />
 
-            <header className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
+            <header className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
               <div className="min-w-0 flex-1">
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="font-mono text-[10px] font-semibold tracking-[0.14em] text-[var(--text-muted)]">
@@ -175,7 +175,7 @@ function ExperienceCard({
 
                 <h3
                   id={titleId}
-                  className="mt-2 text-lg font-semibold leading-snug tracking-tight text-[var(--text-primary)] sm:text-xl"
+                  className="mt-2 text-base font-semibold leading-snug tracking-tight text-[var(--text-primary)] sm:text-lg md:text-xl"
                 >
                   {item.role}
                 </h3>
@@ -197,18 +197,20 @@ function ExperienceCard({
                 ) : null}
               </div>
 
-              <div className="flex shrink-0 flex-col gap-1.5 sm:items-end">
-                <p className="inline-flex w-fit items-center rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-base)]/50 px-3 py-1.5 font-mono text-xs tabular-nums text-[var(--text-primary)]">
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 sm:flex-col sm:items-end sm:gap-1.5">
+                <p className="inline-flex shrink-0 items-center rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-base)]/50 px-2.5 py-1 font-mono text-[10px] tabular-nums text-[var(--text-primary)] sm:px-3 sm:py-1.5 sm:text-xs">
                   {item.period}
                 </p>
-                <p className="text-xs leading-snug text-[var(--text-muted)] sm:text-right">
-                  {item.location}
-                </p>
+                {item.location?.trim() ? (
+                  <p className="text-[11px] leading-snug text-[var(--text-muted)] sm:text-right sm:text-xs">
+                    {item.location}
+                  </p>
+                ) : null}
               </div>
             </header>
 
             {highlights.length > 0 ? (
-              <ul className="mt-6 flex flex-col gap-3.5 border-t border-[var(--border-subtle)]/80 pt-6 text-sm leading-relaxed text-[var(--text-secondary)]">
+              <ul className="mt-5 flex flex-col gap-3 border-t border-[var(--border-subtle)]/80 pt-5 text-sm leading-relaxed text-[var(--text-secondary)] sm:mt-6 sm:gap-3.5 sm:pt-6">
                 {highlights.map((text, bi) => (
                   <li key={`${cardId}-h-${bi}`} className="flex gap-3">
                     <span
@@ -234,7 +236,7 @@ function ExperienceCard({
             ) : null}
 
             {stack.length > 0 ? (
-              <footer className="mt-6 border-t border-[var(--border-subtle)]/80 pt-6">
+              <footer className="mt-5 border-t border-[var(--border-subtle)]/80 pt-5 sm:mt-6 sm:pt-6">
                 <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--text-muted)]">
                   {stackLabel}
                 </p>
@@ -293,7 +295,7 @@ export function ExperienceTimeline({
     <>
       <ol className="relative mx-auto max-w-4xl list-none p-0">
         <div
-          className="absolute left-7 top-10 bottom-10 hidden w-px bg-gradient-to-b from-blue-500/50 via-[var(--border-subtle)] to-transparent min-[480px]:left-8 sm:left-9 sm:block"
+          className="absolute left-7 top-10 bottom-10 hidden w-px bg-gradient-to-b from-blue-500/50 via-[var(--border-subtle)] to-transparent min-[480px]:block sm:left-9"
           aria-hidden
         />
 
@@ -316,7 +318,7 @@ export function ExperienceTimeline({
             <button
               type="button"
               onClick={() => setExpanded(true)}
-              className="inline-flex items-center gap-2 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/40 px-6 py-3 text-sm font-semibold text-[var(--text-secondary)] transition hover:border-[var(--border-hover)] hover:bg-[var(--bg-elevated)]/60 hover:text-[var(--text-primary)]"
+              className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/40 px-6 py-3 text-sm font-semibold text-[var(--text-secondary)] transition hover:border-[var(--border-hover)] hover:bg-[var(--bg-elevated)]/60 hover:text-[var(--text-primary)] sm:w-auto"
             >
               {showMoreLabel}
               <span aria-hidden>↓</span>
@@ -331,7 +333,7 @@ export function ExperienceTimeline({
             <button
               type="button"
               onClick={() => setExpanded(false)}
-              className="text-sm font-semibold text-[var(--text-muted)] transition hover:text-[var(--text-primary)]"
+              className="inline-flex min-h-11 items-center justify-center px-2 text-sm font-semibold text-[var(--text-muted)] transition hover:text-[var(--text-primary)]"
             >
               {showLessLabel}
             </button>

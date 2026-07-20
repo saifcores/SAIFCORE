@@ -93,7 +93,7 @@ export function ThemeToggle() {
             aria-label={labels[mode]}
             title={labels[mode]}
             onClick={() => setPreference(mode)}
-            className={`inline-flex h-8 w-8 items-center justify-center rounded-lg transition ${
+            className={`inline-flex h-9 w-9 items-center justify-center rounded-lg transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40 sm:h-8 sm:w-8 ${
               active
                 ? "bg-[var(--bg-elevated)] text-[var(--text-primary)] shadow-[var(--shadow-card)] ring-1 ring-[var(--border-subtle)]"
                 : "text-[var(--text-muted)] hover:bg-[var(--bg-elevated)]/60 hover:text-[var(--text-primary)]"

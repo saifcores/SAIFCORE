@@ -26,23 +26,23 @@ export async function CertificationsTeaser() {
   return (
     <section
       id="certifications"
-      className="border-b border-[var(--border-subtle)] px-4 py-16 sm:py-20 lg:py-24 sm:px-6 lg:px-8"
+      className="border-b border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24"
     >
       <div className="mx-auto max-w-[1280px]">
         <MotionReveal>
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
+          <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between">
+            <div className="min-w-0 flex-1">
+              <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)] sm:mb-4">
                 {t("title")}
               </p>
-              <h2 className="max-w-2xl text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
+              <h2 className="max-w-2xl text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl">
                 {t("teaserHeading")}
               </h2>
             </div>
             {hasObtainedCertifications() ? (
               <Link
                 href="/certifications"
-                className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-accent transition hover:text-[var(--accent-blue-light)]"
+                className="inline-flex w-full shrink-0 items-center justify-center gap-1.5 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 px-4 py-3 text-sm font-semibold text-accent transition hover:border-[var(--border-hover)] hover:text-[var(--accent-blue-light)] sm:w-auto sm:border-transparent sm:bg-transparent sm:px-0 sm:py-0"
               >
                 {t("viewAll")}
                 <span aria-hidden>→</span>
@@ -51,7 +51,7 @@ export async function CertificationsTeaser() {
           </div>
         </MotionReveal>
 
-        <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-8 grid grid-cols-1 gap-3 xs:grid-cols-2 sm:mt-10 lg:grid-cols-4">
           {teaserItems.map((cert, i) => {
             const copy = messages.certifications.items[cert.id];
             return (

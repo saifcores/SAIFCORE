@@ -10,10 +10,12 @@ import {
 } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Analytics } from "@vercel/analytics/react";
+import { BackToTop } from "@/components/portfolio/BackToTop";
 import { StickyActionBar } from "@/components/portfolio/StickyActionBar";
 import { ThemeProvider } from "@/components/portfolio/ThemeProvider";
 import { routing } from "@/i18n/routing";
-import { getSiteUrl } from "@/site";
+import { buildWebSiteJsonLd } from "@/seo";
+import { getBlogIndexUrl, getSiteUrl } from "@/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -68,6 +70,7 @@ export async function generateMetadata({
       languages: {
         en: routing.defaultLocale === "en" ? "/" : "/en",
         fr: "/fr",
+        "x-default": routing.defaultLocale === "en" ? "/" : "/en",
       },
     },
     openGraph: {
@@ -76,6 +79,7 @@ export async function generateMetadata({
       url: canonicalUrl,
       siteName: "SAIFCORE",
       locale: locale === "fr" ? "fr_FR" : "en_US",
+      alternateLocale: locale === "fr" ? ["en_US"] : ["fr_FR"],
       type: "website",
     },
     twitter: {
@@ -83,6 +87,14 @@ export async function generateMetadata({
       title: t("ogTitle"),
       description: t("twitterDescription"),
     },
+    robots: {
+      index: true,
+      follow: true,
+    },
+    keywords: t("keywords")
+      .split(",")
+      .map((k) => k.trim())
+      .filter(Boolean),
   };
 }
 
@@ -102,6 +114,15 @@ export default async function LocaleLayout({
 
   const messages = await getMessages();
   const tCommon = await getTranslations("common");
+  const tMeta = await getTranslations("meta");
+  const contentLoc = locale === "fr" ? "fr" : "en";
+  const blogIndexUrl = getBlogIndexUrl(contentLoc);
+
+  const websiteJsonLd = buildWebSiteJsonLd(locale, {
+    name: "SAIFCORE",
+    description: tMeta("description"),
+    blogUrl: blogIndexUrl,
+  });
 
   return (
     <html
@@ -124,15 +145,20 @@ export default async function LocaleLayout({
             __html: `(function(){try{var p=localStorage.getItem("theme");if(p!=="light"&&p!=="dark"&&p!=="system")p="system";var r=p;if(p==="system")r=matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.dataset.theme=r;document.documentElement.dataset.themePreference=p;}catch(e){}})();`,
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider>
             <a
               href="#main-content"
-              className="fixed left-4 top-4 z-100 -translate-y-16 rounded-lg bg-[var(--accent-blue)] px-4 py-2 text-sm font-semibold text-white opacity-0 transition focus:translate-y-0 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-[var(--focus-ring)]"
+              className="fixed left-4 top-[max(1rem,env(safe-area-inset-top))] z-100 -translate-y-16 rounded-lg bg-[var(--accent-blue)] px-4 py-2.5 text-sm font-semibold text-white opacity-0 transition focus:translate-y-0 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-[var(--focus-ring)]"
             >
               {tCommon("skipToContent")}
             </a>
             {children}
+            <BackToTop />
             <StickyActionBar />
           </ThemeProvider>
         </NextIntlClientProvider>

@@ -13,6 +13,43 @@ import {
   isLocalResume,
 } from "@/server/resume";
 
+type FooterLink = {
+  href: string;
+  label: string;
+  external?: boolean;
+};
+
+function FooterNavLink({
+  link,
+  opensInNewTab,
+}: {
+  link: FooterLink;
+  opensInNewTab: string;
+}) {
+  const className =
+    "inline-flex min-h-10 items-center text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)] sm:min-h-11";
+
+  if (link.external) {
+    return (
+      <a
+        href={link.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`${link.label} (${opensInNewTab})`}
+        className={className}
+      >
+        {link.label}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={link.href} className={className}>
+      {link.label}
+    </Link>
+  );
+}
+
 export async function Footer() {
   const t = await getTranslations("footer");
   const tCommon = await getTranslations("common");
@@ -23,45 +60,48 @@ export async function Footer() {
   const resumeDownload = getResumeDownloadFilename(locale);
   const profileName = getProfileDisplayName();
   const blogIndexUrl = getBlogIndexUrl(loc);
+  const linkedinUrl = getLinkedinUrl();
+  const githubUrl = getGithubUrl();
   const opensInNewTab = tCommon("opensInNewTab");
   const ownerLabel =
     profileName !== "SAIFCORE"
       ? t("rightsOwner", { name: profileName })
       : "SAIFCORE";
 
-  const pageLinks = [
-    { href: "/about" as const, label: t("about"), external: false },
+  const pageLinks: FooterLink[] = [
+    { href: "/experience", label: t("experience") },
+    { href: "/systems", label: t("systems") },
+    { href: "/about", label: t("about") },
     ...(hasObtainedCertifications()
-      ? [
-          {
-            href: "/certifications" as const,
-            label: t("credentials"),
-            external: false,
-          },
-        ]
+      ? [{ href: "/certifications", label: t("credentials") }]
       : []),
-    { href: "/systems" as const, label: t("systems"), external: false },
-    { href: "/experience" as const, label: t("experience"), external: false },
-    {
-      href: blogIndexUrl ?? "/articles",
-      label: t("articles"),
-      external: !!blogIndexUrl,
-    },
+    ...(blogIndexUrl
+      ? [{ href: blogIndexUrl, label: t("blog"), external: true }]
+      : [{ href: "/articles", label: t("articles") }]),
+    { href: "/#contact", label: t("contact") },
+  ];
+
+  const homeSectionLinks: FooterLink[] = [
+    { href: "/#work", label: t("work") },
+    { href: "/#services", label: t("services") },
+    { href: "/#expertise", label: t("expertise") },
+    { href: "/#process", label: t("process") },
+    { href: "/#insights", label: t("insights") },
   ];
 
   return (
-    <footer className="border-t border-[var(--border-subtle)] px-4 py-12 sm:px-6 lg:px-8">
+    <footer className="border-t border-[var(--border-subtle)] px-4 py-10 pb-[max(2.5rem,env(safe-area-inset-bottom))] sm:px-6 sm:py-12 lg:px-8">
       <div className="mx-auto max-w-[1280px]">
-        <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+        <div className="flex flex-col gap-8 sm:gap-10 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
             <p className="text-sm font-bold tracking-tight">
               <span className="text-[var(--text-primary)]">SAIF</span>
               <span className="text-gradient">CORE</span>
             </p>
-            <p className="mt-3 text-sm leading-relaxed text-[var(--text-muted)]">
+            <p className="mt-3 text-pretty text-sm leading-relaxed text-[var(--text-muted)]">
               {t("tagline")}
             </p>
-            <p className="mt-4 text-xs text-[var(--text-muted)]">
+            <p className="mt-4 text-pretty text-xs leading-relaxed text-[var(--text-muted)]">
               {t("rights", { year, owner: ownerLabel })}{" "}
               <span aria-hidden="true">·</span>{" "}
               <Link
@@ -73,77 +113,72 @@ export async function Footer() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-8 sm:flex sm:flex-wrap sm:gap-12 md:gap-16">
-            <nav aria-label={t("pagesLabel")}>
+          <div className="grid grid-cols-2 gap-6 sm:gap-8 md:flex md:flex-wrap md:gap-12 lg:gap-16">
+            <nav aria-label={t("pagesLabel")} className="min-w-0">
               <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
                 {t("pagesLabel")}
               </p>
-              <ul className="mt-4 space-y-2.5">
+              <ul className="mt-3 space-y-1 sm:mt-4 sm:space-y-2">
                 {pageLinks.map((link) => (
-                  <li key={link.href}>
-                    {link.external ? (
-                      <a
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${link.label} (${opensInNewTab})`}
-                        className="text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
-                      >
-                        {link.label}
-                      </a>
-                    ) : (
-                      <Link
-                        href={link.href}
-                        className="text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
-                      >
-                        {link.label}
-                      </Link>
-                    )}
+                  <li key={`${link.href}-${link.label}`}>
+                    <FooterNavLink link={link} opensInNewTab={opensInNewTab} />
                   </li>
                 ))}
-                <li>
-                  <Link
-                    href="/#contact"
-                    className="text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
-                  >
-                    {t("contact")}
-                  </Link>
-                </li>
               </ul>
             </nav>
 
-            <div>
+            <nav
+              aria-label={t("homeSectionsLabel")}
+              className="col-span-2 min-w-0 md:col-span-1"
+            >
+              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
+                {t("homeSectionsLabel")}
+              </p>
+              <ul className="mt-3 space-y-1 sm:mt-4 sm:space-y-2">
+                {homeSectionLinks.map((link) => (
+                  <li key={link.href}>
+                    <FooterNavLink link={link} opensInNewTab={opensInNewTab} />
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            <div className="min-w-0">
               <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
                 {t("connectLabel")}
               </p>
-              <ul className="mt-4 space-y-2.5">
-                <li>
-                  <a
-                    href={getLinkedinUrl()}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${t("linkedin")} (${opensInNewTab})`}
-                    className="text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
-                  >
-                    {t("linkedin")}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={getGithubUrl()}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${t("github")} (${opensInNewTab})`}
-                    className="text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
-                  >
-                    {t("github")}
-                  </a>
-                </li>
+              <ul className="mt-3 space-y-1 sm:mt-4 sm:space-y-2">
+                {linkedinUrl ? (
+                  <li>
+                    <a
+                      href={linkedinUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${t("linkedin")} (${opensInNewTab})`}
+                      className="inline-flex min-h-10 items-center text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)] sm:min-h-11"
+                    >
+                      {t("linkedin")}
+                    </a>
+                  </li>
+                ) : null}
+                {githubUrl ? (
+                  <li>
+                    <a
+                      href={githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${t("github")} (${opensInNewTab})`}
+                      className="inline-flex min-h-10 items-center text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)] sm:min-h-11"
+                    >
+                      {t("github")}
+                    </a>
+                  </li>
+                ) : null}
                 {resumeUrl ? (
                   <li>
                     <a
                       href={resumeUrl}
-                      className="text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
+                      className="inline-flex min-h-10 items-center text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)] sm:min-h-11"
                       {...(isLocalResume(resumeUrl)
                         ? { download: resumeDownload }
                         : {

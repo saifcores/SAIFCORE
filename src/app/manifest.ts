@@ -1,20 +1,27 @@
 import type { MetadataRoute } from "next";
+import { getTranslations } from "next-intl/server";
+import { routing } from "@/i18n/routing";
 
-export default function manifest(): MetadataRoute.Manifest {
+export default async function manifest(): Promise<MetadataRoute.Manifest> {
+  const t = await getTranslations({
+    locale: routing.defaultLocale,
+    namespace: "meta",
+  });
+
   return {
-    name: "SAIFCORE — Freelance Fintech & Backend Engineer",
+    name: t("manifestName"),
     short_name: "SAIFCORE",
-    description:
-      "Payment infrastructure, enterprise backends, and API architecture — freelance & contract engagements worldwide.",
+    description: t("manifestDescription"),
     start_url: "/",
     display: "standalone",
     background_color: "#0A0A0A",
     theme_color: "#0A0A0A",
     orientation: "portrait-primary",
+    lang: routing.defaultLocale,
     icons: [
       {
         src: "/icon.png",
-        sizes: "512x512",
+        sizes: "192x192",
         type: "image/png",
         purpose: "any",
       },

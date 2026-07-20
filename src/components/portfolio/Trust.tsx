@@ -9,24 +9,24 @@ export async function Trust() {
   const industries = messages.trust.industries;
 
   return (
-    <section className="border-b border-[var(--border-subtle)] px-4 py-16 sm:px-6 lg:px-8">
+    <section className="border-b border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-[1280px]">
         {/* Section heading */}
         <Reveal>
-          <p className="mb-8 text-center text-xs font-medium uppercase tracking-[0.2em] text-[var(--text-muted)]">
+          <p className="mb-6 text-pretty text-center text-xs font-medium uppercase tracking-[0.2em] text-[var(--text-muted)] sm:mb-8">
             {t("heading")}
           </p>
         </Reveal>
 
         {/* Industry badges */}
         <Reveal delay={80}>
-          <div className="mb-12 flex flex-wrap items-center justify-center gap-3">
+          <div className="mb-10 flex flex-wrap items-center justify-center gap-2 sm:mb-12 sm:gap-3">
             {industries.map((industry, i) => {
               const isHighlight = i === 0 || i === 1;
               return (
                 <span
                   key={industry}
-                  className={`rounded-full border px-3 py-1.5 text-xs font-medium transition sm:px-4 sm:py-2 sm:text-sm ${
+                  className={`rounded-full border px-2.5 py-1 text-[11px] font-medium transition sm:px-4 sm:py-2 sm:text-sm ${
                     isHighlight
                       ? "border-blue-500/30 bg-gradient-to-r from-blue-500/12 to-emerald-500/8 text-[var(--text-primary)]"
                       : "border-[var(--border-subtle)] text-[var(--text-secondary)] hover:border-[var(--border-hover)] hover:text-[var(--text-primary)]"

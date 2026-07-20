@@ -10,11 +10,11 @@ type Props = {
 
 export function TrustBrandGrid({ brands }: Props) {
   return (
-    <ul className="trust-grid grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-5">
+    <ul className="trust-grid grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-5">
       {brands.map(({ name, logo }, i) => (
         <li key={name}>
           <Reveal delay={i * 80}>
-            <figure className="group relative flex h-full flex-col items-center gap-3 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 px-3 py-5 text-center transition duration-300 hover:-translate-y-1 hover:border-[var(--border-hover)] hover:bg-[var(--bg-elevated)]/50">
+            <figure className="group relative flex h-full flex-col items-center gap-2 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 px-2 py-4 text-center transition duration-300 hover:-translate-y-1 hover:border-[var(--border-hover)] hover:bg-[var(--bg-elevated)]/50 sm:gap-3 sm:px-3 sm:py-5">
               <div className="trust-logo-drift relative flex min-h-[44px] w-full max-w-[180px] items-center justify-center sm:min-h-[52px]">
                 <div className="relative flex h-10 w-full items-center justify-center overflow-hidden rounded-xl sm:h-12">
                   <TrustLogo

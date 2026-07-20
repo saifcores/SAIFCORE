@@ -9,18 +9,18 @@ const OG_COPY: Record<
   { alt: string; badge: string; line1: string; line2: string; line3: string }
 > = {
   en: {
-    alt: "SAIFCORE — Freelance Fintech Engineer | Payment & Backend Systems",
-    badge: "Freelance Fintech Engineer · Remote Worldwide",
-    line1: "Scalable payment",
-    line2: "infrastructure &",
-    line3: "enterprise backends",
+    alt: "SAIFCORE — Backend Software Engineer | Enterprise Platforms · Payments",
+    badge: "Backend Software Engineer · Remote Worldwide",
+    line1: "Enterprise platforms",
+    line2: "& payment",
+    line3: "infrastructure",
   },
   fr: {
-    alt: "SAIFCORE — Ingénieur Fintech Freelance | Paiements & Backend",
-    badge: "Ingénieur Fintech Freelance · Remote International",
-    line1: "Infrastructure de",
-    line2: "paiement scalable &",
-    line3: "backends enterprise",
+    alt: "SAIFCORE — Ingénieur Logiciel Backend | Plateformes Enterprise · Paiements",
+    badge: "Ingénieur Logiciel Backend · Remote International",
+    line1: "Plateformes enterprise",
+    line2: "& infrastructure",
+    line3: "de paiement",
   },
 };
 
@@ -173,7 +173,7 @@ export function createOgImageResponse(locale: OgLocale = "en") {
           letterSpacing: "0.04em",
         }}
       >
-        saifcore.com
+        saifcore.tech
       </div>
 
       <div

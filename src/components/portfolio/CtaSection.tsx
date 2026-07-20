@@ -17,11 +17,11 @@ export async function CtaSection() {
   return (
     <section
       id="contact"
-      className="px-4 py-16 sm:py-20 lg:py-24 sm:px-6 lg:px-8"
+      className="px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24"
     >
       <div className="mx-auto max-w-[1280px]">
         <MotionReveal>
-          <div className="relative overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 px-4 py-10 sm:px-10 sm:py-16 lg:px-14">
+          <div className="relative overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 px-4 py-8 sm:px-8 sm:py-12 lg:px-14 lg:py-16">
             <div className="bg-grid pointer-events-none absolute inset-0 opacity-60" />
             <div
               className="pointer-events-none absolute -left-24 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-blue-600/20 blur-3xl"
@@ -37,15 +37,15 @@ export async function CtaSection() {
                 <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-[var(--text-muted)]">
                   {t("label")}
                 </p>
-                <h2 className="text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl lg:text-[2.5rem]">
+                <h2 className="text-pretty text-xl font-bold tracking-tight text-[var(--text-primary)] sm:text-2xl md:text-3xl lg:text-[2.5rem]">
                   {t("title")}
                 </h2>
-                <p className="mx-auto mt-4 max-w-xl text-[var(--text-secondary)]">
+                <p className="mx-auto mt-3 max-w-xl text-pretty text-sm text-[var(--text-secondary)] sm:mt-4 sm:text-base">
                   {t("subtitle")}
                 </p>
               </div>
 
-              <div className="mt-12">
+              <div className="mt-8 sm:mt-12">
                 <ContactForm
                   subject={t("emailSubject")}
                   formName={t("formName")}
@@ -55,8 +55,10 @@ export async function CtaSection() {
                   formMessagePlaceholder={t("formMessagePlaceholder")}
                   formSubmit={t("formSubmit")}
                   formNote={t("formNote")}
+                  formUnavailable={t("formUnavailable")}
                   bookCall={t("bookCall")}
                   calendlyHint={t("calendlyHint")}
+                  calendlyFallbackHint={t("calendlyFallbackHint")}
                   socialTitle={t("socialTitle")}
                   linkedinLabel={tFooter("linkedin")}
                   githubLabel={tFooter("github")}
@@ -65,10 +67,10 @@ export async function CtaSection() {
               </div>
 
               {resumeUrl ? (
-                <p className="mt-8 text-center">
+                <p className="mt-8 text-center sm:mt-10">
                   <a
                     href={resumeUrl}
-                    className="text-sm font-semibold text-[var(--text-muted)] underline decoration-white/15 underline-offset-4 transition hover:text-[var(--text-primary)]"
+                    className="inline-flex min-h-11 items-center justify-center text-sm font-semibold text-[var(--text-muted)] underline decoration-white/15 underline-offset-4 transition hover:text-[var(--text-primary)]"
                     {...(isLocalResume(resumeUrl)
                       ? { download: resumeDownload }
                       : { target: "_blank", rel: "noopener noreferrer" })}

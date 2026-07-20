@@ -7,18 +7,18 @@ import {
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CertificationsSection } from "@/components/portfolio/CertificationsSection";
+import { ContactBridgeStrip } from "@/components/portfolio/ContactBridgeStrip";
 import { Footer } from "@/components/portfolio/Footer";
 import { Navbar } from "@/components/portfolio/Navbar";
-import { Reveal } from "@/components/portfolio/Reveal";
+import { PageHeader } from "@/components/portfolio/PageHeader";
+import { ProfileExploreLinks } from "@/components/portfolio/ProfileExploreLinks";
 import {
   certificationIds,
   getCertificationMeta,
   hasObtainedCertifications,
 } from "@/data/certifications";
-import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { buildBreadcrumbJsonLd, buildPageMetadata } from "@/seo";
-import { getProfileDisplayName } from "@/site";
+import { buildPageMetadata, buildProfilePageGraph } from "@/seo";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -60,8 +60,8 @@ export default async function CertificationsPage({ params }: Props) {
 
   const t = await getTranslations("certificationsPage");
   const tCommon = await getTranslations("common");
+  const tMeta = await getTranslations("meta");
   const messages = await getMessages();
-  const displayName = getProfileDisplayName();
 
   const credentials = certificationIds.map((id) => {
     const copy = messages.certifications.items[id];
@@ -69,72 +69,66 @@ export default async function CertificationsPage({ params }: Props) {
     return { ...copy, ...meta, id };
   });
 
-  const jsonLd: Record<string, unknown>[] = [
-    buildBreadcrumbJsonLd(locale, [
+  const pageJsonLd = buildProfilePageGraph({
+    locale,
+    path: "/certifications",
+    pageName: t("metaTitle"),
+    pageDescription: t("metaDescription"),
+    jobTitle: tMeta("jsonLdJobTitle"),
+    personDescription: tMeta("jsonLdDescription"),
+    breadcrumb: [
       { name: tCommon("home"), path: "/" },
       { name: t("title"), path: "/certifications" },
-    ]),
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfilePage",
-      name: t("metaTitle"),
-      description: t("metaDescription"),
-      mainEntity: {
-        "@type": "Person",
-        name: displayName,
-        hasCredential: credentials.map((item) => ({
-          "@type": "EducationalOccupationalCredential",
-          name: item.name,
-          description: item.description,
-          credentialCategory:
-            item.group === "formal" ? "certification" : "expertise",
-          recognizedBy: {
-            "@type": "Organization",
-            name: item.issuer,
-          },
-          ...(item.verifyUrl && item.status === "obtained"
-            ? { url: item.verifyUrl }
-            : {}),
-        })),
-      },
+    ],
+    personExtras: {
+      hasCredential: credentials.map((item) => ({
+        "@type": "EducationalOccupationalCredential",
+        name: item.name,
+        description: item.description,
+        credentialCategory:
+          item.group === "formal" ? "certification" : "expertise",
+        recognizedBy: {
+          "@type": "Organization",
+          name: item.issuer,
+        },
+        ...(item.verifyUrl && item.status === "obtained"
+          ? { url: item.verifyUrl }
+          : {}),
+      })),
     },
-  ];
+  });
 
   return (
     <div className="flex min-h-full flex-col">
-      {jsonLd.map((data, index) => (
-        <script
-          key={index}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
-        />
-      ))}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
+      />
       <Navbar />
       <main
         id="main-content"
-        className="flex-1 pb-24 outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base md:pb-0"
+        className="flex-1 pb-28 outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base xl:pb-0"
         tabIndex={-1}
       >
-        <section className="border-b border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-          <div className="mx-auto max-w-[1280px]">
-            <Reveal>
-              <Link
-                href="/"
-                className="text-sm font-medium text-[var(--text-muted)] transition hover:text-[var(--text-primary)]"
-              >
-                ← {t("backToHome")}
-              </Link>
-              <h1 className="mt-8 text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
-                {t("title")}
-              </h1>
-              <p className="mt-4 max-w-2xl text-base text-[var(--text-secondary)] sm:text-lg">
-                {t("subtitle")}
-              </p>
-            </Reveal>
-          </div>
-        </section>
+        <PageHeader
+          title={t("title")}
+          subtitle={t("subtitle")}
+          backLabel={t("backToHome")}
+          showFacts
+        />
 
-        <CertificationsSection compact />
+        <div className="px-4 pb-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-[1280px]">
+            <CertificationsSection compact />
+          </div>
+        </div>
+
+        <div className="px-4 pb-16 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-[1280px] space-y-8">
+            <ProfileExploreLinks excludePath="/certifications" />
+            <ContactBridgeStrip ns="certificationsPage" />
+          </div>
+        </div>
       </main>
       <Footer />
     </div>

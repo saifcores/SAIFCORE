@@ -499,6 +499,28 @@ export function getArticleBySlug(slug: string): Article | undefined {
   return articles.find((a) => a.slug === slug);
 }
 
+export function getLatestArticles(limit?: number): Article[] {
+  const sorted = [...articles].sort((a, b) =>
+    b.publishedAt.localeCompare(a.publishedAt),
+  );
+  return limit ? sorted.slice(0, limit) : sorted;
+}
+
+/** Same-kind articles first, then newest — excludes the current slug. */
+export function getRelatedArticles(slug: string, limit = 3): Article[] {
+  const current = getArticleBySlug(slug);
+  if (!current) return [];
+
+  const byDate = (a: Article, b: Article) =>
+    b.publishedAt.localeCompare(a.publishedAt);
+
+  const others = articles.filter((a) => a.slug !== slug);
+  const sameKind = others.filter((a) => a.kind === current.kind).sort(byDate);
+  const rest = others.filter((a) => a.kind !== current.kind).sort(byDate);
+
+  return [...sameKind, ...rest].slice(0, limit);
+}
+
 export function getArticleBlocks(article: Article): ContentBlock[] {
   if (article.blocks?.length) return article.blocks;
   if (article.body) return bodyToBlocks(article.body);

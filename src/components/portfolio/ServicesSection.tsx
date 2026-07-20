@@ -44,22 +44,22 @@ export function ServicesSection({
   return (
     <section
       id="services"
-      className="border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)]/10 px-4 py-16 sm:py-20 lg:py-24 sm:px-6 lg:px-8"
+      className="border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)]/10 px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24"
     >
       <div className="mx-auto max-w-[1280px]">
         <MotionReveal>
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
             {title}
           </p>
-          <span className="inline-flex rounded-full border border-blue-500/25 bg-blue-500/10 px-3.5 py-1 text-xs font-medium text-accent">
+          <span className="inline-flex max-w-full rounded-full border border-blue-500/25 bg-blue-500/10 px-3 py-1 text-[11px] font-medium text-accent sm:px-3.5 sm:text-xs">
             {audience}
           </span>
-          <h2 className="mt-4 max-w-2xl text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
+          <h2 className="mt-3 max-w-2xl text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:mt-4 sm:text-3xl md:text-4xl">
             {subtitle}
           </h2>
         </MotionReveal>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
           {items.map((item, i) => {
             const Icon = ICONS[i % ICONS.length];
             return (
@@ -87,7 +87,7 @@ export function ServicesSection({
           <div className="mt-10 flex justify-center">
             <Link
               href="/#contact"
-              className="btn-primary inline-flex items-center gap-2 px-8 py-3 text-sm"
+              className="btn-primary inline-flex min-h-12 w-full items-center justify-center gap-2 px-6 py-3 text-sm sm:w-auto sm:px-8"
             >
               {cta}
               <ArrowRight className="h-4 w-4" aria-hidden />
