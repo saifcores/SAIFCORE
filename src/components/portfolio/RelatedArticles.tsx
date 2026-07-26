@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { getArticleLink } from "@/blog/article-links";
+import { articleToCardData } from "@/blog/recent-articles";
 import { getRelatedArticles } from "@/data/articles";
 import { Link } from "@/i18n/navigation";
 import { ArticlePostCard } from "./ArticlePostCard";
@@ -46,15 +46,13 @@ export async function RelatedArticles({ slug, locale }: Props) {
 
       <div className="mt-8 grid gap-x-8 gap-y-10 sm:mt-10 sm:grid-cols-2 sm:gap-y-14 lg:grid-cols-3">
         {related.map((article, i) => {
-          const link = getArticleLink(article, locale);
+          const card = articleToCardData(article, locale);
           return (
             <Reveal key={article.slug} delay={i * 60}>
               <ArticlePostCard
-                article={article}
+                article={card}
                 locale={locale}
-                href={link.href}
-                external={link.external}
-                tagLabel={t(`kinds.${article.kind}`)}
+                tagLabel={t(`kinds.${card.kind}`)}
                 authorLabel={t("author")}
                 readMoreLabel={t("readMore")}
                 opensInNewTabLabel={tCommon("opensInNewTab")}

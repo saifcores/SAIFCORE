@@ -1,13 +1,10 @@
 import Image from "next/image";
-import type { Article } from "@/data/articles";
-import { getBlogArticleCover } from "@/blog/article-covers";
+import type { ArticleCardData } from "@/blog/recent-articles";
 import { Link } from "@/i18n/navigation";
 
 type Props = {
-  article: Article;
+  article: ArticleCardData;
   locale: "en" | "fr";
-  href: string;
-  external: boolean;
   tagLabel: string;
   authorLabel: string;
   readMoreLabel: string;
@@ -62,16 +59,13 @@ function CardAnchor({
 export function ArticlePostCard({
   article,
   locale,
-  href,
-  external,
   tagLabel,
   authorLabel,
   readMoreLabel,
   opensInNewTabLabel,
 }: Props) {
   const loc = locale;
-  const coverSrc = getBlogArticleCover(article.slug);
-  const title = article.title[loc];
+  const { href, external, coverImage, title, excerpt, publishedAt } = article;
   const externalTitleLabel = external
     ? `${title} (${opensInNewTabLabel})`
     : undefined;
@@ -88,7 +82,7 @@ export function ArticlePostCard({
 
   return (
     <article className="post-card group flex h-full flex-col">
-      {coverSrc ? (
+      {coverImage ? (
         <CardAnchor
           href={href}
           external={external}
@@ -97,7 +91,7 @@ export function ArticlePostCard({
           ariaHidden
         >
           <Image
-            src={coverSrc}
+            src={coverImage}
             alt=""
             fill
             unoptimized
@@ -109,7 +103,7 @@ export function ArticlePostCard({
 
       <div
         className={
-          coverSrc ? "mt-5 flex flex-1 flex-col" : "flex flex-1 flex-col"
+          coverImage ? "mt-5 flex flex-1 flex-col" : "flex flex-1 flex-col"
         }
       >
         <CardAnchor
@@ -132,7 +126,7 @@ export function ArticlePostCard({
         </h3>
 
         <p className="post-card-excerpt mt-3 flex-1 text-[15px] leading-relaxed text-[var(--text-secondary)] line-clamp-3">
-          {article.excerpt[loc]}
+          {excerpt}
         </p>
 
         <footer className="post-card-meta mt-5 flex flex-col gap-3 border-t border-[var(--border-subtle)] pt-4 min-[420px]:flex-row min-[420px]:items-center min-[420px]:justify-between min-[420px]:gap-4">
@@ -141,10 +135,10 @@ export function ArticlePostCard({
               {authorLabel}
             </p>
             <time
-              dateTime={article.publishedAt}
+              dateTime={publishedAt}
               className="text-xs text-[var(--text-muted)]"
             >
-              {formatDate(article.publishedAt)}
+              {formatDate(publishedAt)}
             </time>
           </div>
           <CardAnchor

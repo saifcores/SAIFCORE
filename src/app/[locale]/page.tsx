@@ -21,7 +21,7 @@ import { Testimonials } from "@/components/portfolio/Testimonials";
 import { TrustedExpertise } from "@/components/portfolio/TrustedExpertise";
 import { Trust } from "@/components/portfolio/Trust";
 import { WorkProcess } from "@/components/portfolio/WorkProcess";
-import { getLatestArticles } from "@/data/articles";
+import { fetchRecentArticles } from "@/blog/recent-articles";
 import {
   buildArticleItemListJsonLd,
   buildExternalItemListJsonLd,
@@ -31,8 +31,6 @@ import {
   getLocalePageUrl,
 } from "@/seo";
 import {
-  getBlogArticleUrl,
-  getBlogIndexUrl,
   getContactEmail,
   getProfileDisplayName,
   getProfileLocation,
@@ -160,20 +158,21 @@ export default async function Home({ params }: Props) {
     mainEntity: { "@id": personId },
   };
 
-  const blogIndexUrl = getBlogIndexUrl(contentLoc);
-  const latestArticles = getLatestArticles(3);
-  const insightsItemListJsonLd = blogIndexUrl
+  const latestArticles = await fetchRecentArticles(contentLoc, 3);
+  const insightsItemListJsonLd = latestArticles.some(
+    (article) => article.external,
+  )
     ? buildExternalItemListJsonLd({
         name: tInsights("title"),
-        items: latestArticles.flatMap((article) => {
-          const url = getBlogArticleUrl(article.slug, contentLoc);
-          return url ? [{ name: article.title[contentLoc], url }] : [];
-        }),
+        items: latestArticles.map((article) => ({
+          name: article.title,
+          url: article.href,
+        })),
       })
     : buildArticleItemListJsonLd(locale, {
         name: tInsights("title"),
         items: latestArticles.map((article) => ({
-          name: article.title[contentLoc],
+          name: article.title,
           slug: article.slug,
         })),
       });

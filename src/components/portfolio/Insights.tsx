@@ -1,6 +1,5 @@
 import { getLocale, getTranslations } from "next-intl/server";
-import { getLatestArticles } from "@/data/articles";
-import { getArticleLink } from "@/blog/article-links";
+import { fetchRecentArticles } from "@/blog/recent-articles";
 import { Link } from "@/i18n/navigation";
 import { getBlogIndexUrl } from "@/site";
 import { ArticlePostCard } from "./ArticlePostCard";
@@ -18,7 +17,7 @@ export async function Insights({ teaser = false }: Props) {
   const tCommon = await getTranslations("common");
   const locale = await getLocale();
   const loc = locale === "fr" ? "fr" : "en";
-  const preview = getLatestArticles(3);
+  const preview = await fetchRecentArticles(loc, 3);
   const blogIndexUrl = getBlogIndexUrl(loc);
   const viewAllHref = blogIndexUrl ?? "/articles";
   const viewAllExternal = !!blogIndexUrl;
@@ -103,23 +102,18 @@ export async function Insights({ teaser = false }: Props) {
         ) : null}
 
         <div className="mt-10 grid gap-x-6 gap-y-10 sm:mt-14 sm:grid-cols-2 sm:gap-y-12 lg:grid-cols-3">
-          {preview.map((article, i) => {
-            const link = getArticleLink(article, loc);
-            return (
-              <Reveal key={article.slug} delay={i * 80}>
-                <ArticlePostCard
-                  article={article}
-                  locale={loc}
-                  href={link.href}
-                  external={link.external}
-                  tagLabel={tArticles(`kinds.${article.kind}`)}
-                  authorLabel={tArticles("author")}
-                  readMoreLabel={tArticles("readMore")}
-                  opensInNewTabLabel={opensInNewTab}
-                />
-              </Reveal>
-            );
-          })}
+          {preview.map((article, i) => (
+            <Reveal key={article.slug} delay={i * 80}>
+              <ArticlePostCard
+                article={article}
+                locale={loc}
+                tagLabel={tArticles(`kinds.${article.kind}`)}
+                authorLabel={tArticles("author")}
+                readMoreLabel={tArticles("readMore")}
+                opensInNewTabLabel={opensInNewTab}
+              />
+            </Reveal>
+          ))}
         </div>
 
         {!teaser ? (

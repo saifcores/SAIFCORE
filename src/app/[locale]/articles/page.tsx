@@ -8,8 +8,8 @@ import { Footer } from "@/components/portfolio/Footer";
 import { Navbar } from "@/components/portfolio/Navbar";
 import { PageHeader } from "@/components/portfolio/PageHeader";
 import { Reveal } from "@/components/portfolio/Reveal";
+import { articleToCardData } from "@/blog/recent-articles";
 import { getLatestArticles } from "@/data/articles";
-import { getArticleLink } from "@/blog/article-links";
 import {
   buildCollectionPageJsonLd,
   buildPageMetadata,
@@ -119,15 +119,13 @@ export default async function ArticlesPage({ params }: Props) {
           <div className="mx-auto max-w-[1280px]">
             <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2 sm:gap-y-14 lg:grid-cols-3">
               {getLatestArticles().map((article, i) => {
-                const link = getArticleLink(article, loc);
+                const card = articleToCardData(article, loc);
                 return (
                   <Reveal key={article.slug} delay={i * 60}>
                     <ArticlePostCard
-                      article={article}
+                      article={card}
                       locale={loc}
-                      href={link.href}
-                      external={link.external}
-                      tagLabel={t(`kinds.${article.kind}`)}
+                      tagLabel={t(`kinds.${card.kind}`)}
                       authorLabel={t("author")}
                       readMoreLabel={t("readMore")}
                       opensInNewTabLabel={tCommon("opensInNewTab")}
