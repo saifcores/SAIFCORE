@@ -17,7 +17,7 @@ export async function Insights({ teaser = false }: Props) {
   const tCommon = await getTranslations("common");
   const locale = await getLocale();
   const loc = locale === "fr" ? "fr" : "en";
-  const preview = await fetchRecentArticles(loc, 3);
+  const preview = await fetchRecentArticles(loc, teaser ? 2 : 3);
   const blogIndexUrl = getBlogIndexUrl(loc);
   const viewAllHref = blogIndexUrl ?? "/articles";
   const viewAllExternal = !!blogIndexUrl;
@@ -27,7 +27,9 @@ export async function Insights({ teaser = false }: Props) {
     <section
       id="insights"
       aria-labelledby="insights-heading"
-      className="border-b border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24"
+      className={`border-b border-[var(--border-subtle)] px-4 sm:px-6 lg:px-8 ${
+        teaser ? "py-10 sm:py-12 lg:py-16" : "py-12 sm:py-16 lg:py-24"
+      }`}
     >
       <div className="mx-auto max-w-[1280px]">
         <Reveal>
@@ -74,7 +76,7 @@ export async function Insights({ teaser = false }: Props) {
           </div>
         </Reveal>
 
-        {blogIndexUrl ? (
+        {blogIndexUrl && !teaser ? (
           <Reveal delay={60}>
             <a
               href={blogIndexUrl}
@@ -101,7 +103,11 @@ export async function Insights({ teaser = false }: Props) {
           </Reveal>
         ) : null}
 
-        <div className="mt-10 grid gap-x-6 gap-y-10 sm:mt-14 sm:grid-cols-2 sm:gap-y-12 lg:grid-cols-3">
+        <div
+          className={`mt-8 grid gap-x-6 gap-y-8 sm:mt-10 sm:grid-cols-2 sm:gap-y-10 ${
+            teaser ? "" : "lg:grid-cols-3"
+          }`}
+        >
           {preview.map((article, i) => (
             <Reveal key={article.slug} delay={i * 80}>
               <ArticlePostCard
@@ -141,32 +147,7 @@ export async function Insights({ teaser = false }: Props) {
               )}
             </div>
           </Reveal>
-        ) : (
-          <Reveal delay={240}>
-            <div className="mt-8 flex justify-center sm:mt-10">
-              {viewAllExternal ? (
-                <a
-                  href={viewAllHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${t("viewAll")} (${opensInNewTab})`}
-                  className="inline-flex min-h-12 w-full max-w-sm items-center justify-center gap-2 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 px-6 py-3 text-sm font-semibold text-[var(--text-secondary)] transition hover:border-[var(--border-hover)] hover:text-[var(--text-primary)] sm:w-auto"
-                >
-                  {t("viewAll")}
-                  <span aria-hidden>↗</span>
-                </a>
-              ) : (
-                <Link
-                  href={viewAllHref}
-                  className="inline-flex min-h-12 w-full max-w-sm items-center justify-center gap-2 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 px-6 py-3 text-sm font-semibold text-[var(--text-secondary)] transition hover:border-[var(--border-hover)] hover:text-[var(--text-primary)] sm:w-auto"
-                >
-                  {t("viewAll")}
-                  <span aria-hidden>→</span>
-                </Link>
-              )}
-            </div>
-          </Reveal>
-        )}
+        ) : null}
 
         {!teaser ? (
           <div className="mt-16">

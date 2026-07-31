@@ -21,10 +21,10 @@ export async function Hero() {
         {t("ctaBookCall")}
       </BookCallLink>
       <Link
-        href="/#services"
+        href="/experience"
         className="btn-outline inline-flex min-h-12 w-full items-center justify-center rounded-xl px-4 text-sm font-semibold sm:w-auto sm:px-8"
       >
-        {t("ctaPrimary")}
+        {t("ctaExperience")}
       </Link>
       {resumeUrl ? (
         <a
@@ -38,17 +38,17 @@ export async function Hero() {
         </a>
       ) : (
         <Link
-          href="/#contact"
+          href="/#paths"
           className="btn-outline inline-flex min-h-12 w-full items-center justify-center rounded-xl px-4 text-sm font-semibold sm:w-auto sm:px-8"
         >
-          {t("ctaResume")}
+          {t("ctaPrimary")}
         </Link>
       )}
     </>
   );
 
   return (
-    <section className="relative overflow-hidden border-b border-[var(--border-subtle)] px-4 pb-28 pt-12 sm:px-6 sm:pb-32 sm:pt-20 md:pb-36 md:pt-24 lg:px-8 xl:pb-36">
+    <section className="relative overflow-hidden border-b border-[var(--border-subtle)] px-4 pb-16 pt-12 sm:px-6 sm:pb-20 sm:pt-16 md:pb-24 md:pt-20 lg:px-8 xl:pb-28">
       <div className="bg-grid pointer-events-none absolute inset-0 opacity-100" />
       <div
         className="ambient-glow pointer-events-none absolute -left-1/3 top-0 h-[600px] w-[70%] rounded-full bg-gradient-to-br from-blue-600/20 via-blue-500/8 to-transparent blur-3xl animate-float-glow"

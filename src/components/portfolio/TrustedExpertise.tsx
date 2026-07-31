@@ -49,7 +49,7 @@ export function TrustedExpertise({
   return (
     <section
       id="expertise"
-      className="border-b border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24"
+      className="border-b border-[var(--border-subtle)] px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16"
     >
       <div className="mx-auto max-w-[1280px]">
         <MotionReveal>
@@ -70,23 +70,21 @@ export function TrustedExpertise({
                 <motion.article
                   whileHover={reduce ? undefined : { y: -6 }}
                   transition={{ type: "spring", stiffness: 380, damping: 28 }}
-                  className={`group h-full rounded-2xl border bg-gradient-to-br ${accent} p-5 sm:p-6`}
+                  className={`group h-full rounded-2xl border bg-gradient-to-br ${accent} p-4 sm:p-5`}
                 >
-                  <div className="mb-5 inline-flex rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-base)]/50 p-2.5">
+                  <div className="mb-3 inline-flex rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-base)]/50 p-2">
                     <Icon className="h-5 w-5" strokeWidth={1.6} aria-hidden />
                   </div>
                   <h3 className="text-base font-semibold text-[var(--text-primary)]">
                     {item.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-[var(--text-secondary)]">
+                  <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">
                     {item.description}
                   </p>
-                  <div className="mt-5 border-t border-[var(--border-subtle)] pt-4">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
-                      {techLabel}
-                    </p>
-                    <div className="mt-2 flex flex-wrap gap-1.5">
-                      {item.technologies.map((tech) => (
+                  <div className="mt-4 border-t border-[var(--border-subtle)] pt-3">
+                    <p className="sr-only">{techLabel}</p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {item.technologies.slice(0, 5).map((tech) => (
                         <span
                           key={tech}
                           className="rounded-md border border-[var(--border-subtle)] bg-[var(--bg-base)]/60 px-2 py-0.5 text-[11px] text-[var(--text-muted)]"
@@ -96,21 +94,10 @@ export function TrustedExpertise({
                       ))}
                     </div>
                   </div>
-                  <div className="mt-4">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
-                      {conceptsLabel}
-                    </p>
-                    <ul className="mt-2 space-y-1 text-xs text-[var(--text-secondary)]">
-                      {item.concepts.map((c) => (
-                        <li key={c} className="flex gap-2">
-                          <span className="text-emerald-400" aria-hidden>
-                            ·
-                          </span>
-                          {c}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  <p className="mt-3 text-xs leading-relaxed text-[var(--text-muted)]">
+                    <span className="sr-only">{conceptsLabel}: </span>
+                    {item.concepts.slice(0, 3).join(" · ")}
+                  </p>
                 </motion.article>
               </MotionReveal>
             );

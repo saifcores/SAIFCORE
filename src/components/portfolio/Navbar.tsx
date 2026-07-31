@@ -49,24 +49,27 @@ function navWithoutCredentials(items: NavItem[]): NavItem[] {
 }
 
 /**
- * Recruiter / client primary path — full pages first so decision-makers
- * land on scannable profiles, not mid-page anchors.
+ * Dual-audience primary path:
+ * Who → Proof → Work → Offer → Contact
  */
 const primaryNav: NavItem[] = [
+  { href: "/about", labelKey: "about" },
   { href: "/experience", labelKey: "experience" },
   { href: "/systems", labelKey: "systems" },
   { href: "/#services", labelKey: "services" },
-  { href: "/about", labelKey: "about" },
   { href: "/#contact", labelKey: "contact" },
 ];
 
 const homeHashSections = [
+  "about",
+  "paths",
   "experience",
   "work",
   "services",
+  "offers",
+  "process",
   "expertise",
   "certifications",
-  "process",
   "insights",
   "contact",
 ] as const;
@@ -82,7 +85,8 @@ function isNavItemActive(
     const section = href.slice(2) as HomeHashSection;
     return activeHomeSection === section;
   }
-  return pathname === href || pathname.startsWith(`${href}/`);
+  const pathOnly = href.split("#")[0] || href;
+  return pathname === pathOnly || pathname.startsWith(`${pathOnly}/`);
 }
 
 function navLinkClass(active: boolean): string {
@@ -112,9 +116,10 @@ export function Navbar() {
     () =>
       navWithoutCredentials([
         { href: "/#work", labelKey: "work" },
-        { href: "/#expertise", labelKey: "expertise" },
-        { href: "/#certifications", labelKey: "credentials" },
+        { href: "/#offers", labelKey: "offers" },
         { href: "/#process", labelKey: "process" },
+        { href: "/about#expertise", labelKey: "expertise" },
+        { href: "/#certifications", labelKey: "credentials" },
         ...insightsNavItems(loc),
       ]),
     [loc],
@@ -122,10 +127,10 @@ export function Navbar() {
 
   const mobilePriorityNav = useMemo(
     (): NavItem[] => [
+      { href: "/about", labelKey: "about" },
       { href: "/experience", labelKey: "experience" },
       { href: "/systems", labelKey: "systems" },
       { href: "/#services", labelKey: "services" },
-      { href: "/about", labelKey: "about" },
       { href: "/#contact", labelKey: "contact" },
     ],
     [],
@@ -135,9 +140,10 @@ export function Navbar() {
     () =>
       navWithoutCredentials([
         { href: "/#work", labelKey: "work" },
-        { href: "/#expertise", labelKey: "expertise" },
-        { href: "/#certifications", labelKey: "credentials" },
+        { href: "/#offers", labelKey: "offers" },
         { href: "/#process", labelKey: "process" },
+        { href: "/about#expertise", labelKey: "expertise" },
+        { href: "/#certifications", labelKey: "credentials" },
         ...insightsNavItems(loc),
       ]),
     [loc],

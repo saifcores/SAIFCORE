@@ -6,16 +6,15 @@ import {
 } from "next-intl/server";
 import type { Metadata } from "next";
 import { ContactBridgeStrip } from "@/components/portfolio/ContactBridgeStrip";
+import { DepthTeaser } from "@/components/portfolio/DepthTeaser";
+import { MidPageCta } from "@/components/portfolio/MidPageCta";
 import { PageHeader } from "@/components/portfolio/PageHeader";
 import { ProfileExploreLinks } from "@/components/portfolio/ProfileExploreLinks";
-import { ArchitectureExpertise } from "@/components/portfolio/ArchitectureExpertise";
 import { Experience } from "@/components/portfolio/Experience";
 import { EducationSection } from "@/components/portfolio/EducationSection";
 import { HowIThink } from "@/components/portfolio/HowIThink";
-import { WhatISolve } from "@/components/portfolio/WhatISolve";
 import { Footer } from "@/components/portfolio/Footer";
 import { Navbar } from "@/components/portfolio/Navbar";
-import { SkillsMatrix } from "@/components/portfolio/SkillsMatrix";
 import { routing } from "@/i18n/routing";
 import { buildPageMetadata, buildProfilePageGraph } from "@/seo";
 
@@ -91,19 +90,14 @@ export default async function ExperiencePage({ params }: Props) {
           subtitle={t("subtitle")}
           backLabel={t("backToHome")}
           showFacts
+          actionVariant="recruiter"
         />
 
-        {/* Full experience timeline */}
         <Experience />
-
+        <MidPageCta namespace="experiencePage" />
         <EducationSection />
-
         <HowIThink />
-
-        {/* Technical skills matrix */}
-        <SkillsMatrix />
-        <ArchitectureExpertise />
-        <WhatISolve />
+        <DepthTeaser />
 
         <div className="px-4 pb-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-[1280px] space-y-8">

@@ -114,7 +114,7 @@ export default async function CertificationsPage({ params }: Props) {
           title={t("title")}
           subtitle={t("subtitle")}
           backLabel={t("backToHome")}
-          showFacts
+          actionVariant="recruiter"
         />
 
         <div className="px-4 pb-4 sm:px-6 lg:px-8">

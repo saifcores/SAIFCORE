@@ -9,27 +9,25 @@ export async function Trust() {
   const industries = messages.trust.industries;
 
   return (
-    <section className="border-b border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
+    <section className="border-b border-[var(--border-subtle)] px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
       <div className="mx-auto max-w-[1280px]">
-        {/* Section heading */}
         <Reveal>
-          <p className="mb-6 text-pretty text-center text-xs font-medium uppercase tracking-[0.2em] text-[var(--text-muted)] sm:mb-8">
+          <p className="mb-4 text-pretty text-center text-xs font-medium uppercase tracking-[0.2em] text-[var(--text-muted)]">
             {t("heading")}
           </p>
         </Reveal>
 
-        {/* Industry badges */}
-        <Reveal delay={80}>
-          <div className="mb-10 flex flex-wrap items-center justify-center gap-2 sm:mb-12 sm:gap-3">
+        <Reveal delay={60}>
+          <div className="mb-6 flex flex-wrap items-center justify-center gap-2">
             {industries.map((industry, i) => {
               const isHighlight = i === 0 || i === 1;
               return (
                 <span
                   key={industry}
-                  className={`rounded-full border px-2.5 py-1 text-[11px] font-medium transition sm:px-4 sm:py-2 sm:text-sm ${
+                  className={`rounded-full border px-2.5 py-1 text-[11px] font-medium sm:px-3 sm:text-xs ${
                     isHighlight
                       ? "border-blue-500/30 bg-gradient-to-r from-blue-500/12 to-emerald-500/8 text-[var(--text-primary)]"
-                      : "border-[var(--border-subtle)] text-[var(--text-secondary)] hover:border-[var(--border-hover)] hover:text-[var(--text-primary)]"
+                      : "border-[var(--border-subtle)] text-[var(--text-secondary)]"
                   }`}
                 >
                   {industry}
@@ -39,19 +37,10 @@ export async function Trust() {
           </div>
         </Reveal>
 
-        {/* Divider with companies label */}
-        <Reveal delay={140}>
-          <div className="mb-8 flex items-center gap-4">
-            <div className="h-px flex-1 bg-[var(--border-subtle)]" />
-            <span className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
-              {t("companiesLabel")}
-            </span>
-            <div className="h-px flex-1 bg-[var(--border-subtle)]" />
-          </div>
-        </Reveal>
-
-        {/* Company logos */}
-        <Reveal delay={180}>
+        <Reveal delay={100}>
+          <p className="mb-4 text-center text-[10px] font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
+            {t("companiesLabel")}
+          </p>
           <TrustMotion brands={trustBrands} />
         </Reveal>
       </div>

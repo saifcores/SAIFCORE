@@ -15,6 +15,7 @@ export type NavPrimaryLinkKey = Extract<
   NavLinkKey,
   | "work"
   | "services"
+  | "offers"
   | "expertise"
   | "experience"
   | "process"

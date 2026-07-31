@@ -5,20 +5,20 @@ import {
 } from "next-intl/server";
 import type { Locale } from "next-intl";
 import { AboutTeaser } from "@/components/portfolio/AboutTeaser";
+import { AudiencePaths } from "@/components/portfolio/AudiencePaths";
 import { ExperienceTeaser } from "@/components/portfolio/ExperienceTeaser";
 import { Insights } from "@/components/portfolio/Insights";
 import { CtaSection } from "@/components/portfolio/CtaSection";
-import { EngineeringPrinciples } from "@/components/portfolio/EngineeringPrinciples";
 import { FeaturedProjectsTeaser } from "@/components/portfolio/FeaturedProjectsTeaser";
 import { Footer } from "@/components/portfolio/Footer";
 import { Hero } from "@/components/portfolio/Hero";
 import { MetricsSection } from "@/components/portfolio/MetricsSection";
 import { Navbar } from "@/components/portfolio/Navbar";
+import { FreelanceOffers } from "@/components/portfolio/FreelanceOffers";
 import { ServicesSection } from "@/components/portfolio/ServicesSection";
 import { CertificationsTeaser } from "@/components/portfolio/CertificationsTeaser";
-import { TechStackSection } from "@/components/portfolio/TechStackSection";
+import { DepthTeaser } from "@/components/portfolio/DepthTeaser";
 import { Testimonials } from "@/components/portfolio/Testimonials";
-import { TrustedExpertise } from "@/components/portfolio/TrustedExpertise";
 import { Trust } from "@/components/portfolio/Trust";
 import { WorkProcess } from "@/components/portfolio/WorkProcess";
 import { fetchRecentArticles } from "@/blog/recent-articles";
@@ -55,10 +55,8 @@ export default async function Home({ params }: Props) {
   const contentLoc = locale === "fr" ? "fr" : "en";
 
   const messages = await getMessages();
-  const te = messages.trustedExpertise;
   const sv = messages.services;
-  const ts = messages.techStack;
-  const ep = messages.engineeringPrinciples;
+  const fo = messages.freelanceOffers;
   const wp = messages.workProcess;
   const tm = messages.testimonials;
 
@@ -219,16 +217,15 @@ export default async function Home({ params }: Props) {
         className="flex-1 pb-28 outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base xl:pb-0"
         tabIndex={-1}
       >
+        {/*
+          Home: Who → Path → Proof → Offer → How → Depth bridge → Contact
+          Full expertise / stack live on /about
+        */}
         <Hero />
         <Trust />
+        <AboutTeaser />
+        <AudiencePaths />
         <ExperienceTeaser />
-        <TrustedExpertise
-          title={te.title}
-          subtitle={te.subtitle}
-          techLabel={te.techLabel}
-          conceptsLabel={te.conceptsLabel}
-          items={[...te.items]}
-        />
         <MetricsSection />
         <FeaturedProjectsTeaser />
         <ServicesSection
@@ -238,16 +235,12 @@ export default async function Home({ params }: Props) {
           cta={sv.cta}
           items={[...sv.items]}
         />
-        <TechStackSection
-          title={ts.title}
-          subtitle={ts.subtitle}
-          categories={[...ts.categories]}
-        />
-        <CertificationsTeaser />
-        <EngineeringPrinciples
-          title={ep.title}
-          subtitle={ep.subtitle}
-          items={[...ep.items]}
+        <FreelanceOffers
+          title={fo.title}
+          subtitle={fo.subtitle}
+          note={fo.note}
+          cta={fo.cta}
+          tracks={fo.tracks}
         />
         <WorkProcess
           title={wp.title}
@@ -259,8 +252,9 @@ export default async function Home({ params }: Props) {
           subtitle={tm.subtitle}
           items={[...tm.items]}
         />
+        <DepthTeaser withAnchor />
+        <CertificationsTeaser />
         <Insights teaser />
-        <AboutTeaser />
         <CtaSection />
       </main>
       <Footer />

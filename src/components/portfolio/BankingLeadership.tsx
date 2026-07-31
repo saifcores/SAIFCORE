@@ -6,33 +6,33 @@ export async function BankingLeadership() {
   const content = messages.bankingLeadership;
 
   return (
-    <section className="border-t border-[var(--border-subtle)] bg-[var(--bg-elevated)]/10 px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
+    <section className="border-t border-[var(--border-subtle)] bg-[var(--bg-elevated)]/10 px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
       <div className="mx-auto max-w-[1280px]">
         <Reveal>
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
             {content.eyebrow}
           </p>
-          <h2 className="max-w-3xl text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl">
+          <h2 className="max-w-3xl text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl">
             {content.title}
           </h2>
-          <p className="mt-3 max-w-2xl text-pretty text-sm leading-relaxed text-[var(--text-secondary)] sm:mt-4 sm:text-base">
+          <p className="mt-2 max-w-2xl text-pretty text-sm leading-relaxed text-[var(--text-secondary)]">
             {content.subtitle}
           </p>
         </Reveal>
 
-        <div className="mt-10 grid gap-6 lg:mt-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-8">
-          <Reveal delay={80}>
-            <div className="h-full rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 p-5 sm:p-6 md:p-8">
-              <p className="mb-6 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
+        <div className="mt-8 grid gap-4 lg:mt-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-5">
+          <Reveal delay={60}>
+            <div className="h-full rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 p-5">
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
                 {content.leadershipLabel}
               </p>
-              <div className="grid gap-5 sm:grid-cols-2">
+              <div className="grid gap-4 sm:grid-cols-2">
                 {content.items.map((item) => (
                   <article key={item.title}>
-                    <h3 className="font-semibold text-[var(--text-primary)]">
+                    <h3 className="text-sm font-semibold text-[var(--text-primary)]">
                       {item.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">
+                    <p className="mt-1.5 text-sm leading-relaxed text-[var(--text-secondary)]">
                       {item.body}
                     </p>
                   </article>
@@ -41,16 +41,16 @@ export async function BankingLeadership() {
             </div>
           </Reveal>
 
-          <Reveal delay={160}>
-            <div className="h-full rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-base)]/60 p-5 sm:p-6 md:p-8">
-              <p className="mb-6 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
+          <Reveal delay={100}>
+            <div className="h-full rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-base)]/60 p-5">
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
                 {content.playbookLabel}
               </p>
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {content.playbook.map((item) => (
                   <div
                     key={item.title}
-                    className="border-b border-[var(--border-subtle)] pb-4 last:border-b-0 last:pb-0"
+                    className="border-b border-[var(--border-subtle)] pb-3 last:border-b-0 last:pb-0"
                   >
                     <p className="text-sm font-semibold text-[var(--text-primary)]">
                       {item.title}
@@ -65,15 +65,15 @@ export async function BankingLeadership() {
           </Reveal>
         </div>
 
-        <Reveal delay={220}>
-          <div className="mt-6 rounded-2xl border border-dashed border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-5 sm:mt-8 sm:p-6 md:p-8">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-emerald-400">
+        <Reveal delay={140}>
+          <div className="mt-4 rounded-xl border border-dashed border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-5">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-emerald-400">
               {content.adrLabel}
             </p>
-            <h3 className="text-lg font-semibold text-[var(--text-primary)]">
+            <h3 className="text-base font-semibold text-[var(--text-primary)]">
               {content.adr.title}
             </h3>
-            <p className="mt-2 max-w-4xl text-sm leading-relaxed text-[var(--text-secondary)]">
+            <p className="mt-1.5 max-w-4xl text-sm leading-relaxed text-[var(--text-secondary)]">
               {content.adr.body}
             </p>
           </div>

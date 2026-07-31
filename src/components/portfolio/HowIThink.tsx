@@ -9,77 +9,61 @@ export async function HowIThink() {
   return (
     <section
       id="how-i-think"
-      className="border-b border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24"
+      className="border-b border-[var(--border-subtle)] px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16"
     >
       <div className="mx-auto max-w-[1280px]">
         <Reveal>
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
             {t("title")}
           </p>
-          <h2 className="max-w-2xl text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl">
+          <h2 className="max-w-2xl text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl">
             {t("subtitle")}
           </h2>
         </Reveal>
 
-        <div className="mt-10 grid gap-6 md:mt-14 md:grid-cols-2 md:gap-10 lg:gap-14">
-          {/* Steps */}
+        <div className="mt-8 grid gap-4 md:mt-10 md:grid-cols-2 md:gap-6">
           <Reveal>
-            <div className="relative rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-6 sm:p-8 md:p-10">
-              <ol className="relative space-y-0">
-                {steps.map((step, i) => {
-                  const stepId = String(i + 1).padStart(2, "0");
-                  return (
-                    <li key={stepId} className="flex gap-5 sm:gap-6">
-                      <div className="flex flex-col items-center">
-                        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/60 font-mono text-xs font-semibold text-[var(--text-secondary)]">
-                          {stepId}
-                        </span>
-                        {i < steps.length - 1 ? (
-                          <span
-                            className="my-2 min-h-[40px] w-px flex-1 bg-gradient-to-b from-[var(--border-subtle)] to-transparent sm:min-h-[52px]"
-                            aria-hidden
-                          />
-                        ) : null}
-                      </div>
-                      <div
-                        className={`pb-10 pt-1 ${i === steps.length - 1 ? "pb-0" : ""}`}
-                      >
-                        <h3 className="font-semibold text-[var(--text-primary)]">
-                          {step.title}
-                        </h3>
-                        <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">
-                          {step.body}
-                        </p>
-                      </div>
-                    </li>
-                  );
-                })}
-              </ol>
-            </div>
+            <ol className="space-y-4 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-5 sm:p-6">
+              {steps.map((step, i) => {
+                const stepId = String(i + 1).padStart(2, "0");
+                return (
+                  <li key={stepId} className="flex gap-3">
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-[var(--border-subtle)] font-mono text-[10px] font-semibold text-accent">
+                      {stepId}
+                    </span>
+                    <div className="min-w-0">
+                      <h3 className="text-sm font-semibold text-[var(--text-primary)]">
+                        {step.title}
+                      </h3>
+                      <p className="mt-1 text-sm leading-relaxed text-[var(--text-secondary)]">
+                        {step.body}
+                      </p>
+                    </div>
+                  </li>
+                );
+              })}
+            </ol>
           </Reveal>
 
-          {/* Philosophy */}
-          <Reveal delay={120}>
-            <div className="flex h-full flex-col justify-center">
-              <div className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-6 sm:p-8 md:p-10">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
-                  {t("operatingModel")}
-                </p>
-                <p className="mt-4 text-base font-medium leading-relaxed text-[var(--text-primary)]">
-                  {t("operatingBody")}
-                </p>
-                <ul className="mt-8 space-y-3 text-sm text-[var(--text-secondary)]">
-                  {bullets.map((line, bi) => (
-                    <li key={bi} className="flex gap-3">
-                      <span
-                        className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-r from-blue-400 to-emerald-400"
-                        aria-hidden
-                      />
-                      {line}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          <Reveal delay={80}>
+            <div className="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-5 sm:p-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
+                {t("operatingModel")}
+              </p>
+              <p className="mt-3 text-sm font-medium leading-relaxed text-[var(--text-primary)]">
+                {t("operatingBody")}
+              </p>
+              <ul className="mt-5 space-y-2.5 text-sm text-[var(--text-secondary)]">
+                {bullets.map((line, bi) => (
+                  <li key={bi} className="flex gap-2.5">
+                    <span
+                      className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-r from-blue-400 to-emerald-400"
+                      aria-hidden
+                    />
+                    {line}
+                  </li>
+                ))}
+              </ul>
             </div>
           </Reveal>
         </div>

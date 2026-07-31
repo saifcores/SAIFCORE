@@ -17,7 +17,10 @@ export async function AboutTeaser() {
   ] as const;
 
   return (
-    <section className="border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)]/10 px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
+    <section
+      id="about"
+      className="border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)]/10 px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16"
+    >
       <div className="mx-auto max-w-[1280px]">
         <div className="grid items-center gap-10 md:grid-cols-2 md:gap-10 lg:grid-cols-[1fr_320px] lg:gap-16">
           <MotionReveal>
@@ -55,7 +58,11 @@ export async function AboutTeaser() {
               <span aria-hidden>→</span>
             </Link>
 
-            <ProfileExploreLinks compact className="mt-6 sm:mt-8" />
+            <ProfileExploreLinks
+              compact
+              excludePath="/about"
+              className="mt-6 sm:mt-8"
+            />
           </MotionReveal>
 
           <MotionReveal delay={120}>

@@ -26,7 +26,7 @@
   "actionBar": {
     "bookCall": "Book a call",
     "contact": "Contact",
-    "resume": "Resume"
+    "resume": "CV"
   },
   "nav": {
     "primary": "Primary",
@@ -34,6 +34,7 @@
     "brandHomeLabel": "SAIFCORE — home",
     "work": "Projects",
     "services": "Services",
+    "offers": "Packages",
     "expertise": "Expertise",
     "experience": "Experience",
     "process": "Process",
@@ -70,7 +71,26 @@
     "factBanking": "Bank of Africa Group delivery",
     "factRemote": "Remote worldwide",
     "factBilingual": "Bilingual FR / EN",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "seePackages": "See packages"
+  },
+  "audiencePaths": {
+    "title": "Start here",
+    "subtitle": "You know who I am — pick hiring proof, or freelance delivery.",
+    "recruiterTitle": "Hiring or recruiting",
+    "recruiterDescription": "See career proof, case studies, and credentials — then download the resume.",
+    "recruiterLinkExperience": "Experience",
+    "recruiterLinkSystems": "Case studies",
+    "recruiterLinkAbout": "About",
+    "recruiterCta": "Download resume",
+    "recruiterSecondaryCta": "View experience",
+    "clientTitle": "Freelance or project work",
+    "clientDescription": "Browse services and engagement packages — then book a short discovery call.",
+    "clientLinkServices": "Services",
+    "clientLinkOffers": "Packages",
+    "clientLinkProcess": "How I work",
+    "clientCta": "Book a call",
+    "clientSecondaryCta": "See packages"
   },
   "hero": {
     "badge": "Backend · Banking & FinTech · Remote Worldwide",
@@ -84,13 +104,14 @@
       "Distributed Systems",
       "Java & Spring Boot"
     ],
-    "ctaPrimary": "View Services",
+    "ctaPrimary": "See what I offer",
+    "ctaExperience": "View experience",
     "ctaBookCall": "Book a Call",
     "ctaResume": "Download Resume",
     "proofLine": "Delivery with Bank of Africa Group · Synapse · ENG Technologie · West Africa fintech",
     "locationLine": "Dakar, Senegal (GMT) — bilingual EN/FR · open to remote freelance & contract work worldwide.",
     "availability": "Open to new engagements",
-    "jumpToContact": "Start a project",
+    "jumpToContact": "Choose your path",
     "terminalTitle": "Payment Engine",
     "terminalVersion": "v2.4.1",
     "terminalStatus": "Operational",
@@ -229,35 +250,117 @@
   },
   "services": {
     "title": "Services",
-    "audience": "For banks, fintechs, and product teams — remote worldwide",
+    "audience": "For clients, startups, banks, and enterprises — remote worldwide",
     "subtitle": "Backend architecture, payment integrations, and platform modernization for regulated and high-stakes systems — freelance, contract, or advisory.",
     "items": [
       {
         "title": "Enterprise Backend Architecture & Modernization",
-        "description": "Future-proof your platform: migrate legacy systems, design robust cloud-native backends, and ensure resilience, observability, and compliance for enterprise-scale fintech and payment workloads."
+        "description": "Legacy migration and cloud-native backends built for resilience, observability, and compliance."
       },
       {
         "title": "Payment Integration & Unified API Adapters",
-        "description": "Integrate local and global payment providers (banks, PSPs, wallets) under a single, stable contract. Standardize payment flows, enforce idempotency, and streamline onboarding — no more custom one-offs."
+        "description": "Banks, PSPs, and wallets under one stable contract — idempotent flows, faster onboarding."
       },
       {
         "title": "Fintech Product Launch & MVP Acceleration",
-        "description": "For startups or new business lines — get a launch-ready MVP built on real payment infrastructure: ready to demo, fund, and extend, with best-practice documentation and auditability."
+        "description": "Launch-ready MVP on real payment rails — demoable, fundable, and ready to extend."
       },
       {
         "title": "Secure API Gateways & Partner Onboarding",
-        "description": "Design and deploy partner API gateways for regulated products: secure auth, granular access control, auditing, traffic management, and simplified onboarding for banks and PSPs."
+        "description": "Partner gateways with auth, access control, audit, and traffic management for regulated products."
       },
       {
         "title": "Cloud DevOps & SRE for Payments",
-        "description": "Deploy and operate payment infrastructure with blue/green or canary delivery, GitOps automation, real SLOs, and scalable, cost-optimized cloud — for always-on regulated services."
+        "description": "Blue/green or canary delivery, GitOps, SLOs, and cost-aware cloud for always-on services."
       },
       {
         "title": "Technical Due Diligence & Codebase Audits",
-        "description": "Independent code, integration, and cloud audits for M&A, investment, or compliance — get clear, actionable findings and risk assessments from a hands-on backend payments expert."
+        "description": "Independent code, integration, and cloud reviews for M&A, investment, or compliance."
       }
     ],
-    "cta": "Discuss your backend needs"
+    "cta": "See engagement packages"
+  },
+  "freelanceOffers": {
+    "title": "Engagement packages",
+    "subtitle": "Two tracks — product teams shipping fast, and enterprises modernizing under real constraints. Remote, scoped, production-minded.",
+    "note": "We start with a short discovery call. You get a written proposal with scope, milestones, and effort — no vague retainers.",
+    "cta": "Request a proposal",
+    "tracks": [
+      {
+        "label": "Clients & founders",
+        "audience": "Startups, product owners, and SMEs building APIs, MVPs, or payment-backed products.",
+        "promise": "A backend you can demo, operate, and hand to your team — with milestones, docs, and no black box.",
+        "packages": [
+          {
+            "title": "Discovery & architecture sprint",
+            "duration": "1–2 weeks",
+            "description": "Best before a full build: lock scope, risks, and the shortest path to a launchable backend.",
+            "includes": [
+              "Goals, constraints, and integration map",
+              "Target architecture + draft ADRs",
+              "Phased plan with effort ranges"
+            ]
+          },
+          {
+            "title": "Build & deliver",
+            "duration": "4–12 weeks",
+            "description": "End-to-end freelance delivery of APIs, payment adapters, or core workflows — discovery through production handoff.",
+            "includes": [
+              "Milestone demos and acceptance criteria",
+              "Tests, observability, and runbooks",
+              "Handoff docs your team can own"
+            ]
+          },
+          {
+            "title": "MVP acceleration",
+            "duration": "6–10 weeks",
+            "description": "A fundable, demo-ready MVP on real payment rails — built to extend, not throw away.",
+            "includes": [
+              "Core domain APIs and payment flows",
+              "Security baseline and audit-friendly trails",
+              "Launch checklist + next-iteration roadmap"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Enterprises & banks",
+        "audience": "Banks, fintechs, and platform teams that need senior backend capacity, modernization, or independent judgment.",
+        "promise": "Senior ownership where stakes are high — regulated integrations, compliance-aware delivery, architecture that scales.",
+        "packages": [
+          {
+            "title": "Contract backend embed",
+            "duration": "1–6 months",
+            "description": "A senior backend engineer inside your squad — roadmap sprints, CI/CD, and production ownership in regulated contexts.",
+            "includes": [
+              "Delivery inside your ceremonies and tools",
+              "Code reviews, quality bar, and mentorship",
+              "Stable ops posture after release"
+            ]
+          },
+          {
+            "title": "Platform modernization",
+            "duration": "8–16 weeks+",
+            "description": "Legacy-to-cloud-native moves, partner API gateways, and payment programs with enterprise governance.",
+            "includes": [
+              "Architecture and migration waves",
+              "Partner onboarding and versioned API contracts",
+              "Resilience, observability, and SLOs"
+            ]
+          },
+          {
+            "title": "Audit & architecture advisory",
+            "duration": "1–3 weeks",
+            "description": "Independent due diligence or design partnership before M&A, investment, or a major build decision.",
+            "includes": [
+              "Findings ranked by risk and effort",
+              "Reference designs and ADRs",
+              "Executive-ready recommendations"
+            ]
+          }
+        ]
+      }
+    ]
   },
   "techStack": {
     "title": "Production stack",
@@ -1015,6 +1118,7 @@
     "statCuriosityValue": "∞",
     "statCuriosity": "Curiosity Driven",
     "engagementsTitle": "Ways I can help",
+    "offersLink": "See engagement packages →",
     "engagements": [
       {
         "title": "Freelance delivery",
@@ -1214,10 +1318,16 @@
     "relatedCaseStudiesSubtitle": "Production patterns from banking, payments, and platform delivery.",
     "viewAllArticles": "View all articles"
   },
+  "depthTeaser": {
+    "title": "Technical depth",
+    "heading": "Capabilities, production stack, and engineering principles",
+    "body": "For hiring managers and technical reviewers — full capability map, tools, and how I build regulated systems.",
+    "cta": "Open full profile"
+  },
   "cta": {
     "label": "Contact",
-    "title": "Ready to discuss your backend, payments, or platform needs?",
-    "subtitle": "Share goals, constraints, and timeline — I reply with clear next steps. Best for freelance, contract, and consulting engagements (remote worldwide).",
+    "title": "Hiring or starting a project — let’s talk",
+    "subtitle": "Recruiters: send a brief or grab the CV. Clients & teams: share goals, constraints, and timeline — I reply with clear next steps (remote worldwide).",
     "processTitle": "How It Works",
     "processStep1": "Share your brief: goals, architecture, challenges, and constraints.",
     "processStep2": "I respond with focused questions and a practical roadmap.",
@@ -1265,6 +1375,7 @@
     "homeSectionsLabel": "Homepage",
     "work": "Featured Projects",
     "services": "Services",
+    "offers": "Engagement packages",
     "expertise": "Expertise",
     "process": "How I Work",
     "insights": "Insights Preview",
@@ -1301,6 +1412,9 @@
     "title": "Projects & case studies",
     "subtitle": "Problem, architecture, security, scale, and measurable impact — including patterns from Synapse delivery for Bank of Africa Group and FinTech integrations.",
     "backToHome": "Back to home",
+    "midCtaTitle": "Want similar outcomes on your platform?",
+    "midCtaSubtitle": "Book a discovery call, or review engagement packages.",
+    "midCtaSecondary": "See packages",
     "endCtaTitle": "Need architecture patterns like these on your platform?",
     "endCtaSubtitle": "Share your context — payments, ledgers, APIs, or SaaS — and I will reply with practical next steps.",
     "endCtaButton": "Discuss your project"
@@ -1313,8 +1427,11 @@
     "backToHome": "Back to Home",
     "skillsTitle": "Production Technology Stack",
     "skillsSubtitle": "Tools and patterns used on live banking and fintech backends — not a buzzword list.",
-    "endCtaTitle": "Looking for this profile on your team or project?",
-    "endCtaSubtitle": "Freelance, contract, or consulting — remote worldwide. Share role, stack, and timeline.",
+    "midCtaTitle": "Enough proof to take the next step?",
+    "midCtaSubtitle": "Download the CV, or share a role / project brief.",
+    "midCtaSecondary": "Contact",
+    "endCtaTitle": "Hiring for this profile — or embedding me on a project?",
+    "endCtaSubtitle": "Recruiters: grab the CV or send a brief. Teams: share stack, constraints, and timeline for freelance or contract work.",
     "endCtaButton": "Get in touch"
   },
   "skillsMatrix": {

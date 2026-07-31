@@ -4,11 +4,7 @@ import {
   getTeaserCertifications,
   hasObtainedCertifications,
 } from "@/data/certifications";
-import {
-  CertificationIcon,
-  CertificationStatusPill,
-  getStatusLabelKey,
-} from "./CertificationIcon";
+import { CertificationIcon, getStatusLabelKey } from "./CertificationIcon";
 import { MotionReveal } from "@/components/portfolio/motion/MotionReveal";
 
 export async function CertificationsTeaser() {
@@ -26,23 +22,23 @@ export async function CertificationsTeaser() {
   return (
     <section
       id="certifications"
-      className="border-b border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24"
+      className="border-b border-[var(--border-subtle)] px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16"
     >
       <div className="mx-auto max-w-[1280px]">
         <MotionReveal>
-          <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div className="min-w-0 flex-1">
-              <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)] sm:mb-4">
+              <p className="mb-2 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
                 {t("title")}
               </p>
-              <h2 className="max-w-2xl text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl">
+              <h2 className="max-w-2xl text-pretty text-xl font-bold tracking-tight text-[var(--text-primary)] sm:text-2xl">
                 {t("teaserHeading")}
               </h2>
             </div>
             {hasObtainedCertifications() ? (
               <Link
                 href="/certifications"
-                className="inline-flex w-full shrink-0 items-center justify-center gap-1.5 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 px-4 py-3 text-sm font-semibold text-accent transition hover:border-[var(--border-hover)] hover:text-[var(--accent-blue-light)] sm:w-auto sm:border-transparent sm:bg-transparent sm:px-0 sm:py-0"
+                className="inline-flex min-h-10 shrink-0 items-center gap-1.5 text-sm font-semibold text-accent transition hover:text-[var(--accent-blue-light)]"
               >
                 {t("viewAll")}
                 <span aria-hidden>→</span>
@@ -51,32 +47,26 @@ export async function CertificationsTeaser() {
           </div>
         </MotionReveal>
 
-        <ul className="mt-8 grid grid-cols-1 gap-3 xs:grid-cols-2 sm:mt-10 lg:grid-cols-4">
+        <ul className="mt-6 flex flex-col gap-2 sm:mt-8 sm:flex-row sm:flex-wrap">
           {teaserItems.map((cert, i) => {
             const copy = messages.certifications.items[cert.id];
             return (
-              <li key={cert.id}>
-                <MotionReveal delay={i * 50}>
-                  <div className="card-interactive flex h-full flex-col gap-3 rounded-2xl bg-[var(--bg-elevated)]/20 p-4">
-                    <div className="flex items-center gap-3">
-                      <CertificationIcon
-                        kind={cert.kind}
-                        status={cert.status}
-                        statusLabel={statusLabel(cert.status)}
-                      />
-                      <div className="min-w-0 flex-1">
-                        <p className="text-sm font-semibold leading-snug text-[var(--text-primary)]">
-                          {copy.name}
-                        </p>
-                        <p className="mt-0.5 truncate text-[11px] text-[var(--text-muted)]">
-                          {copy.issuer}
-                        </p>
-                      </div>
-                    </div>
-                    <CertificationStatusPill
+              <li key={cert.id} className="min-w-0 sm:max-w-xs sm:flex-1">
+                <MotionReveal delay={i * 40}>
+                  <div className="flex items-center gap-3 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 px-3 py-3">
+                    <CertificationIcon
+                      kind={cert.kind}
                       status={cert.status}
-                      label={statusLabel(cert.status)}
+                      statusLabel={statusLabel(cert.status)}
                     />
+                    <div className="min-w-0">
+                      <p className="truncate text-sm font-semibold text-[var(--text-primary)]">
+                        {copy.name}
+                      </p>
+                      <p className="truncate text-[11px] text-[var(--text-muted)]">
+                        {copy.issuer}
+                      </p>
+                    </div>
                   </div>
                 </MotionReveal>
               </li>

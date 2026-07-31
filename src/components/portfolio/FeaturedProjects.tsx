@@ -91,7 +91,7 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
   const t = await getTranslations("featuredProjects");
 
   return (
-    <section id="work" className="px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
+    <section id="work" className="px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
       <div className="mx-auto max-w-[1280px]">
         {!showDetail ? (
           <Reveal>
@@ -127,7 +127,7 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
                     aria-hidden
                   />
 
-                  <div className="p-5 sm:p-8 lg:p-12">
+                  <div className="p-5 sm:p-6 lg:p-8">
                     {/* Header row */}
                     <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-start sm:justify-between">
                       <div className="flex min-w-0 items-start gap-3 sm:gap-6">
@@ -169,7 +169,7 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
                     </div>
 
                     {/* Core narrative — Problem / Solution / Architecture */}
-                    <div className="mt-5 grid gap-4 border-t border-[var(--border-subtle)] pt-5 sm:mt-8 sm:grid-cols-2 sm:gap-6 sm:pt-8 lg:grid-cols-3 lg:gap-8">
+                    <div className="mt-4 grid gap-4 border-t border-[var(--border-subtle)] pt-4 sm:mt-6 sm:grid-cols-2 sm:gap-5 sm:pt-6 lg:grid-cols-3">
                       <div>
                         <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)] sm:mb-3">
                           {t("problemLabel")}
@@ -277,7 +277,7 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
                     ) : null}
 
                     {/* Impact callout */}
-                    <div className="mt-6 flex flex-col gap-4 border-t border-[var(--border-subtle)] pt-6 sm:flex-row sm:items-start sm:justify-between">
+                    <div className="mt-5 flex flex-col gap-3 border-t border-[var(--border-subtle)] pt-5 sm:flex-row sm:items-start sm:justify-between">
                       <div className="flex-1">
                         <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-500">
                           {t("impactLabel")}
@@ -318,25 +318,27 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
           })}
         </div>
 
-        {/* Bridge CTA */}
-        <Reveal delay={320}>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 rounded-2xl border border-dashed border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 px-4 py-8 text-center sm:mt-12 sm:flex-row sm:gap-10 sm:px-8 sm:py-10 lg:px-12">
-            <div className="max-w-md">
-              <p className="text-pretty text-sm font-semibold text-[var(--text-primary)] sm:text-base">
-                {t("bridgeTitle")}
-              </p>
-              <p className="mt-2 text-sm text-[var(--text-secondary)]">
-                {t("bridgeSubtitle")}
-              </p>
+        {/* Inline bridge only when MidPageCta is not used on the page */}
+        {!showDetail ? (
+          <Reveal delay={320}>
+            <div className="mt-8 flex flex-col items-center justify-center gap-4 rounded-2xl border border-dashed border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 px-4 py-6 text-center sm:mt-10 sm:flex-row sm:gap-8 sm:px-8 sm:py-8">
+              <div className="max-w-md">
+                <p className="text-pretty text-sm font-semibold text-[var(--text-primary)] sm:text-base">
+                  {t("bridgeTitle")}
+                </p>
+                <p className="mt-2 text-sm text-[var(--text-secondary)]">
+                  {t("bridgeSubtitle")}
+                </p>
+              </div>
+              <Link
+                href="/#contact"
+                className="btn-primary inline-flex min-h-12 w-full shrink-0 items-center justify-center px-8 py-3 text-sm sm:w-auto"
+              >
+                {t("bridgeCta")}
+              </Link>
             </div>
-            <Link
-              href="/#contact"
-              className="btn-primary inline-flex min-h-12 w-full shrink-0 items-center justify-center px-8 py-3 text-sm sm:w-auto"
-            >
-              {t("bridgeCta")}
-            </Link>
-          </div>
-        </Reveal>
+          </Reveal>
+        ) : null}
       </div>
     </section>
   );

@@ -1,15 +1,12 @@
 import { getMessages, getTranslations } from "next-intl/server";
 import Image from "next/image";
+import { Link } from "@/i18n/navigation";
 import { getProfileDisplayName } from "@/site";
-import { BankingLeadership } from "./BankingLeadership";
-import { CertificationsSection } from "./CertificationsSection";
-import { EducationSection } from "./EducationSection";
 import { ProfileExploreLinks } from "./ProfileExploreLinks";
 import { Reveal } from "./Reveal";
-import { VisionSection } from "./VisionSection";
 
 type Props = {
-  /** Full about page: engagements grid + contact CTA */
+  /** Full about page: languages + engagements + explore links */
   extended?: boolean;
 };
 
@@ -22,7 +19,7 @@ export async function About({ extended = false }: Props) {
   return (
     <section
       id="about"
-      className={`px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24 ${extended ? "" : "border-b border-[var(--border-subtle)]"}`}
+      className={`px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16 ${extended ? "" : "border-b border-[var(--border-subtle)]"}`}
     >
       <div className="mx-auto max-w-[1280px]">
         <div className="grid gap-10 md:grid-cols-2 md:items-center md:gap-16 lg:gap-20">
@@ -115,21 +112,15 @@ export async function About({ extended = false }: Props) {
         </div>
 
         {extended ? (
-          <div className="mt-12 border-t border-[var(--border-subtle)] pt-10 sm:mt-16 sm:pt-14 md:mt-20 md:pt-16">
+          <div className="mt-10 border-t border-[var(--border-subtle)] pt-8 sm:mt-12 sm:pt-10">
             <ProfileExploreLinks excludePath="/about" />
           </div>
         ) : null}
 
         {extended ? (
-          <div className="mt-12 border-t border-[var(--border-subtle)] pt-10 sm:mt-16 sm:pt-14 md:mt-20 md:pt-16">
-            <CertificationsSection compact />
-          </div>
-        ) : null}
-
-        {extended ? (
-          <div className="mt-12 border-t border-[var(--border-subtle)] pt-10 sm:mt-16 sm:pt-14 md:mt-20 md:pt-16">
-            <Reveal delay={120}>
-              <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
+          <div className="mt-10 border-t border-[var(--border-subtle)] pt-8 sm:mt-12 sm:pt-10">
+            <Reveal delay={80}>
+              <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
                 {t("languagesTitle")}
               </p>
               <ul className="grid gap-3 sm:grid-cols-2">
@@ -151,49 +142,37 @@ export async function About({ extended = false }: Props) {
           </div>
         ) : null}
 
-        {extended ? (
-          <div className="mt-20 border-t border-[var(--border-subtle)]">
-            <EducationSection />
-          </div>
-        ) : null}
-
-        {extended ? (
-          <div className="border-b border-[var(--border-subtle)]">
-            <VisionSection />
-          </div>
-        ) : null}
-
-        {extended ? (
-          <div className="border-b border-[var(--border-subtle)]">
-            <BankingLeadership />
-          </div>
-        ) : null}
-
         {extended && engagements ? (
-          <>
-            <Reveal delay={160}>
-              <div className="mt-12 border-t border-[var(--border-subtle)] pt-10 sm:mt-16 sm:pt-14 md:mt-20 md:pt-16">
-                <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
-                  {t("engagementsTitle")}
-                </p>
-                <div className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
-                  {engagements.map((item) => (
-                    <article
-                      key={item.title}
-                      className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 p-5 transition hover:border-[var(--border-hover)] sm:p-6"
-                    >
-                      <h3 className="font-semibold text-[var(--text-primary)]">
-                        {item.title}
-                      </h3>
-                      <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">
-                        {item.description}
-                      </p>
-                    </article>
-                  ))}
-                </div>
+          <Reveal delay={120}>
+            <div className="mt-10 border-t border-[var(--border-subtle)] pt-8 sm:mt-12 sm:pt-10">
+              <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
+                {t("engagementsTitle")}
+              </p>
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {engagements.map((item) => (
+                  <article
+                    key={item.title}
+                    className="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 p-4 sm:p-5"
+                  >
+                    <h3 className="text-sm font-semibold text-[var(--text-primary)]">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">
+                      {item.description}
+                    </p>
+                  </article>
+                ))}
               </div>
-            </Reveal>
-          </>
+              <p className="mt-4 text-sm text-[var(--text-muted)]">
+                <Link
+                  href="/#offers"
+                  className="font-semibold text-accent underline decoration-accent/30 underline-offset-4 transition hover:decoration-accent/60"
+                >
+                  {t("offersLink")}
+                </Link>
+              </p>
+            </div>
+          </Reveal>
         ) : null}
       </div>
     </section>

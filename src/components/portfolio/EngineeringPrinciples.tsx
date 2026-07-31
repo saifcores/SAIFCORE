@@ -18,7 +18,7 @@ export function EngineeringPrinciples({ title, subtitle, items }: Props) {
   const reduce = useReducedMotion();
 
   return (
-    <section className="border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)]/10 px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
+    <section className="border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)]/10 px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
       <div className="mx-auto max-w-[1280px]">
         <MotionReveal>
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
@@ -29,7 +29,7 @@ export function EngineeringPrinciples({ title, subtitle, items }: Props) {
           </h2>
         </MotionReveal>
 
-        <div className="mt-10 grid gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
+        <div className="mt-8 grid gap-3 sm:mt-10 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
           {items.map((item, i) => {
             const Icon = ICONS[i % ICONS.length];
             return (

@@ -13,7 +13,7 @@ export async function Experience() {
     <section
       id="experience"
       aria-labelledby="experience-heading"
-      className="relative overflow-hidden border-y border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24"
+      className="relative overflow-hidden border-y border-[var(--border-subtle)] px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16"
     >
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(37,99,235,0.08),transparent)]"
@@ -33,7 +33,7 @@ export async function Experience() {
           </h2>
         </Reveal>
 
-        <div className="mt-10 sm:mt-14">
+        <div className="mt-8 sm:mt-10">
           <ExperienceTimeline
             items={experience.items}
             stackLabel={t("stackLabel")}

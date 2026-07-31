@@ -7,7 +7,6 @@ import { ArticleKindBadge } from "@/components/portfolio/ArticleKindBadge";
 import { ContactBridgeStrip } from "@/components/portfolio/ContactBridgeStrip";
 import { Footer } from "@/components/portfolio/Footer";
 import { Navbar } from "@/components/portfolio/Navbar";
-import { ProfileFactChips } from "@/components/portfolio/ProfileFactChips";
 import { RecruiterActionBar } from "@/components/portfolio/RecruiterActionBar";
 import { RelatedArticles } from "@/components/portfolio/RelatedArticles";
 import { RelatedCaseStudies } from "@/components/portfolio/RelatedCaseStudies";
@@ -173,10 +172,10 @@ export default async function ArticlePage({ params }: Props) {
               <p className="mt-4 text-pretty text-sm leading-relaxed text-[var(--text-secondary)] sm:mt-6 sm:text-base md:text-lg">
                 {article.excerpt[loc]}
               </p>
-              <ProfileFactChips className="mt-5 sm:mt-6" />
               <RecruiterActionBar
                 className="mt-5 border-t border-[var(--border-subtle)] pt-5 sm:mt-6 sm:pt-6"
                 hideContactLink
+                variant="balanced"
               />
               {external ? (
                 <a
@@ -205,7 +204,7 @@ export default async function ArticlePage({ params }: Props) {
 
         <div className="px-4 pb-16 pt-8 sm:px-6 sm:pt-10 lg:px-8">
           <div className="mx-auto max-w-[720px]">
-            <ContactBridgeStrip ns="articlesPage" />
+            <ContactBridgeStrip ns="articlesPage" showPackages />
           </div>
         </div>
       </main>

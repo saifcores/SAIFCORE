@@ -8,6 +8,7 @@ type SitePath =
   | "/experience"
   | "/systems"
   | "/certifications"
+  | "/#offers"
   | "/#contact";
 
 type Props = {
@@ -25,12 +26,13 @@ export async function ProfileExploreLinks({
   const tNav = await getTranslations("nav");
 
   const links = [
+    { href: "/about" as const, label: tNav("about") },
     { href: "/experience" as const, label: tNav("experience") },
     { href: "/systems" as const, label: tNav("systems") },
+    { href: "/#offers" as const, label: tNav("offers") },
     ...(hasObtainedCertifications()
       ? [{ href: "/certifications" as const, label: tNav("credentials") }]
       : []),
-    { href: "/about" as const, label: tNav("about") },
     { href: "/#contact" as const, label: tNav("contact") },
   ].filter((link) => link.href !== excludePath);
 
@@ -40,7 +42,7 @@ export async function ProfileExploreLinks({
     <nav aria-label={t("label")} className={className}>
       <Reveal delay={compact ? 0 : 80}>
         {!compact ? (
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
             {t("title")}
           </p>
         ) : null}

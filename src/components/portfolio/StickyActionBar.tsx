@@ -2,6 +2,7 @@
 
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
+import { Link } from "@/i18n/navigation";
 import {
   getResumeDownloadFilename,
   getResumeUrl,
@@ -10,7 +11,7 @@ import {
 import { BookCallLink } from "./BookCallLink";
 
 /**
- * Mobile: after scroll, keep recruiter CV + client booking one tap away.
+ * Mobile: after scroll — CV (recruiters), Contact, Book a call (clients).
  */
 export function StickyActionBar() {
   const t = useTranslations("actionBar");
@@ -27,8 +28,8 @@ export function StickyActionBar() {
   }, []);
 
   const barLabel = resumeUrl
-    ? `${t("resume")} · ${t("bookCall")}`
-    : t("bookCall");
+    ? `${t("resume")} · ${t("contact")} · ${t("bookCall")}`
+    : `${t("contact")} · ${t("bookCall")}`;
 
   return (
     <div
@@ -39,11 +40,11 @@ export function StickyActionBar() {
       }`}
       aria-hidden={!visible}
     >
-      <div className="mx-auto flex max-w-[1280px] gap-2 px-3 sm:px-4">
+      <div className="mx-auto flex max-w-[1280px] gap-1.5 px-3 sm:gap-2 sm:px-4">
         {resumeUrl ? (
           <a
             href={resumeUrl}
-            className="btn-outline inline-flex min-h-12 min-w-0 flex-1 items-center justify-center rounded-xl bg-[var(--bg-elevated)]/80 px-2 text-xs font-semibold sm:px-3 sm:text-sm"
+            className="btn-outline inline-flex min-h-12 min-w-0 flex-1 items-center justify-center rounded-xl bg-[var(--bg-elevated)]/80 px-1.5 text-[11px] font-semibold sm:px-3 sm:text-sm"
             {...(isLocalResume(resumeUrl)
               ? { download: resumeDownload }
               : { target: "_blank", rel: "noopener noreferrer" })}
@@ -51,7 +52,13 @@ export function StickyActionBar() {
             {t("resume")}
           </a>
         ) : null}
-        <BookCallLink className="btn-primary inline-flex min-h-12 min-w-0 flex-1 items-center justify-center px-2 text-xs sm:px-3 sm:text-sm">
+        <Link
+          href="/#contact"
+          className="btn-outline inline-flex min-h-12 min-w-0 flex-1 items-center justify-center rounded-xl bg-[var(--bg-elevated)]/80 px-1.5 text-[11px] font-semibold sm:px-3 sm:text-sm"
+        >
+          {t("contact")}
+        </Link>
+        <BookCallLink className="btn-primary inline-flex min-h-12 min-w-0 flex-1 items-center justify-center px-1.5 text-[11px] sm:px-3 sm:text-sm">
           {t("bookCall")}
         </BookCallLink>
       </div>

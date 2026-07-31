@@ -21,41 +21,39 @@ export function Testimonials({ title, subtitle, items }: Props) {
   const reduce = useReducedMotion();
 
   return (
-    <section className="border-b border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
+    <section className="border-b border-[var(--border-subtle)] px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
       <div className="mx-auto max-w-[1280px]">
         <MotionReveal>
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
             {title}
           </p>
-          <h2 className="max-w-2xl text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl">
+          <h2 className="max-w-2xl text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl">
             {subtitle}
           </h2>
         </MotionReveal>
 
-        <div className="mt-10 grid gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
+        <div className="mt-8 grid gap-3 sm:mt-10 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item, i) => (
-            <MotionReveal key={item.company} delay={i * 90}>
+            <MotionReveal key={item.company} delay={i * 50}>
               <motion.blockquote
-                whileHover={reduce ? undefined : { y: -4 }}
-                className="flex h-full flex-col rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 p-5 transition hover:border-[var(--border-hover)] sm:p-8"
+                whileHover={reduce ? undefined : { y: -2 }}
+                className="flex h-full flex-col rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-4 transition hover:border-[var(--border-hover)] sm:p-5"
               >
                 <Quote
-                  className="h-8 w-8 text-accent/40"
+                  className="h-5 w-5 text-accent/40"
                   strokeWidth={1.2}
                   aria-hidden
                 />
-                <p className="mt-4 flex-1 text-sm leading-relaxed text-[var(--text-secondary)]">
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-[var(--text-secondary)]">
                   &ldquo;{item.quote}&rdquo;
                 </p>
-                <footer className="mt-6 border-t border-[var(--border-subtle)] pt-5">
+                <footer className="mt-4 border-t border-[var(--border-subtle)] pt-3">
                   <p className="text-sm font-semibold text-[var(--text-primary)]">
                     {item.name}
                   </p>
-                  <p className="mt-1 text-xs text-[var(--text-muted)]">
+                  <p className="mt-0.5 text-xs text-[var(--text-muted)]">
                     {item.role}
-                  </p>
-                  <p className="mt-0.5 text-xs font-medium text-accent/90">
-                    {item.company}
+                    <span className="text-accent/90"> · {item.company}</span>
                   </p>
                 </footer>
               </motion.blockquote>

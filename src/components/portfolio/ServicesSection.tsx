@@ -44,7 +44,7 @@ export function ServicesSection({
   return (
     <section
       id="services"
-      className="border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)]/10 px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24"
+      className="border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)]/10 px-4 py-12 sm:px-6 sm:py-14 lg:px-8 lg:py-20"
     >
       <div className="mx-auto max-w-[1280px]">
         <MotionReveal>
@@ -59,35 +59,37 @@ export function ServicesSection({
           </h2>
         </MotionReveal>
 
-        <div className="mt-10 grid gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
+        <div className="mt-8 grid gap-3 sm:mt-10 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item, i) => {
             const Icon = ICONS[i % ICONS.length];
             return (
-              <MotionReveal key={item.title} delay={i * 60}>
+              <MotionReveal key={item.title} delay={i * 40}>
                 <motion.article
-                  whileHover={reduce ? undefined : { y: -4 }}
-                  className="group flex h-full flex-col rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 p-6 transition hover:border-[var(--border-hover)] hover:bg-[var(--bg-elevated)]/45"
+                  whileHover={reduce ? undefined : { y: -2 }}
+                  className="flex h-full gap-3 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 p-4 transition hover:border-[var(--border-hover)]"
                 >
-                  <div className="mb-4 inline-flex rounded-xl border border-blue-500/20 bg-gradient-to-br from-blue-500/12 to-emerald-500/8 p-2.5 text-accent">
-                    <Icon className="h-5 w-5" strokeWidth={1.6} aria-hidden />
+                  <div className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-blue-500/20 bg-gradient-to-br from-blue-500/12 to-emerald-500/8 text-accent">
+                    <Icon className="h-4 w-4" strokeWidth={1.6} aria-hidden />
                   </div>
-                  <h3 className="text-base font-semibold text-[var(--text-primary)]">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-[var(--text-secondary)]">
-                    {item.description}
-                  </p>
+                  <div className="min-w-0">
+                    <h3 className="text-sm font-semibold text-[var(--text-primary)]">
+                      {item.title}
+                    </h3>
+                    <p className="mt-1 text-xs leading-relaxed text-[var(--text-secondary)]">
+                      {item.description}
+                    </p>
+                  </div>
                 </motion.article>
               </MotionReveal>
             );
           })}
         </div>
 
-        <MotionReveal delay={360}>
-          <div className="mt-10 flex justify-center">
+        <MotionReveal delay={280}>
+          <div className="mt-8 flex justify-center">
             <Link
-              href="/#contact"
-              className="btn-primary inline-flex min-h-12 w-full items-center justify-center gap-2 px-6 py-3 text-sm sm:w-auto sm:px-8"
+              href="/#offers"
+              className="inline-flex min-h-11 items-center justify-center gap-2 text-sm font-semibold text-accent transition hover:text-[var(--accent-blue-light)]"
             >
               {cta}
               <ArrowRight className="h-4 w-4" aria-hidden />

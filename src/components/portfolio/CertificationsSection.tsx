@@ -46,7 +46,7 @@ export async function CertificationsSection({ compact = false }: Props) {
       className={
         compact
           ? ""
-          : "border-b border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24"
+          : "border-b border-[var(--border-subtle)] px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16"
       }
     >
       <div className={compact ? "" : "mx-auto max-w-[1280px]"}>

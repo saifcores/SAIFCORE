@@ -123,7 +123,7 @@ export function HeroContent({
       >
         <span className="text-pretty leading-relaxed">{locationLine}</span>
         <Link
-          href="/#contact"
+          href="/#paths"
           className="inline-flex min-h-11 w-fit items-center font-medium text-[var(--text-secondary)] underline decoration-white/20 underline-offset-4 transition hover:text-[var(--text-primary)] hover:decoration-white/40 sm:min-h-0"
         >
           {jumpToContact}

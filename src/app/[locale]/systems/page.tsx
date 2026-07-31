@@ -6,6 +6,7 @@ import {
 } from "next-intl/server";
 import type { Metadata } from "next";
 import { ContactBridgeStrip } from "@/components/portfolio/ContactBridgeStrip";
+import { MidPageCta } from "@/components/portfolio/MidPageCta";
 import { PageHeader } from "@/components/portfolio/PageHeader";
 import { ProfileExploreLinks } from "@/components/portfolio/ProfileExploreLinks";
 import { ArchitectureSection } from "@/components/portfolio/ArchitectureSection";
@@ -94,17 +95,19 @@ export default async function SystemsPage({ params }: Props) {
           subtitle={t("subtitle")}
           backLabel={t("backToHome")}
           showFacts
+          actionVariant="client"
         />
 
-        <ArchitectureSection />
-        {/* Full case studies with security + scale detail */}
+        {/* Proof first, then architecture context */}
         <FeaturedProjects showDetail />
+        <MidPageCta namespace="systemsPage" />
+        <ArchitectureSection />
         <BankingLeadership />
 
         <div className="px-4 pb-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-[1280px] space-y-8">
             <ProfileExploreLinks excludePath="/systems" />
-            <ContactBridgeStrip ns="systemsPage" />
+            <ContactBridgeStrip ns="systemsPage" showPackages />
           </div>
         </div>
       </main>

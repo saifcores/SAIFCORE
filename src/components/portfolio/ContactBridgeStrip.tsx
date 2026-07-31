@@ -16,9 +16,16 @@ type Namespace =
   | "aboutPage"
   | "certificationsPage";
 
-export async function ContactBridgeStrip({ ns }: { ns: Namespace }) {
+type Props = {
+  ns: Namespace;
+  /** Show a link to freelance packages (client-oriented pages). */
+  showPackages?: boolean;
+};
+
+export async function ContactBridgeStrip({ ns, showPackages = false }: Props) {
   const t = await getTranslations(ns);
   const tNav = await getTranslations("nav");
+  const tHeader = await getTranslations("pageHeader");
   const locale = await getLocale();
   const resumeUrl = getResumeUrl(locale);
   const resumeDownload = getResumeDownloadFilename(locale);
@@ -30,7 +37,7 @@ export async function ContactBridgeStrip({ ns }: { ns: Namespace }) {
 
   return (
     <section
-      className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 px-4 py-10 sm:px-10 sm:py-14"
+      className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 px-4 py-8 sm:px-10 sm:py-12"
       aria-labelledby={`contact-bridge-${ns}`}
     >
       <Reveal>
@@ -54,6 +61,14 @@ export async function ContactBridgeStrip({ ns }: { ns: Namespace }) {
             <BookCallLink className="btn-outline inline-flex h-12 w-full items-center justify-center rounded-xl px-6 text-sm font-semibold sm:w-auto">
               {tNav("bookCall")}
             </BookCallLink>
+            {showPackages ? (
+              <Link
+                href="/#offers"
+                className="btn-outline inline-flex h-12 w-full items-center justify-center rounded-xl px-6 text-sm font-semibold sm:w-auto"
+              >
+                {tHeader("seePackages")}
+              </Link>
+            ) : null}
             {resumeUrl && resumeProps ? (
               <a
                 href={resumeUrl}

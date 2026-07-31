@@ -1,11 +1,18 @@
 import type { Locale } from "next-intl";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import {
+  getMessages,
+  getTranslations,
+  setRequestLocale,
+} from "next-intl/server";
 import type { Metadata } from "next";
 import { About } from "@/components/portfolio/About";
 import { ContactBridgeStrip } from "@/components/portfolio/ContactBridgeStrip";
+import { EngineeringPrinciples } from "@/components/portfolio/EngineeringPrinciples";
 import { Footer } from "@/components/portfolio/Footer";
 import { Navbar } from "@/components/portfolio/Navbar";
 import { PageHeader } from "@/components/portfolio/PageHeader";
+import { TechStackSection } from "@/components/portfolio/TechStackSection";
+import { TrustedExpertise } from "@/components/portfolio/TrustedExpertise";
 import { routing } from "@/i18n/routing";
 import { buildPageMetadata, buildProfilePageGraph } from "@/seo";
 
@@ -41,6 +48,10 @@ export default async function AboutPage({ params }: Props) {
   const t = await getTranslations("aboutPage");
   const tCommon = await getTranslations("common");
   const tMeta = await getTranslations("meta");
+  const messages = await getMessages();
+  const te = messages.trustedExpertise;
+  const ts = messages.techStack;
+  const ep = messages.engineeringPrinciples;
 
   const pageJsonLd = buildProfilePageGraph({
     locale,
@@ -82,13 +93,32 @@ export default async function AboutPage({ params }: Props) {
           subtitle={t("subtitle")}
           backLabel={t("backToHome")}
           showFacts
+          actionVariant="balanced"
         />
 
         <About extended />
 
+        <TrustedExpertise
+          title={te.title}
+          subtitle={te.subtitle}
+          techLabel={te.techLabel}
+          conceptsLabel={te.conceptsLabel}
+          items={[...te.items]}
+        />
+        <TechStackSection
+          title={ts.title}
+          subtitle={ts.subtitle}
+          categories={[...ts.categories]}
+        />
+        <EngineeringPrinciples
+          title={ep.title}
+          subtitle={ep.subtitle}
+          items={[...ep.items]}
+        />
+
         <div className="px-4 pb-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-[1280px]">
-            <ContactBridgeStrip ns="aboutPage" />
+            <ContactBridgeStrip ns="aboutPage" showPackages />
           </div>
         </div>
       </main>

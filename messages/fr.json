@@ -24,7 +24,7 @@
     "backToTop": "Retour en haut"
   },
   "actionBar": {
-    "bookCall": "Réserver un appel",
+    "bookCall": "Appel",
     "contact": "Contact",
     "resume": "CV"
   },
@@ -34,6 +34,7 @@
     "brandHomeLabel": "SAIFCORE — accueil",
     "work": "Projets",
     "services": "Services",
+    "offers": "Packages",
     "expertise": "Expertise",
     "experience": "Expérience",
     "process": "Processus",
@@ -70,7 +71,26 @@
     "factBanking": "Delivery Groupe Bank of Africa",
     "factRemote": "Remote international",
     "factBilingual": "Bilingue FR / EN",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "seePackages": "Voir les packages"
+  },
+  "audiencePaths": {
+    "title": "Par où commencer",
+    "subtitle": "Vous savez qui je suis — choisissez preuves recrutement, ou livraison freelance.",
+    "recruiterTitle": "Recrutement ou hiring",
+    "recruiterDescription": "Parcourez le parcours, les études de cas et le profil — puis téléchargez le CV.",
+    "recruiterLinkExperience": "Expérience",
+    "recruiterLinkSystems": "Études de cas",
+    "recruiterLinkAbout": "À propos",
+    "recruiterCta": "Télécharger le CV",
+    "recruiterSecondaryCta": "Voir l'expérience",
+    "clientTitle": "Freelance ou projet",
+    "clientDescription": "Consultez les services et packages d'engagement — puis réservez un court appel discovery.",
+    "clientLinkServices": "Services",
+    "clientLinkOffers": "Packages",
+    "clientLinkProcess": "Comment je travaille",
+    "clientCta": "Réserver un appel",
+    "clientSecondaryCta": "Voir les packages"
   },
   "hero": {
     "badge": "Backend · Banque & FinTech · Remote International",
@@ -84,13 +104,14 @@
       "Systèmes Distribués",
       "Java & Spring Boot"
     ],
-    "ctaPrimary": "Voir les services",
+    "ctaPrimary": "Voir ce que j'offre",
+    "ctaExperience": "Voir l'expérience",
     "ctaBookCall": "Réserver un appel",
     "ctaResume": "Télécharger le CV",
     "proofLine": "Delivery avec Bank of Africa Group · Synapse · ENG Technologie · Fintech Afrique de l'Ouest",
     "locationLine": "Dakar, Sénégal (GMT) — bilingue FR/EN · ouvert aux missions freelance et contrat remote à l'international.",
     "availability": "Ouvert aux nouvelles missions",
-    "jumpToContact": "Démarrer un projet",
+    "jumpToContact": "Choisir votre chemin",
     "terminalTitle": "Moteur de paiement",
     "terminalVersion": "v2.4.1",
     "terminalStatus": "Opérationnel",
@@ -227,35 +248,117 @@
   },
   "services": {
     "title": "Services",
-    "audience": "Pour banques, fintechs et équipes produit — remote international",
+    "audience": "Pour clients, startups, banques et entreprises — remote international",
     "subtitle": "Architecture backend, intégrations paiement et modernisation de plateformes pour systèmes régulés et à enjeux élevés — freelance, contrat ou conseil.",
     "items": [
       {
         "title": "Architecture backend enterprise & modernisation",
-        "description": "Pérennisez votre plateforme : migration de systèmes legacy, conception de backends cloud-native robustes, et garantie de résilience, observabilité et conformité pour charges fintech et paiement à l'échelle enterprise."
+        "description": "Migration legacy et backends cloud-native pensés pour la résilience, l'observabilité et la conformité."
       },
       {
         "title": "Intégration paiement & adaptateurs API unifiés",
-        "description": "Intégrez fournisseurs de paiement locaux et globaux (banques, PSP, wallets) sous un contrat unique et stable. Standardisez les flux, imposez l'idempotence et simplifiez l'onboarding — fini les intégrations ad hoc."
+        "description": "Banques, PSP et wallets sous un contrat stable — flux idempotents, onboarding accéléré."
       },
       {
         "title": "Lancement produit fintech & accélération MVP",
-        "description": "Pour startups ou nouvelles lignes métier — obtenez un MVP prêt au lancement sur une vraie infrastructure de paiement : prêt à démo, financement et extension, avec documentation et auditabilité aux bonnes pratiques."
+        "description": "MVP prêt au lancement sur de vrais rails de paiement — démo, financement et extension."
       },
       {
         "title": "Passerelles API sécurisées & onboarding partenaires",
-        "description": "Conception et déploiement de passerelles API partenaires pour produits régulés : auth sécurisée, contrôle d'accès granulaire, audit, gestion du trafic et onboarding simplifié pour banques et PSP."
+        "description": "Passerelles partenaires avec auth, contrôle d'accès, audit et gestion du trafic."
       },
       {
         "title": "Cloud DevOps & SRE pour paiements",
-        "description": "Déploiement et exploitation d'infrastructure de paiement avec livraison blue/green ou canary, automatisation GitOps, vrais SLOs et cloud scalable et optimisé en coûts — pour services régulés toujours disponibles."
+        "description": "Livraison blue/green ou canary, GitOps, SLOs et cloud maîtrisé pour services toujours dispo."
       },
       {
         "title": "Due diligence technique & audits de codebase",
-        "description": "Audits indépendants de code, intégrations et cloud pour M&A, investissement ou conformité — constats clairs et évaluations de risque par un expert backend paiements terrain."
+        "description": "Revues indépendantes code, intégrations et cloud pour M&A, investissement ou conformité."
       }
     ],
-    "cta": "Discuter de vos besoins backend"
+    "cta": "Voir les packages d'engagement"
+  },
+  "freelanceOffers": {
+    "title": "Packages d'engagement",
+    "subtitle": "Deux pistes — les équipes produit qui livrent vite, et les entreprises qui modernisent sous contraintes réelles. Remote, cadré, orienté production.",
+    "note": "On commence par un court appel discovery. Vous recevez une proposition écrite : périmètre, jalons et effort — pas de forfait flou.",
+    "cta": "Demander une proposition",
+    "tracks": [
+      {
+        "label": "Clients & fondateurs",
+        "audience": "Startups, product owners et PME qui construisent des APIs, des MVP ou des produits adossés aux paiements.",
+        "promise": "Un backend que vous pouvez démo, exploiter et transmettre à votre équipe — avec jalons, docs, sans boîte noire.",
+        "packages": [
+          {
+            "title": "Sprint discovery & architecture",
+            "duration": "1–2 semaines",
+            "description": "Idéal avant un build complet : verrouiller périmètre, risques et le chemin le plus court vers un backend lançable.",
+            "includes": [
+              "Objectifs, contraintes et carte d'intégrations",
+              "Architecture cible + brouillons d'ADR",
+              "Plan phasé avec fourchettes d'effort"
+            ]
+          },
+          {
+            "title": "Build & livraison",
+            "duration": "4–12 semaines",
+            "description": "Livraison freelance de bout en bout : APIs, adaptateurs paiement ou workflows core — de la discovery au handoff production.",
+            "includes": [
+              "Démos par jalons et critères d'acceptation",
+              "Tests, observabilité et runbooks",
+              "Docs de handoff reprises par votre équipe"
+            ]
+          },
+          {
+            "title": "Accélération MVP",
+            "duration": "6–10 semaines",
+            "description": "Un MVP finançable et prêt à démo sur de vrais rails de paiement — conçu pour s'étendre, pas pour être jeté.",
+            "includes": [
+              "APIs métier core et flux de paiement",
+              "Socle sécurité et pistes d'audit",
+              "Checklist de lancement + roadmap suivante"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Entreprises & banques",
+        "audience": "Banques, fintechs et équipes plateforme qui ont besoin de capacité backend senior, de modernisation ou d'un regard indépendant.",
+        "promise": "Une ownership senior là où les enjeux sont élevés — intégrations régulées, livraison conforme, architecture qui scale.",
+        "packages": [
+          {
+            "title": "Embed backend en contrat",
+            "duration": "1–6 mois",
+            "description": "Un ingénieur backend senior dans votre squad — sprints roadmap, CI/CD et ownership production en contexte régulé.",
+            "includes": [
+              "Livraison dans vos rituels et outils",
+              "Reviews, barre de qualité et mentorship",
+              "Posture ops stable après release"
+            ]
+          },
+          {
+            "title": "Modernisation de plateforme",
+            "duration": "8–16 semaines+",
+            "description": "Migration legacy vers cloud-native, passerelles API partenaires et programmes paiement avec gouvernance enterprise.",
+            "includes": [
+              "Architecture et vagues de migration",
+              "Onboarding partenaires et contrats API versionnés",
+              "Résilience, observabilité et SLOs"
+            ]
+          },
+          {
+            "title": "Audit & conseil architecture",
+            "duration": "1–3 semaines",
+            "description": "Due diligence indépendante ou partenariat design avant M&A, investissement ou une décision de build majeure.",
+            "includes": [
+              "Constats classés par risque et effort",
+              "Designs de référence et ADR",
+              "Recommandations prêtes pour le COMEX"
+            ]
+          }
+        ]
+      }
+    ]
   },
   "techStack": {
     "title": "Stack production",
@@ -1013,6 +1116,7 @@
     "statCuriosityValue": "∞",
     "statCuriosity": "Curiosité",
     "engagementsTitle": "Comment je peux aider",
+    "offersLink": "Voir les packages d'engagement →",
     "engagements": [
       {
         "title": "Livraison freelance",
@@ -1212,10 +1316,16 @@
     "relatedCaseStudiesSubtitle": "Patterns production issus de la delivery banque, paiements et plateformes.",
     "viewAllArticles": "Voir tous les articles"
   },
+  "depthTeaser": {
+    "title": "Profondeur technique",
+    "heading": "Capacités, stack production et principes d'ingénierie",
+    "body": "Pour recruteurs et reviewers techniques — carte des capacités, outils et façon de construire des systèmes régulés.",
+    "cta": "Ouvrir le profil complet"
+  },
   "cta": {
     "label": "Contact",
-    "title": "Prêt à parler backend, paiements ou plateforme ?",
-    "subtitle": "Partagez objectifs, contraintes et calendrier — je réponds avec des prochaines étapes claires. Idéal pour missions freelance, contrat et consulting (remote international).",
+    "title": "Recrutement ou projet — parlons-en",
+    "subtitle": "Recruteurs : envoyez un brief ou prenez le CV. Clients & équipes : partagez objectifs, contraintes et délai — je réponds avec des prochaines étapes claires (remote international).",
     "processTitle": "Comment ça marche",
     "processStep1": "Partagez votre brief : objectifs, architecture, défis et contraintes.",
     "processStep2": "Je réponds avec des questions ciblées et une roadmap pratique.",
@@ -1263,6 +1373,7 @@
     "homeSectionsLabel": "Page d'accueil",
     "work": "Projets phares",
     "services": "Services",
+    "offers": "Packages d'engagement",
     "expertise": "Expertise",
     "process": "Processus",
     "insights": "Aperçu articles",
@@ -1299,6 +1410,9 @@
     "title": "Projets & études de cas",
     "subtitle": "Problème, architecture, sécurité, échelle et impact mesurable — dont des patterns issus de la delivery Synapse pour le Groupe Bank of Africa et des intégrations FinTech.",
     "backToHome": "Retour à l'accueil",
+    "midCtaTitle": "Vous voulez des résultats similaires sur votre plateforme ?",
+    "midCtaSubtitle": "Réservez un appel discovery, ou consultez les packages d'engagement.",
+    "midCtaSecondary": "Voir les packages",
     "endCtaTitle": "Besoin de patterns d'architecture similaires sur votre plateforme ?",
     "endCtaSubtitle": "Partagez votre contexte — paiements, grands livres, API ou SaaS — je réponds avec des prochaines étapes concrètes.",
     "endCtaButton": "Discuter de votre projet"
@@ -1311,8 +1425,11 @@
     "backToHome": "Retour à l'accueil",
     "skillsTitle": "Stack technologique production",
     "skillsSubtitle": "Outils et patterns utilisés sur des backends bancaires et fintech live — pas une liste de buzzwords.",
-    "endCtaTitle": "Vous cherchez ce profil pour votre équipe ou projet ?",
-    "endCtaSubtitle": "Freelance, contrat ou conseil — remote international. Partagez le rôle, la stack et le calendrier.",
+    "midCtaTitle": "Assez de preuves pour l'étape suivante ?",
+    "midCtaSubtitle": "Téléchargez le CV, ou partagez un brief de rôle / projet.",
+    "midCtaSecondary": "Contact",
+    "endCtaTitle": "Recrutement pour ce profil — ou mission embarquée ?",
+    "endCtaSubtitle": "Recruteurs : prenez le CV ou envoyez un brief. Équipes : partagez stack, contraintes et délai pour du freelance ou contrat.",
     "endCtaButton": "Me contacter"
   },
   "skillsMatrix": {

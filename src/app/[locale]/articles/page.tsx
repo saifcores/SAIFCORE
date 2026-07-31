@@ -112,10 +112,10 @@ export default async function ArticlesPage({ params }: Props) {
           title={t("title")}
           subtitle={t("subtitle")}
           backLabel={t("backToHome")}
-          showFacts
+          actionVariant="balanced"
         />
 
-        <section className="px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+        <section className="px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
           <div className="mx-auto max-w-[1280px]">
             <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2 sm:gap-y-14 lg:grid-cols-3">
               {getLatestArticles().map((article, i) => {
@@ -139,7 +139,7 @@ export default async function ArticlesPage({ params }: Props) {
 
         <div className="px-4 pb-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-[1280px]">
-            <ContactBridgeStrip ns="articlesPage" />
+            <ContactBridgeStrip ns="articlesPage" showPackages />
           </div>
         </div>
       </main>
