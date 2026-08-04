@@ -19,6 +19,7 @@ export type NavPrimaryLinkKey = Extract<
   | "expertise"
   | "experience"
   | "process"
+  | "faq"
   | "about"
   | "insights"
   | "blog"

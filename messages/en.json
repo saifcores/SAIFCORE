@@ -1,19 +1,19 @@
 {
   "meta": {
-    "title": "Backend Software Engineer | Enterprise Platforms · Payments | SAIFCORE",
-    "description": "Backend software engineer (EN/FR) building enterprise platforms, banking systems, and payment infrastructure from Dakar — remote worldwide. Java, Spring Boot, Kafka, AWS for fintech and regulated environments.",
-    "ogTitle": "Backend Software Engineer — Enterprise Platforms · Payment Infrastructure",
-    "ogDescription": "I build backend platforms that power enterprise applications, banking systems, and payment infrastructure — reliable, scalable, and built for long-term evolution. Available for international freelance & contract work.",
-    "twitterDescription": "Backend software engineer · Enterprise platforms · Payment infrastructure · Java · Spring Boot · AWS · Remote worldwide.",
+    "title": "Backend Software Engineer | Freelance Packages · Payments | SAIFCORE",
+    "description": "Backend engineer (EN/FR) for enterprise platforms, banking systems, and payments — remote worldwide from Dakar. Clear engagement packages for founders and banks: discovery, build, MVP, contract embed, modernization, and architecture advisory.",
+    "ogTitle": "Backend Engineer — Engagement Packages for Fintech & Banking",
+    "ogDescription": "Scoped freelance and contract backend delivery for APIs, payments, and regulated platforms. Discovery call, written proposal, remote worldwide — Java, Spring Boot, Kafka, AWS.",
+    "twitterDescription": "Backend engineer · Engagement packages · Payments & banking · Java · Spring Boot · AWS · Remote worldwide.",
     "jsonLdJobTitle": "Backend Software Engineer",
-    "jsonLdDescription": "Backend software engineer specializing in enterprise platforms, banking systems, and payment infrastructure — Java, Spring Boot, distributed systems, microservices, and cloud-native delivery. Based in Dakar, open to remote international engagements.",
+    "jsonLdDescription": "Backend software engineer specializing in enterprise platforms, banking systems, and payment infrastructure — Java, Spring Boot, distributed systems, microservices, and cloud-native delivery. Offers scoped engagement packages for startups and enterprises. Based in Dakar, open to remote international work.",
     "jsonLdServiceName": "Enterprise platform & payment engineering",
-    "jsonLdServiceDescription": "Backend systems, APIs, distributed architectures, and payment solutions for enterprise and fintech platforms — including mobile money and regulated banking integrations.",
+    "jsonLdServiceDescription": "Backend systems, APIs, distributed architectures, and payment solutions for enterprise and fintech platforms — including mobile money and regulated banking integrations. Delivered as scoped engagement packages.",
     "jsonLdAvailability": "Remote worldwide",
     "jsonLdAreaServed": "Worldwide",
-    "keywords": "backend software engineer, Spring Boot, Java, payment infrastructure, fintech, banking systems, distributed systems, Kafka, AWS, mobile money, West Africa, remote engineer, freelance backend, SAIFCORE",
+    "keywords": "backend software engineer, freelance backend, engagement packages, Spring Boot, Java, payment infrastructure, fintech, banking systems, distributed systems, Kafka, AWS, mobile money, West Africa, remote engineer, contract backend, architecture advisory, SAIFCORE",
     "manifestName": "SAIFCORE — Backend Software Engineer",
-    "manifestDescription": "Portfolio — enterprise platforms, payment infrastructure, banking systems, and backend engineering."
+    "manifestDescription": "Portfolio — engagement packages for enterprise platforms, payment infrastructure, banking systems, and backend engineering."
   },
   "common": {
     "skipToContent": "Skip to content",
@@ -26,11 +26,12 @@
   "actionBar": {
     "bookCall": "Book a call",
     "contact": "Contact",
+    "packages": "Packages",
     "resume": "CV"
   },
   "nav": {
     "primary": "Primary",
-    "brandRole": "Backend · Banking · Payments",
+    "brandRole": "Backend · Packages · Payments",
     "brandHomeLabel": "SAIFCORE — home",
     "work": "Projects",
     "services": "Services",
@@ -38,6 +39,7 @@
     "expertise": "Expertise",
     "experience": "Experience",
     "process": "Process",
+    "faq": "FAQ",
     "about": "About",
     "insights": "Insights",
     "blog": "Blog",
@@ -76,16 +78,16 @@
   },
   "audiencePaths": {
     "title": "Start here",
-    "subtitle": "You know who I am — pick hiring proof, or freelance delivery.",
-    "recruiterTitle": "Hiring or recruiting",
-    "recruiterDescription": "See career proof, case studies, and credentials — then download the resume.",
+    "subtitle": "Two paths — hiring proof for recruiters, or scoped delivery for clients.",
+    "recruiterTitle": "Hiring & recruiting",
+    "recruiterDescription": "Review experience, case studies, and About — then download the CV.",
     "recruiterLinkExperience": "Experience",
     "recruiterLinkSystems": "Case studies",
     "recruiterLinkAbout": "About",
-    "recruiterCta": "Download resume",
+    "recruiterCta": "Download CV",
     "recruiterSecondaryCta": "View experience",
-    "clientTitle": "Freelance or project work",
-    "clientDescription": "Browse services and engagement packages — then book a short discovery call.",
+    "clientTitle": "Project & freelance work",
+    "clientDescription": "See what I deliver, pick an engagement package, then book a short discovery call.",
     "clientLinkServices": "Services",
     "clientLinkOffers": "Packages",
     "clientLinkProcess": "How I work",
@@ -104,7 +106,7 @@
       "Distributed Systems",
       "Java & Spring Boot"
     ],
-    "ctaPrimary": "See what I offer",
+    "ctaPrimary": "See packages",
     "ctaExperience": "View experience",
     "ctaBookCall": "Book a Call",
     "ctaResume": "Download Resume",
@@ -249,32 +251,32 @@
     ]
   },
   "services": {
-    "title": "Services",
-    "audience": "For clients, startups, banks, and enterprises — remote worldwide",
-    "subtitle": "Backend architecture, payment integrations, and platform modernization for regulated and high-stakes systems — freelance, contract, or advisory.",
+    "title": "What I deliver",
+    "audience": "Clients, startups, banks, and enterprises — remote worldwide",
+    "subtitle": "Capability areas behind the engagement packages — architecture, payments, and platform work for regulated systems.",
     "items": [
       {
-        "title": "Enterprise Backend Architecture & Modernization",
+        "title": "Backend architecture & modernization",
         "description": "Legacy migration and cloud-native backends built for resilience, observability, and compliance."
       },
       {
-        "title": "Payment Integration & Unified API Adapters",
-        "description": "Banks, PSPs, and wallets under one stable contract — idempotent flows, faster onboarding."
+        "title": "Payment integrations & API adapters",
+        "description": "Banks, PSPs, and wallets under one stable contract — idempotent flows, faster partner onboarding."
       },
       {
-        "title": "Fintech Product Launch & MVP Acceleration",
-        "description": "Launch-ready MVP on real payment rails — demoable, fundable, and ready to extend."
+        "title": "Fintech MVP & product launch",
+        "description": "Launch-ready MVP on real payment rails — demoable, fundable, and designed to extend."
       },
       {
-        "title": "Secure API Gateways & Partner Onboarding",
-        "description": "Partner gateways with auth, access control, audit, and traffic management for regulated products."
+        "title": "API gateways & partner onboarding",
+        "description": "Secure partner gateways with auth, access control, audit trails, and traffic management."
       },
       {
-        "title": "Cloud DevOps & SRE for Payments",
+        "title": "Cloud DevOps & SRE for payments",
         "description": "Blue/green or canary delivery, GitOps, SLOs, and cost-aware cloud for always-on services."
       },
       {
-        "title": "Technical Due Diligence & Codebase Audits",
+        "title": "Technical due diligence & audits",
         "description": "Independent code, integration, and cloud reviews for M&A, investment, or compliance."
       }
     ],
@@ -359,6 +361,36 @@
             ]
           }
         ]
+      }
+    ]
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "subtitle": "Straight answers for founders, product leads, and hiring managers scoping a backend engagement.",
+    "items": [
+      {
+        "question": "How do engagements start?",
+        "answer": "With a short discovery call. You get a written proposal covering scope, milestones, effort range, and the recommended package — no vague retainers."
+      },
+      {
+        "question": "Do you work fully remote?",
+        "answer": "Yes. Delivery is remote worldwide from Dakar, with async-friendly rituals and overlap that fits your timezone for critical workshops."
+      },
+      {
+        "question": "Which package should I choose?",
+        "answer": "Founders and SMEs usually start with Discovery & architecture, Build & deliver, or MVP acceleration. Banks and platform teams lean toward Contract embed, Platform modernization, or Audit & architecture advisory."
+      },
+      {
+        "question": "Can you work inside regulated banking or payment environments?",
+        "answer": "Yes. Experience includes Bank of Africa / Synapse contexts, payment integrations, audit-friendly trails, and production ownership where compliance and reliability matter."
+      },
+      {
+        "question": "What does handoff look like?",
+        "answer": "Milestone demos, tests, observability, runbooks, and documentation your team can operate — so delivery does not end as a black box."
+      },
+      {
+        "question": "Are you open to full-time roles as well as freelance?",
+        "answer": "Yes. Recruiters can review experience, systems, and CV; clients can start from engagement packages. Share context either way and you get a clear next step."
       }
     ]
   },
@@ -486,8 +518,9 @@
     ]
   },
   "workProcess": {
-    "title": "Work process",
-    "subtitle": "A proven delivery workflow for freelance and contract engagements — transparent, predictable, enterprise-ready.",
+    "title": "How delivery works",
+    "subtitle": "The same workflow behind every package — clear stages, visible progress, handoff your team can run.",
+    "cta": "Back to engagement packages",
     "steps": [
       {
         "title": "Discovery",
@@ -495,23 +528,23 @@
       },
       {
         "title": "Architecture",
-        "body": "System design, data contracts, security model, and phased roadmap with explicit trade-offs."
+        "body": "System design, data contracts, security model, and a phased roadmap with explicit trade-offs."
       },
       {
-        "title": "Development",
+        "title": "Build",
         "body": "Incremental delivery with reviews, CI/CD, and demos tied to business milestones."
       },
       {
-        "title": "Testing",
+        "title": "Verify",
         "body": "Unit, integration, and regression coverage — plus failure injection where money moves."
       },
       {
-        "title": "Deployment",
-        "body": "Production rollout, runbooks, monitoring, and handoff your team can operate."
+        "title": "Ship",
+        "body": "Production rollout, runbooks, monitoring, and a handoff your team can operate."
       },
       {
-        "title": "Optimization",
-        "body": "Post-launch tuning — latency, cost, and reliability improvements from real traffic data."
+        "title": "Tune",
+        "body": "Post-launch improvements — latency, cost, and reliability from real traffic data."
       }
     ]
   },
@@ -572,8 +605,9 @@
     }
   },
   "testimonials": {
-    "title": "How teams engage me",
-    "subtitle": "Typical outcomes from banking, fintech, and platform work — representative patterns (not named testimonials).",
+    "title": "Engagement outcomes",
+    "subtitle": "What delivery looks like in banking, fintech, and platform work — representative patterns, not named quotes.",
+    "cta": "Match an outcome to a package",
     "items": [
       {
         "quote": "Credit and mobile-money flows delivered with regulated-environment rigor — shorter integration cycles and stable post-launch operations.",
@@ -1066,9 +1100,9 @@
         "description": "Measured improvement from Mafalia SaaS backend and database optimization"
       },
       {
-        "value": "4",
-        "label": "Credentials obtained",
-        "description": "Java, software design, engineering essentials, and digital banking fundamentals"
+        "value": "FR/EN",
+        "label": "Bilingual delivery",
+        "description": "Workshops, documentation, and handoffs in French and English for international teams"
       }
     ],
     "principles": [
@@ -1122,15 +1156,15 @@
     "engagements": [
       {
         "title": "Freelance delivery",
-        "description": "End-to-end build or modernization of payment rails, APIs, and core workflows — discovery to production handoff, with clear milestones."
+        "description": "Build or modernize payment rails, APIs, and core workflows — discovery to production handoff, with milestones and docs."
       },
       {
-        "title": "Contract engineering",
-        "description": "Embedded senior backend capacity for product teams — roadmap sprints, CI/CD, and production ownership in regulated contexts."
+        "title": "Contract embed",
+        "description": "Senior backend capacity inside your squad — roadmap sprints, CI/CD, and production ownership in regulated contexts."
       },
       {
         "title": "Architecture advisory",
-        "description": "Discovery, ADRs, and reference designs that reduce integration, compliance, and scale risk before you commit to a build."
+        "description": "Discovery, ADRs, and reference designs that cut integration, compliance, and scale risk before you commit."
       }
     ],
     "endCtaTitle": "Planning a backend, payments, or platform initiative?",
@@ -1151,9 +1185,9 @@
   },
   "certifications": {
     "title": "Credentials",
-    "subtitle": "Verified academic credentials and production depth",
-    "teaserHeading": "Verified credentials — and skills proven in production",
-    "intro": "Obtained credentials in software design, engineering essentials, and digital banking. Day-to-day depth comes from shipping Spring, Kafka, cloud, and payment systems in regulated environments — industry certs below are the roadmap.",
+    "subtitle": "Certification roadmap backed by production delivery",
+    "teaserHeading": "Credentials in progress — skills already proven in production",
+    "intro": "Day-to-day depth comes from shipping Spring, Kafka, cloud, and payment systems in regulated environments. Formal certifications below are the roadmap — obtained credentials appear here with verify links as they land.",
     "formalLabel": "Industry certifications",
     "expertiseLabel": "Professional expertise",
     "viewAll": "View all credentials",
@@ -1257,22 +1291,22 @@
   },
   "certificationsPage": {
     "metaTitle": "Credentials & Certifications | Backend Software Engineer | SAIFCORE",
-    "metaDescription": "Obtained certifications in Java, software design, digital banking, and engineering essentials — plus production depth in Spring, Kubernetes, Kafka, and payment systems.",
+    "metaDescription": "Certification roadmap for cloud, security, streaming, and domain depth — backed by production delivery on Spring, Kafka, and payment systems in regulated environments.",
     "title": "Credentials",
-    "subtitle": "Verified certifications and actively pursued cloud, security, and streaming credentials — alongside hands-on Spring and payment infrastructure expertise.",
+    "subtitle": "Planned and in-progress cloud, security, and streaming credentials — alongside hands-on Spring and payment infrastructure expertise proven in production.",
     "backToHome": "Back to home",
-    "endCtaTitle": "Need verified backend depth on your initiative?",
-    "endCtaSubtitle": "Credentials plus production delivery on banking, payments, and platform work — share your context and timeline.",
+    "endCtaTitle": "Need backend depth on your initiative?",
+    "endCtaSubtitle": "Production delivery on banking, payments, and platform work — share your context and timeline.",
     "endCtaButton": "Start a conversation"
   },
   "aboutPage": {
     "metaTitle": "About | Backend Software Engineer | SAIFCORE",
-    "metaDescription": "Saïfoulaye Diallo (SAIFCORE) — bilingual EN/FR backend engineer in Dakar, open to remote worldwide. Enterprise platforms, banking systems, and payment infrastructure with Java & Spring Boot.",
+    "metaDescription": "Saïfoulaye Diallo (SAIFCORE) — bilingual EN/FR backend engineer in Dakar, open to remote worldwide. Enterprise platforms, banking & payments with Java & Spring Boot — plus scoped engagement packages for clients and enterprises.",
     "title": "About",
     "subtitle": "Four-plus years delivering backend platforms for banking, fintech, and enterprise systems — with reliability, security, and measurable business outcomes at the center.",
     "backToHome": "Back to home",
-    "endCtaTitle": "Want to work together on backend or payments delivery?",
-    "endCtaSubtitle": "Freelance, contract, or consulting — remote worldwide. Tell me about your team, stack, and constraints.",
+    "endCtaTitle": "Ready to scope a package — or hire this profile?",
+    "endCtaSubtitle": "Share team, stack, and constraints. I reply with a clear path: package proposal, contract embed, or next hiring steps.",
     "endCtaButton": "Get in touch"
   },
   "insights": {
@@ -1282,7 +1316,7 @@
     "blogPromoTitle": "SAIFCORE Blog",
     "blogPromoBody": "Long-form engineering articles on payments, backends, and fintech — published on the dedicated blog.",
     "endCtaTitle": "Tackling similar technical obstacles?",
-    "endCtaSubtitle": "Tell me about your platform, stack, and business context — let's pressure-test solutions together in your real-world environment.",
+    "endCtaSubtitle": "Tell me about your platform, stack, and constraints — I reply with a clear path: package proposal, workshop, or next hiring steps.",
     "endCtaButton": "Start the conversation"
   },
   "articlesPage": {
@@ -1327,7 +1361,7 @@
   "cta": {
     "label": "Contact",
     "title": "Hiring or starting a project — let’s talk",
-    "subtitle": "Recruiters: send a brief or grab the CV. Clients & teams: share goals, constraints, and timeline — I reply with clear next steps (remote worldwide).",
+    "subtitle": "Recruiters: send a brief or grab the CV. Clients & teams: share goals, constraints, and timeline — or start from an engagement package (remote worldwide).",
     "processTitle": "How It Works",
     "processStep1": "Share your brief: goals, architecture, challenges, and constraints.",
     "processStep2": "I respond with focused questions and a practical roadmap.",
@@ -1336,6 +1370,7 @@
     "bookCall": "Book a discovery call",
     "startProject": "Send an email",
     "emailSubject": "Project collaboration inquiry — SAIFCORE",
+    "seePackages": "See engagement packages",
     "downloadResume": "Download CV",
     "formName": "Your name",
     "formEmail": "Work email address",
@@ -1362,7 +1397,7 @@
     "rights": "© {year} {owner}. All rights reserved.",
     "rightsOwner": "{name} · SAIFCORE",
     "license": "MIT License",
-    "tagline": "Enterprise backends for banking, payments, and fintech — built in Dakar, delivered worldwide.",
+    "tagline": "Scoped backend engagements for banking, payments, and fintech — built in Dakar, delivered worldwide.",
     "linkedin": "Connect on LinkedIn",
     "github": "View GitHub",
     "blog": "SAIFCORE Blog",
@@ -1379,6 +1414,7 @@
     "expertise": "Expertise",
     "process": "How I Work",
     "insights": "Insights Preview",
+    "faq": "FAQ",
     "pagesLabel": "Explore",
     "connectLabel": "Get in Touch",
     "contact": "Contact Me"
@@ -1408,7 +1444,7 @@
   },
   "systemsPage": {
     "metaTitle": "Case Studies | Banking & Fintech Backends | SAIFCORE",
-    "metaDescription": "Backend case studies for payments, ledgers, API gateways, and SaaS — architecture, security, and scale patterns from Bank of Africa / Synapse and West Africa fintech delivery.",
+    "metaDescription": "Backend case studies for payments, ledgers, API gateways, and SaaS — patterns from Bank of Africa / Synapse and West Africa fintech. Useful proof before scoping an engagement package.",
     "title": "Projects & case studies",
     "subtitle": "Problem, architecture, security, scale, and measurable impact — including patterns from Synapse delivery for Bank of Africa Group and FinTech integrations.",
     "backToHome": "Back to home",
@@ -1421,17 +1457,17 @@
   },
   "experiencePage": {
     "metaTitle": "Experience | Backend Software Engineer | SAIFCORE",
-    "metaDescription": "Backend engineer track record: Synapse for Bank of Africa Group, ENG FinTech payments, Mafalia SaaS, SarayaTech — Java, Spring Boot, Kafka. Based in Dakar, open to remote worldwide.",
+    "metaDescription": "Backend track record: Synapse for Bank of Africa Group, ENG FinTech payments, Mafalia SaaS, SarayaTech — Java, Spring Boot, Kafka. Hire this profile, or scope a remote engagement package.",
     "title": "Professional Experience",
     "subtitle": "Banking, fintech, and enterprise delivery — where reliability, security, and correctness are non-negotiable.",
     "backToHome": "Back to Home",
     "skillsTitle": "Production Technology Stack",
     "skillsSubtitle": "Tools and patterns used on live banking and fintech backends — not a buzzword list.",
     "midCtaTitle": "Enough proof to take the next step?",
-    "midCtaSubtitle": "Download the CV, or share a role / project brief.",
-    "midCtaSecondary": "Contact",
-    "endCtaTitle": "Hiring for this profile — or embedding me on a project?",
-    "endCtaSubtitle": "Recruiters: grab the CV or send a brief. Teams: share stack, constraints, and timeline for freelance or contract work.",
+    "midCtaSubtitle": "Download the CV for hiring, or review engagement packages for freelance and contract work.",
+    "midCtaSecondary": "See packages",
+    "endCtaTitle": "Hiring for this profile — or scoping a package?",
+    "endCtaSubtitle": "Recruiters: grab the CV or send a brief. Teams: share stack, constraints, and timeline — I reply with a package proposal or next hiring steps.",
     "endCtaButton": "Get in touch"
   },
   "skillsMatrix": {

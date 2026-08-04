@@ -39,13 +39,13 @@ export function FreelanceOffers({ title, subtitle, note, cta, tracks }: Props) {
     >
       <div className="mx-auto max-w-[1280px]">
         <MotionReveal>
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
-            {title}
-          </p>
           <h2 className="max-w-3xl text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl">
-            {subtitle}
+            {title}
           </h2>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[var(--text-secondary)]">
+          <p className="mt-4 max-w-3xl text-pretty text-base leading-relaxed text-[var(--text-secondary)] sm:text-lg">
+            {subtitle}
+          </p>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[var(--text-muted)]">
             {note}
           </p>
         </MotionReveal>

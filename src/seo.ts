@@ -451,6 +451,109 @@ export function buildJsonLdGraph(
   };
 }
 
+export type OfferPackageInput = {
+  name: string;
+  description: string;
+  category?: string;
+};
+
+type OfferCatalogInput = {
+  locale: string;
+  catalogName: string;
+  catalogDescription: string;
+  packages: OfferPackageInput[];
+  areaServed: string;
+  availability: string;
+};
+
+/** OfferCatalog + Offer nodes for engagement packages on the home page. */
+export function buildOfferCatalogNodes({
+  locale,
+  catalogName,
+  catalogDescription,
+  packages,
+  areaServed,
+  availability,
+}: OfferCatalogInput): {
+  catalog: Record<string, unknown>;
+  offers: Record<string, unknown>[];
+} {
+  const homeUrl = getLocaleHomeUrl(locale);
+  const personId = personIdForLocale(locale);
+  const catalogId = `${homeUrl}#offer-catalog`;
+  const offersUrl = `${homeUrl}#offers`;
+
+  const offers = packages.map((pkg, index) => {
+    const slug = caseStudySlug(pkg.name);
+    return {
+      "@type": "Offer",
+      "@id": `${homeUrl}#offer-${slug || index}`,
+      name: pkg.name,
+      description: pkg.description,
+      url: offersUrl,
+      category: pkg.category,
+      areaServed,
+      availableAtOrFrom: {
+        "@type": "Place",
+        name: availability,
+      },
+      itemOffered: {
+        "@type": "Service",
+        name: pkg.name,
+        description: pkg.description,
+        provider: { "@id": personId },
+        serviceType: pkg.category,
+        areaServed,
+      },
+    };
+  });
+
+  return {
+    catalog: {
+      "@type": "OfferCatalog",
+      "@id": catalogId,
+      name: catalogName,
+      description: catalogDescription,
+      url: offersUrl,
+      numberOfItems: packages.length,
+      itemListElement: offers.map((offer, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: { "@id": offer["@id"] },
+      })),
+    },
+    offers,
+  };
+}
+
+export type FaqItemInput = {
+  question: string;
+  answer: string;
+};
+
+/** FAQPage JSON-LD for common buying / hiring questions. */
+export function buildFaqPageJsonLd(
+  locale: string,
+  items: FaqItemInput[],
+): Record<string, unknown> {
+  const homeUrl = getLocaleHomeUrl(locale);
+
+  return {
+    "@type": "FAQPage",
+    "@id": `${homeUrl}#faq`,
+    url: `${homeUrl}#faq`,
+    inLanguage: pageLanguage(locale),
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+}
+
 export type CaseStudyJsonLdInput = {
   name: string;
   description: string;

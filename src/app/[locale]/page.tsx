@@ -11,6 +11,7 @@ import { Insights } from "@/components/portfolio/Insights";
 import { CtaSection } from "@/components/portfolio/CtaSection";
 import { FeaturedProjectsTeaser } from "@/components/portfolio/FeaturedProjectsTeaser";
 import { Footer } from "@/components/portfolio/Footer";
+import { FaqSection } from "@/components/portfolio/FaqSection";
 import { Hero } from "@/components/portfolio/Hero";
 import { MetricsSection } from "@/components/portfolio/MetricsSection";
 import { Navbar } from "@/components/portfolio/Navbar";
@@ -25,7 +26,9 @@ import { fetchRecentArticles } from "@/blog/recent-articles";
 import {
   buildArticleItemListJsonLd,
   buildExternalItemListJsonLd,
+  buildFaqPageJsonLd,
   buildJsonLdGraph,
+  buildOfferCatalogNodes,
   caseStudySlug,
   getLocaleHomeUrl,
   getLocalePageUrl,
@@ -52,6 +55,7 @@ export default async function Home({ params }: Props) {
   });
   const tInsights = await getTranslations("insights");
   const tFeatured = await getTranslations("featuredProjects");
+  const tFaq = await getTranslations("faq");
   const contentLoc = locale === "fr" ? "fr" : "en";
 
   const messages = await getMessages();
@@ -59,15 +63,40 @@ export default async function Home({ params }: Props) {
   const fo = messages.freelanceOffers;
   const wp = messages.workProcess;
   const tm = messages.testimonials;
+  const faqItems = tFaq.raw("items") as readonly {
+    question: string;
+    answer: string;
+  }[];
 
   const siteUrl = getSiteUrl();
   const sameAs = getSocialLinks();
   const loc = getProfileLocation();
   const contactEmail = getContactEmail();
+  const homeUrl = getLocaleHomeUrl(locale);
+  const personId = `${homeUrl}#person`;
+  const catalogId = `${homeUrl}#offer-catalog`;
+
+  const packageInputs = fo.tracks.flatMap((track) =>
+    track.packages.map((pkg) => ({
+      name: pkg.title,
+      description: pkg.description,
+      category: track.label,
+    })),
+  );
+
+  const { catalog: offerCatalogNode, offers: catalogOffers } =
+    buildOfferCatalogNodes({
+      locale,
+      catalogName: fo.title,
+      catalogDescription: fo.subtitle,
+      packages: packageInputs,
+      areaServed: t("jsonLdAreaServed"),
+      availability: t("jsonLdAvailability"),
+    });
 
   const jsonLdPerson: Record<string, unknown> = {
     "@type": "Person",
-    "@id": `${getLocaleHomeUrl(locale)}#person`,
+    "@id": personId,
     name: getProfileDisplayName(),
     alternateName: "SAIFCORE",
     jobTitle: t("jsonLdJobTitle"),
@@ -91,6 +120,7 @@ export default async function Home({ params }: Props) {
       "Microservices",
       "AWS",
       "Mobile money",
+      "Freelance backend engineering",
     ],
     alumniOf: {
       "@type": "CollegeOrUniversity",
@@ -114,19 +144,10 @@ export default async function Home({ params }: Props) {
       name: "SAIFCORE",
       url: siteUrl,
     },
-    makesOffer: {
-      "@type": "Offer",
-      itemOffered: {
-        "@type": "Service",
-        name: t("jsonLdServiceName"),
-        description: t("jsonLdServiceDescription"),
-      },
-      availableAtOrFrom: {
-        "@type": "Place",
-        name: t("jsonLdAvailability"),
-      },
-      areaServed: t("jsonLdAreaServed"),
-    },
+    hasOfferCatalog: { "@id": catalogId },
+    makesOffer: catalogOffers.map((offer) => ({
+      "@id": offer["@id"] as string,
+    })),
   };
 
   if (sameAs.length > 0) {
@@ -136,9 +157,6 @@ export default async function Home({ params }: Props) {
   if (contactEmail) {
     jsonLdPerson.email = contactEmail;
   }
-
-  const homeUrl = getLocaleHomeUrl(locale);
-  const personId = `${homeUrl}#person`;
 
   const jsonLdWebPage = {
     "@type": "WebPage",
@@ -154,6 +172,7 @@ export default async function Home({ params }: Props) {
     },
     about: { "@id": personId },
     mainEntity: { "@id": personId },
+    hasPart: [{ "@id": catalogId }, { "@id": `${homeUrl}#faq` }],
   };
 
   const latestArticles = await fetchRecentArticles(contentLoc, 3);
@@ -175,7 +194,14 @@ export default async function Home({ params }: Props) {
         })),
       });
 
-  const graphNodes: Record<string, unknown>[] = [jsonLdPerson, jsonLdWebPage];
+  const graphNodes: Record<string, unknown>[] = [
+    jsonLdPerson,
+    jsonLdWebPage,
+    offerCatalogNode,
+    ...catalogOffers,
+    buildFaqPageJsonLd(locale, [...faqItems]),
+  ];
+
   if (
     insightsItemListJsonLd.itemListElement &&
     Array.isArray(insightsItemListJsonLd.itemListElement) &&
@@ -218,7 +244,7 @@ export default async function Home({ params }: Props) {
         tabIndex={-1}
       >
         {/*
-          Home: Who → Path → Proof → Offer → How → Depth bridge → Contact
+          Home: Who → Path → Proof → Offer → How → Depth bridge → FAQ → Contact
           Full expertise / stack live on /about
         */}
         <Hero />
@@ -245,16 +271,19 @@ export default async function Home({ params }: Props) {
         <WorkProcess
           title={wp.title}
           subtitle={wp.subtitle}
+          cta={wp.cta}
           steps={[...wp.steps]}
         />
         <Testimonials
           title={tm.title}
           subtitle={tm.subtitle}
+          cta={tm.cta}
           items={[...tm.items]}
         />
         <DepthTeaser withAnchor />
         <CertificationsTeaser />
         <Insights teaser />
+        <FaqSection />
         <CtaSection />
       </main>
       <Footer />

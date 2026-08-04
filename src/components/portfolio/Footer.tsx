@@ -90,6 +90,7 @@ export async function Footer() {
     { href: "/#process", label: t("process") },
     { href: "/about#expertise", label: t("expertise") },
     { href: "/#insights", label: t("insights") },
+    { href: "/#faq", label: t("faq") },
   ];
 
   return (

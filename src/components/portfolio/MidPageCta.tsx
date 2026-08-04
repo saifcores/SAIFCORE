@@ -55,7 +55,7 @@ export async function MidPageCta({ namespace }: Props) {
                 </BookCallLink>
               )}
               <Link
-                href={namespace === "systemsPage" ? "/#offers" : "/#contact"}
+                href="/#offers"
                 className="btn-outline inline-flex min-h-11 items-center justify-center rounded-xl px-5 text-sm font-semibold"
               >
                 {t("midCtaSecondary")}

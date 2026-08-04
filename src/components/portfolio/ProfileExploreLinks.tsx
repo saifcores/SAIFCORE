@@ -9,6 +9,7 @@ type SitePath =
   | "/systems"
   | "/certifications"
   | "/#offers"
+  | "/#faq"
   | "/#contact";
 
 type Props = {
@@ -30,6 +31,7 @@ export async function ProfileExploreLinks({
     { href: "/experience" as const, label: tNav("experience") },
     { href: "/systems" as const, label: tNav("systems") },
     { href: "/#offers" as const, label: tNav("offers") },
+    { href: "/#faq" as const, label: tNav("faq") },
     ...(hasObtainedCertifications()
       ? [{ href: "/certifications" as const, label: tNav("credentials") }]
       : []),

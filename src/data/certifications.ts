@@ -29,7 +29,11 @@ export type CertificationKind =
   | "ai"
   | "domain";
 
-/** Credential progress — edit per cert in `certificationsMeta`. */
+/**
+ * Credential progress — edit per cert in `certificationsMeta`.
+ * Set `obtained` (+ optional `verifyUrl`) to unlock nav, sitemap, and
+ * `/certifications`. `inProgress` shows on the home teaser only.
+ */
 export type CertificationStatus = "obtained" | "inProgress" | "notStarted";
 
 export type CertificationMeta = {
@@ -44,17 +48,17 @@ export const certificationsMeta: CertificationMeta[] = [
   {
     id: "softwareDesign",
     kind: "academic",
-    status: "obtained",
+    status: "notStarted",
   },
   {
     id: "softwareEngineeringEssentials",
     kind: "academic",
-    status: "obtained",
+    status: "notStarted",
   },
   {
     id: "digitalBankingFundamentals",
     kind: "academic",
-    status: "obtained",
+    status: "notStarted",
   },
   {
     id: "awsSolutionsArchitect",

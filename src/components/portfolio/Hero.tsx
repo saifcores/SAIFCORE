@@ -21,6 +21,12 @@ export async function Hero() {
         {t("ctaBookCall")}
       </BookCallLink>
       <Link
+        href="/#offers"
+        className="btn-outline inline-flex min-h-12 w-full items-center justify-center rounded-xl px-4 text-sm font-semibold sm:w-auto sm:px-8"
+      >
+        {t("ctaPrimary")}
+      </Link>
+      <Link
         href="/experience"
         className="btn-outline inline-flex min-h-12 w-full items-center justify-center rounded-xl px-4 text-sm font-semibold sm:w-auto sm:px-8"
       >
@@ -29,21 +35,14 @@ export async function Hero() {
       {resumeUrl ? (
         <a
           href={resumeUrl}
-          className="btn-outline inline-flex min-h-12 w-full items-center justify-center rounded-xl px-4 text-sm font-semibold sm:w-auto sm:px-8"
+          className="inline-flex min-h-12 w-full items-center justify-center px-4 text-sm font-semibold text-[var(--text-muted)] underline decoration-white/15 underline-offset-4 transition hover:text-[var(--text-primary)] sm:w-auto sm:px-2"
           {...(isLocalResume(resumeUrl)
             ? { download: resumeDownload }
             : { target: "_blank", rel: "noopener noreferrer" })}
         >
           {t("ctaResume")}
         </a>
-      ) : (
-        <Link
-          href="/#paths"
-          className="btn-outline inline-flex min-h-12 w-full items-center justify-center rounded-xl px-4 text-sm font-semibold sm:w-auto sm:px-8"
-        >
-          {t("ctaPrimary")}
-        </Link>
-      )}
+      ) : null}
     </>
   );
 

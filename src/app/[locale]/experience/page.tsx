@@ -90,7 +90,7 @@ export default async function ExperiencePage({ params }: Props) {
           subtitle={t("subtitle")}
           backLabel={t("backToHome")}
           showFacts
-          actionVariant="recruiter"
+          actionVariant="balanced"
         />
 
         <Experience />
@@ -102,7 +102,7 @@ export default async function ExperiencePage({ params }: Props) {
         <div className="px-4 pb-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-[1280px] space-y-8">
             <ProfileExploreLinks excludePath="/experience" />
-            <ContactBridgeStrip ns="experiencePage" />
+            <ContactBridgeStrip ns="experiencePage" showPackages />
           </div>
         </div>
       </main>

@@ -71,6 +71,7 @@ const homeHashSections = [
   "expertise",
   "certifications",
   "insights",
+  "faq",
   "contact",
 ] as const;
 type HomeHashSection = (typeof homeHashSections)[number];
@@ -118,6 +119,7 @@ export function Navbar() {
         { href: "/#work", labelKey: "work" },
         { href: "/#offers", labelKey: "offers" },
         { href: "/#process", labelKey: "process" },
+        { href: "/#faq", labelKey: "faq" },
         { href: "/about#expertise", labelKey: "expertise" },
         { href: "/#certifications", labelKey: "credentials" },
         ...insightsNavItems(loc),
@@ -142,6 +144,7 @@ export function Navbar() {
         { href: "/#work", labelKey: "work" },
         { href: "/#offers", labelKey: "offers" },
         { href: "/#process", labelKey: "process" },
+        { href: "/#faq", labelKey: "faq" },
         { href: "/about#expertise", labelKey: "expertise" },
         { href: "/#certifications", labelKey: "credentials" },
         ...insightsNavItems(loc),

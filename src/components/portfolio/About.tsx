@@ -145,9 +145,9 @@ export async function About({ extended = false }: Props) {
         {extended && engagements ? (
           <Reveal delay={120}>
             <div className="mt-10 border-t border-[var(--border-subtle)] pt-8 sm:mt-12 sm:pt-10">
-              <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
+              <h2 className="mb-3 text-lg font-semibold tracking-tight text-[var(--text-primary)] sm:text-xl">
                 {t("engagementsTitle")}
-              </p>
+              </h2>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {engagements.map((item) => (
                   <article

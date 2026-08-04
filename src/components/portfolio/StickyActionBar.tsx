@@ -11,7 +11,7 @@ import {
 import { BookCallLink } from "./BookCallLink";
 
 /**
- * Mobile: after scroll — CV (recruiters), Contact, Book a call (clients).
+ * Mobile: after scroll — CV (recruiters), Packages (clients), Book a call.
  */
 export function StickyActionBar() {
   const t = useTranslations("actionBar");
@@ -28,8 +28,8 @@ export function StickyActionBar() {
   }, []);
 
   const barLabel = resumeUrl
-    ? `${t("resume")} · ${t("contact")} · ${t("bookCall")}`
-    : `${t("contact")} · ${t("bookCall")}`;
+    ? `${t("resume")} · ${t("packages")} · ${t("bookCall")}`
+    : `${t("packages")} · ${t("bookCall")}`;
 
   return (
     <div
@@ -53,10 +53,10 @@ export function StickyActionBar() {
           </a>
         ) : null}
         <Link
-          href="/#contact"
+          href="/#offers"
           className="btn-outline inline-flex min-h-12 min-w-0 flex-1 items-center justify-center rounded-xl bg-[var(--bg-elevated)]/80 px-1.5 text-[11px] font-semibold sm:px-3 sm:text-sm"
         >
-          {t("contact")}
+          {t("packages")}
         </Link>
         <BookCallLink className="btn-primary inline-flex min-h-12 min-w-0 flex-1 items-center justify-center px-1.5 text-[11px] sm:px-3 sm:text-sm">
           {t("bookCall")}

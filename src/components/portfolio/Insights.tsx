@@ -151,7 +151,7 @@ export async function Insights({ teaser = false }: Props) {
 
         {!teaser ? (
           <div className="mt-16">
-            <ContactBridgeStrip ns="insights" />
+            <ContactBridgeStrip ns="insights" showPackages />
           </div>
         ) : null}
       </div>

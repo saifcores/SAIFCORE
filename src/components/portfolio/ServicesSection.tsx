@@ -48,15 +48,15 @@ export function ServicesSection({
     >
       <div className="mx-auto max-w-[1280px]">
         <MotionReveal>
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
+          <h2 className="max-w-2xl text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl">
             {title}
-          </p>
-          <span className="inline-flex max-w-full rounded-full border border-blue-500/25 bg-blue-500/10 px-3 py-1 text-[11px] font-medium text-accent sm:px-3.5 sm:text-xs">
+          </h2>
+          <span className="mt-3 inline-flex max-w-full rounded-full border border-blue-500/25 bg-blue-500/10 px-3 py-1 text-[11px] font-medium text-accent sm:mt-4 sm:px-3.5 sm:text-xs">
             {audience}
           </span>
-          <h2 className="mt-3 max-w-2xl text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:mt-4 sm:text-3xl md:text-4xl">
+          <p className="mt-3 max-w-2xl text-pretty text-base leading-relaxed text-[var(--text-secondary)] sm:text-lg">
             {subtitle}
-          </h2>
+          </p>
         </MotionReveal>
 
         <div className="mt-8 grid gap-3 sm:mt-10 sm:grid-cols-2 lg:grid-cols-3">

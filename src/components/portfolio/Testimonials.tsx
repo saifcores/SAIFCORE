@@ -1,7 +1,8 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { Quote } from "lucide-react";
+import { ArrowRight, Quote } from "lucide-react";
+import { Link } from "@/i18n/navigation";
 import { MotionReveal } from "@/components/portfolio/motion/MotionReveal";
 
 type Testimonial = {
@@ -14,22 +15,23 @@ type Testimonial = {
 type Props = {
   title: string;
   subtitle: string;
+  cta: string;
   items: Testimonial[];
 };
 
-export function Testimonials({ title, subtitle, items }: Props) {
+export function Testimonials({ title, subtitle, cta, items }: Props) {
   const reduce = useReducedMotion();
 
   return (
     <section className="border-b border-[var(--border-subtle)] px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
       <div className="mx-auto max-w-[1280px]">
         <MotionReveal>
-          <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
-            {title}
-          </p>
           <h2 className="max-w-2xl text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl">
-            {subtitle}
+            {title}
           </h2>
+          <p className="mt-3 max-w-2xl text-pretty text-base leading-relaxed text-[var(--text-secondary)] sm:text-lg">
+            {subtitle}
+          </p>
         </MotionReveal>
 
         <div className="mt-8 grid gap-3 sm:mt-10 sm:grid-cols-2 lg:grid-cols-3">
@@ -60,6 +62,18 @@ export function Testimonials({ title, subtitle, items }: Props) {
             </MotionReveal>
           ))}
         </div>
+
+        <MotionReveal delay={200}>
+          <div className="mt-8 flex justify-center">
+            <Link
+              href="/#offers"
+              className="inline-flex min-h-11 items-center justify-center gap-2 text-sm font-semibold text-accent transition hover:text-[var(--accent-blue-light)]"
+            >
+              {cta}
+              <ArrowRight className="h-4 w-4" aria-hidden />
+            </Link>
+          </div>
+        </MotionReveal>
       </div>
     </section>
   );
