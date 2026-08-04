@@ -6,6 +6,7 @@ import {
   getResumeDownloadFilename,
   isLocalResume,
 } from "@/server/resume";
+import { isContactFormConfigured } from "@/server/contact-mail";
 import { MotionReveal } from "@/components/portfolio/motion/MotionReveal";
 
 export async function CtaSection() {
@@ -14,6 +15,7 @@ export async function CtaSection() {
   const locale = await getLocale();
   const resumeUrl = getResumeUrl(locale);
   const resumeDownload = getResumeDownloadFilename(locale);
+  const formEnabled = isContactFormConfigured();
 
   return (
     <section
@@ -44,17 +46,45 @@ export async function CtaSection() {
                 <p className="mx-auto mt-3 max-w-xl text-pretty text-sm text-[var(--text-secondary)] sm:mt-4 sm:text-base">
                   {t("subtitle")}
                 </p>
+                <p className="mx-auto mt-3 text-pretty text-xs text-[var(--text-muted)] sm:text-sm">
+                  {t("responseHint")}
+                </p>
               </div>
+
+              <ol className="mx-auto mt-8 grid max-w-3xl gap-4 text-left sm:mt-10 sm:grid-cols-3 sm:gap-6">
+                {(
+                  [
+                    t("processStep1"),
+                    t("processStep2"),
+                    t("processStep3"),
+                  ] as const
+                ).map((step, index) => (
+                  <li key={step} className="min-w-0">
+                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">
+                      {String(index + 1).padStart(2, "0")}
+                    </p>
+                    <p className="mt-2 text-pretty text-sm leading-relaxed text-[var(--text-secondary)]">
+                      {step}
+                    </p>
+                  </li>
+                ))}
+              </ol>
 
               <div className="mt-8 sm:mt-12">
                 <ContactForm
                   subject={t("emailSubject")}
+                  formEnabled={formEnabled}
                   formName={t("formName")}
                   formEmail={t("formEmail")}
                   formCompany={t("formCompany")}
                   formMessage={t("formMessage")}
                   formMessagePlaceholder={t("formMessagePlaceholder")}
                   formSubmit={t("formSubmit")}
+                  formSending={t("formSending")}
+                  formSuccess={t("formSuccess")}
+                  formSuccessHint={t("formSuccessHint")}
+                  formSendAnother={t("formSendAnother")}
+                  formError={t("formError")}
                   formNote={t("formNote")}
                   formUnavailable={t("formUnavailable")}
                   bookCall={t("bookCall")}

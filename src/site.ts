@@ -54,7 +54,7 @@ export function getCalendlyUrl(): string | null {
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-/** Public contact email (mailto, footer). Set `NEXT_PUBLIC_CONTACT_EMAIL`. */
+/** Public contact email (mailto, footer, Resend To). Set `NEXT_PUBLIC_CONTACT_EMAIL`. */
 export function getContactEmail(): string | null {
   const e = process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim();
   return e && EMAIL_RE.test(e) ? e : null;
