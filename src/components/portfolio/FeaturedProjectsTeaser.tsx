@@ -60,52 +60,54 @@ export async function FeaturedProjectsTeaser() {
           </div>
         </Reveal>
 
-        <ul className="mt-6 space-y-3 sm:mt-8">
+        <ul className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
           {items.map((item, i) => {
-            const indexStr = String(i + 1).padStart(2, "0");
             const caseStudyHref =
               `/systems#case-${caseStudySlug(item.title)}` as const;
             const isShipped = projectStatusRank(item.status) === 0;
             const primaryMetric = item.metrics?.[0];
 
             return (
-              <li key={item.title}>
-                <Reveal delay={i * 50}>
+              <li key={item.title} className="min-h-0">
+                <Reveal delay={i * 60} className="h-full">
                   <Link
                     href={caseStudyHref}
-                    className="group flex flex-col gap-3 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/15 px-4 py-4 transition hover:border-[var(--border-hover)] hover:bg-[var(--bg-elevated)]/35 sm:flex-row sm:items-center sm:gap-5 sm:px-5"
+                    className="group flex h-full flex-col border-b border-[var(--border-subtle)] pb-5 transition hover:border-[var(--border-hover)] sm:border sm:border-[var(--border-subtle)] sm:bg-[var(--bg-elevated)]/10 sm:p-5 sm:pb-5 sm:hover:border-[var(--border-hover)] sm:hover:bg-[var(--bg-elevated)]/25"
                   >
-                    <span className="font-mono text-[11px] font-semibold tracking-[0.14em] text-[var(--text-muted)]">
-                      {indexStr}
-                    </span>
-                    <div className="min-w-0 flex-1">
-                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                        <h3 className="text-sm font-semibold text-[var(--text-primary)] transition group-hover:text-accent sm:text-base">
-                          {item.title}
-                        </h3>
-                        {item.status ? (
-                          <span
-                            className={`text-[11px] font-medium ${isShipped ? "text-emerald-400" : "text-amber-400"}`}
-                          >
-                            {item.status}
-                          </span>
-                        ) : null}
-                      </div>
-                      <p className="mt-1 line-clamp-2 text-sm leading-relaxed text-[var(--text-secondary)]">
-                        {item.solution}
-                      </p>
-                      <div className="mt-2 flex flex-wrap gap-1.5">
-                        {item.stacks.slice(0, 4).map((tech) => (
-                          <span
-                            key={tech}
-                            className="rounded-md border border-[var(--border-subtle)] bg-[var(--bg-base)]/50 px-2 py-0.5 text-[11px] text-[var(--text-muted)]"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
+                    <div className="flex flex-wrap items-center gap-2">
+                      {item.market ? (
+                        <span className="text-[11px] font-medium tracking-wide text-accent">
+                          {item.market}
+                        </span>
+                      ) : null}
+                      {item.status ? (
+                        <span
+                          className={`text-[11px] font-medium ${isShipped ? "text-emerald-400" : "text-amber-400"}`}
+                        >
+                          {item.status}
+                        </span>
+                      ) : null}
                     </div>
-                    <div className="flex shrink-0 items-center justify-between gap-4 sm:flex-col sm:items-end sm:text-right">
+
+                    <h3 className="mt-3 text-base font-semibold text-[var(--text-primary)] transition group-hover:text-accent sm:text-lg">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 line-clamp-2 flex-1 text-sm leading-relaxed text-[var(--text-secondary)]">
+                      {item.solution}
+                    </p>
+
+                    <div className="mt-4 flex flex-wrap gap-1.5">
+                      {item.stacks.slice(0, 4).map((tech) => (
+                        <span
+                          key={tech}
+                          className="border border-[var(--border-subtle)] bg-[var(--bg-base)]/40 px-2 py-0.5 text-[11px] text-[var(--text-muted)]"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="mt-5 flex items-end justify-between gap-3 border-t border-[var(--border-subtle)] pt-4">
                       {primaryMetric ? (
                         <div>
                           <p className="font-mono text-sm font-semibold text-emerald-400">
@@ -115,7 +117,9 @@ export async function FeaturedProjectsTeaser() {
                             {primaryMetric.label}
                           </p>
                         </div>
-                      ) : null}
+                      ) : (
+                        <span />
+                      )}
                       <span className="text-xs font-semibold text-accent">
                         {t("readCaseStudy")}
                         <span aria-hidden> →</span>

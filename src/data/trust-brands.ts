@@ -1,7 +1,7 @@
 export type TrustBrand = {
   name: string;
   /**
-   * Filename under `public/trust/` (same assets as experience timeline).
+   * Filename under `public/trust/` (same assets as experience logos).
    * Do not use LinkedIn CDN URLs here — hotlinking is blocked and components
    * serve files from `/trust/`. Download logos into `public/trust/` instead.
    */

@@ -138,15 +138,25 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
                           <h3 className="text-lg font-bold tracking-tight text-[var(--text-primary)] sm:text-xl md:text-2xl">
                             {item.title}
                           </h3>
-                          {item.status ? (
-                            <span className="mt-2 inline-flex items-center gap-1.5 text-xs font-medium text-emerald-400">
-                              <span
-                                className="h-1.5 w-1.5 rounded-full bg-emerald-400"
-                                aria-hidden
-                              />
-                              {item.status}
-                            </span>
-                          ) : null}
+                          <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+                            {item.market ? (
+                              <span className="text-xs font-medium tracking-wide text-accent">
+                                <span className="sr-only">
+                                  {t("marketLabel")}:{" "}
+                                </span>
+                                {item.market}
+                              </span>
+                            ) : null}
+                            {item.status ? (
+                              <span className="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-400">
+                                <span
+                                  className="h-1.5 w-1.5 rounded-full bg-emerald-400"
+                                  aria-hidden
+                                />
+                                {item.status}
+                              </span>
+                            ) : null}
+                          </div>
                         </div>
                       </div>
 

@@ -82,14 +82,10 @@ export async function Footer() {
   ];
 
   const homeSectionLinks: FooterLink[] = [
-    { href: "/#about", label: t("about") },
-    { href: "/#experience", label: t("experience") },
     { href: "/#work", label: t("work") },
     { href: "/#services", label: t("services") },
     { href: "/#offers", label: t("offers") },
     { href: "/#process", label: t("process") },
-    { href: "/about#expertise", label: t("expertise") },
-    { href: "/#insights", label: t("insights") },
     { href: "/#faq", label: t("faq") },
   ];
 

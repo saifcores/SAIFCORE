@@ -33,9 +33,6 @@ export async function AboutTeaser() {
             <p className="mt-4 max-w-lg text-pretty text-sm leading-relaxed text-[var(--text-secondary)] sm:mt-5 sm:text-base">
               {t("excerpt")}
             </p>
-            <p className="mt-3 text-pretty text-sm text-[var(--text-muted)] sm:mt-4">
-              {about("p4")}
-            </p>
 
             <div className="mt-8 grid grid-cols-3 gap-3 sm:mt-10 sm:flex sm:flex-wrap sm:gap-8">
               {stats.map((stat) => (

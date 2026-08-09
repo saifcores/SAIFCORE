@@ -244,16 +244,18 @@ export default async function Home({ params }: Props) {
         tabIndex={-1}
       >
         {/*
-          Home: Who → Path → Proof → Offer → How → Depth bridge → FAQ → Contact
+          Home: Who → Proof → Path → Content → Offer → How → Depth bridge → FAQ → Contact
+          Case studies and articles surface early — they are the strongest attention hook.
           Full expertise / stack live on /about
         */}
         <Hero />
         <Trust />
+        <FeaturedProjectsTeaser />
         <AboutTeaser />
         <AudiencePaths />
         <ExperienceTeaser />
         <MetricsSection />
-        <FeaturedProjectsTeaser />
+        <Insights teaser />
         <ServicesSection
           title={sv.title}
           audience={sv.audience}
@@ -282,7 +284,6 @@ export default async function Home({ params }: Props) {
         />
         <DepthTeaser withAnchor />
         <CertificationsTeaser />
-        <Insights teaser />
         <FaqSection />
         <CtaSection />
       </main>

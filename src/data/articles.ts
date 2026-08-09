@@ -24,6 +24,188 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "eleven-subsidiaries-eleven-ways-to-break-a-webhook",
+    kind: "writing",
+    publishedAt: "2026-03-05",
+    title: {
+      en: "11 bank subsidiaries, 11 ways to break the same webhook",
+      fr: "11 filiales bancaires, 11 façons de casser le même webhook",
+    },
+    excerpt: {
+      en: "Multiply one integration by eleven entities and “works in staging” stops meaning anything. Notes on the failure modes that only show up at that scale.",
+      fr: "Multipliez une intégration par onze entités et « ça marche en staging » ne veut plus rien dire. Notes sur les modes de panne qui n'apparaissent qu'à cette échelle.",
+    },
+    blocks: [
+      {
+        type: "paragraph",
+        en: "One subsidiary, one webhook endpoint, one happy path — it works first try, and it is tempting to ship the same contract everywhere. Multiply that endpoint by eleven banking entities with their own infrastructure, their own security policy, and their own idea of “timely,” and the contract that looked airtight in staging starts leaking in ways no single-tenant test would ever catch.",
+        fr: "Une filiale, un endpoint webhook, un chemin nominal — ça marche du premier coup, et on est tenté de livrer le même contrat partout. Multipliez cet endpoint par onze entités bancaires avec chacune sa propre infrastructure, sa propre politique de sécurité et sa propre idée de ce qu'est « à temps », et le contrat qui semblait béton en staging se met à fuir de façons qu'aucun test mono-tenant ne détecterait.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        en: "The failure modes that only appear at N entities",
+        fr: "Les modes de panne qui n'apparaissent qu'à N entités",
+      },
+      {
+        type: "list",
+        ordered: false,
+        items: {
+          en: [
+            "Timeout budgets that differ per subsidiary firewall — the same call is fast in one entity and hangs in another",
+            "TLS and certificate rotation policies that are not synchronized, so “it broke last night” means a different night for each entity",
+            "Clock skew across on-prem servers large enough to fail signature verification windows",
+            "Duplicate webhook delivery under load, in entities where the upstream queue retries more aggressively than others",
+            "Subtly different interpretations of an “optional” field, because one integration team filled a gap in the spec with its own default",
+          ],
+          fr: [
+            "Des budgets de timeout qui diffèrent selon le pare-feu de chaque filiale — le même appel est rapide chez l'une, bloqué chez l'autre",
+            "Des politiques de rotation TLS/certificats non synchronisées, si bien que « ça a cassé cette nuit » ne désigne pas la même nuit selon l'entité",
+            "Un décalage d'horloge entre serveurs on-prem suffisant pour faire échouer la fenêtre de vérification de signature",
+            "Une livraison en double du webhook sous charge, chez les entités où la queue amont retry plus agressivement que les autres",
+            "Une interprétation subtilement différente d'un champ « optionnel », parce qu'une équipe d'intégration a comblé un vide de spec avec son propre défaut",
+          ],
+        },
+      },
+      {
+        type: "callout",
+        variant: "warning",
+        en: "None of these are exotic bugs. Each one is boring in isolation — and invisible until entity number seven or eight surfaces it in production, usually during a settlement window.",
+        fr: "Aucun de ces cas n'est un bug exotique. Chacun est banal pris isolément — et invisible jusqu'à ce que la filiale numéro sept ou huit le révèle en production, en général pendant une fenêtre de règlement.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        en: "Design for variance, not for a single golden entity",
+        fr: "Concevoir pour la variance, pas pour une filiale témoin",
+      },
+      {
+        type: "paragraph",
+        en: "The fix is not a smarter retry library. It is treating “per-entity configuration” as a first-class part of the architecture from entity two onward: explicit timeout budgets per subsidiary, idempotency keys that survive duplicate delivery by design, signature verification with a tolerant clock window, and a correlation ID that ties a webhook back to the entity, the attempt number, and the exact contract version it was signed against. Multi-subsidiary integration work is not “the same webhook eleven times.” It is one contract and eleven operating realities that all have to fit inside it without elevens forks of the code.",
+        fr: "La solution n'est pas une librairie de retry plus maligne. C'est de traiter la « configuration par filiale » comme un pilier de l'architecture dès la deuxième entité : budgets de timeout explicites par filiale, clés d'idempotence conçues pour survivre à une livraison en double, vérification de signature avec une fenêtre d'horloge tolérante, et un correlation ID qui relie un webhook à l'entité, au numéro de tentative et à la version exacte du contrat sur laquelle il a été signé. Le travail d'intégration multi-filiales n'est pas « le même webhook onze fois ». C'est un seul contrat et onze réalités opérationnelles qui doivent toutes y tenir sans onze forks du code.",
+      },
+    ],
+  },
+  {
+    slug: "retry-storm-double-payout",
+    kind: "writing",
+    publishedAt: "2025-09-30",
+    title: {
+      en: "The retry storm that almost paid a merchant twice",
+      fr: "La tempête de retries qui a failli payer un marchand deux fois",
+    },
+    excerpt: {
+      en: "A provider timeout, a naive client retry loop, and the one idempotency check that stood between a clean settlement and an awkward call with finance.",
+      fr: "Un timeout fournisseur, une boucle de retry côté client trop naïve, et le seul contrôle d'idempotence qui a évité un règlement en double — et un appel gênant avec la finance.",
+    },
+    blocks: [
+      {
+        type: "paragraph",
+        en: "A mobile money provider went slow, not down — the worst kind of failure. Requests were taking four, five, sometimes eight seconds instead of the usual few hundred milliseconds. A client integration with an eager retry policy started firing the same payout request again after a three-second timeout, still believing the first attempt had failed. It hadn't. It was just late.",
+        fr: "Un provider mobile money est devenu lent, pas indisponible — le pire type de panne. Les requêtes prenaient quatre, cinq, parfois huit secondes au lieu des quelques centaines de millisecondes habituelles. Une intégration cliente avec une politique de retry trop gourmande s'est mise à renvoyer la même demande de payout après un timeout de trois secondes, persuadée que la première tentative avait échoué. Elle n'avait pas échoué. Elle était juste en retard.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        en: "What actually happened",
+        fr: "Ce qui s'est réellement passé",
+      },
+      {
+        type: "paragraph",
+        en: "Within about ninety seconds, the same payout command had been submitted three times for the same merchant. On the provider side, all three eventually succeeded — three separate transfers, same amount, same recipient. If the payments service had treated each inbound request as a new command, the merchant account would have been credited three times for one sale, and someone in finance would have discovered it during end-of-day reconciliation, days later, with no obvious trail back to the cause.",
+        fr: "En environ quatre-vingt-dix secondes, la même commande de payout avait été soumise trois fois pour le même marchand. Côté fournisseur, les trois ont fini par réussir — trois virements distincts, même montant, même bénéficiaire. Si le service de paiement avait traité chaque requête entrante comme une nouvelle commande, le compte du marchand aurait été crédité trois fois pour une seule vente, et quelqu'un en finance l'aurait découvert lors du rapprochement de fin de journée, plusieurs jours plus tard, sans piste évidente vers la cause.",
+      },
+      {
+        type: "callout",
+        variant: "warning",
+        en: "That is the trap with retries under latency, not downtime: every signal a naive client looks at (timeout, no response, connection reset) is indistinguishable from “the request never arrived.” It usually did arrive. It just hadn't answered yet.",
+        fr: "C'est le piège des retries sous latence, pas sous panne franche : tout signal qu'un client naïf observe (timeout, absence de réponse, connexion coupée) est indiscernable de « la requête n'est jamais arrivée ». En général, elle est bien arrivée. Elle n'avait juste pas encore répondu.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        en: "The one check that held the line",
+        fr: "Le seul contrôle qui a tenu la ligne",
+      },
+      {
+        type: "paragraph",
+        en: "The payout endpoint required a client-generated idempotency key, hashed from the merchant ID, the order ID, and the amount — not a random UUID the retry loop could regenerate on every attempt. All three retries carried the same key. The server recognized the second and third calls as duplicates of an in-flight command, returned the original response, and never issued a second transfer. No incident, no reconciliation surprise, no call to the merchant to explain a refund. Just a slightly noisy log line, three requests wide, that a bored engineer noticed the next morning.",
+        fr: "L'endpoint de payout exigeait une clé d'idempotence générée côté client, dérivée de l'ID marchand, de l'ID commande et du montant — pas un UUID aléatoire que la boucle de retry aurait pu régénérer à chaque tentative. Les trois retries portaient la même clé. Le serveur a reconnu les deuxième et troisième appels comme des doublons d'une commande en cours, renvoyé la réponse d'origine, et n'a jamais émis de second virement. Pas d'incident, pas de surprise en rapprochement, pas d'appel au marchand pour expliquer un remboursement. Juste une ligne de log un peu bruyante, trois requêtes de large, qu'un ingénieur a remarquée le lendemain matin par curiosité.",
+      },
+      {
+        type: "paragraph",
+        en: "The lesson wasn't “add retries carefully.” It was that idempotency has to be derived from the business intent of a command, not from a client-side identifier that a retry can accidentally reset. If the key can change between attempts, the safety net was never actually there.",
+        fr: "La leçon n'était pas « ajoutez des retries avec précaution ». C'était que l'idempotence doit se dériver de l'intention métier d'une commande, pas d'un identifiant côté client qu'un retry peut réinitialiser par accident. Si la clé peut changer entre deux tentatives, le filet de sécurité n'a jamais vraiment existé.",
+      },
+    ],
+  },
+  {
+    slug: "stop-microservices-first-west-africa",
+    kind: "writing",
+    publishedAt: "2025-06-18",
+    title: {
+      en: "Stop defaulting to microservices in West African fintech",
+      fr: "Arrêtez de partir en microservices par défaut en fintech ouest-africaine",
+    },
+    excerpt: {
+      en: "Twelve services and three Kafka topics don't fix a two-person ops team. A case for a well-modularized monolith until traffic and headcount actually justify the split.",
+      fr: "Douze services et trois topics Kafka ne réparent pas une équipe ops de deux personnes. Plaidoyer pour un monolithe bien modularisé, jusqu'à ce que trafic et effectif justifient vraiment la scission.",
+    },
+    blocks: [
+      {
+        type: "paragraph",
+        en: "Every second architecture pitch for a new fintech MVP in the region starts with a service diagram: auth service, payments service, notifications service, a message bus between them, each with its own database and its own deploy pipeline. The team behind it usually has three engineers and no dedicated ops person. That diagram is not an architecture — it is a wish list for a company that doesn't exist yet.",
+        fr: "Un pitch d'architecture sur deux pour une nouvelle MVP fintech dans la région commence par un diagramme de services : service auth, service paiement, service notifications, un bus de messages entre les trois, chacun avec sa propre base et son propre pipeline de déploiement. L'équipe derrière compte en général trois ingénieurs et personne dédié aux ops. Ce diagramme n'est pas une architecture — c'est une liste de souhaits pour une entreprise qui n'existe pas encore.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        en: "Where the pattern comes from",
+        fr: "D'où vient ce réflexe",
+      },
+      {
+        type: "paragraph",
+        en: "Microservices-first is a reasonable answer to a problem most early fintechs in the region don't have yet: hundreds of engineers who need to deploy independently without stepping on each other. Copying that structure at three engineers imports its costs — network calls where a function call would do, distributed transactions where a database transaction would do, and an on-call rotation that doesn't exist to answer three services paging at 2am instead of one.",
+        fr: "Le microservices-first est une réponse raisonnable à un problème que la plupart des jeunes fintechs de la région n'ont pas encore : des centaines d'ingénieurs qui doivent déployer indépendamment sans se marcher dessus. Copier cette structure à trois ingénieurs en importe les coûts — des appels réseau là où un simple appel de fonction suffirait, des transactions distribuées là où une transaction base de données suffirait, et une astreinte qui n'existe pas pour répondre à trois services qui sonnent à 2h du matin au lieu d'un seul.",
+      },
+      {
+        type: "callout",
+        variant: "info",
+        en: "The question is never “monolith or microservices” in the abstract. It is: who is on call tonight, and how many independent failure domains can that person actually reason about at 2am?",
+        fr: "La question n'est jamais « monolithe ou microservices » dans l'abstrait. C'est : qui est d'astreinte ce soir, et combien de domaines de panne indépendants cette personne peut-elle vraiment gérer à 2h du matin ?",
+      },
+      {
+        type: "heading",
+        level: 2,
+        en: "What actually justifies the split",
+        fr: "Ce qui justifie vraiment la scission",
+      },
+      {
+        type: "list",
+        ordered: false,
+        items: {
+          en: [
+            "A module has a genuinely different scaling profile — e.g. webhook ingestion needs to scale independently of the admin dashboard",
+            "Two teams need to ship and deploy that module on separate schedules without coordinating a release",
+            "A component has different compliance or data-residency requirements from the rest of the system",
+            "The module's failure blast radius must be contained — a reporting job crashing should never take payments down with it",
+          ],
+          fr: [
+            "Un module a un profil de montée en charge réellement différent — par ex. l'ingestion de webhooks doit scaler indépendamment du dashboard admin",
+            "Deux équipes doivent livrer et déployer ce module sur des calendriers séparés sans coordonner une release",
+            "Un composant a des exigences de conformité ou de résidence des données différentes du reste du système",
+            "Le rayon d'impact d'une panne du module doit être contenu — un job de reporting qui plante ne doit jamais entraîner les paiements avec lui",
+          ],
+        },
+      },
+      {
+        type: "paragraph",
+        en: "None of those are “we read a blog post about Netflix.” Start with a modular monolith — clear module boundaries, one deployable, one database, internal interfaces strict enough that pulling a module out later is a refactor, not a rewrite. Split when a concrete constraint forces it, not before. The team that resists the diagram now is usually the one still shipping in eighteen months.",
+        fr: "Aucun de ces cas n'est « on a lu un article de blog sur Netflix ». Commencez par un monolithe modulaire — des frontières de modules claires, un seul déployable, une seule base, des interfaces internes assez strictes pour qu'extraire un module plus tard soit un refactor, pas une réécriture. Scindez quand une contrainte concrète l'impose, pas avant. L'équipe qui résiste au diagramme aujourd'hui est en général celle qui livre encore dans dix-huit mois.",
+      },
+    ],
+  },
+  {
     slug: "banking-middleware-multi-subsidiary",
     kind: "writing",
     publishedAt: "2025-04-28",
