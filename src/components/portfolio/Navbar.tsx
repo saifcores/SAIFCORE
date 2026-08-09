@@ -2,10 +2,17 @@
 
 import { useTranslations, useLocale } from "next-intl";
 import Image from "next/image";
-import { useCallback, useEffect, useId, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useId,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { Link, usePathname } from "@/i18n/navigation";
 import type { NavPrimaryLinkKey } from "@/types/messages";
-import { getGithubUrl, getLinkedinUrl } from "@/site";
+import { getBlogIndexUrl, getGithubUrl, getLinkedinUrl } from "@/site";
 import {
   getResumeDownloadFilename,
   getResumeUrl,
@@ -18,19 +25,26 @@ import { ThemeToggle } from "./ThemeToggle";
 type NavItem = {
   href: string;
   labelKey: NavPrimaryLinkKey;
+  external?: boolean;
 };
 
 /**
  * Dual-audience primary path:
- * Who → Proof → Work → Offer → Contact
+ * Who → Proof → Work → Insights → Contact
+ * Insights points at SAIFCORE Blog when NEXT_PUBLIC_BLOG_URL is set.
  */
-const primaryNav: NavItem[] = [
-  { href: "/about", labelKey: "about" },
-  { href: "/experience", labelKey: "experience" },
-  { href: "/systems", labelKey: "systems" },
-  { href: "/#services", labelKey: "services" },
-  { href: "/#contact", labelKey: "contact" },
-];
+function buildPrimaryNav(locale: "en" | "fr"): NavItem[] {
+  const blogIndexUrl = getBlogIndexUrl(locale);
+  return [
+    { href: "/about", labelKey: "about" },
+    { href: "/experience", labelKey: "experience" },
+    { href: "/systems", labelKey: "systems" },
+    blogIndexUrl
+      ? { href: blogIndexUrl, labelKey: "insights", external: true }
+      : { href: "/articles", labelKey: "insights" },
+    { href: "/#contact", labelKey: "contact" },
+  ];
+}
 
 const homeHashSections = [
   "about",
@@ -73,12 +87,14 @@ export function Navbar() {
   const tCommon = useTranslations("common");
   const locale = useLocale();
   const pathname = usePathname();
+  const loc = locale === "fr" ? "fr" : "en";
   const opensInNewTab = tCommon("opensInNewTab");
   const resumeUrl = getResumeUrl(locale);
   const resumeDownload = getResumeDownloadFilename(locale);
   const linkedinUrl = getLinkedinUrl();
   const githubUrl = getGithubUrl();
   const isHome = pathname === "/";
+  const primaryNav = useMemo(() => buildPrimaryNav(loc), [loc]);
 
   const [activeHomeSection, setActiveHomeSection] =
     useState<HomeHashSection | null>(null);
@@ -227,22 +243,35 @@ export function Navbar() {
           className="hidden min-w-0 items-center gap-0.5 lg:flex 2xl:gap-1"
           aria-label={t("primary")}
         >
-          {primaryNav.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              className={navLinkClass(
-                isNavItemActive(pathname, l.href, navHomeSection),
-              )}
-              aria-current={
-                isNavItemActive(pathname, l.href, navHomeSection)
-                  ? "page"
-                  : undefined
-              }
-            >
-              {t(l.labelKey)}
-            </Link>
-          ))}
+          {primaryNav.map((l) =>
+            l.external ? (
+              <a
+                key={l.href}
+                href={l.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${t(l.labelKey)} (${opensInNewTab})`}
+                className={navLinkClass(false)}
+              >
+                {t(l.labelKey)}
+              </a>
+            ) : (
+              <Link
+                key={l.href}
+                href={l.href}
+                className={navLinkClass(
+                  isNavItemActive(pathname, l.href, navHomeSection),
+                )}
+                aria-current={
+                  isNavItemActive(pathname, l.href, navHomeSection)
+                    ? "page"
+                    : undefined
+                }
+              >
+                {t(l.labelKey)}
+              </Link>
+            ),
+          )}
         </nav>
 
         <div className="flex shrink-0 items-center gap-1 sm:gap-1.5 xl:gap-2">
@@ -330,22 +359,35 @@ export function Navbar() {
               <ul className="space-y-0.5">
                 {primaryNav.map((l) => (
                   <li key={l.href}>
-                    <Link
-                      href={l.href}
-                      className={`block rounded-xl px-4 py-3.5 text-base font-medium transition hover:bg-[var(--bg-elevated)] hover:text-[var(--text-primary)] min-[420px]:py-3 ${
-                        isNavItemActive(pathname, l.href, navHomeSection)
-                          ? "bg-[var(--bg-elevated)]/80 text-[var(--text-primary)] ring-1 ring-[var(--border-subtle)]"
-                          : "text-[var(--text-secondary)]"
-                      }`}
-                      aria-current={
-                        isNavItemActive(pathname, l.href, navHomeSection)
-                          ? "page"
-                          : undefined
-                      }
-                      onClick={() => close(false)}
-                    >
-                      {t(l.labelKey)}
-                    </Link>
+                    {l.external ? (
+                      <a
+                        href={l.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${t(l.labelKey)} (${opensInNewTab})`}
+                        className="block rounded-xl px-4 py-3.5 text-base font-medium text-[var(--text-secondary)] transition hover:bg-[var(--bg-elevated)] hover:text-[var(--text-primary)] min-[420px]:py-3"
+                        onClick={() => close(false)}
+                      >
+                        {t(l.labelKey)}
+                      </a>
+                    ) : (
+                      <Link
+                        href={l.href}
+                        className={`block rounded-xl px-4 py-3.5 text-base font-medium transition hover:bg-[var(--bg-elevated)] hover:text-[var(--text-primary)] min-[420px]:py-3 ${
+                          isNavItemActive(pathname, l.href, navHomeSection)
+                            ? "bg-[var(--bg-elevated)]/80 text-[var(--text-primary)] ring-1 ring-[var(--border-subtle)]"
+                            : "text-[var(--text-secondary)]"
+                        }`}
+                        aria-current={
+                          isNavItemActive(pathname, l.href, navHomeSection)
+                            ? "page"
+                            : undefined
+                        }
+                        onClick={() => close(false)}
+                      >
+                        {t(l.labelKey)}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

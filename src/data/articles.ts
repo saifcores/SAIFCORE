@@ -24,6 +24,109 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "centralized-baas-multi-subsidiary-branches",
+    kind: "writing",
+    publishedAt: "2026-08-09",
+    title: {
+      en: "Centralized BaaS for banking groups: one platform, many subsidiaries, many branches",
+      fr: "BaaS centralisé pour groupes bancaires : une plateforme, plusieurs filiales, des milliers d’agences",
+    },
+    excerpt: {
+      en: "Why “one core per subsidiary” does not scale — and what a group BaaS platform must isolate versus share when each entity runs its own network of branches.",
+      fr: "Pourquoi « un core par filiale » ne scale pas — et ce qu’une plateforme BaaS de groupe doit isoler versus partager quand chaque entité opère son propre réseau d’agences.",
+    },
+    blocks: [
+      {
+        type: "paragraph",
+        en: "A banking group wants one platform for deposits, payments, and agency operations — not eleven separate cores to keep alive. Each subsidiary still has its own legal entity, currency, product catalogue, and regulator. Each branch is an operating point with cash, limits, and staff — not a bank of its own. Centralized Banking-as-a-Service only works when that hierarchy is modeled on purpose: one shared platform contract, many subsidiary realities, thousands of branch contexts that never leak into each other.",
+        fr: "Un groupe bancaire veut une seule plateforme pour les dépôts, les paiements et les opérations d’agence — pas onze cores distincts à maintenir en vie. Chaque filiale reste une entité légale avec sa devise, son catalogue produits et son régulateur. Chaque agence est un point d’opération — caisse, plafonds, équipes — pas une banque à part. Le Banking-as-a-Service centralisé ne tient que si cette hiérarchie est modélisée volontairement : un contrat de plateforme commun, plusieurs réalités de filiale, des milliers de contextes d’agence qui ne doivent jamais fuiter les uns dans les autres.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        en: "What “centralize” actually means",
+        fr: "Ce que « centraliser » veut vraiment dire",
+      },
+      {
+        type: "paragraph",
+        en: "Centralize the platform: APIs, ledgers engines, identity, orchestration, observability, release trains. Do not centralize risk, compliance, or balances into a single undifferentiated blob. A shared codebase with first-class entity boundaries is not the same as a shared database where every subsidiary’s money sits behind the same WHERE clause. The group buys speed and consistency; each subsidiary keeps its legal and operational perimeter.",
+        fr: "Centralisez la plateforme : APIs, moteurs de ledger, identité, orchestration, observabilité, trains de release. Ne centralisez pas le risque, la conformité ni les soldes dans un blob indifférencié. Un code partagé avec des frontières d’entité de premier ordre n’est pas une base partagée où l’argent de chaque filiale se cache derrière le même WHERE. Le groupe gagne en vitesse et en cohérence ; chaque filiale garde son périmètre légal et opérationnel.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        en: "The hierarchy you must model",
+        fr: "La hiérarchie à modéliser",
+      },
+      {
+        type: "list",
+        ordered: false,
+        items: {
+          en: [
+            "Group — shared platform ownership, standards, cross-entity reporting, partner contracts at scale",
+            "Subsidiary — legal entity: chart of accounts, currency, local products, regulatory reporting, settlement calendars",
+            "Branch / agency — service point: cash vault, teller roles, local limits, opening hours, inventory of devices",
+            "Channels — mobile, agency banking, partner APIs: same domain commands, different auth and risk envelopes",
+          ],
+          fr: [
+            "Groupe — propriété de la plateforme, standards, reporting transversal, contrats partenaires à l’échelle",
+            "Filiale — entité légale : plan comptable, devise, produits locaux, reporting réglementaire, calendriers de settlement",
+            "Agence — point de service : caisse, rôles guichet, plafonds locaux, horaires, parc de terminaux",
+            "Canaux — mobile, agency banking, APIs partenaires : mêmes commandes métier, enveloppes d’auth et de risque différentes",
+          ],
+        },
+      },
+      {
+        type: "heading",
+        level: 2,
+        en: "Architecture pillars of multi-subsidiary BaaS",
+        fr: "Piliers d’architecture d’un BaaS multi-filiales",
+      },
+      {
+        type: "list",
+        ordered: false,
+        items: {
+          en: [
+            "Tenancy first — every command, event, and row carries an explicit entityId; isolation is a product feature, not an afterthought filter",
+            "Ledger per subsidiary — balances and double-entry books never cross legal entities; group views are aggregations, not a mega-ledger",
+            "Parametric product catalogue — shared primitives (account, transfer, fee) with local rules, limits, and fees instead of forked services",
+            "Identity and branch scope — a teller sees one agency; a subsidiary ops role sees one entity; group roles are rare and audited",
+            "Dual reporting — regulatory and financial close per subsidiary, plus group consolidations that never weaken entity controls",
+          ],
+          fr: [
+            "Tenancy d’abord — chaque commande, événement et ligne porte un entityId explicite ; l’isolation est une fonction produit, pas un filtre après coup",
+            "Ledger par filiale — soldes et écritures en partie double ne traversent jamais les entités légales ; les vues groupe sont des agrégations, pas un méga-ledger",
+            "Catalogue produits paramétrique — primitives partagées (compte, transfert, frais) avec règles, plafonds et tarifs locaux plutôt que des services forkés",
+            "Identité et périmètre agence — un caissier voit une agence ; un ops filiale voit une entité ; les rôles groupe sont rares et audités",
+            "Double reporting — clôture réglementaire et financière par filiale, plus consolidations groupe qui n’affaiblissent jamais les contrôles d’entité",
+          ],
+        },
+      },
+      {
+        type: "callout",
+        variant: "warning",
+        en: "The expensive failure mode is a “shared database without boundaries,” or eleven forks of the same core “just for this market.” Both look faster in month one. Both become unreleasable by year two — especially across West African multi-country groups where each subsidiary already runs a different operating reality.",
+        fr: "Le mode de panne coûteux, c’est la « base partagée sans frontières », ou onze forks du même core « juste pour ce marché ». Les deux semblent plus rapides le premier mois. Les deux deviennent impossibles à releaser dès la deuxième année — surtout dans les groupes multi-pays d’Afrique de l’Ouest où chaque filiale vit déjà une réalité opérationnelle différente.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        en: "Branches inside a centralized platform",
+        fr: "Les agences dans une solution centralisée",
+      },
+      {
+        type: "paragraph",
+        en: "Branches are configuration and authorization, not separate deployments. Cash limits, vault hierarchies, teller workflows, cut-off times, and device inventories belong in subsidiary-scoped policy layers. The platform ships one release train; each agency inherits the subsidiary’s rules and adds local constraints. When a teller posts a deposit, the command is the same everywhere — entity, branch, and channel travel with it so audit, reconciliation, and support never guess which perimeter they are in.",
+        fr: "Les agences sont de la configuration et de l’autorisation, pas des déploiements séparés. Plafonds de caisse, hiérarchies de coffre, workflows guichet, heures de cut-off et inventaire des terminaux appartiennent à des couches de politiques scopées par filiale. La plateforme livre un seul train de release ; chaque agence hérite des règles de sa filiale et y ajoute des contraintes locales. Quand un caissier enregistre un dépôt, la commande est la même partout — entité, agence et canal voyagent avec elle pour que l’audit, le rapprochement et le support ne devinent jamais le périmètre.",
+      },
+      {
+        type: "paragraph",
+        en: "Multi-subsidiary BaaS is not “the same core eleven times.” It is one platform contract and N operating realities — the same design stance as multi-entity integrations, applied to the banking model itself: design for variance from entity two and branch one, or you will pay for it in forks, incidents, and regulatory gaps later.",
+        fr: "Le BaaS multi-filiales n’est pas « le même core onze fois ». C’est un contrat de plateforme et N réalités opérationnelles — la même posture que pour les intégrations multi-entités, appliquée au modèle bancaire lui-même : concevez pour la variance dès la deuxième filiale et la première agence, ou vous le paierez plus tard en forks, incidents et trous réglementaires.",
+      },
+    ],
+  },
+  {
     slug: "eleven-subsidiaries-eleven-ways-to-break-a-webhook",
     kind: "writing",
     publishedAt: "2026-03-05",
