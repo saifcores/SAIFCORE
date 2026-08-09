@@ -17,7 +17,7 @@ export async function Insights({ teaser = false }: Props) {
   const tCommon = await getTranslations("common");
   const locale = await getLocale();
   const loc = locale === "fr" ? "fr" : "en";
-  const preview = await fetchRecentArticles(loc, teaser ? 2 : 3);
+  const preview = await fetchRecentArticles(loc, 3);
   const blogIndexUrl = getBlogIndexUrl(loc);
   const viewAllHref = blogIndexUrl ?? "/articles";
   const viewAllExternal = !!blogIndexUrl;
@@ -103,24 +103,22 @@ export async function Insights({ teaser = false }: Props) {
           </Reveal>
         ) : null}
 
-        <div
-          className={`mt-8 grid gap-x-6 gap-y-8 sm:mt-10 sm:grid-cols-2 sm:gap-y-10 ${
-            teaser ? "" : "lg:grid-cols-3"
-          }`}
-        >
-          {preview.map((article, i) => (
-            <Reveal key={article.slug} delay={i * 80}>
-              <ArticlePostCard
-                article={article}
-                locale={loc}
-                tagLabel={tArticles(`kinds.${article.kind}`)}
-                authorLabel={tArticles("author")}
-                readMoreLabel={tArticles("readMore")}
-                opensInNewTabLabel={opensInNewTab}
-              />
-            </Reveal>
-          ))}
-        </div>
+        {preview.length > 0 ? (
+          <div className="mt-8 grid gap-x-6 gap-y-8 sm:mt-10 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-3">
+            {preview.map((article, i) => (
+              <Reveal key={article.slug} delay={i * 80}>
+                <ArticlePostCard
+                  article={article}
+                  locale={loc}
+                  tagLabel={tArticles(`kinds.${article.kind}`)}
+                  authorLabel={tArticles("author")}
+                  readMoreLabel={tArticles("readMore")}
+                  opensInNewTabLabel={opensInNewTab}
+                />
+              </Reveal>
+            ))}
+          </div>
+        ) : null}
 
         {!teaser ? (
           <Reveal delay={200}>

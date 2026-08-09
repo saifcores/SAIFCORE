@@ -1,7 +1,4 @@
-import { getBlogArticleCover } from "@/blog/article-covers";
-import { getArticleLink } from "@/blog/article-links";
 import type { ArticleKind } from "@/data/article-content";
-import { type Article, getLatestArticles } from "@/data/articles";
 import { getBlogUrl } from "@/site";
 
 const ARTICLE_KINDS = new Set<ArticleKind>([
@@ -73,32 +70,6 @@ function parseBlogArticle(raw: unknown): BlogArticle | null {
   };
 }
 
-export function articleToCardData(
-  article: Article,
-  locale: "en" | "fr",
-): ArticleCardData {
-  const link = getArticleLink(article, locale);
-  return {
-    slug: article.slug,
-    title: article.title[locale],
-    excerpt: article.excerpt[locale],
-    kind: article.kind,
-    publishedAt: article.publishedAt,
-    href: link.href,
-    external: link.external,
-    coverImage: getBlogArticleCover(article.slug),
-  };
-}
-
-function staticRecentArticles(
-  locale: "en" | "fr",
-  limit: number,
-): ArticleCardData[] {
-  return getLatestArticles(limit).map((article) =>
-    articleToCardData(article, locale),
-  );
-}
-
 function blogArticleToCardData(article: BlogArticle): ArticleCardData {
   return {
     slug: article.slug,
@@ -113,8 +84,8 @@ function blogArticleToCardData(article: BlogArticle): ArticleCardData {
 }
 
 /**
- * Latest articles for Insights / JSON-LD.
- * Prefers the blog public API; falls back to the static catalog.
+ * Latest articles for Insights / JSON-LD — blog API only.
+ * No local catalog fallback (articles live on SAIFCORE Blog).
  */
 export async function fetchRecentArticles(
   locale: "en" | "fr",
@@ -122,7 +93,10 @@ export async function fetchRecentArticles(
 ): Promise<ArticleCardData[]> {
   const blog = getBlogUrl();
   if (!blog) {
-    return staticRecentArticles(locale, limit);
+    console.error(
+      "[blog] NEXT_PUBLIC_BLOG_URL is not set — cannot load recent articles",
+    );
+    return [];
   }
 
   const capped = Math.min(Math.max(limit, 1), 10);
@@ -138,7 +112,7 @@ export async function fetchRecentArticles(
       console.error(
         `[blog] recent articles HTTP ${response.status} for ${url}`,
       );
-      return staticRecentArticles(locale, limit);
+      return [];
     }
 
     const data: unknown = await response.json();
@@ -148,21 +122,15 @@ export async function fetchRecentArticles(
       !Array.isArray((data as BlogArticlesResponse).articles)
     ) {
       console.error("[blog] recent articles: unexpected response shape");
-      return staticRecentArticles(locale, limit);
+      return [];
     }
 
-    const articles = (data as BlogArticlesResponse).articles
+    return (data as BlogArticlesResponse).articles
       .map(parseBlogArticle)
       .filter((article): article is BlogArticle => article !== null)
       .map(blogArticleToCardData);
-
-    if (articles.length === 0) {
-      return staticRecentArticles(locale, limit);
-    }
-
-    return articles;
   } catch (error) {
     console.error("[blog] recent articles fetch failed:", error);
-    return staticRecentArticles(locale, limit);
+    return [];
   }
 }

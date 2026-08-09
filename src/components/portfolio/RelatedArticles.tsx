@@ -1,7 +1,6 @@
 import { getTranslations } from "next-intl/server";
-import { articleToCardData } from "@/blog/recent-articles";
-import { getRelatedArticles } from "@/data/articles";
-import { Link } from "@/i18n/navigation";
+import { fetchRecentArticles } from "@/blog/recent-articles";
+import { getBlogIndexUrl } from "@/site";
 import { ArticlePostCard } from "./ArticlePostCard";
 import { Reveal } from "./Reveal";
 
@@ -10,12 +9,16 @@ type Props = {
   locale: "en" | "fr";
 };
 
+/** Related posts from the blog API (excludes current slug). */
 export async function RelatedArticles({ slug, locale }: Props) {
-  const related = getRelatedArticles(slug, 3);
+  const recent = await fetchRecentArticles(locale, 4);
+  const related = recent.filter((article) => article.slug !== slug).slice(0, 3);
   if (related.length === 0) return null;
 
   const t = await getTranslations("articlesPage");
   const tCommon = await getTranslations("common");
+  const blogIndexUrl = getBlogIndexUrl(locale);
+  const opensInNewTab = tCommon("opensInNewTab");
 
   return (
     <section
@@ -35,31 +38,33 @@ export async function RelatedArticles({ slug, locale }: Props) {
               {t("relatedSubtitle")}
             </p>
           </div>
-          <Link
-            href="/articles"
-            className="inline-flex min-h-11 shrink-0 items-center text-sm font-semibold text-accent transition hover:text-[var(--accent-blue-light)]"
-          >
-            {t("viewAllArticles")} →
-          </Link>
+          {blogIndexUrl ? (
+            <a
+              href={blogIndexUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${t("viewAllArticles")} (${opensInNewTab})`}
+              className="inline-flex min-h-11 shrink-0 items-center text-sm font-semibold text-accent transition hover:text-[var(--accent-blue-light)]"
+            >
+              {t("viewAllArticles")} ↗
+            </a>
+          ) : null}
         </div>
       </Reveal>
 
       <div className="mt-8 grid gap-x-8 gap-y-10 sm:mt-10 sm:grid-cols-2 sm:gap-y-14 lg:grid-cols-3">
-        {related.map((article, i) => {
-          const card = articleToCardData(article, locale);
-          return (
-            <Reveal key={article.slug} delay={i * 60}>
-              <ArticlePostCard
-                article={card}
-                locale={locale}
-                tagLabel={t(`kinds.${card.kind}`)}
-                authorLabel={t("author")}
-                readMoreLabel={t("readMore")}
-                opensInNewTabLabel={tCommon("opensInNewTab")}
-              />
-            </Reveal>
-          );
-        })}
+        {related.map((article, i) => (
+          <Reveal key={article.slug} delay={i * 60}>
+            <ArticlePostCard
+              article={article}
+              locale={locale}
+              tagLabel={t(`kinds.${article.kind}`)}
+              authorLabel={t("author")}
+              readMoreLabel={t("readMore")}
+              opensInNewTabLabel={opensInNewTab}
+            />
+          </Reveal>
+        ))}
       </div>
     </section>
   );
