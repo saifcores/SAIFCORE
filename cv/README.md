@@ -14,13 +14,13 @@ Locale resolution lives in [`src/server/resume.ts`](../src/server/resume.ts).
 - **Headline:** Backend Software Engineer | Enterprise Platforms · Payments · Banking
 - **Tone:** senior through scope and impact (not a fake “Senior” title)
 - **Audience:** ATS parsers, recruiters, founders/CTOs seeking payment & banking backend partners
-- **Collaboration signal:** freelance delivery, contract engineering, architecture advisory (aligned with portfolio engagements)
+- **Collaboration signal:** freelance delivery, contract engineering, technical & architecture review (aligned with portfolio engagements)
 
 ## Content guidelines (ATS + marketable)
 
 - Single-column layout, standard section titles, plain-text skills/keywords
 - Bullets: ownership verb + context + measurable outcome when known from the portfolio
-- Keep metrics honest (11+ BoA subsidiaries, ~30% latency, Wave / Orange Money)
+- Keep metrics honest (11+ BoA subsidiaries via Synapse, Wave / Orange Money). No unsourced round percentages.
 - Projects: Payment SDK, Unified API Gateway, Ecom 360 PME
 - No decorative icons, multi-column layouts, or invented metrics
 - Target **1–2 A4 pages**

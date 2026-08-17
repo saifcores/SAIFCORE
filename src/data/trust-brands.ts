@@ -19,10 +19,6 @@ export function resolveTrustLogoSrc(logo: string): string {
 
 export const trustBrands: TrustBrand[] = [
   {
-    name: "Bank of Africa - Groupe Bank of Africa",
-    logo: "boa.jpeg",
-  },
-  {
     name: "Synapse Groupe",
     logo: "synapse.jpeg",
   },

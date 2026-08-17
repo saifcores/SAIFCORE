@@ -184,7 +184,7 @@ export function HeroVisual({
                   transition={{ delay: 1 + i * 0.08, duration: 0.4 }}
                   className="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-base)]/60 p-3 md:p-4"
                 >
-                  <p className="font-mono text-lg font-bold text-[var(--text-primary)] lg:text-xl">
+                  <p className="text-sm font-bold leading-tight text-[var(--text-primary)] sm:text-base lg:text-lg">
                     {metric.value}
                   </p>
                   <p className="mt-1 text-[10px] leading-snug text-[var(--text-muted)] md:text-[11px]">

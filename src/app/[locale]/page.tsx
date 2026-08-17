@@ -4,7 +4,6 @@ import {
   setRequestLocale,
 } from "next-intl/server";
 import type { Locale } from "next-intl";
-import { AboutTeaser } from "@/components/portfolio/AboutTeaser";
 import { AudiencePaths } from "@/components/portfolio/AudiencePaths";
 import { ExperienceTeaser } from "@/components/portfolio/ExperienceTeaser";
 import { Insights } from "@/components/portfolio/Insights";
@@ -13,13 +12,9 @@ import { FeaturedProjectsTeaser } from "@/components/portfolio/FeaturedProjectsT
 import { Footer } from "@/components/portfolio/Footer";
 import { FaqSection } from "@/components/portfolio/FaqSection";
 import { Hero } from "@/components/portfolio/Hero";
-import { MetricsSection } from "@/components/portfolio/MetricsSection";
 import { Navbar } from "@/components/portfolio/Navbar";
 import { FreelanceOffers } from "@/components/portfolio/FreelanceOffers";
-import { ServicesSection } from "@/components/portfolio/ServicesSection";
 import { CertificationsTeaser } from "@/components/portfolio/CertificationsTeaser";
-import { DepthTeaser } from "@/components/portfolio/DepthTeaser";
-import { Testimonials } from "@/components/portfolio/Testimonials";
 import { Trust } from "@/components/portfolio/Trust";
 import { WorkProcess } from "@/components/portfolio/WorkProcess";
 import { fetchRecentArticles } from "@/blog/recent-articles";
@@ -59,10 +54,8 @@ export default async function Home({ params }: Props) {
   const contentLoc = locale === "fr" ? "fr" : "en";
 
   const messages = await getMessages();
-  const sv = messages.services;
   const fo = messages.freelanceOffers;
   const wp = messages.workProcess;
-  const tm = messages.testimonials;
   const faqItems = tFaq.raw("items") as readonly {
     question: string;
     answer: string;
@@ -244,25 +237,16 @@ export default async function Home({ params }: Props) {
         tabIndex={-1}
       >
         {/*
-          Home: Who → Proof → Path → Content → Offer → How → Depth bridge → FAQ → Contact
-          Case studies and articles surface early — they are the strongest attention hook.
-          Full expertise / stack live on /about
+          Home (freelance-first): Proof → Path → Offer → How → FAQ → Contact
+          Case studies surface early. Full profile / stack live on /about.
+          Recruiter CV stays in nav and the hiring path — not in the hero.
         */}
         <Hero />
         <Trust />
         <FeaturedProjectsTeaser />
-        <AboutTeaser />
         <AudiencePaths />
         <ExperienceTeaser />
-        <MetricsSection />
         <Insights teaser />
-        <ServicesSection
-          title={sv.title}
-          audience={sv.audience}
-          subtitle={sv.subtitle}
-          cta={sv.cta}
-          items={[...sv.items]}
-        />
         <FreelanceOffers
           title={fo.title}
           subtitle={fo.subtitle}
@@ -276,13 +260,6 @@ export default async function Home({ params }: Props) {
           cta={wp.cta}
           steps={[...wp.steps]}
         />
-        <Testimonials
-          title={tm.title}
-          subtitle={tm.subtitle}
-          cta={tm.cta}
-          items={[...tm.items]}
-        />
-        <DepthTeaser withAnchor />
         <CertificationsTeaser />
         <FaqSection />
         <CtaSection />

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Ingénieur Logiciel Backend | Packages Freelance · Paiements | SAIFCORE",
-    "description": "Ingénieur backend (FR/EN) pour banque, paiements et plateformes enterprise — Dakar, Afrique de l'Ouest, remote international. Packages : discovery, build, MVP, embed contrat, modernisation, conseil.",
+    "description": "Ingénieur backend (FR/EN) pour banque, paiements et plateformes enterprise — Dakar, Afrique de l'Ouest, remote international. Packages : discovery, build, MVP, embed contrat, modernisation, revue architecture.",
     "ogTitle": "Ingénieur Backend — Packages d'engagement Fintech & Banque",
     "ogDescription": "Livraison backend cadrée : APIs, paiements et plateformes régulées. Dakar · Afrique de l'Ouest · remote international — Java, Spring Boot, Kafka, AWS.",
     "twitterDescription": "Backend · Banque & paiements · Dakar · Afrique de l'Ouest · Remote international · Java · Spring Boot · AWS.",
@@ -11,7 +11,7 @@
     "jsonLdServiceDescription": "Systèmes backend, APIs, architectures distribuées et solutions de paiement pour plateformes enterprise et fintech — dont mobile money et intégrations bancaires réglementées. Livrés sous forme de packages d'engagement cadrés.",
     "jsonLdAvailability": "Remote international",
     "jsonLdAreaServed": "Sénégal, Afrique de l'Ouest, Monde entier",
-    "keywords": "ingénieur logiciel backend, freelance backend, packages d'engagement, Spring Boot, Java, infrastructure de paiement, fintech, systèmes bancaires, systèmes distribués, Kafka, AWS, mobile money, Sénégal, Afrique de l'Ouest, Dakar, ingénieur remote, contrat backend, conseil architecture, SAIFCORE",
+    "keywords": "ingénieur logiciel backend, freelance backend, packages d'engagement, Spring Boot, Java, infrastructure de paiement, fintech, systèmes bancaires, systèmes distribués, Kafka, AWS, mobile money, Sénégal, Afrique de l'Ouest, Dakar, ingénieur remote, contrat backend, revue architecture, SAIFCORE",
     "manifestName": "SAIFCORE — Ingénieur Logiciel Backend",
     "manifestDescription": "Portfolio — packages d'engagement pour plateformes enterprise, infrastructure de paiement, systèmes bancaires et ingénierie backend."
   },
@@ -70,7 +70,7 @@
   "pageHeader": {
     "factsLabel": "Points clés du profil",
     "factYears": "4+ ans en production",
-    "factBanking": "Delivery Groupe Bank of Africa",
+    "factBanking": "Delivery Groupe Bank of Africa via Synapse",
     "factRemote": "Afrique de l'Ouest · Remote international",
     "factBilingual": "Bilingue FR / EN",
     "linkedin": "LinkedIn",
@@ -78,7 +78,7 @@
   },
   "audiencePaths": {
     "title": "Par où commencer",
-    "subtitle": "Deux chemins — preuves pour recruteurs, ou livraison cadrée pour clients.",
+    "subtitle": "Livraison cadrée pour un projet — et le dossier recruteur si vous embauchez.",
     "recruiterTitle": "Recrutement",
     "recruiterDescription": "Parcourez l'expérience, les études de cas et À propos — puis téléchargez le CV.",
     "recruiterLinkExperience": "Expérience",
@@ -110,19 +110,23 @@
     "ctaExperience": "Voir l'expérience",
     "ctaBookCall": "Réserver un appel",
     "ctaResume": "Télécharger le CV",
-    "proofLine": "Bank of Africa Group · Synapse · ENG Technologie",
-    "locationLine": "Dakar, Sénégal — bilingue FR/EN · ouvert aux missions freelance et contrat remote à l'international.",
+    "proofLine": "Delivery Groupe Bank of Africa via Synapse · ENG Technologie",
+    "locationLine": "Dakar, Sénégal — bilingue FR/EN · missions freelance et contrat, remote à l'international.",
     "availability": "Ouvert aux nouvelles missions",
-    "jumpToContact": "Choisir votre chemin",
+    "jumpToContact": "Vous recrutez ? Voir le chemin recruteur",
     "terminalTitle": "Moteur de paiement",
     "terminalVersion": "v2.4.1",
     "terminalStatus": "Opérationnel",
-    "mockupLabel": "Métriques système",
-    "mockupChart": "Débit transactions — 24h",
-    "metricUptime": "Disponibilité",
-    "metricLatency": "Latence P99",
-    "metricPlatforms": "Fournisseurs",
-    "metricIncidents": "Incidents"
+    "mockupLabel": "Illustration — chemin de paiement",
+    "mockupChart": "Flux illustratif — pas de télémétrie production",
+    "metric1Value": "Idempotent",
+    "metric1Label": "Retries sûrs",
+    "metric2Value": "Partie double",
+    "metric2Label": "Écritures ledger",
+    "metric3Value": "Réconcilié",
+    "metric3Label": "Dérive fournisseur",
+    "metric4Value": "Append-only",
+    "metric4Label": "Piste d'audit"
   },
   "trustedExpertise": {
     "title": "Compétences clés",
@@ -274,8 +278,8 @@
         "description": "Livraison blue/green ou canary, SLOs et cloud maîtrisé pour services toujours dispo."
       },
       {
-        "title": "Due diligence technique & audits",
-        "description": "Revues indépendantes code, intégrations et cloud pour investissement ou conformité."
+        "title": "Revue technique et architecture",
+        "description": "Revue ciblée code, intégrations et cloud — pour cadrer un build ou une modernisation."
       }
     ],
     "cta": "Voir les packages d'engagement"
@@ -325,13 +329,13 @@
       },
       {
         "label": "Entreprises & banques",
-        "audience": "Banques, fintechs et équipes plateforme qui ont besoin de capacité backend senior, de modernisation ou d'un regard indépendant.",
-        "promise": "Une ownership senior là où les enjeux sont élevés — intégrations régulées, livraison conforme, architecture qui scale.",
+        "audience": "Banques, fintechs et équipes plateforme qui ont besoin de capacité backend, de modernisation ou d'un regard technique indépendant.",
+        "promise": "Une ownership là où les enjeux sont élevés — intégrations régulées, livraison conforme, architecture qui scale.",
         "packages": [
           {
             "title": "Embed backend en contrat",
             "duration": "1–6 mois",
-            "description": "Un ingénieur backend senior dans votre squad — sprints roadmap, CI/CD et ownership production en contexte régulé.",
+            "description": "Un ingénieur backend dans votre squad — sprints roadmap, CI/CD et ownership production en contexte régulé.",
             "includes": [
               "Livraison dans vos rituels et outils",
               "Reviews, barre de qualité et mentorship",
@@ -349,13 +353,13 @@
             ]
           },
           {
-            "title": "Audit & conseil architecture",
+            "title": "Revue technique et architecture",
             "duration": "1–3 semaines",
-            "description": "Due diligence indépendante ou partenariat design avant M&A, investissement ou une décision de build majeure.",
+            "description": "Revue ciblée d'un backend, d'une intégration paiement ou d'une API avant un build — constats classés, ADRs, plan phasé.",
             "includes": [
               "Constats classés par risque et effort",
               "Designs de référence et ADR",
-              "Recommandations prêtes pour le COMEX"
+              "Plan d'action pour l'équipe qui implémente"
             ]
           }
         ]
@@ -376,19 +380,19 @@
       },
       {
         "question": "Quel package choisir ?",
-        "answer": "Fondateurs et PME commencent souvent par Discovery & architecture, Build & livraison ou Accélération MVP. Banques et équipes plateforme privilégient Embed contrat, Modernisation de plateforme ou Audit & conseil architecture."
+        "answer": "Fondateurs et PME commencent souvent par Discovery & architecture, Build & livraison ou Accélération MVP. Banques et équipes plateforme privilégient Embed contrat, Modernisation de plateforme ou Revue technique et architecture."
       },
       {
         "question": "Pouvez-vous intervenir en contexte bancaire ou paiement régulé ?",
-        "answer": "Oui. Expérience Bank of Africa / Synapse, intégrations paiement, pistes d'audit et ownership production là où conformité et fiabilité comptent."
+        "answer": "Oui. Delivery Synapse pour les plateformes du Groupe Bank of Africa, intégrations paiement, pistes d'audit et ownership production là où conformité et fiabilité comptent."
       },
       {
         "question": "À quoi ressemble le handoff ?",
         "answer": "Démos par jalons, tests, observabilité, runbooks et documentation que votre équipe peut exploiter — la livraison ne finit pas en boîte noire."
       },
       {
-        "question": "Êtes-vous ouvert au CDI / contrat autant qu'au freelance ?",
-        "answer": "Oui. Les recruteurs peuvent consulter expérience, systèmes et CV ; les clients démarrent via les packages d'engagement. Partagez le contexte : vous obtenez une prochaine étape claire."
+        "question": "Êtes-vous ouvert au CDI autant qu'au freelance ?",
+        "answer": "La priorité actuelle est la livraison freelance et contrat, cadrée par les packages. Un CDI reste possible si le contexte est le bon — le CV est dans la navigation. Précisez si vous embauchez ou si vous avez un projet."
       }
     ]
   },
@@ -466,7 +470,7 @@
         ]
       },
       {
-        "label": "Fintech & conseil",
+        "label": "Fintech & paiements",
         "items": [
           "Passerelles de paiement & wallets digitaux",
           "Plateformes mobile money",
@@ -620,9 +624,9 @@
         "company": "Services financiers régulés"
       },
       {
-        "quote": "Communication claire avec produit, intégration et conformité — adapté aux missions contract et freelance backend senior.",
+        "quote": "Communication claire avec produit, intégration et conformité — adapté aux missions contract et freelance backend.",
         "name": "Ingénierie en contrat",
-        "role": "Embed backend senior",
+        "role": "Embed backend",
         "company": "Équipes SaaS & plateformes"
       }
     ]
@@ -637,7 +641,8 @@
       "Santé",
       "SaaS Entreprise"
     ],
-    "companiesLabel": "Entreprises & partenaires"
+    "companiesLabel": "Employeurs",
+    "deliveryNote": "Delivery pour les plateformes du Groupe Bank of Africa via Synapse — pas un partenariat commercial."
   },
   "whatISolve": {
     "title": "Systèmes que je livre",
@@ -787,14 +792,14 @@
         ],
         "tradeoffs": "La couche adaptateur ajoute du code, mais elle réduit fortement le coût d'intégration et les divergences de comportement entre fournisseurs.",
         "bankingOutcome": "Signal direct pour banques et fintechs : intégrations unifiées Wave, Orange Money et wallets — patterns éprouvés sur la delivery FinTech ENG Technologie et applicables aux corridors bancaires multi-fournisseurs.",
-        "impact": "~60% d'intégration plus rapide pour nouveaux wallets ; surface d'observabilité unique sur 3+ fournisseurs live.",
+        "impact": "Wave, Orange Money et Free Money derrière un contrat unique — adaptateurs et idempotence éprouvés sur la delivery FinTech ENG Technologie. Le SDK packagé est encore en consolidation.",
         "href": "",
         "linkLabel": "",
         "stacks": ["Java", "Spring Boot", "Redis", "Kafka", "PostgreSQL"],
-        "status": "En développement",
+        "status": "Issu de la production · ENG",
         "metrics": [
-          { "value": "3+", "label": "Fournisseurs unifiés" },
-          { "value": "60%", "label": "Intégration plus rapide" }
+          { "value": "3+", "label": "Wallets unifiés" },
+          { "value": "1", "label": "Contrat API" }
         ]
       },
       {
@@ -824,14 +829,14 @@
         ],
         "tradeoffs": "Le modèle impose plus de discipline métier qu'une table de soldes simple, mais il évite les corrections opaques et les écarts non traçables.",
         "bankingOutcome": "Signal fort pour décideurs bancaires : exactitude comptable, auditabilité, rapprochement et contrôle des mouvements — patterns appliqués sur la delivery bancaire multi-entités Synapse.",
-        "impact": "Auditabilité complète pour régulateurs et équipes finance ; zéro écart de solde en réconciliation production.",
+        "impact": "Patterns appliqués en production sur la delivery bancaire multi-entités Synapse : écritures append-only, jobs de réconciliation, piste d'audit immuable. Ce dossier est l'architecture de référence, pas le SLA d'un produit autonome.",
         "href": "",
         "linkLabel": "",
         "stacks": ["Java", "Spring Boot", "PostgreSQL", "Kafka"],
-        "status": "En développement",
+        "status": "Référence · production Synapse",
         "metrics": [
-          { "value": "100%", "label": "Couverture audit" },
-          { "value": "0", "label": "Incidents ledger" }
+          { "value": "Append-only", "label": "Écritures" },
+          { "value": "Immuable", "label": "Piste d'audit" }
         ]
       },
       {
@@ -861,14 +866,14 @@
         ],
         "tradeoffs": "La passerelle devient un point de gouvernance critique ; elle demande discipline sur versioning, monitoring et politiques d'accès.",
         "bankingOutcome": "Aligné avec la delivery bancaire multi-filiales : gouvernance API, protection du core, audit des flux et onboarding partenaire plus rapide à l'échelle du groupe.",
-        "impact": "3 intégrations partenaires live ; ~40% d'onboarding partenaire plus rapide ; 12+ mois de déploiements sans interruption.",
+        "impact": "Patterns issus de la delivery Synapse pour les filiales du Groupe Bank of Africa : gateway comme frontière, contrats partenaires versionnés, systèmes core hors du bord public.",
         "href": "",
         "linkLabel": "",
         "stacks": ["Spring Cloud", "Kafka", "PostgreSQL", "Docker", "AWS"],
-        "status": "En développement",
+        "status": "Référence · production Synapse",
         "metrics": [
-          { "value": "3", "label": "Intégrations partenaires" },
-          { "value": "99.9%", "label": "Cible uptime" }
+          { "value": "Gateway", "label": "Comme frontière" },
+          { "value": "Versionnés", "label": "Contrats API" }
         ]
       },
       {
@@ -898,14 +903,14 @@
         ],
         "tradeoffs": "Le SaaS partagé accélère la livraison, mais impose des frontières tenant solides et une configuration claire par établissement.",
         "bankingOutcome": "Même hors banque, ce cas démontre gestion multi-tenant, données sensibles, facturation et opérations administratives structurées.",
-        "impact": "~35% de temps de handoff admin en moins ; dossiers unifiés entre départements.",
+        "impact": "Admissions, facturation et personnel sur une plateforme isolée par tenant — reporting hors du chemin des opérations quotidiennes.",
         "href": "",
         "linkLabel": "",
         "stacks": ["Angular", "Spring Boot", "PostgreSQL", "REST APIs"],
         "status": "Livré",
         "metrics": [
           { "value": "3", "label": "Départements unifiés" },
-          { "value": "35%", "label": "Temps admin économisé" }
+          { "value": "Async", "label": "Chemin reporting" }
         ]
       }
     ]
@@ -949,10 +954,10 @@
         "company": "Mafalia — Applications Ecom & Fintech",
         "client": "",
         "logo": "mafalia.jpeg",
-        "period": "Juin 2022 — Nov 2023",
+        "period": "Juin 2022 — Nov 2023 · en parallèle d'ENG dès juil. 2023",
         "location": "Région de Dakar, Sénégal",
         "bullet0": "Construction de services backend et APIs REST pour la gestion des stocks, le traitement des commandes, les ventes et les workflows financiers d'une plateforme SaaS pour les PME.",
-        "bullet1": "Amélioration des performances par l'optimisation des requêtes et du traitement métier, avec une réduction d'environ 30% des temps de réponse. Mise en cache et traitement asynchrone pour la scalabilité.",
+        "bullet1": "Amélioration des performances par l'optimisation des requêtes et du traitement métier. Mise en cache et traitement asynchrone pour la scalabilité.",
         "bullet2": "Java, Spring Boot, MySQL, Angular, TypeScript, REST APIs, Agile XP"
       },
       {
@@ -1104,9 +1109,9 @@
         "description": "Delivery Synapse pour les plateformes du Groupe Bank of Africa"
       },
       {
-        "value": "30%",
-        "label": "Réponses API plus rapides",
-        "description": "Mesuré sur le backend SaaS Mafalia et l'optimisation base de données"
+        "value": "Wave + OM",
+        "label": "Corridors de paiement",
+        "description": "Intégrations Wave et Orange Money sur la delivery FinTech ENG"
       },
       {
         "value": "FR/EN",
@@ -1151,7 +1156,7 @@
     "p2b": "des APIs, rails de paiement et backends event-driven",
     "p2c": " que les équipes peuvent exploiter en production.",
     "p3": "Récents : Synapse → Groupe Bank of Africa (11+ filiales), rails FinTech (Wave, Orange Money, Kafka) et SaaS multi-tenant.",
-    "p4": "Basé à Dakar. Livraison Afrique de l'Ouest ; freelance, contrat et conseil remote à l'international. Bilingue FR/EN.",
+    "p4": "Basé à Dakar. Livraison Afrique de l'Ouest ; freelance et contrat remote à l'international. Bilingue FR/EN.",
     "cardRole": "Ingénieur Logiciel Backend",
     "cardTagline": "Dakar · Afrique de l'Ouest · Remote International",
     "statYearsValue": "4+",
@@ -1169,10 +1174,10 @@
       },
       {
         "title": "Embed en contrat",
-        "description": "Capacité backend senior dans votre squad — sprints, CI/CD et ownership production."
+        "description": "Capacité backend dans votre squad — sprints, CI/CD et ownership production."
       },
       {
-        "title": "Conseil architecture",
+        "title": "Revue d'architecture",
         "description": "Discovery, ADR et designs de référence avant d'engager le budget."
       }
     ],
@@ -1408,9 +1413,9 @@
     "contentNote": "Les contenus rédigés, études de cas et éléments de marque restent © SAIFCORE sauf mention contraire. La licence MIT s'applique au code source du site."
   },
   "footer": {
-    "rights": "© {year} {owner}. Tous droits réservés.",
+    "rights": "© {year} {owner}. Contenus et marque réservés.",
     "rightsOwner": "{name} · SAIFCORE",
-    "license": "Licence MIT",
+    "license": "Code source du site (MIT)",
     "tagline": "Backend banque et paiements — Dakar, Afrique de l'Ouest, remote international.",
     "linkedin": "Se connecter sur LinkedIn",
     "github": "Voir GitHub",

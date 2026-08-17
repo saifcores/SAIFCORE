@@ -13,7 +13,7 @@ export function TrustMarquee({ brands }: Props) {
   return (
     <div className="relative py-1">
       <p className="sr-only">
-        Partner brands: {brands.map((b) => b.name).join(", ")}.
+        Employers: {brands.map((b) => b.name).join(", ")}.
       </p>
       <div
         className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-[var(--bg-base)] to-transparent sm:w-20"

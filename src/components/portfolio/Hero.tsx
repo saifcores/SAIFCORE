@@ -1,19 +1,11 @@
-import { getLocale, getTranslations } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { BookCallLink } from "@/components/portfolio/BookCallLink";
 import { HeroContent } from "@/components/portfolio/HeroContent";
 import { HeroVisual } from "@/components/portfolio/HeroVisual";
-import {
-  getResumeUrl,
-  getResumeDownloadFilename,
-  isLocalResume,
-} from "@/server/resume";
 
 export async function Hero() {
   const t = await getTranslations("hero");
-  const locale = await getLocale();
-  const resumeUrl = getResumeUrl(locale);
-  const resumeDownload = getResumeDownloadFilename(locale);
 
   const ctas = (
     <>
@@ -26,23 +18,6 @@ export async function Hero() {
       >
         {t("ctaPrimary")}
       </Link>
-      <Link
-        href="/experience"
-        className="btn-outline inline-flex min-h-12 w-full items-center justify-center rounded-xl px-4 text-sm font-semibold sm:w-auto sm:px-8"
-      >
-        {t("ctaExperience")}
-      </Link>
-      {resumeUrl ? (
-        <a
-          href={resumeUrl}
-          className="inline-flex min-h-12 w-full items-center justify-center px-4 text-sm font-semibold text-[var(--text-muted)] underline decoration-white/15 underline-offset-4 transition hover:text-[var(--text-primary)] sm:w-auto sm:px-2"
-          {...(isLocalResume(resumeUrl)
-            ? { download: resumeDownload }
-            : { target: "_blank", rel: "noopener noreferrer" })}
-        >
-          {t("ctaResume")}
-        </a>
-      ) : null}
     </>
   );
 
@@ -91,10 +66,10 @@ export async function Hero() {
             mockupStatus={t("terminalStatus")}
             mockupChart={t("mockupChart")}
             metrics={[
-              { value: "99.9%", label: t("metricUptime") },
-              { value: "<50ms", label: t("metricLatency") },
-              { value: "3+", label: t("metricPlatforms") },
-              { value: "0", label: t("metricIncidents") },
+              { value: t("metric1Value"), label: t("metric1Label") },
+              { value: t("metric2Value"), label: t("metric2Label") },
+              { value: t("metric3Value"), label: t("metric3Label") },
+              { value: t("metric4Value"), label: t("metric4Label") },
             ]}
           />
         </div>

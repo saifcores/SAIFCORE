@@ -7,11 +7,19 @@ function projectStatusRank(status: string | undefined): number {
   const normalized = (status ?? "").toLowerCase();
   if (
     normalized.includes("live") ||
-    normalized.includes("delivered") ||
-    normalized.includes("livré") ||
     normalized.includes("en production")
   ) {
     return 0;
+  }
+  if (
+    normalized.includes("from production") ||
+    normalized.includes("reference") ||
+    normalized.includes("référence") ||
+    normalized.includes("issu") ||
+    normalized.includes("delivered") ||
+    normalized.includes("livré")
+  ) {
+    return 1;
   }
   if (
     normalized.includes("progress") ||
@@ -19,9 +27,9 @@ function projectStatusRank(status: string | undefined): number {
     normalized.includes("development") ||
     normalized.includes("développement")
   ) {
-    return 1;
+    return 2;
   }
-  return 2;
+  return 3;
 }
 
 export async function FeaturedProjectsTeaser() {

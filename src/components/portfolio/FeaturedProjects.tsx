@@ -148,9 +148,23 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
                               </span>
                             ) : null}
                             {item.status ? (
-                              <span className="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-400">
+                              <span
+                                className={`inline-flex items-center gap-1.5 text-xs font-medium ${
+                                  /live|en production|delivered|livré/i.test(
+                                    item.status,
+                                  )
+                                    ? "text-emerald-400"
+                                    : "text-amber-400"
+                                }`}
+                              >
                                 <span
-                                  className="h-1.5 w-1.5 rounded-full bg-emerald-400"
+                                  className={`h-1.5 w-1.5 rounded-full ${
+                                    /live|en production|delivered|livré/i.test(
+                                      item.status,
+                                    )
+                                      ? "bg-emerald-400"
+                                      : "bg-amber-400"
+                                  }`}
                                   aria-hidden
                                 />
                                 {item.status}

@@ -42,6 +42,9 @@ export async function Trust() {
             {t("companiesLabel")}
           </p>
           <TrustMotion brands={trustBrands} />
+          <p className="mx-auto mt-5 max-w-xl text-pretty text-center text-xs leading-relaxed text-[var(--text-muted)] sm:text-sm">
+            {t("deliveryNote")}
+          </p>
         </Reveal>
       </div>
     </section>
