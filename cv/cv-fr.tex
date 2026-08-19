@@ -14,13 +14,8 @@
 \usepackage[dvipsnames]{xcolor}
 \usepackage{titlesec}
 \usepackage{enumitem}
-\usepackage{hyperref}
 \usepackage{parskip}
-
-\newcommand{\iconEmail}{Email~:}
-\newcommand{\iconPhone}{T\'el.~:}
-\newcommand{\iconLinkedin}{LinkedIn~:}
-\newcommand{\iconGlobe}{Web~:}
+\usepackage{hyperref}
 
 \pagestyle{empty}
 
@@ -47,7 +42,7 @@
 
 \titlespacing*{\section}
     {0pt}
-    {9pt}
+    {8pt}
     {4pt}
 
 \newcommand{\resumeItem}[1]{
@@ -66,6 +61,16 @@
     \end{itemize}
 }
 
+\newcommand{\resumeProject}[3]{%
+    \par\vspace{2pt}%
+    \noindent\begin{minipage}{\textwidth}
+        \textbf{#1}\hfill{\small #2}
+        \begin{resumeItemize}
+            #3
+        \end{resumeItemize}
+    \end{minipage}%
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -76,39 +81,47 @@
     \vspace{3pt}
 
     {\large Ing\'enieur Logiciel Backend \textbar\
-    Plateformes Enterprise · Paiements · Banque}
+    Plateformes d'entreprise \textbullet\ Paiements \textbullet\ Banque}
 
     \vspace{4pt}
 
     {\small
-    \iconEmail\
     \href{mailto:saifoulaye.diallo0512@gmail.com}{saifoulaye.diallo0512@gmail.com}
     \quad\textbar\quad
-    \iconPhone\ +221~77~124~41~51
+    \href{tel:+221771244151}{+221~77~124~41~51}
     \quad\textbar\quad
-    \iconLinkedin\
+    Dakar, S\'en\'egal (GMT)}
+
+    \vspace{2pt}
+
+    {\small
     \href{https://www.linkedin.com/in/sayfoulaye-diallo}{linkedin.com/in/sayfoulaye-diallo}
     \quad\textbar\quad
-    \iconGlobe\ \href{https://saifcore.tech}{saifcore.tech}
-    }
+    \href{https://github.com/saifcores/saifcores}{github.com/saifcores/saifcores}
+    \quad\textbar\quad
+    \href{https://saifcore.tech}{saifcore.tech}
+    \quad\textbar\quad
+    \href{https://blog.saifcore.tech}{blog.saifcore.tech}}
 \end{center}
 
 \section{R\'esum\'e Professionnel}
 
-Ing\'enieur Logiciel Backend sp\'ecialis\'e dans l'infrastructure de paiement,
-les plateformes bancaires et les APIs enterprise. Plus de 4 ans \`a livrer des
-syst\`emes Java / Spring Boot en production pour banques multi-filiales et
-produits FinTech --- rails de paiement, int\'egrations Mobile Money et services
-haute disponibilit\'e. Solide en conception d'API, backends distribu\'es,
-architecture propre et livraison avec des \'equipes pluridisciplinaires.
-Bas\'e \`a Dakar (GMT), bilingue fran\c{c}ais / anglais, ouvert aux missions
-freelance et contrat embarqu\'e en remote \`a
-l'international. Portfolio~: saifcore.tech.
+\begin{sloppypar}
+Ing\'enieur logiciel backend sp\'ecialis\'e dans l'infrastructure de paiement,
+les plateformes bancaires et les APIs d'entreprise. Plus de 4 ans \`a livrer
+des syst\`emes Java / Spring Boot en production --- rails de paiement,
+int\'egrations Mobile Money (Wave, Orange Money) et services haute
+disponibilit\'e pour plus de 11 filiales du Groupe Bank of Africa via Synapse.
+Solide en conception d'API, backends \'ev\'enementiels, architecture propre et
+livraison avec des \'equipes pluridisciplinaires. Bas\'e \`a Dakar (GMT),
+bilingue fran\c{c}ais / anglais. Ouvert aux missions freelance, aux contrats
+en \'equipe et aux revues d'architecture, en remote international.
+\end{sloppypar}
 
-\section{Mots-Cl\'es Cl\'es}
+\section{Mots-cl\'es}
 
 {\small Java, Spring Boot, Spring Security, API REST, Microservices, Traitement
-des Paiements, Mobile Money, Wave, Orange Money, Syst\`emes Bancaires, FinTech,
+des paiements, Mobile Money, Wave, Orange Money, Syst\`emes bancaires, FinTech,
 Kafka, PostgreSQL, Oracle, Redis, Docker, Kubernetes, AWS, CI/CD,
 Domain-Driven Design, Clean Architecture, OpenAPI, OAuth2, JWT, Agile}
 
@@ -122,14 +135,18 @@ Domain-Driven Design, Clean Architecture, OpenAPI, OAuth2, JWT, Agile}
 
 \begin{resumeItemize}
     \resumeItem{Concevoir et faire \'evoluer des services backend pour
-    paiements, virements et traitement des transactions au service de
-    plateformes bancaires enterprise sur plus de 11 filiales Bank of Africa.}
-    \resumeItem{Livrer des APIs enterprise s\'ecuris\'ees reliant applications
-    bancaires, middleware et syst\`emes tiers sous contraintes strictes de
-    disponibilit\'e et de conformit\'e.}
+    paiements, virements et traitement des transactions sur des plateformes
+    bancaires d'entreprise, au service de plus de 11 filiales du Groupe Bank of
+    Africa.}
+    \resumeItem{Livrer des APIs d'entreprise s\'ecuris\'ees reliant applications
+    bancaires, middleware et syst\`emes tiers --- contrats versionn\'es,
+    journalisation d'audit des requ\^etes, sans exposer les syst\`emes
+    c{\oe}ur. Appliquer des \'ecritures append-only et la r\'econciliation
+    pour que chaque mouvement d'argent reste explicable pour la finance,
+    l'audit et la conformit\'e.}
     \resumeItem{Moderniser des services critiques pour la maintenabilit\'e et
-    la r\'esilience op\'erationnelle ; collaborer avec produit, QA et
-    plusieurs \'equipes techniques en Agile.}
+    la r\'esilience op\'erationnelle en haute disponibilit\'e ; collaborer avec
+    produit, QA et plusieurs \'equipes techniques en Agile.}
     \resumeItem{\textit{Environnement~:} Java, Spring Boot, Docker, Kubernetes,
     CI/CD, JasperReports, Microservices, Clean Architecture, Scrum.}
 \end{resumeItemize}
@@ -147,8 +164,8 @@ Domain-Driven Design, Clean Architecture, OpenAPI, OAuth2, JWT, Agile}
     l'onboarding client et les workflows de paiement sur une plateforme
     FinTech.}
     \resumeItem{Int\'egrer Wave et Orange Money pour automatiser les paiements ;
-    appliquer des patterns asynchrones et des flux \'ev\'enementiels orient\'es
-    Kafka.}
+    appliquer des flux \'ev\'enementiels Kafka et une idempotence explicite
+    pour que les retries ne cr\'eent pas de d\'ebits en double.}
     \resumeItem{Renforcer les APIs avec Spring Security et am\'eliorer la
     fiabilit\'e des op\'erations de paiement en production.}
     \resumeItem{\textit{Environnement~:} Java, Spring Boot, AWS, PostgreSQL,
@@ -164,10 +181,12 @@ Domain-Driven Design, Clean Architecture, OpenAPI, OAuth2, JWT, Agile}
     {Juin 2022 -- Nov. 2023 (en parall\`ele d'ENG d\`es juil. 2023)}
 
 \begin{resumeItemize}
-    \resumeItem{Prendre en charge services backend et APIs REST pour stocks,
-    commandes, ventes et workflows financiers d'un SaaS multi-tenant pour PME.}
+    \resumeItem{Prendre en charge les services backend et APIs REST pour stocks,
+    commandes, ventes et workflows financiers d'un SaaS multi-tenant aidant les
+    PME \`a piloter leurs op\'erations.}
     \resumeItem{Am\'eliorer les performances via optimisation des requ\^etes,
-    cache et traitement asynchrone.}
+    cache et traitement asynchrone, en tenant le reporting hors du chemin
+    d'encaissement.}
     \resumeItem{\textit{Environnement~:} Java, Spring Boot, MySQL, Angular,
     TypeScript, API REST, Agile XP.}
 \end{resumeItemize}
@@ -181,9 +200,9 @@ Domain-Driven Design, Clean Architecture, OpenAPI, OAuth2, JWT, Agile}
     {D\'ec. 2021 -- Mai 2022}
 
 \begin{resumeItemize}
-    \resumeItem{Livrer services backend et fonctionnalit\'es full-stack pour
-    gestion des patients, consultations et prescriptions sur une plateforme
-    clinique.}
+    \resumeItem{Livrer des services backend et des fonctionnalit\'es full-stack
+    pour la gestion des patients, consultations et prescriptions sur une
+    plateforme clinique.}
     \resumeItem{Concevoir des APIs REST s\'ecuris\'ees et scalables \`a travers
     plusieurs modules m\'etier ; am\'eliorer les performances via cache et
     traitement asynchrone.}
@@ -193,57 +212,60 @@ Domain-Driven Design, Clean Architecture, OpenAPI, OAuth2, JWT, Agile}
 
 \section{Projets S\'electionn\'es}
 
-\textbf{SDK Paiement Pan-Africain} \hfill {\small Infrastructure de Paiement}
-
-\begin{resumeItemize}
-    \resumeItem{SDK unifi\'e avec une API pour initier, confirmer et
-    r\'econcilier les paiements Orange Money, Wave et Free Money via
-    adaptateurs fournisseurs.}
+\resumeProject
+    {SDK Paiement Pan-Africain}
+    {Infrastructure de paiement}
+    {
+    \resumeItem{Une API pour initier, confirmer et r\'econcilier les paiements
+    Orange Money, Wave et Free Money via des adaptateurs fournisseurs --- 3+
+    wallets derri\`ere un contrat unique.}
     \resumeItem{Adaptateurs Spring Boot, cl\'es d'idempotence Redis,
-    \'ev\'enements Kafka de settlement, requ\^etes sign\'ees et validation HMAC
-    des webhooks.}
-\end{resumeItemize}
+    \'ev\'enements Kafka de r\`eglement, requ\^etes sign\'ees et validation HMAC
+    des webhooks. Patterns \'eprouv\'es sur la delivery FinTech ENG
+    Technologie.}
+    }
 
-\vspace{2pt}
+\resumeProject
+    {Passerelle API Unifi\'ee}
+    {Int\'egrations bancaires}
+    {
+    \resumeItem{Gateway comme fronti\`ere : authentification, routage,
+    limitation de d\'ebit et orchestration fournisseurs pour des int\'egrations
+    bancaires multi-entit\'es.}
+    \resumeItem{JWT en p\'eriph\'erie, RBAC, journalisation d'audit des
+    requ\^etes et contrats REST versionn\'es pour prot\'eger les syst\`emes
+    c{\oe}ur tout en ouvrant les APIs partenaires. Patterns issus de la delivery
+    Synapse pour les filiales du Groupe Bank of Africa.}
+    }
 
-\textbf{Passerelle API Unifi\'ee} \hfill {\small Enterprise / Int\'egrations Bancaires}
-
-\begin{resumeItemize}
-    \resumeItem{Pattern de gateway enterprise centralisant auth, routage,
-    rate limiting et orchestration fournisseurs pour int\'egrations bancaires
-    multi-entit\'es.}
-    \resumeItem{JWT en edge, RBAC, journalisation d'audit des requ\^etes et
-    contrats REST versionn\'es pour prot\'eger le core tout en ouvrant les
-    APIs partenaires.}
-\end{resumeItemize}
-
-\vspace{2pt}
-
-\textbf{Ecom 360 PME} \hfill {\small Plateforme SaaS Commerce}
-
-\begin{resumeItemize}
+\resumeProject
+    {Ecom 360 PME}
+    {Plateforme SaaS commerce}
+    {
     \resumeItem{Plateforme tout-en-un : POS, stocks temps r\'eel, Wave \&
     Orange Money li\'es \`a chaque vente, multi-boutiques et exports
     comptables.}
     \resumeItem{SPA Angular avec API REST Spring Boot multi-tenant, jobs
-    asynchrones de reporting et contr\^ole d'acc\`es par r\^oles.}
-\end{resumeItemize}
+    asynchrones de reporting et contr\^ole d'acc\`es par r\^oles --- 500+
+    commer\c{c}ants actifs au S\'en\'egal et en Afrique de l'Ouest.
+    \href{https://ecom360pme.com/}{ecom360pme.com}}
+    }
 
 \section{Comp\'etences Techniques}
 
 {\small
-\textbf{Langages~:} Java (8--21), TypeScript, JavaScript (ES6+), SQL \\
-\textbf{Backend~:} Spring Boot, Spring Security, Spring Data JPA, NestJS, API
-REST, GraphQL, OAuth2, JWT, OpenAPI / Swagger \\
-\textbf{Frontend~:} React, Next.js, Angular, TypeScript, HTML5, CSS3, Tailwind CSS \\
+\textbf{Langages~:} Java (8--21), TypeScript, JavaScript, SQL \\
+\textbf{Backend~:} Spring Boot, Spring Security, Spring Data JPA, Spring Cloud
+Gateway, API REST, OpenAPI / Swagger, OAuth2, JWT, NestJS, GraphQL \\
+\textbf{Frontend~:} Angular, React, Next.js, TypeScript, HTML5, CSS3, Tailwind CSS \\
 \textbf{Cloud \& DevOps~:} AWS, Docker, Kubernetes, Terraform, GitHub Actions,
 GitLab CI, Jenkins, Maven, Git \\
-\textbf{Architecture~:} Microservices, Monolithe Modulaire, Architecture
-Clean / Hexagonale, DDD, Event-Driven, API-First \\
+\textbf{Architecture~:} Microservices, Monolithe modulaire, Architecture
+clean / hexagonale, DDD, Event-Driven, API-First \\
 \textbf{Donn\'ees \& Messagerie~:} PostgreSQL, Oracle, MySQL, Redis, MongoDB,
 Kafka, RabbitMQ \\
-\textbf{Domaines~:} Syst\`emes Bancaires, FinTech, Traitement des Paiements,
-Mobile Money, Int\'egrations Enterprise
+\textbf{Domaines~:} Syst\`emes bancaires, FinTech, Traitement des paiements,
+Mobile Money, Int\'egrations d'entreprise
 }
 
 \section{Formation}
@@ -252,7 +274,7 @@ Mobile Money, Int\'egrations Enterprise
     {Master, Ing\'enierie Logicielle}
     {Universit\'e num\'erique Cheikh Hamidou KANE (UN-CHK)}
     {Dakar, S\'en\'egal}
-    {Mai 2024}
+    {Dipl\^ome obtenu --- mai 2024}
 
 \vspace{1pt}
 
@@ -269,12 +291,6 @@ Mobile Money, Int\'egrations Enterprise
     {SarayaTech}
     {S\'en\'egal}
     {Jan 2022 -- Oct 2022}
-
-\section{Certifications}
-
-{\small Java Intermediate ; Software Design: From Requirements to Release ;
-Software Engineering Essentials ; Digital Banking Fundamentals.
-AWS Certified Solutions Architect --- Associate (en cours).}
 
 \section{Langues}
 

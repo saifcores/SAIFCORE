@@ -14,13 +14,10 @@
 \usepackage[dvipsnames]{xcolor}
 \usepackage{titlesec}
 \usepackage{enumitem}
-\usepackage{hyperref}
 \usepackage{parskip}
+\usepackage{hyperref}
 
-\newcommand{\iconEmail}{Email:}
-\newcommand{\iconPhone}{Tel:}
-\newcommand{\iconLinkedin}{LinkedIn:}
-\newcommand{\iconGlobe}{Web:}
+\hyphenation{compliance}
 
 \pagestyle{empty}
 
@@ -47,7 +44,7 @@
 
 \titlespacing*{\section}
     {0pt}
-    {9pt}
+    {8pt}
     {4pt}
 
 \newcommand{\resumeItem}[1]{
@@ -66,6 +63,16 @@
     \end{itemize}
 }
 
+\newcommand{\resumeProject}[3]{%
+    \par\vspace{2pt}%
+    \noindent\begin{minipage}{\textwidth}
+        \textbf{#1}\hfill{\small #2}
+        \begin{resumeItemize}
+            #3
+        \end{resumeItemize}
+    \end{minipage}%
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -75,33 +82,40 @@
 
     \vspace{3pt}
 
-    {\large Backend Software Engineer \textbar\ Enterprise Platforms · Payments · Banking}
+    {\large Backend Software Engineer \textbar\
+    Enterprise Platforms \textbullet\ Payments \textbullet\ Banking}
 
     \vspace{4pt}
 
     {\small
-    \iconEmail\
     \href{mailto:saifoulaye.diallo0512@gmail.com}{saifoulaye.diallo0512@gmail.com}
     \quad\textbar\quad
-    \iconPhone\ +221~77~124~41~51
+    \href{tel:+221771244151}{+221~77~124~41~51}
     \quad\textbar\quad
-    \iconLinkedin\
+    Dakar, Senegal (GMT)}
+
+    \vspace{2pt}
+
+    {\small
     \href{https://www.linkedin.com/in/sayfoulaye-diallo}{linkedin.com/in/sayfoulaye-diallo}
     \quad\textbar\quad
-    \iconGlobe\ \href{https://saifcore.tech}{saifcore.tech}
-    }
+    \href{https://github.com/saifcores/saifcores}{github.com/saifcores/saifcores}
+    \quad\textbar\quad
+    \href{https://saifcore.tech}{saifcore.tech}
+    \quad\textbar\quad
+    \href{https://blog.saifcore.tech}{blog.saifcore.tech}}
 \end{center}
 
 \section{Professional Summary}
 
-Backend Software Engineer specializing in payment infrastructure, banking
+Backend software engineer specializing in payment infrastructure, banking
 platforms, and enterprise APIs. 4+ years shipping production Java / Spring Boot
-systems for multi-subsidiary banks and FinTech products --- including payment
-rails, mobile money integrations, and high-availability services. Strong in
-API design, distributed backends, clean architecture, and delivery with
-cross-functional teams. Based in Dakar (GMT), bilingual French / English,
-open to remote freelance delivery and embedded contract engineering
-worldwide. Portfolio: saifcore.tech.
+systems --- payment rails, mobile-money integrations (Wave, Orange Money), and
+high-availability services for 11+ Bank of Africa Group subsidiaries via
+Synapse. Strong in API design, event-driven backends, clean architecture, and
+delivery with cross-functional teams. Based in Dakar (GMT); bilingual French /
+English; open to remote freelance delivery, contract engineering, and
+architecture review worldwide.
 
 \section{Core Keywords}
 
@@ -120,14 +134,16 @@ Clean Architecture, OpenAPI, OAuth2, JWT, Agile}
 
 \begin{resumeItemize}
     \resumeItem{Design and evolve backend services for payments, transfers, and
-    transaction processing supporting enterprise banking platforms across 11+
-    Bank of Africa subsidiaries.}
+    transaction processing on enterprise banking platforms across 11+ Bank of
+    Africa Group subsidiaries.}
     \resumeItem{Deliver secure enterprise APIs connecting banking applications,
-    middleware, and third-party systems under strict availability and compliance
-    constraints.}
+    middleware, and third-party systems --- versioned contracts, request audit
+    logging, and core systems kept off the public edge. Apply append-only
+    posting and reconciliation so money movement stays explainable to finance,
+    audit, and compliance.}
     \resumeItem{Modernize critical services for maintainability and operational
-    resilience; partner with product, QA, and multi-team engineering on Agile
-    delivery.}
+    resilience under high-availability constraints; partner with product, QA,
+    and multi-team engineering on Agile delivery.}
     \resumeItem{\textit{Stack:} Java, Spring Boot, Docker, Kubernetes, CI/CD,
     JasperReports, Microservices, Clean Architecture, Scrum.}
 \end{resumeItemize}
@@ -144,9 +160,10 @@ Clean Architecture, OpenAPI, OAuth2, JWT, Agile}
     \resumeItem{Built backend microservices for digital lending, customer
     onboarding, and payment workflows on a FinTech platform.}
     \resumeItem{Integrated Wave and Orange Money to automate payment processing;
-    applied asynchronous patterns and Kafka-oriented event flows.}
+    applied Kafka-oriented event flows and explicit idempotency so retries do
+    not create duplicate debits.}
     \resumeItem{Hardened APIs with Spring Security and strengthened reliability
-    for production payment operations.}
+    of production payment operations.}
     \resumeItem{\textit{Stack:} Java, Spring Boot, AWS, PostgreSQL, Apache Kafka,
     Docker, GitLab CI/CD, Scrum.}
 \end{resumeItemize}
@@ -161,9 +178,10 @@ Clean Architecture, OpenAPI, OAuth2, JWT, Agile}
 
 \begin{resumeItemize}
     \resumeItem{Owned backend services and REST APIs for inventory, orders,
-    sales, and financial workflows on a multi-tenant SaaS for SMEs.}
+    sales, and financial workflows on a multi-tenant SaaS helping SMEs run
+    day-to-day operations.}
     \resumeItem{Improved performance through query optimization, caching, and
-    asynchronous processing.}
+    asynchronous processing so reporting stayed off the checkout path.}
     \resumeItem{\textit{Stack:} Java, Spring Boot, MySQL, Angular, TypeScript,
     REST APIs, Agile XP.}
 \end{resumeItemize}
@@ -186,44 +204,49 @@ Clean Architecture, OpenAPI, OAuth2, JWT, Agile}
 
 \section{Selected Projects}
 
-\textbf{Pan-African Payment SDK} \hfill {\small Payment Infrastructure}
-
-\begin{resumeItemize}
-    \resumeItem{Unified SDK with one API to initiate, confirm, and reconcile
-    payments across Orange Money, Wave, and Free Money via provider adapters.}
+\resumeProject
+    {Pan-African Payment SDK}
+    {Payment Infrastructure}
+    {
+    \resumeItem{One API to initiate, confirm, and reconcile payments across
+    Orange Money, Wave, and Free Money via provider adapters --- 3+ wallets
+    behind a single contract.}
     \resumeItem{Spring Boot adapters, Redis idempotency keys, Kafka settlement
-    events, signed requests, and webhook HMAC validation.}
-\end{resumeItemize}
+    events, signed requests, and webhook HMAC validation. Patterns proven on
+    ENG Technologie FinTech delivery.}
+    }
 
-\vspace{2pt}
-
-\textbf{Unified API Gateway} \hfill {\small Enterprise / Banking Integrations}
-
-\begin{resumeItemize}
-    \resumeItem{Enterprise gateway pattern centralizing auth, routing, rate
-    limits, and provider orchestration for multi-entity banking integrations.}
+\resumeProject
+    {Unified API Gateway}
+    {Enterprise / Banking Integrations}
+    {
+    \resumeItem{Gateway as the boundary for auth, routing, rate limits, and
+    provider orchestration across multi-entity banking integrations.}
     \resumeItem{JWT at the edge, RBAC, request audit logging, and versioned REST
-    contracts to protect core systems while opening partner APIs.}
-\end{resumeItemize}
+    contracts to protect core systems while opening partner APIs. Patterns from
+    Synapse delivery for Bank of Africa Group subsidiaries.}
+    }
 
-\vspace{2pt}
-
-\textbf{Ecom 360 PME} \hfill {\small SaaS Commerce Platform}
-
-\begin{resumeItemize}
+\resumeProject
+    {Ecom 360 PME}
+    {SaaS Commerce Platform}
+    {
     \resumeItem{All-in-one commerce platform: POS, real-time inventory, Wave \&
-    Orange Money per sale, multi-store management, and accountant-ready exports.}
-    \resumeItem{Angular SPA with Spring Boot multi-tenant REST API, async
-    reporting jobs, and role-based staff access.}
-\end{resumeItemize}
+    Orange Money on each sale, multi-store operations, and accountant-ready
+    exports.}
+    \resumeItem{Angular SPA with a Spring Boot multi-tenant REST API, async
+    reporting jobs, and role-based staff access --- 500+ active merchants
+    across Senegal and West Africa.
+    \href{https://ecom360pme.com/}{ecom360pme.com}}
+    }
 
 \section{Technical Skills}
 
 {\small
-\textbf{Languages:} Java (8--21), TypeScript, JavaScript (ES6+), SQL \\
-\textbf{Backend:} Spring Boot, Spring Security, Spring Data JPA, NestJS, REST
-APIs, GraphQL, OAuth2, JWT, OpenAPI / Swagger \\
-\textbf{Frontend:} React, Next.js, Angular, TypeScript, HTML5, CSS3, Tailwind CSS \\
+\textbf{Languages:} Java (8--21), TypeScript, JavaScript, SQL \\
+\textbf{Backend:} Spring Boot, Spring Security, Spring Data JPA, Spring Cloud
+Gateway, REST APIs, OpenAPI / Swagger, OAuth2, JWT, NestJS, GraphQL \\
+\textbf{Frontend:} Angular, React, Next.js, TypeScript, HTML5, CSS3, Tailwind CSS \\
 \textbf{Cloud \& DevOps:} AWS, Docker, Kubernetes, Terraform, GitHub Actions,
 GitLab CI, Jenkins, Maven, Git \\
 \textbf{Architecture:} Microservices, Modular Monolith, Clean / Hexagonal
@@ -240,7 +263,7 @@ Enterprise Integrations
     {Master, Software Engineering}
     {Universit\'e num\'erique Cheikh Hamidou KANE (UN-CHK)}
     {Dakar, Senegal}
-    {May 2024}
+    {Graduated May 2024}
 
 \vspace{1pt}
 
@@ -257,12 +280,6 @@ Enterprise Integrations
     {SarayaTech}
     {Senegal}
     {Jan 2022 -- Oct 2022}
-
-\section{Certifications}
-
-{\small Java Intermediate; Software Design: From Requirements to Release;
-Software Engineering Essentials; Digital Banking Fundamentals.
-AWS Certified Solutions Architect --- Associate (in progress).}
 
 \section{Languages}
 
