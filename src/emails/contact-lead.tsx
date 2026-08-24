@@ -206,7 +206,7 @@ export function ContactLeadEmail({
           <Hr style={styles.hr} />
 
           <Text style={styles.footer}>
-            SAIFCORE · Backend · Payments · Platforms
+            SAIFCORE · Senior Backend · Payments · Platforms
             <br />
             <Link href={siteUrl} style={styles.link}>
               {siteUrl}

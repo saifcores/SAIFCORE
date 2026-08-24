@@ -115,7 +115,7 @@ NEXT
 3. Sinon → 3–5 questions ciblées + package adapté
 
 —
-SAIFCORE · Backend · Payments · Platforms
+SAIFCORE · Senior Backend · Payments · Platforms
 ${getSiteUrl()}`;
 }
 

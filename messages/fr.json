@@ -1,18 +1,18 @@
 {
   "meta": {
-    "title": "Ingénieur Logiciel Backend | Packages Freelance · Paiements | SAIFCORE",
-    "description": "Ingénieur backend (FR/EN) pour banque, paiements et plateformes enterprise — Dakar, Afrique de l'Ouest, remote mondial. Packages : discovery, build, MVP, embed contrat, modernisation, revue architecture.",
-    "ogTitle": "Ingénieur Backend — Packages d'engagement Fintech & Banque",
+    "title": "Ingénieur Backend Senior | Packages Freelance · Paiements | SAIFCORE",
+    "description": "Ingénieur backend senior (FR/EN) pour banque, paiements et plateformes enterprise — Dakar, Afrique de l'Ouest, remote mondial. Packages : discovery, build, MVP, embed contrat, modernisation, revue architecture.",
+    "ogTitle": "Ingénieur Backend Senior — Packages d'engagement Fintech & Banque",
     "ogDescription": "Livraison backend cadrée : APIs, paiements et plateformes régulées. Dakar · Afrique de l'Ouest · remote mondial — Java, Spring Boot, Kafka, AWS.",
-    "twitterDescription": "Backend · Banque & paiements · Dakar · Afrique de l'Ouest · Remote mondial · Java · Spring Boot · AWS.",
-    "jsonLdJobTitle": "Ingénieur Logiciel Backend",
-    "jsonLdDescription": "Ingénieur backend pour plateformes enterprise, systèmes bancaires et infrastructure de paiement — Java, Spring Boot, systèmes distribués. Basé à Dakar ; livraison Afrique de l'Ouest et remote mondial.",
+    "twitterDescription": "Ingénieur Backend Senior · Banque & paiements · Dakar · Afrique de l'Ouest · Remote mondial · Java · Spring Boot · AWS.",
+    "jsonLdJobTitle": "Ingénieur Backend Senior",
+    "jsonLdDescription": "Ingénieur backend senior pour plateformes enterprise, systèmes bancaires et infrastructure de paiement — Java, Spring Boot, systèmes distribués. Basé à Dakar ; livraison Afrique de l'Ouest et remote mondial.",
     "jsonLdServiceName": "Ingénierie de plateformes enterprise et de paiement",
     "jsonLdServiceDescription": "Systèmes backend, APIs, architectures distribuées et solutions de paiement pour plateformes enterprise et fintech — dont mobile money et intégrations bancaires réglementées. Livrés sous forme de packages d'engagement cadrés.",
     "jsonLdAvailability": "Remote mondial",
     "jsonLdAreaServed": "Sénégal, Afrique de l'Ouest, Monde entier",
-    "keywords": "ingénieur logiciel backend, freelance backend, packages d'engagement, Spring Boot, Java, infrastructure de paiement, fintech, systèmes bancaires, systèmes distribués, Kafka, AWS, mobile money, Sénégal, Afrique de l'Ouest, Dakar, ingénieur remote, contrat backend, revue architecture, SAIFCORE",
-    "manifestName": "SAIFCORE — Ingénieur Logiciel Backend",
+    "keywords": "ingénieur backend senior, senior backend engineer, ingénieur logiciel backend, freelance backend, packages d'engagement, Spring Boot, Java, infrastructure de paiement, fintech, systèmes bancaires, systèmes distribués, Kafka, AWS, mobile money, Sénégal, Afrique de l'Ouest, Dakar, ingénieur remote, contrat backend, revue architecture, SAIFCORE",
+    "manifestName": "SAIFCORE — Ingénieur Backend Senior",
     "manifestDescription": "Portfolio — packages d'engagement pour plateformes enterprise, infrastructure de paiement, systèmes bancaires et ingénierie backend."
   },
   "common": {
@@ -31,7 +31,7 @@
   },
   "nav": {
     "primary": "Principal",
-    "brandRole": "Backend · Packages · Paiements",
+    "brandRole": "Backend Senior · Paiements",
     "brandHomeLabel": "SAIFCORE — accueil",
     "work": "Projets",
     "services": "Services",
@@ -97,10 +97,10 @@
   },
   "hero": {
     "badge": "Dakar · Afrique de l'Ouest · Remote mondial",
-    "titleLine1": "Ingénieur Logiciel Backend",
+    "titleLine1": "Ingénieur Backend Senior",
     "titleLine2": "Plateformes Enterprise",
     "titleLine3": "Paiements · FinTech · Systèmes Distribués",
-    "subtitle": "Je construis des backends Java / Spring Boot pour la banque et les paiements — systèmes fiables et auditables, livraison Afrique de l'Ouest et équipes internationales en remote.",
+    "subtitle": "Je conçois des backends Java / Spring Boot pour la banque et les paiements — du contrat d'API à l'exploitation en production, livraison Afrique de l'Ouest et équipes internationales en remote.",
     "specializations": [
       "Plateformes Enterprise",
       "Infrastructure de Paiement",
@@ -336,7 +336,7 @@
           {
             "title": "Embed backend en contrat",
             "duration": "1–6 mois",
-            "description": "Un ingénieur backend dans votre squad — sprints roadmap, CI/CD et ownership production en contexte régulé.",
+            "description": "Un ingénieur backend senior dans votre squad — sprints roadmap, CI/CD et ownership production en contexte régulé.",
             "includes": [
               "Livraison dans vos rituels et outils",
               "Reviews, barre de qualité et mentorship",
@@ -414,19 +414,6 @@
         ]
       },
       {
-        "label": "Frontend",
-        "items": [
-          "Angular",
-          "React",
-          "Next.js",
-          "TypeScript",
-          "Tailwind CSS",
-          "JavaScript (ESNext)",
-          "React Router",
-          "React Query"
-        ]
-      },
-      {
         "label": "Données & cache",
         "items": [
           "Oracle",
@@ -468,6 +455,19 @@
           "Splunk",
           "Datadog",
           "Sentry"
+        ]
+      },
+      {
+        "label": "Frontend",
+        "items": [
+          "Angular",
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "JavaScript (ESNext)",
+          "React Router",
+          "React Query"
         ]
       },
       {
@@ -929,14 +929,14 @@
     "showLess": "Afficher moins",
     "items": [
       {
-        "role": "Ingénieur Backend — Systèmes Bancaires",
+        "role": "Ingénieur Backend Senior — Systèmes Bancaires",
         "company": "Synapse Groupe",
         "client": "Bank of Africa — Groupe Bank of Africa",
         "logo": "synapse.jpeg",
         "period": "Fév 2025 — Présent",
         "location": "Ngor, Dakar, Sénégal",
-        "bullet0": "Conception et évolution de services backend pour les paiements, virements et le traitement des transactions — au service des plateformes bancaires enterprise sur plus de 11 filiales Bank of Africa.",
-        "bullet1": "Construction d'APIs enterprise pour l'intégration sécurisée entre applications bancaires, middleware et systèmes tiers. Modernisation des services pour la maintenabilité, la fiabilité et la résilience opérationnelle en environnement haute disponibilité.",
+        "bullet0": "Piloter la modernisation backend de plateformes bancaires enterprise — Java / Spring Boot, microservices, clean architecture — au service de plus de 11 filiales du Groupe Bank of Africa.",
+        "bullet1": "Conception d'APIs REST d'entreprise sécurisées, de services de paiement et de virement, et d'une réconciliation append-only pour que chaque mouvement d'argent reste auditable. Ownership technique avec produit, QA et équipes d'ingénierie en haute disponibilité.",
         "bullet2": "Java, Spring Boot, API Design, Docker, Kubernetes, CI/CD, JasperReports, Microservices, Clean Architecture, Agile (Scrum)"
       },
       {
@@ -946,7 +946,7 @@
         "logo": "eng.jpeg",
         "period": "Juil 2023 — Fév 2025",
         "location": "Dakar-Plateau, Sénégal",
-        "bullet0": "Contribution à une plateforme FinTech pour le crédit digital, le traitement des paiements et les opérations financières — conception et implémentation de microservices backend pour l'onboarding client et les workflows de paiement.",
+        "bullet0": "Porter des microservices backend pour le crédit digital, l'onboarding client et les workflows de paiement sur une plateforme FinTech.",
         "bullet1": "Intégration des services Wave et Orange Money pour automatiser le traitement des paiements. Mise en place de patterns de traitement asynchrone et renforcement de la sécurité API avec Spring Security.",
         "bullet2": "Java, Spring Boot, AWS, PostgreSQL, Apache Kafka, Docker, GitLab CI/CD, API Design, Agile Scrum"
       },
@@ -968,7 +968,7 @@
         "logo": "saraya.jpeg",
         "period": "Déc 2021 — Mai 2022",
         "location": "Sénégal",
-        "bullet0": "Développement de services backend et fonctionnalités full-stack pour la gestion des patients, consultations, prescriptions et workflows de santé sur une plateforme clinique.",
+        "bullet0": "Développement de services backend et fonctionnalités métier pour la gestion des patients, consultations, prescriptions et workflows de santé sur une plateforme clinique.",
         "bullet1": "Conception d'APIs REST sécurisées et scalables à travers plusieurs modules métier. Amélioration des performances via cache et traitement asynchrone ; participation aux revues de code et aux tests.",
         "bullet2": "Java, Spring Boot, Angular, REST APIs, Scrum, Jira"
       }
@@ -1079,7 +1079,7 @@
     "title": "Infrastructure paiement et banque qui tient localement et voyage en remote.",
     "body": "Construire des rails et middleware qui servent les marchés d'Afrique de l'Ouest et les équipes internationales qui exigent la même exactitude à distance.",
     "positioning": [
-      "Ingénieur Backend",
+      "Ingénieur Backend Senior",
       "Constructeur d'Infrastructure Fintech",
       "Futur Fondateur"
     ],
@@ -1152,13 +1152,13 @@
       { "name": "Français", "level": "Natif / bilingue professionnel" },
       { "name": "Anglais", "level": "Professionnel (écrit)" }
     ],
-    "p1": "Je construis des plateformes backend pour la banque, les paiements et l'enterprise — des systèmes qui restent corrects sous audit et à l'échelle.",
+    "p1": "Je conçois et porte des plateformes backend pour la banque, les paiements et l'enterprise — des services qui restent corrects sous audit et en production.",
     "p2a": "Plus de quatre ans en Java, Spring Boot et systèmes distribués — en livrant",
     "p2b": "des APIs, rails de paiement et backends event-driven",
     "p2c": " que les équipes peuvent exploiter en production.",
     "p3": "Récents : Synapse → Groupe Bank of Africa (11+ filiales), rails FinTech (Wave, Orange Money, Kafka) et SaaS multi-tenant.",
     "p4": "Basé à Dakar. Livraison Afrique de l'Ouest ; freelance et contrat remote à l'international. Bilingue FR/EN.",
-    "cardRole": "Ingénieur Logiciel Backend",
+    "cardRole": "Ingénieur Backend Senior",
     "cardTagline": "Dakar · Afrique de l'Ouest · Remote mondial",
     "statYearsValue": "4+",
     "statYears": "Années en production",
@@ -1188,7 +1188,7 @@
   },
   "aboutTeaser": {
     "title": "À propos",
-    "heading": "Backend pour banque, paiements et plateformes",
+    "heading": "Backend senior pour banque, paiements et plateformes",
     "excerpt": "Basé à Dakar, bilingue FR/EN. Java / Spring Boot pour banques et FinTech en Afrique de l'Ouest — et équipes internationales en remote.",
     "readMore": "Voir le profil complet",
     "stat1Value": "4+",
@@ -1305,7 +1305,7 @@
     }
   },
   "certificationsPage": {
-    "metaTitle": "Certifications & Expertise | Ingénieur Logiciel Backend | SAIFCORE",
+    "metaTitle": "Certifications & Expertise | Ingénieur Backend Senior | SAIFCORE",
     "metaDescription": "Feuille de route certifications cloud, sécurité, streaming et domaine — adossée à la delivery production Spring, Kafka et systèmes de paiement en environnements régulés.",
     "title": "Certifications",
     "subtitle": "Credentials cloud, sécurité et streaming prévus ou en cours — avec expertise terrain Spring et infrastructure de paiement prouvée en production.",
@@ -1315,10 +1315,10 @@
     "endCtaButton": "Démarrer la conversation"
   },
   "aboutPage": {
-    "metaTitle": "À propos | Ingénieur Logiciel Backend | SAIFCORE",
-    "metaDescription": "Saïfoulaye Diallo (SAIFCORE) — ingénieur backend bilingue FR/EN à Dakar. Banque & paiements Afrique de l'Ouest ; remote mondial. Java, Spring Boot, packages cadrés.",
+    "metaTitle": "À propos | Ingénieur Backend Senior | SAIFCORE",
+    "metaDescription": "Saïfoulaye Diallo (SAIFCORE) — ingénieur backend senior bilingue FR/EN à Dakar. Banque & paiements Afrique de l'Ouest ; remote mondial. Java, Spring Boot, packages cadrés.",
     "title": "À propos",
-    "subtitle": "Plus de quatre ans sur backends banque, fintech et enterprise — livraison Afrique de l'Ouest, remote mondial.",
+    "subtitle": "Plus de quatre ans à porter des backends banque, fintech et enterprise — livraison Afrique de l'Ouest, remote mondial.",
     "backToHome": "Retour à l'accueil",
     "endCtaTitle": "Prêt à cadrer un package — ou à recruter ce profil ?",
     "endCtaSubtitle": "Partagez équipe, stack et contraintes. Je réponds avec un chemin clair : proposition de package, embed contrat, ou prochaines étapes recrutement.",
@@ -1422,7 +1422,7 @@
     "rights": "© {year} {owner}. Contenus et marque réservés.",
     "rightsOwner": "{name} · SAIFCORE",
     "license": "Code source du site (MIT)",
-    "tagline": "Backend banque et paiements — Dakar, Afrique de l'Ouest, remote mondial.",
+    "tagline": "Backend senior pour banque et paiements — Dakar, Afrique de l'Ouest, remote mondial.",
     "linkedin": "Se connecter sur LinkedIn",
     "github": "Voir GitHub",
     "blog": "Blog SAIFCORE",
@@ -1482,8 +1482,8 @@
     "endCtaButton": "Discuter de votre projet"
   },
   "experiencePage": {
-    "metaTitle": "Expérience | Ingénieur Logiciel Backend | SAIFCORE",
-    "metaDescription": "Parcours backend : Synapse pour le Groupe Bank of Africa, FinTech ENG, SaaS Mafalia, SarayaTech — Java, Spring Boot, Kafka. Recrutez ce profil, ou cadrez un package d'engagement remote.",
+    "metaTitle": "Expérience | Ingénieur Backend Senior | SAIFCORE",
+    "metaDescription": "Parcours backend senior : Synapse pour le Groupe Bank of Africa, FinTech ENG, SaaS Mafalia, SarayaTech — Java, Spring Boot, Kafka. Recrutez ce profil, ou cadrez un package d'engagement remote.",
     "title": "Expérience professionnelle",
     "subtitle": "Delivery banque, fintech et enterprise — là où fiabilité, sécurité et exactitude sont non négociables.",
     "backToHome": "Retour à l'accueil",

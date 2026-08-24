@@ -113,7 +113,7 @@ export default async function Home({ params }: Props) {
       "Microservices",
       "AWS",
       "Mobile money",
-      "Freelance backend engineering",
+      "Senior backend engineering",
     ],
     alumniOf: {
       "@type": "CollegeOrUniversity",

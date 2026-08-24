@@ -11,10 +11,11 @@ Locale resolution lives in [`src/server/resume.ts`](../src/server/resume.ts).
 
 ## Positioning
 
-- **Headline:** Senior Software Engineer | Backend Architecture · Distributed Systems · Banking & Payments
-- **Tone:** senior through scope and impact (not a fake “Senior” title)
+- **Headline:** Senior Backend Engineer | Java · Spring Boot · Distributed Systems · Banking & Payments
+- **Tone:** senior through scope and impact (ownership, API contracts, production reliability) — not a fake “Architect” title
 - **Audience:** ATS parsers, recruiters, founders/CTOs seeking payment & banking backend partners
 - **Collaboration signal:** freelance delivery, contract engineering, technical & architecture review (aligned with portfolio engagements)
+- **Career arc:** Backend Engineer → Senior Backend Engineer on current banking platforms role
 
 ## Content guidelines (ATS + marketable)
 
@@ -22,6 +23,7 @@ Locale resolution lives in [`src/server/resume.ts`](../src/server/resume.ts).
 - Bullets: ownership verb + context + measurable outcome when known from the portfolio
 - Keep metrics honest (11+ BoA subsidiaries via Synapse, Wave / Orange Money). No unsourced round percentages.
 - Projects: Payment SDK, Unified API Gateway, Ecom 360 PME
+- Frontend is secondary (“Also”) — do not lead with Angular / React
 - No decorative icons, multi-column layouts, or invented metrics
 - Target **1–2 A4 pages**
 
