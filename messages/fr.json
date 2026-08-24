@@ -1,15 +1,15 @@
 {
   "meta": {
     "title": "Ingénieur Logiciel Backend | Packages Freelance · Paiements | SAIFCORE",
-    "description": "Ingénieur backend (FR/EN) pour banque, paiements et plateformes enterprise — Dakar, Afrique de l'Ouest, remote international. Packages : discovery, build, MVP, embed contrat, modernisation, revue architecture.",
+    "description": "Ingénieur backend (FR/EN) pour banque, paiements et plateformes enterprise — Dakar, Afrique de l'Ouest, remote mondial. Packages : discovery, build, MVP, embed contrat, modernisation, revue architecture.",
     "ogTitle": "Ingénieur Backend — Packages d'engagement Fintech & Banque",
-    "ogDescription": "Livraison backend cadrée : APIs, paiements et plateformes régulées. Dakar · Afrique de l'Ouest · remote international — Java, Spring Boot, Kafka, AWS.",
-    "twitterDescription": "Backend · Banque & paiements · Dakar · Afrique de l'Ouest · Remote international · Java · Spring Boot · AWS.",
+    "ogDescription": "Livraison backend cadrée : APIs, paiements et plateformes régulées. Dakar · Afrique de l'Ouest · remote mondial — Java, Spring Boot, Kafka, AWS.",
+    "twitterDescription": "Backend · Banque & paiements · Dakar · Afrique de l'Ouest · Remote mondial · Java · Spring Boot · AWS.",
     "jsonLdJobTitle": "Ingénieur Logiciel Backend",
-    "jsonLdDescription": "Ingénieur backend pour plateformes enterprise, systèmes bancaires et infrastructure de paiement — Java, Spring Boot, systèmes distribués. Basé à Dakar ; livraison Afrique de l'Ouest et remote international.",
+    "jsonLdDescription": "Ingénieur backend pour plateformes enterprise, systèmes bancaires et infrastructure de paiement — Java, Spring Boot, systèmes distribués. Basé à Dakar ; livraison Afrique de l'Ouest et remote mondial.",
     "jsonLdServiceName": "Ingénierie de plateformes enterprise et de paiement",
     "jsonLdServiceDescription": "Systèmes backend, APIs, architectures distribuées et solutions de paiement pour plateformes enterprise et fintech — dont mobile money et intégrations bancaires réglementées. Livrés sous forme de packages d'engagement cadrés.",
-    "jsonLdAvailability": "Remote international",
+    "jsonLdAvailability": "Remote mondial",
     "jsonLdAreaServed": "Sénégal, Afrique de l'Ouest, Monde entier",
     "keywords": "ingénieur logiciel backend, freelance backend, packages d'engagement, Spring Boot, Java, infrastructure de paiement, fintech, systèmes bancaires, systèmes distribués, Kafka, AWS, mobile money, Sénégal, Afrique de l'Ouest, Dakar, ingénieur remote, contrat backend, revue architecture, SAIFCORE",
     "manifestName": "SAIFCORE — Ingénieur Logiciel Backend",
@@ -71,7 +71,7 @@
     "factsLabel": "Points clés du profil",
     "factYears": "4+ ans en production",
     "factBanking": "Delivery Groupe Bank of Africa via Synapse",
-    "factRemote": "Afrique de l'Ouest · Remote international",
+    "factRemote": "Afrique de l'Ouest · Remote mondial",
     "factBilingual": "Bilingue FR / EN",
     "linkedin": "LinkedIn",
     "seePackages": "Voir les packages"
@@ -88,14 +88,15 @@
     "recruiterSecondaryCta": "Voir l'expérience",
     "clientTitle": "Projet & freelance",
     "clientDescription": "Voyez ce que je livre, choisissez un package d'engagement, puis réservez un court appel discovery.",
-    "clientLinkServices": "Services",
+    "clientLinkServices": "Ce que je livre",
     "clientLinkOffers": "Packages",
     "clientLinkProcess": "Comment je travaille",
+    "clientLinkContact": "Contact",
     "clientCta": "Réserver un appel",
     "clientSecondaryCta": "Voir les packages"
   },
   "hero": {
-    "badge": "Dakar · Afrique de l'Ouest · Remote International",
+    "badge": "Dakar · Afrique de l'Ouest · Remote mondial",
     "titleLine1": "Ingénieur Logiciel Backend",
     "titleLine2": "Plateformes Enterprise",
     "titleLine3": "Paiements · FinTech · Systèmes Distribués",
@@ -376,7 +377,7 @@
       },
       {
         "question": "Travaillez-vous 100 % remote ?",
-        "answer": "Oui. Livraison remote internationale depuis Dakar, avec rituels async-friendly et chevauchement horaire adapté pour les ateliers critiques."
+        "answer": "Oui. Livraison remote mondiale depuis Dakar, avec rituels async-friendly et chevauchement horaire adapté pour les ateliers critiques."
       },
       {
         "question": "Quel package choisir ?",
@@ -522,7 +523,7 @@
   "workProcess": {
     "title": "Comment la livraison se déroule",
     "subtitle": "Le même workflow derrière chaque package — étapes claires, progrès visible, handoff que votre équipe peut exploiter.",
-    "cta": "Retour aux packages d'engagement",
+    "cta": "Demander une proposition",
     "steps": [
       {
         "title": "Discovery",
@@ -748,7 +749,7 @@
         ],
         "tradeoffs": "Priorité donnée à la robustesse opérationnelle plutôt qu'à des fonctionnalités analytiques avancées dès la première version.",
         "bankingOutcome": "Montre une capacité à gérer des flux financiers, du rapprochement local et des opérations multi-sites avec audit minimal.",
-        "impact": "500+ commerces actifs au Sénégal et en Afrique de l'Ouest ; heures gagnées chaque semaine à la clôture ; mobile money enregistré avec chaque transaction au lieu d'une réconciliation manuelle.",
+        "impact": "Des centaines de commerces actifs au Sénégal et en Afrique de l'Ouest ; heures gagnées chaque semaine à la clôture ; mobile money enregistré avec chaque transaction au lieu d'une réconciliation manuelle.",
         "href": "https://ecom360pme.com/",
         "linkLabel": "Voir Ecom 360 PME",
         "stacks": [
@@ -761,7 +762,7 @@
         ],
         "status": "En production",
         "metrics": [
-          { "value": "500+", "label": "Commerces actifs" },
+          { "value": "Des centaines", "label": "Commerces actifs" },
           { "value": "< 5 min", "label": "Pour démarrer" }
         ]
       },
@@ -1087,12 +1088,12 @@
       { "value": "4", "label": "Plateformes fintech" },
       { "value": "4", "label": "Banques & fintechs" }
     ],
-    "dividerText": "Dakar · Afrique de l'Ouest · Remote international"
+    "dividerText": "Dakar · Afrique de l'Ouest · Remote mondial"
   },
   "metricsSection": {
     "label": "Résultats de delivery",
     "title": "Des résultats vérifiables sur le profil.",
-    "subtitle": "Livraison banque, fintech et SaaS depuis Dakar — Afrique de l'Ouest et remote international.",
+    "subtitle": "Livraison banque, fintech et SaaS depuis Dakar — Afrique de l'Ouest et remote mondial.",
     "uptimeChartLabel": "Standard de fiabilité",
     "uptimeStatus": "Production-ready",
     "uptimeSummary": "Posture cible pour backends mission-critical",
@@ -1158,7 +1159,7 @@
     "p3": "Récents : Synapse → Groupe Bank of Africa (11+ filiales), rails FinTech (Wave, Orange Money, Kafka) et SaaS multi-tenant.",
     "p4": "Basé à Dakar. Livraison Afrique de l'Ouest ; freelance et contrat remote à l'international. Bilingue FR/EN.",
     "cardRole": "Ingénieur Logiciel Backend",
-    "cardTagline": "Dakar · Afrique de l'Ouest · Remote International",
+    "cardTagline": "Dakar · Afrique de l'Ouest · Remote mondial",
     "statYearsValue": "4+",
     "statYears": "Années en production",
     "statSystemsValue": "11+",
@@ -1195,7 +1196,7 @@
     "stat2Value": "11+",
     "stat2Label": "Filiales bancaires",
     "stat3Value": "FR/EN",
-    "stat3Label": "Remote international"
+    "stat3Label": "Remote mondial"
   },
   "certifications": {
     "title": "Certifications",
@@ -1315,9 +1316,9 @@
   },
   "aboutPage": {
     "metaTitle": "À propos | Ingénieur Logiciel Backend | SAIFCORE",
-    "metaDescription": "Saïfoulaye Diallo (SAIFCORE) — ingénieur backend bilingue FR/EN à Dakar. Banque & paiements Afrique de l'Ouest ; remote international. Java, Spring Boot, packages cadrés.",
+    "metaDescription": "Saïfoulaye Diallo (SAIFCORE) — ingénieur backend bilingue FR/EN à Dakar. Banque & paiements Afrique de l'Ouest ; remote mondial. Java, Spring Boot, packages cadrés.",
     "title": "À propos",
-    "subtitle": "Plus de quatre ans sur backends banque, fintech et enterprise — livraison Afrique de l'Ouest, remote international.",
+    "subtitle": "Plus de quatre ans sur backends banque, fintech et enterprise — livraison Afrique de l'Ouest, remote mondial.",
     "backToHome": "Retour à l'accueil",
     "endCtaTitle": "Prêt à cadrer un package — ou à recruter ce profil ?",
     "endCtaSubtitle": "Partagez équipe, stack et contraintes. Je réponds avec un chemin clair : proposition de package, embed contrat, ou prochaines étapes recrutement.",
@@ -1375,7 +1376,7 @@
   "cta": {
     "label": "Contact",
     "title": "Recrutement ou projet — parlons-en",
-    "subtitle": "Recruteurs : brief ou CV. Clients : objectifs, contraintes, délai — ou choisissez un package. Remote international.",
+    "subtitle": "Recruteurs : brief ou CV. Clients : objectifs, contraintes, délai — ou choisissez un package. Remote mondial.",
     "processTitle": "Comment ça marche",
     "processStep1": "Partagez votre brief : objectifs, architecture, défis et contraintes.",
     "processStep2": "Je réponds avec des questions ciblées et une roadmap pratique.",
@@ -1389,8 +1390,13 @@
     "formName": "Votre nom",
     "formEmail": "Email professionnel",
     "formCompany": "Entreprise (optionnel)",
+    "formIntent": "Vous êtes…",
+    "formIntentPlaceholder": "Choisir",
+    "formIntentHiring": "Recrutement",
+    "formIntentFreelance": "En recherche de livraison freelance",
+    "formIntentOther": "Autre",
     "formMessage": "Brief projet",
-    "formMessagePlaceholder": "Objectifs, timeline, stack, contraintes (paiements, conformité, scale) — et s’il s’agit de recrutement, freelance ou embed équipe…",
+    "formMessagePlaceholder": "Objectifs, timeline, stack, contraintes (paiements, conformité, scale)…",
     "formSubmit": "Envoyer votre brief",
     "formSending": "Envoi…",
     "formSuccess": "Brief reçu — vérifiez votre boîte mail pour la confirmation.",
@@ -1416,7 +1422,7 @@
     "rights": "© {year} {owner}. Contenus et marque réservés.",
     "rightsOwner": "{name} · SAIFCORE",
     "license": "Code source du site (MIT)",
-    "tagline": "Backend banque et paiements — Dakar, Afrique de l'Ouest, remote international.",
+    "tagline": "Backend banque et paiements — Dakar, Afrique de l'Ouest, remote mondial.",
     "linkedin": "Se connecter sur LinkedIn",
     "github": "Voir GitHub",
     "blog": "Blog SAIFCORE",
@@ -1427,6 +1433,7 @@
     "about": "À propos de SAIFCORE",
     "credentials": "Certifications & Expertise",
     "homeSectionsLabel": "Page d'accueil",
+    "paths": "Par où commencer",
     "work": "Projets phares",
     "services": "Services",
     "offers": "Packages d'engagement",

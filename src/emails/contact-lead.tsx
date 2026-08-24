@@ -15,6 +15,7 @@ export type ContactLeadEmailProps = {
   name: string;
   email: string;
   company: string;
+  intent: string;
   subject: string;
   message: string;
   locale: "en" | "fr";
@@ -114,6 +115,7 @@ export function ContactLeadEmail({
   name,
   email,
   company,
+  intent,
   subject,
   message,
   locale,
@@ -121,7 +123,7 @@ export function ContactLeadEmail({
   siteUrl,
 }: ContactLeadEmailProps) {
   const companyLabel = company || "—";
-  const preview = `Lead: ${name}${company ? ` · ${company}` : ""}`;
+  const preview = `Lead: ${name}${company ? ` · ${company}` : ""} · ${intent}`;
 
   return (
     <Html>
@@ -152,6 +154,10 @@ export function ContactLeadEmail({
               {companyLabel}
             </Text>
             <Text style={styles.row}>
+              <span style={styles.muted}>Intention · </span>
+              {intent}
+            </Text>
+            <Text style={styles.row}>
               <span style={styles.muted}>Objet · </span>
               {subject}
             </Text>
@@ -169,8 +175,6 @@ export function ContactLeadEmail({
           <Section>
             <Text style={styles.label}>Qualif (reply)</Text>
             <Text style={styles.list}>
-              • Recrutement / freelance / embed équipe ?
-              <br />
               • Objectif : paiements, API, modernisation, MVP, audit…
               <br />
               • Timeline + contraintes (réglementaire, stack, scale)

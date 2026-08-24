@@ -1,0 +1,89 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Shared preamble — ATS, one column
+%% Requires \cvmode before \begin{document}
+%% Values: master | backend | architecture | fintech | international
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[left=0.55in,
+            right=0.55in,
+            top=0.42in,
+            bottom=0.42in]{geometry}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{etoolbox}
+\usepackage{hyperref}
+
+\pagestyle{empty}
+\raggedbottom
+
+% Keep a heading with its following lines (no extra package)
+\newcommand{\Needspace}[1]{%
+  \par\vspace{0pt}%
+  \vskip #1%
+  \penalty 10000%
+  \vskip -#1%
+}
+
+\definecolor{primary}{HTML}{1A365D}
+\definecolor{light}{HTML}{718096}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1.5pt}
+
+\titleformat{\section}
+    {\large\bfseries\color{primary}\uppercase}
+    {}
+    {0em}
+    {}
+    [\vspace{0.5pt}\titlerule]
+
+\titlespacing*{\section}
+    {0pt}
+    {7pt}
+    {3pt}
+
+\newcommand{\resumeItem}[1]{
+    \item {\small #1}
+}
+
+\newcommand{\resumeSubheading}[4]{
+    \Needspace{5.5\baselineskip}%
+    {\textbf{#1}} \hfill {\small #4}\\*
+    {\color{light}\small #2} \hfill \textit{\small #3}%
+    \par\vspace{1pt}%
+}
+
+\newenvironment{resumeItemize}{
+    \begin{itemize}[leftmargin=*, itemsep=0.8pt, topsep=0.6pt, parsep=0pt]
+}{
+    \end{itemize}
+}
+
+\newcommand{\resumeProject}[3]{%
+    \Needspace{4.5\baselineskip}%
+    \par\vspace{1.5pt}%
+    \noindent\begin{minipage}{\textwidth}
+        \textbf{#1}\hfill{\small #2}
+        \begin{resumeItemize}
+            #3
+        \end{resumeItemize}
+    \end{minipage}%
+}
+
+\newcommand{\expertiseLine}[2]{%
+    \textbf{#1:} #2\par
+}
+
+% Expands \<prefix><cvmode>, falls back to \<prefix>master
+\newcommand{\ModeText}[1]{%
+  \ifcsname #1\cvmode\endcsname
+    \csname #1\cvmode\endcsname
+  \else
+    \csname #1master\endcsname
+  \fi
+}

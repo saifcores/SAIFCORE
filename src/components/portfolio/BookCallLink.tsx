@@ -1,6 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
+import { Link } from "@/i18n/navigation";
 import { getCalendlyUrl } from "@/site";
 
 type Props = {
@@ -11,23 +12,28 @@ type Props = {
 
 /**
  * Primary booking action: opens Calendly in a new tab when configured,
- * otherwise scrolls to `#contact`.
+ * otherwise navigates to the home contact section (locale-aware).
  */
 export function BookCallLink({ className, children, onClick }: Props) {
   const calendly = getCalendlyUrl();
-  const href = calendly ?? "#contact";
-  const external = calendly != null;
+
+  if (calendly) {
+    return (
+      <a
+        href={calendly}
+        className={className}
+        onClick={onClick}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {children}
+      </a>
+    );
+  }
 
   return (
-    <a
-      href={href}
-      className={className}
-      onClick={onClick}
-      {...(external
-        ? { target: "_blank" as const, rel: "noopener noreferrer" }
-        : {})}
-    >
+    <Link href="/#contact" className={className} onClick={onClick}>
       {children}
-    </a>
+    </Link>
   );
 }

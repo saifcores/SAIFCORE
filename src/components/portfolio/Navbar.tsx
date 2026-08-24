@@ -47,14 +47,11 @@ function buildPrimaryNav(locale: "en" | "fr"): NavItem[] {
 }
 
 const homeHashSections = [
-  "about",
   "paths",
   "experience",
   "work",
-  "services",
   "offers",
   "process",
-  "expertise",
   "certifications",
   "insights",
   "faq",

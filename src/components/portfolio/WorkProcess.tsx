@@ -61,7 +61,7 @@ export function WorkProcess({ title, subtitle, cta, steps }: Props) {
         <MotionReveal delay={280}>
           <div className="mt-8 flex justify-center">
             <Link
-              href="/#offers"
+              href="/#contact"
               className="inline-flex min-h-11 items-center justify-center gap-2 text-sm font-semibold text-accent transition hover:text-[var(--accent-blue-light)]"
             >
               {cta}

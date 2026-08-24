@@ -3,6 +3,7 @@
 import { useId, useState } from "react";
 import { useLocale } from "next-intl";
 import { BookCallLink } from "@/components/portfolio/BookCallLink";
+import { isContactIntent } from "@/contact-intent";
 import {
   getCalendlyUrl,
   getContactMailto,
@@ -16,6 +17,11 @@ type Props = {
   formName: string;
   formEmail: string;
   formCompany: string;
+  formIntent: string;
+  formIntentPlaceholder: string;
+  formIntentHiring: string;
+  formIntentFreelance: string;
+  formIntentOther: string;
   formMessage: string;
   formMessagePlaceholder: string;
   formSubmit: string;
@@ -43,6 +49,11 @@ export function ContactForm({
   formName,
   formEmail,
   formCompany,
+  formIntent,
+  formIntentPlaceholder,
+  formIntentHiring,
+  formIntentFreelance,
+  formIntentOther,
   formMessage,
   formMessagePlaceholder,
   formSubmit,
@@ -63,9 +74,17 @@ export function ContactForm({
 }: Props) {
   const locale = useLocale();
   const formDomId = useId();
+  const nameId = `${formDomId}-name`;
+  const emailId = `${formDomId}-email`;
+  const companyId = `${formDomId}-company`;
+  const intentId = `${formDomId}-intent`;
+  const messageId = `${formDomId}-message`;
+  const noteId = `${formDomId}-note`;
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
+  const [intent, setIntent] = useState("");
   const [message, setMessage] = useState("");
   const [website, setWebsite] = useState("");
   const [status, setStatus] = useState<Status>("idle");
@@ -81,6 +100,7 @@ export function ContactForm({
     setName("");
     setEmail("");
     setCompany("");
+    setIntent("");
     setMessage("");
     setWebsite("");
     setStatus("idle");
@@ -89,6 +109,7 @@ export function ContactForm({
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formEnabled || isSending) return;
+    if (!isContactIntent(intent)) return;
 
     setStatus("sending");
     try {
@@ -99,6 +120,7 @@ export function ContactForm({
           name,
           email,
           company,
+          intent,
           message,
           subject,
           locale: locale === "fr" ? "fr" : "en",
@@ -111,21 +133,23 @@ export function ContactForm({
         return;
       }
 
-      setName("");
-      setEmail("");
-      setCompany("");
-      setMessage("");
-      setWebsite("");
+      resetForm();
       setStatus("success");
     } catch {
       setStatus("error");
     }
   };
 
-  const directMail = getContactMailto(subject);
+  const mailtoSubject = isContactIntent(intent)
+    ? `${subject} · ${intent}`
+    : subject;
+  const directMail = getContactMailto(mailtoSubject);
   const linkedinUrl = getLinkedinUrl();
   const githubUrl = getGithubUrl();
   const hasCalendly = getCalendlyUrl() != null;
+  const bookCallClass = formEnabled
+    ? "btn-outline inline-flex min-h-12 w-full items-center justify-center rounded-xl px-4 text-sm font-semibold sm:px-6"
+    : `${hasCalendly ? "btn-primary" : "btn-outline"} inline-flex min-h-12 w-full items-center justify-center rounded-xl px-4 text-sm font-semibold sm:px-6`;
 
   const statusMessage =
     status === "error" ? formError : formEnabled ? formNote : formUnavailable;
@@ -186,11 +210,12 @@ export function ContactForm({
                 onChange={(e) => setWebsite(e.target.value)}
               />
             </label>
-            <label className="block sm:col-span-1">
+            <label className="block sm:col-span-1" htmlFor={nameId}>
               <span className="mb-1.5 block text-xs font-medium text-[var(--text-muted)]">
                 {formName}
               </span>
               <input
+                id={nameId}
                 required
                 name="name"
                 autoComplete="name"
@@ -204,11 +229,12 @@ export function ContactForm({
                 className="input-field min-h-11 px-4 py-2.5 disabled:cursor-not-allowed disabled:opacity-60"
               />
             </label>
-            <label className="block sm:col-span-1">
+            <label className="block sm:col-span-1" htmlFor={emailId}>
               <span className="mb-1.5 block text-xs font-medium text-[var(--text-muted)]">
                 {formEmail}
               </span>
               <input
+                id={emailId}
                 required
                 name="email"
                 type="email"
@@ -224,11 +250,12 @@ export function ContactForm({
                 className="input-field min-h-11 px-4 py-2.5 disabled:cursor-not-allowed disabled:opacity-60"
               />
             </label>
-            <label className="block sm:col-span-2">
+            <label className="block sm:col-span-1" htmlFor={companyId}>
               <span className="mb-1.5 block text-xs font-medium text-[var(--text-muted)]">
                 {formCompany}
               </span>
               <input
+                id={companyId}
                 name="company"
                 autoComplete="organization"
                 maxLength={120}
@@ -241,11 +268,34 @@ export function ContactForm({
                 className="input-field min-h-11 px-4 py-2.5 disabled:cursor-not-allowed disabled:opacity-60"
               />
             </label>
-            <label className="block sm:col-span-2">
+            <label className="block sm:col-span-1" htmlFor={intentId}>
+              <span className="mb-1.5 block text-xs font-medium text-[var(--text-muted)]">
+                {formIntent}
+              </span>
+              <select
+                id={intentId}
+                required
+                name="intent"
+                value={intent}
+                onChange={(e) => {
+                  clearStatusIfNeeded();
+                  setIntent(e.target.value);
+                }}
+                disabled={!formEnabled || isSending}
+                className="input-field min-h-11 px-4 py-2.5 disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                <option value="">{formIntentPlaceholder}</option>
+                <option value="hiring">{formIntentHiring}</option>
+                <option value="freelance">{formIntentFreelance}</option>
+                <option value="other">{formIntentOther}</option>
+              </select>
+            </label>
+            <label className="block sm:col-span-2" htmlFor={messageId}>
               <span className="mb-1.5 block text-xs font-medium text-[var(--text-muted)]">
                 {formMessage}
               </span>
               <textarea
+                id={messageId}
                 required
                 name="message"
                 rows={5}
@@ -266,13 +316,13 @@ export function ContactForm({
             <button
               type="submit"
               disabled={!formEnabled || isSending}
-              aria-describedby="contact-form-note"
+              aria-describedby={noteId}
               className="btn-primary inline-flex min-h-12 w-full items-center justify-center px-6 text-sm sm:w-auto sm:px-8"
             >
               {isSending ? formSending : formSubmit}
             </button>
             <p
-              id="contact-form-note"
+              id={noteId}
               role={status === "error" ? "alert" : undefined}
               aria-live={status === "error" ? "assertive" : "polite"}
               className={`mt-3 text-pretty text-xs leading-relaxed ${
@@ -287,11 +337,7 @@ export function ContactForm({
 
       <aside className="order-first grid gap-4 min-[480px]:grid-cols-2 md:order-none md:flex md:flex-col md:gap-6">
         <div className="surface-panel rounded-2xl p-5 sm:p-6">
-          <BookCallLink
-            className={`${hasCalendly ? "btn-primary" : "btn-outline"} inline-flex min-h-12 w-full items-center justify-center rounded-xl px-4 text-sm font-semibold sm:px-6`}
-          >
-            {bookCall}
-          </BookCallLink>
+          <BookCallLink className={bookCallClass}>{bookCall}</BookCallLink>
           <p className="mt-3 text-center text-xs leading-relaxed text-[var(--text-muted)]">
             {hasCalendly ? calendlyHint : calendlyFallbackHint}
           </p>

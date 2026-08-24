@@ -88,9 +88,10 @@
     "recruiterSecondaryCta": "View experience",
     "clientTitle": "Project & freelance work",
     "clientDescription": "See what I deliver, pick an engagement package, then book a short discovery call.",
-    "clientLinkServices": "Services",
+    "clientLinkServices": "What I deliver",
     "clientLinkOffers": "Packages",
     "clientLinkProcess": "How I work",
+    "clientLinkContact": "Contact",
     "clientCta": "Book a call",
     "clientSecondaryCta": "See packages"
   },
@@ -524,7 +525,7 @@
   "workProcess": {
     "title": "How delivery works",
     "subtitle": "The same workflow behind every package — clear stages, visible progress, handoff your team can run.",
-    "cta": "Back to engagement packages",
+    "cta": "Request a proposal",
     "steps": [
       {
         "title": "Discovery",
@@ -750,7 +751,7 @@
         ],
         "tradeoffs": "The first version favored operational robustness over advanced analytics features.",
         "bankingOutcome": "Shows the ability to manage financial flows, local reconciliation, and multi-site operations with a minimum audit trail.",
-        "impact": "500+ active merchants across Senegal and West Africa; hours saved weekly on closing; local wallets recorded with every transaction instead of manual reconciliation.",
+        "impact": "Hundreds of active merchants across Senegal and West Africa; hours saved weekly on closing; local wallets recorded with every transaction instead of manual reconciliation.",
         "href": "https://ecom360pme.com/",
         "linkLabel": "View Ecom 360 PME",
         "stacks": [
@@ -763,7 +764,7 @@
         ],
         "status": "Live",
         "metrics": [
-          { "value": "500+", "label": "Active merchants" },
+          { "value": "Hundreds", "label": "Active merchants" },
           { "value": "< 5 min", "label": "Time to start" }
         ]
       },
@@ -1391,8 +1392,13 @@
     "formName": "Your name",
     "formEmail": "Work email address",
     "formCompany": "Company (optional)",
+    "formIntent": "I am…",
+    "formIntentPlaceholder": "Select one",
+    "formIntentHiring": "Hiring / recruiting",
+    "formIntentFreelance": "Looking for freelance delivery",
+    "formIntentOther": "Something else",
     "formMessage": "Project brief",
-    "formMessagePlaceholder": "Goals, timeline, stack, constraints (payments, compliance, scale) — and whether this is hiring, freelance, or a team embed…",
+    "formMessagePlaceholder": "Goals, timeline, stack, constraints (payments, compliance, scale)…",
     "formSubmit": "Send your brief",
     "formSending": "Sending…",
     "formSuccess": "Brief received — check your inbox for confirmation.",
@@ -1429,6 +1435,7 @@
     "about": "About SAIFCORE",
     "credentials": "Certifications & Credentials",
     "homeSectionsLabel": "Homepage",
+    "paths": "Start here",
     "work": "Featured Projects",
     "services": "Services",
     "offers": "Engagement packages",

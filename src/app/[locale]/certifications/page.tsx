@@ -69,6 +69,10 @@ export default async function CertificationsPage({ params }: Props) {
     return { ...copy, ...meta, id };
   });
 
+  const obtainedCredentials = credentials.filter(
+    (item) => item.status === "obtained",
+  );
+
   const pageJsonLd = buildProfilePageGraph({
     locale,
     path: "/certifications",
@@ -80,22 +84,23 @@ export default async function CertificationsPage({ params }: Props) {
       { name: tCommon("home"), path: "/" },
       { name: t("title"), path: "/certifications" },
     ],
-    personExtras: {
-      hasCredential: credentials.map((item) => ({
-        "@type": "EducationalOccupationalCredential",
-        name: item.name,
-        description: item.description,
-        credentialCategory:
-          item.group === "formal" ? "certification" : "expertise",
-        recognizedBy: {
-          "@type": "Organization",
-          name: item.issuer,
-        },
-        ...(item.verifyUrl && item.status === "obtained"
-          ? { url: item.verifyUrl }
-          : {}),
-      })),
-    },
+    personExtras:
+      obtainedCredentials.length > 0
+        ? {
+            hasCredential: obtainedCredentials.map((item) => ({
+              "@type": "EducationalOccupationalCredential",
+              name: item.name,
+              description: item.description,
+              credentialCategory:
+                item.group === "formal" ? "certification" : "expertise",
+              recognizedBy: {
+                "@type": "Organization",
+                name: item.issuer,
+              },
+              ...(item.verifyUrl ? { url: item.verifyUrl } : {}),
+            })),
+          }
+        : {},
   });
 
   return (

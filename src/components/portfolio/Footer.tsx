@@ -82,6 +82,7 @@ export async function Footer() {
   ];
 
   const homeSectionLinks: FooterLink[] = [
+    { href: "/#paths", label: t("paths") },
     { href: "/#work", label: t("work") },
     { href: "/#offers", label: t("offers") },
     { href: "/#process", label: t("process") },

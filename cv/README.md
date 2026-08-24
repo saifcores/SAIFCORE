@@ -11,7 +11,7 @@ Locale resolution lives in [`src/server/resume.ts`](../src/server/resume.ts).
 
 ## Positioning
 
-- **Headline:** Backend Software Engineer | Enterprise Platforms · Payments · Banking
+- **Headline:** Senior Software Engineer | Backend Architecture · Distributed Systems · Banking & Payments
 - **Tone:** senior through scope and impact (not a fake “Senior” title)
 - **Audience:** ATS parsers, recruiters, founders/CTOs seeking payment & banking backend partners
 - **Collaboration signal:** freelance delivery, contract engineering, technical & architecture review (aligned with portfolio engagements)

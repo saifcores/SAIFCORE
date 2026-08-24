@@ -2,6 +2,11 @@ import { Resend } from "resend";
 import { ContactAutoReplyEmail } from "@/emails/contact-auto-reply";
 import { ContactLeadEmail } from "@/emails/contact-lead";
 import {
+  contactIntentLabel,
+  isContactIntent,
+  type ContactIntent,
+} from "@/contact-intent";
+import {
   getCalendlyUrl,
   getContactEmail,
   getLinkedinUrl,
@@ -20,6 +25,7 @@ export type ContactPayload = {
   name: string;
   email: string;
   company: string;
+  intent: ContactIntent;
   message: string;
   subject: string;
   locale: ContactLocale;
@@ -40,6 +46,7 @@ export function parseContactPayload(body: unknown): ContactPayload | null {
   const name = typeof b.name === "string" ? b.name.trim() : "";
   const email = typeof b.email === "string" ? b.email.trim() : "";
   const company = typeof b.company === "string" ? b.company.trim() : "";
+  const intentRaw = typeof b.intent === "string" ? b.intent.trim() : "";
   const message = typeof b.message === "string" ? b.message.trim() : "";
   const subject = typeof b.subject === "string" ? b.subject.trim() : "";
   const localeRaw = typeof b.locale === "string" ? b.locale.trim() : "en";
@@ -48,15 +55,25 @@ export function parseContactPayload(body: unknown): ContactPayload | null {
   if (!name || name.length > MAX_NAME) return null;
   if (!email || email.length > 254 || !EMAIL_RE.test(email)) return null;
   if (company.length > MAX_COMPANY) return null;
+  if (!isContactIntent(intentRaw)) return null;
   if (message.length < MIN_MESSAGE || message.length > MAX_MESSAGE) return null;
   if (!subject || subject.length > 200) return null;
 
-  return { name, email, company, message, subject, locale };
+  return {
+    name,
+    email,
+    company,
+    intent: intentRaw,
+    message,
+    subject,
+    locale,
+  };
 }
 
 function ownerSubject(payload: ContactPayload): string {
   const company = payload.company || "—";
-  return `[SAIFCORE Lead] ${payload.name} · ${company}`;
+  const intent = contactIntentLabel(payload.intent, payload.locale);
+  return `[SAIFCORE Lead] ${intent} · ${payload.name} · ${company}`;
 }
 
 function autoReplySubject(payload: ContactPayload): string {
@@ -68,6 +85,7 @@ function autoReplySubject(payload: ContactPayload): string {
 function ownerText(payload: ContactPayload): string {
   const company = payload.company || "—";
   const calendly = getCalendlyUrl();
+  const intent = contactIntentLabel(payload.intent, payload.locale);
 
   return `Nouveau brief — saifcore.tech
 Locale: ${payload.locale}
@@ -77,6 +95,7 @@ LEAD
 Nom      : ${payload.name}
 Email    : ${payload.email}
 Société  : ${company}
+Intention: ${intent}
 Objet    : ${payload.subject}
 
 BRIEF
@@ -85,7 +104,6 @@ ${payload.message}
 
 QUALIF (reply)
 ──────────────
-• Recrutement / freelance / embed équipe ?
 • Objectif : paiements, API, modernisation, MVP, audit…
 • Timeline + contraintes (réglementaire, stack, scale)
 • Cadre : forfait / TJM / mission
@@ -170,6 +188,7 @@ export async function sendContactEmails(
       name: payload.name,
       email: payload.email,
       company: payload.company,
+      intent: contactIntentLabel(payload.intent, payload.locale),
       subject: payload.subject,
       message: payload.message,
       locale: payload.locale,
@@ -179,6 +198,7 @@ export async function sendContactEmails(
     tags: [
       { name: "type", value: "contact_lead" },
       { name: "locale", value: payload.locale },
+      { name: "intent", value: payload.intent },
     ],
   });
 

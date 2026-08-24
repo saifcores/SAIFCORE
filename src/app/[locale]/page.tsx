@@ -237,14 +237,14 @@ export default async function Home({ params }: Props) {
         tabIndex={-1}
       >
         {/*
-          Home (freelance-first): Proof → Path → Offer → How → FAQ → Contact
-          Case studies surface early. Full profile / stack live on /about.
-          Recruiter CV stays in nav and the hiring path — not in the hero.
+          Home (freelance-first): Trust → Path → Proof → Offer → How → FAQ → Contact
+          Audience fork happens before case studies. Full profile / stack live
+          on /about. Recruiter CV stays in nav and the hiring path — not in the hero.
         */}
         <Hero />
         <Trust />
-        <FeaturedProjectsTeaser />
         <AudiencePaths />
+        <FeaturedProjectsTeaser />
         <ExperienceTeaser />
         <Insights teaser />
         <FreelanceOffers
