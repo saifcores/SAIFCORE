@@ -42,6 +42,7 @@ export async function RecruiterActionBar({
 
   const resumePrimary = variant === "recruiter";
   const bookPrimary = variant !== "recruiter";
+  const resumeLabel = resumePrimary ? t("downloadCv") : tNav("resume");
 
   const resumeClass = resumePrimary
     ? "btn-primary inline-flex min-h-11 w-full items-center justify-center px-5 text-sm xs:w-auto"
@@ -57,7 +58,7 @@ export async function RecruiterActionBar({
     >
       {resumePrimary && resumeUrl && resumeProps ? (
         <a href={resumeUrl} className={resumeClass} {...resumeProps}>
-          {tNav("resume")}
+          {resumeLabel}
         </a>
       ) : null}
 
@@ -65,7 +66,7 @@ export async function RecruiterActionBar({
 
       {!resumePrimary && resumeUrl && resumeProps ? (
         <a href={resumeUrl} className={resumeClass} {...resumeProps}>
-          {tNav("resume")}
+          {resumeLabel}
         </a>
       ) : null}
 

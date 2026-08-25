@@ -5,6 +5,7 @@ import {
 } from "next-intl/server";
 import type { Locale } from "next-intl";
 import { AudiencePaths } from "@/components/portfolio/AudiencePaths";
+import { CollaborationStrip } from "@/components/portfolio/CollaborationStrip";
 import { ExperienceTeaser } from "@/components/portfolio/ExperienceTeaser";
 import { Insights } from "@/components/portfolio/Insights";
 import { CtaSection } from "@/components/portfolio/CtaSection";
@@ -237,15 +238,16 @@ export default async function Home({ params }: Props) {
         tabIndex={-1}
       >
         {/*
-          Home (freelance-first): Trust → Path → Proof → Offer → How → FAQ → Contact
-          Audience fork happens before case studies. Full profile / stack live
-          on /about. Recruiter CV stays in nav and the hiring path — not in the hero.
+          Home (freelance-first): Trust → Path → Proof → How we start →
+          Offer → How → FAQ → Contact. Audience fork before case studies.
+          Full profile / stack live on /about. Recruiter CV in nav and hero.
         */}
         <Hero />
         <Trust />
         <AudiencePaths />
         <FeaturedProjectsTeaser />
         <ExperienceTeaser />
+        <CollaborationStrip />
         <Insights teaser />
         <FreelanceOffers
           title={fo.title}

@@ -30,19 +30,25 @@ type NavItem = {
 
 /**
  * Dual-audience primary path:
- * Who → Proof → Work → Insights → Contact
- * Insights points at SAIFCORE Blog when NEXT_PUBLIC_BLOG_URL is set.
+ * About → Experience → Case studies → Packages → Contact
+ * Insights stays in the footer and the mobile extra list.
  */
-function buildPrimaryNav(locale: "en" | "fr"): NavItem[] {
-  const blogIndexUrl = getBlogIndexUrl(locale);
+function buildPrimaryNav(): NavItem[] {
   return [
     { href: "/about", labelKey: "about" },
     { href: "/experience", labelKey: "experience" },
     { href: "/systems", labelKey: "systems" },
+    { href: "/#offers", labelKey: "offers" },
+    { href: "/#contact", labelKey: "contact" },
+  ];
+}
+
+function buildMobileExtraNav(locale: "en" | "fr"): NavItem[] {
+  const blogIndexUrl = getBlogIndexUrl(locale);
+  return [
     blogIndexUrl
       ? { href: blogIndexUrl, labelKey: "insights", external: true }
       : { href: "/articles", labelKey: "insights" },
-    { href: "/#contact", labelKey: "contact" },
   ];
 }
 
@@ -50,6 +56,7 @@ const homeHashSections = [
   "paths",
   "experience",
   "work",
+  "start",
   "offers",
   "process",
   "certifications",
@@ -91,7 +98,8 @@ export function Navbar() {
   const linkedinUrl = getLinkedinUrl();
   const githubUrl = getGithubUrl();
   const isHome = pathname === "/";
-  const primaryNav = useMemo(() => buildPrimaryNav(loc), [loc]);
+  const primaryNav = useMemo(() => buildPrimaryNav(), []);
+  const extraNav = useMemo(() => buildMobileExtraNav(loc), [loc]);
 
   const [activeHomeSection, setActiveHomeSection] =
     useState<HomeHashSection | null>(null);
@@ -380,6 +388,30 @@ export function Navbar() {
                             ? "page"
                             : undefined
                         }
+                        onClick={() => close(false)}
+                      >
+                        {t(l.labelKey)}
+                      </Link>
+                    )}
+                  </li>
+                ))}
+                {extraNav.map((l) => (
+                  <li key={l.href}>
+                    {l.external ? (
+                      <a
+                        href={l.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${t(l.labelKey)} (${opensInNewTab})`}
+                        className="block rounded-xl px-4 py-3.5 text-base font-medium text-[var(--text-secondary)] transition hover:bg-[var(--bg-elevated)] hover:text-[var(--text-primary)] min-[420px]:py-3"
+                        onClick={() => close(false)}
+                      >
+                        {t(l.labelKey)}
+                      </a>
+                    ) : (
+                      <Link
+                        href={l.href}
+                        className="block rounded-xl px-4 py-3.5 text-base font-medium text-[var(--text-secondary)] transition hover:bg-[var(--bg-elevated)] hover:text-[var(--text-primary)] min-[420px]:py-3"
                         onClick={() => close(false)}
                       >
                         {t(l.labelKey)}

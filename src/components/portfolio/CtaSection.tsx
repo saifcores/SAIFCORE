@@ -83,6 +83,12 @@ export async function CtaSection() {
                   formIntentOther={t("formIntentOther")}
                   formMessage={t("formMessage")}
                   formMessagePlaceholder={t("formMessagePlaceholder")}
+                  formMessagePlaceholderHiring={t(
+                    "formMessagePlaceholderHiring",
+                  )}
+                  formMessagePlaceholderFreelance={t(
+                    "formMessagePlaceholderFreelance",
+                  )}
                   formSubmit={t("formSubmit")}
                   formSending={t("formSending")}
                   formSuccess={t("formSuccess")}

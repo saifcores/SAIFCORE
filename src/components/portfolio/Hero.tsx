@@ -1,23 +1,38 @@
-import { getTranslations } from "next-intl/server";
-import { Link } from "@/i18n/navigation";
+import { getLocale, getTranslations } from "next-intl/server";
 import { BookCallLink } from "@/components/portfolio/BookCallLink";
 import { HeroContent } from "@/components/portfolio/HeroContent";
 import { HeroVisual } from "@/components/portfolio/HeroVisual";
+import {
+  getResumeDownloadFilename,
+  getResumeUrl,
+  isLocalResume,
+} from "@/server/resume";
 
 export async function Hero() {
   const t = await getTranslations("hero");
+  const locale = await getLocale();
+  const resumeUrl = getResumeUrl(locale);
+  const resumeDownload = getResumeDownloadFilename(locale);
+  const resumeProps = resumeUrl
+    ? isLocalResume(resumeUrl)
+      ? { download: resumeDownload }
+      : ({ target: "_blank" as const, rel: "noopener noreferrer" } as const)
+    : null;
 
   const ctas = (
     <>
       <BookCallLink className="btn-primary btn-primary-lg inline-flex min-h-12 w-full items-center justify-center px-4 text-sm sm:w-auto sm:px-8">
         {t("ctaBookCall")}
       </BookCallLink>
-      <Link
-        href="/#offers"
-        className="btn-outline inline-flex min-h-12 w-full items-center justify-center rounded-xl px-4 text-sm font-semibold sm:w-auto sm:px-8"
-      >
-        {t("ctaPrimary")}
-      </Link>
+      {resumeUrl && resumeProps ? (
+        <a
+          href={resumeUrl}
+          className="btn-outline inline-flex min-h-12 w-full items-center justify-center rounded-xl px-4 text-sm font-semibold sm:w-auto sm:px-8"
+          {...resumeProps}
+        >
+          {t("ctaResume")}
+        </a>
+      ) : null}
     </>
   );
 
@@ -56,6 +71,7 @@ export async function Hero() {
             availability={t("availability")}
             locationLine={t("locationLine")}
             jumpToContact={t("jumpToContact")}
+            seePackages={t("ctaPrimary")}
             ctas={ctas}
           />
           <HeroVisual

@@ -7,6 +7,7 @@ export async function Trust() {
   const t = await getTranslations("trust");
   const messages = await getMessages();
   const industries = messages.trust.industries;
+  const facts = messages.trust.facts;
 
   return (
     <section className="border-b border-[var(--border-subtle)] px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
@@ -45,6 +46,24 @@ export async function Trust() {
           <p className="mx-auto mt-5 max-w-xl text-pretty text-center text-xs leading-relaxed text-[var(--text-muted)] sm:text-sm">
             {t("deliveryNote")}
           </p>
+        </Reveal>
+
+        <Reveal delay={140}>
+          <ul className="mx-auto mt-8 grid max-w-4xl list-none grid-cols-2 gap-3 p-0 sm:grid-cols-4 sm:gap-4">
+            {facts.map((fact) => (
+              <li
+                key={fact.label}
+                className="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/15 px-3 py-3 text-center sm:px-4 sm:py-4"
+              >
+                <p className="font-mono text-sm font-semibold text-[var(--text-primary)] sm:text-base">
+                  {fact.value}
+                </p>
+                <p className="mt-1 text-[11px] leading-snug text-[var(--text-muted)] sm:text-xs">
+                  {fact.label}
+                </p>
+              </li>
+            ))}
+          </ul>
         </Reveal>
       </div>
     </section>

@@ -1,6 +1,11 @@
-import { getMessages, getTranslations } from "next-intl/server";
+import { getLocale, getMessages, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import type { ExperienceEntry } from "@/types/messages";
+import {
+  getResumeDownloadFilename,
+  getResumeUrl,
+  isLocalResume,
+} from "@/server/resume";
 import { Reveal } from "./Reveal";
 
 const TEASER_COUNT = 3;
@@ -9,11 +14,23 @@ function firstBullet(entry: ExperienceEntry): string {
   return entry.bullet0.trim();
 }
 
+function isCurrentRole(period: string): boolean {
+  return /\b(present|présent|actuel|current)\b/i.test(period);
+}
+
 export async function ExperienceTeaser() {
   const messages = await getMessages();
   const { experience } = messages;
   const t = await getTranslations("experience");
+  const locale = await getLocale();
   const items = experience.items.slice(0, TEASER_COUNT);
+  const resumeUrl = getResumeUrl(locale);
+  const resumeDownload = getResumeDownloadFilename(locale);
+  const resumeProps = resumeUrl
+    ? isLocalResume(resumeUrl)
+      ? { download: resumeDownload }
+      : ({ target: "_blank" as const, rel: "noopener noreferrer" } as const)
+    : null;
 
   return (
     <section
@@ -31,13 +48,24 @@ export async function ExperienceTeaser() {
                 {t("subtitle")}
               </h2>
             </div>
-            <Link
-              href="/experience"
-              className="inline-flex min-h-10 shrink-0 items-center gap-1.5 text-sm font-semibold text-accent transition hover:text-[var(--accent-blue-light)]"
-            >
-              {t("viewAll")}
-              <span aria-hidden>→</span>
-            </Link>
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
+              {resumeUrl && resumeProps ? (
+                <a
+                  href={resumeUrl}
+                  className="inline-flex min-h-10 shrink-0 items-center text-sm font-semibold text-[var(--text-secondary)] transition hover:text-accent"
+                  {...resumeProps}
+                >
+                  {t("downloadCv")}
+                </a>
+              ) : null}
+              <Link
+                href="/experience"
+                className="inline-flex min-h-10 shrink-0 items-center gap-1.5 text-sm font-semibold text-accent transition hover:text-[var(--accent-blue-light)]"
+              >
+                {t("viewAll")}
+                <span aria-hidden>→</span>
+              </Link>
+            </div>
           </div>
         </Reveal>
 
@@ -45,6 +73,8 @@ export async function ExperienceTeaser() {
           {items.map((item, i) => {
             const isFirst = i === 0;
             const bullet = firstBullet(item);
+            const isCurrent = isCurrentRole(item.period);
+            const client = item.client?.trim();
             return (
               <li key={`${item.role}|${item.company}`}>
                 <Reveal delay={i * 50}>
@@ -52,14 +82,30 @@ export async function ExperienceTeaser() {
                     <div className="min-w-0 flex-1">
                       <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
                         <div className="min-w-0">
-                          <span
-                            className={`text-sm font-semibold ${isFirst ? "text-accent" : "text-[var(--text-secondary)]"}`}
-                          >
-                            {item.company}
-                          </span>
+                          <div className="flex flex-wrap items-center gap-2">
+                            <span
+                              className={`text-sm font-semibold ${isFirst ? "text-accent" : "text-[var(--text-secondary)]"}`}
+                            >
+                              {item.company}
+                            </span>
+                            {isCurrent ? (
+                              <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-accent">
+                                {t("currentRole")}
+                              </span>
+                            ) : null}
+                          </div>
                           <p className="mt-0.5 text-sm font-medium text-[var(--text-primary)]">
                             {item.role}
                           </p>
+                          {client ? (
+                            <p className="mt-0.5 text-xs text-[var(--text-muted)]">
+                              <span className="font-medium uppercase tracking-[0.12em]">
+                                {t("clientLabel")}
+                              </span>
+                              {": "}
+                              {client}
+                            </p>
+                          ) : null}
                         </div>
                         <span className="shrink-0 font-mono text-[11px] tabular-nums text-[var(--text-muted)]">
                           {item.period}

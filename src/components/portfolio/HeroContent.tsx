@@ -15,6 +15,7 @@ type Props = {
   availability: string;
   locationLine: string;
   jumpToContact: string;
+  seePackages: string;
   ctas: ReactNode;
 };
 
@@ -29,6 +30,7 @@ export function HeroContent({
   availability,
   locationLine,
   jumpToContact,
+  seePackages,
   ctas,
 }: Props) {
   const reduce = useReducedMotion();
@@ -119,15 +121,23 @@ export function HeroContent({
         initial={reduce ? false : { opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.34 }}
-        className="mt-6 flex flex-col gap-2 text-sm text-[var(--text-muted)] sm:mt-8 sm:block"
+        className="mt-6 flex flex-col gap-2 text-sm text-[var(--text-muted)] sm:mt-8"
       >
         <span className="text-pretty leading-relaxed">{locationLine}</span>
-        <Link
-          href="/#paths"
-          className="inline-flex min-h-11 w-fit items-center font-medium text-[var(--text-secondary)] underline decoration-white/20 underline-offset-4 transition hover:text-[var(--text-primary)] hover:decoration-white/40 sm:min-h-0"
-        >
-          {jumpToContact}
-        </Link>
+        <span className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-4">
+          <Link
+            href="/#paths"
+            className="inline-flex min-h-11 w-fit items-center font-medium text-[var(--text-secondary)] underline decoration-white/20 underline-offset-4 transition hover:text-[var(--text-primary)] hover:decoration-white/40 sm:min-h-0"
+          >
+            {jumpToContact}
+          </Link>
+          <Link
+            href="/#offers"
+            className="inline-flex min-h-11 w-fit items-center font-medium text-[var(--text-secondary)] underline decoration-white/20 underline-offset-4 transition hover:text-[var(--text-primary)] hover:decoration-white/40 sm:min-h-0"
+          >
+            {seePackages}
+          </Link>
+        </span>
       </motion.p>
     </div>
   );

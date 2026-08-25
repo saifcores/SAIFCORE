@@ -24,6 +24,8 @@ type Props = {
   formIntentOther: string;
   formMessage: string;
   formMessagePlaceholder: string;
+  formMessagePlaceholderHiring: string;
+  formMessagePlaceholderFreelance: string;
   formSubmit: string;
   formSending: string;
   formSuccess: string;
@@ -56,6 +58,8 @@ export function ContactForm({
   formIntentOther,
   formMessage,
   formMessagePlaceholder,
+  formMessagePlaceholderHiring,
+  formMessagePlaceholderFreelance,
   formSubmit,
   formSending,
   formSuccess,
@@ -91,6 +95,12 @@ export function ContactForm({
 
   const isSending = status === "sending";
   const isSuccess = status === "success";
+  const messagePlaceholder =
+    intent === "hiring"
+      ? formMessagePlaceholderHiring
+      : intent === "freelance"
+        ? formMessagePlaceholderFreelance
+        : formMessagePlaceholder;
 
   const clearStatusIfNeeded = () => {
     if (status === "error" || status === "success") setStatus("idle");
@@ -306,7 +316,7 @@ export function ContactForm({
                   clearStatusIfNeeded();
                   setMessage(e.target.value);
                 }}
-                placeholder={formMessagePlaceholder}
+                placeholder={messagePlaceholder}
                 disabled={!formEnabled || isSending}
                 className="input-field min-h-[8.5rem] resize-y px-4 py-2.5 disabled:cursor-not-allowed disabled:opacity-60"
               />

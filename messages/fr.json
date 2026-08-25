@@ -1,12 +1,12 @@
 {
   "meta": {
-    "title": "Ingénieur Backend Senior | Packages Freelance · Paiements | SAIFCORE",
-    "description": "Ingénieur backend senior (FR/EN) pour banque, paiements et plateformes enterprise — Dakar, Afrique de l'Ouest, remote mondial. Packages : discovery, build, MVP, embed contrat, modernisation, revue architecture.",
-    "ogTitle": "Ingénieur Backend Senior — Packages d'engagement Fintech & Banque",
-    "ogDescription": "Livraison backend cadrée : APIs, paiements et plateformes régulées. Dakar · Afrique de l'Ouest · remote mondial — Java, Spring Boot, Kafka, AWS.",
-    "twitterDescription": "Ingénieur Backend Senior · Banque & paiements · Dakar · Afrique de l'Ouest · Remote mondial · Java · Spring Boot · AWS.",
+    "title": "Ingénieur Backend Senior | Plateformes de paiement · Packages freelance | SAIFCORE",
+    "description": "Je conçois, construis et livre des plateformes de paiement et de banque que vous pouvez auditer et transférer. Ingénieur backend senior (FR/EN) à Dakar — Java, Spring Boot, packages freelance et embeds contrat, remote mondial.",
+    "ogTitle": "Je conçois, construis et livre des plateformes de paiement et de banque",
+    "ogDescription": "Ingénieur backend senior nommé pour la banque, les paiements et les APIs. Dakar · Afrique de l'Ouest · remote mondial — Java, Spring Boot, Kafka. Réservez un appel de 30 minutes ou téléchargez le CV.",
+    "twitterDescription": "Plateformes de paiement et de banque auditables et transférables. Backend senior · Dakar · FR/EN · Java · Spring Boot · remote mondial.",
     "jsonLdJobTitle": "Ingénieur Backend Senior",
-    "jsonLdDescription": "Ingénieur backend senior pour plateformes enterprise, systèmes bancaires et infrastructure de paiement — Java, Spring Boot, systèmes distribués. Basé à Dakar ; livraison Afrique de l'Ouest et remote mondial.",
+    "jsonLdDescription": "Je conçois et livre des plateformes backend pour la banque, les paiements et les produits enterprise — Java, Spring Boot, systèmes distribués. Basé à Dakar ; livraison Afrique de l'Ouest et remote mondial.",
     "jsonLdServiceName": "Ingénierie de plateformes enterprise et de paiement",
     "jsonLdServiceDescription": "Systèmes backend, APIs, architectures distribuées et solutions de paiement pour plateformes enterprise et fintech — dont mobile money et intégrations bancaires réglementées. Livrés sous forme de packages d'engagement cadrés.",
     "jsonLdAvailability": "Remote mondial",
@@ -74,7 +74,8 @@
     "factRemote": "Afrique de l'Ouest · Remote mondial",
     "factBilingual": "Bilingue FR / EN",
     "linkedin": "LinkedIn",
-    "seePackages": "Voir les packages"
+    "seePackages": "Voir les packages",
+    "downloadCv": "Télécharger le CV"
   },
   "audiencePaths": {
     "title": "Par où commencer",
@@ -90,6 +91,7 @@
     "clientDescription": "Voyez ce que je livre, choisissez un package d'engagement, puis réservez un court appel discovery.",
     "clientLinkServices": "Ce que je livre",
     "clientLinkOffers": "Packages",
+    "clientLinkStart": "Comment ça démarre",
     "clientLinkProcess": "Comment je travaille",
     "clientLinkContact": "Contact",
     "clientCta": "Réserver un appel",
@@ -97,10 +99,10 @@
   },
   "hero": {
     "badge": "Dakar · Afrique de l'Ouest · Remote mondial",
-    "titleLine1": "Ingénieur Backend Senior",
-    "titleLine2": "Plateformes Enterprise",
-    "titleLine3": "Paiements · FinTech · Systèmes Distribués",
-    "subtitle": "Je conçois des backends Java / Spring Boot pour la banque et les paiements — du contrat d'API à l'exploitation en production, livraison Afrique de l'Ouest et équipes internationales en remote.",
+    "titleLine1": "Je conçois, construis et livre",
+    "titleLine2": "des plateformes de paiement et banque",
+    "titleLine3": "que vous pouvez auditer et transférer",
+    "subtitle": "Ingénieur backend senior à Dakar. Java / Spring Boot pour banques et fintechs — delivery Groupe Bank of Africa via Synapse, Wave et Orange Money chez ENG. Packages freelance et embeds contrat, bilingue FR/EN, remote mondial.",
     "specializations": [
       "Plateformes Enterprise",
       "Infrastructure de Paiement",
@@ -111,7 +113,7 @@
     "ctaExperience": "Voir l'expérience",
     "ctaBookCall": "Réserver un appel",
     "ctaResume": "Télécharger le CV",
-    "proofLine": "Delivery Groupe Bank of Africa via Synapse · ENG Technologie",
+    "proofLine": "Livraison en production pour le Groupe Bank of Africa (via Synapse) et la FinTech ENG Technologie.",
     "locationLine": "Dakar, Sénégal — bilingue FR/EN · missions freelance et contrat, remote à l'international.",
     "availability": "Ouvert aux nouvelles missions",
     "jumpToContact": "Vous recrutez ? Voir le chemin recruteur",
@@ -392,6 +394,14 @@
         "answer": "Démos par jalons, tests, observabilité, runbooks et documentation que votre équipe peut exploiter — la livraison ne finit pas en boîte noire."
       },
       {
+        "question": "Qui fait réellement le travail ?",
+        "answer": "Moi. Vous travaillez avec un ingénieur backend senior nommé — pas un banc qui tourne. Le périmètre, l'architecture et la livraison restent chez moi jusqu'au handoff."
+      },
+      {
+        "question": "Comment démarrer si je recrute ?",
+        "answer": "Téléchargez le CV, parcourez Expérience et les études de cas, puis réservez un court appel ou envoyez un brief. Je réponds sous deux jours ouvrés."
+      },
+      {
         "question": "Êtes-vous ouvert au CDI autant qu'au freelance ?",
         "answer": "La priorité actuelle est la livraison freelance et contrat, cadrée par les packages. Un CDI reste possible si le contexte est le bon — le CV est dans la navigation. Précisez si vous embauchez ou si vous avez un projet."
       }
@@ -523,7 +533,7 @@
   "workProcess": {
     "title": "Comment la livraison se déroule",
     "subtitle": "Le même workflow derrière chaque package — étapes claires, progrès visible, handoff que votre équipe peut exploiter.",
-    "cta": "Demander une proposition",
+    "cta": "Réserver un appel de 30 minutes",
     "steps": [
       {
         "title": "Discovery",
@@ -550,6 +560,32 @@
         "body": "Améliorations post-lancement — latence, coût et fiabilité à partir du trafic réel."
       }
     ]
+  },
+  "collaboration": {
+    "title": "Comment un engagement démarre",
+    "subtitle": "Un ingénieur senior nommé, une proposition écrite, pas de forfait flou.",
+    "facts": [
+      {
+        "title": "Intro de 30 minutes",
+        "body": "Pas de retainer. Je cadre le travail avec vous, puis vous décidez."
+      },
+      {
+        "title": "Proposition écrite",
+        "body": "Périmètre, jalons et fourchette d'effort avant tout build."
+      },
+      {
+        "title": "Owner nommé",
+        "body": "Je reste sur le sujet jusqu'au handoff — tests, runbooks et docs."
+      },
+      {
+        "title": "Réponse sous 2 jours",
+        "body": "Je réponds sous deux jours ouvrés avec une prochaine étape claire."
+      }
+    ],
+    "ctaTitle": "Réserver un appel intro de 30 minutes",
+    "ctaSubtitle": "Sans engagement. Je suis avec une proposition écrite — ou un chemin recrutement si vous embauchez.",
+    "ctaPrimary": "Réserver un appel",
+    "ctaSecondary": "Voir les packages"
   },
   "bankingLeadership": {
     "eyebrow": "Leadership technique",
@@ -643,7 +679,25 @@
       "SaaS Entreprise"
     ],
     "companiesLabel": "Employeurs",
-    "deliveryNote": "Delivery pour les plateformes du Groupe Bank of Africa via Synapse — pas un partenariat commercial."
+    "deliveryNote": "Delivery pour les plateformes du Groupe Bank of Africa via Synapse — pas un partenariat commercial.",
+    "facts": [
+      {
+        "value": "4+",
+        "label": "Années en production"
+      },
+      {
+        "value": "11+",
+        "label": "Filiales Bank of Africa"
+      },
+      {
+        "value": "Wave + OM",
+        "label": "Corridors de paiement"
+      },
+      {
+        "value": "FR / EN",
+        "label": "Remote mondial"
+      }
+    ]
   },
   "whatISolve": {
     "title": "Systèmes que je livre",
@@ -920,6 +974,7 @@
     "title": "Expérience",
     "subtitle": "Banque, fintech et systèmes d'entreprise — des contextes où la correction, la conformité et la fiabilité ne sont pas négociables.",
     "viewAll": "Expérience complète",
+    "downloadCv": "Télécharger le CV",
     "valueTitle": "Ce que vous obtenez",
     "valueBody": "Delivery concrète en banque et fintech régulées — mobile money, APIs enterprise et pipelines production en Afrique de l'Ouest.",
     "stackLabel": "Stack",
@@ -1164,8 +1219,8 @@
     "statYears": "Années en production",
     "statSystemsValue": "11+",
     "statSystems": "Filiales bancaires",
-    "statCuriosityValue": "∞",
-    "statCuriosity": "Curiosité",
+    "statCuriosityValue": "FR/EN",
+    "statCuriosity": "Livraison bilingue",
     "engagementsTitle": "Comment je peux aider",
     "offersLink": "Voir les packages d'engagement →",
     "engagements": [
@@ -1318,7 +1373,7 @@
     "metaTitle": "À propos | Ingénieur Backend Senior | SAIFCORE",
     "metaDescription": "Saïfoulaye Diallo (SAIFCORE) — ingénieur backend senior bilingue FR/EN à Dakar. Banque & paiements Afrique de l'Ouest ; remote mondial. Java, Spring Boot, packages cadrés.",
     "title": "À propos",
-    "subtitle": "Plus de quatre ans à porter des backends banque, fintech et enterprise — livraison Afrique de l'Ouest, remote mondial.",
+    "subtitle": "Ingénieur backend senior nommé à Dakar. Banque, paiements et plateformes que vous pouvez auditer et transférer — Afrique de l'Ouest et remote mondial.",
     "backToHome": "Retour à l'accueil",
     "endCtaTitle": "Prêt à cadrer un package — ou à recruter ce profil ?",
     "endCtaSubtitle": "Partagez équipe, stack et contraintes. Je réponds avec un chemin clair : proposition de package, embed contrat, ou prochaines étapes recrutement.",
@@ -1377,10 +1432,10 @@
     "label": "Contact",
     "title": "Recrutement ou projet — parlons-en",
     "subtitle": "Recruteurs : brief ou CV. Clients : objectifs, contraintes, délai — ou choisissez un package. Remote mondial.",
-    "processTitle": "Comment ça marche",
-    "processStep1": "Partagez votre brief : objectifs, architecture, défis et contraintes.",
-    "processStep2": "Je réponds avec des questions ciblées et une roadmap pratique.",
-    "processStep3": "Nous nous alignons : appel discovery, atelier solution ou build par phases.",
+    "processTitle": "Comment ça démarre",
+    "processStep1": "Précisez si vous recrutez ou cadrez un projet — intro de 30 minutes, pas de retainer.",
+    "processStep2": "Je réponds sous deux jours ouvrés avec des questions ciblées, ou une proposition écrite.",
+    "processStep3": "La suite est explicite : chemin recrutement et CV, ou livraison cadrée que je porte jusqu'au handoff.",
     "responseHint": "Réponse attendue sous deux jours ouvrables.",
     "bookCall": "Réserver un appel discovery",
     "startProject": "Email direct",
@@ -1397,6 +1452,8 @@
     "formIntentOther": "Autre",
     "formMessage": "Brief projet",
     "formMessagePlaceholder": "Objectifs, timeline, stack, contraintes (paiements, conformité, scale)…",
+    "formMessagePlaceholderHiring": "Poste, équipe, stack, localisation et délai…",
+    "formMessagePlaceholderFreelance": "Objectifs, timeline, stack, contraintes (paiements, conformité, scale)…",
     "formSubmit": "Envoyer votre brief",
     "formSending": "Envoi…",
     "formSuccess": "Brief reçu — vérifiez votre boîte mail pour la confirmation.",
@@ -1422,11 +1479,11 @@
     "rights": "© {year} {owner}. Contenus et marque réservés.",
     "rightsOwner": "{name} · SAIFCORE",
     "license": "Code source du site (MIT)",
-    "tagline": "Backend senior pour banque et paiements — Dakar, Afrique de l'Ouest, remote mondial.",
+    "tagline": "Je conçois, construis et livre des plateformes de paiement et de banque — Dakar, Afrique de l'Ouest, remote mondial.",
     "linkedin": "Se connecter sur LinkedIn",
     "github": "Voir GitHub",
     "blog": "Blog SAIFCORE",
-    "resume": "Voir le CV",
+    "resume": "Télécharger le CV",
     "systems": "Études de cas projets",
     "experience": "Expérience professionnelle",
     "articles": "Articles & Insights",
@@ -1435,6 +1492,7 @@
     "homeSectionsLabel": "Page d'accueil",
     "paths": "Par où commencer",
     "work": "Projets phares",
+    "start": "Comment un engagement démarre",
     "services": "Services",
     "offers": "Packages d'engagement",
     "expertise": "Expertise",
@@ -1472,7 +1530,7 @@
     "metaTitle": "Études de cas | Backends Banque & Fintech | SAIFCORE",
     "metaDescription": "Études de cas : paiements, grands livres, passerelles API, SaaS — Sénégal, Afrique de l'Ouest, banque multi-pays. Preuve avant de cadrer un package.",
     "title": "Projets & études de cas",
-    "subtitle": "Problème, marché, architecture, sécurité et impact — livraison Afrique de l'Ouest et patterns banque multi-pays.",
+    "subtitle": "Produit live d'abord, puis systèmes de paiement et de banque — problème, architecture et impact vérifiables.",
     "backToHome": "Retour à l'accueil",
     "midCtaTitle": "Vous voulez des résultats similaires sur votre plateforme ?",
     "midCtaSubtitle": "Réservez un appel discovery, ou consultez les packages d'engagement.",
@@ -1485,7 +1543,7 @@
     "metaTitle": "Expérience | Ingénieur Backend Senior | SAIFCORE",
     "metaDescription": "Parcours backend senior : Synapse pour le Groupe Bank of Africa, FinTech ENG, SaaS Mafalia, SarayaTech — Java, Spring Boot, Kafka. Recrutez ce profil, ou cadrez un package d'engagement remote.",
     "title": "Expérience professionnelle",
-    "subtitle": "Delivery banque, fintech et enterprise — là où fiabilité, sécurité et exactitude sont non négociables.",
+    "subtitle": "Synapse pour le Groupe Bank of Africa, paiements FinTech ENG, SaaS — Java, Spring Boot. Recrutez ce profil, ou cadrez un package remote.",
     "backToHome": "Retour à l'accueil",
     "skillsTitle": "Stack technologique production",
     "skillsSubtitle": "Outils et patterns utilisés sur des backends bancaires et fintech live — pas une liste de buzzwords.",

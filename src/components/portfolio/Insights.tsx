@@ -18,6 +18,10 @@ export async function Insights({ teaser = false }: Props) {
   const locale = await getLocale();
   const loc = locale === "fr" ? "fr" : "en";
   const preview = await fetchRecentArticles(loc, 3);
+  if (teaser && preview.length === 0) {
+    return null;
+  }
+
   const blogIndexUrl = getBlogIndexUrl(loc);
   const viewAllHref = blogIndexUrl ?? "/articles";
   const viewAllExternal = !!blogIndexUrl;

@@ -2,6 +2,7 @@ import { getMessages, getTranslations } from "next-intl/server";
 import type { ReactNode } from "react";
 import { Link } from "@/i18n/navigation";
 import { caseStudySlug } from "@/seo";
+import { projectStatusRank, sortProjectsLiveFirst } from "@/data/case-studies";
 import type { FeaturedProjectItem } from "@/types/messages";
 import { FeaturedProjectDetails } from "./FeaturedProjectDetails";
 import { Reveal } from "./Reveal";
@@ -87,7 +88,7 @@ function ArchitectureFlow({
 
 export async function FeaturedProjects({ showDetail = false }: Props) {
   const messages = await getMessages();
-  const items = messages.featuredProjects.items;
+  const items = sortProjectsLiveFirst(messages.featuredProjects.items);
   const t = await getTranslations("featuredProjects");
 
   return (
@@ -150,18 +151,14 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
                             {item.status ? (
                               <span
                                 className={`inline-flex items-center gap-1.5 text-xs font-medium ${
-                                  /live|en production|delivered|livré/i.test(
-                                    item.status,
-                                  )
+                                  projectStatusRank(item.status) === 0
                                     ? "text-emerald-400"
                                     : "text-amber-400"
                                 }`}
                               >
                                 <span
                                   className={`h-1.5 w-1.5 rounded-full ${
-                                    /live|en production|delivered|livré/i.test(
-                                      item.status,
-                                    )
+                                    projectStatusRank(item.status) === 0
                                       ? "bg-emerald-400"
                                       : "bg-amber-400"
                                   }`}

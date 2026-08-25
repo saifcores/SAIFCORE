@@ -90,7 +90,7 @@ export default async function ExperiencePage({ params }: Props) {
           subtitle={t("subtitle")}
           backLabel={t("backToHome")}
           showFacts
-          actionVariant="balanced"
+          actionVariant="recruiter"
         />
 
         <Experience />

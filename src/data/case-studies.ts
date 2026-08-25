@@ -34,3 +34,42 @@ export function getRelatedCaseStudies(
 export function getCaseStudyHref(title: string): `/systems#case-${string}` {
   return `/systems#case-${caseStudySlug(title)}`;
 }
+
+/** Lower rank ships first on teasers and /systems. */
+export function projectStatusRank(status: string | undefined): number {
+  const normalized = (status ?? "").toLowerCase();
+  // "delivered" contains "live" — match a whole word, not a substring.
+  if (/\blive\b/.test(normalized) || normalized.includes("en production")) {
+    return 0;
+  }
+  if (
+    normalized.includes("from production") ||
+    normalized.includes("reference") ||
+    normalized.includes("référence") ||
+    normalized.includes("issu") ||
+    normalized.includes("delivered") ||
+    normalized.includes("livré")
+  ) {
+    return 1;
+  }
+  if (
+    normalized.includes("progress") ||
+    normalized.includes("cours") ||
+    normalized.includes("development") ||
+    normalized.includes("développement")
+  ) {
+    return 2;
+  }
+  return 3;
+}
+
+export function sortProjectsLiveFirst<
+  T extends { status?: string; href?: string },
+>(items: readonly T[]): T[] {
+  return [...items].sort((a, b) => {
+    const hrefRank = (item: T) => (item.href?.trim() ? 0 : 1);
+    const byHref = hrefRank(a) - hrefRank(b);
+    if (byHref !== 0) return byHref;
+    return projectStatusRank(a.status) - projectStatusRank(b.status);
+  });
+}

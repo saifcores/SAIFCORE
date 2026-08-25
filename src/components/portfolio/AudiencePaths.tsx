@@ -36,8 +36,8 @@ export async function AudiencePaths() {
       title: t("clientTitle"),
       description: t("clientDescription"),
       links: [
-        { href: "/#offers", label: t("clientLinkServices") },
-        { href: "/#process", label: t("clientLinkProcess") },
+        { href: "/#offers", label: t("clientLinkOffers") },
+        { href: "/#start", label: t("clientLinkStart") },
         { href: "/#contact", label: t("clientLinkContact") },
       ],
       primaryHref: "/#offers",

@@ -21,6 +21,7 @@ import {
   caseStudySlug,
   getLocalePageUrl,
 } from "@/seo";
+import { sortProjectsLiveFirst } from "@/data/case-studies";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -55,7 +56,9 @@ export default async function SystemsPage({ params }: Props) {
   const tCommon = await getTranslations("common");
   const messages = await getMessages();
   const pageUrl = getLocalePageUrl(locale, "/systems");
-  const caseStudies = messages.featuredProjects.items.map((item) => {
+  const caseStudies = sortProjectsLiveFirst(
+    messages.featuredProjects.items,
+  ).map((item) => {
     const slug = caseStudySlug(item.title);
 
     return {
