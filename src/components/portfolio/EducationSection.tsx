@@ -10,16 +10,16 @@ export async function EducationSection() {
     <section
       id="education"
       aria-labelledby="education-heading"
-      className="border-t border-[var(--border-subtle)] px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16"
+      className="border-t border-[var(--border-subtle)] px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
     >
-      <div className="mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-7xl">
         <Reveal>
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
             {t("title")}
           </p>
           <h2
             id="education-heading"
-            className="max-w-2xl text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl"
+            className="max-w-2xl font-display text-pretty text-2xl font-medium tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl"
           >
             {t("subtitle")}
           </h2>

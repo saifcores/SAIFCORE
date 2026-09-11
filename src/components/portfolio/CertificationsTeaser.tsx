@@ -24,21 +24,21 @@ export async function CertificationsTeaser() {
       id="certifications"
       className="border-b border-[var(--border-subtle)] px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16"
     >
-      <div className="mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-7xl">
         <MotionReveal>
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div className="min-w-0 flex-1">
               <p className="mb-2 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
                 {t("title")}
               </p>
-              <h2 className="max-w-2xl text-pretty text-xl font-bold tracking-tight text-[var(--text-primary)] sm:text-2xl">
+              <h2 className="max-w-2xl font-display text-pretty text-xl font-medium tracking-tight text-[var(--text-primary)] sm:text-2xl">
                 {t("teaserHeading")}
               </h2>
             </div>
             {hasObtainedCertifications() ? (
               <Link
                 href="/certifications"
-                className="inline-flex min-h-10 shrink-0 items-center gap-1.5 text-sm font-semibold text-accent transition hover:text-[var(--accent-blue-light)]"
+                className="inline-flex min-h-10 shrink-0 items-center gap-1.5 text-sm font-medium text-[var(--text-primary)] underline-offset-4 transition hover:underline"
               >
                 {t("viewAll")}
                 <span aria-hidden>→</span>
@@ -53,7 +53,7 @@ export async function CertificationsTeaser() {
             return (
               <li key={cert.id} className="min-w-0 sm:max-w-xs sm:flex-1">
                 <MotionReveal delay={i * 40}>
-                  <div className="flex items-center gap-3 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 px-3 py-3">
+                  <div className="flex items-center gap-3 rounded-[12px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 px-3 py-3">
                     <CertificationIcon
                       kind={cert.kind}
                       status={cert.status}

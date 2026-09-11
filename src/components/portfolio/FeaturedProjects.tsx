@@ -31,7 +31,7 @@ function DetailList({ items }: { items: string[] }) {
           className="flex gap-2 text-sm leading-relaxed text-[var(--text-secondary)]"
         >
           <span
-            className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400"
+            className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent-strong)]"
             aria-hidden
           />
           <span>{item}</span>
@@ -92,14 +92,14 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
   const t = await getTranslations("featuredProjects");
 
   return (
-    <section id="work" className="px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
-      <div className="mx-auto max-w-[1280px]">
+    <section id="work" className="px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+      <div className="mx-auto max-w-7xl">
         {!showDetail ? (
           <Reveal>
             <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
               {t("title")}
             </p>
-            <h2 className="max-w-2xl text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl">
+            <h2 className="max-w-2xl font-display text-pretty text-2xl font-medium tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl">
               {t("heading")}
             </h2>
             <p className="mt-3 max-w-2xl text-pretty text-sm text-[var(--text-secondary)] sm:mt-4 sm:text-base">
@@ -110,7 +110,7 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
 
         {/* Case study cards */}
         <div
-          className={`space-y-6 sm:space-y-8 ${!showDetail ? "mt-10 sm:mt-14" : ""}`}
+          className={`space-y-5 sm:space-y-6 ${!showDetail ? "mt-10 sm:mt-14" : ""}`}
         >
           {items.map((item, i) => {
             const external = item.href.trim();
@@ -120,11 +120,10 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
               <Reveal key={item.title} delay={i * 100}>
                 <article
                   id={`case-${caseStudySlug(item.title)}`}
-                  className="group relative scroll-mt-28 overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 transition duration-300 hover:border-[var(--border-hover)] hover:bg-[var(--bg-elevated)]/50 xl:scroll-mt-24"
+                  className="group relative scroll-mt-28 overflow-hidden rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 transition duration-300 hover:border-[var(--border-hover)] xl:scroll-mt-24"
                 >
-                  {/* Left accent line */}
                   <div
-                    className="absolute inset-y-0 left-0 w-[3px] rounded-l-2xl bg-gradient-to-b from-[var(--accent-blue)] to-[var(--accent-emerald)] opacity-0 transition duration-300 group-hover:opacity-100"
+                    className="absolute inset-y-0 left-0 w-[2px] bg-[var(--text-primary)] opacity-0 transition duration-300 group-hover:opacity-100"
                     aria-hidden
                   />
 
@@ -132,16 +131,16 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
                     {/* Header row */}
                     <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-start sm:justify-between">
                       <div className="flex min-w-0 items-start gap-3 sm:gap-6">
-                        <span className="shrink-0 font-mono text-[11px] font-semibold tracking-[0.15em] text-[var(--text-muted)]">
+                        <span className="shrink-0 font-display text-[11px] font-medium tracking-[0.15em] text-[var(--text-muted)]">
                           {indexStr}
                         </span>
                         <div className="min-w-0">
-                          <h3 className="text-lg font-bold tracking-tight text-[var(--text-primary)] sm:text-xl md:text-2xl">
+                          <h3 className="font-display text-lg font-medium tracking-tight text-[var(--text-primary)] sm:text-xl md:text-2xl">
                             {item.title}
                           </h3>
                           <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1.5">
                             {item.market ? (
-                              <span className="text-xs font-medium tracking-wide text-accent">
+                              <span className="text-xs font-medium tracking-wide text-[var(--text-secondary)]">
                                 <span className="sr-only">
                                   {t("marketLabel")}:{" "}
                                 </span>
@@ -152,15 +151,15 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
                               <span
                                 className={`inline-flex items-center gap-1.5 text-xs font-medium ${
                                   projectStatusRank(item.status) === 0
-                                    ? "text-emerald-400"
-                                    : "text-amber-400"
+                                    ? "text-[var(--accent-strong)]"
+                                    : "text-[var(--text-muted)]"
                                 }`}
                               >
                                 <span
                                   className={`h-1.5 w-1.5 rounded-full ${
                                     projectStatusRank(item.status) === 0
-                                      ? "bg-emerald-400"
-                                      : "bg-amber-400"
+                                      ? "bg-[var(--accent-strong)]"
+                                      : "bg-[var(--text-muted)]"
                                   }`}
                                   aria-hidden
                                 />
@@ -222,7 +221,7 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
                       <FeaturedProjectDetails summary={t("detailsSummary")}>
                         <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
                           <div>
-                            <p className="mb-3 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-violet-400">
+                            <p className="mb-3 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)]">
                               <svg
                                 viewBox="0 0 16 16"
                                 fill="none"
@@ -244,7 +243,7 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
                             </p>
                           </div>
                           <div>
-                            <p className="mb-3 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-amber-400">
+                            <p className="mb-3 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)]">
                               <svg
                                 viewBox="0 0 16 16"
                                 fill="none"
@@ -300,7 +299,7 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
                     {/* Impact callout */}
                     <div className="mt-5 flex flex-col gap-3 border-t border-[var(--border-subtle)] pt-5 sm:flex-row sm:items-start sm:justify-between">
                       <div className="flex-1">
-                        <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-500">
+                        <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--accent-strong)]">
                           {t("impactLabel")}
                         </p>
                         <p className="text-sm font-medium leading-relaxed text-[var(--text-primary)]">
@@ -325,7 +324,7 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
                           href={external}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex min-h-11 shrink-0 items-center gap-1.5 text-sm font-semibold text-[var(--accent-blue)] transition hover:text-[var(--accent-blue-light)]"
+                          className="inline-flex min-h-11 shrink-0 items-center gap-1.5 text-sm font-medium text-[var(--text-primary)] underline-offset-4 transition hover:underline"
                         >
                           {item.linkLabel}
                           <span aria-hidden>→</span>
@@ -342,9 +341,9 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
         {/* Inline bridge only when MidPageCta is not used on the page */}
         {!showDetail ? (
           <Reveal delay={320}>
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 rounded-2xl border border-dashed border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 px-4 py-6 text-center sm:mt-10 sm:flex-row sm:gap-8 sm:px-8 sm:py-8">
+            <div className="mt-8 flex flex-col items-center justify-center gap-4 rounded-[16px] border border-dashed border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 px-4 py-6 text-center sm:mt-10 sm:flex-row sm:gap-8 sm:px-8 sm:py-8">
               <div className="max-w-md">
-                <p className="text-pretty text-sm font-semibold text-[var(--text-primary)] sm:text-base">
+                <p className="text-pretty text-sm font-medium text-[var(--text-primary)] sm:text-base">
                   {t("bridgeTitle")}
                 </p>
                 <p className="mt-2 text-sm text-[var(--text-secondary)]">

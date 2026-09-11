@@ -466,7 +466,7 @@ type OfferCatalogInput = {
   availability: string;
 };
 
-/** OfferCatalog + Offer nodes for engagement packages on the home page. */
+/** OfferCatalog + Offer nodes for ways-to-work engagements on the home page. */
 export function buildOfferCatalogNodes({
   locale,
   catalogName,

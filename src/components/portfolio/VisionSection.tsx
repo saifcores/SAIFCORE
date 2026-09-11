@@ -7,36 +7,24 @@ export async function VisionSection() {
   const t = await getTranslations("visionSection");
 
   return (
-    <section className="relative overflow-hidden px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-28">
-      {/* Ambient orbs */}
-      <div
-        className="pointer-events-none absolute left-1/4 top-0 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-blue-600/20 to-transparent blur-3xl animate-orb"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute right-1/4 bottom-0 h-[400px] w-[400px] translate-x-1/2 translate-y-1/2 rounded-full bg-gradient-to-tl from-emerald-500/15 to-transparent blur-3xl animate-orb-delay"
-        aria-hidden
-      />
-
-      <div className="relative mx-auto max-w-[1280px]">
+    <section className="relative overflow-hidden border-b border-[var(--border-subtle)] px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+      <div className="relative mx-auto max-w-7xl">
         <Reveal>
           <div className="mx-auto max-w-3xl text-center">
-            {/* Label */}
             <p className="mb-6 text-xs font-medium uppercase tracking-[0.25em] text-[var(--text-muted)] sm:mb-8">
               {t("label")}
             </p>
 
-            <h2 className="text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl lg:text-5xl lg:leading-[1.1]">
+            <h2 className="font-display text-pretty text-2xl font-medium tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl lg:text-5xl lg:leading-[1.1]">
               {t("title")}
             </h2>
 
-            <p className="mt-6 text-pretty text-base leading-relaxed text-[var(--text-secondary)] sm:mt-8 sm:text-lg md:text-xl">
+            <p className="mt-6 text-pretty text-base leading-relaxed text-[var(--text-secondary)] sm:mt-8 sm:text-lg">
               {t("body")}
             </p>
           </div>
         </Reveal>
 
-        {/* Positioning path */}
         <Reveal delay={120}>
           <div className="mt-12 flex flex-col items-stretch justify-center gap-3 sm:mt-16 sm:flex-row sm:items-center sm:gap-0">
             {positioning.map((step, i) => (
@@ -45,15 +33,7 @@ export async function VisionSection() {
                 className="flex flex-col items-center sm:flex-row"
               >
                 <div className="relative w-full sm:w-auto">
-                  <div
-                    className={`rounded-full border px-4 py-2 text-center text-sm font-semibold transition sm:px-5 sm:py-2.5 ${
-                      i === 0
-                        ? "border-blue-500/30 bg-gradient-to-r from-blue-500/15 to-blue-500/5 text-[var(--text-primary)]"
-                        : i === 1
-                          ? "border-indigo-500/30 bg-gradient-to-r from-indigo-500/12 to-indigo-500/5 text-[var(--text-primary)]"
-                          : "border-emerald-500/30 bg-gradient-to-r from-emerald-500/15 to-emerald-500/5 text-[var(--text-primary)]"
-                    }`}
-                  >
+                  <div className="rounded-full border border-[var(--border-strong)] bg-[var(--bg-elevated)] px-4 py-2 text-center text-sm font-medium text-[var(--text-primary)] sm:px-5 sm:py-2.5">
                     {step}
                   </div>
                 </div>
@@ -94,12 +74,11 @@ export async function VisionSection() {
           </div>
         </Reveal>
 
-        {/* Stats */}
         <Reveal delay={200}>
-          <div className="mt-12 grid grid-cols-1 gap-8 min-[480px]:grid-cols-3 sm:mt-16 sm:gap-10">
+          <div className="mt-12 grid grid-cols-1 gap-8 border-t border-[var(--border-subtle)] pt-10 min-[480px]:grid-cols-3 sm:mt-16 sm:gap-10">
             {stats.map((stat, i) => (
               <div key={i} className="text-center">
-                <p className="text-gradient text-2xl font-bold sm:text-3xl md:text-4xl">
+                <p className="font-display text-2xl font-light tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl">
                   {stat.value}
                 </p>
                 <p className="mt-2 text-sm text-[var(--text-muted)]">
@@ -110,14 +89,13 @@ export async function VisionSection() {
           </div>
         </Reveal>
 
-        {/* Divider line with tagline */}
         <Reveal delay={260}>
           <div className="mt-12 flex flex-col items-center gap-4 sm:mt-16 sm:flex-row sm:gap-6">
-            <div className="hidden h-px flex-1 bg-gradient-to-r from-transparent via-[var(--border-subtle)] to-transparent sm:block" />
+            <div className="hidden h-px flex-1 bg-[var(--border-subtle)] sm:block" />
             <p className="text-center text-[10px] font-medium tracking-[0.18em] text-[var(--text-muted)] uppercase sm:text-xs">
               {t("dividerText")}
             </p>
-            <div className="hidden h-px flex-1 bg-gradient-to-r from-transparent via-[var(--border-subtle)] to-transparent sm:block" />
+            <div className="hidden h-px flex-1 bg-[var(--border-subtle)] sm:block" />
           </div>
         </Reveal>
       </div>

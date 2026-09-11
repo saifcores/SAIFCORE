@@ -19,9 +19,9 @@ export async function About({ extended = false }: Props) {
   return (
     <section
       id="about"
-      className={`px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16 ${extended ? "" : "border-b border-[var(--border-subtle)]"}`}
+      className={`px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20 ${extended ? "" : "border-b border-[var(--border-subtle)]"}`}
     >
-      <div className="mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-7xl">
         <div className="grid gap-10 md:grid-cols-2 md:items-center md:gap-16 lg:gap-20">
           <Reveal>
             {!extended ? (
@@ -50,17 +50,33 @@ export async function About({ extended = false }: Props) {
             <p className="mt-3 text-pretty text-sm leading-relaxed text-[var(--text-secondary)] sm:mt-4 sm:text-base">
               {t("p4")}
             </p>
+            <p className="mt-3 text-pretty text-sm leading-relaxed text-[var(--text-secondary)] sm:mt-4 sm:text-base">
+              {t("p5")}
+            </p>
+            <p className="mt-3 text-pretty text-sm leading-relaxed text-[var(--text-secondary)] sm:mt-4 sm:text-base">
+              {t("p6")}
+            </p>
+            <p className="mt-3 text-pretty text-sm leading-relaxed text-[var(--text-secondary)] sm:mt-4 sm:text-base">
+              {t("collaboration")}
+            </p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              <span className="sr-only">{t("focusTagsTitle")}</span>
+              {messages.about.focusTags.map((tag) => (
+                <span
+                  key={tag}
+                  className="inline-flex items-center rounded-full border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/40 px-2.5 py-1 text-[11px] font-medium text-[var(--text-secondary)]"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
           </Reveal>
 
           <Reveal delay={120}>
             <div className="relative mx-auto max-w-md lg:max-w-none">
-              <div
-                className="absolute -inset-4 rounded-[28px] bg-gradient-to-br from-blue-600/20 via-blue-500/8 to-emerald-500/15 blur-2xl"
-                aria-hidden
-              />
-              <div className="relative overflow-hidden rounded-[24px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/60 p-5 text-center backdrop-blur-sm sm:p-8 md:p-10">
+              <div className="relative overflow-hidden rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/50 p-5 text-center sm:p-8 md:p-10">
                 <div
-                  className="mx-auto flex h-24 w-24 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-emerald)] shadow-lg shadow-blue-500/25 sm:h-28 sm:w-28"
+                  className="mx-auto flex h-24 w-24 items-center justify-center overflow-hidden rounded-[12px] border border-[var(--border-subtle)] bg-[var(--bg-base)] sm:h-28 sm:w-28"
                   aria-hidden
                 >
                   <Image
@@ -82,7 +98,7 @@ export async function About({ extended = false }: Props) {
 
                 <div className="mt-8 grid grid-cols-3 gap-2 border-t border-[var(--border-subtle)] pt-8 text-center sm:gap-4">
                   <div>
-                    <p className="text-gradient text-xl font-bold sm:text-2xl">
+                    <p className="font-display text-xl font-light tracking-tight text-[var(--text-primary)] sm:text-2xl">
                       {t("statYearsValue")}
                     </p>
                     <p className="mt-1 text-[10px] text-[var(--text-muted)] sm:text-xs">
@@ -90,7 +106,7 @@ export async function About({ extended = false }: Props) {
                     </p>
                   </div>
                   <div>
-                    <p className="text-gradient text-xl font-bold sm:text-2xl">
+                    <p className="font-display text-xl font-light tracking-tight text-[var(--text-primary)] sm:text-2xl">
                       {t("statSystemsValue")}
                     </p>
                     <p className="mt-1 text-[10px] text-[var(--text-muted)] sm:text-xs">
@@ -98,7 +114,7 @@ export async function About({ extended = false }: Props) {
                     </p>
                   </div>
                   <div>
-                    <p className="text-gradient text-xl font-bold sm:text-2xl">
+                    <p className="font-display text-xl font-light tracking-tight text-[var(--text-primary)] sm:text-2xl">
                       {t("statCuriosityValue")}
                     </p>
                     <p className="mt-1 text-[10px] text-[var(--text-muted)] sm:text-xs">
@@ -127,7 +143,7 @@ export async function About({ extended = false }: Props) {
                 {messages.about.languages.map((lang) => (
                   <li
                     key={lang.name}
-                    className="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 px-4 py-3"
+                    className="rounded-[12px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 px-4 py-3"
                   >
                     <p className="font-semibold text-[var(--text-primary)]">
                       {lang.name}
@@ -152,7 +168,7 @@ export async function About({ extended = false }: Props) {
                 {engagements.map((item) => (
                   <article
                     key={item.title}
-                    className="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 p-4 sm:p-5"
+                    className="rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 p-4 sm:p-5"
                   >
                     <h3 className="text-sm font-semibold text-[var(--text-primary)]">
                       {item.title}
@@ -166,7 +182,7 @@ export async function About({ extended = false }: Props) {
               <p className="mt-4 text-sm text-[var(--text-muted)]">
                 <Link
                   href="/#offers"
-                  className="font-semibold text-accent underline decoration-accent/30 underline-offset-4 transition hover:decoration-accent/60"
+                  className="font-semibold text-[var(--text-primary)] underline decoration-[var(--border-subtle)] underline-offset-4 transition hover:decoration-[var(--border-hover)]"
                 >
                   {t("offersLink")}
                 </Link>

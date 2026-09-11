@@ -37,14 +37,14 @@ export async function ContactBridgeStrip({ ns, showPackages = false }: Props) {
 
   return (
     <section
-      className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 px-4 py-8 sm:px-10 sm:py-12"
+      className="rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 px-5 py-10 sm:px-10 sm:py-12"
       aria-labelledby={`contact-bridge-${ns}`}
     >
       <Reveal>
         <div className="mx-auto max-w-[680px] text-center">
           <h2
             id={`contact-bridge-${ns}`}
-            className="text-pretty text-lg font-bold tracking-tight text-[var(--text-primary)] sm:text-xl md:text-2xl"
+            className="font-display text-pretty text-lg font-medium tracking-tight text-[var(--text-primary)] sm:text-xl md:text-2xl"
           >
             {t("endCtaTitle")}
           </h2>
@@ -58,13 +58,13 @@ export async function ContactBridgeStrip({ ns, showPackages = false }: Props) {
             >
               {t("endCtaButton")}
             </Link>
-            <BookCallLink className="btn-outline inline-flex h-12 w-full items-center justify-center rounded-xl px-6 text-sm font-semibold sm:w-auto">
+            <BookCallLink className="btn-outline inline-flex h-12 w-full items-center justify-center px-6 text-sm font-medium sm:w-auto">
               {tNav("bookCall")}
             </BookCallLink>
             {showPackages ? (
               <Link
                 href="/#offers"
-                className="btn-outline inline-flex h-12 w-full items-center justify-center rounded-xl px-6 text-sm font-semibold sm:w-auto"
+                className="btn-outline inline-flex h-12 w-full items-center justify-center px-6 text-sm font-medium sm:w-auto"
               >
                 {tHeader("seePackages")}
               </Link>
@@ -72,7 +72,7 @@ export async function ContactBridgeStrip({ ns, showPackages = false }: Props) {
             {resumeUrl && resumeProps ? (
               <a
                 href={resumeUrl}
-                className="btn-outline inline-flex h-12 w-full items-center justify-center rounded-xl px-6 text-sm font-semibold sm:w-auto"
+                className="btn-outline inline-flex h-12 w-full items-center justify-center px-6 text-sm font-medium sm:w-auto"
                 {...resumeProps}
               >
                 {tNav("resume")}

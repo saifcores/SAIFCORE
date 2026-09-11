@@ -2,7 +2,6 @@ import { getMessages, getTranslations } from "next-intl/server";
 import { Reveal } from "./Reveal";
 
 const icons = [
-  /* Payments */
   <svg
     key="0"
     viewBox="0 0 24 24"
@@ -17,7 +16,6 @@ const icons = [
       d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
     />
   </svg>,
-  /* Credit */
   <svg
     key="1"
     viewBox="0 0 24 24"
@@ -32,7 +30,6 @@ const icons = [
       d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
     />
   </svg>,
-  /* Distributed */
   <svg
     key="2"
     viewBox="0 0 24 24"
@@ -47,7 +44,6 @@ const icons = [
       d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
     />
   </svg>,
-  /* Enterprise Architecture */
   <svg
     key="3"
     viewBox="0 0 24 24"
@@ -64,20 +60,6 @@ const icons = [
   </svg>,
 ];
 
-const CARD_ACCENTS = [
-  "from-blue-500/15 to-blue-500/5 border-blue-500/20",
-  "from-indigo-500/15 to-indigo-500/5 border-indigo-500/20",
-  "from-violet-500/15 to-violet-500/5 border-violet-500/20",
-  "from-emerald-500/15 to-emerald-500/5 border-emerald-500/20",
-];
-
-const ICON_COLORS = [
-  "text-accent",
-  "text-indigo-400",
-  "text-violet-400",
-  "text-emerald-400",
-];
-
 export async function WhatISolve() {
   const messages = await getMessages();
   const items = messages.whatISolve.items;
@@ -86,25 +68,23 @@ export async function WhatISolve() {
   return (
     <section
       id="capabilities"
-      className="border-b border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24"
+      className="border-b border-[var(--border-subtle)] px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
     >
-      <div className="mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-7xl">
         <Reveal>
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
             {t("title")}
           </p>
-          <h2 className="max-w-2xl text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl">
+          <h2 className="max-w-2xl font-display text-pretty text-2xl font-medium tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl">
             {t("subtitle")}
           </h2>
         </Reveal>
 
-        <div className="mt-10 grid gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
+        <div className="mt-10 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
           {items.map((item, i) => (
             <Reveal key={item.title} delay={i * 80}>
-              <article
-                className={`group h-full rounded-2xl border bg-gradient-to-br ${CARD_ACCENTS[i]} p-5 transition duration-300 hover:-translate-y-1 hover:brightness-110 sm:p-6`}
-              >
-                <div className={`mb-5 inline-flex ${ICON_COLORS[i]}`}>
+              <article className="group h-full rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 p-5 transition hover:border-[var(--border-hover)] sm:p-6">
+                <div className="mb-5 inline-flex text-[var(--text-primary)]">
                   {icons[i] ?? null}
                 </div>
                 <h3 className="text-base font-semibold text-[var(--text-primary)]">

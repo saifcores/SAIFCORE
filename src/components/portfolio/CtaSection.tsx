@@ -19,30 +19,20 @@ export async function CtaSection() {
   return (
     <section
       id="contact"
-      className="px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16"
+      className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
     >
-      <div className="mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-7xl">
         <MotionReveal>
-          <div className="relative overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 px-4 py-8 sm:px-8 sm:py-12 lg:px-14 lg:py-16">
-            <div className="bg-grid pointer-events-none absolute inset-0 opacity-60" />
-            <div
-              className="pointer-events-none absolute -left-24 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-blue-600/20 blur-3xl"
-              aria-hidden
-            />
-            <div
-              className="pointer-events-none absolute -right-24 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-emerald-500/12 blur-3xl"
-              aria-hidden
-            />
-
+          <div className="relative overflow-hidden rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 px-5 py-10 sm:px-10 sm:py-14 lg:px-14 lg:py-16">
             <div className="relative">
               <div className="mx-auto max-w-2xl text-center">
                 <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-[var(--text-muted)]">
                   {t("label")}
                 </p>
-                <h2 className="text-pretty text-xl font-bold tracking-tight text-[var(--text-primary)] sm:text-2xl md:text-3xl lg:text-[2.5rem]">
+                <h2 className="font-display text-pretty text-2xl font-medium tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl">
                   {t("title")}
                 </h2>
-                <p className="mx-auto mt-3 max-w-xl text-pretty text-sm text-[var(--text-secondary)] sm:mt-4 sm:text-base">
+                <p className="mx-auto mt-4 max-w-xl text-pretty text-sm text-[var(--text-secondary)] sm:text-base">
                   {t("subtitle")}
                 </p>
                 <p className="mx-auto mt-3 text-pretty text-xs text-[var(--text-muted)] sm:text-sm">
@@ -50,7 +40,7 @@ export async function CtaSection() {
                 </p>
               </div>
 
-              <ol className="mx-auto mt-8 grid max-w-3xl gap-4 text-left sm:mt-10 sm:grid-cols-3 sm:gap-6">
+              <ol className="mx-auto mt-10 grid max-w-3xl gap-6 text-left sm:grid-cols-3">
                 {(
                   [
                     t("processStep1"),
@@ -59,7 +49,7 @@ export async function CtaSection() {
                   ] as const
                 ).map((step, index) => (
                   <li key={step} className="min-w-0">
-                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">
+                    <p className="font-display text-sm font-medium text-[var(--text-muted)]">
                       {String(index + 1).padStart(2, "0")}
                     </p>
                     <p className="mt-2 text-pretty text-sm leading-relaxed text-[var(--text-secondary)]">

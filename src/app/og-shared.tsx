@@ -9,18 +9,18 @@ const OG_COPY: Record<
   { alt: string; badge: string; line1: string; line2: string; line3: string }
 > = {
   en: {
-    alt: "SAIFCORE — Senior Backend Engineer | Engagement Packages · Payments · Banking",
-    badge: "Senior Backend Engineer · Payments · Remote",
-    line1: "Scoped backends",
-    line2: "for payments",
-    line3: "& banking",
+    alt: "SAIFCORE — Senior Software Engineer | Distributed Systems · Architecture",
+    badge: "Senior Software Engineer · Remote",
+    line1: "Software that",
+    line2: "solves real-world",
+    line3: "problems",
   },
   fr: {
-    alt: "SAIFCORE — Ingénieur Backend Senior | Packages d'engagement · Paiements · Banque",
-    badge: "Ingénieur Backend Senior · Paiements · Remote",
-    line1: "Backends cadrés",
-    line2: "pour paiements",
-    line3: "& banque",
+    alt: "SAIFCORE — Ingénieur Logiciel Senior | Systèmes distribués · Architecture",
+    badge: "Ingénieur Logiciel Senior · Remote",
+    line1: "Des logiciels qui",
+    line2: "résolvent des",
+    line3: "problèmes réels",
   },
 };
 

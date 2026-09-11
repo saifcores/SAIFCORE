@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { getProfileDisplayName } from "@/site";
 import { MotionReveal } from "@/components/portfolio/motion/MotionReveal";
@@ -19,15 +20,15 @@ export async function AboutTeaser() {
   return (
     <section
       id="about"
-      className="border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)]/10 px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16"
+      className="border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)]/10 px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
     >
-      <div className="mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-7xl">
         <div className="grid items-center gap-10 md:grid-cols-2 md:gap-10 lg:grid-cols-[1fr_320px] lg:gap-16">
           <MotionReveal>
             <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
               {t("title")}
             </p>
-            <h2 className="max-w-xl text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl">
+            <h2 className="max-w-xl font-display text-pretty text-2xl font-medium tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl">
               {t("heading")}
             </h2>
             <p className="mt-4 max-w-lg text-pretty text-sm leading-relaxed text-[var(--text-secondary)] sm:mt-5 sm:text-base">
@@ -37,7 +38,7 @@ export async function AboutTeaser() {
             <div className="mt-8 grid grid-cols-3 gap-3 sm:mt-10 sm:flex sm:flex-wrap sm:gap-8">
               {stats.map((stat) => (
                 <div key={stat.label} className="min-w-0">
-                  <p className="text-gradient text-xl font-bold sm:text-2xl">
+                  <p className="font-display text-xl font-medium tracking-tight text-[var(--text-primary)] sm:text-2xl">
                     {stat.value}
                   </p>
                   <p className="mt-1 text-[10px] leading-snug text-[var(--text-muted)] sm:text-xs">
@@ -49,10 +50,10 @@ export async function AboutTeaser() {
 
             <Link
               href="/about"
-              className="mt-8 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 px-4 text-sm font-semibold text-accent transition hover:border-[var(--border-hover)] hover:text-[var(--accent-blue-light)] sm:mt-10 sm:w-auto sm:border-0 sm:bg-transparent sm:px-0"
+              className="mt-8 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-[12px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 px-4 text-sm font-medium text-[var(--text-primary)] transition hover:border-[var(--border-hover)] sm:mt-10 sm:w-auto sm:border-0 sm:bg-transparent sm:px-0 sm:underline-offset-4 sm:hover:underline"
             >
               {t("readMore")}
-              <span aria-hidden>→</span>
+              <ArrowUpRight className="h-4 w-4" aria-hidden />
             </Link>
 
             <ProfileExploreLinks
@@ -64,12 +65,8 @@ export async function AboutTeaser() {
 
           <MotionReveal delay={120}>
             <div className="relative mx-auto max-w-xs lg:mx-0 lg:ml-auto">
-              <div
-                className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-blue-600/15 to-emerald-500/10 blur-xl"
-                aria-hidden
-              />
-              <div className="glass relative overflow-hidden rounded-2xl p-6 text-center sm:p-8">
-                <div className="mx-auto h-24 w-24 overflow-hidden rounded-xl bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-emerald)] shadow-lg">
+              <div className="relative overflow-hidden rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 p-6 text-center sm:p-8">
+                <div className="mx-auto h-24 w-24 overflow-hidden rounded-[12px] border border-[var(--border-subtle)] bg-[var(--bg-base)]">
                   <Image
                     src="/profile.png"
                     alt={displayName}

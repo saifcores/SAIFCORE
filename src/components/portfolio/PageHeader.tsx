@@ -22,8 +22,8 @@ export async function PageHeader({
   actionVariant = "balanced",
 }: Props) {
   return (
-    <section className="border-b border-[var(--border-subtle)] px-4 py-8 sm:px-6 sm:py-10 md:py-12 lg:px-8">
-      <div className="mx-auto max-w-[1280px]">
+    <section className="border-b border-[var(--border-subtle)] px-4 py-10 sm:px-6 sm:py-12 md:py-14 lg:px-8">
+      <div className="mx-auto max-w-7xl">
         <Reveal>
           <Link
             href="/"
@@ -31,7 +31,7 @@ export async function PageHeader({
           >
             ← {backLabel}
           </Link>
-          <h1 className="mt-5 text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:mt-6 sm:text-3xl md:text-4xl">
+          <h1 className="mt-5 font-display text-pretty text-2xl font-medium tracking-tight text-[var(--text-primary)] sm:mt-6 sm:text-3xl md:text-4xl">
             {title}
           </h1>
           <p className="mt-3 max-w-2xl text-pretty text-base leading-relaxed text-[var(--text-secondary)] sm:text-lg">

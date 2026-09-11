@@ -1,6 +1,6 @@
 import "@/global";
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono, Instrument_Sans } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { hasLocale, type Locale } from "next-intl";
 import {
@@ -17,9 +17,10 @@ import { routing } from "@/i18n/routing";
 import { buildWebSiteJsonLd } from "@/seo";
 import { getBlogIndexUrl, getSiteUrl } from "@/site";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const instrumentSans = Instrument_Sans({
+  variable: "--font-instrument-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
@@ -34,8 +35,8 @@ export const viewport: Viewport = {
   initialScale: 1,
   viewportFit: "cover",
   themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
-    { media: "(prefers-color-scheme: light)", color: "#f0f2f6" },
+    { media: "(prefers-color-scheme: dark)", color: "#070e18" },
+    { media: "(prefers-color-scheme: light)", color: "#f4f7fb" },
   ],
 };
 
@@ -127,12 +128,12 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${instrumentSans.variable} ${geistMono.variable} h-full antialiased`}
       data-scroll-behavior="smooth"
       suppressHydrationWarning
     >
       <body
-        className="min-h-full bg-bg-base text-text-primary"
+        className="min-h-full bg-bg-base font-sans text-text-primary"
         suppressHydrationWarning
       >
         {/*
@@ -154,7 +155,7 @@ export default async function LocaleLayout({
           <ThemeProvider>
             <a
               href="#main-content"
-              className="fixed left-4 top-[max(1rem,env(safe-area-inset-top))] z-100 -translate-y-16 rounded-lg bg-[var(--accent-blue)] px-4 py-2.5 text-sm font-semibold text-white opacity-0 transition focus:translate-y-0 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-[var(--focus-ring)]"
+              className="fixed left-4 top-[max(1rem,env(safe-area-inset-top))] z-100 -translate-y-16 rounded-[12px] bg-[var(--btn-primary-bg)] px-4 py-2.5 text-sm font-medium text-[var(--btn-primary-fg)] opacity-0 transition focus:translate-y-0 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-[var(--focus-ring)]"
             >
               {tCommon("skipToContent")}
             </a>

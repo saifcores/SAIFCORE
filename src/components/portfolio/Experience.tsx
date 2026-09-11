@@ -47,9 +47,9 @@ function RoleLogo({
 
   return (
     <div
-      className={`relative flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl border transition duration-300 sm:h-14 sm:w-14 ${
+      className={`relative flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-[12px] border transition duration-300 sm:h-14 sm:w-14 ${
         featured
-          ? "border-[var(--accent-blue)]/30 bg-[var(--bg-base)]/80 shadow-[0_0_0_1px_color-mix(in_srgb,var(--accent-blue)_12%,transparent)]"
+          ? "border-[var(--border-strong)] bg-[var(--bg-base)]"
           : "border-[var(--border-subtle)] bg-[var(--bg-elevated)]/60 group-hover:border-[var(--border-hover)]"
       }`}
     >
@@ -65,8 +65,10 @@ function RoleLogo({
         />
       ) : (
         <span
-          className={`text-xs font-bold tracking-tight sm:text-sm ${
-            featured ? "text-accent" : "text-[var(--text-secondary)]"
+          className={`text-xs font-semibold tracking-tight sm:text-sm ${
+            featured
+              ? "text-[var(--text-primary)]"
+              : "text-[var(--text-secondary)]"
           }`}
           aria-hidden
         >
@@ -105,13 +107,13 @@ function RoleRow({
         aria-labelledby={titleId}
         className={`group relative scroll-mt-28 xl:scroll-mt-24 ${
           isCurrent
-            ? "rounded-2xl border border-[var(--accent-blue)]/20 bg-gradient-to-br from-[color-mix(in_srgb,var(--accent-blue)_7%,transparent)] via-[var(--bg-elevated)]/20 to-transparent px-4 py-7 sm:px-6 sm:py-9 lg:px-8"
+            ? "rounded-[16px] border border-[var(--border-strong)] bg-[var(--bg-elevated)]/30 px-4 py-7 sm:px-6 sm:py-9 lg:px-8"
             : "py-8 sm:py-10"
         }`}
       >
         {isCurrent ? (
           <div
-            className="absolute inset-y-3 left-0 w-[3px] rounded-full bg-gradient-to-b from-[var(--accent-blue)] to-[var(--accent-emerald)] sm:inset-y-4"
+            className="absolute inset-y-3 left-0 w-[2px] rounded-full bg-[var(--accent-strong)] sm:inset-y-4"
             aria-hidden
           />
         ) : null}
@@ -140,9 +142,9 @@ function RoleRow({
                     {indexStr}
                   </span>
                   {isCurrent ? (
-                    <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-accent lg:mt-0">
+                    <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--accent-strong)] lg:mt-0">
                       <span
-                        className="h-1.5 w-1.5 animate-pulse rounded-full bg-[var(--accent-blue)]"
+                        className="h-1.5 w-1.5 animate-pulse rounded-full bg-[var(--accent-strong)]"
                         aria-hidden
                       />
                       {currentRoleLabel}
@@ -152,7 +154,9 @@ function RoleRow({
 
                 <p
                   className={`mt-1.5 text-sm font-semibold leading-snug sm:text-base ${
-                    isCurrent ? "text-accent" : "text-[var(--text-primary)]"
+                    isCurrent
+                      ? "text-[var(--accent-strong)]"
+                      : "text-[var(--text-primary)]"
                   }`}
                 >
                   {item.company}
@@ -175,7 +179,7 @@ function RoleRow({
           <div className="min-w-0">
             <h3
               id={titleId}
-              className="text-pretty text-xl font-bold tracking-tight text-[var(--text-primary)] sm:text-2xl"
+              className="font-display text-pretty text-xl font-medium tracking-tight text-[var(--text-primary)] sm:text-2xl"
             >
               {item.role}
             </h3>
@@ -201,7 +205,7 @@ function RoleRow({
                     <span
                       className={`mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full ${
                         isCurrent
-                          ? "bg-[var(--accent-blue)]"
+                          ? "bg-[var(--accent-strong)]"
                           : "bg-[var(--text-muted)]"
                       }`}
                       aria-hidden
@@ -223,7 +227,7 @@ function RoleRow({
                       <span
                         className={`inline-block rounded-lg border px-2.5 py-1 text-xs font-medium transition duration-300 ${
                           isCurrent
-                            ? "border-[var(--accent-blue)]/20 bg-[color-mix(in_srgb,var(--accent-blue)_6%,transparent)] text-[var(--text-secondary)]"
+                            ? "border-[var(--border-subtle)] bg-[var(--bg-elevated)]/40 text-[var(--text-secondary)]"
                             : "border-[var(--border-subtle)] bg-[var(--bg-elevated)]/40 text-[var(--text-muted)] group-hover:border-[var(--border-hover)] group-hover:text-[var(--text-secondary)]"
                         }`}
                       >
@@ -264,12 +268,7 @@ export async function Experience() {
       aria-label={t("title")}
       className="relative overflow-hidden border-b border-[var(--border-subtle)] px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16"
     >
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-56 bg-[radial-gradient(ellipse_70%_80%_at_0%_0%,color-mix(in_srgb,var(--accent-blue)_10%,transparent),transparent)]"
-        aria-hidden
-      />
-
-      <div className="relative mx-auto max-w-[1280px]">
+      <div className="relative mx-auto max-w-7xl">
         <Reveal>
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between sm:gap-8">
             <div className="max-w-2xl">

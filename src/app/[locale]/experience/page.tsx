@@ -82,7 +82,7 @@ export default async function ExperiencePage({ params }: Props) {
       <Navbar />
       <main
         id="main-content"
-        className="flex-1 pb-28 outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base xl:pb-0"
+        className="flex-1 pb-28 outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base xl:pb-0"
         tabIndex={-1}
       >
         <PageHeader
@@ -100,7 +100,7 @@ export default async function ExperiencePage({ params }: Props) {
         <DepthTeaser />
 
         <div className="px-4 pb-16 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-[1280px] space-y-8">
+          <div className="mx-auto max-w-7xl space-y-8">
             <ProfileExploreLinks excludePath="/experience" />
             <ContactBridgeStrip ns="experiencePage" showPackages />
           </div>

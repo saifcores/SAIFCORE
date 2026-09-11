@@ -91,13 +91,12 @@ export async function Footer() {
   ];
 
   return (
-    <footer className="border-t border-[var(--border-subtle)] px-4 py-10 pb-[max(2.5rem,env(safe-area-inset-bottom))] sm:px-6 sm:py-12 lg:px-8">
-      <div className="mx-auto max-w-[1280px]">
+    <footer className="border-t border-[var(--border-subtle)] px-4 py-12 pb-[max(2.5rem,env(safe-area-inset-bottom))] sm:px-6 sm:py-14 lg:px-8">
+      <div className="mx-auto max-w-7xl">
         <div className="flex flex-col gap-8 sm:gap-10 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
-            <p className="text-sm font-bold tracking-tight">
-              <span className="text-[var(--text-primary)]">SAIF</span>
-              <span className="text-gradient">CORE</span>
+            <p className="text-sm font-semibold tracking-tight text-[var(--text-primary)]">
+              SAIFCORE
             </p>
             <p className="mt-3 text-pretty text-sm leading-relaxed text-[var(--text-muted)]">
               {t("tagline")}

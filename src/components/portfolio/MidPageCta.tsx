@@ -29,9 +29,9 @@ export async function MidPageCta({ namespace }: Props) {
 
   return (
     <section className="border-b border-[var(--border-subtle)] px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
-      <div className="mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-7xl">
         <Reveal>
-          <div className="flex flex-col gap-4 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/15 px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+          <div className="flex flex-col gap-4 rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 px-5 py-6 sm:flex-row sm:items-center sm:justify-between sm:px-8 sm:py-7">
             <div className="min-w-0">
               <p className="text-sm font-semibold text-[var(--text-primary)]">
                 {t("midCtaTitle")}
@@ -56,7 +56,7 @@ export async function MidPageCta({ namespace }: Props) {
               )}
               <Link
                 href="/#offers"
-                className="btn-outline inline-flex min-h-11 items-center justify-center rounded-xl px-5 text-sm font-semibold"
+                className="btn-outline inline-flex min-h-11 items-center justify-center px-5 text-sm font-medium"
               >
                 {t("midCtaSecondary")}
               </Link>

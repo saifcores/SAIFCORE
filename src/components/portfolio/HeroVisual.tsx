@@ -2,219 +2,108 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 
-const TERMINAL_ENTRIES = [
-  {
-    method: "POST",
-    path: "/api/v1/payments/initiate",
-    status: "202",
-    time: "18ms",
-    type: "request",
-  },
-  {
-    method: "→",
-    path: "auth.verify(jwt, scope='payment')",
-    status: "✓",
-    time: "8ms",
-    type: "step-green",
-  },
-  {
-    method: "→",
-    path: "ledger.credit(amount, idempotencyKey)",
-    status: "✓",
-    time: "43ms",
-    type: "step-green",
-  },
-  {
-    method: "→",
-    path: "kafka.publish('payment.completed')",
-    status: "✓",
-    time: "6ms",
-    type: "step-green",
-  },
-  {
-    method: "→",
-    path: "audit.log(txnId, actor, timestamp)",
-    status: "✓",
-    time: "3ms",
-    type: "step-violet",
-  },
-] as const;
-
-type Metric = { value: string; label: string };
-
 type Props = {
-  terminalTitle: string;
-  terminalVersion: string;
-  terminalStatus: string;
-  mockupLabel: string;
-  mockupStatus: string;
-  mockupChart: string;
-  metrics: Metric[];
+  nodes: string[];
+  hubLabel?: string;
 };
 
-export function HeroVisual({
-  terminalTitle,
-  terminalVersion,
-  terminalStatus,
-  mockupLabel,
-  mockupStatus,
-  mockupChart,
-  metrics,
-}: Props) {
+/** Angles in degrees — top, then clockwise (matches reference layout). */
+const NODE_ANGLES = [-90, -18, 54, 126, 198] as const;
+/** Distance from center to node center, as % of container. */
+const ORBIT_RADIUS = 38;
+
+export function HeroVisual({ nodes, hubLabel = "SAIFCORE" }: Props) {
   const reduce = useReducedMotion();
+  const labels = nodes.slice(0, 5);
 
   return (
     <motion.div
       initial={reduce ? false : { opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.2 }}
-      className="mx-auto hidden w-full max-w-sm md:block lg:max-w-none lg:mx-0"
+      className="relative mx-auto flex w-full max-w-lg items-center justify-center md:block lg:mx-0 lg:max-w-none"
       aria-hidden
     >
-      <div className="relative space-y-4">
-        <motion.div
-          initial={reduce ? false : { opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-blue-600/12 via-indigo-500/8 to-emerald-500/8 blur-2xl"
-        />
+      <div className="relative mx-auto aspect-square w-full max-w-[440px] lg:max-w-[480px]">
+        {/* Dot grid + rings */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-full">
+          <div
+            className="absolute inset-0 opacity-40"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle, color-mix(in srgb, var(--text-muted) 35%, transparent) 1px, transparent 1px)",
+              backgroundSize: "18px 18px",
+            }}
+          />
+          <div className="absolute inset-[14%] rounded-full border border-dashed border-[var(--border-subtle)]" />
+          <div className="absolute inset-[26%] rounded-full border border-dashed border-[var(--border-subtle)] opacity-70" />
+        </div>
 
-        <motion.div
-          data-theme="dark"
-          initial={reduce ? false : { opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className="glass relative overflow-hidden rounded-2xl"
+        {/* Spokes — end just inside the orbit so lines meet the pills */}
+        <svg
+          className="absolute inset-0 h-full w-full"
+          viewBox="0 0 100 100"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <div className="flex items-center justify-between border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)]/40 px-4 py-3 sm:px-5 sm:py-3.5">
-            <div className="flex items-center gap-2.5">
-              <span
-                className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"
-                style={{ animationDuration: "2s" }}
+          {labels.map((_, i) => {
+            const angle = ((NODE_ANGLES[i] ?? -90) * Math.PI) / 180;
+            const x2 = 50 + Math.cos(angle) * 28;
+            const y2 = 50 + Math.sin(angle) * 28;
+            return (
+              <motion.line
+                key={`spoke-${i}`}
+                x1="50"
+                y1="50"
+                x2={x2}
+                y2={y2}
+                stroke="var(--accent-strong)"
+                strokeWidth="0.35"
+                initial={reduce ? false : { pathLength: 0, opacity: 0 }}
+                animate={{ pathLength: 1, opacity: 0.55 }}
+                transition={{ delay: 0.35 + i * 0.05, duration: 0.45 }}
               />
-              <span className="font-mono text-[11px] font-semibold tracking-wider text-emerald-400">
-                {terminalTitle}
-              </span>
-            </div>
-            <div className="flex items-center gap-3">
-              <span className="font-mono text-[10px] text-[var(--text-muted)]">
-                {terminalVersion}
-              </span>
-              <span className="inline-flex items-center gap-1 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-2 py-0.5 font-mono text-[10px] text-emerald-400">
-                {terminalStatus}
-              </span>
-            </div>
-          </div>
+            );
+          })}
+        </svg>
 
-          <div className="space-y-0 p-3 md:p-4 lg:p-5">
-            {TERMINAL_ENTRIES.map((entry, i) => (
-              <motion.div
-                key={i}
-                initial={reduce ? false : { opacity: 0, x: -12 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.7 + i * 0.08, duration: 0.4 }}
-                className="flex items-center justify-between gap-2 py-1.5 md:gap-3"
-                style={{
-                  borderBottom:
-                    i < TERMINAL_ENTRIES.length - 1
-                      ? "1px solid var(--border-subtle)"
-                      : "none",
-                }}
-              >
-                <div className="flex min-w-0 items-center gap-2">
-                  <span
-                    className={`shrink-0 font-mono text-[10px] font-semibold ${
-                      entry.type === "request"
-                        ? "text-accent"
-                        : entry.type === "step-violet"
-                          ? "text-violet-400"
-                          : "text-emerald-400"
-                    }`}
-                  >
-                    {entry.method}
-                  </span>
-                  <span className="truncate font-mono text-[10px] text-[var(--text-muted)] md:text-[11px]">
-                    {entry.path}
-                  </span>
-                </div>
-                <div className="flex shrink-0 items-center gap-2">
-                  <span
-                    className={`font-mono text-[10px] font-semibold ${
-                      entry.type === "request"
-                        ? "text-accent"
-                        : entry.type === "step-violet"
-                          ? "text-violet-400"
-                          : "text-emerald-400"
-                    }`}
-                  >
-                    {entry.status}
-                  </span>
-                  <span className="font-mono text-[10px] tabular-nums text-[var(--text-muted)]">
-                    {entry.time}
-                  </span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
+        {/* Hub — centered */}
         <motion.div
-          initial={reduce ? false : { opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.85 }}
-          className="glass relative overflow-hidden rounded-2xl"
+          initial={reduce ? false : { opacity: 0, scale: 0.88 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.25, duration: 0.45 }}
+          className="absolute left-1/2 top-1/2 z-10 flex h-[30%] w-[30%] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[var(--text-primary)] shadow-[var(--shadow-panel)]"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-emerald-500/5" />
-          <div className="relative flex flex-col gap-3 p-3 md:gap-4 md:p-4 lg:p-6">
-            <div className="flex items-center justify-between">
-              <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)]">
-                {mockupLabel}
-              </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-2.5 py-1 font-mono text-[10px] text-emerald-400">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                {mockupStatus}
-              </span>
-            </div>
-            <div className="grid grid-cols-2 gap-2 md:gap-3">
-              {metrics.map((metric, i) => (
-                <motion.div
-                  key={metric.label}
-                  initial={reduce ? false : { opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1 + i * 0.08, duration: 0.4 }}
-                  className="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-base)]/60 p-3 md:p-4"
-                >
-                  <p className="text-sm font-bold leading-tight text-[var(--text-primary)] sm:text-base lg:text-lg">
-                    {metric.value}
-                  </p>
-                  <p className="mt-1 text-[10px] leading-snug text-[var(--text-muted)] md:text-[11px]">
-                    {metric.label}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-            <div className="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-base)]/40 p-3 md:p-4">
-              <div className="flex items-end gap-1">
-                {[40, 65, 45, 80, 55, 90, 70, 85, 60, 95].map((h, i) => (
-                  <motion.div
-                    key={i}
-                    initial={reduce ? false : { scaleY: 0 }}
-                    animate={{ scaleY: 1 }}
-                    transition={{ delay: 1.15 + i * 0.04, duration: 0.35 }}
-                    style={{
-                      height: `${h * 0.4}px`,
-                      transformOrigin: "bottom",
-                    }}
-                    className="flex-1 rounded-sm bg-gradient-to-t from-blue-500/40 to-emerald-500/50"
-                  />
-                ))}
-              </div>
-              <p className="mt-3 font-mono text-[10px] text-[var(--text-muted)]">
-                {mockupChart}
-              </p>
-            </div>
-          </div>
+          <span className="select-none px-1 text-center font-display text-[clamp(0.65rem,2.2vw,0.95rem)] font-semibold tracking-tight text-[var(--bg-base)]">
+            {hubLabel}
+          </span>
         </motion.div>
+
+        {/* Satellite nodes — absolute % positions so labels stay aligned on the orbit */}
+        {labels.map((label, i) => {
+          const angleRad = ((NODE_ANGLES[i] ?? -90) * Math.PI) / 180;
+          const left = 50 + Math.cos(angleRad) * ORBIT_RADIUS;
+          const top = 50 + Math.sin(angleRad) * ORBIT_RADIUS;
+
+          return (
+            <motion.div
+              key={label}
+              initial={reduce ? false : { opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.4 + i * 0.06, duration: 0.35 }}
+              className="absolute z-20 -translate-x-1/2 -translate-y-1/2"
+              style={{ left: `${left}%`, top: `${top}%` }}
+            >
+              <span className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-[var(--border-subtle)] bg-[var(--bg-elevated)] px-3 py-1.5 text-xs font-medium text-[var(--text-primary)] shadow-sm">
+                <span
+                  className="h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent-strong)]"
+                  aria-hidden
+                />
+                {label}
+              </span>
+            </motion.div>
+          );
+        })}
       </div>
     </motion.div>
   );

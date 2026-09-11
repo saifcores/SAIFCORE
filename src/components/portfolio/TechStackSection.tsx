@@ -15,13 +15,13 @@ export function TechStackSection({ title, subtitle, categories }: Props) {
   const reduce = useReducedMotion();
 
   return (
-    <section className="border-b border-[var(--border-subtle)] px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
-      <div className="mx-auto max-w-[1280px]">
+    <section className="border-b border-[var(--border-subtle)] px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+      <div className="mx-auto max-w-7xl">
         <MotionReveal>
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
             {title}
           </p>
-          <h2 className="max-w-2xl text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl">
+          <h2 className="max-w-2xl font-display text-pretty text-2xl font-medium tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl">
             {subtitle}
           </h2>
         </MotionReveal>
@@ -33,9 +33,9 @@ export function TechStackSection({ title, subtitle, categories }: Props) {
                 initial={reduce ? false : { opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                className="glass h-full rounded-2xl p-5 sm:p-6"
+                className="h-full rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 p-5 sm:p-6"
               >
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
                   {cat.label}
                 </p>
                 <motion.div
@@ -56,7 +56,7 @@ export function TechStackSection({ title, subtitle, categories }: Props) {
                         show: { opacity: 1, scale: 1 },
                       }}
                       whileHover={reduce ? undefined : { scale: 1.04 }}
-                      className="rounded-full border border-[var(--border-subtle)] bg-[var(--bg-base)]/60 px-3 py-1.5 text-xs font-medium text-[var(--text-secondary)] transition hover:border-blue-500/30 hover:text-[var(--text-primary)]"
+                      className="rounded-full border border-[var(--border-subtle)] bg-[var(--bg-base)]/60 px-3 py-1.5 text-xs font-medium text-[var(--text-secondary)] transition hover:border-[var(--border-hover)] hover:text-[var(--text-primary)]"
                     >
                       {tech}
                     </motion.span>

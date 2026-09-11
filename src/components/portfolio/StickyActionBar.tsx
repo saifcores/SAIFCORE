@@ -11,7 +11,7 @@ import {
 
 /**
  * Mobile: after scroll — Book a call (clients) and CV (recruiters).
- * Packages live in the primary nav.
+ * Ways to work live in the primary nav.
  */
 export function StickyActionBar() {
   const t = useTranslations("actionBar");
@@ -40,22 +40,22 @@ export function StickyActionBar() {
     <div
       role="region"
       aria-label={barLabel}
-      className={`fixed inset-x-0 bottom-0 z-40 border-t border-[var(--border-subtle)] bg-[var(--bg-base)]/95 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-2 backdrop-blur-xl transition-transform duration-300 xl:hidden ${
+      className={`fixed inset-x-0 bottom-0 z-40 border-t border-[var(--border-subtle)] bg-[var(--bg-base)]/95 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-2 backdrop-blur-sm transition-transform duration-300 xl:hidden ${
         visible ? "translate-y-0" : "translate-y-full"
       }`}
       aria-hidden={!visible}
     >
-      <div className="mx-auto flex max-w-[1280px] gap-1.5 px-3 sm:gap-2 sm:px-4">
+      <div className="mx-auto flex max-w-7xl gap-2 px-3 sm:px-4">
         {resumeUrl && resumeProps ? (
           <a
             href={resumeUrl}
-            className="btn-outline inline-flex min-h-12 min-w-0 flex-1 items-center justify-center rounded-xl bg-[var(--bg-elevated)]/80 px-1.5 text-[11px] font-semibold sm:px-3 sm:text-sm"
+            className="btn-outline inline-flex min-h-12 min-w-0 flex-1 items-center justify-center px-2 text-xs font-medium sm:px-3 sm:text-sm"
             {...resumeProps}
           >
             {t("resume")}
           </a>
         ) : null}
-        <BookCallLink className="btn-primary inline-flex min-h-12 min-w-0 flex-1 items-center justify-center px-1.5 text-[11px] sm:px-3 sm:text-sm">
+        <BookCallLink className="btn-primary inline-flex min-h-12 min-w-0 flex-1 items-center justify-center px-2 text-xs sm:px-3 sm:text-sm">
           {t("bookCall")}
         </BookCallLink>
       </div>

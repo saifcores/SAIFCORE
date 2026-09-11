@@ -46,10 +46,10 @@ export async function CertificationsSection({ compact = false }: Props) {
       className={
         compact
           ? ""
-          : "border-b border-[var(--border-subtle)] px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16"
+          : "border-b border-[var(--border-subtle)] px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
       }
     >
-      <div className={compact ? "" : "mx-auto max-w-[1280px]"}>
+      <div className={compact ? "" : "mx-auto max-w-7xl"}>
         {!compact ? (
           <Reveal>
             <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
@@ -57,7 +57,7 @@ export async function CertificationsSection({ compact = false }: Props) {
             </p>
             <h2
               id={headingId}
-              className="max-w-2xl text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl"
+              className="max-w-2xl font-display text-2xl font-medium tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl"
             >
               {t("subtitle")}
             </h2>
@@ -135,7 +135,7 @@ function CertGroup({
         {items.map((item) => (
           <li key={item.id}>
             <article
-              className={`card-interactive flex h-full flex-col gap-3 rounded-2xl bg-[var(--bg-elevated)]/20 p-4 sm:flex-row sm:gap-4 sm:p-5 ${certificationCardClassName(item.status)}`}
+              className={`card-interactive flex h-full flex-col gap-3 rounded-[16px] bg-[var(--bg-elevated)]/20 p-4 sm:flex-row sm:gap-4 sm:p-5 ${certificationCardClassName(item.status)}`}
             >
               <CertificationIcon
                 kind={item.kind}
@@ -163,7 +163,7 @@ function CertGroup({
                     href={item.verifyUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="link-accent mt-3 inline-flex min-h-11 items-center gap-1 text-xs font-semibold sm:min-h-0"
+                    className="link-accent mt-3 inline-flex min-h-11 items-center gap-1 text-xs font-medium sm:min-h-0"
                   >
                     {verifyLabel}
                     <span aria-hidden>↗</span>

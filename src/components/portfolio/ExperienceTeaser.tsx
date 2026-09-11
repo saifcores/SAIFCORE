@@ -35,16 +35,16 @@ export async function ExperienceTeaser() {
   return (
     <section
       id="experience"
-      className="border-b border-[var(--border-subtle)] px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16"
+      className="border-b border-[var(--border-subtle)] px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
     >
-      <div className="mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-7xl">
         <Reveal>
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div className="min-w-0">
               <p className="mb-2 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
                 {t("title")}
               </p>
-              <h2 className="max-w-2xl text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl">
+              <h2 className="max-w-2xl font-display text-pretty text-2xl font-medium tracking-tight text-[var(--text-primary)] sm:text-3xl">
                 {t("subtitle")}
               </h2>
             </div>
@@ -52,7 +52,7 @@ export async function ExperienceTeaser() {
               {resumeUrl && resumeProps ? (
                 <a
                   href={resumeUrl}
-                  className="inline-flex min-h-10 shrink-0 items-center text-sm font-semibold text-[var(--text-secondary)] transition hover:text-accent"
+                  className="inline-flex min-h-10 shrink-0 items-center text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
                   {...resumeProps}
                 >
                   {t("downloadCv")}
@@ -60,7 +60,7 @@ export async function ExperienceTeaser() {
               ) : null}
               <Link
                 href="/experience"
-                className="inline-flex min-h-10 shrink-0 items-center gap-1.5 text-sm font-semibold text-accent transition hover:text-[var(--accent-blue-light)]"
+                className="inline-flex min-h-10 shrink-0 items-center gap-1.5 text-sm font-medium text-[var(--text-primary)] transition hover:opacity-70"
               >
                 {t("viewAll")}
                 <span aria-hidden>→</span>
@@ -84,12 +84,12 @@ export async function ExperienceTeaser() {
                         <div className="min-w-0">
                           <div className="flex flex-wrap items-center gap-2">
                             <span
-                              className={`text-sm font-semibold ${isFirst ? "text-accent" : "text-[var(--text-secondary)]"}`}
+                              className={`text-sm font-semibold ${isFirst ? "text-[var(--text-primary)]" : "text-[var(--text-secondary)]"}`}
                             >
                               {item.company}
                             </span>
                             {isCurrent ? (
-                              <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-accent">
+                              <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--accent-strong)]">
                                 {t("currentRole")}
                               </span>
                             ) : null}

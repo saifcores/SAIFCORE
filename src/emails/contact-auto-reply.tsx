@@ -103,14 +103,14 @@ const copy = {
     heading: "Brief received",
     intro: (name: string) => `Hi ${name},`,
     p1: "Thanks for reaching out via SAIFCORE.",
-    p2: "I’ve received your brief and will reply within two business days — with focused questions and, when the fit is clear, a concrete next step (discovery call, workshop, or engagement package).",
+    p2: "I’ve received your brief and will reply within two business days — with focused questions and, when the fit is clear, a concrete next step (discovery call, workshop, or way of working).",
     faster: "To move faster, you can:",
     bulletGoals: "share goals, constraints, timeline, and stack;",
     bulletCall: "or book a 30-minute discovery call:",
     bulletReply: "or reply directly to this message.",
     cta: "Book a discovery call",
     positioning:
-      "I partner on enterprise backends, payments, and regulated platforms (Java / Spring Boot, distributed systems, cloud) — remote, EN/FR.",
+      "Senior Software Engineer — I build software that solves real-world problems: backends, distributed systems, APIs, and architecture (Java / Spring Boot), with banking & FinTech depth — remote, EN/FR.",
     regards: "Best regards,",
   },
   fr: {
@@ -118,14 +118,14 @@ const copy = {
     heading: "Brief reçu",
     intro: (name: string) => `Bonjour ${name},`,
     p1: "Merci pour votre message via SAIFCORE.",
-    p2: "Votre brief est bien reçu. Je le lis avec attention et vous réponds sous deux jours ouvrables — avec des questions précises et, si le besoin est clair, un prochain pas concret (appel discovery, atelier, ou package d’engagement).",
+    p2: "Votre brief est bien reçu. Je le lis avec attention et vous réponds sous deux jours ouvrables — avec des questions précises et, si le besoin est clair, un prochain pas concret (appel discovery, atelier, ou mode de collaboration).",
     faster: "Pour avancer plus vite, vous pouvez :",
     bulletGoals: "préciser objectifs, contraintes, timeline et stack ;",
     bulletCall: "ou réserver un appel discovery de 30 min :",
     bulletReply: "ou me répondre directement à ce message.",
     cta: "Réserver un appel discovery",
     positioning:
-      "Je collabore principalement sur les backends enterprise, les paiements et les plateformes régulées (Java / Spring Boot, systèmes distribués, cloud) — en remote, EN/FR.",
+      "Ingénieur logiciel senior — je construis des logiciels qui résolvent des problèmes réels : backends, systèmes distribués, APIs et architecture (Java / Spring Boot), avec une profondeur banque & FinTech — remote, EN/FR.",
     regards: "Bien cordialement,",
   },
 } as const;

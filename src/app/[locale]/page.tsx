@@ -15,7 +15,6 @@ import { FaqSection } from "@/components/portfolio/FaqSection";
 import { Hero } from "@/components/portfolio/Hero";
 import { Navbar } from "@/components/portfolio/Navbar";
 import { FreelanceOffers } from "@/components/portfolio/FreelanceOffers";
-import { CertificationsTeaser } from "@/components/portfolio/CertificationsTeaser";
 import { Trust } from "@/components/portfolio/Trust";
 import { WorkProcess } from "@/components/portfolio/WorkProcess";
 import { fetchRecentArticles } from "@/blog/recent-articles";
@@ -104,17 +103,20 @@ export default async function Home({ params }: Props) {
     knowsAbout: [
       "Java",
       "Spring Boot",
+      "Backend engineering",
+      "Software architecture",
+      "Distributed systems",
+      "APIs",
+      "Cloud-native architectures",
       "Enterprise platforms",
       "Banking systems",
       "Payment infrastructure",
       "FinTech",
-      "Distributed systems",
       "Apache Kafka",
-      "API architecture",
       "Microservices",
       "AWS",
       "Mobile money",
-      "Senior backend engineering",
+      "AI-enabled software",
     ],
     alumniOf: {
       "@type": "CollegeOrUniversity",
@@ -234,21 +236,19 @@ export default async function Home({ params }: Props) {
       <Navbar />
       <main
         id="main-content"
-        className="flex-1 pb-28 outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base xl:pb-0"
+        className="flex-1 pb-28 outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base xl:pb-0"
         tabIndex={-1}
       >
         {/*
-          Home (freelance-first): Trust → Path → Proof → How we start →
-          Offer → How → FAQ → Contact. Audience fork before case studies.
-          Full profile / stack live on /about. Recruiter CV in nav and hero.
+          Home: Trust → Path → Proof → Start → History → Ways to work →
+          Process → Insights → FAQ → Contact. Depth on /about & /systems.
         */}
         <Hero />
         <Trust />
         <AudiencePaths />
         <FeaturedProjectsTeaser />
-        <ExperienceTeaser />
         <CollaborationStrip />
-        <Insights teaser />
+        <ExperienceTeaser />
         <FreelanceOffers
           title={fo.title}
           subtitle={fo.subtitle}
@@ -262,7 +262,7 @@ export default async function Home({ params }: Props) {
           cta={wp.cta}
           steps={[...wp.steps]}
         />
-        <CertificationsTeaser />
+        <Insights teaser />
         <FaqSection />
         <CtaSection />
       </main>

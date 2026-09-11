@@ -78,7 +78,7 @@ export function ThemeToggle() {
 
   return (
     <div
-      className="flex items-center gap-0.5 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/50 p-0.5"
+      className="flex items-center gap-0.5 rounded-[12px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/50 p-0.5"
       role="radiogroup"
       aria-label={t("toggle")}
     >
@@ -93,7 +93,7 @@ export function ThemeToggle() {
             aria-label={labels[mode]}
             title={labels[mode]}
             onClick={() => setPreference(mode)}
-            className={`inline-flex h-9 w-9 items-center justify-center rounded-lg transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40 sm:h-8 sm:w-8 ${
+            className={`inline-flex h-9 w-9 items-center justify-center rounded-[12px] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] sm:h-8 sm:w-8 ${
               active
                 ? "bg-[var(--bg-elevated)] text-[var(--text-primary)] shadow-[var(--shadow-card)] ring-1 ring-[var(--border-subtle)]"
                 : "text-[var(--text-muted)] hover:bg-[var(--bg-elevated)]/60 hover:text-[var(--text-primary)]"

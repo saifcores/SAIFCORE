@@ -64,12 +64,12 @@ function qualify(input: ReplyInput): ReplyDraft {
 
 Merci pour votre brief. Pour le cadrer rapidement et vous proposer le bon prochain pas :
 
-1) Objectif business prioritaire (paiement, API, modernisation, MVP, audit…) ?
+1) Objectif business prioritaire (API, modernisation, MVP, plateforme, paiement…) ?
 2) Deadline / go-live souhaité ?
 3) Stack actuelle et contraintes (sécu, compliance, volumes) ?
 4) Cadre : forfait, TJM, ou embed dans l’équipe ?
 
-Sur cette base, je vous propose soit un appel de 30 min, soit un package d’engagement adapté.
+Sur cette base, je vous propose soit un appel de 30 min, soit un mode de collaboration adapté.
 ${cal}
 ${signoff("fr")}`,
     };
@@ -81,12 +81,12 @@ ${signoff("fr")}`,
 
 Thanks for the brief. To scope this quickly and suggest the right next step:
 
-1) Primary business outcome (payments, API, modernization, MVP, audit…)?
+1) Primary business outcome (API, modernization, MVP, platform, payments…)?
 2) Target timeline / go-live?
 3) Current stack and constraints (security, compliance, scale)?
 4) Engagement model: fixed scope, day rate, or team embed?
 
-From there I can recommend either a 30-min discovery call or the right engagement package.
+From there I can recommend either a 30-min discovery call or the right way to work together.
 ${cal}
 ${signoff("en")}`,
   };
@@ -139,12 +139,12 @@ function packageReply(input: ReplyInput): ReplyDraft {
 
   if (input.locale === "fr") {
     return {
-      subject: `SAIFCORE — package d’engagement adapté, ${n}`,
+      subject: `SAIFCORE — mode de collaboration adapté, ${n}`,
       body: `Bonjour ${n},
 
-Merci pour le contexte. Au vu de votre besoin, je recommande de partir d’un package d’engagement (plutôt qu’un échange ouvert sans cadrage) — pour un scope, un délai et un livrable explicites.
+Merci pour le contexte. Au vu de votre besoin, je recommande de partir d’un engagement cadré (plutôt qu’un échange ouvert sans cadrage) — pour un scope, un délai et un livrable explicites.
 
-Packages : ${site}/#offers
+Modes de collaboration : ${site}/#offers
 ${cal}
 Dites-moi lequel se rapproche le plus de votre contexte (discovery, build, MVP, embed, modernisation, advisory), ou on en choisit un ensemble en appel.
 
@@ -153,12 +153,12 @@ ${signoff("fr")}`,
   }
 
   return {
-    subject: `SAIFCORE — recommended engagement package, ${n}`,
+    subject: `SAIFCORE — recommended way of working, ${n}`,
     body: `Hi ${n},
 
-Thanks for the context. Given your need, I’d start from a scoped engagement package (rather than an open-ended chat) — clear outcome, timeline, and deliverable.
+Thanks for the context. Given your need, I’d start from a scoped engagement (rather than an open-ended chat) — clear outcome, timeline, and deliverable.
 
-Packages: ${site}/#offers
+Ways to work: ${site}/#offers
 ${cal}
 Tell me which track is closest (discovery, build, MVP, embed, modernization, advisory), or we can pick one together on a call.
 
@@ -276,8 +276,8 @@ export const REPLY_KINDS: {
   },
   {
     kind: "package",
-    labelFr: "Orienter vers un package d’engagement",
-    labelEn: "Point to an engagement package",
+    labelFr: "Orienter vers un mode de collaboration",
+    labelEn: "Point to ways of working",
   },
   {
     kind: "recruiter",

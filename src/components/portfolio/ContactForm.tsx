@@ -168,11 +168,11 @@ export function ContactForm({
     <div className="grid gap-6 md:grid-cols-[1fr_minmax(220px,280px)] md:gap-10 lg:gap-12">
       {isSuccess ? (
         <div
-          className="surface-panel order-last rounded-2xl p-5 text-left sm:p-8 md:order-none"
+          className="surface-panel order-last rounded-[16px] p-5 text-left sm:p-8 md:order-none"
           role="status"
           aria-live="polite"
         >
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-emerald-400">
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--accent-strong)]">
             SAIFCORE
           </p>
           <h3 className="mt-3 text-pretty text-lg font-semibold tracking-tight text-[var(--text-primary)] sm:text-xl">
@@ -200,7 +200,7 @@ export function ContactForm({
         <form
           id={formDomId}
           onSubmit={handleSubmit}
-          className="surface-panel order-last rounded-2xl p-5 text-left sm:p-8 md:order-none"
+          className="surface-panel order-last rounded-[16px] p-5 text-left sm:p-8 md:order-none"
           aria-label={formSubmit}
           aria-busy={isSending}
         >
@@ -346,14 +346,14 @@ export function ContactForm({
       )}
 
       <aside className="order-first grid gap-4 min-[480px]:grid-cols-2 md:order-none md:flex md:flex-col md:gap-6">
-        <div className="surface-panel rounded-2xl p-5 sm:p-6">
+        <div className="surface-panel rounded-[16px] p-5 sm:p-6">
           <BookCallLink className={bookCallClass}>{bookCall}</BookCallLink>
           <p className="mt-3 text-center text-xs leading-relaxed text-[var(--text-muted)]">
             {hasCalendly ? calendlyHint : calendlyFallbackHint}
           </p>
         </div>
         {linkedinUrl || githubUrl || directMail ? (
-          <div className="surface-panel rounded-2xl p-5 sm:p-6 min-[480px]:col-span-2 md:col-span-1">
+          <div className="surface-panel rounded-[16px] p-5 sm:p-6 min-[480px]:col-span-2 md:col-span-1">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--text-muted)]">
               {socialTitle}
             </p>

@@ -1,93 +1,56 @@
-import { getLocale, getTranslations } from "next-intl/server";
+import { getMessages, getTranslations } from "next-intl/server";
+import { ArrowUpRight } from "lucide-react";
+import { Link } from "@/i18n/navigation";
 import { BookCallLink } from "@/components/portfolio/BookCallLink";
 import { HeroContent } from "@/components/portfolio/HeroContent";
 import { HeroVisual } from "@/components/portfolio/HeroVisual";
-import {
-  getResumeDownloadFilename,
-  getResumeUrl,
-  isLocalResume,
-} from "@/server/resume";
 
 export async function Hero() {
   const t = await getTranslations("hero");
-  const locale = await getLocale();
-  const resumeUrl = getResumeUrl(locale);
-  const resumeDownload = getResumeDownloadFilename(locale);
-  const resumeProps = resumeUrl
-    ? isLocalResume(resumeUrl)
-      ? { download: resumeDownload }
-      : ({ target: "_blank" as const, rel: "noopener noreferrer" } as const)
-    : null;
+  const messages = await getMessages();
 
   const ctas = (
     <>
-      <BookCallLink className="btn-primary btn-primary-lg inline-flex min-h-12 w-full items-center justify-center px-4 text-sm sm:w-auto sm:px-8">
+      <BookCallLink className="btn-primary btn-primary-lg inline-flex min-h-12 w-full items-center justify-center px-8 text-base sm:w-auto">
         {t("ctaBookCall")}
+        <ArrowUpRight className="h-4 w-4" aria-hidden />
       </BookCallLink>
-      {resumeUrl && resumeProps ? (
-        <a
-          href={resumeUrl}
-          className="btn-outline inline-flex min-h-12 w-full items-center justify-center rounded-xl px-4 text-sm font-semibold sm:w-auto sm:px-8"
-          {...resumeProps}
-        >
-          {t("ctaResume")}
-        </a>
-      ) : null}
+      <Link
+        href="/experience"
+        className="btn-outline inline-flex min-h-12 w-full items-center justify-center px-8 text-sm font-medium sm:w-auto"
+      >
+        {t("ctaPrimary")}
+      </Link>
     </>
   );
 
   return (
-    <section className="relative overflow-hidden border-b border-[var(--border-subtle)] px-4 pb-16 pt-12 sm:px-6 sm:pb-20 sm:pt-16 md:pb-24 md:pt-20 lg:px-8 xl:pb-28">
-      <div className="bg-grid pointer-events-none absolute inset-0 opacity-100" />
+    <section className="relative overflow-hidden border-b border-[var(--border-subtle)] px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div
-        className="ambient-glow pointer-events-none absolute -left-1/3 top-0 h-[600px] w-[70%] rounded-full bg-gradient-to-br from-blue-600/20 via-blue-500/8 to-transparent blur-3xl animate-float-glow"
+        className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden"
         aria-hidden
-      />
-      <div
-        className="ambient-glow pointer-events-none absolute -right-1/4 bottom-0 h-[500px] w-[55%] rounded-full bg-gradient-to-tl from-emerald-500/12 via-emerald-400/5 to-transparent blur-3xl animate-float-glow"
-        style={{ animationDelay: "-5s" }}
-        aria-hidden
-      />
-      <div
-        className="hero-particles pointer-events-none absolute inset-0"
-        aria-hidden
-      />
+      >
+        <span className="select-none font-display text-[15vw] font-medium leading-none tracking-tight text-[var(--text-primary)] opacity-[0.03]">
+          SAIFCORE
+        </span>
+      </div>
 
-      <div className="relative mx-auto max-w-[1280px]">
-        <div className="grid items-center gap-10 md:grid-cols-2 md:gap-12 lg:grid-cols-[1fr_minmax(280px,420px)] xl:gap-24">
+      <div className="relative mx-auto max-w-7xl">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <HeroContent
             badge={t("badge")}
             titleLine1={t("titleLine1")}
             titleLine2={t("titleLine2")}
             titleLine3={t("titleLine3")}
             subtitle={t("subtitle")}
-            specializations={[
-              t("specializations.0"),
-              t("specializations.1"),
-              t("specializations.2"),
-              t("specializations.3"),
-            ]}
             proofLine={t("proofLine")}
             availability={t("availability")}
             locationLine={t("locationLine")}
             jumpToContact={t("jumpToContact")}
-            seePackages={t("ctaPrimary")}
+            seePackages={t("ctaExperience")}
             ctas={ctas}
           />
-          <HeroVisual
-            terminalTitle={t("terminalTitle")}
-            terminalVersion={t("terminalVersion")}
-            terminalStatus={t("terminalStatus")}
-            mockupLabel={t("mockupLabel")}
-            mockupStatus={t("terminalStatus")}
-            mockupChart={t("mockupChart")}
-            metrics={[
-              { value: t("metric1Value"), label: t("metric1Label") },
-              { value: t("metric2Value"), label: t("metric2Label") },
-              { value: t("metric3Value"), label: t("metric3Label") },
-              { value: t("metric4Value"), label: t("metric4Label") },
-            ]}
-          />
+          <HeroVisual nodes={[...messages.hero.hubNodes]} hubLabel="SAIFCORE" />
         </div>
       </div>
     </section>

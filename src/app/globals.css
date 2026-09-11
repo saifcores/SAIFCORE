@@ -1,80 +1,87 @@
 @import "tailwindcss";
 
-/* Design system — Fintech Infrastructure Portfolio */
+/* Design system — navy + cyan (locked from UI reference) */
 
-/* Dark mode (default) — also applied explicitly via [data-theme="dark"]
-   so sub-trees can force dark appearance (e.g. the terminal panel). */
+/* Dark mode — also applied via [data-theme="dark"] for forced dark subtrees. */
 :root,
 [data-theme="dark"] {
   color-scheme: dark;
-  --bg-base: #0a0a0a;
-  --bg-elevated: #111111;
+  --bg-base: #070e18;
+  --bg-elevated: #0f1a28;
   --bg-card: rgba(255, 255, 255, 0.04);
-  --bg-code: #0a0d14;
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(255, 255, 255, 0.16);
-  --border-code: rgba(255, 255, 255, 0.06);
-  --text-primary: #fafafa;
-  --text-secondary: #a1a1aa;
-  --text-muted: #71717a;
-  --accent-blue: #2563eb;
-  --accent-emerald: #10b981;
-  --accent-blue-light: #3b82f6;
-  --accent-text: #60a5fa;
-  --focus-ring: rgba(59, 130, 246, 0.28);
-  --focus-border: rgba(59, 130, 246, 0.45);
-  --glow-primary: rgba(37, 99, 235, 0.3);
-  --glow-secondary: rgba(16, 185, 129, 0.2);
-  --overlay-scrim: rgba(0, 0, 0, 0.62);
-  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.35);
-  --shadow-panel: 0 24px 48px -12px rgba(0, 0, 0, 0.55);
-  --shadow-dropdown: 0 12px 40px rgba(0, 0, 0, 0.45);
-  --toggle-track: #18181f;
-  --toggle-track-border: rgba(255, 255, 255, 0.1);
+  --bg-code: #050a12;
+  --border-subtle: rgba(148, 163, 184, 0.14);
+  --border-hover: rgba(148, 163, 184, 0.28);
+  --border-code: rgba(148, 163, 184, 0.1);
+  --border-strong: rgba(148, 163, 184, 0.22);
+  --text-primary: #f3f6fb;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --accent-blue: #38bdf8;
+  --accent-emerald: #4ade80;
+  --accent-blue-light: #7dd3fc;
+  --accent-text: #e2e8f0;
+  --accent-strong: #38e0f0;
+  --focus-ring: rgba(56, 224, 240, 0.35);
+  --focus-border: rgba(56, 224, 240, 0.55);
+  --glow-primary: rgba(56, 224, 240, 0.12);
+  --glow-secondary: rgba(56, 189, 248, 0.08);
+  --overlay-scrim: rgba(7, 14, 24, 0.65);
+  --shadow-card: none;
+  --shadow-panel: 0 16px 40px rgba(0, 0, 0, 0.5);
+  --shadow-dropdown: 0 12px 32px rgba(0, 0, 0, 0.45);
+  --toggle-track: #0f1a28;
+  --toggle-track-border: rgba(148, 163, 184, 0.16);
   --toggle-thumb: #1e293b;
   --toggle-thumb-text: #94a3b8;
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --btn-primary-bg: #f3f6fb;
+  --btn-primary-fg: #070e18;
+  --font-sans:
+    var(--font-instrument-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display:
+    var(--font-instrument-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
-  --radius-lg: 16px;
-  --radius-xl: 20px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
 }
 
-/* Light mode — premium cool-tinted fintech palette */
+/* Light mode — cool slate studio */
 [data-theme="light"] {
   color-scheme: light;
 
-  /* Backgrounds — slightly blue-tinted for a dashboard feel */
-  --bg-base: #f0f2f6;
+  --bg-base: #f4f7fb;
   --bg-elevated: #ffffff;
-  --bg-card: rgba(255, 255, 255, 0.88);
-  --bg-code: #0f1419;
+  --bg-card: rgba(255, 255, 255, 0.94);
+  --bg-code: #0b1220;
   --border-subtle: rgba(15, 23, 42, 0.1);
-  --border-hover: rgba(37, 99, 235, 0.28);
-  --border-code: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(15, 23, 42, 0.22);
+  --border-code: rgba(148, 163, 184, 0.12);
+  --border-strong: rgba(15, 23, 42, 0.16);
 
-  /* Text — stronger contrast on cool gray base */
-  --text-primary: #0c0c12;
-  --text-secondary: #3f3f46;
+  --text-primary: #0b1220;
+  --text-secondary: #475569;
   --text-muted: #64748b;
 
-  --accent-blue: #2563eb;
-  --accent-emerald: #10b981;
-  --accent-blue-light: #1d4ed8;
-  --accent-text: #2563eb;
-  --focus-ring: rgba(37, 99, 235, 0.22);
-  --focus-border: rgba(37, 99, 235, 0.45);
+  --accent-blue: #0284c7;
+  --accent-emerald: #16a34a;
+  --accent-blue-light: #0ea5e9;
+  --accent-text: #0b1220;
+  --accent-strong: #0891b2;
+  --focus-ring: rgba(8, 145, 178, 0.28);
+  --focus-border: rgba(8, 145, 178, 0.5);
 
-  /* Glows — more visible on light backgrounds */
-  --glow-primary: rgba(37, 99, 235, 0.2);
-  --glow-secondary: rgba(16, 185, 129, 0.14);
-  --overlay-scrim: rgba(12, 18, 32, 0.38);
-  --shadow-card: 0 4px 16px rgba(15, 23, 42, 0.08);
-  --shadow-panel: 0 20px 40px -12px rgba(15, 23, 42, 0.14);
+  --glow-primary: rgba(8, 145, 178, 0.08);
+  --glow-secondary: rgba(14, 165, 233, 0.06);
+  --overlay-scrim: rgba(11, 18, 32, 0.45);
+  --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-panel: 0 16px 40px -12px rgba(15, 23, 42, 0.14);
   --shadow-dropdown: 0 12px 32px rgba(15, 23, 42, 0.12);
-  --toggle-track: #e4e8f0;
+  --toggle-track: #e2e8f0;
   --toggle-track-border: rgba(15, 23, 42, 0.1);
   --toggle-thumb: #ffffff;
-  --toggle-thumb-text: #d97706;
+  --toggle-thumb-text: #64748b;
+  --btn-primary-bg: #0b1220;
+  --btn-primary-fg: #f4f7fb;
 }
 
 @theme inline {
@@ -85,7 +92,7 @@
   --color-text-muted: var(--text-muted);
   --color-accent-blue: var(--accent-blue);
   --color-accent-emerald: var(--accent-emerald);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-instrument-sans);
   --font-mono: var(--font-geist-mono);
   --breakpoint-xs: 30rem;
 }
@@ -145,27 +152,41 @@ body {
 }
 
 .section-y {
-  padding-block: 4rem;
+  padding-block: 5rem;
 }
 
 @media (min-width: 640px) {
   .section-y {
-    padding-block: 5rem;
+    padding-block: 5.5rem;
   }
 }
 
 @media (min-width: 1024px) {
   .section-y {
-    padding-block: 6rem;
+    padding-block: 7rem;
   }
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.03em;
+}
+
+.text-display-md {
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  line-height: 1.08;
+  font-weight: 500;
+}
+
+.text-accent-strong {
+  color: var(--accent-strong);
 }
 
 /* Borders and card backgrounds also transition smoothly */
 section,
 header,
 footer,
-nav,
-.glass {
+nav {
   transition:
     background-color 0.28s ease,
     border-color 0.2s ease;
@@ -177,60 +198,37 @@ nav,
   section,
   header,
   footer,
-  nav,
-  .glass {
+  nav {
     transition: none;
   }
 }
 
 ::selection {
-  background: rgba(37, 99, 235, 0.28);
+  background: rgba(8, 145, 178, 0.2);
   color: var(--text-primary);
 }
 
-[data-theme="light"] ::selection {
-  background: rgba(37, 99, 235, 0.18);
+[data-theme="dark"] ::selection {
+  background: rgba(56, 224, 240, 0.28);
   color: var(--text-primary);
-}
-
-/* Blue → Emerald gradient — the fintech infrastructure brand gradient */
-.text-gradient {
-  background: linear-gradient(135deg, #2563eb 0%, #10b981 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-/* Glass panel */
-.glass {
-  background: var(--bg-card);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--border-subtle);
-}
-
-/* Light mode glass gets a subtle shadow for card elevation depth */
-[data-theme="light"] .glass {
-  box-shadow:
-    0 1px 2px rgba(15, 23, 42, 0.05),
-    0 4px 20px rgba(15, 23, 42, 0.06);
 }
 
 /* Outline buttons & interactive cards — theme-aware hover border */
 .btn-outline {
-  border: 1px solid var(--border-subtle);
-  background: color-mix(in srgb, var(--bg-elevated) 50%, transparent);
+  border: 1px solid var(--border-strong);
+  background: var(--bg-elevated);
   color: var(--text-primary);
-  backdrop-filter: blur(8px);
+  border-radius: 12px;
   transition:
     border-color 0.2s ease,
-    background-color 0.28s ease,
+    background-color 0.2s ease,
+    opacity 0.2s ease,
     transform 0.15s ease;
 }
 
 .btn-outline:hover {
   border-color: var(--border-hover);
-  background: color-mix(in srgb, var(--bg-elevated) 72%, transparent);
+  background: color-mix(in srgb, var(--bg-elevated) 88%, var(--text-primary));
 }
 
 .btn-outline:active {
@@ -268,24 +266,24 @@ nav,
   border-color: var(--border-hover);
 }
 
-/* Brand gradient CTA */
+/* Solid inverted CTA — consultancy style */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 0.75rem;
-  background: linear-gradient(90deg, var(--accent-blue), var(--accent-emerald));
-  font-weight: 600;
-  color: #ffffff;
-  box-shadow: 0 0 24px -6px var(--glow-primary);
+  gap: 0.35rem;
+  border-radius: 12px;
+  background: var(--btn-primary-bg);
+  font-weight: 500;
+  color: var(--btn-primary-fg);
+  box-shadow: none;
   transition:
-    filter 0.2s ease,
-    transform 0.15s ease,
-    box-shadow 0.2s ease;
+    opacity 0.2s ease,
+    transform 0.15s ease;
 }
 
 .btn-primary:hover {
-  filter: brightness(1.08);
+  opacity: 0.82;
 }
 
 .btn-primary:active {
@@ -298,28 +296,23 @@ nav,
 }
 
 .btn-primary-lg {
-  box-shadow: 0 0 32px -8px var(--glow-primary);
-}
-
-.btn-primary-lg:hover {
-  box-shadow: 0 0 40px -8px var(--glow-primary);
-}
-
-.bg-brand-gradient {
-  background: linear-gradient(90deg, var(--accent-blue), var(--accent-emerald));
-}
-
-.text-accent {
-  color: var(--accent-text);
+  padding-inline: 2rem;
+  padding-block: 1rem;
+  font-size: 1rem;
 }
 
 .link-accent {
-  color: var(--accent-text);
-  transition: color 0.2s ease;
+  color: var(--text-primary);
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 4px;
+  transition:
+    color 0.2s ease,
+    text-decoration-color 0.2s ease;
 }
 
 .link-accent:hover {
-  color: var(--accent-blue-light);
+  text-decoration-color: var(--border-hover);
 }
 
 .surface-panel {
@@ -385,18 +378,18 @@ nav,
   }
 }
 
-/* Subtle grid background */
+/* Subtle grid background — quiet navy studio */
 .bg-grid {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-  background-size: 56px 56px;
+    linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+  background-size: 64px 64px;
 }
 
 [data-theme="light"] .bg-grid {
   background-image:
-    linear-gradient(rgba(37, 99, 235, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(37, 99, 235, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
 }
 
 @keyframes float-glow {

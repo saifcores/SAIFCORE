@@ -35,7 +35,7 @@ export async function Insights({ teaser = false }: Props) {
         teaser ? "py-10 sm:py-12 lg:py-16" : "py-12 sm:py-16 lg:py-24"
       }`}
     >
-      <div className="mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-7xl">
         <Reveal>
           <div
             className={
@@ -50,7 +50,7 @@ export async function Insights({ teaser = false }: Props) {
               </p>
               <h2
                 id="insights-heading"
-                className="max-w-2xl text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl"
+                className="max-w-2xl font-display text-pretty text-2xl font-medium tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl"
               >
                 {t("subtitle")}
               </h2>
@@ -62,7 +62,7 @@ export async function Insights({ teaser = false }: Props) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${t("viewAll")} (${opensInNewTab})`}
-                  className="inline-flex min-h-11 w-full shrink-0 items-center justify-center gap-1.5 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 px-4 text-sm font-semibold text-accent transition hover:border-[var(--border-hover)] hover:text-[var(--accent-blue-light)] sm:w-auto sm:border-0 sm:bg-transparent sm:px-0"
+                  className="inline-flex min-h-11 w-full shrink-0 items-center justify-center gap-1.5 rounded-[12px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 px-4 text-sm font-medium text-[var(--text-primary)] transition hover:border-[var(--border-hover)] sm:w-auto sm:border-0 sm:bg-transparent sm:px-0 sm:underline-offset-4 sm:hover:underline"
                 >
                   {t("viewAll")}
                   <span aria-hidden>↗</span>
@@ -70,7 +70,7 @@ export async function Insights({ teaser = false }: Props) {
               ) : (
                 <Link
                   href={viewAllHref}
-                  className="inline-flex min-h-11 w-full shrink-0 items-center justify-center gap-1.5 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 px-4 text-sm font-semibold text-accent transition hover:border-[var(--border-hover)] hover:text-[var(--accent-blue-light)] sm:w-auto sm:border-0 sm:bg-transparent sm:px-0"
+                  className="inline-flex min-h-11 w-full shrink-0 items-center justify-center gap-1.5 rounded-[12px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 px-4 text-sm font-medium text-[var(--text-primary)] transition hover:border-[var(--border-hover)] sm:w-auto sm:border-0 sm:bg-transparent sm:px-0 sm:underline-offset-4 sm:hover:underline"
                 >
                   {t("viewAll")}
                   <span aria-hidden>→</span>
@@ -87,17 +87,17 @@ export async function Insights({ teaser = false }: Props) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${t("blogPromoTitle")} (${opensInNewTab})`}
-              className="mt-8 flex flex-col gap-4 rounded-2xl border border-blue-500/20 bg-gradient-to-br from-blue-500/10 to-emerald-500/5 p-5 transition hover:border-blue-500/35 sm:mt-10 sm:flex-row sm:items-center sm:justify-between sm:p-6"
+              className="mt-8 flex flex-col gap-4 rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 p-5 transition hover:border-[var(--border-hover)] sm:mt-10 sm:flex-row sm:items-center sm:justify-between sm:p-6"
             >
               <div className="min-w-0">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--text-muted)]">
                   {t("blogPromoTitle")}
                 </p>
                 <p className="mt-2 text-pretty text-sm leading-relaxed text-[var(--text-secondary)] sm:text-base">
                   {t("blogPromoBody")}
                 </p>
               </div>
-              <span className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/40 px-4 text-sm font-semibold text-accent">
+              <span className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-[12px] border border-[var(--border-subtle)] bg-[var(--bg-base)]/60 px-4 text-sm font-medium text-[var(--text-primary)]">
                 {tArticles("blogCta")}
                 <span aria-hidden className="ml-1.5">
                   ↗

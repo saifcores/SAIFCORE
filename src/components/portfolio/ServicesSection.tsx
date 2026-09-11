@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import {
-  ArrowRight,
+  ArrowUpRight,
   ClipboardCheck,
   FileSearch,
   Landmark,
@@ -44,14 +44,14 @@ export function ServicesSection({
   return (
     <section
       id="services"
-      className="border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)]/10 px-4 py-12 sm:px-6 sm:py-14 lg:px-8 lg:py-20"
+      className="border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)]/10 px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
     >
-      <div className="mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-7xl">
         <MotionReveal>
-          <h2 className="max-w-2xl text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl">
+          <h2 className="max-w-2xl font-display text-pretty text-2xl font-medium tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl">
             {title}
           </h2>
-          <span className="mt-3 inline-flex max-w-full rounded-full border border-blue-500/25 bg-blue-500/10 px-3 py-1 text-[11px] font-medium text-accent sm:mt-4 sm:px-3.5 sm:text-xs">
+          <span className="mt-3 inline-flex max-w-full rounded-full border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/40 px-3 py-1 text-[11px] font-medium text-[var(--text-secondary)] sm:mt-4 sm:px-3.5 sm:text-xs">
             {audience}
           </span>
           <p className="mt-3 max-w-2xl text-pretty text-base leading-relaxed text-[var(--text-secondary)] sm:text-lg">
@@ -66,9 +66,9 @@ export function ServicesSection({
               <MotionReveal key={item.title} delay={i * 40}>
                 <motion.article
                   whileHover={reduce ? undefined : { y: -2 }}
-                  className="flex h-full gap-3 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 p-4 transition hover:border-[var(--border-hover)]"
+                  className="flex h-full gap-3 rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 p-4 transition hover:border-[var(--border-hover)]"
                 >
-                  <div className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-blue-500/20 bg-gradient-to-br from-blue-500/12 to-emerald-500/8 text-accent">
+                  <div className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-[12px] border border-[var(--border-subtle)] bg-[var(--bg-base)]/60 text-[var(--text-primary)]">
                     <Icon className="h-4 w-4" strokeWidth={1.6} aria-hidden />
                   </div>
                   <div className="min-w-0">
@@ -89,10 +89,10 @@ export function ServicesSection({
           <div className="mt-8 flex justify-center">
             <Link
               href="/#offers"
-              className="inline-flex min-h-11 items-center justify-center gap-2 text-sm font-semibold text-accent transition hover:text-[var(--accent-blue-light)]"
+              className="inline-flex min-h-11 items-center justify-center gap-2 text-sm font-medium text-[var(--text-primary)] underline-offset-4 transition hover:underline"
             >
               {cta}
-              <ArrowRight className="h-4 w-4" aria-hidden />
+              <ArrowUpRight className="h-4 w-4" aria-hidden />
             </Link>
           </div>
         </MotionReveal>

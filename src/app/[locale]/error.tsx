@@ -21,7 +21,7 @@ export default function Error({
     <div className="relative flex min-h-[70vh] flex-col items-center justify-center overflow-hidden px-4 py-16">
       <div className="bg-grid pointer-events-none absolute inset-0 opacity-40" />
       <div
-        className="ambient-glow pointer-events-none absolute -top-24 left-1/2 h-72 w-[min(90vw,480px)] -translate-x-1/2 rounded-full bg-gradient-to-br from-blue-600/20 via-red-500/8 to-transparent blur-3xl"
+        className="ambient-glow pointer-events-none absolute -top-24 left-1/2 h-72 w-[min(90vw,480px)] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,color-mix(in_srgb,var(--text-muted)_12%,transparent),transparent)] blur-3xl"
         aria-hidden
       />
 
@@ -29,7 +29,7 @@ export default function Error({
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)]">
           {t("kicker")}
         </p>
-        <h1 className="mt-3 text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
+        <h1 className="mt-3 font-display text-3xl font-medium tracking-tight text-[var(--text-primary)] sm:text-4xl">
           {t("title")}
         </h1>
         <p className="mt-4 leading-relaxed text-[var(--text-secondary)]">
@@ -45,7 +45,7 @@ export default function Error({
           </button>
           <Link
             href="/"
-            className="btn-outline inline-flex h-12 items-center justify-center rounded-xl px-8 text-sm font-semibold"
+            className="btn-outline inline-flex h-12 items-center justify-center rounded-[12px] px-8 text-sm font-medium"
           >
             {t("backHome")}
           </Link>

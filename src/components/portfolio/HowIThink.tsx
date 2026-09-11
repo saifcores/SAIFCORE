@@ -9,26 +9,26 @@ export async function HowIThink() {
   return (
     <section
       id="how-i-think"
-      className="border-b border-[var(--border-subtle)] px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16"
+      className="border-b border-[var(--border-subtle)] px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
     >
-      <div className="mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-7xl">
         <Reveal>
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
             {t("title")}
           </p>
-          <h2 className="max-w-2xl text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl">
+          <h2 className="max-w-2xl font-display text-pretty text-2xl font-medium tracking-tight text-[var(--text-primary)] sm:text-3xl">
             {t("subtitle")}
           </h2>
         </Reveal>
 
         <div className="mt-8 grid gap-4 md:mt-10 md:grid-cols-2 md:gap-6">
           <Reveal>
-            <ol className="space-y-4 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-5 sm:p-6">
+            <ol className="space-y-4 rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-5 sm:p-6">
               {steps.map((step, i) => {
                 const stepId = String(i + 1).padStart(2, "0");
                 return (
                   <li key={stepId} className="flex gap-3">
-                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-[var(--border-subtle)] font-mono text-[10px] font-semibold text-accent">
+                    <span className="font-display flex h-7 w-7 shrink-0 items-center justify-center text-[11px] font-medium text-[var(--text-muted)]">
                       {stepId}
                     </span>
                     <div className="min-w-0">
@@ -46,7 +46,7 @@ export async function HowIThink() {
           </Reveal>
 
           <Reveal delay={80}>
-            <div className="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-5 sm:p-6">
+            <div className="rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-5 sm:p-6">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
                 {t("operatingModel")}
               </p>
@@ -57,7 +57,7 @@ export async function HowIThink() {
                 {bullets.map((line, bi) => (
                   <li key={bi} className="flex gap-2.5">
                     <span
-                      className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-r from-blue-400 to-emerald-400"
+                      className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent-strong)]"
                       aria-hidden
                     />
                     {line}

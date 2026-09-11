@@ -29,26 +29,26 @@ type NavItem = {
 };
 
 /**
- * Dual-audience primary path:
- * About → Experience → Case studies → Packages → Contact
- * Insights stays in the footer and the mobile extra list.
+ * Dual-audience primary path (studio-sparse):
+ * About · Case studies · Ways to work · Insights
+ * Experience / Contact / CV live in mobile extras + CTAs.
  */
-function buildPrimaryNav(): NavItem[] {
-  return [
-    { href: "/about", labelKey: "about" },
-    { href: "/experience", labelKey: "experience" },
-    { href: "/systems", labelKey: "systems" },
-    { href: "/#offers", labelKey: "offers" },
-    { href: "/#contact", labelKey: "contact" },
-  ];
-}
-
-function buildMobileExtraNav(locale: "en" | "fr"): NavItem[] {
+function buildPrimaryNav(locale: "en" | "fr"): NavItem[] {
   const blogIndexUrl = getBlogIndexUrl(locale);
   return [
+    { href: "/about", labelKey: "about" },
+    { href: "/systems", labelKey: "systems" },
+    { href: "/#offers", labelKey: "offers" },
     blogIndexUrl
       ? { href: blogIndexUrl, labelKey: "insights", external: true }
       : { href: "/articles", labelKey: "insights" },
+  ];
+}
+
+function buildMobileExtraNav(): NavItem[] {
+  return [
+    { href: "/experience", labelKey: "experience" },
+    { href: "/#contact", labelKey: "contact" },
   ];
 }
 
@@ -59,7 +59,6 @@ const homeHashSections = [
   "start",
   "offers",
   "process",
-  "certifications",
   "insights",
   "faq",
   "contact",
@@ -82,8 +81,8 @@ function isNavItemActive(
 
 function navLinkClass(active: boolean): string {
   return active
-    ? "shrink-0 rounded-lg bg-[var(--bg-elevated)]/80 px-2.5 py-1.5 text-xs font-semibold text-[var(--text-primary)] ring-1 ring-[var(--border-subtle)] 2xl:px-3 2xl:text-sm"
-    : "shrink-0 rounded-lg px-2.5 py-1.5 text-xs font-medium text-[var(--text-muted)] transition hover:bg-[var(--bg-elevated)]/60 hover:text-[var(--text-primary)] 2xl:px-3 2xl:text-sm";
+    ? "shrink-0 px-3 py-2 text-sm font-medium text-[var(--text-primary)]"
+    : "shrink-0 px-3 py-2 text-sm text-[var(--text-secondary)] transition-colors duration-300 hover:text-[var(--text-primary)]";
 }
 
 export function Navbar() {
@@ -98,8 +97,8 @@ export function Navbar() {
   const linkedinUrl = getLinkedinUrl();
   const githubUrl = getGithubUrl();
   const isHome = pathname === "/";
-  const primaryNav = useMemo(() => buildPrimaryNav(), []);
-  const extraNav = useMemo(() => buildMobileExtraNav(loc), [loc]);
+  const primaryNav = useMemo(() => buildPrimaryNav(loc), [loc]);
+  const extraNav = useMemo(() => buildMobileExtraNav(), []);
 
   const [activeHomeSection, setActiveHomeSection] =
     useState<HomeHashSection | null>(null);
@@ -213,14 +212,14 @@ export function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b border-[var(--border-subtle)] backdrop-blur-xl backdrop-saturate-150 transition-colors duration-200 ${
-        scrolled ? "bg-[var(--bg-base)]/90" : "bg-[var(--bg-base)]/60"
+      className={`sticky top-0 z-50 border-b border-[var(--border-subtle)] backdrop-blur-sm transition-colors duration-300 ${
+        scrolled ? "bg-[var(--bg-base)]/80" : "bg-[var(--bg-base)]/80"
       }`}
     >
-      <div className="mx-auto flex h-14 max-w-[1280px] items-center justify-between gap-2 px-3 sm:h-16 sm:gap-3 sm:px-6 xl:px-8">
+      <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-2 px-4 sm:h-16 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="flex min-w-0 items-center gap-2.5 text-[var(--text-primary)] transition hover:opacity-90"
+          className="flex min-w-0 items-center gap-2.5 text-[var(--text-primary)] transition-opacity duration-300 hover:opacity-80"
           onClick={() => close(false)}
           aria-label={t("brandHomeLabel")}
         >
@@ -229,23 +228,19 @@ export function Navbar() {
             alt=""
             width={80}
             height={80}
-            className="h-8 w-8 shrink-0 rounded-lg object-cover ring-1 ring-[var(--border-subtle)] sm:h-9 sm:w-9"
+            className="h-8 w-8 shrink-0 rounded-[10px] object-cover ring-1 ring-[var(--border-subtle)] sm:h-9 sm:w-9"
             priority
             sizes="36px"
           />
           <span className="min-w-0">
-            <span className="block text-sm font-bold tracking-tight">
-              <span className="text-[var(--text-primary)]">SAIF</span>
-              <span className="text-gradient">CORE</span>
-            </span>
-            <span className="mt-0.5 hidden max-w-[9rem] truncate text-[10px] font-medium tracking-wide text-[var(--text-muted)] lg:block">
-              {t("brandRole")}
+            <span className="block text-sm font-semibold tracking-tight text-[var(--text-primary)]">
+              SAIFCORE
             </span>
           </span>
         </Link>
 
         <nav
-          className="hidden min-w-0 items-center gap-0.5 lg:flex 2xl:gap-1"
+          className="hidden min-w-0 items-center gap-1 lg:flex"
           aria-label={t("primary")}
         >
           {primaryNav.map((l) =>
@@ -279,7 +274,7 @@ export function Navbar() {
           )}
         </nav>
 
-        <div className="flex shrink-0 items-center gap-1 sm:gap-1.5 xl:gap-2">
+        <div className="flex shrink-0 items-center gap-1 sm:gap-2">
           <LocaleSwitcher
             navLabel={t("language")}
             labels={{ en: t("localeEn"), fr: t("localeFr") }}
@@ -287,22 +282,28 @@ export function Navbar() {
           <div className="hidden min-[400px]:block">
             <ThemeToggle />
           </div>
-          {resumeUrl && resumeLinkProps ? (
-            <a
-              href={resumeUrl}
-              className="btn-outline hidden h-9 items-center justify-center rounded-xl px-3 text-xs font-semibold lg:inline-flex 2xl:px-3.5 2xl:text-sm"
-              {...resumeLinkProps}
-            >
-              {t("resume")}
-            </a>
-          ) : null}
-          <BookCallLink className="btn-primary hidden h-9 items-center justify-center px-3 text-xs lg:inline-flex 2xl:px-4 2xl:text-sm">
+          <BookCallLink className="btn-primary hidden h-10 items-center justify-center px-4 text-sm lg:inline-flex">
             {t("bookCall")}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden
+            >
+              <path d="M7 7h10v10" />
+              <path d="M7 17 17 7" />
+            </svg>
           </BookCallLink>
           <button
             ref={menuButtonRef}
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/50 text-[var(--text-primary)] transition hover:border-[var(--border-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40 lg:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-[12px] text-[var(--text-secondary)] transition-all duration-300 hover:bg-[var(--bg-elevated)] hover:text-[var(--text-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] lg:hidden"
             onClick={() => setOpen((o) => !o)}
             aria-expanded={open}
             aria-controls={panelId}
@@ -360,7 +361,7 @@ export function Navbar() {
             aria-modal="true"
             aria-label={t("siteNavigation")}
           >
-            <nav className="mx-auto max-w-[1280px] px-3 py-4 sm:px-6">
+            <nav className="mx-auto max-w-7xl px-3 py-4 sm:px-6">
               <ul className="space-y-0.5">
                 {primaryNav.map((l) => (
                   <li key={l.href}>

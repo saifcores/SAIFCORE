@@ -13,21 +13,21 @@ export default async function GlobalNotFound() {
   });
 
   return (
-    <div className="relative flex min-h-[70vh] flex-col items-center justify-center overflow-hidden px-4 py-16">
+    <div className="relative flex min-h-[70vh] flex-col items-center justify-center overflow-hidden bg-[var(--bg-base)] px-4 py-16 text-[var(--text-primary)]">
       <div className="relative w-full max-w-md text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)]">
           {t("kicker")}
         </p>
-        <h1 className="mt-3 text-pretty text-3xl font-bold tracking-tight sm:text-4xl">
+        <h1 className="mt-3 font-display text-pretty text-3xl font-medium tracking-tight sm:text-4xl">
           {t("title")}
         </h1>
-        <p className="mt-4 text-pretty leading-relaxed text-neutral-400">
+        <p className="mt-4 text-pretty leading-relaxed text-[var(--text-secondary)]">
           {t("description")}
         </p>
         <div className="mt-10 flex justify-center">
           <Link
             href="/"
-            className="inline-flex h-12 items-center justify-center rounded-2xl bg-blue-600 px-8 text-sm font-semibold text-white"
+            className="btn-primary inline-flex h-12 items-center justify-center px-8 text-sm"
           >
             {t("backHome")}
           </Link>

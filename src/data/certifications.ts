@@ -32,7 +32,7 @@ export type CertificationKind =
 /**
  * Credential progress — edit per cert in `certificationsMeta`.
  * Set `obtained` (+ optional `verifyUrl`) to unlock nav, sitemap, and
- * `/certifications`. `inProgress` shows on the home teaser only.
+ * `/certifications`. `inProgress` can surface in credential teasers.
  */
 export type CertificationStatus = "obtained" | "inProgress" | "notStarted";
 

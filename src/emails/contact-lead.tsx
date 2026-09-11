@@ -175,7 +175,7 @@ export function ContactLeadEmail({
           <Section>
             <Text style={styles.label}>Qualif (reply)</Text>
             <Text style={styles.list}>
-              • Objectif : paiements, API, modernisation, MVP, audit…
+              • Objectif : API, modernisation, MVP, plateforme, paiements…
               <br />
               • Timeline + contraintes (réglementaire, stack, scale)
               <br />• Cadre : forfait / TJM / mission
@@ -199,14 +199,14 @@ export function ContactLeadEmail({
                 </>
               ) : null}
               <br />
-              3. Sinon → 3–5 questions ciblées + package adapté
+              3. Sinon → 3–5 questions ciblées + mode de collaboration
             </Text>
           </Section>
 
           <Hr style={styles.hr} />
 
           <Text style={styles.footer}>
-            SAIFCORE · Senior Backend · Payments · Platforms
+            SAIFCORE · Senior Software Engineer · Architecture
             <br />
             <Link href={siteUrl} style={styles.link}>
               {siteUrl}

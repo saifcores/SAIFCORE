@@ -15,7 +15,7 @@ export function LocaleSwitcher({ labels, navLabel }: Props) {
 
   return (
     <div
-      className="flex shrink-0 items-center gap-0.5 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/50 p-0.5 text-[10px] font-medium sm:gap-1 sm:text-xs"
+      className="flex shrink-0 items-center gap-0.5 rounded-[12px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/50 p-0.5 text-[10px] font-medium sm:gap-1 sm:text-xs"
       role="navigation"
       aria-label={navLabel}
     >

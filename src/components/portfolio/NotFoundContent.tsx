@@ -16,7 +16,7 @@ export async function NotFoundContent({ locale }: Props) {
       <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)]">
         {t("kicker")}
       </p>
-      <h1 className="mt-3 text-pretty text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
+      <h1 className="mt-3 font-display text-pretty text-3xl font-medium tracking-tight text-[var(--text-primary)] sm:text-4xl">
         {t("title")}
       </h1>
       <p className="mt-4 text-pretty leading-relaxed text-[var(--text-secondary)]">
@@ -31,7 +31,7 @@ export async function NotFoundContent({ locale }: Props) {
         </Link>
         <Link
           href="/#contact"
-          className="btn-outline inline-flex h-12 items-center justify-center rounded-xl px-8 text-sm font-semibold"
+          className="btn-outline inline-flex h-12 items-center justify-center rounded-[12px] px-8 text-sm font-medium"
         >
           {t("contact")}
         </Link>

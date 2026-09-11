@@ -23,7 +23,7 @@ export async function RelatedCaseStudies({ slug }: Props) {
       <Reveal>
         <h2
           id="related-case-studies-heading"
-          className="text-pretty text-xl font-bold tracking-tight text-[var(--text-primary)] sm:text-2xl"
+          className="font-display text-pretty text-xl font-medium tracking-tight text-[var(--text-primary)] sm:text-2xl"
         >
           {t("relatedCaseStudiesTitle")}
         </h2>
@@ -38,18 +38,18 @@ export async function RelatedCaseStudies({ slug }: Props) {
             <Reveal delay={i * 60}>
               <Link
                 href={getCaseStudyHref(item.title)}
-                className="group flex h-full flex-col rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-5 transition hover:border-[var(--border-hover)] hover:bg-[var(--bg-elevated)]/40 sm:p-6"
+                className="group flex h-full flex-col rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-5 transition hover:border-[var(--border-hover)] hover:bg-[var(--bg-elevated)]/40 sm:p-6"
               >
                 <p className="text-xs font-medium uppercase tracking-[0.16em] text-[var(--text-muted)]">
                   {tFeatured("title")}
                 </p>
-                <h3 className="mt-2 text-base font-semibold text-[var(--text-primary)] transition group-hover:text-accent sm:text-lg">
+                <h3 className="mt-2 text-base font-semibold text-[var(--text-primary)] transition group-hover:underline group-hover:underline-offset-4 sm:text-lg">
                   {item.title}
                 </h3>
                 <p className="mt-2 line-clamp-2 flex-1 text-sm leading-relaxed text-[var(--text-secondary)]">
                   {item.solution}
                 </p>
-                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--accent-blue)]">
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-[var(--text-primary)] underline-offset-4 group-hover:underline">
                   {tFeatured("readCaseStudy")}
                   <span aria-hidden>→</span>
                 </span>

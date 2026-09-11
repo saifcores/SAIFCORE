@@ -18,7 +18,7 @@ export async function NotFoundPage({ locale }: Props) {
       >
         <div className="bg-grid pointer-events-none absolute inset-0 opacity-40" />
         <div
-          className="ambient-glow pointer-events-none absolute -top-24 left-1/2 h-72 w-[min(90vw,480px)] -translate-x-1/2 rounded-full bg-gradient-to-br from-blue-600/20 via-blue-500/8 to-transparent blur-3xl"
+          className="ambient-glow pointer-events-none absolute -top-24 left-1/2 h-72 w-[min(90vw,480px)] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,color-mix(in_srgb,var(--text-muted)_12%,transparent),transparent)] blur-3xl"
           aria-hidden
         />
         <NotFoundContent locale={locale} />

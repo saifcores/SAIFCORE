@@ -1,10 +1,10 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { Gauge, Layers, Lock, RefreshCw, Shield, Wrench } from "lucide-react";
+import { Gauge, Layers, Lock, Shield, Sparkles, Wrench } from "lucide-react";
 import { MotionReveal } from "@/components/portfolio/motion/MotionReveal";
 
-const ICONS = [RefreshCw, Shield, Lock, Wrench, Gauge, Layers];
+const ICONS = [Sparkles, Shield, Gauge, Lock, Wrench, Layers];
 
 type Principle = { title: string; description: string };
 
@@ -18,13 +18,13 @@ export function EngineeringPrinciples({ title, subtitle, items }: Props) {
   const reduce = useReducedMotion();
 
   return (
-    <section className="border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)]/10 px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
-      <div className="mx-auto max-w-[1280px]">
+    <section className="border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)]/10 px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+      <div className="mx-auto max-w-7xl">
         <MotionReveal>
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
             {title}
           </p>
-          <h2 className="max-w-2xl text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl">
+          <h2 className="max-w-2xl font-display text-pretty text-2xl font-medium tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl">
             {subtitle}
           </h2>
         </MotionReveal>
@@ -36,10 +36,10 @@ export function EngineeringPrinciples({ title, subtitle, items }: Props) {
               <MotionReveal key={item.title} delay={i * 70}>
                 <motion.article
                   whileHover={reduce ? undefined : { y: -4 }}
-                  className="h-full rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-5 transition hover:border-[var(--border-hover)] sm:p-6"
+                  className="h-full rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-5 transition hover:border-[var(--border-hover)] sm:p-6"
                 >
                   <Icon
-                    className="mb-4 h-5 w-5 text-emerald-400"
+                    className="mb-4 h-5 w-5 text-[var(--text-primary)]"
                     strokeWidth={1.6}
                     aria-hidden
                   />

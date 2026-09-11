@@ -53,8 +53,8 @@ export async function ProfileExploreLinks({
                 href={link.href}
                 className={
                   compact
-                    ? "inline-flex min-h-10 items-center rounded-full border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/40 px-3.5 text-xs font-semibold text-[var(--text-secondary)] transition hover:border-[var(--border-hover)] hover:text-[var(--text-primary)] sm:text-sm"
-                    : "flex min-h-11 items-center justify-between rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 px-4 py-3 text-sm font-semibold text-[var(--text-secondary)] transition hover:border-[var(--border-hover)] hover:bg-[var(--bg-elevated)]/40 hover:text-[var(--text-primary)]"
+                    ? "inline-flex min-h-10 items-center rounded-full border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/40 px-3.5 text-xs font-medium text-[var(--text-secondary)] transition hover:border-[var(--border-hover)] hover:text-[var(--text-primary)] sm:text-sm"
+                    : "flex min-h-11 items-center justify-between rounded-[12px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 px-4 py-3 text-sm font-medium text-[var(--text-secondary)] transition hover:border-[var(--border-hover)] hover:bg-[var(--bg-elevated)]/40 hover:text-[var(--text-primary)]"
                 }
               >
                 {link.label}

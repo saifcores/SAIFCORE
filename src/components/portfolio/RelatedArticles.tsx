@@ -30,7 +30,7 @@ export async function RelatedArticles({ slug, locale }: Props) {
           <div className="min-w-0">
             <h2
               id="related-articles-heading"
-              className="text-pretty text-xl font-bold tracking-tight text-[var(--text-primary)] sm:text-2xl"
+              className="font-display text-pretty text-xl font-medium tracking-tight text-[var(--text-primary)] sm:text-2xl"
             >
               {t("relatedTitle")}
             </h2>
@@ -44,7 +44,7 @@ export async function RelatedArticles({ slug, locale }: Props) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${t("viewAllArticles")} (${opensInNewTab})`}
-              className="inline-flex min-h-11 shrink-0 items-center text-sm font-semibold text-accent transition hover:text-[var(--accent-blue-light)]"
+              className="inline-flex min-h-11 shrink-0 items-center text-sm font-medium text-[var(--text-primary)] underline-offset-4 transition hover:underline"
             >
               {t("viewAllArticles")} ↗
             </a>

@@ -104,7 +104,7 @@ ${payload.message}
 
 QUALIF (reply)
 ──────────────
-• Objectif : paiements, API, modernisation, MVP, audit…
+• Objectif : API, modernisation, MVP, plateforme, paiements…
 • Timeline + contraintes (réglementaire, stack, scale)
 • Cadre : forfait / TJM / mission
 
@@ -112,10 +112,10 @@ NEXT
 ────
 1. Reply ce thread
 2. Si fit clair → discovery${calendly ? `\n   ${calendly}` : ""}
-3. Sinon → 3–5 questions ciblées + package adapté
+3. Sinon → 3–5 questions ciblées + mode de collaboration
 
 —
-SAIFCORE · Senior Backend · Payments · Platforms
+SAIFCORE · Senior Software Engineer · Architecture
 ${getSiteUrl()}`;
 }
 
@@ -129,13 +129,13 @@ function autoReplyText(payload: ContactPayload): string {
 
 Merci pour votre message via SAIFCORE.
 
-Votre brief est bien reçu. Je le lis avec attention et vous réponds sous deux jours ouvrables — avec des questions précises et, si le besoin est clair, un prochain pas concret (appel discovery, atelier, ou package d’engagement).
+Votre brief est bien reçu. Je le lis avec attention et vous réponds sous deux jours ouvrables — avec des questions précises et, si le besoin est clair, un prochain pas concret (appel discovery, atelier, ou mode de collaboration).
 
 Pour avancer plus vite, vous pouvez :
 • préciser objectifs, contraintes, timeline et stack ;
 ${calendly ? `• ou réserver 30 min :\n  ${calendly}` : "• ou me répondre directement à ce message."}
 
-Je collabore principalement sur les backends enterprise, les paiements et les plateformes régulées (Java / Spring Boot, systèmes distribués, cloud) — en remote, EN/FR.
+Je collabore principalement en tant qu’ingénieur logiciel senior — backends, systèmes distribués, APIs et architecture (Java / Spring Boot), avec une profondeur banque & FinTech — en remote, EN/FR.
 
 Bien cordialement,
 Saïfoulaye Diallo
@@ -147,13 +147,13 @@ ${site}${linkedin ? `\n${linkedin}` : ""}`;
 
 Thanks for reaching out via SAIFCORE.
 
-I’ve received your brief and will reply within two business days — with focused questions and, when the fit is clear, a concrete next step (discovery call, workshop, or engagement package).
+I’ve received your brief and will reply within two business days — with focused questions and, when the fit is clear, a concrete next step (discovery call, workshop, or way of working).
 
 To move faster, you can:
 • share goals, constraints, timeline, and stack;
 ${calendly ? `• or book 30 minutes:\n  ${calendly}` : "• or reply directly to this message."}
 
-I partner on enterprise backends, payments, and regulated platforms (Java / Spring Boot, distributed systems, cloud) — remote, EN/FR.
+Senior Software Engineer — I build software that solves real-world problems: backends, distributed systems, APIs, and architecture (Java / Spring Boot), with banking & FinTech depth — remote, EN/FR.
 
 Best regards,
 Saïfoulaye Diallo

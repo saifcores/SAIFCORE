@@ -11,16 +11,7 @@ import {
 } from "lucide-react";
 import { MotionReveal } from "@/components/portfolio/motion/MotionReveal";
 
-const ICONS = [CreditCard, Layers, Network, Globe, Cloud, Smartphone] as const;
-
-const ACCENTS = [
-  "from-blue-500/15 to-blue-500/5 border-blue-500/20 text-accent",
-  "from-indigo-500/15 to-indigo-500/5 border-indigo-500/20 text-indigo-400",
-  "from-violet-500/15 to-violet-500/5 border-violet-500/20 text-violet-400",
-  "from-amber-500/15 to-amber-500/5 border-amber-500/20 text-amber-400",
-  "from-cyan-500/15 to-cyan-500/5 border-cyan-500/20 text-cyan-400",
-  "from-emerald-500/15 to-emerald-500/5 border-emerald-500/20 text-emerald-400",
-];
+const ICONS = [Layers, Network, Globe, CreditCard, Cloud, Smartphone] as const;
 
 export type ExpertiseItem = {
   title: string;
@@ -49,14 +40,14 @@ export function TrustedExpertise({
   return (
     <section
       id="expertise"
-      className="border-b border-[var(--border-subtle)] px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16"
+      className="border-b border-[var(--border-subtle)] px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
     >
-      <div className="mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-7xl">
         <MotionReveal>
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
             {title}
           </p>
-          <h2 className="max-w-2xl text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl">
+          <h2 className="max-w-2xl font-display text-pretty text-2xl font-medium tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl">
             {subtitle}
           </h2>
         </MotionReveal>
@@ -64,15 +55,14 @@ export function TrustedExpertise({
         <div className="mt-10 grid gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
           {items.map((item, i) => {
             const Icon = ICONS[i % ICONS.length];
-            const accent = ACCENTS[i % ACCENTS.length];
             return (
               <MotionReveal key={item.title} delay={i * 70}>
                 <motion.article
-                  whileHover={reduce ? undefined : { y: -6 }}
+                  whileHover={reduce ? undefined : { y: -4 }}
                   transition={{ type: "spring", stiffness: 380, damping: 28 }}
-                  className={`group h-full rounded-2xl border bg-gradient-to-br ${accent} p-4 sm:p-5`}
+                  className="group h-full rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 p-5 transition-colors hover:border-[var(--border-hover)] sm:p-6"
                 >
-                  <div className="mb-3 inline-flex rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-base)]/50 p-2">
+                  <div className="mb-3 inline-flex rounded-[10px] border border-[var(--border-subtle)] bg-[var(--bg-base)] p-2 text-[var(--text-primary)]">
                     <Icon className="h-5 w-5" strokeWidth={1.6} aria-hidden />
                   </div>
                   <h3 className="text-base font-semibold text-[var(--text-primary)]">
@@ -87,7 +77,7 @@ export function TrustedExpertise({
                       {item.technologies.slice(0, 5).map((tech) => (
                         <span
                           key={tech}
-                          className="rounded-md border border-[var(--border-subtle)] bg-[var(--bg-base)]/60 px-2 py-0.5 text-[11px] text-[var(--text-muted)]"
+                          className="rounded-full border border-[var(--border-subtle)] bg-[var(--bg-base)]/60 px-2.5 py-0.5 text-[11px] text-[var(--text-muted)]"
                         >
                           {tech}
                         </span>

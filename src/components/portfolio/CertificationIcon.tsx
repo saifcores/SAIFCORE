@@ -10,60 +10,60 @@ const kindStyles: Record<
   academic: {
     label: "Cert",
     className:
-      "border-indigo-500/30 bg-gradient-to-br from-indigo-500/15 to-violet-500/10 text-indigo-300",
+      "border-[var(--border-subtle)] bg-[var(--bg-elevated)] text-[var(--text-secondary)]",
   },
   aws: {
     label: "AWS",
     className:
-      "border-orange-500/30 bg-gradient-to-br from-orange-500/20 to-amber-600/10 text-orange-300",
+      "border-[var(--border-subtle)] bg-[var(--bg-elevated)] text-[var(--text-secondary)]",
   },
   security: {
     label: "Sec+",
     className:
-      "border-red-500/30 bg-gradient-to-br from-red-500/15 to-rose-600/10 text-red-300",
+      "border-[var(--border-subtle)] bg-[var(--bg-elevated)] text-[var(--text-secondary)]",
   },
   azure: {
     label: "Azure",
     className:
-      "border-sky-500/30 bg-gradient-to-br from-sky-500/20 to-blue-600/10 text-sky-300",
+      "border-[var(--border-subtle)] bg-[var(--bg-elevated)] text-[var(--text-secondary)]",
   },
   kafka: {
     label: "Kafka",
     className:
-      "border-amber-500/30 bg-gradient-to-br from-amber-500/15 to-orange-500/10 text-amber-300",
+      "border-[var(--border-subtle)] bg-[var(--bg-elevated)] text-[var(--text-secondary)]",
   },
   kubernetes: {
     label: "K8s",
     className:
-      "border-blue-500/30 bg-gradient-to-br from-blue-500/15 to-indigo-500/10 text-accent",
+      "border-[var(--border-subtle)] bg-[var(--bg-elevated)] text-[var(--text-secondary)]",
   },
   docker: {
     label: "Docker",
     className:
-      "border-sky-500/30 bg-gradient-to-br from-sky-500/15 to-blue-500/10 text-sky-300",
+      "border-[var(--border-subtle)] bg-[var(--bg-elevated)] text-[var(--text-secondary)]",
   },
   spring: {
     label: "Spring",
     className:
-      "border-emerald-500/30 bg-gradient-to-br from-emerald-500/15 to-green-600/10 text-emerald-400",
+      "border-[var(--border-subtle)] bg-[var(--bg-elevated)] text-[var(--text-secondary)]",
   },
   ai: {
     label: "AI",
     className:
-      "border-violet-500/30 bg-gradient-to-br from-violet-500/15 to-fuchsia-500/10 text-violet-300",
+      "border-[var(--border-subtle)] bg-[var(--bg-elevated)] text-[var(--text-secondary)]",
   },
   domain: {
     label: "Pay",
     className:
-      "border-[var(--border-hover)] bg-gradient-to-br from-blue-500/12 to-emerald-500/10 text-accent",
+      "border-[var(--border-strong)] bg-[var(--bg-base)] text-[var(--text-primary)]",
   },
 };
 
 const statusRing: Record<CertificationStatus, string> = {
   obtained:
-    "ring-2 ring-emerald-500/40 ring-offset-1 ring-offset-[var(--bg-base)]",
+    "ring-1 ring-[var(--accent-strong)]/50 ring-offset-1 ring-offset-[var(--bg-base)]",
   inProgress:
-    "ring-2 ring-amber-500/35 ring-offset-1 ring-offset-[var(--bg-base)] cert-status-pulse",
+    "ring-1 ring-[var(--text-muted)]/40 ring-offset-1 ring-offset-[var(--bg-base)]",
   notStarted: "",
 };
 
@@ -76,7 +76,7 @@ type IconProps = {
 function StatusCorner({ status }: { status: CertificationStatus }) {
   if (status === "obtained") {
     return (
-      <span className="absolute -bottom-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded-full border border-emerald-500/40 bg-emerald-500/90 text-white shadow-sm">
+      <span className="absolute -bottom-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded-full border border-[var(--border-subtle)] bg-[var(--accent-strong)] text-[var(--bg-base)] shadow-sm">
         <svg
           className="h-2.5 w-2.5"
           viewBox="0 0 20 20"
@@ -95,8 +95,8 @@ function StatusCorner({ status }: { status: CertificationStatus }) {
 
   if (status === "inProgress") {
     return (
-      <span className="absolute -bottom-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded-full border border-amber-500/40 bg-amber-500/90 shadow-sm">
-        <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-white" />
+      <span className="absolute -bottom-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded-full border border-[var(--border-subtle)] bg-[var(--bg-elevated)] shadow-sm">
+        <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[var(--text-muted)]" />
       </span>
     );
   }
@@ -125,7 +125,7 @@ export function CertificationIcon({ kind, status, statusLabel }: IconProps) {
   if (status === "notStarted") {
     return (
       <span
-        className="relative inline-flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-dashed border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 text-[10px] font-bold uppercase tracking-wide text-[var(--text-muted)] opacity-70"
+        className="relative inline-flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-[12px] border border-dashed border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 text-[10px] font-bold uppercase tracking-wide text-[var(--text-muted)] opacity-70"
         title={statusLabel}
         aria-label={statusLabel}
       >
@@ -139,7 +139,7 @@ export function CertificationIcon({ kind, status, statusLabel }: IconProps) {
 
   return (
     <span
-      className={`relative inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border text-[10px] font-bold uppercase tracking-wide ${className} ${statusRing[status]} ${dimmed}`}
+      className={`relative inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-[12px] border text-[10px] font-bold uppercase tracking-wide ${className} ${statusRing[status]} ${dimmed}`}
       title={statusLabel}
       aria-label={statusLabel}
     >
@@ -150,8 +150,10 @@ export function CertificationIcon({ kind, status, statusLabel }: IconProps) {
 }
 
 const pillStyles: Record<CertificationStatus, string> = {
-  obtained: "border-emerald-500/25 bg-emerald-500/10 text-emerald-400",
-  inProgress: "border-amber-500/25 bg-amber-500/10 text-amber-400",
+  obtained:
+    "border-[var(--border-subtle)] bg-[var(--bg-elevated)]/40 text-[var(--accent-strong)]",
+  inProgress:
+    "border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 text-[var(--text-muted)]",
   notStarted:
     "border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 text-[var(--text-muted)]",
 };
@@ -168,11 +170,14 @@ export function CertificationStatusPill({
       className={`inline-flex items-center gap-1.5 rounded-full border px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide ${pillStyles[status]}`}
     >
       {status === "obtained" ? (
-        <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" aria-hidden />
+        <span
+          className="h-1.5 w-1.5 rounded-full bg-[var(--accent-strong)]"
+          aria-hidden
+        />
       ) : null}
       {status === "inProgress" ? (
         <span
-          className="h-1.5 w-1.5 animate-pulse rounded-full bg-amber-400"
+          className="h-1.5 w-1.5 animate-pulse rounded-full bg-[var(--text-muted)]"
           aria-hidden
         />
       ) : null}
@@ -194,7 +199,7 @@ export function certificationCardClassName(
     case "obtained":
       return "";
     case "inProgress":
-      return "border-amber-500/10";
+      return "border-[var(--border-subtle)]";
     case "notStarted":
       return "opacity-50 saturate-50 [&_h3]:text-[var(--text-muted)] [&_p]:text-[var(--text-muted)]";
   }

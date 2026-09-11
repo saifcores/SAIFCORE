@@ -80,7 +80,7 @@ function BlockRenderer({
       );
     case "code":
       return (
-        <figure className="code-block overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-code)] shadow-[inset_0_1px_0_var(--border-code)]">
+        <figure className="code-block overflow-hidden rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-code)] shadow-[inset_0_1px_0_var(--border-code)]">
           {block.title ? (
             <figcaption className="border-b border-[var(--border-code)] px-4 py-2.5 text-xs font-medium text-[var(--text-muted)]">
               {t(block.title)}
@@ -96,10 +96,10 @@ function BlockRenderer({
     case "callout":
       return (
         <aside
-          className={`rounded-2xl border px-4 py-3.5 text-pretty text-sm leading-relaxed sm:py-4 ${
+          className={`rounded-[16px] border px-4 py-3.5 text-pretty text-sm leading-relaxed sm:py-4 ${
             block.variant === "warning"
-              ? "border-amber-500/30 bg-amber-500/10 text-amber-100/90"
-              : "border-sky-500/30 bg-sky-500/10 text-sky-100/90"
+              ? "border-[var(--border-strong)] bg-[var(--bg-elevated)]/40 text-[var(--text-primary)]"
+              : "border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 text-[var(--text-secondary)]"
           }`}
         >
           <InlineText text={t(block)} />
@@ -107,8 +107,8 @@ function BlockRenderer({
       );
     case "adr":
       return (
-        <div className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/50 p-4 sm:p-6 md:p-8">
-          <p className="text-[10px] font-semibold uppercase tracking-widest text-[var(--accent-cyan)] sm:text-xs">
+        <div className="rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/50 p-4 sm:p-6 md:p-8">
+          <p className="text-[10px] font-semibold uppercase tracking-widest text-[var(--text-muted)] sm:text-xs">
             {labels.adrStatus} · {t(block.status)}
           </p>
           <div className="mt-5 space-y-5 sm:mt-6 sm:space-y-6">
@@ -141,13 +141,13 @@ function BlockRenderer({
       );
     case "design":
       return (
-        <div className="border-l-4 border-indigo-500/50 pl-4 text-pretty text-sm leading-relaxed text-[var(--text-secondary)] sm:pl-5 sm:text-base">
+        <div className="border-l-4 border-[var(--border-strong)] pl-4 text-pretty text-sm leading-relaxed text-[var(--text-secondary)] sm:pl-5 sm:text-base">
           <InlineText text={t(block)} />
         </div>
       );
     case "document":
       return (
-        <div className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-base)]/60 p-4 sm:p-6">
+        <div className="rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-base)]/60 p-4 sm:p-6">
           <h3 className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)] sm:text-sm">
             {t(block.title)}
           </h3>

@@ -12,25 +12,25 @@ export async function FaqSection() {
     <section
       id="faq"
       aria-labelledby="faq-heading"
-      className="border-b border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-14 lg:px-8 lg:py-20"
+      className="border-b border-[var(--border-subtle)] px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
     >
-      <div className="mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-7xl">
         <MotionReveal>
           <h2
             id="faq-heading"
-            className="max-w-2xl text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl"
+            className="max-w-2xl font-display text-pretty text-2xl font-medium tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl"
           >
             {t("title")}
           </h2>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[var(--text-secondary)]">
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[var(--text-secondary)] sm:text-base">
             {t("subtitle")}
           </p>
         </MotionReveal>
 
-        <div className="mx-auto mt-8 max-w-3xl space-y-3 sm:mt-10">
+        <div className="mx-auto mt-10 max-w-3xl divide-y divide-[var(--border-subtle)] border-y border-[var(--border-subtle)]">
           {items.map((item, index) => (
             <MotionReveal key={item.question} delay={index * 40}>
-              <details className="group rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 px-4 py-3 open:border-[var(--border-hover)] sm:px-5 sm:py-4">
+              <details className="group px-1 py-4 sm:py-5">
                 <summary className="cursor-pointer list-none text-sm font-semibold text-[var(--text-primary)] marker:content-none [&::-webkit-details-marker]:hidden">
                   <span className="flex items-start justify-between gap-3">
                     <span>{item.question}</span>
@@ -42,7 +42,7 @@ export async function FaqSection() {
                     </span>
                   </span>
                 </summary>
-                <p className="mt-3 text-sm leading-relaxed text-[var(--text-secondary)]">
+                <p className="mt-3 pr-8 text-sm leading-relaxed text-[var(--text-secondary)]">
                   {item.answer}
                 </p>
               </details>

@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { MotionReveal } from "@/components/portfolio/motion/MotionReveal";
 
@@ -18,16 +18,16 @@ export async function DepthTeaser({ withAnchor = false }: Props) {
   return (
     <section
       id={withAnchor ? "expertise" : undefined}
-      className="border-b border-[var(--border-subtle)] px-4 py-8 sm:px-6 sm:py-10 lg:px-8"
+      className="border-b border-[var(--border-subtle)] px-4 py-10 sm:px-6 sm:py-12 lg:px-8"
     >
-      <div className="mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-7xl">
         <MotionReveal>
-          <div className="flex flex-col gap-4 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/15 px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-6">
+          <div className="flex flex-col gap-4 rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 px-5 py-6 sm:flex-row sm:items-center sm:justify-between sm:px-8 sm:py-7">
             <div className="min-w-0">
               <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
                 {t("title")}
               </p>
-              <h2 className="mt-2 max-w-xl text-pretty text-lg font-bold tracking-tight text-[var(--text-primary)] sm:text-xl">
+              <h2 className="mt-2 max-w-xl font-display text-pretty text-lg font-medium tracking-tight text-[var(--text-primary)] sm:text-xl">
                 {t("heading")}
               </h2>
               <p className="mt-1.5 max-w-lg text-sm leading-relaxed text-[var(--text-secondary)]">
@@ -36,10 +36,10 @@ export async function DepthTeaser({ withAnchor = false }: Props) {
             </div>
             <Link
               href="/about#expertise"
-              className="btn-outline inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-xl px-5 text-sm font-semibold"
+              className="btn-outline inline-flex min-h-11 shrink-0 items-center justify-center gap-2 px-5 text-sm font-medium"
             >
               {t("cta")}
-              <ArrowRight className="h-4 w-4" aria-hidden />
+              <ArrowUpRight className="h-4 w-4" aria-hidden />
             </Link>
           </div>
         </MotionReveal>

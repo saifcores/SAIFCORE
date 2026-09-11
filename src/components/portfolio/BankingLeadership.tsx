@@ -6,13 +6,13 @@ export async function BankingLeadership() {
   const content = messages.bankingLeadership;
 
   return (
-    <section className="border-t border-[var(--border-subtle)] bg-[var(--bg-elevated)]/10 px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
-      <div className="mx-auto max-w-[1280px]">
+    <section className="border-t border-[var(--border-subtle)] bg-[var(--bg-elevated)]/10 px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+      <div className="mx-auto max-w-7xl">
         <Reveal>
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
             {content.eyebrow}
           </p>
-          <h2 className="max-w-3xl text-pretty text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl">
+          <h2 className="max-w-3xl font-display text-pretty text-2xl font-medium tracking-tight text-[var(--text-primary)] sm:text-3xl">
             {content.title}
           </h2>
           <p className="mt-2 max-w-2xl text-pretty text-sm leading-relaxed text-[var(--text-secondary)]">
@@ -22,7 +22,7 @@ export async function BankingLeadership() {
 
         <div className="mt-8 grid gap-4 lg:mt-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-5">
           <Reveal delay={60}>
-            <div className="h-full rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 p-5">
+            <div className="h-full rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 p-5 sm:p-6">
               <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
                 {content.leadershipLabel}
               </p>
@@ -42,7 +42,7 @@ export async function BankingLeadership() {
           </Reveal>
 
           <Reveal delay={100}>
-            <div className="h-full rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-base)]/60 p-5">
+            <div className="h-full rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-base)]/60 p-5 sm:p-6">
               <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
                 {content.playbookLabel}
               </p>
@@ -66,8 +66,8 @@ export async function BankingLeadership() {
         </div>
 
         <Reveal delay={140}>
-          <div className="mt-4 rounded-xl border border-dashed border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-5">
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-emerald-400">
+          <div className="mt-4 rounded-[16px] border border-dashed border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-5 sm:p-6">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
               {content.adrLabel}
             </p>
             <h3 className="text-base font-semibold text-[var(--text-primary)]">

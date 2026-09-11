@@ -109,16 +109,16 @@ export function ArticlePostCard({
         <CardAnchor
           href={href}
           external={external}
-          className="inline-flex w-fit text-[11px] font-bold uppercase tracking-[0.16em] text-accent transition hover:text-[var(--accent-blue-light)]"
+          className="inline-flex w-fit text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--text-muted)] transition hover:text-[var(--text-primary)]"
         >
           {tagLabel}
         </CardAnchor>
 
-        <h3 className="post-card-title mt-3 text-lg font-bold leading-snug tracking-tight text-[var(--text-primary)] sm:text-xl md:text-[1.35rem]">
+        <h3 className="post-card-title mt-3 font-display text-lg font-medium leading-snug tracking-tight text-[var(--text-primary)] sm:text-xl md:text-[1.35rem]">
           <CardAnchor
             href={href}
             external={external}
-            className="transition group-hover:text-accent"
+            className="transition group-hover:underline group-hover:underline-offset-4"
             ariaLabel={externalTitleLabel}
           >
             {title}
@@ -144,7 +144,7 @@ export function ArticlePostCard({
           <CardAnchor
             href={href}
             external={external}
-            className="inline-flex min-h-11 shrink-0 items-center text-sm font-semibold text-accent transition hover:text-[var(--accent-blue-light)] min-[420px]:min-h-0"
+            className="inline-flex min-h-11 shrink-0 items-center text-sm font-medium text-[var(--text-primary)] underline-offset-4 transition hover:underline min-[420px]:min-h-0"
             ariaLabel={externalReadMoreLabel}
           >
             {readMoreLabel}
