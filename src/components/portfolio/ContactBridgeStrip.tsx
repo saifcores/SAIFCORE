@@ -14,7 +14,10 @@ type Namespace =
   | "systemsPage"
   | "experiencePage"
   | "aboutPage"
-  | "certificationsPage";
+  | "certificationsPage"
+  | "caseStudyEcom360"
+  | "caseStudyPaymentDisasterLab"
+  | "caseStudyDoubleEntryLedger";
 
 type Props = {
   ns: Namespace;

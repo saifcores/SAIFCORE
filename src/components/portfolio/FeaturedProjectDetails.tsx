@@ -19,7 +19,11 @@ export function FeaturedProjectDetails({ summary, children }: Props) {
   }, []);
 
   if (isDesktop) {
-    return <div>{children}</div>;
+    return (
+      <div className="mt-6 border-t border-[var(--border-subtle)] pt-6">
+        {children}
+      </div>
+    );
   }
 
   return (

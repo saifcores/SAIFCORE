@@ -1,8 +1,12 @@
 import { getMessages, getTranslations } from "next-intl/server";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { projectStatusRank, sortProjectsLiveFirst } from "@/data/case-studies";
-import { projectCaseStudyId } from "@/seo";
+import {
+  getCaseStudyHref,
+  hasDedicatedCaseStudyPage,
+  projectStatusRank,
+  sortProjectsLiveFirst,
+} from "@/data/case-studies";
 import { Reveal } from "./Reveal";
 
 function faviconForUrl(url: string): string | null {
@@ -55,12 +59,13 @@ export async function FeaturedProjectsTeaser() {
 
         <ul className="mt-8 divide-y divide-[var(--border-subtle)] border-y border-[var(--border-subtle)] sm:mt-10 md:grid md:grid-cols-2 md:gap-0 md:divide-y-0 md:border md:border-[var(--border-subtle)] lg:mt-12 lg:grid-cols-3">
           {items.map((item, i) => {
-            const caseStudyHref =
-              `/systems#case-${projectCaseStudyId(item)}` as const;
+            const caseStudyHref = getCaseStudyHref(item);
             const isShipped = projectStatusRank(item.status) === 0;
+            const isDeep = hasDedicatedCaseStudyPage(item);
             const liveHref = item.href?.trim() || "";
             const liveLabel = item.linkLabel?.trim() || t("viewProduct");
             const favicon = liveHref ? faviconForUrl(liveHref) : null;
+            const primaryMetric = item.metrics?.[0];
             const outcome = item.impact || item.solution;
 
             return (
@@ -98,17 +103,27 @@ export async function FeaturedProjectsTeaser() {
                         <h3 className="truncate text-base font-semibold text-[var(--text-primary)]">
                           {item.title}
                         </h3>
-                        {item.status ? (
-                          <p
-                            className={`text-[11px] font-medium ${
-                              isShipped
-                                ? "text-[var(--accent-strong)]"
-                                : "text-[var(--text-muted)]"
-                            }`}
-                          >
-                            {item.status}
-                          </p>
-                        ) : null}
+                        <div className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-0.5">
+                          {item.status ? (
+                            <p
+                              className={`text-[11px] font-medium ${
+                                isShipped
+                                  ? "text-[var(--accent-strong)]"
+                                  : "text-[var(--text-muted)]"
+                              }`}
+                            >
+                              {item.status}
+                            </p>
+                          ) : null}
+                          {primaryMetric ? (
+                            <p className="text-[11px] text-[var(--text-muted)]">
+                              <span className="font-semibold text-[var(--text-secondary)]">
+                                {primaryMetric.value}
+                              </span>{" "}
+                              {primaryMetric.label}
+                            </p>
+                          ) : null}
+                        </div>
                       </div>
                     </div>
 
@@ -123,24 +138,31 @@ export async function FeaturedProjectsTeaser() {
                     </p>
 
                     <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2">
+                      <Link
+                        href={caseStudyHref}
+                        className={`inline-flex min-h-10 items-center text-xs font-semibold transition ${
+                          isDeep
+                            ? "text-[var(--text-primary)] hover:opacity-70"
+                            : "font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+                        }`}
+                      >
+                        {t("readCaseStudy")}
+                        {isDeep ? (
+                          <ArrowUpRight className="ml-1 h-3 w-3" aria-hidden />
+                        ) : null}
+                      </Link>
                       {liveHref ? (
                         <a
                           href={liveHref}
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label={`${liveLabel} (${opensInNewTab})`}
-                          className="inline-flex min-h-10 items-center gap-1 text-xs font-semibold text-[var(--text-primary)] transition hover:opacity-70"
+                          className="inline-flex min-h-10 items-center gap-1 text-xs font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
                         >
                           {liveLabel}
                           <ArrowUpRight className="h-3 w-3" aria-hidden />
                         </a>
                       ) : null}
-                      <Link
-                        href={caseStudyHref}
-                        className="inline-flex min-h-10 items-center text-xs font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
-                      >
-                        {t("readCaseStudy")}
-                      </Link>
                     </div>
                   </article>
                 </Reveal>

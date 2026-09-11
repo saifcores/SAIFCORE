@@ -24,8 +24,8 @@ import {
   buildOfferCatalogNodes,
   getLocaleHomeUrl,
   getLocalePageUrl,
-  projectCaseStudyId,
 } from "@/seo";
+import { getCaseStudyHref, ECOM_360_CASE_STUDY_PATH } from "@/data/case-studies";
 import {
   getContactEmail,
   getProfileDisplayName,
@@ -190,10 +190,16 @@ export default async function Home({ params }: Props) {
   const systemsUrl = getLocalePageUrl(locale, "/systems");
   const caseStudiesItemListJsonLd = buildExternalItemListJsonLd({
     name: tFeatured("heading"),
-    items: messages.featuredProjects.items.map((item) => ({
-      name: item.title,
-      url: `${systemsUrl}#case-${projectCaseStudyId(item)}`,
-    })),
+    items: messages.featuredProjects.items.map((item) => {
+      const href = getCaseStudyHref(item);
+      const url = href.includes("#")
+        ? `${systemsUrl}${href.slice(href.indexOf("#"))}`
+        : getLocalePageUrl(locale, href as `/systems/${string}`);
+      return {
+        name: item.title,
+        url,
+      };
+    }),
   });
   if (
     caseStudiesItemListJsonLd.itemListElement &&
@@ -236,7 +242,15 @@ export default async function Home({ params }: Props) {
           cta={fo.cta}
           ctaSecondary={fo.ctaSecondary}
           fitLabel={fo.fitLabel}
-          tracks={fo.tracks}
+          tracks={fo.tracks.map((track, index) =>
+            index === 0
+              ? {
+                  ...track,
+                  proofLabel: fo.productProofLabel,
+                  proofHref: ECOM_360_CASE_STUDY_PATH,
+                }
+              : track,
+          )}
         />
         <Insights teaser />
         <FaqSection />

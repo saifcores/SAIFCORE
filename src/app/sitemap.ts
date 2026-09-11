@@ -1,5 +1,10 @@
 import type { MetadataRoute } from "next";
 import { articles } from "@/data/articles";
+import {
+  DOUBLE_ENTRY_LEDGER_CASE_STUDY_PATH,
+  ECOM_360_CASE_STUDY_PATH,
+  PAYMENT_DISASTER_LAB_CASE_STUDY_PATH,
+} from "@/data/case-studies";
 import { hasObtainedCertifications } from "@/data/certifications";
 import { routing } from "@/i18n/routing";
 import { getBlogUrl, getSiteUrl } from "@/site";
@@ -59,6 +64,39 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
       alternates: {
         languages: localeAlternates(base, "/systems"),
+      },
+    });
+
+    const ecomCaseUrl = `${base}${prefix}${ECOM_360_CASE_STUDY_PATH}`;
+    entries.push({
+      url: ecomCaseUrl,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.88,
+      alternates: {
+        languages: localeAlternates(base, ECOM_360_CASE_STUDY_PATH),
+      },
+    });
+
+    const disasterLabCaseUrl = `${base}${prefix}${PAYMENT_DISASTER_LAB_CASE_STUDY_PATH}`;
+    entries.push({
+      url: disasterLabCaseUrl,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.88,
+      alternates: {
+        languages: localeAlternates(base, PAYMENT_DISASTER_LAB_CASE_STUDY_PATH),
+      },
+    });
+
+    const ledgerCaseUrl = `${base}${prefix}${DOUBLE_ENTRY_LEDGER_CASE_STUDY_PATH}`;
+    entries.push({
+      url: ledgerCaseUrl,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.88,
+      alternates: {
+        languages: localeAlternates(base, DOUBLE_ENTRY_LEDGER_CASE_STUDY_PATH),
       },
     });
 

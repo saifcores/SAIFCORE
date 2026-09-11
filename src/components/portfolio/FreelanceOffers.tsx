@@ -18,6 +18,8 @@ type Track = {
   audience: string;
   promise: string;
   packages: readonly Package[];
+  proofLabel?: string;
+  proofHref?: `/systems/${string}`;
 };
 
 type Props = {
@@ -76,6 +78,15 @@ export function FreelanceOffers({
                   <p className="mt-4 text-sm font-medium leading-relaxed text-[var(--text-primary)]">
                     {track.promise}
                   </p>
+                  {track.proofLabel && track.proofHref ? (
+                    <Link
+                      href={track.proofHref}
+                      className="mt-4 inline-flex min-h-10 items-center gap-1 text-xs font-semibold text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
+                    >
+                      {track.proofLabel}
+                      <ArrowUpRight className="h-3 w-3" aria-hidden />
+                    </Link>
+                  ) : null}
                 </div>
 
                 <ol className="mt-2 flex flex-1 list-none flex-col divide-y divide-[var(--border-subtle)] p-0">

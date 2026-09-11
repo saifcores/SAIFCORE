@@ -21,7 +21,7 @@ import {
   getLocalePageUrl,
   projectCaseStudyId,
 } from "@/seo";
-import { sortProjectsLiveFirst } from "@/data/case-studies";
+import { getCaseStudyHref, sortProjectsLiveFirst } from "@/data/case-studies";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -59,12 +59,16 @@ export default async function SystemsPage({ params }: Props) {
   const caseStudies = sortProjectsLiveFirst(
     messages.featuredProjects.items,
   ).map((item) => {
-    const slug = projectCaseStudyId(item);
+    const caseHref = getCaseStudyHref(item);
+    const caseUrl = caseHref.includes("#")
+      ? `${pageUrl}${caseHref.slice(caseHref.indexOf("#"))}`
+      : getLocalePageUrl(locale, caseHref as `/systems/${string}`);
 
     return {
+      id: projectCaseStudyId(item),
       name: item.title,
       description: item.solution,
-      url: `${pageUrl}#case-${slug}`,
+      url: caseUrl,
       externalUrl: item.href.trim() || undefined,
       keywords: item.stacks,
     };

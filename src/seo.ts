@@ -563,9 +563,13 @@ export function buildFaqPageJsonLd(
 }
 
 export type CaseStudyJsonLdInput = {
+  /** Stable project id — preferred over slugifying localized titles. */
+  id?: string;
   name: string;
   description: string;
+  /** Case-study page or `/systems#case-*` anchor URL. */
   url: string;
+  /** Live product / repo URL (exposed as `sameAs`, not primary `url`). */
   externalUrl?: string;
   keywords?: string[];
 };
@@ -591,17 +595,18 @@ export function buildSystemsPageGraph({
   const personId = personIdForLocale(locale);
 
   const creativeWorks = caseStudies.map((study) => {
-    const slug = caseStudySlug(study.name);
-    const workUrl = study.externalUrl?.trim() || study.url;
+    const slug = projectCaseStudyId({ id: study.id, title: study.name });
+    const external = study.externalUrl?.trim();
 
     return {
       "@type": "CreativeWork",
       "@id": `${pageUrl}#case-${slug}`,
       name: study.name,
       description: study.description,
-      url: workUrl,
+      url: study.url,
       inLanguage: pageLanguage(locale),
       author: { "@id": personId },
+      ...(external ? { sameAs: [external] } : {}),
       ...(study.keywords?.length
         ? { keywords: study.keywords.join(", ") }
         : {}),
@@ -614,14 +619,13 @@ export function buildSystemsPageGraph({
     name: pageName,
     numberOfItems: caseStudies.length,
     itemListElement: caseStudies.map((study, index) => {
-      const slug = caseStudySlug(study.name);
-      const workUrl = study.externalUrl?.trim() || study.url;
+      const slug = projectCaseStudyId({ id: study.id, title: study.name });
 
       return {
         "@type": "ListItem",
         position: index + 1,
         name: study.name,
-        url: workUrl,
+        url: study.url,
         item: { "@id": `${pageUrl}#case-${slug}` },
       };
     }),
@@ -654,5 +658,64 @@ export function buildSystemsPageGraph({
     collectionPage,
     itemList,
     ...creativeWorks,
+  );
+}
+
+type CaseStudyPageGraphInput = {
+  locale: string;
+  path: SitePath;
+  pageName: string;
+  pageDescription: string;
+  workName: string;
+  workDescription: string;
+  externalUrl?: string;
+  keywords?: string[];
+  breadcrumb: BreadcrumbItem[];
+};
+
+/** BreadcrumbList + WebPage + CreativeWork for a dedicated case-study page. */
+export function buildCaseStudyPageGraph({
+  locale,
+  path,
+  pageName,
+  pageDescription,
+  workName,
+  workDescription,
+  externalUrl,
+  keywords,
+  breadcrumb,
+}: CaseStudyPageGraphInput): Record<string, unknown> {
+  const pageUrl = getLocalePageUrl(locale, path);
+  const siteUrl = getSiteUrl();
+  const personId = personIdForLocale(locale);
+  const external = externalUrl?.trim();
+
+  const creativeWork = {
+    "@type": "CreativeWork",
+    "@id": `${pageUrl}#work`,
+    name: workName,
+    description: workDescription,
+    url: pageUrl,
+    inLanguage: pageLanguage(locale),
+    author: { "@id": personId },
+    ...(external ? { sameAs: [external] } : {}),
+    ...(keywords?.length ? { keywords: keywords.join(", ") } : {}),
+  };
+
+  const webPageNode = {
+    "@type": "WebPage",
+    "@id": `${pageUrl}#webpage`,
+    url: pageUrl,
+    name: pageName,
+    description: pageDescription,
+    inLanguage: pageLanguage(locale),
+    isPartOf: { "@type": "WebSite", name: "SAIFCORE", url: siteUrl },
+    mainEntity: { "@id": `${pageUrl}#work` },
+  };
+
+  return buildJsonLdGraph(
+    buildBreadcrumbJsonLd(locale, breadcrumb),
+    webPageNode,
+    creativeWork,
   );
 }

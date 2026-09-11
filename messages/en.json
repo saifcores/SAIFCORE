@@ -389,7 +389,8 @@
       }
     ],
     "ctaSecondary": "Send a brief",
-    "closer": "Not sure which fits? Start with discovery — I will recommend the right engagement."
+    "closer": "Not sure which fits? Start with discovery — I will recommend the right engagement.",
+    "productProofLabel": "See Ecom 360 case study"
   },
   "faq": {
     "title": "FAQ",
@@ -759,9 +760,8 @@
   "featuredProjects": {
     "title": "Selected work",
     "heading": "Systems that solved real problems",
-    "subtitle": "Problem, outcome, and depth — where banking and FinTech stakes were real.",
-    "impactLabel": "Business impact",
-    "statusLabel": "Status",
+    "subtitle": "Live products and production systems — problem, architecture, and what had to be correct.",
+    "impactLabel": "Impact",
     "marketLabel": "Market",
     "problemLabel": "Problem",
     "solutionLabel": "Solution",
@@ -772,9 +772,8 @@
     "constraintsLabel": "Constraints",
     "decisionsLabel": "Decisions",
     "tradeoffsLabel": "Trade-offs",
-    "bankingOutcomeLabel": "Banking signal",
-    "screenshotLabel": "Product preview",
-    "viewAll": "View full case studies",
+    "bankingOutcomeLabel": "Signal",
+    "viewAll": "View all case studies",
     "readCaseStudy": "Read case study",
     "viewProduct": "View live product",
     "bridgeTitle": "Building something similar?",
@@ -789,7 +788,7 @@
         "scope": "national",
         "problem": "African retailers ran day-to-day operations on notebooks, spreadsheets, and improvised tills — cash errors, blind stock, forgotten customer credits, and end-of-day totals rebuilt by hand.",
         "solution": "Commerce platform with POS, real-time inventory, Wave & Orange Money on each sale, multi-store ops, and accountant-ready exports.",
-        "architecture": "Angular SPA for POS and dashboards; Spring Boot multi-tenant REST API; async jobs for reports and bulk imports; store-scoped inventory and role-based staff access.",
+        "architecture": "React SPA for POS and dashboards; Spring Boot multi-tenant REST API; async jobs for reports, bulk imports, and accounting exports; store-scoped inventory and role-based staff access.",
         "security": "TLS in transit, encrypted sensitive data, automatic backups, tenant isolation per merchant, and role-based permissions for cashiers vs managers.",
         "scale": "Multi-store chains with consolidated reporting; mobile-first UX for counter, warehouse, and field; stock decremented on every sale without manual recounts.",
         "architectureFlow": [
@@ -801,8 +800,9 @@
         ],
         "constraints": [
           "Reliable counter operations, even with unstable network conditions.",
-          "Strict data separation by merchant and store.",
-          "Traceability for sales, customer credit, and mobile money payments."
+          "Strict multi-tenant isolation by merchant and store.",
+          "Traceability for sales, customer credit, and mobile money payments.",
+          "Accountant-ready exports for local reconciliation — not raw dumps."
         ],
         "decisions": [
           {
@@ -811,18 +811,18 @@
           },
           {
             "title": "Async jobs",
-            "body": "Move exports, imports, and reports out of the checkout path to keep sales fast."
+            "body": "Move exports, imports, and reports out of the checkout path to keep sales fast at the till."
           }
         ],
-        "tradeoffs": "The first version favored operational robustness over advanced analytics features.",
-        "bankingOutcome": "Shows the ability to manage financial flows, local reconciliation, and multi-site operations with a minimum audit trail.",
-        "impact": "Hundreds of active merchants across Senegal and West Africa; hours saved weekly on closing; local wallets recorded with every transaction instead of manual reconciliation.",
+        "tradeoffs": "Operational robustness first — reliable checkout, tenant isolation, and reconciliable exports — over advanced analytics in v1.",
+        "bankingOutcome": "Financial flows, local reconciliation, and multi-site ops with a minimum audit trail — patterns that transfer to FinTech delivery.",
+        "impact": "10+ merchants live across Senegal and West Africa; hours saved weekly on closing; Wave & Orange Money on every sale with accountant-ready exports.",
         "href": "https://ecom360pme.com/",
-        "linkLabel": "View Ecom 360 PME",
+        "linkLabel": "View live product",
         "stacks": [
-          "Angular",
+          "React",
           "Spring Boot",
-          "MySQL",
+          "PostgreSQL",
           "Wave",
           "Orange Money",
           "REST APIs"
@@ -830,12 +830,80 @@
         "status": "Live",
         "metrics": [
           {
-            "value": "Hundreds",
-            "label": "Active merchants"
+            "value": "10+",
+            "label": "Merchants live"
           },
           {
-            "value": "< 5 min",
-            "label": "Time to start"
+            "value": "Hours/wk",
+            "label": "Saved on closing"
+          },
+          {
+            "value": "Live",
+            "label": "West Africa"
+          }
+        ]
+      },
+      {
+        "id": "payment-platform-disaster-lab",
+        "title": "Payment Platform Disaster Lab",
+        "market": "XOF · Dual PSP · Distributed",
+        "scope": "international",
+        "problem": "Happy-path payment APIs are easy. The hard cases start when a PSP times out (captured or not?), the client retries after an HTTP timeout, a webhook arrives three times, a Kafka consumer dies while events pile up, or a deploy breaks 20% of traffic — perceived availability and financial correctness diverge.",
+        "solution": "Production / resilience engineering lab around a distributed payment platform: multi-service Spring Boot, dual PSP simulators, transactional outbox, and an SRE control center — proving no payment lost and none processed twice under partial failure.",
+        "architecture": "API Gateway (JWT + correlation) → payment-service (state machine, idempotency, outbox) → dual PSP simulators with Resilience4j; Postgres per service, Kafka + Schema Registry; React control center to inject chaos and observe recovery.",
+        "security": "Keycloak identity outside the business path; JWT at the gateway; X-Correlation-Id end-to-end; chaos admin endpoints scoped to PSP simulators.",
+        "scale": "Isolated failure domains — kill a consumer or PSP A/B without collapsing financial invariants; outbox lag and circuit breakers as first-class signals.",
+        "architectureFlow": [
+          "Gateway",
+          "Payment SM",
+          "Dual PSP",
+          "Outbox / Kafka",
+          "Reconciliation"
+        ],
+        "constraints": [
+          "Timeout PSP ≠ FAILED — uncertainty is IN_RECONCILIATION, not a reason to call PSP B.",
+          "Failover A→B only on certain failure (503 / CB OPEN / business refuse).",
+          "Never emit a Kafka event without committed payment state (transactional outbox).",
+          "Database-per-service so the append-only ledger schema stays isolated.",
+          "PSP simulators with hot-injectable chaos — not real Stripe network/SCA behavior."
+        ],
+        "decisions": [
+          {
+            "title": "Timeout = UNKNOWN",
+            "body": "No blind failover on timeout; reconcile before truth — prevents double capture."
+          },
+          {
+            "title": "Transactional outbox",
+            "body": "Payment commit and outbox write in one transaction so Kafka never lies about state."
+          }
+        ],
+        "tradeoffs": "Correctness before “API always 200” — more payments in IN_RECONCILIATION and mandatory recon, in exchange for zero double capture on timeout.",
+        "bankingOutcome": "Direct signal for payment platforms: distinguish certain PSP failure from uncertainty; idempotency, state machine, and reconciliation as first-class — not ops afterthoughts.",
+        "impact": "P0–P2 delivered: Compose stack, payment-service with idempotency and outbox, dual PSP + safe failover vs IN_RECONCILIATION, SRE control center. Disaster scenarios D1–D10 documented.",
+        "href": "https://github.com/saifcores/payment-platform-disaster-lab",
+        "linkLabel": "View on GitHub",
+        "stacks": [
+          "Java 21",
+          "Spring Boot",
+          "Kafka",
+          "PostgreSQL",
+          "Keycloak",
+          "React",
+          "Resilience4j"
+        ],
+        "status": "Lab · P0–P2 shipped",
+        "metrics": [
+          {
+            "value": "0",
+            "label": "Double capture on timeout"
+          },
+          {
+            "value": "D1–D10",
+            "label": "Disaster scenarios"
+          },
+          {
+            "value": "P0–P2",
+            "label": "Shipped today"
           }
         ]
       },
@@ -896,57 +964,65 @@
         ]
       },
       {
-        "id": "double-entry-ledger-system",
-        "title": "Double-Entry Ledger System",
-        "market": "Regulated fintech · Multi-market",
+        "id": "double-entry-ledger-platform",
+        "title": "Double-Entry Ledger Platform",
+        "market": "Fintech · Payments · Wallets",
         "scope": "international",
-        "problem": "Financial products required auditable balances with strict consistency — spreadsheet-style tracking was not acceptable for compliance.",
-        "solution": "Double-entry ledger with immutable audit log and transactional guarantees on every money movement.",
-        "architecture": "PostgreSQL with serializable transactions for postings; append-only audit store; reconciliation jobs for provider drift.",
-        "security": "Role-based access, immutable audit trail, and no destructive updates on posted entries.",
-        "scale": "Partition-friendly schema and batch reconciliation for high-volume mobile-money corridors.",
+        "problem": "Wallet and payment products need auditable money movement — balanced journals, safe retries, provider webhooks, and ops controls. A balances table plus ad-hoc updates fails compliance, idempotency, and reconciliation under load.",
+        "solution": "Production-minded modular monolith for wallets and double-entry flows: balanced journal_entries, idempotent posting, transactional outbox to Kafka, maker/checker withdrawals, and operational freeze — with a live demo UI on the real API.",
+        "architecture": "Maven modules (domain, persistence, core, platform) on Java 21 / Spring Boot 3.4; PostgreSQL + Flyway (append-only triggers); Redis rate limits; Kafka via outbox dispatcher; OpenAPI; Micrometer / optional OTLP.",
+        "security": "JWT auth, webhook HMAC verification, RBAC (ADMIN / OPERATIONS / COMPLIANCE), Redis rate limiting, and DB triggers that block UPDATE/DELETE on journal_entries.",
+        "scale": "Pessimistic account locking in deterministic order, scoped advisory locks for idempotency, scheduled reconciliation and balance snapshots — modular monolith boundaries ready to extract later.",
         "architectureFlow": [
-          "Payment Events",
-          "Ledger Commands",
-          "Double Entry",
-          "Audit Log",
+          "HTTP / Webhooks",
+          "Payment services",
+          "Ledger posting",
+          "Outbox / Kafka",
           "Reconciliation"
         ],
         "constraints": [
-          "No balance should depend on destructive updates.",
-          "Every movement must be explainable to finance, audit, and compliance teams.",
-          "Reconciliation must detect provider drift before users do."
+          "Every movement is a balanced journal — DB triggers enforce append-only behavior.",
+          "Retries and duplicate provider refs must dedupe via idempotency keys inside the posting transaction.",
+          "Large withdrawals may require maker/checker approval before funds leave.",
+          "Demo faucet stays sandboxed — DEMO_MODE_ENABLED must be off outside local Compose."
         ],
         "decisions": [
           {
-            "title": "Append-only ledger",
-            "body": "Record postings as immutable events to preserve the full financial history."
+            "title": "Modular monolith",
+            "body": "Split domain, persistence, application services, and HTTP adapter across Maven modules — clear boundaries without premature microservices."
           },
           {
-            "title": "Serializable transactions",
-            "body": "Favor financial consistency on critical paths, even with stricter concurrency handling."
+            "title": "Transactional outbox",
+            "body": "Write outbox_messages in the same transaction as the post, then publish to Kafka via OutboxDispatcher."
           }
         ],
-        "tradeoffs": "The model requires more domain discipline than a simple balances table, but avoids opaque corrections and untraceable drift.",
-        "bankingOutcome": "Core signal for banking decision-makers: accounting correctness, auditability, reconciliation, and control of money movement — patterns applied on Synapse multi-entity banking delivery.",
-        "impact": "Patterns applied in production on Synapse multi-entity banking delivery: append-only postings, reconciliation jobs, immutable audit trail. This write-up is the reference architecture, not a standalone product SLA.",
-        "href": "",
-        "linkLabel": "",
+        "tradeoffs": "A modular monolith is easier to operate than split services, but module discipline must hold or the boundary erodes. Append-only + locking buys correctness at the cost of stricter concurrency rules on hot accounts.",
+        "bankingOutcome": "Direct signal for fintech and payments teams: double-entry correctness, idempotent commands, webhook settlement, maker/checker, freeze controls, and observability — not a balances spreadsheet.",
+        "impact": "Runnable Compose stack with seeded roles, live demo UI (transfer, merchant pay, withdraw, journal expand, trial balance, approvals), Swagger, Prometheus, and Grafana — reference platform for wallet and ledger delivery.",
+        "href": "https://github.com/saifcores/double-entry-ledger-platform",
+        "linkLabel": "View on GitHub",
         "stacks": [
-          "Java",
-          "Spring Boot",
+          "Java 21",
+          "Spring Boot 3.4",
           "PostgreSQL",
-          "Kafka"
+          "Redis",
+          "Kafka",
+          "Flyway",
+          "OpenAPI"
         ],
-        "status": "Reference · Synapse production",
+        "status": "Reference · Modular monolith",
         "metrics": [
           {
             "value": "Append-only",
+            "label": "Journal"
+          },
+          {
+            "value": "Idempotent",
             "label": "Postings"
           },
           {
-            "value": "Immutable",
-            "label": "Audit trail"
+            "value": "Outbox",
+            "label": "→ Kafka"
           }
         ]
       },
@@ -1005,61 +1081,6 @@
             "label": "Partner APIs"
           }
         ]
-      },
-      {
-        "id": "school-management-saas",
-        "title": "School Management SaaS",
-        "market": "Regional SaaS · West Africa",
-        "scope": "regional",
-        "problem": "Private schools ran disconnected admin, billing, and academic tools — no single operational source of truth.",
-        "solution": "Multi-tenant SaaS for admissions, billing, staff, and reporting — built for school operations.",
-        "architecture": "Angular + Spring Boot REST; async jobs for bulk operations; modular domains per school tenant.",
-        "security": "Tenant isolation, encrypted sensitive records, role-based staff access.",
-        "scale": "Async processing for reports and notifications; shared platform serving growing school networks.",
-        "architectureFlow": [
-          "Portals",
-          "REST API",
-          "Modular Domains",
-          "Async Jobs",
-          "Reporting"
-        ],
-        "constraints": [
-          "Sensitive student, family, and finance data isolated by school.",
-          "Administrative processes vary across institutions.",
-          "Reporting must not block daily operations."
-        ],
-        "decisions": [
-          {
-            "title": "Modular domains",
-            "body": "Separate admissions, billing, staff, and reporting so each area can evolve independently."
-          },
-          {
-            "title": "Shared platform",
-            "body": "Serve multiple schools with one technical foundation and tenant-level rules."
-          }
-        ],
-        "tradeoffs": "The shared SaaS model accelerates delivery, but requires strong tenant boundaries and clear per-school configuration.",
-        "bankingOutcome": "Even outside banking, this case demonstrates multi-tenancy, sensitive data handling, billing, and structured operations.",
-        "impact": "Admissions, billing, and staff records on one tenant-isolated platform — reporting kept off the daily operations path.",
-        "href": "",
-        "linkLabel": "",
-        "stacks": [
-          "Angular",
-          "Spring Boot",
-          "PostgreSQL",
-          "REST APIs"
-        ],
-        "status": "Delivered",
-        "metrics": [
-          {
-            "value": "3",
-            "label": "Departments unified"
-          },
-          {
-            "value": "Async",
-            "label": "Reporting path"
-          }
-        ]
       }
     ],
     "outcomeLabel": "Outcome —"
@@ -1084,9 +1105,9 @@
         "logo": "synapse.jpeg",
         "period": "Feb 2025 — Present",
         "location": "Ngor, Dakar, Senegal",
-        "bullet0": "Drove backend modernization of enterprise banking platforms — Java / Spring Boot, microservices, clean architecture — serving 11+ Bank of Africa Group subsidiaries.",
+        "bullet0": "Drove backend modernization of enterprise banking platforms — Java / Spring Boot, multi-tenancy, clean architecture — serving 11+ Bank of Africa Group subsidiaries.",
         "bullet1": "Designed secured enterprise REST APIs, payment and transfer services, and append-only reconciliation so money movement stays auditable. Technical ownership with product, QA, and engineering teams in a high-availability environment.",
-        "bullet2": "Java, Spring Boot, API Design, Docker, Kubernetes, CI/CD, JasperReports, Microservices, Clean Architecture, Agile (Scrum)"
+        "bullet2": "Java, Spring Boot, API Design, Docker, Kubernetes, CI/CD, JasperReports, Clean Architecture, Multi-tenancy, Agile (Scrum)"
       },
       {
         "role": "Software Engineer — FinTech & Payments",
@@ -1138,8 +1159,8 @@
         "period": "Jan 2020 — May 2024"
       },
       {
-        "degree": "Computer Programming BootCamp",
-        "institution": "SarayaTech",
+        "degree": "BootCamp Java & Angular",
+        "institution": "SarayaTech Senegal",
         "period": "Jan 2022 — Oct 2022"
       }
     ]
@@ -1675,7 +1696,7 @@
     "metaTitle": "Case Studies | Systems & Architecture | SAIFCORE",
     "metaDescription": "Case studies: APIs, ledgers, integrations, and platforms — Senegal to multi-country banking. Problem, architecture, and impact.",
     "title": "Case studies",
-    "subtitle": "Problem, architecture, and impact — from local products to multi-country platforms.",
+    "subtitle": "From a live West Africa product to multi-country banking systems — problem, architecture, and impact.",
     "backToHome": "Back to home",
     "midCtaTitle": "Need similar depth on your next system?",
     "midCtaSubtitle": "Book a discovery call, or review ways to work.",
@@ -1683,6 +1704,307 @@
     "endCtaTitle": "Building something in the same space?",
     "endCtaSubtitle": "Share your context — APIs, architecture, or platforms — and I will reply with practical next steps.",
     "endCtaButton": "Discuss your project"
+  },
+  "caseStudyEcom360": {
+    "metaTitle": "Ecom 360 PME — Case Study | Product Delivery | SAIFCORE",
+    "metaDescription": "Deep case study: multi-tenant commerce platform shipped and operated in West Africa — network constraints, mobile money at the till, accountant-ready exports.",
+    "backToSystems": "All case studies",
+    "eyebrow": "Case study · Live product",
+    "title": "Ecom 360 PME",
+    "subtitle": "Commerce ops for West African retailers — POS, inventory, Wave & Orange Money on every sale, and accountant-ready exports. Shipped and operated in production.",
+    "market": "Senegal · West Africa",
+    "status": "Live",
+    "liveCta": "View live product",
+    "offersCta": "Product & startup delivery",
+    "proofLine": "Shipped and operated in production in West Africa — not a demo, not a deck.",
+    "metricsLabel": "Signals",
+    "metrics": [
+      {
+        "value": "10+",
+        "label": "Merchants live",
+        "description": "Day-to-day ops on the platform across Senegal and the region."
+      },
+      {
+        "value": "Hours/wk",
+        "label": "Saved on closing",
+        "description": "End-of-day totals and reconciliation that used to be rebuilt by hand."
+      },
+      {
+        "value": "Live",
+        "label": "West Africa",
+        "description": "Real network, wallet, and multi-store constraints — not a lab demo."
+      }
+    ],
+    "problemLabel": "Problem",
+    "problem": "Retailers ran on notebooks, spreadsheets, and improvised tills — cash errors, blind stock, forgotten credits, and end-of-day totals rebuilt by hand.",
+    "solutionLabel": "Solution",
+    "solution": "POS, real-time inventory, Wave & Orange Money at the till, multi-store ops, and accountant-ready exports for local reconciliation.",
+    "constraintsLabel": "Constraints",
+    "constraints": [
+      "Reliable counter ops on unstable networks.",
+      "Strict multi-tenant isolation by merchant and store.",
+      "Traceability for sales, credit, and mobile money.",
+      "Exports owners and accountants can close the books with."
+    ],
+    "architectureFlowLabel": "Architecture flow",
+    "architectureFlow": [
+      "POS",
+      "REST API",
+      "Inventory",
+      "Mobile Money",
+      "Reporting"
+    ],
+    "architectureLabel": "Architecture",
+    "architecture": "React SPA for POS and dashboards; Spring Boot multi-tenant REST API; async jobs for reports, bulk imports, and accounting exports; store-scoped inventory and role-based staff access.",
+    "decisionsLabel": "Decisions",
+    "decisions": [
+      {
+        "title": "Multi-tenant model",
+        "body": "One platform, isolated ops, roles, and inventory per merchant."
+      },
+      {
+        "title": "Async jobs",
+        "body": "Exports, imports, and reports off the checkout path so the till stays fast."
+      }
+    ],
+    "tradeoffsLabel": "Trade-offs",
+    "tradeoffs": "Robustness over analytics in v1 — reliable checkout, tenant isolation, and reconciliable exports beat pitch-deck dashboards under network and wallet pressure.",
+    "stacksLabel": "Stack",
+    "stacks": [
+      "React",
+      "Spring Boot",
+      "PostgreSQL",
+      "Wave",
+      "Orange Money",
+      "REST APIs"
+    ],
+    "endCtaTitle": "Need similar depth on your next product?",
+    "endCtaSubtitle": "Share the goal and hard constraints — I will outline options, risks, and a realistic first step.",
+    "endCtaButton": "Discuss your project"
+  },
+  "caseStudyPaymentDisasterLab": {
+    "metaTitle": "Payment Platform Disaster Lab — Case Study | Resilience Engineering | SAIFCORE",
+    "metaDescription": "Resilience engineering lab for a distributed XOF payment platform — dual PSP, Kafka outbox, financial correctness under partial failure. Not a production PSP.",
+    "backToSystems": "All case studies",
+    "eyebrow": "Case study · Resilience lab",
+    "title": "Payment Platform Disaster Lab",
+    "subtitle": "Production / resilience engineering around a distributed payment platform (XOF, dual PSP, Kafka, ledger) — prove financial correctness when the system is not 100% available.",
+    "market": "XOF · Dual PSP · Distributed",
+    "status": "Lab · P0–P2 shipped",
+    "repoCta": "View on GitHub",
+    "offersCta": "Ways to work",
+    "proofLine": "Not a production PSP. A lab to show a payment system can stay financially correct under partial failures — no lost payment, none processed twice.",
+    "routingRuleLabel": "Golden routing rule",
+    "routingRule": "PSP A down (503 / CB OPEN) → failover PSP B. PSP A timeout / UNKNOWN → IN_RECONCILIATION — never PSP B. Confusing D1 and D2 is a design flaw, not an ops detail.",
+    "metricsLabel": "Signals",
+    "metrics": [
+      {
+        "value": "0",
+        "label": "Double capture on timeout",
+        "description": "Uncertainty is first-class — timeout never triggers blind failover."
+      },
+      {
+        "value": "D1–D10",
+        "label": "Disaster scenarios",
+        "description": "Documented failure hypotheses from PSP down to deploy canaries."
+      },
+      {
+        "value": "P0–P2",
+        "label": "Shipped today",
+        "description": "Compose, payment SM, dual PSP + chaos, gateway JWT, SRE control center."
+      }
+    ],
+    "problemLabel": "Problem",
+    "problem": "Happy-path payment APIs are easy. Hard cases start when the PSP times out (captured or not?), the client retries after an HTTP timeout, a webhook arrives three times, a Kafka consumer dies while events pile up, or a deploy breaks 20% of traffic. Perceived high availability and financial correctness diverge — a blind failover to a second PSP can create a double debit; a non-idempotent retry can too.",
+    "solutionLabel": "Solution",
+    "solution": "One directing rule: no payment lost, none processed twice — even when the system is not fully available. Invariant chain: Identity → Authorization → Idempotency → State Machine → PSP (uncertainty first-class) → Ledger → Event → Reconciliation → Observability. Timeout PSP ≠ FAILED; uncertainty is IN_RECONCILIATION, not an excuse to call PSP B.",
+    "constraintsLabel": "Constraints",
+    "constraints": [
+      "Timeout PSP ≠ FAILED — uncertainty is a business state (IN_RECONCILIATION).",
+      "Failover A→B only on certain failure (503 / CB OPEN / business refuse).",
+      "Never emit Kafka without committed payment state (transactional outbox).",
+      "Database-per-service — isolate append-only ledger schema; no cross-DB joins.",
+      "PSP simulators with hot-injectable chaos — not real Stripe network/SCA behavior."
+    ],
+    "architectureFlowLabel": "Architecture flow",
+    "architectureFlow": [
+      "Gateway",
+      "Payment SM",
+      "Dual PSP",
+      "Outbox / Kafka",
+      "Reconciliation"
+    ],
+    "architectureLabel": "Architecture",
+    "architecture": "Multi-service Spring Boot (failure domains you can kill in isolation). API Gateway: JWT + /v1/payments + X-Correlation-Id. payment-service: create/GET, state machine, idempotency, transactional outbox. Dual psp-simulator A/B with Resilience4j — safe failover vs IN_RECONCILIATION. Compose: Postgres, Kafka, Schema Registry, Keycloak, Kafka UI. Frontend is an SRE control center (Vite + React), not a merchant checkout — observe, inject, recover.",
+    "decisionsLabel": "Decisions",
+    "decisions": [
+      {
+        "title": "Multi-services, not a monolith",
+        "body": "Kill a consumer or a PSP in isolation — real failure domains for the lab."
+      },
+      {
+        "title": "Database-per-service",
+        "body": "Isolate the append-only ledger schema; no cross-DB joins in the demo path."
+      },
+      {
+        "title": "Transactional outbox",
+        "body": "Never publish a Kafka event without committed payment state."
+      },
+      {
+        "title": "Timeout PSP = UNKNOWN",
+        "body": "No blind failover; reconcile before truth — prevents double capture."
+      },
+      {
+        "title": "Failover only on certain failure",
+        "body": "503 / CB OPEN / business refuse — not timeout or ambiguous 5xx."
+      },
+      {
+        "title": "JSON Schema + Schema Registry",
+        "body": "Readable contracts in demos; CI-compatible evolution without Avro ceremony yet."
+      },
+      {
+        "title": "Keycloak + API Gateway",
+        "body": "Identity / JWT off the business path so chaos stays about money movement."
+      },
+      {
+        "title": "PSP simulators + FE control center",
+        "body": "Hot chaos via PUT /admin/chaos; frontend observes and recovers — not a checkout product."
+      }
+    ],
+    "tradeoffsLabel": "Trade-offs",
+    "tradeoffs": "Correctness before “API always 200” means more IN_RECONCILIATION and mandatory recon. Split services + outbox buy isolation and Kafka replay at the cost of heavier local ops. One Postgres with logical DBs keeps the lab simple — not multi-instance HA. JSON Schema favors demo readability over Avro’s battle-tested evolution. Simulators give deterministic chaos, not real network/SCA/settlement. Canary/K8s land in later phases (P6); FE can run in simulation and risk diverging from real BE behavior until wired.",
+    "stacksLabel": "Stack",
+    "stacks": [
+      "Java 21",
+      "Spring Boot",
+      "Resilience4j",
+      "Kafka",
+      "Schema Registry",
+      "PostgreSQL",
+      "Keycloak",
+      "React",
+      "Vite",
+      "Docker Compose"
+    ],
+    "nextLabel": "What I’d do next",
+    "next": [
+      "P3 — Ledger + Kafka consumers: double-entry append-only, idempotent consumer, DLT, Schema Registry end-to-end.",
+      "P4 — Notification + reconciliation: merchant webhooks; MATCHED / MISSING / DUPLICATE / AMOUNT_MISMATCH; poll PSP status out of IN_RECONCILIATION.",
+      "P5 — Observability: OTel traces gateway → payment → PSP → Kafka → ledger; KPI / SLO / CB / outbox lag dashboards.",
+      "P6 — Kubernetes + canary: Helm, probes, 5–20% canary, auto-rollback on error rate.",
+      "P7 — Documented chaos: fill D1–D10 (hypothesis → observed → recovery); wire FE to real backend."
+    ],
+    "endCtaTitle": "Scoping a payment or resilience problem?",
+    "endCtaSubtitle": "Share the failure modes you care about — I will map invariants, risks, and a realistic first slice.",
+    "endCtaButton": "Discuss the problem"
+  },
+  "caseStudyDoubleEntryLedger": {
+    "metaTitle": "Double-Entry Ledger Platform — Case Study | Fintech Ledger | SAIFCORE",
+    "metaDescription": "Modular monolith for wallets and double-entry ledger flows — balanced journals, idempotent posting, Kafka outbox, maker/checker withdrawals. Java 21 · Spring Boot 3.4.",
+    "backToSystems": "All case studies",
+    "eyebrow": "Case study · Reference platform",
+    "title": "Double-Entry Ledger Platform",
+    "subtitle": "A production-minded modular monolith for wallets and double-entry ledger flows in fintech and payments — balanced postings, idempotent commands, and a live demo on the real API.",
+    "market": "Fintech · Payments · Wallets",
+    "status": "Reference · Modular monolith",
+    "repoCta": "View on GitHub",
+    "offersCta": "Ways to work",
+    "proofLine": "Not a balances spreadsheet. Runnable Compose stack with append-only journals, transactional outbox, maker/checker withdrawals, and a showcase UI that hits live endpoints.",
+    "routingRuleLabel": "Golden posting rule",
+    "routingRule": "Every money movement is a balanced journal_entry set. Retries and duplicate provider refs dedupe via idempotency keys inside the posting transaction. DB triggers reject UPDATE/DELETE on the journal — corrections are new postings, never silent edits.",
+    "metricsLabel": "Signals",
+    "metrics": [
+      {
+        "value": "Append-only",
+        "label": "Journal",
+        "description": "Flyway-backed triggers block UPDATE/DELETE on journal_entries."
+      },
+      {
+        "value": "Idempotent",
+        "label": "Commands",
+        "description": "Scoped advisory locks + idempotency keys inside posting transactions."
+      },
+      {
+        "value": "Outbox",
+        "label": "→ Kafka",
+        "description": "Events written with the post, then published by OutboxDispatcher."
+      }
+    ],
+    "problemLabel": "Problem",
+    "problem": "Wallet and payment products need auditable money movement under retries, webhooks, and ops pressure. Spreadsheet-style balances and destructive updates fail compliance. Without idempotency, a client timeout or duplicate provider callback creates double posts. Without an outbox, Kafka can advertise state that never committed.",
+    "solutionLabel": "Solution",
+    "solution": "Modular monolith: domain, persistence, application services, and HTTP adapter as Maven modules. Product flows in PaymentApplicationService — P2P transfer, merchant payment (gross + platform fee), withdrawal (optional maker/checker), reversal, and deposit settlement from signed provider webhooks. Live demo UI at / exercises the real API.",
+    "constraintsLabel": "Constraints",
+    "constraints": [
+      "Balanced postings only — account locking and negative-liability guards on the critical path.",
+      "Idempotency keys and provider refs must dedupe inside the posting transaction.",
+      "Above ledger.withdrawal.approval-threshold-minor, withdrawals return 202 + pending approval id.",
+      "Demo faucet (/api/v1/demo/**) gated by DEMO_MODE_ENABLED — never ship to production.",
+      "Webhook HMAC (WEBHOOK_HMAC_SECRET) required for provider deposit settlement."
+    ],
+    "architectureFlowLabel": "Architecture flow",
+    "architectureFlow": [
+      "HTTP / Webhooks",
+      "Payment services",
+      "Ledger posting",
+      "Outbox / Kafka",
+      "Reconciliation"
+    ],
+    "architectureLabel": "Architecture",
+    "architecture": "ledger-domain (types/models) → ledger-persistence (JPA, Flyway) → ledger-core (posting, payments, wallet, outbox, reconciliation, webhook verification) → ledger-platform (Spring Boot packaging, REST, security, OpenAPI). Compose: PostgreSQL 16, Redis 7, Kafka, Prometheus, Grafana. Optional OTLP via Micrometer/OpenTelemetry.",
+    "decisionsLabel": "Decisions",
+    "decisions": [
+      {
+        "title": "Modular monolith, not microservices",
+        "body": "Clear Maven boundaries without the ops tax of split deployables — extract later if needed."
+      },
+      {
+        "title": "Append-only journal at the DB",
+        "body": "Triggers enforce immutability so application bugs cannot silently rewrite history."
+      },
+      {
+        "title": "Transactional outbox",
+        "body": "outbox_messages and the post commit together; OutboxDispatcher publishes to Kafka."
+      },
+      {
+        "title": "Idempotency inside the transaction",
+        "body": "Keys + scoped advisory locks so retries and duplicate provider refs cannot double-post."
+      },
+      {
+        "title": "Maker/checker for large withdrawals",
+        "body": "Threshold in minor units; COMPLIANCE / OPERATIONS / ADMIN approve or reject."
+      },
+      {
+        "title": "Demo UI on the real API",
+        "body": "Bundled static showcase with JWT login, faucet, transfers, journal expand, and call log — reviewers see real HTTP, not mocks."
+      }
+    ],
+    "tradeoffsLabel": "Trade-offs",
+    "tradeoffs": "A modular monolith is simpler to run than split services, but module discipline must hold. Append-only + deterministic locking buys correctness at the cost of stricter concurrency on hot accounts. Demo mode accelerates review and must stay off outside sandboxes. Local Compose includes ZooKeeper for Kafka — fine for the lab, not the target production topology.",
+    "stacksLabel": "Stack",
+    "stacks": [
+      "Java 21",
+      "Spring Boot 3.4",
+      "Spring Security",
+      "PostgreSQL 16",
+      "Flyway",
+      "Redis 7",
+      "Apache Kafka",
+      "OpenAPI / springdoc",
+      "Micrometer",
+      "Docker Compose"
+    ],
+    "nextLabel": "What the platform already covers",
+    "next": [
+      "Product flows: P2P, merchant pay with fee split, withdraw, reverse, deposit settlement.",
+      "Ops: wallet/account freeze, trial balance, pending approvals, audit in the service layer.",
+      "Integrity: journal immutability triggers, deadlock-safe lock order, reconciliation + balance snapshot jobs.",
+      "Observability: Prometheus scrape, Grafana dashboard provisioned, optional OTLP export.",
+      "Tests: mvn test across modules; Testcontainers ITs when Docker is available."
+    ],
+    "endCtaTitle": "Scoping a ledger or wallet problem?",
+    "endCtaSubtitle": "Share posting invariants, webhook constraints, and ops needs — I will map architecture, risks, and a realistic first slice.",
+    "endCtaButton": "Discuss the problem"
   },
   "experiencePage": {
     "metaTitle": "Experience | Senior Software Engineer | SAIFCORE",

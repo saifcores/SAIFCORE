@@ -1,20 +1,46 @@
-import { caseStudySlug, projectCaseStudyId } from "@/seo";
+import { caseStudySlug, projectCaseStudyId, type SitePath } from "@/seo";
 import type { FeaturedProjectItem } from "@/types/messages";
 
-/** Stable case study anchor slugs (from project `id` / EN title slug). */
+/** Dedicated deep case-study routes. */
+export const ECOM_360_CASE_STUDY_ID = "ecom-360-pme";
+export const ECOM_360_CASE_STUDY_PATH =
+  "/systems/ecom-360-pme" as const satisfies SitePath;
+
+export const PAYMENT_DISASTER_LAB_CASE_STUDY_ID =
+  "payment-platform-disaster-lab";
+export const PAYMENT_DISASTER_LAB_CASE_STUDY_PATH =
+  "/systems/payment-platform-disaster-lab" as const satisfies SitePath;
+
+export const DOUBLE_ENTRY_LEDGER_CASE_STUDY_ID = "double-entry-ledger-platform";
+export const DOUBLE_ENTRY_LEDGER_CASE_STUDY_PATH =
+  "/systems/double-entry-ledger-platform" as const satisfies SitePath;
+
+const dedicatedCaseStudyPaths: Record<string, SitePath> = {
+  [ECOM_360_CASE_STUDY_ID]: ECOM_360_CASE_STUDY_PATH,
+  [PAYMENT_DISASTER_LAB_CASE_STUDY_ID]: PAYMENT_DISASTER_LAB_CASE_STUDY_PATH,
+  [DOUBLE_ENTRY_LEDGER_CASE_STUDY_ID]: DOUBLE_ENTRY_LEDGER_CASE_STUDY_PATH,
+};
+
+/** Maps local article slugs → related case-study ids (dormant while blog is external). */
 const articleCaseStudySlugs: Record<string, string[]> = {
   "banking-middleware-multi-subsidiary": ["unified-api-gateway"],
-  "adr-double-entry-ledger-payments": ["double-entry-ledger-system"],
+  "adr-double-entry-ledger-payments": [
+    "double-entry-ledger-platform",
+    "payment-platform-disaster-lab",
+  ],
   "mobile-money-integration-patterns": [
     "pan-african-payment-sdk",
-    "ecom-360-pme",
+    "payment-platform-disaster-lab",
   ],
   "scalable-fintech-systems": [
-    "double-entry-ledger-system",
-    "pan-african-payment-sdk",
+    "payment-platform-disaster-lab",
+    "double-entry-ledger-platform",
   ],
-  "why-saas-fail-africa": ["school-management-saas", "ecom-360-pme"],
-  "architecture-reviews-that-help": ["unified-api-gateway"],
+  "why-saas-fail-africa": ["ecom-360-pme"],
+  "architecture-reviews-that-help": [
+    "payment-platform-disaster-lab",
+    "unified-api-gateway",
+  ],
 };
 
 export function getRelatedCaseStudies(
@@ -26,20 +52,39 @@ export function getRelatedCaseStudies(
   if (!slugs?.length) return [];
 
   return slugs
-    .map((slug) =>
-      items.find((item) => projectCaseStudyId(item) === slug),
-    )
+    .map((slug) => items.find((item) => projectCaseStudyId(item) === slug))
     .filter((item): item is FeaturedProjectItem => item != null)
     .slice(0, limit);
 }
 
+export type CaseStudyHref = SitePath | `/systems#case-${string}`;
+
+export function hasDedicatedCaseStudyPage(
+  itemOrId: FeaturedProjectItem | string,
+): boolean {
+  const id =
+    typeof itemOrId === "string" ? itemOrId : projectCaseStudyId(itemOrId);
+  return id in dedicatedCaseStudyPaths;
+}
+
 export function getCaseStudyHref(
   itemOrTitle: FeaturedProjectItem | string,
-): `/systems#case-${string}` {
+): CaseStudyHref {
   if (typeof itemOrTitle === "string") {
-    return `/systems#case-${caseStudySlug(itemOrTitle)}`;
+    if (itemOrTitle in dedicatedCaseStudyPaths) {
+      return dedicatedCaseStudyPaths[itemOrTitle]!;
+    }
+    const slug = caseStudySlug(itemOrTitle);
+    if (slug in dedicatedCaseStudyPaths) {
+      return dedicatedCaseStudyPaths[slug]!;
+    }
+    return `/systems#case-${slug}`;
   }
-  return `/systems#case-${projectCaseStudyId(itemOrTitle)}`;
+  const id = projectCaseStudyId(itemOrTitle);
+  if (id in dedicatedCaseStudyPaths) {
+    return dedicatedCaseStudyPaths[id]!;
+  }
+  return `/systems#case-${id}`;
 }
 
 /** Lower rank ships first on teasers and /systems. */
@@ -55,7 +100,9 @@ export function projectStatusRank(status: string | undefined): number {
     normalized.includes("référence") ||
     normalized.includes("issu") ||
     normalized.includes("delivered") ||
-    normalized.includes("livré")
+    normalized.includes("livré") ||
+    normalized.includes("lab") ||
+    normalized.includes("labo")
   ) {
     return 1;
   }

@@ -1,9 +1,14 @@
 import { getMessages, getTranslations } from "next-intl/server";
-import type { ReactNode } from "react";
 import { Link } from "@/i18n/navigation";
 import { projectCaseStudyId } from "@/seo";
-import { projectStatusRank, sortProjectsLiveFirst } from "@/data/case-studies";
+import {
+  getCaseStudyHref,
+  hasDedicatedCaseStudyPage,
+  projectStatusRank,
+  sortProjectsLiveFirst,
+} from "@/data/case-studies";
 import type { FeaturedProjectItem } from "@/types/messages";
+import { DetailLabel } from "./DetailLabel";
 import { FeaturedProjectDetails } from "./FeaturedProjectDetails";
 import { Reveal } from "./Reveal";
 
@@ -13,14 +18,6 @@ type Props = {
 };
 
 type ProjectDecision = FeaturedProjectItem["decisions"][number];
-
-function DetailLabel({ children }: { children: ReactNode }) {
-  return (
-    <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)]">
-      {children}
-    </p>
-  );
-}
 
 function DetailList({ items }: { items: string[] }) {
   return (
@@ -68,10 +65,13 @@ function ArchitectureFlow({
   return (
     <div className="mt-6 border-t border-[var(--border-subtle)] pt-6">
       <DetailLabel>{label}</DetailLabel>
-      <div className="flex flex-wrap items-center gap-2">
+      <ol className="mt-1 flex list-none flex-wrap items-center gap-2 p-0">
         {steps.map((step, i) => (
-          <div key={`${step}-${i}`} className="flex items-center gap-2">
-            <span className="rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-base)]/70 px-3 py-1.5 text-xs font-medium text-[var(--text-secondary)]">
+          <li key={`${step}-${i}`} className="flex items-center gap-2">
+            <span className="inline-flex items-center gap-2 rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-base)]/70 px-3 py-1.5 text-xs font-medium text-[var(--text-secondary)]">
+              <span className="font-mono text-[10px] tabular-nums text-[var(--text-muted)]">
+                {String(i + 1).padStart(2, "0")}
+              </span>
               {step}
             </span>
             {i < steps.length - 1 ? (
@@ -79,9 +79,9 @@ function ArchitectureFlow({
                 →
               </span>
             ) : null}
-          </div>
+          </li>
         ))}
-      </div>
+      </ol>
     </div>
   );
 }
@@ -115,15 +115,27 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
           {items.map((item, i) => {
             const external = item.href.trim();
             const indexStr = String(i + 1).padStart(2, "0");
+            const deepHref = getCaseStudyHref(item);
+            const showDeepCta = hasDedicatedCaseStudyPage(item);
+            const isLive = projectStatusRank(item.status) === 0;
+            const metrics = item.metrics ?? [];
 
             return (
               <Reveal key={item.title} delay={i * 100}>
                 <article
                   id={`case-${projectCaseStudyId(item)}`}
-                  className="group relative scroll-mt-28 overflow-hidden rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 transition duration-300 hover:border-[var(--border-hover)] xl:scroll-mt-24"
+                  className={`group relative scroll-mt-28 overflow-hidden rounded-[16px] border bg-[var(--bg-elevated)]/25 transition duration-300 hover:border-[var(--border-hover)] xl:scroll-mt-24 ${
+                    showDeepCta
+                      ? "border-[var(--border-hover)]"
+                      : "border-[var(--border-subtle)]"
+                  }`}
                 >
                   <div
-                    className="absolute inset-y-0 left-0 w-[2px] bg-[var(--text-primary)] opacity-0 transition duration-300 group-hover:opacity-100"
+                    className={`absolute inset-y-0 left-0 w-[2px] bg-[var(--text-primary)] transition duration-300 ${
+                      showDeepCta || isLive
+                        ? "opacity-100"
+                        : "opacity-0 group-hover:opacity-100"
+                    }`}
                     aria-hidden
                   />
 
@@ -150,14 +162,14 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
                             {item.status ? (
                               <span
                                 className={`inline-flex items-center gap-1.5 text-xs font-medium ${
-                                  projectStatusRank(item.status) === 0
+                                  isLive
                                     ? "text-[var(--accent-strong)]"
                                     : "text-[var(--text-muted)]"
                                 }`}
                               >
                                 <span
                                   className={`h-1.5 w-1.5 rounded-full ${
-                                    projectStatusRank(item.status) === 0
+                                    isLive
                                       ? "bg-[var(--accent-strong)]"
                                       : "bg-[var(--text-muted)]"
                                   }`}
@@ -188,8 +200,29 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
                       </div>
                     </div>
 
+                    {metrics.length > 0 ? (
+                      <div className="mt-5 grid grid-cols-3 gap-3 border-t border-[var(--border-subtle)] pt-5 sm:mt-6 sm:gap-4">
+                        {metrics.map((metric) => (
+                          <div key={metric.label}>
+                            <p className="font-display text-lg font-medium tracking-tight text-[var(--text-primary)] sm:text-xl">
+                              {metric.value}
+                            </p>
+                            <p className="mt-0.5 text-[11px] leading-snug text-[var(--text-muted)] sm:text-xs">
+                              {metric.label}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    ) : null}
+
                     {/* Core narrative — Problem / Solution / Architecture */}
-                    <div className="mt-4 grid gap-4 border-t border-[var(--border-subtle)] pt-4 sm:mt-6 sm:grid-cols-2 sm:gap-5 sm:pt-6 lg:grid-cols-3">
+                    <div
+                      className={`grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 ${
+                        metrics.length > 0
+                          ? "mt-5 border-t border-[var(--border-subtle)] pt-5 sm:mt-6 sm:pt-6"
+                          : "mt-4 border-t border-[var(--border-subtle)] pt-4 sm:mt-6 sm:pt-6"
+                      }`}
+                    >
                       <div>
                         <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)] sm:mb-3">
                           {t("problemLabel")}
@@ -319,17 +352,32 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
                         ))}
                       </div>
 
-                      {external ? (
-                        <a
-                          href={external}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex min-h-11 shrink-0 items-center gap-1.5 text-sm font-medium text-[var(--text-primary)] underline-offset-4 transition hover:underline"
-                        >
-                          {item.linkLabel}
-                          <span aria-hidden>→</span>
-                        </a>
-                      ) : null}
+                      <div className="flex shrink-0 flex-col items-stretch gap-2 sm:items-end">
+                        {showDeepCta ? (
+                          <Link
+                            href={deepHref}
+                            className="btn-outline inline-flex min-h-11 items-center justify-center gap-1.5 px-4 text-sm font-medium"
+                          >
+                            {t("readCaseStudy")}
+                            <span aria-hidden>→</span>
+                          </Link>
+                        ) : null}
+                        {external ? (
+                          <a
+                            href={external}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`inline-flex min-h-11 items-center justify-center gap-1.5 text-sm underline-offset-4 transition hover:underline ${
+                              showDeepCta
+                                ? "font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+                                : "font-medium text-[var(--text-primary)]"
+                            }`}
+                          >
+                            {item.linkLabel}
+                            <span aria-hidden>→</span>
+                          </a>
+                        ) : null}
+                      </div>
                     </div>
                   </div>
                 </article>
