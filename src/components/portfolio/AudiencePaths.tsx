@@ -25,8 +25,10 @@ export async function AudiencePaths() {
         { href: "/systems", label: t("recruiterLinkSystems") },
         { href: "/about", label: t("recruiterLinkAbout") },
       ],
-      primaryHref: "/experience",
+      primaryHref: "/experience" as const,
       primaryLabel: t("recruiterCta"),
+      secondaryHref: "/experience" as const,
+      secondaryLabel: t("recruiterSecondaryCta"),
       resume: true as const,
     },
     {
@@ -34,12 +36,14 @@ export async function AudiencePaths() {
       title: t("clientTitle"),
       description: t("clientDescription"),
       links: [
+        { href: "/systems", label: t("clientLinkServices") },
         { href: "/#offers", label: t("clientLinkOffers") },
-        { href: "/#start", label: t("clientLinkStart") },
         { href: "/#contact", label: t("clientLinkContact") },
       ],
-      primaryHref: "/#offers",
+      primaryHref: "/#contact" as const,
       primaryLabel: t("clientCta"),
+      secondaryHref: "/#offers" as const,
+      secondaryLabel: t("clientSecondaryCta"),
       resume: false as const,
     },
   ] as const;
@@ -48,7 +52,7 @@ export async function AudiencePaths() {
     <section
       id="paths"
       aria-labelledby="audience-paths-heading"
-      className="border-b border-[var(--border-subtle)] px-4 py-14 sm:px-6 sm:py-16 lg:px-8"
+      className="scroll-mt-24 border-b border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 xl:scroll-mt-28"
     >
       <div className="mx-auto max-w-7xl">
         <MotionReveal>
@@ -63,11 +67,11 @@ export async function AudiencePaths() {
           </h2>
         </MotionReveal>
 
-        <div className="mt-10 grid gap-0 overflow-hidden rounded-[16px] border border-[var(--border-subtle)] md:grid-cols-2">
+        <div className="mt-8 grid gap-0 overflow-hidden rounded-[16px] border border-[var(--border-subtle)] sm:mt-10 md:grid-cols-2">
           {paths.map((path, index) => (
             <MotionReveal key={path.key} delay={index * 60}>
               <div
-                className={`flex h-full flex-col bg-[var(--bg-elevated)]/20 p-6 sm:p-8 ${
+                className={`flex h-full flex-col bg-[var(--bg-elevated)]/20 p-5 sm:p-7 lg:p-8 ${
                   index === 0
                     ? "border-b border-[var(--border-subtle)] md:border-b-0 md:border-r"
                     : ""
@@ -80,12 +84,12 @@ export async function AudiencePaths() {
                   {path.description}
                 </p>
 
-                <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+                <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-1 text-sm">
                   {path.links.map((link) => (
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="font-medium text-[var(--text-muted)] underline decoration-[var(--border-subtle)] underline-offset-4 transition hover:text-[var(--text-primary)] hover:decoration-[var(--border-hover)]"
+                        className="inline-flex min-h-10 items-center font-medium text-[var(--text-muted)] underline decoration-[var(--border-subtle)] underline-offset-4 transition hover:text-[var(--text-primary)] hover:decoration-[var(--border-hover)]"
                       >
                         {link.label}
                       </Link>
@@ -93,11 +97,11 @@ export async function AudiencePaths() {
                   ))}
                 </ul>
 
-                <div className="mt-6 flex flex-wrap gap-2">
+                <div className="mt-auto flex flex-col gap-2 pt-6 min-[420px]:flex-row min-[420px]:flex-wrap">
                   {path.resume && resumeUrl ? (
                     <a
                       href={resumeUrl}
-                      className="btn-primary inline-flex min-h-11 items-center justify-center gap-2 px-5 text-sm"
+                      className="btn-primary inline-flex min-h-11 w-full items-center justify-center gap-2 px-5 text-sm min-[420px]:w-auto"
                       {...(isLocalResume(resumeUrl)
                         ? { download: resumeDownload }
                         : {
@@ -111,32 +115,23 @@ export async function AudiencePaths() {
                   ) : path.resume ? (
                     <Link
                       href={path.primaryHref}
-                      className="btn-primary inline-flex min-h-11 items-center justify-center gap-2 px-5 text-sm"
+                      className="btn-primary inline-flex min-h-11 w-full items-center justify-center gap-2 px-5 text-sm min-[420px]:w-auto"
                     >
                       {path.primaryLabel}
                       <ArrowUpRight className="h-4 w-4" aria-hidden />
                     </Link>
                   ) : (
-                    <BookCallLink className="btn-primary inline-flex min-h-11 items-center justify-center gap-2 px-5 text-sm">
+                    <BookCallLink className="btn-primary inline-flex min-h-11 w-full items-center justify-center gap-2 px-5 text-sm min-[420px]:w-auto">
                       {path.primaryLabel}
                       <ArrowUpRight className="h-4 w-4" aria-hidden />
                     </BookCallLink>
                   )}
-                  {!path.resume ? (
-                    <Link
-                      href={path.primaryHref}
-                      className="btn-outline inline-flex min-h-11 items-center justify-center px-5 text-sm font-medium"
-                    >
-                      {t("clientSecondaryCta")}
-                    </Link>
-                  ) : (
-                    <Link
-                      href="/experience"
-                      className="btn-outline inline-flex min-h-11 items-center justify-center px-5 text-sm font-medium"
-                    >
-                      {t("recruiterSecondaryCta")}
-                    </Link>
-                  )}
+                  <Link
+                    href={path.secondaryHref}
+                    className="btn-outline inline-flex min-h-11 w-full items-center justify-center px-5 text-sm font-medium min-[420px]:w-auto"
+                  >
+                    {path.secondaryLabel}
+                  </Link>
                 </div>
               </div>
             </MotionReveal>

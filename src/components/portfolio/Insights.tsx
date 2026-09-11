@@ -31,7 +31,7 @@ export async function Insights({ teaser = false }: Props) {
     <section
       id="insights"
       aria-labelledby="insights-heading"
-      className={`border-b border-[var(--border-subtle)] px-4 sm:px-6 lg:px-8 ${
+      className={`scroll-mt-24 border-b border-[var(--border-subtle)] px-4 sm:px-6 lg:px-8 xl:scroll-mt-28 ${
         teaser ? "py-10 sm:py-12 lg:py-16" : "py-12 sm:py-16 lg:py-24"
       }`}
     >
@@ -52,8 +52,11 @@ export async function Insights({ teaser = false }: Props) {
                 id="insights-heading"
                 className="max-w-2xl font-display text-pretty text-2xl font-medium tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl"
               >
-                {t("subtitle")}
+                {t("heading")}
               </h2>
+              <p className="mt-3 max-w-xl text-pretty text-sm text-[var(--text-secondary)] sm:text-base">
+                {t("subtitle")}
+              </p>
             </div>
             {teaser ? (
               viewAllExternal ? (
@@ -110,7 +113,11 @@ export async function Insights({ teaser = false }: Props) {
         {preview.length > 0 ? (
           <div className="mt-8 grid gap-x-6 gap-y-8 sm:mt-10 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-3">
             {preview.map((article, i) => (
-              <Reveal key={article.slug} delay={i * 80}>
+              <Reveal
+                key={article.slug}
+                delay={i * 80}
+                className={i === 2 ? "sm:col-span-2 lg:col-span-1" : undefined}
+              >
                 <ArticlePostCard
                   article={article}
                   locale={loc}

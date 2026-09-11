@@ -7,10 +7,10 @@ type Props = {
   hubLabel?: string;
 };
 
-/** Angles in degrees — top, then clockwise (matches reference layout). */
+/** Angles in degrees — top, then clockwise. */
 const NODE_ANGLES = [-90, -18, 54, 126, 198] as const;
 /** Distance from center to node center, as % of container. */
-const ORBIT_RADIUS = 38;
+const ORBIT_RADIUS = 36;
 
 export function HeroVisual({ nodes, hubLabel = "SAIFCORE" }: Props) {
   const reduce = useReducedMotion();
@@ -21,14 +21,13 @@ export function HeroVisual({ nodes, hubLabel = "SAIFCORE" }: Props) {
       initial={reduce ? false : { opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.2 }}
-      className="relative mx-auto flex w-full max-w-lg items-center justify-center md:block lg:mx-0 lg:max-w-none"
+      className="relative mx-auto flex w-full items-center justify-center"
       aria-hidden
     >
-      <div className="relative mx-auto aspect-square w-full max-w-[440px] lg:max-w-[480px]">
-        {/* Dot grid + rings */}
+      <div className="relative mx-auto aspect-square w-full max-w-[420px] lg:max-w-[480px]">
         <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-full">
           <div
-            className="absolute inset-0 opacity-40"
+            className="absolute inset-0 opacity-30 sm:opacity-40"
             style={{
               backgroundImage:
                 "radial-gradient(circle, color-mix(in srgb, var(--text-muted) 35%, transparent) 1px, transparent 1px)",
@@ -39,7 +38,6 @@ export function HeroVisual({ nodes, hubLabel = "SAIFCORE" }: Props) {
           <div className="absolute inset-[26%] rounded-full border border-dashed border-[var(--border-subtle)] opacity-70" />
         </div>
 
-        {/* Spokes — end just inside the orbit so lines meet the pills */}
         <svg
           className="absolute inset-0 h-full w-full"
           viewBox="0 0 100 100"
@@ -48,8 +46,8 @@ export function HeroVisual({ nodes, hubLabel = "SAIFCORE" }: Props) {
         >
           {labels.map((_, i) => {
             const angle = ((NODE_ANGLES[i] ?? -90) * Math.PI) / 180;
-            const x2 = 50 + Math.cos(angle) * 28;
-            const y2 = 50 + Math.sin(angle) * 28;
+            const x2 = 50 + Math.cos(angle) * 26;
+            const y2 = 50 + Math.sin(angle) * 26;
             return (
               <motion.line
                 key={`spoke-${i}`}
@@ -67,19 +65,17 @@ export function HeroVisual({ nodes, hubLabel = "SAIFCORE" }: Props) {
           })}
         </svg>
 
-        {/* Hub — centered */}
         <motion.div
           initial={reduce ? false : { opacity: 0, scale: 0.88 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.25, duration: 0.45 }}
-          className="absolute left-1/2 top-1/2 z-10 flex h-[30%] w-[30%] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[var(--text-primary)] shadow-[var(--shadow-panel)]"
+          className="absolute left-1/2 top-1/2 z-10 flex h-[28%] w-[28%] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[var(--text-primary)] shadow-[var(--shadow-panel)] sm:h-[30%] sm:w-[30%]"
         >
-          <span className="select-none px-1 text-center font-display text-[clamp(0.65rem,2.2vw,0.95rem)] font-semibold tracking-tight text-[var(--bg-base)]">
+          <span className="select-none px-1 text-center font-display text-[clamp(0.55rem,2.4vw,0.95rem)] font-semibold tracking-tight text-[var(--bg-base)]">
             {hubLabel}
           </span>
         </motion.div>
 
-        {/* Satellite nodes — absolute % positions so labels stay aligned on the orbit */}
         {labels.map((label, i) => {
           const angleRad = ((NODE_ANGLES[i] ?? -90) * Math.PI) / 180;
           const left = 50 + Math.cos(angleRad) * ORBIT_RADIUS;
@@ -94,12 +90,12 @@ export function HeroVisual({ nodes, hubLabel = "SAIFCORE" }: Props) {
               className="absolute z-20 -translate-x-1/2 -translate-y-1/2"
               style={{ left: `${left}%`, top: `${top}%` }}
             >
-              <span className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-[var(--border-subtle)] bg-[var(--bg-elevated)] px-3 py-1.5 text-xs font-medium text-[var(--text-primary)] shadow-sm">
+              <span className="inline-flex max-w-[7.5rem] items-center gap-1 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-elevated)] px-2 py-1 text-[10px] font-medium leading-tight text-[var(--text-primary)] shadow-sm sm:max-w-none sm:gap-1.5 sm:px-3 sm:py-1.5 sm:text-xs">
                 <span
                   className="h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent-strong)]"
                   aria-hidden
                 />
-                {label}
+                <span className="truncate">{label}</span>
               </span>
             </motion.div>
           );

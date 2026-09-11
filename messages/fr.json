@@ -13,7 +13,27 @@
     "jsonLdAreaServed": "Sénégal, Afrique de l'Ouest, Monde entier",
     "keywords": "ingénieur logiciel senior, senior software engineer, ingénieur backend, architecture logicielle, systèmes distribués, APIs, Spring Boot, Java, infrastructure de paiement, fintech, systèmes bancaires, cloud-native, Kafka, AWS, mobile money, Sénégal, Afrique de l'Ouest, Dakar, ingénieur remote, SAIFCORE",
     "manifestName": "SAIFCORE — Ingénieur Logiciel Senior",
-    "manifestDescription": "Portfolio — ingénierie backend, systèmes distribués, APIs et architecture logicielle pour banque, FinTech et plateformes enterprise."
+    "manifestDescription": "Portfolio — ingénierie backend, systèmes distribués, APIs et architecture logicielle pour banque, FinTech et plateformes enterprise.",
+    "knowsAbout": [
+      "Java",
+      "Spring Boot",
+      "Ingénierie backend",
+      "Architecture logicielle",
+      "Systèmes distribués",
+      "APIs",
+      "Architectures cloud-native",
+      "Plateformes enterprise",
+      "Systèmes bancaires",
+      "Infrastructure de paiement",
+      "FinTech",
+      "Apache Kafka",
+      "Microservices",
+      "AWS",
+      "Mobile money",
+      "Logiciels enrichis par l'IA"
+    ],
+    "langFrench": "Français",
+    "langEnglish": "Anglais"
   },
   "common": {
     "skipToContent": "Aller au contenu",
@@ -41,7 +61,7 @@
     "process": "Processus",
     "faq": "FAQ",
     "about": "À propos",
-    "insights": "Articles",
+    "insights": "Analyses",
     "blog": "Blog",
     "credentials": "Certifications",
     "systems": "Études de cas",
@@ -54,8 +74,8 @@
     "closeMenu": "Fermer le menu",
     "siteNavigation": "Navigation du site",
     "language": "Langue",
-    "localeEn": "English",
-    "localeFr": "Français",
+    "localeEn": "EN",
+    "localeFr": "FR",
     "more": "Plus",
     "groupPriority": "Pages clés",
     "groupMore": "Plus",
@@ -70,7 +90,7 @@
   "pageHeader": {
     "factsLabel": "Points clés du profil",
     "factYears": "4+ ans en production",
-    "factBanking": "Delivery Groupe Bank of Africa via Synapse",
+    "factBanking": "Livraison Groupe Bank of Africa via Synapse",
     "factRemote": "Afrique de l'Ouest · Remote mondial",
     "factBilingual": "Bilingue FR / EN",
     "linkedin": "LinkedIn",
@@ -79,17 +99,17 @@
   },
   "audiencePaths": {
     "title": "Par où commencer",
-    "subtitle": "Recruter ce profil, ou cadrer un projet — choisissez votre chemin.",
+    "subtitle": "Recruter ce profil, ou démarrer un projet.",
     "recruiterTitle": "Recrutement",
-    "recruiterDescription": "Parcourez l'expérience, les études de cas et À propos — puis téléchargez le CV.",
+    "recruiterDescription": "Expérience, études de cas et À propos — puis le CV.",
     "recruiterLinkExperience": "Expérience",
     "recruiterLinkSystems": "Études de cas",
     "recruiterLinkAbout": "À propos",
     "recruiterCta": "Télécharger le CV",
     "recruiterSecondaryCta": "Voir l'expérience",
     "clientTitle": "Projet & freelance",
-    "clientDescription": "Voyez ce que je livre, puis réservez un court appel discovery — ou consultez les modes de collaboration si la forme du travail est déjà claire.",
-    "clientLinkServices": "Ce que je livre",
+    "clientDescription": "Voir les systèmes livrés, les modes de collaboration, puis un court appel.",
+    "clientLinkServices": "Études de cas",
     "clientLinkOffers": "Modes de collaboration",
     "clientLinkStart": "Comment ça démarre",
     "clientLinkProcess": "Comment je travaille",
@@ -98,11 +118,11 @@
     "clientSecondaryCta": "Modes de collaboration"
   },
   "hero": {
-    "badge": "Dakar · Afrique de l'Ouest · Remote mondial",
+    "badge": "Dakar · FR/EN · Remote mondial",
     "titleLine1": "Je construis des logiciels",
     "titleLine2": "qui résolvent",
     "titleLine3": "des problèmes réels.",
-    "subtitle": "Ingénieur logiciel senior — backend, systèmes distribués, APIs et architecture. Surtout Java et Spring Boot. Je pars du problème, je rends les compromis explicites, et je livre des systèmes qui restent fiables en évoluant.",
+    "subtitle": "Ingénieur logiciel senior — backend, systèmes distribués, APIs et architecture. Surtout Java et Spring Boot. Je pars du problème, je rends les compromis explicites, et je livre des systèmes qui restent fiables.",
     "hubNodes": [
       "Architecture",
       "Backend",
@@ -115,9 +135,8 @@
     "ctaBookCall": "Réserver un appel",
     "ctaResume": "Télécharger le CV",
     "proofLine": "Parcours sur plateformes enterprise, banque et FinTech — dont Groupe Bank of Africa (via Synapse) et ENG Technologie.",
-    "locationLine": "Dakar · bilingue FR/EN · freelance et contrat · remote mondial.",
     "availability": "Ouvert aux nouvelles missions",
-    "jumpToContact": "Vous recrutez ? Commencer par le chemin recruteur"
+    "jumpToContact": "Vous recrutez ? Parcours recruteur"
   },
   "trustedExpertise": {
     "title": "Compétences clés",
@@ -283,89 +302,98 @@
   },
   "freelanceOffers": {
     "title": "Modes de collaboration",
-    "subtitle": "Deux pistes : équipes produit qui livrent vite, entreprises qui modernisent sous contraintes. Remote, cadré, orienté production.",
-    "note": "Court appel de découverte, puis proposition écrite — périmètre, jalons, effort. Ownership claire jusqu'à la livraison.",
-    "cta": "Demander une proposition",
+    "subtitle": "Alignez l’engagement sur la décision — clarifier le problème, livrer le système, ou intégrer une capacité senior.",
+    "note": "Chaque chemin commence de la même façon : un court appel de découverte, puis une proposition écrite avec périmètre, jalons et ownership.",
+    "cta": "Réserver un appel découverte",
+    "fitLabel": "Idéal quand",
     "tracks": [
       {
-        "label": "Clients & fondateurs",
-        "audience": "Startups, product owners et PME qui livrent des APIs, des MVP ou des backends de production.",
-        "promise": "Un backend que vous pouvez démo, exploiter et transmettre à votre équipe — avec jalons, docs, sans boîte noire.",
+        "label": "Livraison produit & startup",
+        "audience": "Fondateurs et équipes produit qui ont besoin d'un backend fiable sans recruter toute une équipe plateforme.",
+        "promise": "De l'idée floue à un système que vous pouvez démontrer, opérer et transmettre — avec des compromis explicites.",
         "packages": [
           {
-            "title": "Sprint discovery & architecture",
+            "title": "Sprint architecture",
             "duration": "1–2 semaines",
-            "description": "Idéal avant un build complet : verrouiller périmètre, risques et le chemin le plus court vers un backend lançable.",
+            "fit": "Le périmètre est flou, les enjeux montent, et vous voulez le chemin le plus court vers un design livrable.",
+            "description": "Verrouiller objectifs, risques, intégrations et architecture avant de brûler du budget sur le mauvais build.",
             "includes": [
-              "Objectifs, contraintes et carte d'intégrations",
-              "Architecture cible + brouillons d'ADR",
-              "Plan phasé avec fourchettes d'effort"
+              "Cadrage du problème et carte d'intégrations",
+              "Architecture cible avec ADRs brouillon",
+              "Plan phasé et fourchettes d'effort"
             ]
           },
           {
-            "title": "Build & livraison",
+            "title": "Build cadré",
             "duration": "4–12 semaines",
-            "description": "Livraison freelance de bout en bout d'APIs, d'intégrations ou de workflows core — de la discovery à une ownership prête pour la production.",
+            "fit": "Vous savez quoi livrer et avez besoin d'un ingénieur senior nommé pour porter la livraison jusqu'à la production.",
+            "description": "Livraison de bout en bout d'APIs, de workflows ou d'intégrations — jalons, tests et runbooks inclus.",
             "includes": [
-              "Démos par jalons et critères d'acceptation",
-              "Tests, observabilité et runbooks",
-              "Docs et runbooks que votre équipe peut porter"
+              "Démos par jalons avec critères d'acceptation",
+              "Tests, observabilité et documentation",
+              "Transfert que votre équipe peut opérer"
             ]
           },
           {
             "title": "Accélération MVP",
             "duration": "6–10 semaines",
-            "description": "Un MVP finançable et démontrable sur de vraies intégrations — conçu pour s'étendre, pas pour être jeté.",
+            "fit": "Vous avez besoin d'un produit démontrable et finançable sur de vraies intégrations — conçu pour évoluer, pas pour être jeté.",
+            "description": "APIs métier centrales et flux critiques prêts pour le lancement, socle sécurité, et itération suivante.",
             "includes": [
-              "APIs de domaine core et flux critiques",
+              "Flux critiques sur de vraies intégrations",
               "Socle sécurité et pistes d'audit",
-              "Checklist de lancement + roadmap suivante"
+              "Checklist de lancement + feuille de route"
             ]
           }
         ]
       },
       {
-        "label": "Entreprises & banques",
-        "audience": "Banques, fintechs et équipes plateforme qui ont besoin de capacité backend, de modernisation ou d'un regard technique indépendant.",
-        "promise": "Une ownership là où les enjeux sont élevés — intégrations régulées, livraison conforme, architecture qui scale.",
+        "label": "Entreprise & plateforme",
+        "audience": "Banques, fintechs et équipes plateforme qui modernisent sous contrainte — ou renforcent la profondeur backend senior.",
+        "promise": "Ownership là où la correction et la fiabilité sont non négociables — contextes régulés, gouvernance claire, architecture durable.",
         "packages": [
           {
-            "title": "Embed backend en contrat",
-            "duration": "1–6 mois",
-            "description": "Un ingénieur logiciel senior dans votre squad — sprints roadmap, CI/CD et ownership production en contextes régulés.",
+            "title": "Revue d'architecture",
+            "duration": "1–3 semaines",
+            "fit": "Avant un gros pari — vous voulez des risques classés, des designs de référence et un plan exécutable.",
+            "description": "Regard indépendant sur un backend, une API ou une surface d'intégration avant de vous engager à construire ou migrer.",
             "includes": [
-              "Livraison dans vos rituels et outils",
-              "Reviews, barre de qualité et mentorship",
-              "Posture ops stable après release"
+              "Constats classés par risque et effort",
+              "Designs de référence et ADRs",
+              "Plan d'action pour votre équipe"
             ]
           },
           {
             "title": "Modernisation de plateforme",
             "duration": "8–16 semaines+",
-            "description": "Passages legacy vers cloud-native, API gateways partenaires et programmes à enjeux élevés avec gouvernance enterprise.",
+            "fit": "Des systèmes legacy ou fragmentés doivent évoluer vers quelque chose d'opérable, d'observable et prêt pour les partenaires.",
+            "description": "Vagues de migration, contrats d'API partenaires et résilience avec une discipline de livraison enterprise.",
             "includes": [
               "Architecture et vagues de migration",
-              "Onboarding partenaires et contrats API versionnés",
-              "Résilience, observabilité et SLOs"
+              "Contrats d'API partenaires versionnés",
+              "Observabilité, SLO et runbooks"
             ]
           },
           {
-            "title": "Revue technique et architecture",
-            "duration": "1–3 semaines",
-            "description": "Une revue ciblée d'un backend, d'une intégration ou d'une API avant d'engager un build — findings classés, ADR et plan phasé.",
+            "title": "Embed en contrat",
+            "duration": "1–6 mois",
+            "fit": "Votre équipe a besoin de capacité senior intégrée — livraison roadmap, exigence qualité, ownership en production.",
+            "description": "Un ingénieur logiciel senior nommé, intégré à vos rituels et outils jusqu'à la stabilisation post-release.",
             "includes": [
-              "Constats classés par risque et effort",
-              "Designs de référence et ADR",
-              "Plan d'action pour l'équipe qui implémente"
+              "Livraison dans vos rituels et votre stack",
+              "Revues de code, barre qualité, mentorat",
+              "Posture ops stable après release"
             ]
           }
         ]
       }
-    ]
+    ],
+    "ctaSecondary": "Envoyer un brief",
+    "closer": "Pas sûr du bon format ? Commencez par la découverte — je recommanderai l’engagement adapté."
   },
   "faq": {
-    "title": "Questions fréquentes",
-    "subtitle": "Réponses courtes pour recruteurs et responsables de projet.",
+    "title": "FAQ",
+    "subtitle": "Recruteurs et responsables de projet — réponses directes.",
     "items": [
       {
         "question": "Comment démarrent les engagements ?",
@@ -377,7 +405,7 @@
       },
       {
         "question": "Comment façonner l'engagement ?",
-        "answer": "Fondateurs et PME commencent souvent par Discovery & architecture, Build & livraison ou Accélération MVP. Banques et équipes plateforme privilégient Embed contrat, Modernisation de plateforme ou Revue technique et architecture."
+        "answer": "Les équipes produit démarrent souvent par un Sprint architecture, un Build cadré ou une Accélération MVP. Banques et équipes plateforme s’orientent vers Revue d’architecture, Modernisation de plateforme, ou Embed en contrat."
       },
       {
         "question": "Pouvez-vous intervenir en contexte bancaire ou paiement régulé ?",
@@ -545,27 +573,23 @@
   },
   "collaboration": {
     "title": "Comment un engagement démarre",
-    "subtitle": "Un ingénieur senior nommé, une proposition claire, pas de retainer flou.",
+    "subtitle": "Ingénieur senior nommé. Proposition écrite. Pas de contrat flou.",
     "facts": [
       {
         "title": "Intro de 30 minutes",
-        "body": "Pas de retainer. Je cadre le travail avec vous, puis vous décidez."
+        "body": "Pas de contrat flou. Je cadre le travail avec vous, puis vous décidez."
       },
       {
         "title": "Proposition écrite",
         "body": "Périmètre, jalons et fourchette d'effort avant tout build."
       },
       {
-        "title": "Owner nommé",
+        "title": "Responsable nommé",
         "body": "Je reste sur le travail jusqu'à la production — tests, runbooks et docs."
-      },
-      {
-        "title": "Réponse sous 2 jours",
-        "body": "Je réponds sous deux jours ouvrés avec une prochaine étape claire."
       }
     ],
     "ctaTitle": "Réserver un appel intro de 30 minutes",
-    "ctaSubtitle": "Sans engagement. Proposition écrite pour un projet — ou un chemin recrutement clair si vous embauchez.",
+    "ctaSubtitle": "Proposition écrite pour un projet — ou un parcours recrutement clair si vous embauchez.",
     "ctaPrimary": "Réserver un appel",
     "ctaSecondary": "Modes de collaboration"
   },
@@ -574,24 +598,24 @@
     "title": "Comment je mène des systèmes à enjeux élevés",
     "subtitle": "Au-delà du code : cadrage, décisions, gouvernance API et rituels de livraison qui réduisent le risque dans les environnements régulés — appliqués sur des missions conseil comme la delivery Synapse pour le Groupe Bank of Africa.",
     "leadershipLabel": "Conduite projet",
-    "playbookLabel": "Architecture playbook",
+    "playbookLabel": "Playbook d'architecture",
     "adrLabel": "ADR & gouvernance",
     "items": [
       {
-        "title": "Requirement analysis",
+        "title": "Analyse du besoin",
         "body": "Clarifier objectifs métier, contraintes réglementaires, dépendances core banking et critères d'acceptation avant l'estimation."
       },
       {
-        "title": "API governance",
+        "title": "Gouvernance API",
         "body": "Définir contrats OpenAPI, versioning, règles d'erreur, idempotence et politiques d'accès avant l'exposition partenaire."
       },
       {
-        "title": "Risk assessment",
+        "title": "Évaluation des risques",
         "body": "Identifier les risques transactionnels : double débit, callback perdu, dérive de rapprochement, dette d'audit ou indisponibilité fournisseur."
       },
       {
-        "title": "Delivery control",
-        "body": "Découper en incréments vérifiables avec revues d'architecture, code reviews, CI/CD, observabilité et handoff opérable."
+        "title": "Contrôle de la livraison",
+        "body": "Découper en incréments vérifiables avec revues d'architecture, revues de code, CI/CD, observabilité et transfert opérable."
       }
     ],
     "playbook": [
@@ -651,7 +675,7 @@
     ]
   },
   "trust": {
-    "heading": "La confiance là où la fiabilité compte — banque, FinTech et plateformes",
+    "heading": "La confiance là où la fiabilité compte",
     "industriesLabel": "Secteurs",
     "industries": [
       "Banque",
@@ -661,7 +685,7 @@
       "SaaS Entreprise"
     ],
     "companiesLabel": "Employeurs",
-    "deliveryNote": "Delivery pour les plateformes du Groupe Bank of Africa via Synapse — pas un partenariat commercial.",
+    "deliveryNote": "Livraison pour les plateformes du Groupe Bank of Africa via Synapse — pas un partenariat commercial.",
     "facts": [
       {
         "value": "4+",
@@ -733,9 +757,9 @@
     ]
   },
   "featuredProjects": {
-    "title": "Engagements sélectionnés",
-    "heading": "Systèmes sélectionnés — du produit local aux plateformes multi-pays",
-    "subtitle": "Le problème, l'approche et le résultat — avec une profondeur banque et FinTech là où elle comptait.",
+    "title": "Travaux sélectionnés",
+    "heading": "Des systèmes qui ont résolu de vrais problèmes",
+    "subtitle": "Problème, résultat et profondeur — là où les enjeux banque et FinTech étaient réels.",
     "impactLabel": "Impact métier",
     "statusLabel": "Statut",
     "marketLabel": "Marché",
@@ -759,6 +783,7 @@
     "detailsSummary": "Architecture, sécurité & détails de delivery",
     "items": [
       {
+        "id": "ecom-360-pme",
         "title": "Ecom 360 PME",
         "market": "Sénégal · Afrique de l'Ouest",
         "scope": "national",
@@ -768,8 +793,8 @@
         "security": "TLS en transit, données sensibles chiffrées, sauvegardes automatiques, isolation par commerçant et permissions caissiers / responsables.",
         "scale": "Chaînes multi-magasins avec reporting consolidé ; UX mobile-first au comptoir et en déplacement ; stock mis à jour à chaque vente sans recomptage manuel.",
         "architectureFlow": [
-          "POS",
-          "API REST",
+          "Point de vente",
+          "Services métier",
           "Inventaire",
           "Mobile Money",
           "Reporting"
@@ -815,6 +840,7 @@
         ]
       },
       {
+        "id": "pan-african-payment-sdk",
         "title": "SDK Paiement Pan-Africain",
         "market": "Corridors Afrique de l'Ouest",
         "scope": "regional",
@@ -824,11 +850,11 @@
         "security": "Requêtes signées, validation HMAC webhooks et clés API par tenant avec permissions limitées.",
         "scale": "API stateless horizontalement scalable ; latence fournisseur isolée via files async sans bloquer les threads clients.",
         "architectureFlow": [
-          "Client API",
-          "SDK",
-          "Adapters",
-          "Wallet Providers",
-          "Kafka"
+          "API client",
+          "Orchestration",
+          "Adaptateurs",
+          "Fournisseurs wallet",
+          "Réconciliation"
         ],
         "constraints": [
           "APIs fournisseurs hétérogènes avec statuts et callbacks incohérents.",
@@ -870,6 +896,7 @@
         ]
       },
       {
+        "id": "double-entry-ledger-system",
         "title": "Système de Grand Livre en Partie Double",
         "market": "Fintech régulée · Multi-marchés",
         "scope": "international",
@@ -879,11 +906,11 @@
         "security": "Accès par rôles, piste d'audit immuable et aucune mise à jour destructive sur écritures postées.",
         "scale": "Schéma partitionnable et réconciliation batch pour corridors mobile money à fort volume.",
         "architectureFlow": [
-          "Payment Events",
-          "Ledger Commands",
-          "Double Entry",
-          "Audit Log",
-          "Reconciliation"
+          "Événements de paiement",
+          "Commandes ledger",
+          "Partie double",
+          "Journal d'audit",
+          "Réconciliation"
         ],
         "constraints": [
           "Aucun solde ne doit dépendre d'une mise à jour destructive.",
@@ -892,7 +919,7 @@
         ],
         "decisions": [
           {
-            "title": "Append-only ledger",
+            "title": "Ledger append-only",
             "body": "Enregistrer les écritures comme événements immuables pour conserver l'historique complet."
           },
           {
@@ -924,6 +951,7 @@
         ]
       },
       {
+        "id": "unified-api-gateway",
         "title": "Passerelle API Unifiée",
         "market": "Banque multi-pays",
         "scope": "international",
@@ -933,11 +961,11 @@
         "security": "JWT en périphérie, RBAC, validation des entrées avant contact core, journalisation d'audit complète des requêtes.",
         "scale": "Tier gateway stateless ; Kafka absorbe les pics analytics sans bloquer les paiements.",
         "architectureFlow": [
-          "Partners",
-          "API Gateway",
-          "Domain Services",
-          "Core Banking",
-          "Audit"
+          "Clients partenaires",
+          "Passerelle API",
+          "Services métier",
+          "Core banking",
+          "Observabilité"
         ],
         "constraints": [
           "Protéger les systèmes core tout en ouvrant des APIs partenaires.",
@@ -979,6 +1007,7 @@
         ]
       },
       {
+        "id": "school-management-saas",
         "title": "SaaS Gestion Scolaire",
         "market": "SaaS régional · Afrique de l'Ouest",
         "scope": "regional",
@@ -989,9 +1018,9 @@
         "scale": "Traitement async pour rapports et notifications ; plateforme partagée servant des réseaux scolaires en croissance.",
         "architectureFlow": [
           "Portails",
-          "API REST",
-          "Domaines modulaires",
-          "Jobs async",
+          "Services métier",
+          "Facturation",
+          "Notifications",
           "Reporting"
         ],
         "constraints": [
@@ -1032,11 +1061,12 @@
           }
         ]
       }
-    ]
+    ],
+    "outcomeLabel": "Résultat —"
   },
   "experience": {
     "title": "Expérience",
-    "subtitle": "Là où le travail s'est fait — systèmes enterprise, banque et FinTech où la correction et la fiabilité comptent.",
+    "subtitle": "Là où le travail s’est fait — et ce qui devait être correct.",
     "viewAll": "Expérience complète",
     "downloadCv": "Télécharger le CV",
     "valueTitle": "Ce que vous obtenez",
@@ -1048,7 +1078,7 @@
     "showLess": "Afficher moins",
     "items": [
       {
-        "role": "Ingénieur Backend Senior — Systèmes Bancaires",
+        "role": "Consultant Ingénieur Backend — Systèmes Bancaires",
         "company": "Synapse Groupe",
         "client": "Bank of Africa — Groupe Bank of Africa",
         "logo": "synapse.jpeg",
@@ -1223,7 +1253,7 @@
     "title": "Des résultats vérifiables sur le profil.",
     "subtitle": "Livraison banque, fintech et SaaS depuis Dakar — Afrique de l'Ouest et remote mondial.",
     "uptimeChartLabel": "Standard de fiabilité",
-    "uptimeStatus": "Production-ready",
+    "uptimeStatus": "Prêt pour la production",
     "uptimeSummary": "Posture cible pour backends mission-critical",
     "principlesTitle": "Principes d'infrastructure",
     "metrics": [
@@ -1339,16 +1369,16 @@
     "offersLink": "Voir les modes de collaboration →",
     "engagements": [
       {
-        "title": "Livraison freelance",
-        "description": "Construire ou moderniser backends, APIs et intégrations — de la discovery à une ownership prête pour la production, avec jalons et docs."
+        "title": "Clarifier d’abord",
+        "description": "Sprint architecture ou revue — verrouiller le problème, les risques et le plan avant un build complet."
       },
       {
-        "title": "Embed en contrat",
-        "description": "Capacité backend et architecture dans votre squad — sprints, CI/CD et ownership production."
+        "title": "Livrer le système",
+        "description": "Build cadré ou accélération MVP — ownership nommée des jalons jusqu’au transfert en production."
       },
       {
-        "title": "Revue d'architecture",
-        "description": "Discovery, ADR et designs de référence avant d'engager le budget."
+        "title": "Intégrer de la capacité",
+        "description": "Embed en contrat ou modernisation de plateforme — profondeur senior dans votre équipe ou programme."
       }
     ],
     "endCtaTitle": "Un projet backend, systèmes ou plateforme en vue ?",
@@ -1494,19 +1524,20 @@
     "endCtaButton": "Me contacter"
   },
   "insights": {
-    "title": "Articles d'ingénierie",
-    "subtitle": "Notes sur le backend, les systèmes distribués et l'architecture — tirées de livraisons réelles.",
+    "title": "Analyses",
+    "subtitle": "Backend, systèmes distribués et architecture.",
     "viewAll": "Parcourir tous les articles",
     "blogPromoTitle": "Blog SAIFCORE",
     "blogPromoBody": "Articles d’ingénierie approfondis sur backends, architecture et paysages FinTech — publiés sur le blog dédié.",
     "endCtaTitle": "Vous faites face à des obstacles techniques similaires ?",
     "endCtaSubtitle": "Parlez-moi de votre plateforme, stack et contraintes — je réponds avec un chemin clair : proposition, atelier, ou prochaines étapes recrutement.",
-    "endCtaButton": "Démarrer la conversation"
+    "endCtaButton": "Démarrer la conversation",
+    "heading": "Notes tirées du travail"
   },
   "articlesPage": {
     "metaTitle": "Articles & Analyses | SAIFCORE",
     "metaDescription": "Articles d'ingénierie approfondis sur l'architecture backend, les systèmes distribués et les plateformes financières — distillés de lancements, échecs et correctifs réels.",
-    "title": "Articles & Insights",
+    "title": "Articles & analyses",
     "subtitle": "Leçons et techniques pratiques pour concevoir des backends distribués, des plateformes résilientes et des systèmes modernes en Afrique et au-delà.",
     "backToHome": "← Retour à l'accueil",
     "readArticle": "Lire l'article",
@@ -1544,12 +1575,12 @@
   },
   "cta": {
     "label": "Contact",
-    "title": "Parlons du travail",
-    "subtitle": "Recrutement : rôle et équipe. Projet : objectifs, contraintes, délai — puis une suite écrite. Remote mondial.",
+    "title": "Parlez-moi du travail",
+    "subtitle": "Recrutement ou projet — partagez le contexte, et je réponds avec une suite claire.",
     "processTitle": "Comment ça démarre",
-    "processStep1": "Précisez si vous recrutez ou cadrez un projet — intro de 30 minutes, pas de retainer.",
-    "processStep2": "Je réponds sous deux jours ouvrés avec des questions ciblées, ou une proposition écrite.",
-    "processStep3": "La prochaine étape est explicite : chemin recrutement et CV, ou livraison cadrée que je porte jusqu'à la production.",
+    "processStep1": "Indiquez si vous recrutez ou si vous cadrez un projet.",
+    "processStep2": "Je réponds sous deux jours ouvrés avec des questions — ou une proposition écrite.",
+    "processStep3": "La suite est explicite : CV et chemin recrutement, ou un engagement cadré.",
     "responseHint": "Réponse attendue sous deux jours ouvrables.",
     "bookCall": "Réserver un appel discovery",
     "startProject": "Email direct",
@@ -1600,7 +1631,7 @@
     "resume": "Télécharger le CV",
     "systems": "Études de cas projets",
     "experience": "Expérience professionnelle",
-    "articles": "Articles & Insights",
+    "articles": "Analyses & articles",
     "about": "À propos de SAIFCORE",
     "credentials": "Certifications & Expertise",
     "homeSectionsLabel": "Page d'accueil",
@@ -1611,7 +1642,7 @@
     "offers": "Modes de collaboration",
     "expertise": "Expertise",
     "process": "Processus",
-    "insights": "Aperçu articles",
+    "insights": "Aperçu des analyses",
     "faq": "FAQ",
     "pagesLabel": "Explorer",
     "connectLabel": "Nous contacter",
@@ -1641,27 +1672,27 @@
     "toDark": "Passer en mode sombre"
   },
   "systemsPage": {
-    "metaTitle": "Études de cas | Systèmes Backend & Plateformes | SAIFCORE",
-    "metaDescription": "Études de cas : APIs, grands livres, intégrations, SaaS — Sénégal, Afrique de l’Ouest, banque multi-pays. Preuve avant de démarrer une conversation.",
-    "title": "Projets & études de cas",
-    "subtitle": "Produit live d'abord, puis preuve système — problème, architecture et impact vérifiables à travers banque, FinTech et plateformes.",
+    "metaTitle": "Études de cas | Systèmes & Architecture | SAIFCORE",
+    "metaDescription": "Études de cas : APIs, ledgers, intégrations et plateformes — du Sénégal au multi-pays bancaire. Problème, architecture et impact.",
+    "title": "Études de cas",
+    "subtitle": "Problème, architecture et impact — du produit local aux plateformes multi-pays.",
     "backToHome": "Retour à l'accueil",
     "midCtaTitle": "Besoin d’une profondeur similaire sur votre prochain système ?",
-    "midCtaSubtitle": "Réservez un appel discovery, ou consultez les modes de collaboration.",
+    "midCtaSubtitle": "Réservez un appel de découverte, ou consultez les modes de collaboration.",
     "midCtaSecondary": "Modes de collaboration",
-    "endCtaTitle": "Besoin de patterns d'architecture similaires sur votre plateforme ?",
-    "endCtaSubtitle": "Partagez votre contexte — APIs, architecture, plateformes ou SaaS — je réponds avec des prochaines étapes concrètes.",
+    "endCtaTitle": "Vous construisez quelque chose dans le même espace ?",
+    "endCtaSubtitle": "Partagez votre contexte — APIs, architecture ou plateformes — et je répondrai avec des prochaines étapes concrètes.",
     "endCtaButton": "Discuter de votre projet"
   },
   "experiencePage": {
-    "metaTitle": "Expérience | Ingénieur Logiciel Senior | SAIFCORE",
-    "metaDescription": "Parcours ingénieur logiciel senior : Synapse pour le Groupe Bank of Africa, FinTech ENG, SaaS Mafalia, SarayaTech — Java, Spring Boot, Kafka. Recrutez ce profil, ou cadrez un engagement remote.",
-    "title": "Expérience professionnelle",
-    "subtitle": "Enterprise, banque et FinTech — Java, Spring Boot, systèmes distribués. Recrutez ce profil, ou cadrez un travail remote.",
+    "metaTitle": "Expérience | Ingénieur logiciel senior | SAIFCORE",
+    "metaDescription": "Expérience professionnelle sur plateformes enterprise, banque et FinTech — Synapse, ENG Technologie, et plus. Dakar · remote mondial.",
+    "title": "Expérience",
+    "subtitle": "Rôles et livraisons sur plateformes enterprise, banque et FinTech.",
     "backToHome": "Retour à l'accueil",
     "skillsTitle": "Stack technologique production",
-    "skillsSubtitle": "Outils et patterns utilisés sur des backends bancaires et fintech live — pas une liste de buzzwords.",
-    "midCtaTitle": "Assez de preuves pour l'étape suivante ?",
+    "skillsSubtitle": "Outils et modèles issus de backends en production — pas une liste de buzzwords.",
+    "midCtaTitle": "Prêt pour la prochaine étape ?",
     "midCtaSubtitle": "Téléchargez le CV pour le recrutement, ou consultez les modes de collaboration pour freelance et contrat.",
     "midCtaSecondary": "Modes de collaboration",
     "endCtaTitle": "Recruter ce profil — ou cadrer un projet ?",

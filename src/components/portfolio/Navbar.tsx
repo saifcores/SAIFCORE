@@ -54,11 +54,9 @@ function buildMobileExtraNav(): NavItem[] {
 
 const homeHashSections = [
   "paths",
-  "experience",
   "work",
-  "start",
+  "experience",
   "offers",
-  "process",
   "insights",
   "faq",
   "contact",
@@ -216,10 +214,10 @@ export function Navbar() {
         scrolled ? "bg-[var(--bg-base)]/80" : "bg-[var(--bg-base)]/80"
       }`}
     >
-      <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-2 px-4 sm:h-16 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-1.5 px-3 min-[380px]:gap-2 min-[380px]:px-4 sm:h-16 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="flex min-w-0 items-center gap-2.5 text-[var(--text-primary)] transition-opacity duration-300 hover:opacity-80"
+          className="flex min-w-0 items-center gap-2 text-[var(--text-primary)] transition-opacity duration-300 hover:opacity-80 min-[380px]:gap-2.5"
           onClick={() => close(false)}
           aria-label={t("brandHomeLabel")}
         >
@@ -232,10 +230,8 @@ export function Navbar() {
             priority
             sizes="36px"
           />
-          <span className="min-w-0">
-            <span className="block text-sm font-semibold tracking-tight text-[var(--text-primary)]">
-              SAIFCORE
-            </span>
+          <span className="min-w-0 truncate text-sm font-semibold tracking-tight text-[var(--text-primary)]">
+            SAIFCORE
           </span>
         </Link>
 
@@ -282,7 +278,7 @@ export function Navbar() {
           <div className="hidden min-[400px]:block">
             <ThemeToggle />
           </div>
-          <BookCallLink className="btn-primary hidden h-10 items-center justify-center px-4 text-sm lg:inline-flex">
+          <BookCallLink className="btn-primary hidden h-10 items-center justify-center gap-1.5 px-4 text-sm lg:inline-flex">
             {t("bookCall")}
             <svg
               xmlns="http://www.w3.org/2000/svg"

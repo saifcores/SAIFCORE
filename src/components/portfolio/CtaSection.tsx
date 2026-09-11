@@ -19,28 +19,25 @@ export async function CtaSection() {
   return (
     <section
       id="contact"
-      className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
+      className="scroll-mt-24 px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24 xl:scroll-mt-28"
     >
       <div className="mx-auto max-w-7xl">
         <MotionReveal>
-          <div className="relative overflow-hidden rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 px-5 py-10 sm:px-10 sm:py-14 lg:px-14 lg:py-16">
+          <div className="relative overflow-hidden rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/30 px-4 py-7 sm:px-10 sm:py-14 lg:px-14 lg:py-16">
             <div className="relative">
               <div className="mx-auto max-w-2xl text-center">
-                <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-[var(--text-muted)]">
+                <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-[var(--text-muted)] sm:mb-4">
                   {t("label")}
                 </p>
                 <h2 className="font-display text-pretty text-2xl font-medium tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl">
                   {t("title")}
                 </h2>
-                <p className="mx-auto mt-4 max-w-xl text-pretty text-sm text-[var(--text-secondary)] sm:text-base">
+                <p className="mx-auto mt-3 max-w-xl text-pretty text-sm text-[var(--text-secondary)] sm:mt-4 sm:text-base">
                   {t("subtitle")}
-                </p>
-                <p className="mx-auto mt-3 text-pretty text-xs text-[var(--text-muted)] sm:text-sm">
-                  {t("responseHint")}
                 </p>
               </div>
 
-              <ol className="mx-auto mt-10 grid max-w-3xl gap-6 text-left sm:grid-cols-3">
+              <ol className="mx-auto mt-7 grid max-w-3xl gap-4 text-left min-[480px]:grid-cols-3 min-[480px]:gap-5 sm:mt-10 sm:gap-6">
                 {(
                   [
                     t("processStep1"),
@@ -48,7 +45,14 @@ export async function CtaSection() {
                     t("processStep3"),
                   ] as const
                 ).map((step, index) => (
-                  <li key={step} className="min-w-0">
+                  <li
+                    key={step}
+                    className={`min-w-0 ${
+                      index > 0
+                        ? "border-t border-[var(--border-subtle)] pt-4 min-[480px]:border-l min-[480px]:border-t-0 min-[480px]:pl-5 min-[480px]:pt-0"
+                        : ""
+                    }`}
+                  >
                     <p className="font-display text-sm font-medium text-[var(--text-muted)]">
                       {String(index + 1).padStart(2, "0")}
                     </p>

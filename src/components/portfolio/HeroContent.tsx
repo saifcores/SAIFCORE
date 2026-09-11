@@ -12,9 +12,8 @@ type Props = {
   subtitle: string;
   proofLine: string;
   availability: string;
-  locationLine: string;
   jumpToContact: string;
-  seePackages: string;
+  waysToWork: string;
   ctas: ReactNode;
 };
 
@@ -26,9 +25,8 @@ export function HeroContent({
   subtitle,
   proofLine,
   availability,
-  locationLine,
   jumpToContact,
-  seePackages,
+  waysToWork,
   ctas,
 }: Props) {
   const reduce = useReducedMotion();
@@ -40,25 +38,21 @@ export function HeroContent({
         initial={reduce ? false : { opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.45, ease }}
-        className="mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--border-strong)] bg-[var(--bg-elevated)] px-3 py-1.5"
+        className="mb-5 flex flex-col items-start gap-2.5 min-[480px]:flex-row min-[480px]:flex-wrap min-[480px]:items-center min-[480px]:gap-3"
       >
-        <span className="relative flex h-2 w-2" aria-hidden>
-          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--accent-strong)] opacity-60" />
-          <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--accent-strong)]" />
+        <span className="inline-flex items-center gap-2 rounded-full border border-[var(--border-strong)] bg-[var(--bg-elevated)] px-3 py-1.5">
+          <span className="relative flex h-2 w-2" aria-hidden>
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--accent-strong)] opacity-60" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--accent-strong)]" />
+          </span>
+          <span className="text-xs font-medium text-[var(--text-primary)]">
+            {availability}
+          </span>
         </span>
-        <span className="text-xs font-medium text-[var(--text-primary)]">
-          {availability}
+        <span className="text-xs font-medium uppercase tracking-[0.16em] text-[var(--text-muted)]">
+          {badge}
         </span>
       </motion.div>
-
-      <motion.p
-        initial={reduce ? false : { opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.4, delay: 0.05 }}
-        className="mb-4 text-xs font-medium uppercase tracking-[0.16em] text-[var(--text-muted)]"
-      >
-        {badge}
-      </motion.p>
 
       <motion.h1
         initial={reduce ? false : { opacity: 0, y: 24 }}
@@ -75,7 +69,7 @@ export function HeroContent({
         initial={reduce ? false : { opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.16, ease }}
-        className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-[var(--text-secondary)] sm:text-lg"
+        className="mt-5 max-w-xl text-pretty text-[0.9375rem] leading-relaxed text-[var(--text-secondary)] sm:mt-6 sm:text-lg"
       >
         {subtitle}
       </motion.p>
@@ -93,36 +87,36 @@ export function HeroContent({
         initial={reduce ? false : { opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.45, delay: 0.28, ease }}
-        className="mt-8 flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center"
+        className="mt-7 flex w-full flex-col gap-2.5 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center sm:gap-3"
       >
         {ctas}
       </motion.div>
 
-      <motion.div
+      <motion.p
         initial={reduce ? false : { opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.45, delay: 0.34 }}
-        className="mt-6 flex flex-col gap-3 text-sm text-[var(--text-muted)]"
+        className="mt-6 flex flex-col gap-1 text-sm sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-4 sm:gap-y-2"
       >
-        <p className="text-pretty leading-relaxed">{locationLine}</p>
-        <p className="flex flex-wrap items-center gap-x-4 gap-y-2">
-          <Link
-            href="/#paths"
-            className="inline-flex min-h-11 items-center font-medium text-[var(--text-secondary)] underline decoration-[var(--border-subtle)] underline-offset-4 transition hover:text-[var(--text-primary)] hover:decoration-[var(--border-hover)] sm:min-h-0"
-          >
-            {jumpToContact}
-          </Link>
-          <span className="hidden text-[var(--border-strong)] sm:inline" aria-hidden>
-            ·
-          </span>
-          <Link
-            href="/#offers"
-            className="inline-flex min-h-11 items-center font-medium text-[var(--text-secondary)] underline decoration-[var(--border-subtle)] underline-offset-4 transition hover:text-[var(--text-primary)] hover:decoration-[var(--border-hover)] sm:min-h-0"
-          >
-            {seePackages}
-          </Link>
-        </p>
-      </motion.div>
+        <Link
+          href="/#paths"
+          className="inline-flex min-h-11 items-center font-medium text-[var(--text-secondary)] underline decoration-[var(--border-subtle)] underline-offset-4 transition hover:text-[var(--text-primary)] hover:decoration-[var(--border-hover)]"
+        >
+          {jumpToContact}
+        </Link>
+        <span
+          className="hidden text-[var(--border-strong)] sm:inline"
+          aria-hidden
+        >
+          ·
+        </span>
+        <Link
+          href="/#offers"
+          className="inline-flex min-h-11 items-center font-medium text-[var(--text-secondary)] underline decoration-[var(--border-subtle)] underline-offset-4 transition hover:text-[var(--text-primary)] hover:decoration-[var(--border-hover)]"
+        >
+          {waysToWork}
+        </Link>
+      </motion.p>
     </div>
   );
 }

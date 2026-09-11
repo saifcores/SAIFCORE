@@ -5,7 +5,6 @@ import {
 } from "next-intl/server";
 import type { Locale } from "next-intl";
 import { AudiencePaths } from "@/components/portfolio/AudiencePaths";
-import { CollaborationStrip } from "@/components/portfolio/CollaborationStrip";
 import { ExperienceTeaser } from "@/components/portfolio/ExperienceTeaser";
 import { Insights } from "@/components/portfolio/Insights";
 import { CtaSection } from "@/components/portfolio/CtaSection";
@@ -16,7 +15,6 @@ import { Hero } from "@/components/portfolio/Hero";
 import { Navbar } from "@/components/portfolio/Navbar";
 import { FreelanceOffers } from "@/components/portfolio/FreelanceOffers";
 import { Trust } from "@/components/portfolio/Trust";
-import { WorkProcess } from "@/components/portfolio/WorkProcess";
 import { fetchRecentArticles } from "@/blog/recent-articles";
 import {
   buildArticleItemListJsonLd,
@@ -24,9 +22,9 @@ import {
   buildFaqPageJsonLd,
   buildJsonLdGraph,
   buildOfferCatalogNodes,
-  caseStudySlug,
   getLocaleHomeUrl,
   getLocalePageUrl,
+  projectCaseStudyId,
 } from "@/seo";
 import {
   getContactEmail,
@@ -55,7 +53,6 @@ export default async function Home({ params }: Props) {
 
   const messages = await getMessages();
   const fo = messages.freelanceOffers;
-  const wp = messages.workProcess;
   const faqItems = tFaq.raw("items") as readonly {
     question: string;
     answer: string;
@@ -97,27 +94,10 @@ export default async function Home({ params }: Props) {
     url: siteUrl,
     image: new URL("/profile.png", `${siteUrl}/`).toString(),
     knowsLanguage: [
-      { "@type": "Language", name: "French", alternateName: "fr" },
-      { "@type": "Language", name: "English", alternateName: "en" },
+      { "@type": "Language", name: t("langFrench"), alternateName: "fr" },
+      { "@type": "Language", name: t("langEnglish"), alternateName: "en" },
     ],
-    knowsAbout: [
-      "Java",
-      "Spring Boot",
-      "Backend engineering",
-      "Software architecture",
-      "Distributed systems",
-      "APIs",
-      "Cloud-native architectures",
-      "Enterprise platforms",
-      "Banking systems",
-      "Payment infrastructure",
-      "FinTech",
-      "Apache Kafka",
-      "Microservices",
-      "AWS",
-      "Mobile money",
-      "AI-enabled software",
-    ],
+    knowsAbout: [...messages.meta.knowsAbout],
     alumniOf: {
       "@type": "CollegeOrUniversity",
       name: "Université numérique Cheikh Hamidou KANE (UN-CHK)",
@@ -212,7 +192,7 @@ export default async function Home({ params }: Props) {
     name: tFeatured("heading"),
     items: messages.featuredProjects.items.map((item) => ({
       name: item.title,
-      url: `${systemsUrl}#case-${caseStudySlug(item.title)}`,
+      url: `${systemsUrl}#case-${projectCaseStudyId(item)}`,
     })),
   });
   if (
@@ -240,27 +220,23 @@ export default async function Home({ params }: Props) {
         tabIndex={-1}
       >
         {/*
-          Home: Trust → Path → Proof → Start → History → Ways to work →
-          Process → Insights → FAQ → Contact. Depth on /about & /systems.
+          Home: Trust → Path → Proof → History → Ways to work →
+          Insights → FAQ → Contact. Depth on /about & /systems.
         */}
         <Hero />
         <Trust />
         <AudiencePaths />
         <FeaturedProjectsTeaser />
-        <CollaborationStrip />
         <ExperienceTeaser />
         <FreelanceOffers
           title={fo.title}
           subtitle={fo.subtitle}
           note={fo.note}
+          closer={fo.closer}
           cta={fo.cta}
+          ctaSecondary={fo.ctaSecondary}
+          fitLabel={fo.fitLabel}
           tracks={fo.tracks}
-        />
-        <WorkProcess
-          title={wp.title}
-          subtitle={wp.subtitle}
-          cta={wp.cta}
-          steps={[...wp.steps]}
         />
         <Insights teaser />
         <FaqSection />

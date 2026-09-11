@@ -37,7 +37,7 @@ export async function RelatedCaseStudies({ slug }: Props) {
           <li key={item.title}>
             <Reveal delay={i * 60}>
               <Link
-                href={getCaseStudyHref(item.title)}
+                href={getCaseStudyHref(item)}
                 className="group flex h-full flex-col rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-5 transition hover:border-[var(--border-hover)] hover:bg-[var(--bg-elevated)]/40 sm:p-6"
               >
                 <p className="text-xs font-medium uppercase tracking-[0.16em] text-[var(--text-muted)]">

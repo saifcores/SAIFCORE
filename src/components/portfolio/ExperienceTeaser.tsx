@@ -35,7 +35,7 @@ export async function ExperienceTeaser() {
   return (
     <section
       id="experience"
-      className="border-b border-[var(--border-subtle)] px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
+      className="scroll-mt-24 border-b border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20 xl:scroll-mt-28"
     >
       <div className="mx-auto max-w-7xl">
         <Reveal>
@@ -48,11 +48,11 @@ export async function ExperienceTeaser() {
                 {t("subtitle")}
               </h2>
             </div>
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
+            <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-4">
               {resumeUrl && resumeProps ? (
                 <a
                   href={resumeUrl}
-                  className="inline-flex min-h-10 shrink-0 items-center text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
+                  className="inline-flex min-h-11 shrink-0 items-center text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)] sm:min-h-10"
                   {...resumeProps}
                 >
                   {t("downloadCv")}
@@ -60,7 +60,7 @@ export async function ExperienceTeaser() {
               ) : null}
               <Link
                 href="/experience"
-                className="inline-flex min-h-10 shrink-0 items-center gap-1.5 text-sm font-medium text-[var(--text-primary)] transition hover:opacity-70"
+                className="inline-flex min-h-11 shrink-0 items-center gap-1.5 text-sm font-medium text-[var(--text-primary)] transition hover:opacity-70 sm:min-h-10"
               >
                 {t("viewAll")}
                 <span aria-hidden>→</span>
@@ -78,9 +78,9 @@ export async function ExperienceTeaser() {
             return (
               <li key={`${item.role}|${item.company}`}>
                 <Reveal delay={i * 50}>
-                  <div className="flex flex-col gap-1.5 py-3.5 sm:flex-row sm:items-start sm:gap-5 sm:py-4">
+                  <div className="flex flex-col gap-2 py-4 sm:flex-row sm:items-start sm:gap-5 sm:py-4">
                     <div className="min-w-0 flex-1">
-                      <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+                      <div className="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-baseline sm:justify-between sm:gap-x-3">
                         <div className="min-w-0">
                           <div className="flex flex-wrap items-center gap-2">
                             <span
@@ -107,12 +107,12 @@ export async function ExperienceTeaser() {
                             </p>
                           ) : null}
                         </div>
-                        <span className="shrink-0 font-mono text-[11px] tabular-nums text-[var(--text-muted)]">
+                        <span className="font-mono text-[11px] tabular-nums text-[var(--text-muted)] sm:shrink-0">
                           {item.period}
                         </span>
                       </div>
                       {bullet ? (
-                        <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-[var(--text-secondary)]">
+                        <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-[var(--text-secondary)]">
                           {bullet}
                         </p>
                       ) : null}

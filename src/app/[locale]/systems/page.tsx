@@ -18,8 +18,8 @@ import { routing } from "@/i18n/routing";
 import {
   buildPageMetadata,
   buildSystemsPageGraph,
-  caseStudySlug,
   getLocalePageUrl,
+  projectCaseStudyId,
 } from "@/seo";
 import { sortProjectsLiveFirst } from "@/data/case-studies";
 
@@ -59,7 +59,7 @@ export default async function SystemsPage({ params }: Props) {
   const caseStudies = sortProjectsLiveFirst(
     messages.featuredProjects.items,
   ).map((item) => {
-    const slug = caseStudySlug(item.title);
+    const slug = projectCaseStudyId(item);
 
     return {
       name: item.title,

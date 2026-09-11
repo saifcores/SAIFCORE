@@ -168,7 +168,7 @@ export function ContactForm({
     <div className="grid gap-6 md:grid-cols-[1fr_minmax(220px,280px)] md:gap-10 lg:gap-12">
       {isSuccess ? (
         <div
-          className="surface-panel order-last rounded-[16px] p-5 text-left sm:p-8 md:order-none"
+          className="surface-panel rounded-[16px] p-5 text-left sm:p-8"
           role="status"
           aria-live="polite"
         >
@@ -200,7 +200,7 @@ export function ContactForm({
         <form
           id={formDomId}
           onSubmit={handleSubmit}
-          className="surface-panel order-last rounded-[16px] p-5 text-left sm:p-8 md:order-none"
+          className="surface-panel rounded-[16px] p-5 text-left sm:p-8"
           aria-label={formSubmit}
           aria-busy={isSending}
         >
@@ -345,7 +345,7 @@ export function ContactForm({
         </form>
       )}
 
-      <aside className="order-first grid gap-4 min-[480px]:grid-cols-2 md:order-none md:flex md:flex-col md:gap-6">
+      <aside className="grid gap-4 min-[480px]:grid-cols-2 md:flex md:flex-col md:gap-6">
         <div className="surface-panel rounded-[16px] p-5 sm:p-6">
           <BookCallLink className={bookCallClass}>{bookCall}</BookCallLink>
           <p className="mt-3 text-center text-xs leading-relaxed text-[var(--text-muted)]">

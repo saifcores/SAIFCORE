@@ -13,7 +13,27 @@
     "jsonLdAreaServed": "Senegal, West Africa, Worldwide",
     "keywords": "senior software engineer, backend engineer, software architecture, distributed systems, APIs, Spring Boot, Java, payment infrastructure, fintech, banking systems, cloud-native, Kafka, AWS, mobile money, Senegal, West Africa, Dakar, remote engineer, SAIFCORE",
     "manifestName": "SAIFCORE — Senior Software Engineer",
-    "manifestDescription": "Portfolio — backend engineering, distributed systems, APIs, and software architecture for banking, FinTech, and enterprise platforms."
+    "manifestDescription": "Portfolio — backend engineering, distributed systems, APIs, and software architecture for banking, FinTech, and enterprise platforms.",
+    "knowsAbout": [
+      "Java",
+      "Spring Boot",
+      "Backend engineering",
+      "Software architecture",
+      "Distributed systems",
+      "APIs",
+      "Cloud-native architectures",
+      "Enterprise platforms",
+      "Banking systems",
+      "Payment infrastructure",
+      "FinTech",
+      "Apache Kafka",
+      "Microservices",
+      "AWS",
+      "Mobile money",
+      "AI-enabled software"
+    ],
+    "langFrench": "French",
+    "langEnglish": "English"
   },
   "common": {
     "skipToContent": "Skip to content",
@@ -54,8 +74,8 @@
     "closeMenu": "Close menu",
     "siteNavigation": "Site navigation",
     "language": "Language",
-    "localeEn": "English",
-    "localeFr": "Français",
+    "localeEn": "EN",
+    "localeFr": "FR",
     "more": "More",
     "groupPriority": "Key pages",
     "groupMore": "More",
@@ -79,17 +99,17 @@
   },
   "audiencePaths": {
     "title": "Start here",
-    "subtitle": "Hiring this profile, or scoping a project — pick your path.",
+    "subtitle": "Hiring this profile, or starting a project.",
     "recruiterTitle": "Hiring & recruiting",
-    "recruiterDescription": "Review experience, case studies, and About — then download the CV.",
+    "recruiterDescription": "Experience, case studies, and About — then the CV.",
     "recruiterLinkExperience": "Experience",
     "recruiterLinkSystems": "Case studies",
     "recruiterLinkAbout": "About",
     "recruiterCta": "Download CV",
     "recruiterSecondaryCta": "View experience",
     "clientTitle": "Project & freelance work",
-    "clientDescription": "See what I deliver, then book a short discovery call — or review ways to work when you already know the shape of the work.",
-    "clientLinkServices": "What I deliver",
+    "clientDescription": "See shipped systems, ways to work, then book a short call.",
+    "clientLinkServices": "Case studies",
     "clientLinkOffers": "Ways to work",
     "clientLinkStart": "How it starts",
     "clientLinkProcess": "How I work",
@@ -98,11 +118,11 @@
     "clientSecondaryCta": "Ways to work"
   },
   "hero": {
-    "badge": "Dakar · West Africa · Remote Worldwide",
+    "badge": "Dakar · FR/EN · Remote worldwide",
     "titleLine1": "I build software",
     "titleLine2": "that solves",
     "titleLine3": "real-world problems.",
-    "subtitle": "Senior Software Engineer — backend, distributed systems, APIs, and architecture. Mainly Java and Spring Boot. I start from the problem, make trade-offs explicit, and ship systems that stay reliable as they evolve.",
+    "subtitle": "Senior Software Engineer — backend, distributed systems, APIs, and architecture. Mainly Java and Spring Boot. I start from the problem, make trade-offs explicit, and ship systems that stay reliable.",
     "hubNodes": [
       "Architecture",
       "Backend",
@@ -114,10 +134,9 @@
     "ctaExperience": "Ways to work",
     "ctaBookCall": "Book a call",
     "ctaResume": "Download CV",
-    "proofLine": "History across enterprise platforms, banking, and FinTech — including Bank of Africa Group (via Synapse) and ENG Technologie.",
-    "locationLine": "Dakar · bilingual EN/FR · freelance and contract · remote worldwide.",
+    "proofLine": "Track record across enterprise platforms, banking, and FinTech — including Bank of Africa Group (via Synapse) and ENG Technologie.",
     "availability": "Open to new work",
-    "jumpToContact": "Hiring? Start with the recruiter path"
+    "jumpToContact": "Hiring? Recruiter path"
   },
   "trustedExpertise": {
     "title": "Core capabilities",
@@ -283,89 +302,98 @@
   },
   "freelanceOffers": {
     "title": "Ways to work",
-    "subtitle": "Two tracks: product teams shipping fast, enterprises modernizing under constraints. Remote, scoped, production-minded.",
-    "note": "Short discovery call, then a written proposal — scope, milestones, effort. Clear ownership through delivery.",
-    "cta": "Request a proposal",
+    "subtitle": "Match the engagement to the decision — clarify the problem, ship the system, or embed senior capacity.",
+    "note": "Every path starts the same: a short discovery call, then a written proposal with scope, milestones, and ownership.",
+    "cta": "Book a discovery call",
+    "fitLabel": "Best when",
     "tracks": [
       {
-        "label": "Clients & founders",
-        "audience": "Startups, product owners, and SMEs shipping APIs, MVPs, or production backends.",
-        "promise": "A backend you can demo, operate, and hand to your team — with milestones, docs, and no black box.",
+        "label": "Product & startup delivery",
+        "audience": "Founders and product teams that need a reliable backend without hiring a full platform squad yet.",
+        "promise": "From fuzzy idea to a system you can demo, operate, and hand off — with explicit trade-offs along the way.",
         "packages": [
           {
-            "title": "Discovery & architecture sprint",
+            "title": "Architecture sprint",
             "duration": "1–2 weeks",
-            "description": "Best before a full build: lock scope, risks, and the shortest path to a launchable backend.",
+            "fit": "Scope is unclear, stakes are rising, and you need the shortest path to a launchable design.",
+            "description": "Lock goals, risks, integrations, and architecture before you burn budget on the wrong build.",
             "includes": [
-              "Goals, constraints, and integration map",
-              "Target architecture + draft ADRs",
-              "Phased plan with effort ranges"
+              "Problem framing and integration map",
+              "Target architecture with draft ADRs",
+              "Phased plan and effort ranges"
             ]
           },
           {
-            "title": "Build & deliver",
+            "title": "Scoped build",
             "duration": "4–12 weeks",
-            "description": "End-to-end freelance delivery of APIs, integrations, or core workflows — discovery through production-ready ownership.",
+            "fit": "You know what to ship and need a named senior engineer to own delivery through production.",
+            "description": "End-to-end delivery of APIs, workflows, or integrations — milestones, tests, and runbooks included.",
             "includes": [
-              "Milestone demos and acceptance criteria",
-              "Tests, observability, and runbooks",
-              "Docs and runbooks your team can own"
+              "Milestone demos with acceptance criteria",
+              "Tests, observability, and docs",
+              "Handoff your team can operate"
             ]
           },
           {
             "title": "MVP acceleration",
             "duration": "6–10 weeks",
-            "description": "A fundable, demo-ready MVP on real integrations — built to extend, not throw away.",
+            "fit": "You need a fundable, demo-ready product on real integrations — built to extend, not throw away.",
+            "description": "Core domain APIs and critical flows shaped for launch, security baseline, and the next iteration.",
             "includes": [
-              "Core domain APIs and critical flows",
-              "Security baseline and audit-friendly trails",
-              "Launch checklist + next-iteration roadmap"
+              "Core flows on real integrations",
+              "Security baseline and audit trails",
+              "Launch checklist + roadmap"
             ]
           }
         ]
       },
       {
-        "label": "Enterprises & banks",
-        "audience": "Banks, fintechs, and platform teams that need backend capacity, modernization, or an independent technical look.",
-        "promise": "Ownership where stakes are high — regulated integrations, compliance-aware delivery, architecture that scales.",
+        "label": "Enterprise & platform work",
+        "audience": "Banks, fintechs, and platform teams modernizing under constraints — or adding senior backend depth.",
+        "promise": "Ownership where correctness and reliability are non-negotiable — regulated contexts, clear governance, lasting architecture.",
         "packages": [
           {
-            "title": "Contract backend embed",
-            "duration": "1–6 months",
-            "description": "A senior software engineer inside your squad — roadmap sprints, CI/CD, and production ownership in regulated contexts.",
+            "title": "Architecture review",
+            "duration": "1–3 weeks",
+            "fit": "Before a big bet — you want ranked risks, reference designs, and a plan your team can execute.",
+            "description": "Independent look at a backend, API, or integration surface before you commit to build or migrate.",
             "includes": [
-              "Delivery inside your ceremonies and tools",
-              "Code reviews, quality bar, and mentorship",
-              "Stable ops posture after release"
+              "Findings ranked by risk and effort",
+              "Reference designs and ADRs",
+              "Action plan for your team"
             ]
           },
           {
             "title": "Platform modernization",
             "duration": "8–16 weeks+",
-            "description": "Legacy-to-cloud-native moves, partner API gateways, and high-stakes programs with enterprise governance.",
+            "fit": "Legacy or fragmented systems need a phased move to something operable, observable, and partner-ready.",
+            "description": "Migration waves, partner API contracts, and resilience work with enterprise-grade delivery discipline.",
             "includes": [
               "Architecture and migration waves",
-              "Partner onboarding and versioned API contracts",
-              "Resilience, observability, and SLOs"
+              "Versioned partner API contracts",
+              "Observability, SLOs, and runbooks"
             ]
           },
           {
-            "title": "Technical & architecture review",
-            "duration": "1–3 weeks",
-            "description": "A focused review of a backend, integration, or API before you commit to a build — ranked findings, ADRs, and a phased plan.",
+            "title": "Contract embed",
+            "duration": "1–6 months",
+            "fit": "Your squad needs senior capacity inside the team — roadmap delivery, quality bar, production ownership.",
+            "description": "A named Senior Software Engineer embedded in your ceremonies and tools through release and stabilization.",
             "includes": [
-              "Findings ranked by risk and effort",
-              "Reference designs and ADRs",
-              "An action plan your implementing team can own"
+              "Delivery inside your rituals and stack",
+              "Code reviews, quality bar, mentorship",
+              "Stable ops posture after release"
             ]
           }
         ]
       }
-    ]
+    ],
+    "ctaSecondary": "Send a brief",
+    "closer": "Not sure which fits? Start with discovery — I will recommend the right engagement."
   },
   "faq": {
-    "title": "Frequently asked questions",
-    "subtitle": "Short answers for hiring managers and project leads.",
+    "title": "FAQ",
+    "subtitle": "Hiring managers and project leads — straight answers.",
     "items": [
       {
         "question": "How do engagements start?",
@@ -377,7 +405,7 @@
       },
       {
         "question": "How do we shape the engagement?",
-        "answer": "Founders and SMEs usually start with Discovery & architecture, Build & deliver, or MVP acceleration. Banks and platform teams lean toward Contract embed, Platform modernization, or Technical & architecture review."
+        "answer": "Product teams usually start with an Architecture sprint, Scoped build, or MVP acceleration. Banks and platform teams lean toward Architecture review, Platform modernization, or a Contract embed."
       },
       {
         "question": "Can you work inside regulated banking or payment environments?",
@@ -545,7 +573,7 @@
   },
   "collaboration": {
     "title": "How an engagement starts",
-    "subtitle": "A named senior engineer, a clear proposal, no vague retainer.",
+    "subtitle": "Named senior engineer. Written proposal. No vague retainer.",
     "facts": [
       {
         "title": "30-minute intro",
@@ -558,14 +586,10 @@
       {
         "title": "Named owner",
         "body": "I stay on the work through production — tests, runbooks, and docs."
-      },
-      {
-        "title": "Two-day reply",
-        "body": "I respond within two business days with a clear next step."
       }
     ],
     "ctaTitle": "Book a 30-minute intro call",
-    "ctaSubtitle": "No strings. Written proposal for project work — or a clear hiring path if you are recruiting.",
+    "ctaSubtitle": "Written proposal for project work — or a clear hiring path if you are recruiting.",
     "ctaPrimary": "Book a call",
     "ctaSecondary": "Ways to work"
   },
@@ -651,7 +675,7 @@
     ]
   },
   "trust": {
-    "heading": "Trusted where reliability matters — banking, FinTech, and platforms",
+    "heading": "Trusted where reliability matters",
     "industriesLabel": "Industries",
     "industries": [
       "Banking",
@@ -733,9 +757,9 @@
     ]
   },
   "featuredProjects": {
-    "title": "Selected engagements",
-    "heading": "Selected systems — from local products to multi-country platforms",
-    "subtitle": "The problem, the approach, and the outcome — with banking and FinTech depth where it counted.",
+    "title": "Selected work",
+    "heading": "Systems that solved real problems",
+    "subtitle": "Problem, outcome, and depth — where banking and FinTech stakes were real.",
     "impactLabel": "Business impact",
     "statusLabel": "Status",
     "marketLabel": "Market",
@@ -759,6 +783,7 @@
     "detailsSummary": "Architecture, security & delivery details",
     "items": [
       {
+        "id": "ecom-360-pme",
         "title": "Ecom 360 PME",
         "market": "Senegal · West Africa",
         "scope": "national",
@@ -815,6 +840,7 @@
         ]
       },
       {
+        "id": "pan-african-payment-sdk",
         "title": "Pan-African Payment SDK",
         "market": "West Africa corridors",
         "scope": "regional",
@@ -870,6 +896,7 @@
         ]
       },
       {
+        "id": "double-entry-ledger-system",
         "title": "Double-Entry Ledger System",
         "market": "Regulated fintech · Multi-market",
         "scope": "international",
@@ -924,6 +951,7 @@
         ]
       },
       {
+        "id": "unified-api-gateway",
         "title": "Unified API Gateway",
         "market": "Multi-country banking",
         "scope": "international",
@@ -979,6 +1007,7 @@
         ]
       },
       {
+        "id": "school-management-saas",
         "title": "School Management SaaS",
         "market": "Regional SaaS · West Africa",
         "scope": "regional",
@@ -1032,11 +1061,12 @@
           }
         ]
       }
-    ]
+    ],
+    "outcomeLabel": "Outcome —"
   },
   "experience": {
     "title": "Experience",
-    "subtitle": "Where the work happened — enterprise, banking, and FinTech systems that had to be correct and reliable.",
+    "subtitle": "Where the work happened — and what had to be correct.",
     "viewAll": "Full experience",
     "downloadCv": "Download CV",
     "valueTitle": "What you get",
@@ -1048,7 +1078,7 @@
     "showLess": "Show less",
     "items": [
       {
-        "role": "Senior Backend Engineer — Banking Systems",
+        "role": "Consultant Backend Engineer — Banking Systems",
         "company": "Synapse Groupe",
         "client": "Bank of Africa — Groupe Bank of Africa",
         "logo": "synapse.jpeg",
@@ -1339,16 +1369,16 @@
     "offersLink": "See ways to work →",
     "engagements": [
       {
-        "title": "Freelance delivery",
-        "description": "Build or modernize backends, APIs, and integrations — discovery to production-ready ownership, with milestones and docs."
+        "title": "Clarify first",
+        "description": "Architecture sprint or review — lock the problem, risks, and plan before a full build."
       },
       {
-        "title": "Contract embed",
-        "description": "Backend and architecture capacity in your squad — sprints, CI/CD, and production ownership."
+        "title": "Ship the system",
+        "description": "Scoped build or MVP acceleration — named ownership from milestones through production handoff."
       },
       {
-        "title": "Architecture review",
-        "description": "Discovery, ADRs, and reference designs before you commit budget."
+        "title": "Embed capacity",
+        "description": "Contract embed or platform modernization — senior depth inside your team or program."
       }
     ],
     "endCtaTitle": "Planning a backend, systems, or platform initiative?",
@@ -1494,14 +1524,15 @@
     "endCtaButton": "Get in touch"
   },
   "insights": {
-    "title": "Engineering Insights",
-    "subtitle": "Notes on backends, distributed systems, and architecture — from real delivery.",
+    "title": "Insights",
+    "subtitle": "Backends, distributed systems, and architecture.",
     "viewAll": "Browse all insights",
     "blogPromoTitle": "SAIFCORE Blog",
     "blogPromoBody": "Long-form engineering articles on backends, architecture, and FinTech landscapes — published on the dedicated blog.",
     "endCtaTitle": "Tackling similar technical obstacles?",
     "endCtaSubtitle": "Tell me about your platform, stack, and constraints — I reply with a clear path: proposal, workshop, or next hiring steps.",
-    "endCtaButton": "Start the conversation"
+    "endCtaButton": "Start the conversation",
+    "heading": "Notes from the work"
   },
   "articlesPage": {
     "metaTitle": "Articles & Deep Dives | SAIFCORE",
@@ -1544,12 +1575,12 @@
   },
   "cta": {
     "label": "Contact",
-    "title": "Let's talk about the work",
-    "subtitle": "Hiring: role and team. Project: goals, constraints, timeline — then a written next step. Remote worldwide.",
+    "title": "Tell me about the work",
+    "subtitle": "Hiring or a project — share context, and I reply with a clear next step.",
     "processTitle": "How it starts",
-    "processStep1": "Say whether you are hiring or scoping a project — 30-minute intro, no retainer.",
-    "processStep2": "I reply within two business days with focused questions, or a written proposal.",
-    "processStep3": "Next step is explicit: hiring path and CV, or scoped delivery I own through production.",
+    "processStep1": "Say whether you are hiring or scoping a project.",
+    "processStep2": "I reply within two business days with questions — or a written proposal.",
+    "processStep3": "Next step is explicit: CV and hiring path, or a scoped engagement.",
     "responseHint": "Expect a response within two business days.",
     "bookCall": "Book a discovery call",
     "startProject": "Email directly",
@@ -1611,7 +1642,7 @@
     "offers": "Ways to work",
     "expertise": "Expertise",
     "process": "How I Work",
-    "insights": "Insights Preview",
+    "insights": "Insights preview",
     "faq": "FAQ",
     "pagesLabel": "Explore",
     "connectLabel": "Get in Touch",
@@ -1641,30 +1672,30 @@
     "toDark": "Switch to dark mode"
   },
   "systemsPage": {
-    "metaTitle": "Case Studies | Backend & Platform Systems | SAIFCORE",
-    "metaDescription": "Case studies: APIs, ledgers, integrations, SaaS — Senegal, West Africa, multi-country banking. Proof before starting a conversation.",
-    "title": "Projects & case studies",
-    "subtitle": "Live product first, then systems proof — problem, architecture, and impact you can check across banking, FinTech, and platforms.",
+    "metaTitle": "Case Studies | Systems & Architecture | SAIFCORE",
+    "metaDescription": "Case studies: APIs, ledgers, integrations, and platforms — Senegal to multi-country banking. Problem, architecture, and impact.",
+    "title": "Case studies",
+    "subtitle": "Problem, architecture, and impact — from local products to multi-country platforms.",
     "backToHome": "Back to home",
     "midCtaTitle": "Need similar depth on your next system?",
     "midCtaSubtitle": "Book a discovery call, or review ways to work.",
     "midCtaSecondary": "Ways to work",
-    "endCtaTitle": "Need architecture patterns like these on your platform?",
-    "endCtaSubtitle": "Share your context — APIs, architecture, platforms, or SaaS — and I will reply with practical next steps.",
+    "endCtaTitle": "Building something in the same space?",
+    "endCtaSubtitle": "Share your context — APIs, architecture, or platforms — and I will reply with practical next steps.",
     "endCtaButton": "Discuss your project"
   },
   "experiencePage": {
     "metaTitle": "Experience | Senior Software Engineer | SAIFCORE",
-    "metaDescription": "Senior Software Engineer track record: Synapse for Bank of Africa Group, ENG FinTech, Mafalia SaaS, SarayaTech — Java, Spring Boot, Kafka. Hire this profile, or scope a remote engagement.",
-    "title": "Professional Experience",
-    "subtitle": "Enterprise, banking, and FinTech — Java, Spring Boot, distributed systems. Hire this profile, or scope remote work.",
+    "metaDescription": "Professional experience across enterprise platforms, banking, and FinTech — Synapse, ENG Technologie, and more. Dakar · remote worldwide.",
+    "title": "Experience",
+    "subtitle": "Roles and delivery across enterprise platforms, banking, and FinTech.",
     "backToHome": "Back to Home",
     "skillsTitle": "Production Technology Stack",
-    "skillsSubtitle": "Tools and patterns used on live banking and fintech backends — not a buzzword list.",
-    "midCtaTitle": "Enough proof to take the next step?",
+    "skillsSubtitle": "Tools and patterns from live backends — not a buzzword list.",
+    "midCtaTitle": "Ready for the next step?",
     "midCtaSubtitle": "Download the CV for hiring, or review ways to work for freelance and contract.",
     "midCtaSecondary": "Ways to work",
-    "endCtaTitle": "Hiring for this profile — or scoping a project?",
+    "endCtaTitle": "Hiring this profile — or scoping a project?",
     "endCtaSubtitle": "Recruiters: grab the CV or send a brief. Teams: share stack, constraints, and timeline — I reply with a proposal or next hiring steps.",
     "endCtaButton": "Get in touch"
   },

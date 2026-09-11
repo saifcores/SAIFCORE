@@ -84,14 +84,13 @@ export async function Footer() {
   const homeSectionLinks: FooterLink[] = [
     { href: "/#paths", label: t("paths") },
     { href: "/#work", label: t("work") },
-    { href: "/#start", label: t("start") },
+    { href: "/#experience", label: t("experience") },
     { href: "/#offers", label: t("offers") },
-    { href: "/#process", label: t("process") },
     { href: "/#faq", label: t("faq") },
   ];
 
   return (
-    <footer className="border-t border-[var(--border-subtle)] px-4 py-12 pb-[max(2.5rem,env(safe-area-inset-bottom))] sm:px-6 sm:py-14 lg:px-8">
+    <footer className="border-t border-[var(--border-subtle)] px-4 py-12 pb-[max(6rem,env(safe-area-inset-bottom))] sm:px-6 sm:py-14 sm:pb-[max(6.5rem,env(safe-area-inset-bottom))] lg:px-8 xl:pb-14">
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col gap-8 sm:gap-10 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
@@ -127,10 +126,7 @@ export async function Footer() {
               </ul>
             </nav>
 
-            <nav
-              aria-label={t("homeSectionsLabel")}
-              className="col-span-2 min-w-0 md:col-span-1"
-            >
+            <nav aria-label={t("homeSectionsLabel")} className="min-w-0">
               <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
                 {t("homeSectionsLabel")}
               </p>
@@ -143,7 +139,7 @@ export async function Footer() {
               </ul>
             </nav>
 
-            <div className="min-w-0">
+            <div className="col-span-2 min-w-0 sm:col-span-1">
               <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
                 {t("connectLabel")}
               </p>

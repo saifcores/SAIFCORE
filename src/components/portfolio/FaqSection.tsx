@@ -12,37 +12,37 @@ export async function FaqSection() {
     <section
       id="faq"
       aria-labelledby="faq-heading"
-      className="border-b border-[var(--border-subtle)] px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
+      className="scroll-mt-24 border-b border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20 xl:scroll-mt-28"
     >
       <div className="mx-auto max-w-7xl">
         <MotionReveal>
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
+            {t("title")}
+          </p>
           <h2
             id="faq-heading"
-            className="max-w-2xl font-display text-pretty text-2xl font-medium tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl"
+            className="max-w-2xl font-display text-pretty text-2xl font-medium tracking-tight text-[var(--text-primary)] sm:text-3xl"
           >
-            {t("title")}
-          </h2>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[var(--text-secondary)] sm:text-base">
             {t("subtitle")}
-          </p>
+          </h2>
         </MotionReveal>
 
-        <div className="mx-auto mt-10 max-w-3xl divide-y divide-[var(--border-subtle)] border-y border-[var(--border-subtle)]">
+        <div className="mx-auto mt-8 max-w-3xl divide-y divide-[var(--border-subtle)] border-y border-[var(--border-subtle)] sm:mt-10">
           {items.map((item, index) => (
             <MotionReveal key={item.question} delay={index * 40}>
-              <details className="group px-1 py-4 sm:py-5">
-                <summary className="cursor-pointer list-none text-sm font-semibold text-[var(--text-primary)] marker:content-none [&::-webkit-details-marker]:hidden">
+              <details className="group py-1 sm:py-1.5">
+                <summary className="cursor-pointer list-none py-3 text-sm font-semibold text-[var(--text-primary)] marker:content-none sm:py-4 [&::-webkit-details-marker]:hidden">
                   <span className="flex items-start justify-between gap-3">
-                    <span>{item.question}</span>
+                    <span className="text-pretty pr-1">{item.question}</span>
                     <span
                       aria-hidden
-                      className="mt-0.5 shrink-0 text-[var(--text-muted)] transition group-open:rotate-45"
+                      className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-[var(--text-muted)] transition group-open:rotate-45"
                     >
                       +
                     </span>
                   </span>
                 </summary>
-                <p className="mt-3 pr-8 text-sm leading-relaxed text-[var(--text-secondary)]">
+                <p className="pb-3 pr-2 text-pretty text-sm leading-relaxed text-[var(--text-secondary)] sm:pb-4 sm:pr-10">
                   {item.answer}
                 </p>
               </details>

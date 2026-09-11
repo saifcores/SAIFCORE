@@ -100,6 +100,27 @@
 html {
   scroll-behavior: smooth;
   overflow-x: clip;
+  /* Sticky header (3.5–4rem) + breathing room for in-page anchors */
+  scroll-padding-top: 4.75rem;
+}
+
+@media (min-width: 640px) {
+  html {
+    scroll-padding-top: 5.5rem;
+  }
+}
+
+/* Mobile sticky action bar — keep footer/anchors clear */
+@media (max-width: 1279px) {
+  html {
+    scroll-padding-bottom: 5.5rem;
+  }
+}
+
+@media (max-width: 1279px) and (min-width: 400px) {
+  html {
+    scroll-padding-bottom: 6rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -173,9 +194,15 @@ body {
 }
 
 .text-display-md {
-  font-size: clamp(2rem, 4.5vw, 3.5rem);
-  line-height: 1.08;
+  font-size: clamp(1.65rem, 7.2vw + 0.35rem, 3.5rem);
+  line-height: 1.1;
   font-weight: 500;
+}
+
+@media (min-width: 640px) {
+  .text-display-md {
+    line-height: 1.08;
+  }
 }
 
 .text-accent-strong {

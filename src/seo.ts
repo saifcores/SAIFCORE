@@ -294,6 +294,14 @@ export function caseStudySlug(title: string): string {
     .replace(/^-+|-+$/g, "");
 }
 
+/** Prefer explicit `id` so EN/FR titles share the same anchor. */
+export function projectCaseStudyId(item: {
+  id?: string;
+  title: string;
+}): string {
+  return item.id?.trim() || caseStudySlug(item.title);
+}
+
 type ProfilePageGraphInput = {
   locale: string;
   path: SitePath;

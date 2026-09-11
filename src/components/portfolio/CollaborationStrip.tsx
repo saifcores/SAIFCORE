@@ -49,7 +49,7 @@ export async function CollaborationStrip() {
               </div>
             </div>
 
-            <ul className="mt-10 grid list-none grid-cols-1 gap-6 border-t border-[var(--border-subtle)] p-0 pt-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+            <ul className="mt-10 grid list-none grid-cols-1 gap-6 border-t border-[var(--border-subtle)] p-0 pt-10 sm:grid-cols-3 lg:gap-8">
               {facts.map((fact, index) => (
                 <li key={fact.title}>
                   <p className="font-display text-sm font-medium text-[var(--text-muted)]">

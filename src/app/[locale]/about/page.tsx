@@ -70,9 +70,18 @@ export default async function AboutPage({ params }: Props) {
         name: "Université numérique Cheikh Hamidou KANE (UN-CHK)",
       },
       knowsLanguage: [
-        { "@type": "Language", name: "French", alternateName: "fr" },
-        { "@type": "Language", name: "English", alternateName: "en" },
+        {
+          "@type": "Language",
+          name: tMeta("langFrench"),
+          alternateName: "fr",
+        },
+        {
+          "@type": "Language",
+          name: tMeta("langEnglish"),
+          alternateName: "en",
+        },
       ],
+      knowsAbout: [...messages.meta.knowsAbout],
     },
   });
 

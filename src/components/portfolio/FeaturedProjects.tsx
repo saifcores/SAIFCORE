@@ -1,7 +1,7 @@
 import { getMessages, getTranslations } from "next-intl/server";
 import type { ReactNode } from "react";
 import { Link } from "@/i18n/navigation";
-import { caseStudySlug } from "@/seo";
+import { projectCaseStudyId } from "@/seo";
 import { projectStatusRank, sortProjectsLiveFirst } from "@/data/case-studies";
 import type { FeaturedProjectItem } from "@/types/messages";
 import { FeaturedProjectDetails } from "./FeaturedProjectDetails";
@@ -119,7 +119,7 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
             return (
               <Reveal key={item.title} delay={i * 100}>
                 <article
-                  id={`case-${caseStudySlug(item.title)}`}
+                  id={`case-${projectCaseStudyId(item)}`}
                   className="group relative scroll-mt-28 overflow-hidden rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 transition duration-300 hover:border-[var(--border-hover)] xl:scroll-mt-24"
                 >
                   <div

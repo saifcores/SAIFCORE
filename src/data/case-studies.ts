@@ -1,7 +1,7 @@
-import { caseStudySlug } from "@/seo";
+import { caseStudySlug, projectCaseStudyId } from "@/seo";
 import type { FeaturedProjectItem } from "@/types/messages";
 
-/** Stable case study anchor slugs (from `caseStudySlug(title)`). */
+/** Stable case study anchor slugs (from project `id` / EN title slug). */
 const articleCaseStudySlugs: Record<string, string[]> = {
   "banking-middleware-multi-subsidiary": ["unified-api-gateway"],
   "adr-double-entry-ledger-payments": ["double-entry-ledger-system"],
@@ -26,13 +26,20 @@ export function getRelatedCaseStudies(
   if (!slugs?.length) return [];
 
   return slugs
-    .map((slug) => items.find((item) => caseStudySlug(item.title) === slug))
+    .map((slug) =>
+      items.find((item) => projectCaseStudyId(item) === slug),
+    )
     .filter((item): item is FeaturedProjectItem => item != null)
     .slice(0, limit);
 }
 
-export function getCaseStudyHref(title: string): `/systems#case-${string}` {
-  return `/systems#case-${caseStudySlug(title)}`;
+export function getCaseStudyHref(
+  itemOrTitle: FeaturedProjectItem | string,
+): `/systems#case-${string}` {
+  if (typeof itemOrTitle === "string") {
+    return `/systems#case-${caseStudySlug(itemOrTitle)}`;
+  }
+  return `/systems#case-${projectCaseStudyId(itemOrTitle)}`;
 }
 
 /** Lower rank ships first on teasers and /systems. */
