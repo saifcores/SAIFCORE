@@ -1,17 +1,44 @@
-\Needspace{16\baselineskip}
+\Needspace{20\baselineskip}
 \section{Projets S\'electionn\'es}
 
 \resumeProject
-    {Passerelle API Unifi\'ee}
-    {Architecture \& int\'egrations}
+    {Ecom 360 PME}
+    {SaaS live \textbullet\ S\'en\'egal / Afrique de l'Ouest}
     {
-    \resumeItem{Gateway comme fronti\`ere~: authentification, routage,
-    limitation de d\'ebit et orchestration fournisseurs pour des
-    int\'egrations bancaires multi-entit\'es.}
-    \resumeItem{JWT en p\'eriph\'erie, RBAC, journalisation d'audit et
-    contrats REST versionn\'es pour prot\'eger les syst\`emes c{\oe}ur
-    tout en ouvrant les APIs partenaires. Patterns issus de Synapse /
-    Groupe Bank of Africa.}
+    \resumeItem{Plateforme commerce~: POS, stocks temps r\'eel, Wave \&
+    Orange Money \`a chaque vente, multi-boutiques et exports comptables
+    --- 10+ commer\c{c}ants en production.
+    \href{https://ecom360pme.com/}{ecom360pme.com}}
+    \resumeItem{API REST Spring Boot multi-tenant, jobs asynchrones de
+    reporting / export et acc\`es par r\^oles sous contraintes r\'eseau
+    et wallets.}
+    }
+
+\resumeProject
+    {Double-Entry Ledger Platform}
+    {R\'ef\'erence FinTech \textbullet\
+    \href{https://github.com/saifcores/double-entry-ledger-platform}{GitHub}}
+    {
+    \resumeItem{Monolithe modulaire (Java~21 / Spring Boot~3.4) pour
+    wallets et flux en partie double~: journaux append-only \'equilibr\'es,
+    posting idempotent, outbox transactionnel vers Kafka, retraits
+    maker/checker.}
+    \resumeItem{PostgreSQL + triggers Flyway, rate limits Redis, OpenAPI,
+    UI d\'emo Compose sur la vraie API --- invariants de posting d'abord,
+    pas une table de soldes.}
+    }
+
+\resumeProject
+    {Payment Platform Disaster Lab}
+    {Labo r\'esilience \textbullet\
+    \href{https://github.com/saifcores/payment-platform-disaster-lab}{GitHub}}
+    {
+    \resumeItem{Labo de paiement XOF distribu\'e~: dual simulateurs PSP,
+    state machine paiement, outbox Kafka --- prouver qu'aucun paiement
+    n'est perdu ni trait\'e deux fois sous d\'efaillance partielle.}
+    \resumeItem{Timeout = UNKNOWN / IN\_RECONCILIATION (jamais de failover
+    aveugle)~; control center SRE pour injecter le chaos et observer la
+    recovery.}
     }
 
 \resumeProject
@@ -19,23 +46,10 @@
     {Infrastructure de paiement}
     {
     \resumeItem{API unique pour initier, confirmer et r\'econcilier les
-    paiements Orange Money, Wave et Free Money --- 3+ wallets derri\`ere
-    un contrat unique.}
+    paiements Orange Money, Wave et Free Money --- adaptateurs
+    fournisseurs derri\`ere un contrat unique.}
     \resumeItem{Adaptateurs Spring Boot, cl\'es d'idempotence Redis,
     \'ev\'enements Kafka de r\`eglement, requ\^etes sign\'ees et
     validation HMAC des webhooks. Patterns \'eprouv\'es sur la delivery
     ENG Technologie.}
-    }
-
-\resumeProject
-    {Ecom 360 PME}
-    {Plateforme SaaS}
-    {
-    \resumeItem{Plateforme tout-en-un~: POS, stocks temps r\'eel, Wave \&
-    Orange Money li\'es \`a chaque vente, multi-boutiques et exports
-    comptables.}
-    \resumeItem{API REST Spring Boot multi-tenant, jobs asynchrones de
-    reporting et contr\^ole d'acc\`es par r\^oles --- 500+ commer\c{c}ants
-    actifs au S\'en\'egal et en Afrique de l'Ouest.
-    \href{https://ecom360pme.com/}{ecom360pme.com}}
     }

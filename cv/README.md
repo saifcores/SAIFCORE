@@ -22,9 +22,13 @@ Locale resolution lives in [`src/server/resume.ts`](../src/server/resume.ts).
 - Single-column layout, standard section titles, plain-text skills/keywords
 - Bullets: ownership verb + context + measurable outcome when known from the portfolio
 - Keep metrics honest (11+ BoA subsidiaries via Synapse, Wave / Orange Money). No unsourced round percentages.
-- Projects: Payment SDK, Unified API Gateway, Ecom 360 PME
+- Projects (aligned with portfolio): Ecom 360 PME, Double-Entry Ledger
+  Platform, Payment Platform Disaster Lab, Pan-African Payment SDK
+- Gateway / multi-entity API patterns stay in Synapse experience bullets
 - Frontend is secondary (“Also”) — do not lead with Angular / React
 - No decorative icons, multi-column layouts, or invented metrics
+- Keep metrics honest with the site (e.g. Ecom **10+** merchants live —
+  not inflated counts)
 - Target **1–2 A4 pages**
 
 ## Rebuild

@@ -1,16 +1,42 @@
-\Needspace{16\baselineskip}
+\Needspace{20\baselineskip}
 \section{Selected Projects}
 
 \resumeProject
-    {Unified API Gateway}
-    {Architecture \& integrations}
+    {Ecom 360 PME}
+    {Live SaaS \textbullet\ Senegal / West Africa}
     {
-    \resumeItem{Gateway as a boundary: authentication, routing, rate
-    limiting and provider orchestration for multi-entity banking
-    integrations.}
-    \resumeItem{Edge JWT, RBAC, request audit logging and versioned REST
-    contracts to protect core systems while opening partner APIs.
-    Patterns from Synapse / Bank of Africa Group delivery.}
+    \resumeItem{Commerce platform: POS, real-time inventory, Wave \&
+    Orange Money on each sale, multi-store ops and accountant-ready
+    exports --- 10+ merchants live.
+    \href{https://ecom360pme.com/}{ecom360pme.com}}
+    \resumeItem{Multi-tenant Spring Boot REST API, async reporting /
+    export jobs and role-based staff access under network and wallet
+    constraints.}
+    }
+
+\resumeProject
+    {Double-Entry Ledger Platform}
+    {FinTech reference \textbullet\
+    \href{https://github.com/saifcores/double-entry-ledger-platform}{GitHub}}
+    {
+    \resumeItem{Modular monolith (Java~21 / Spring Boot~3.4) for wallets
+    and double-entry flows: balanced append-only journals, idempotent
+    posting, transactional outbox to Kafka, maker/checker withdrawals.}
+    \resumeItem{PostgreSQL + Flyway triggers, Redis rate limits, OpenAPI,
+    Compose demo UI on the real API --- posting invariants first, not a
+    balances table.}
+    }
+
+\resumeProject
+    {Payment Platform Disaster Lab}
+    {Resilience lab \textbullet\
+    \href{https://github.com/saifcores/payment-platform-disaster-lab}{GitHub}}
+    {
+    \resumeItem{Distributed XOF payment lab: dual PSP simulators, payment
+    state machine, Kafka transactional outbox --- prove no payment lost
+    and none processed twice under partial failure.}
+    \resumeItem{Timeout = UNKNOWN / IN\_RECONCILIATION (never blind
+    failover); SRE control center to inject chaos and observe recovery.}
     }
 
 \resumeProject
@@ -18,21 +44,9 @@
     {Payment infrastructure}
     {
     \resumeItem{Single API to initiate, confirm and reconcile Orange
-    Money, Wave and Free Money payments --- 3+ wallets behind one
+    Money, Wave and Free Money --- provider adapters behind one
     contract.}
     \resumeItem{Spring Boot adapters, Redis idempotency keys, Kafka
     settlement events, signed requests and HMAC webhook validation.
     Patterns proven on ENG Technologie FinTech delivery.}
-    }
-
-\resumeProject
-    {Ecom 360 SME}
-    {SaaS platform}
-    {
-    \resumeItem{All-in-one platform: POS, real-time inventory, Wave \&
-    Orange Money tied to each sale, multi-store and accounting exports.}
-    \resumeItem{Multi-tenant Spring Boot REST API, async reporting jobs
-    and role-based access --- 500+ active merchants in Senegal and West
-    Africa.
-    \href{https://ecom360pme.com/}{ecom360pme.com}}
     }
