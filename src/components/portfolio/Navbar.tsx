@@ -278,8 +278,11 @@ export function Navbar() {
           <div className="hidden min-[400px]:block">
             <ThemeToggle />
           </div>
-          <BookCallLink className="btn-primary hidden h-10 items-center justify-center gap-1.5 px-4 text-sm lg:inline-flex">
-            {t("bookCall")}
+          <Link
+            href="/#architecture-sprint"
+            className="btn-primary hidden h-10 items-center justify-center gap-1.5 px-4 text-sm lg:inline-flex"
+          >
+            {t("sprint")}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="14"
@@ -295,7 +298,7 @@ export function Navbar() {
               <path d="M7 7h10v10" />
               <path d="M7 17 17 7" />
             </svg>
-          </BookCallLink>
+          </Link>
           <button
             ref={menuButtonRef}
             type="button"
@@ -458,13 +461,20 @@ export function Navbar() {
                   </a>
                 ) : null}
                 <BookCallLink
+                  className="btn-outline inline-flex min-h-12 w-full items-center justify-center rounded-xl px-4 text-base font-semibold sm:text-sm"
+                  onClick={() => close(false)}
+                >
+                  {t("bookCall")}
+                </BookCallLink>
+                <Link
+                  href="/#architecture-sprint"
                   className={`btn-primary inline-flex min-h-12 w-full items-center justify-center px-4 text-base sm:text-sm ${
                     linkedinUrl && resumeUrl ? "sm:col-span-2" : ""
                   }`}
                   onClick={() => close(false)}
                 >
-                  {t("bookCall")}
-                </BookCallLink>
+                  {t("sprint")}
+                </Link>
               </div>
             </nav>
           </div>

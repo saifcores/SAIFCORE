@@ -2,7 +2,7 @@
 
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
-import { BookCallLink } from "./BookCallLink";
+import { Link } from "@/i18n/navigation";
 import {
   getResumeDownloadFilename,
   getResumeUrl,
@@ -10,7 +10,7 @@ import {
 } from "@/server/resume";
 
 /**
- * Mobile / tablet: after scroll — Book a call + CV.
+ * Mobile / tablet: after scroll — architecture sprint + CV.
  * Hides near the contact section and on xl+ (desktop CTAs cover it).
  */
 export function StickyActionBar() {
@@ -46,9 +46,7 @@ export function StickyActionBar() {
   }, []);
 
   const show = visible && !nearContact;
-  const barLabel = resumeUrl
-    ? `${t("bookCall")} · ${t("resume")}`
-    : t("bookCall");
+  const barLabel = resumeUrl ? `${t("sprint")} · ${t("resume")}` : t("sprint");
 
   return (
     <div
@@ -69,9 +67,12 @@ export function StickyActionBar() {
             {t("resume")}
           </a>
         ) : null}
-        <BookCallLink className="btn-primary inline-flex min-h-11 min-w-0 flex-[1.15] items-center justify-center px-2.5 text-sm min-[400px]:min-h-12 min-[400px]:px-3">
-          {t("bookCall")}
-        </BookCallLink>
+        <Link
+          href="/#architecture-sprint"
+          className="btn-primary inline-flex min-h-11 min-w-0 flex-[1.15] items-center justify-center px-2.5 text-sm min-[400px]:min-h-12 min-[400px]:px-3"
+        >
+          {t("sprint")}
+        </Link>
       </div>
     </div>
   );

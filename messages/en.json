@@ -44,6 +44,7 @@
   },
   "actionBar": {
     "bookCall": "Book a call",
+    "sprint": "Architecture sprint",
     "contact": "Contact",
     "packages": "Ways to work",
     "resume": "CV"
@@ -66,6 +67,7 @@
     "systems": "Case studies",
     "contact": "Contact",
     "resume": "CV",
+    "sprint": "Architecture sprint",
     "linkedin": "LinkedIn",
     "bookCall": "Book a call",
     "github": "GitHub",

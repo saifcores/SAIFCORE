@@ -16,8 +16,8 @@ type Props = {
   hideContactLink?: boolean;
   /**
    * recruiter — CV primary (experience / certs)
-   * client — Book call primary + packages link (systems)
-   * balanced — Book call primary + CV (about / general)
+   * client — architecture sprint primary + packages link (systems)
+   * balanced — architecture sprint primary + CV (about / general)
    */
   variant?: ActionBarVariant;
 };
@@ -62,7 +62,13 @@ export async function RecruiterActionBar({
         </a>
       ) : null}
 
-      <BookCallLink className={bookClass}>{tNav("bookCall")}</BookCallLink>
+      {resumePrimary ? (
+        <BookCallLink className={bookClass}>{tNav("bookCall")}</BookCallLink>
+      ) : (
+        <Link href="/#architecture-sprint" className={bookClass}>
+          {tNav("sprint")}
+        </Link>
+      )}
 
       {!resumePrimary && resumeUrl && resumeProps ? (
         <a href={resumeUrl} className={resumeClass} {...resumeProps}>
