@@ -32,6 +32,7 @@ import {
 } from "@/data/case-studies";
 import {
   getContactEmail,
+  getLinkedinUrl,
   getProfileDisplayName,
   getProfileLocation,
   getSiteUrl,
@@ -243,7 +244,12 @@ export default async function Home({ params }: Props) {
           subtitle={messages.testimonials.subtitle}
           cta={messages.testimonials.cta}
           referenceCta={messages.testimonials.referenceCta}
+          linkedinCta={messages.testimonials.linkedinCta}
+          namedLabel={messages.testimonials.namedLabel}
+          anonymizedLabel={messages.testimonials.anonymizedLabel}
+          namedItems={[...messages.testimonials.namedItems]}
           items={[...messages.testimonials.items]}
+          linkedinUrl={getLinkedinUrl()}
         />
         <FreelanceOffers
           title={fo.title}

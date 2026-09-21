@@ -127,3 +127,39 @@ export function sortProjectsLiveFirst<
     return projectStatusRank(a.status) - projectStatusRank(b.status);
   });
 }
+
+/**
+ * Home Work teaser order: live product + banking/payment niche patterns
+ * above labs — niche proof above the fold.
+ */
+const HOME_TEASER_IDS = [
+  ECOM_360_CASE_STUDY_ID,
+  "unified-api-gateway",
+  "pan-african-payment-sdk",
+] as const;
+
+export function sortProjectsForHomeTeaser(
+  items: readonly FeaturedProjectItem[],
+  limit = 3,
+): FeaturedProjectItem[] {
+  const byId = new Map(
+    items.map((item) => [projectCaseStudyId(item), item] as const),
+  );
+  const picked: FeaturedProjectItem[] = [];
+
+  for (const id of HOME_TEASER_IDS) {
+    const item = byId.get(id);
+    if (item) {
+      picked.push(item);
+      byId.delete(id);
+    }
+    if (picked.length >= limit) return picked;
+  }
+
+  for (const item of sortProjectsLiveFirst([...byId.values()])) {
+    picked.push(item);
+    if (picked.length >= limit) break;
+  }
+
+  return picked;
+}

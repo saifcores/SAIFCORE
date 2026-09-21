@@ -30,6 +30,13 @@ export type CertificationKind =
  * Set `obtained` (+ optional `verifyUrl`) to unlock nav, sitemap, and
  * `/certifications`. Until then the route 404s and teasers stay hidden —
  * do not publish a planned-only roadmap.
+ *
+ * To publish the first credential:
+ * 1. Pick an id below (e.g. `awsDeveloper`, `comptiaSecurityPlus`).
+ * 2. Set `status: "obtained"` and `verifyUrl` to Credly/issuer link.
+ * 3. Confirm the copy in `messages/*.json` → `certifications.items[id]`.
+ * 4. Redeploy — nav + sitemap unlock automatically.
+ *
  * `inProgress` can surface in credential teasers once actively pursuing.
  */
 export type CertificationStatus = "obtained" | "inProgress" | "notStarted";

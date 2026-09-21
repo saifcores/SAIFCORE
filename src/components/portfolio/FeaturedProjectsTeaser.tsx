@@ -5,7 +5,7 @@ import {
   getCaseStudyHref,
   hasDedicatedCaseStudyPage,
   projectStatusRank,
-  sortProjectsLiveFirst,
+  sortProjectsForHomeTeaser,
 } from "@/data/case-studies";
 import { Reveal } from "./Reveal";
 
@@ -20,10 +20,7 @@ function faviconForUrl(url: string): string | null {
 
 export async function FeaturedProjectsTeaser() {
   const messages = await getMessages();
-  const items = sortProjectsLiveFirst(messages.featuredProjects.items).slice(
-    0,
-    3,
-  );
+  const items = sortProjectsForHomeTeaser(messages.featuredProjects.items, 3);
   const t = await getTranslations("featuredProjects");
   const tCommon = await getTranslations("common");
   const opensInNewTab = tCommon("opensInNewTab");

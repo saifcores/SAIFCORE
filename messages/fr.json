@@ -2,7 +2,7 @@
   "meta": {
     "title": "Ingénieur Backend Senior | Java · Systèmes distribués · Architecture | SAIFCORE",
     "description": "Ingénieur Backend Senior pour systèmes bancaires & paiement — Java, Spring Boot, APIs distribuées. Dakar · remote mondial. SAIFCORE.",
-    "ogTitle": "Je construis des logiciels qui résolvent des problèmes réels",
+    "ogTitle": "Backends banque & paiement qui restent corrects sous charge",
     "ogDescription": "Ingénieur Backend Senior banque & paiements — Java, Spring Boot, systèmes distribués. Dakar · Afrique de l'Ouest · remote mondial.",
     "twitterDescription": "Ingénieur backend senior · backend, systèmes distribués, APIs, architecture. Java · Spring Boot · banque & FinTech · Dakar · remote mondial.",
     "jsonLdJobTitle": "Ingénieur Backend Senior",
@@ -118,16 +118,16 @@
   },
   "hero": {
     "badge": "Dakar · Banque & paiements · FR/EN · Remote",
-    "titleLine1": "Je construis des logiciels",
-    "titleLine2": "qui résolvent",
-    "titleLine3": "des problèmes réels.",
-    "subtitle": "Ingénieur Backend Senior — backends Java / Spring Boot pour banque, paiements et systèmes distribués. Je pars du problème, je rends les compromis explicites, et je livre des systèmes qui restent fiables.",
+    "titleLine1": "Backends banque",
+    "titleLine2": "& paiement qui restent",
+    "titleLine3": "corrects sous charge.",
+    "subtitle": "Ingénieur Backend Senior — Java / Spring Boot pour banques, fintechs et rails de paiement. Je pars du problème, je rends les compromis explicites, et je livre des systèmes qui restent fiables.",
     "hubNodes": [
-      "Architecture",
-      "Backend",
+      "Paiements",
+      "Ledger",
       "APIs",
-      "Cloud",
-      "Systèmes"
+      "Kafka",
+      "Gateway"
     ],
     "ctaPrimary": "Télécharger le CV",
     "ctaExperience": "Modes de collaboration",
@@ -663,9 +663,14 @@
     }
   },
   "testimonials": {
-    "title": "Résultats notés par les partenaires",
-    "subtitle": "Résultats de delivery anonymisés (banque, FinTech, plateformes) — rôle et contexte seulement. Références nominatives sur demande après un appel intro.",
+    "title": "Ce que les partenaires de delivery ont noté",
+    "subtitle": "Références nominatives quand disponibles — sinon résultats anonymisés (banque, FinTech, plateformes). Intros complètes sur demande après un court appel.",
     "cta": "Associer un résultat à un engagement",
+    "referenceCta": "Demander une intro référence",
+    "linkedinCta": "Recommandations LinkedIn",
+    "namedLabel": "Référence nominative",
+    "anonymizedLabel": "Résultat anonymisé",
+    "namedItems": [],
     "items": [
       {
         "quote": "Rails crédit et mobile money livrés avec la rigueur d'un environnement régulé — cycles d'intégration partenaires raccourcis, exploitation post-lancement calme sous trafic wallet réel.",
@@ -685,8 +690,7 @@
         "role": "Embed backend en contrat",
         "company": "SaaS / plateforme · anonymisé"
       }
-    ],
-    "referenceCta": "Demander une intro référence"
+    ]
   },
   "trust": {
     "heading": "La confiance là où la fiabilité compte",
@@ -772,8 +776,8 @@
   },
   "featuredProjects": {
     "title": "Travaux sélectionnés",
-    "heading": "Des systèmes qui ont résolu de vrais problèmes",
-    "subtitle": "Produits live, labs ouverts et patterns de production — y compris du travail banque/FinTech confidentiel, décrit uniquement au niveau des patterns.",
+    "heading": "Banque, paiements et systèmes livrés",
+    "subtitle": "Produit live d’abord, puis patterns banque/paiement de production — le code client confidentiel reste dehors ; les décisions réutilisables restent.",
     "impactLabel": "Impact",
     "marketLabel": "Marché",
     "problemLabel": "Problème",
@@ -1397,7 +1401,7 @@
         "level": "Professionnel (écrit)"
       }
     ],
-    "p1": "Bonjour — je suis Saïfoulaye. Je construis des logiciels qui résolvent des problèmes réels.",
+    "p1": "Bonjour — je suis Saïfoulaye. Je construis des backends banque et paiement qui restent corrects sous charge.",
     "p2a": "Je suis ingénieur backend senior, axé sur l'ingénierie backend, les systèmes distribués, les APIs et l'architecture logicielle. Je travaille surtout avec",
     "p2b": "Java et Spring Boot",
     "p2c": ", mais je privilégie la compréhension du problème, les bons compromis, et des systèmes qui restent fiables en évoluant.",
@@ -1562,7 +1566,7 @@
     "metaTitle": "À propos | Ingénieur Backend Senior | SAIFCORE",
     "metaDescription": "Saïfoulaye Diallo (SAIFCORE) — ingénieur backend senior axé sur backend, systèmes distribués, APIs et architecture. Banque & FinTech. Dakar · remote mondial.",
     "title": "À propos",
-    "subtitle": "Je construis des logiciels qui résolvent des problèmes réels — ingénierie backend, systèmes distribués et architecture, avec une profondeur banque et FinTech.",
+    "subtitle": "Des backends banque et paiement qui restent corrects sous charge — Java, Spring Boot, systèmes distribués. Dakar · remote mondial.",
     "backToHome": "Retour à l'accueil",
     "endCtaTitle": "Prêt à recruter ce profil — ou à démarrer un projet ?",
     "endCtaSubtitle": "Partagez équipe, stack et contraintes. Je réponds avec un chemin clair : proposition écrite, embed contrat, ou prochaines étapes recrutement.",
@@ -1669,7 +1673,7 @@
     "rights": "© {year} {owner}. Contenus et marque réservés.",
     "rightsOwner": "{name} · SAIFCORE",
     "license": "Code source du site (MIT)",
-    "tagline": "Je construis des logiciels qui résolvent des problèmes réels — backend, systèmes distribués et architecture, de Dakar au remote mondial.",
+    "tagline": "Des backends banque et paiement qui restent corrects sous charge — de Dakar au remote mondial.",
     "linkedin": "Se connecter sur LinkedIn",
     "github": "Voir GitHub",
     "blog": "Blog SAIFCORE",
