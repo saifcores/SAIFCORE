@@ -8,6 +8,7 @@ import { MotionReveal } from "@/components/portfolio/motion/MotionReveal";
 type Package = {
   title: string;
   duration: string;
+  investment?: string;
   fit: string;
   description: string;
   includes: readonly string[];
@@ -26,6 +27,8 @@ type Props = {
   title: string;
   subtitle: string;
   note: string;
+  pricingNote: string;
+  investmentLabel: string;
   closer: string;
   cta: string;
   ctaSecondary: string;
@@ -37,6 +40,8 @@ export function FreelanceOffers({
   title,
   subtitle,
   note,
+  pricingNote,
+  investmentLabel,
   closer,
   cta,
   ctaSecondary,
@@ -58,6 +63,9 @@ export function FreelanceOffers({
           </h2>
           <p className="mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-[var(--text-secondary)] sm:text-base">
             {note}
+          </p>
+          <p className="mt-3 max-w-2xl text-pretty text-xs leading-relaxed text-[var(--text-muted)] sm:text-sm">
+            {pricingNote}
           </p>
         </MotionReveal>
 
@@ -101,9 +109,20 @@ export function FreelanceOffers({
                             {pkg.title}
                           </h4>
                         </div>
-                        <span className="pl-7 text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--text-muted)] sm:pl-0">
-                          {pkg.duration}
-                        </span>
+                        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 pl-7 sm:pl-0 sm:justify-end">
+                          <span className="text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--text-muted)]">
+                            {pkg.duration}
+                          </span>
+                          {pkg.investment ? (
+                            <span className="text-sm font-semibold tabular-nums text-[var(--text-primary)]">
+                              <span className="sr-only">
+                                {investmentLabel}
+                                {": "}
+                              </span>
+                              {pkg.investment}
+                            </span>
+                          ) : null}
+                        </div>
                       </div>
 
                       <p className="mt-3 text-sm leading-relaxed text-[var(--text-secondary)]">

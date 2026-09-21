@@ -22,11 +22,6 @@ const kindStyles: Record<
     className:
       "border-[var(--border-subtle)] bg-[var(--bg-elevated)] text-[var(--text-secondary)]",
   },
-  azure: {
-    label: "Azure",
-    className:
-      "border-[var(--border-subtle)] bg-[var(--bg-elevated)] text-[var(--text-secondary)]",
-  },
   kafka: {
     label: "Kafka",
     className:
@@ -44,11 +39,6 @@ const kindStyles: Record<
   },
   spring: {
     label: "Spring",
-    className:
-      "border-[var(--border-subtle)] bg-[var(--bg-elevated)] text-[var(--text-secondary)]",
-  },
-  ai: {
-    label: "AI",
     className:
       "border-[var(--border-subtle)] bg-[var(--bg-elevated)] text-[var(--text-secondary)]",
   },

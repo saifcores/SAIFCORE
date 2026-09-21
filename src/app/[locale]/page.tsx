@@ -14,6 +14,7 @@ import { FaqSection } from "@/components/portfolio/FaqSection";
 import { Hero } from "@/components/portfolio/Hero";
 import { Navbar } from "@/components/portfolio/Navbar";
 import { FreelanceOffers } from "@/components/portfolio/FreelanceOffers";
+import { Testimonials } from "@/components/portfolio/Testimonials";
 import { Trust } from "@/components/portfolio/Trust";
 import { fetchRecentArticles } from "@/blog/recent-articles";
 import {
@@ -25,7 +26,10 @@ import {
   getLocaleHomeUrl,
   getLocalePageUrl,
 } from "@/seo";
-import { getCaseStudyHref, ECOM_360_CASE_STUDY_PATH } from "@/data/case-studies";
+import {
+  getCaseStudyHref,
+  ECOM_360_CASE_STUDY_PATH,
+} from "@/data/case-studies";
 import {
   getContactEmail,
   getProfileDisplayName,
@@ -226,7 +230,7 @@ export default async function Home({ params }: Props) {
         tabIndex={-1}
       >
         {/*
-          Home: Trust → Path → Proof → History → Ways to work →
+          Home: Trust → Path → Proof → History → Outcomes → Ways to work →
           Insights → FAQ → Contact. Depth on /about & /systems.
         */}
         <Hero />
@@ -234,10 +238,19 @@ export default async function Home({ params }: Props) {
         <AudiencePaths />
         <FeaturedProjectsTeaser />
         <ExperienceTeaser />
+        <Testimonials
+          title={messages.testimonials.title}
+          subtitle={messages.testimonials.subtitle}
+          cta={messages.testimonials.cta}
+          referenceCta={messages.testimonials.referenceCta}
+          items={[...messages.testimonials.items]}
+        />
         <FreelanceOffers
           title={fo.title}
           subtitle={fo.subtitle}
           note={fo.note}
+          pricingNote={fo.pricingNote}
+          investmentLabel={fo.investmentLabel}
           closer={fo.closer}
           cta={fo.cta}
           ctaSecondary={fo.ctaSecondary}

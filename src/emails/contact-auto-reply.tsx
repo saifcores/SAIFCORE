@@ -110,7 +110,7 @@ const copy = {
     bulletReply: "or reply directly to this message.",
     cta: "Book a discovery call",
     positioning:
-      "Senior Software Engineer — I build software that solves real-world problems: backends, distributed systems, APIs, and architecture (Java / Spring Boot), with banking & FinTech depth — remote, EN/FR.",
+      "Senior Backend Engineer — I build software that solves real-world problems: backends, distributed systems, APIs, and architecture (Java / Spring Boot), with banking & FinTech depth — remote, EN/FR.",
     regards: "Best regards,",
   },
   fr: {
@@ -125,7 +125,7 @@ const copy = {
     bulletReply: "ou me répondre directement à ce message.",
     cta: "Réserver un appel discovery",
     positioning:
-      "Ingénieur logiciel senior — je construis des logiciels qui résolvent des problèmes réels : backends, systèmes distribués, APIs et architecture (Java / Spring Boot), avec une profondeur banque & FinTech — remote, EN/FR.",
+      "Ingénieur backend senior — je construis des logiciels qui résolvent des problèmes réels : backends, systèmes distribués, APIs et architecture (Java / Spring Boot), avec une profondeur banque & FinTech — remote, EN/FR.",
     regards: "Bien cordialement,",
   },
 } as const;

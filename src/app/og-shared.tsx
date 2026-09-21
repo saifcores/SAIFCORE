@@ -9,15 +9,15 @@ const OG_COPY: Record<
   { alt: string; badge: string; line1: string; line2: string; line3: string }
 > = {
   en: {
-    alt: "SAIFCORE — Senior Software Engineer | Distributed Systems · Architecture",
-    badge: "Senior Software Engineer · Remote",
+    alt: "SAIFCORE — Senior Backend Engineer | Distributed Systems · Architecture",
+    badge: "Senior Backend Engineer · Remote",
     line1: "Software that",
     line2: "solves real-world",
     line3: "problems",
   },
   fr: {
-    alt: "SAIFCORE — Ingénieur Logiciel Senior | Systèmes distribués · Architecture",
-    badge: "Ingénieur Logiciel Senior · Remote",
+    alt: "SAIFCORE — Ingénieur Backend Senior | Systèmes distribués · Architecture",
+    badge: "Ingénieur Backend Senior · Remote",
     line1: "Des logiciels qui",
     line2: "résolvent des",
     line3: "problèmes réels",

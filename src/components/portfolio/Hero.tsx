@@ -1,13 +1,26 @@
-import { getMessages, getTranslations } from "next-intl/server";
+import { getLocale, getMessages, getTranslations } from "next-intl/server";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { BookCallLink } from "@/components/portfolio/BookCallLink";
 import { HeroContent } from "@/components/portfolio/HeroContent";
 import { HeroVisual } from "@/components/portfolio/HeroVisual";
+import {
+  getResumeDownloadFilename,
+  getResumeUrl,
+  isLocalResume,
+} from "@/server/resume";
 
 export async function Hero() {
   const t = await getTranslations("hero");
   const messages = await getMessages();
+  const locale = await getLocale();
+  const resumeUrl = getResumeUrl(locale);
+  const resumeDownload = getResumeDownloadFilename(locale);
+  const resumeProps = resumeUrl
+    ? isLocalResume(resumeUrl)
+      ? { download: resumeDownload }
+      : ({ target: "_blank" as const, rel: "noopener noreferrer" } as const)
+    : null;
 
   const ctas = (
     <>
@@ -15,12 +28,22 @@ export async function Hero() {
         {t("ctaBookCall")}
         <ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden />
       </BookCallLink>
-      <Link
-        href="/experience"
-        className="btn-outline inline-flex min-h-12 w-full items-center justify-center px-5 text-sm font-medium min-[400px]:px-6 sm:w-auto sm:px-8"
-      >
-        {t("ctaPrimary")}
-      </Link>
+      {resumeUrl && resumeProps ? (
+        <a
+          href={resumeUrl}
+          className="btn-outline inline-flex min-h-12 w-full items-center justify-center px-5 text-sm font-medium min-[400px]:px-6 sm:w-auto sm:px-8"
+          {...resumeProps}
+        >
+          {t("ctaPrimary")}
+        </a>
+      ) : (
+        <Link
+          href="/experience"
+          className="btn-outline inline-flex min-h-12 w-full items-center justify-center px-5 text-sm font-medium min-[400px]:px-6 sm:w-auto sm:px-8"
+        >
+          {t("ctaPrimary")}
+        </Link>
+      )}
     </>
   );
 

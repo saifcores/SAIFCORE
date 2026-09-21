@@ -115,7 +115,7 @@ NEXT
 3. Sinon → 3–5 questions ciblées + mode de collaboration
 
 —
-SAIFCORE · Senior Software Engineer · Architecture
+SAIFCORE · Senior Backend Engineer · Architecture
 ${getSiteUrl()}`;
 }
 
@@ -135,7 +135,7 @@ Pour avancer plus vite, vous pouvez :
 • préciser objectifs, contraintes, timeline et stack ;
 ${calendly ? `• ou réserver 30 min :\n  ${calendly}` : "• ou me répondre directement à ce message."}
 
-Je collabore principalement en tant qu’ingénieur logiciel senior — backends, systèmes distribués, APIs et architecture (Java / Spring Boot), avec une profondeur banque & FinTech — en remote, EN/FR.
+Je collabore principalement en tant qu’ingénieur backend senior — backends, systèmes distribués, APIs et architecture (Java / Spring Boot), avec une profondeur banque & FinTech — en remote, EN/FR.
 
 Bien cordialement,
 Saïfoulaye Diallo
@@ -153,7 +153,7 @@ To move faster, you can:
 • share goals, constraints, timeline, and stack;
 ${calendly ? `• or book 30 minutes:\n  ${calendly}` : "• or reply directly to this message."}
 
-Senior Software Engineer — I build software that solves real-world problems: backends, distributed systems, APIs, and architecture (Java / Spring Boot), with banking & FinTech depth — remote, EN/FR.
+Senior Backend Engineer — I build software that solves real-world problems: backends, distributed systems, APIs, and architecture (Java / Spring Boot), with banking & FinTech depth — remote, EN/FR.
 
 Best regards,
 Saïfoulaye Diallo

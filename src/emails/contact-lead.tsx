@@ -206,7 +206,7 @@ export function ContactLeadEmail({
           <Hr style={styles.hr} />
 
           <Text style={styles.footer}>
-            SAIFCORE · Senior Software Engineer · Architecture
+            SAIFCORE · Senior Backend Engineer · Architecture
             <br />
             <Link href={siteUrl} style={styles.link}>
               {siteUrl}

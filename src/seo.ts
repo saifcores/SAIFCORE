@@ -128,9 +128,10 @@ export function buildArticleJsonLd(
     description,
     datePublished: `${publishedAt}T12:00:00.000Z`,
     author: {
-      "@type": "Organization",
-      name: "SAIFCORE",
+      "@type": "Person",
+      name: getProfileDisplayName(),
       url: getSiteUrl(),
+      jobTitle: "Senior Backend Engineer",
     },
     publisher: {
       "@type": "Organization",

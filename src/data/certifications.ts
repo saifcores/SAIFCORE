@@ -6,12 +6,10 @@ export const certificationIds = [
   "awsSolutionsArchitect",
   "awsDeveloper",
   "comptiaSecurityPlus",
-  "azureAiEngineer",
   "confluentKafkaDeveloper",
   "kubernetes",
   "docker",
   "springProfessional",
-  "aiIntegration",
   "paymentSystems",
 ] as const;
 
@@ -21,18 +19,18 @@ export type CertificationKind =
   | "academic"
   | "aws"
   | "security"
-  | "azure"
   | "kafka"
   | "kubernetes"
   | "docker"
   | "spring"
-  | "ai"
   | "domain";
 
 /**
  * Credential progress — edit per cert in `certificationsMeta`.
  * Set `obtained` (+ optional `verifyUrl`) to unlock nav, sitemap, and
- * `/certifications`. `inProgress` can surface in credential teasers.
+ * `/certifications`. Until then the route 404s and teasers stay hidden —
+ * do not publish a planned-only roadmap.
+ * `inProgress` can surface in credential teasers once actively pursuing.
  */
 export type CertificationStatus = "obtained" | "inProgress" | "notStarted";
 
@@ -76,11 +74,6 @@ export const certificationsMeta: CertificationMeta[] = [
     status: "notStarted",
   },
   {
-    id: "azureAiEngineer",
-    kind: "azure",
-    status: "notStarted",
-  },
-  {
     id: "confluentKafkaDeveloper",
     kind: "kafka",
     status: "notStarted",
@@ -98,11 +91,6 @@ export const certificationsMeta: CertificationMeta[] = [
   {
     id: "springProfessional",
     kind: "spring",
-    status: "notStarted",
-  },
-  {
-    id: "aiIntegration",
-    kind: "ai",
     status: "notStarted",
   },
   {

@@ -179,6 +179,15 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
                               </span>
                             ) : null}
                           </div>
+                          {item.disclosure.trim() ? (
+                            <p className="mt-3 max-w-2xl rounded-[10px] border border-[var(--border-subtle)] bg-[var(--bg-base)]/60 px-3 py-2 text-xs leading-relaxed text-[var(--text-muted)]">
+                              <span className="font-semibold text-[var(--text-secondary)]">
+                                {t("disclosureLabel")}
+                                {": "}
+                              </span>
+                              {item.disclosure}
+                            </p>
+                          ) : null}
                         </div>
                       </div>
 

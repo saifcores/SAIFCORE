@@ -62,11 +62,17 @@ export async function FeaturedProjectsTeaser() {
             const caseStudyHref = getCaseStudyHref(item);
             const isShipped = projectStatusRank(item.status) === 0;
             const isDeep = hasDedicatedCaseStudyPage(item);
+            const isConfidential = Boolean(item.disclosure?.trim());
             const liveHref = item.href?.trim() || "";
             const liveLabel = item.linkLabel?.trim() || t("viewProduct");
             const favicon = liveHref ? faviconForUrl(liveHref) : null;
             const primaryMetric = item.metrics?.[0];
             const outcome = item.impact || item.solution;
+            const caseCta = isDeep
+              ? t("readCaseStudy")
+              : isConfidential
+                ? t("readPatterns")
+                : t("readCaseStudy");
 
             return (
               <li
@@ -146,7 +152,7 @@ export async function FeaturedProjectsTeaser() {
                             : "font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
                         }`}
                       >
-                        {t("readCaseStudy")}
+                        {caseCta}
                         {isDeep ? (
                           <ArrowUpRight className="ml-1 h-3 w-3" aria-hidden />
                         ) : null}

@@ -16,10 +16,17 @@ type Props = {
   title: string;
   subtitle: string;
   cta: string;
+  referenceCta: string;
   items: Testimonial[];
 };
 
-export function Testimonials({ title, subtitle, cta, items }: Props) {
+export function Testimonials({
+  title,
+  subtitle,
+  cta,
+  referenceCta,
+  items,
+}: Props) {
   const reduce = useReducedMotion();
 
   return (
@@ -36,7 +43,7 @@ export function Testimonials({ title, subtitle, cta, items }: Props) {
 
         <div className="mt-8 grid gap-3 sm:mt-10 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item, i) => (
-            <MotionReveal key={item.company} delay={i * 50}>
+            <MotionReveal key={`${item.name}-${item.company}`} delay={i * 50}>
               <motion.article
                 whileHover={reduce ? undefined : { y: -2 }}
                 className="flex h-full flex-col rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-4 transition hover:border-[var(--border-hover)] sm:p-5"
@@ -60,12 +67,19 @@ export function Testimonials({ title, subtitle, cta, items }: Props) {
         </div>
 
         <MotionReveal delay={200}>
-          <div className="mt-8 flex justify-center">
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-6">
             <Link
               href="/#offers"
               className="inline-flex min-h-11 items-center justify-center gap-2 text-sm font-medium text-[var(--text-primary)] underline-offset-4 transition hover:underline"
             >
               {cta}
+              <ArrowUpRight className="h-4 w-4" aria-hidden />
+            </Link>
+            <Link
+              href="/#contact"
+              className="inline-flex min-h-11 items-center justify-center gap-2 text-sm font-medium text-[var(--text-secondary)] underline-offset-4 transition hover:text-[var(--text-primary)] hover:underline"
+            >
+              {referenceCta}
               <ArrowUpRight className="h-4 w-4" aria-hidden />
             </Link>
           </div>
