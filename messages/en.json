@@ -1,18 +1,18 @@
 {
   "meta": {
-    "title": "Senior Software Engineer | Backend · Distributed Systems · Architecture | SAIFCORE",
-    "description": "I build software that solves real-world problems. Senior Software Engineer — backend, distributed systems, APIs, and architecture. Banking & FinTech depth. Dakar · remote worldwide.",
+    "title": "Senior Backend Engineer | Java · Distributed Systems · Architecture | SAIFCORE",
+    "description": "Senior Backend Engineer for banking & payment systems — Java, Spring Boot, distributed APIs. Dakar · remote worldwide. SAIFCORE.",
     "ogTitle": "I build software that solves real-world problems",
-    "ogDescription": "Senior Software Engineer — backend, distributed systems, APIs, and architecture. Banking and FinTech depth. Dakar · West Africa · remote worldwide. Java, Spring Boot.",
-    "twitterDescription": "Senior Software Engineer · backend, distributed systems, APIs, architecture. Java · Spring Boot · banking & FinTech · Dakar · remote worldwide.",
-    "jsonLdJobTitle": "Senior Software Engineer",
-    "jsonLdDescription": "Senior Software Engineer focused on backend engineering, distributed systems, APIs, and software architecture. Experience across enterprise platforms, banking, FinTech, and payments — Java, Spring Boot. Based in Dakar; remote worldwide.",
+    "ogDescription": "Senior Backend Engineer for banking & payments — Java, Spring Boot, distributed systems. Dakar · West Africa · remote worldwide.",
+    "twitterDescription": "Senior Backend Engineer · backend, distributed systems, APIs, architecture. Java · Spring Boot · banking & FinTech · Dakar · remote worldwide.",
+    "jsonLdJobTitle": "Senior Backend Engineer",
+    "jsonLdDescription": "Senior Backend Engineer specializing in banking and payment backends — Java, Spring Boot, APIs, distributed systems. Experience across Bank of Africa Group platforms (via Synapse), FinTech, and enterprise delivery. Based in Dakar; remote worldwide.",
     "jsonLdServiceName": "Backend engineering & software architecture",
     "jsonLdServiceDescription": "Backend systems, APIs, distributed architectures, and software for enterprise and fintech platforms — including payment infrastructure and regulated banking integrations when the problem requires it.",
     "jsonLdAvailability": "Remote worldwide",
     "jsonLdAreaServed": "Senegal, West Africa, Worldwide",
-    "keywords": "senior software engineer, backend engineer, software architecture, distributed systems, APIs, Spring Boot, Java, payment infrastructure, fintech, banking systems, cloud-native, Kafka, AWS, mobile money, Senegal, West Africa, Dakar, remote engineer, SAIFCORE",
-    "manifestName": "SAIFCORE — Senior Software Engineer",
+    "keywords": "senior backend engineer, banking backend, payment systems, Java, Spring Boot, distributed systems, APIs, fintech, mobile money, Bank of Africa, Senegal, Dakar, remote engineer, SAIFCORE",
+    "manifestName": "SAIFCORE — Senior Backend Engineer",
     "manifestDescription": "Portfolio — backend engineering, distributed systems, APIs, and software architecture for banking, FinTech, and enterprise platforms.",
     "knowsAbout": [
       "Java",
@@ -29,8 +29,7 @@
       "Apache Kafka",
       "Microservices",
       "AWS",
-      "Mobile money",
-      "AI-enabled software"
+      "Mobile money"
     ],
     "langFrench": "French",
     "langEnglish": "English"
@@ -51,7 +50,7 @@
   },
   "nav": {
     "primary": "Primary",
-    "brandRole": "Senior Software Engineer",
+    "brandRole": "Senior Backend Engineer",
     "brandHomeLabel": "SAIFCORE — home",
     "work": "Projects",
     "services": "Services",
@@ -118,11 +117,11 @@
     "clientSecondaryCta": "Ways to work"
   },
   "hero": {
-    "badge": "Dakar · FR/EN · Remote worldwide",
+    "badge": "Dakar · Banking & payments · FR/EN · Remote",
     "titleLine1": "I build software",
     "titleLine2": "that solves",
     "titleLine3": "real-world problems.",
-    "subtitle": "Senior Software Engineer — backend, distributed systems, APIs, and architecture. Mainly Java and Spring Boot. I start from the problem, make trade-offs explicit, and ship systems that stay reliable.",
+    "subtitle": "Senior Backend Engineer — Java / Spring Boot backends for banking, payments, and distributed systems. I start from the problem, make trade-offs explicit, and ship systems that stay reliable.",
     "hubNodes": [
       "Architecture",
       "Backend",
@@ -130,11 +129,11 @@
       "Cloud",
       "Systems"
     ],
-    "ctaPrimary": "View experience",
+    "ctaPrimary": "Download CV",
     "ctaExperience": "Ways to work",
     "ctaBookCall": "Book a call",
     "ctaResume": "Download CV",
-    "proofLine": "Track record across enterprise platforms, banking, and FinTech — including Bank of Africa Group (via Synapse) and ENG Technologie.",
+    "proofLine": "Senior backend for banking & payment platforms — Bank of Africa Group (via Synapse), ENG Technologie, and production FinTech rails.",
     "availability": "Open to new work",
     "jumpToContact": "Hiring? Recruiter path"
   },
@@ -304,6 +303,8 @@
     "title": "Ways to work",
     "subtitle": "Match the engagement to the decision — clarify the problem, ship the system, or embed senior capacity.",
     "note": "Every path starts the same: a short discovery call, then a written proposal with scope, milestones, and ownership.",
+    "pricingNote": "Indicative investment in EUR (remote from Dakar). Final quote after discovery — fixed scope or day-rate depending on the path.",
+    "investmentLabel": "From",
     "cta": "Book a discovery call",
     "fitLabel": "Best when",
     "tracks": [
@@ -315,6 +316,7 @@
           {
             "title": "Architecture sprint",
             "duration": "1–2 weeks",
+            "investment": "€2.5k–€4.5k",
             "fit": "Scope is unclear, stakes are rising, and you need the shortest path to a launchable design.",
             "description": "Lock goals, risks, integrations, and architecture before you burn budget on the wrong build.",
             "includes": [
@@ -326,6 +328,7 @@
           {
             "title": "Scoped build",
             "duration": "4–12 weeks",
+            "investment": "€8k–€25k",
             "fit": "You know what to ship and need a named senior engineer to own delivery through production.",
             "description": "End-to-end delivery of APIs, workflows, or integrations — milestones, tests, and runbooks included.",
             "includes": [
@@ -337,6 +340,7 @@
           {
             "title": "MVP acceleration",
             "duration": "6–10 weeks",
+            "investment": "€12k–€28k",
             "fit": "You need a fundable, demo-ready product on real integrations — built to extend, not throw away.",
             "description": "Core domain APIs and critical flows shaped for launch, security baseline, and the next iteration.",
             "includes": [
@@ -355,6 +359,7 @@
           {
             "title": "Architecture review",
             "duration": "1–3 weeks",
+            "investment": "€2.5k–€5k",
             "fit": "Before a big bet — you want ranked risks, reference designs, and a plan your team can execute.",
             "description": "Independent look at a backend, API, or integration surface before you commit to build or migrate.",
             "includes": [
@@ -366,6 +371,7 @@
           {
             "title": "Platform modernization",
             "duration": "8–16 weeks+",
+            "investment": "from €20k",
             "fit": "Legacy or fragmented systems need a phased move to something operable, observable, and partner-ready.",
             "description": "Migration waves, partner API contracts, and resilience work with enterprise-grade delivery discipline.",
             "includes": [
@@ -377,8 +383,9 @@
           {
             "title": "Contract embed",
             "duration": "1–6 months",
+            "investment": "€450–€600 / day",
             "fit": "Your squad needs senior capacity inside the team — roadmap delivery, quality bar, production ownership.",
-            "description": "A named Senior Software Engineer embedded in your ceremonies and tools through release and stabilization.",
+            "description": "A named Senior Backend Engineer embedded in your ceremonies and tools through release and stabilization.",
             "includes": [
               "Delivery inside your rituals and stack",
               "Code reviews, quality bar, mentorship",
@@ -389,7 +396,7 @@
       }
     ],
     "ctaSecondary": "Send a brief",
-    "closer": "Not sure which fits? Start with discovery — I will recommend the right engagement.",
+    "closer": "Not sure which fits? Start with discovery — I will recommend the right engagement and a firm quote.",
     "productProofLabel": "See Ecom 360 case study"
   },
   "faq": {
@@ -414,11 +421,15 @@
       },
       {
         "question": "Who actually does the work?",
-        "answer": "I do. You work with a named Senior Software Engineer — not a rotating bench. Scope, architecture, and delivery stay with me through production-ready ownership."
+        "answer": "I do. You work with a named Senior Backend Engineer — not a rotating bench. Scope, architecture, and delivery stay with me through production-ready ownership."
+      },
+      {
+        "question": "What does an engagement cost?",
+        "answer": "Indicative ranges are on Ways to work (sprints from ~€2.5k, scoped builds from ~€8k, embeds €450–€600/day). Every proposal after discovery locks scope, milestones, and a firm quote — EUR, remote from Dakar."
       },
       {
         "question": "How do I start if I am hiring?",
-        "answer": "Download the CV, review Experience and case studies, then book a short call or send a brief. I reply within two business days."
+        "answer": "Download the CV, review Experience and case studies, then book a short call or send a brief. I reply within two business days with a clear hiring path."
       }
     ]
   },
@@ -592,7 +603,8 @@
     "ctaTitle": "Book a 30-minute intro call",
     "ctaSubtitle": "Written proposal for project work — or a clear hiring path if you are recruiting.",
     "ctaPrimary": "Book a call",
-    "ctaSecondary": "Ways to work"
+    "ctaSecondary": "Ways to work",
+    "slaLine": "I reply within two business days — or book a 30-minute call."
   },
   "bankingLeadership": {
     "eyebrow": "Technical leadership",
@@ -651,29 +663,30 @@
     }
   },
   "testimonials": {
-    "title": "Delivery patterns",
-    "subtitle": "Recurring patterns from banking, fintech, and platform delivery — described directly, not attributed client quotes.",
-    "cta": "Match a pattern to an engagement",
+    "title": "Outcomes partners noticed",
+    "subtitle": "Anonymized delivery outcomes from banking, FinTech, and platform work — role and context only. Named references available on request after an intro call.",
+    "cta": "Match an outcome to an engagement",
     "items": [
       {
-        "quote": "Credit and mobile-money flows delivered with regulated-environment rigor — shorter integration cycles and stable post-launch operations.",
-        "name": "FinTech delivery",
+        "quote": "Credit and mobile-money rails shipped with regulated rigor — partner integration cycles shortened, and post-launch ops stayed calm under real wallet traffic.",
+        "name": "Engineering lead",
         "role": "Digital lending & wallets",
-        "company": "West Africa"
+        "company": "FinTech · West Africa · anonymized"
       },
       {
-        "quote": "API and event boundaries defined before implementation — reducing rework when partner integrations and multi-entity scope grow.",
-        "name": "Banking & middleware",
-        "role": "Enterprise API programs",
-        "company": "Regulated financial services"
+        "quote": "API and event boundaries locked before build — multi-entity and partner scope grew without the usual contract rework spiral.",
+        "name": "Program manager",
+        "role": "Enterprise API / middleware",
+        "company": "Banking · anonymized"
       },
       {
-        "quote": "Clear communication with product, integration, and compliance stakeholders — suited to contract embeds and scoped freelance delivery.",
-        "name": "Contract engineering",
-        "role": "Backend embed",
-        "company": "SaaS & platform teams"
+        "quote": "Clear ownership with product, integration, and compliance — an embed that shipped milestones without a rotating bench.",
+        "name": "Product counterpart",
+        "role": "Backend contract embed",
+        "company": "SaaS / platform · anonymized"
       }
-    ]
+    ],
+    "referenceCta": "Request a reference intro"
   },
   "trust": {
     "heading": "Trusted where reliability matters",
@@ -682,7 +695,6 @@
       "Banking",
       "Fintech",
       "Credit Systems",
-      "Healthcare",
       "Enterprise SaaS"
     ],
     "companiesLabel": "Employers",
@@ -704,7 +716,8 @@
         "value": "FR / EN",
         "label": "Remote worldwide"
       }
-    ]
+    ],
+    "specialtyLine": "Niche: production backends for banking, payments, and mobile-money corridors."
   },
   "whatISolve": {
     "title": "Problems I take on",
@@ -760,7 +773,7 @@
   "featuredProjects": {
     "title": "Selected work",
     "heading": "Systems that solved real problems",
-    "subtitle": "Live products and production systems — problem, architecture, and what had to be correct.",
+    "subtitle": "Live products, open labs, and production patterns — including confidential banking/FinTech work described at pattern level only.",
     "impactLabel": "Impact",
     "marketLabel": "Market",
     "problemLabel": "Problem",
@@ -775,6 +788,7 @@
     "bankingOutcomeLabel": "Signal",
     "viewAll": "View all case studies",
     "readCaseStudy": "Read case study",
+    "readPatterns": "View production patterns",
     "viewProduct": "View live product",
     "bridgeTitle": "Building something similar?",
     "bridgeSubtitle": "Share the goal and hard constraints — I will outline options, risks, and a realistic first step.",
@@ -841,7 +855,8 @@
             "value": "Live",
             "label": "West Africa"
           }
-        ]
+        ],
+        "disclosure": ""
       },
       {
         "id": "payment-platform-disaster-lab",
@@ -905,7 +920,8 @@
             "value": "P0–P2",
             "label": "Shipped today"
           }
-        ]
+        ],
+        "disclosure": ""
       },
       {
         "id": "pan-african-payment-sdk",
@@ -927,7 +943,8 @@
         "constraints": [
           "Heterogeneous provider APIs with inconsistent statuses and callbacks.",
           "Retries must not create duplicate debits or duplicate notifications.",
-          "Shared observability across multiple payment corridors."
+          "Shared observability across multiple payment corridors.",
+          "Provider credentials and live traffic remain client-confidential."
         ],
         "decisions": [
           {
@@ -937,11 +954,19 @@
           {
             "title": "Explicit idempotency",
             "body": "Treat every payment command with a stable business key to make retries safe."
+          },
+          {
+            "title": "Async settlement path",
+            "body": "Keep provider latency off the client thread with queues and Kafka settlement events so checkout stays responsive."
+          },
+          {
+            "title": "HMAC webhooks",
+            "body": "Verify provider callbacks with signatures and replay windows before mutating payment state."
           }
         ],
         "tradeoffs": "The adapter layer adds code, but it sharply reduces integration cost and provider-specific behavior drift.",
         "bankingOutcome": "Direct signal for banks and fintechs: unified Wave, Orange Money, and wallet integrations — patterns proven on ENG Technologie FinTech delivery and applicable to multi-provider banking corridors.",
-        "impact": "Wave, Orange Money, and Free Money behind one contract — adapters and idempotency proven on ENG Technologie FinTech delivery. The packaged SDK is still being consolidated.",
+        "impact": "Wave, Orange Money, and Free Money behind one contract — adapters, Redis idempotency, and Kafka settlement events proven on ENG FinTech delivery. Packaged SDK surface stays internal.",
         "href": "",
         "linkLabel": "",
         "stacks": [
@@ -951,7 +976,7 @@
           "Kafka",
           "PostgreSQL"
         ],
-        "status": "From production · ENG",
+        "status": "Production patterns · ENG · confidential",
         "metrics": [
           {
             "value": "3+",
@@ -961,7 +986,8 @@
             "value": "1",
             "label": "API contract"
           }
-        ]
+        ],
+        "disclosure": "Client code and live endpoints stay confidential. Below: reusable patterns from ENG FinTech delivery (Wave, Orange Money, Free Money) — not a public SDK dump."
       },
       {
         "id": "double-entry-ledger-platform",
@@ -1024,7 +1050,8 @@
             "value": "Outbox",
             "label": "→ Kafka"
           }
-        ]
+        ],
+        "disclosure": ""
       },
       {
         "id": "unified-api-gateway",
@@ -1046,7 +1073,8 @@
         "constraints": [
           "Protect core systems while opening partner APIs.",
           "Version contracts without breaking existing integrations.",
-          "Trace every sensitive request for support, audit, and compliance."
+          "Trace every sensitive request for support, audit, and compliance.",
+          "Multi-subsidiary tenancy without leaking entity boundaries."
         ],
         "decisions": [
           {
@@ -1056,11 +1084,19 @@
           {
             "title": "Decoupled events",
             "body": "Publish business events outside the transactional path for reporting and observability."
+          },
+          {
+            "title": "Versioned partner contracts",
+            "body": "Publish OpenAPI versions and error rules before partner exposure so multi-entity onboarding does not break existing clients."
+          },
+          {
+            "title": "Reporting off the hot path",
+            "body": "Decouple Jasper/analytics via Kafka so payment and partner calls are not blocked by report generation."
           }
         ],
         "tradeoffs": "The gateway becomes a critical governance point; it needs discipline around versioning, monitoring, and access policies.",
         "bankingOutcome": "Aligned with multi-subsidiary banking delivery: API governance, core protection, flow auditability, and faster partner onboarding across group entities.",
-        "impact": "Patterns from Synapse delivery for Bank of Africa Group subsidiaries: gateway as the boundary, versioned partner contracts, core systems kept off the public edge.",
+        "impact": "Patterns from Synapse delivery for 11+ Bank of Africa Group subsidiaries: gateway as the boundary, versioned partner contracts, JWT/RBAC at the edge, core systems kept off the public internet.",
         "href": "",
         "linkLabel": "",
         "stacks": [
@@ -1070,7 +1106,7 @@
           "Docker",
           "AWS"
         ],
-        "status": "Reference · Synapse production",
+        "status": "Production patterns · Synapse · confidential",
         "metrics": [
           {
             "value": "Gateway",
@@ -1080,10 +1116,12 @@
             "value": "Versioned",
             "label": "Partner APIs"
           }
-        ]
+        ],
+        "disclosure": "Banking client systems stay confidential. Below: reusable gateway and API-governance patterns from Synapse delivery for Bank of Africa Group subsidiaries — not proprietary core banking code."
       }
     ],
-    "outcomeLabel": "Outcome —"
+    "outcomeLabel": "Outcome —",
+    "disclosureLabel": "Confidential framing"
   },
   "experience": {
     "title": "Experience",
@@ -1091,7 +1129,7 @@
     "viewAll": "Full experience",
     "downloadCv": "Download CV",
     "valueTitle": "What you get",
-    "valueBody": "Hands-on delivery across enterprise platforms — APIs, distributed systems, and production pipelines in banking and FinTech.",
+    "valueBody": "Hands-on delivery across enterprise platforms — APIs, distributed systems, and production pipelines in banking and FinTech. Outcomes you can check: multi-subsidiary banking delivery, Wave / Orange Money rails, and production ownership.",
     "stackLabel": "Stack",
     "clientLabel": "Client",
     "currentRole": "Current",
@@ -1099,25 +1137,25 @@
     "showLess": "Show less",
     "items": [
       {
-        "role": "Consultant Backend Engineer — Banking Systems",
+        "role": "Senior Backend Engineer — Banking Platforms (Consultant)",
         "company": "Synapse Groupe",
         "client": "Bank of Africa — Groupe Bank of Africa",
         "logo": "synapse.jpeg",
         "period": "Feb 2025 — Present",
         "location": "Ngor, Dakar, Senegal",
-        "bullet0": "Drove backend modernization of enterprise banking platforms — Java / Spring Boot, multi-tenancy, clean architecture — serving 11+ Bank of Africa Group subsidiaries.",
-        "bullet1": "Designed secured enterprise REST APIs, payment and transfer services, and append-only reconciliation so money movement stays auditable. Technical ownership with product, QA, and engineering teams in a high-availability environment.",
+        "bullet0": "Drove backend modernization (Java / Spring Boot, multi-tenancy, clean architecture) serving 11+ Bank of Africa Group subsidiaries — standardizing integration patterns and raising maintainability of core services.",
+        "bullet1": "Designed secured REST APIs and gateway-style boundaries (versioned contracts, JWT / RBAC, audit logging) plus append-only reconciliation so money movement stays explainable for finance and compliance. Ownership with product, QA, and engineering on high-availability delivery (Docker, Kubernetes, CI/CD).",
         "bullet2": "Java, Spring Boot, API Design, Docker, Kubernetes, CI/CD, JasperReports, Clean Architecture, Multi-tenancy, Agile (Scrum)"
       },
       {
-        "role": "Software Engineer — FinTech & Payments",
+        "role": "Backend Engineer — FinTech & Payments",
         "company": "ENG Technologie Group",
         "client": "",
         "logo": "eng.jpeg",
         "period": "Jul 2023 — Feb 2025",
         "location": "Dakar-Plateau, Senegal",
-        "bullet0": "Owned backend microservices for digital lending, customer onboarding, and payment workflows on a FinTech platform.",
-        "bullet1": "Integrated Wave and Orange Money services to automate payment processing. Implemented asynchronous processing patterns and strengthened API security with Spring Security.",
+        "bullet0": "Owned backend microservices for digital lending, customer onboarding, and payment workflows on a FinTech platform in production.",
+        "bullet1": "Integrated Wave and Orange Money; designed Kafka event flows with explicit idempotency so retries cannot double-debit. Hardened APIs with Spring Security and improved payment operations reliability on AWS (Docker, GitLab CI/CD).",
         "bullet2": "Java, Spring Boot, AWS, PostgreSQL, Apache Kafka, Docker, GitLab CI/CD, API Design, Agile Scrum"
       },
       {
@@ -1127,8 +1165,8 @@
         "logo": "mafalia.jpeg",
         "period": "Jun 2022 — Nov 2023 · parallel with ENG from Jul 2023",
         "location": "Dakar Region, Senegal",
-        "bullet0": "Built backend services and REST APIs supporting inventory management, order processing, sales, and financial workflows for a SaaS platform helping SMEs manage operations.",
-        "bullet1": "Improved application performance by optimizing database queries and business processing. Implemented caching and asynchronous processing for scalability.",
+        "bullet0": "Built multi-tenant backend services and REST APIs for inventory, orders, sales, and financial workflows helping SMEs run operations.",
+        "bullet1": "Improved performance via query optimization, caching, and async processing — keeping reporting off the collection path so checkout stays responsive.",
         "bullet2": "Java, Spring Boot, MySQL, Angular, TypeScript, REST APIs, Agile XP"
       },
       {
@@ -1249,7 +1287,7 @@
     "title": "Engineering, architecture, and business reality — turned into software that lasts.",
     "body": "I enjoy working at that intersection: complex requirements become simple, maintainable, production-ready systems — with meaningful impact in Africa and beyond.",
     "positioning": [
-      "Senior Software Engineer",
+      "Senior Backend Engineer",
       "Backend & Distributed Systems",
       "Architecture that lasts"
     ],
@@ -1360,13 +1398,13 @@
       }
     ],
     "p1": "Hi — I’m Saïfoulaye. I build software that solves real-world problems.",
-    "p2a": "I’m a Senior Software Engineer focused on backend engineering, distributed systems, APIs, and software architecture. I work mainly with",
+    "p2a": "I’m a Senior Backend Engineer focused on backend engineering, distributed systems, APIs, and software architecture. I work mainly with",
     "p2b": "Java and Spring Boot",
     "p2c": ", but I care more about understanding the problem, making the right trade-offs, and building systems that remain reliable as they evolve.",
-    "p3": "My experience spans enterprise platforms, banking, FinTech, payments, and complex system integrations — turning complex requirements into simple, maintainable, production-ready solutions.",
-    "p4": "I believe good software is not about the most sophisticated technology. It is about the right decisions: simplicity over unnecessary complexity, reliability over short-term fixes, and business impact over technical vanity.",
-    "p5": "I'm particularly interested in distributed systems, cloud-native architectures, AI-enabled software, and how modern engineering creates lasting impact — in Africa and beyond.",
-    "p6": "Outside day-to-day work, I build products, experiment with new technologies, write about engineering and architecture, and explore how technology can create meaningful impact in Africa and beyond.",
+    "p3": "My experience spans enterprise platforms, banking, FinTech, and payment integrations — turning complex requirements into simple, maintainable, production-ready backends.",
+    "p4": "Good software is the right decisions: simplicity over unnecessary complexity, reliability over short-term fixes, and business impact over technical vanity.",
+    "p5": "Specialty: banking and payment backends — mobile money corridors, ledger-safe money movement, and API governance for regulated teams across West Africa and remote worldwide.",
+    "p6": "Outside delivery, I ship side systems and write about architecture decisions drawn from real production constraints.",
     "collaboration": "I enjoy working with people who think critically, care about quality, and want to build things that last.",
     "focusTagsTitle": "Focus",
     "focusTags": [
@@ -1378,7 +1416,7 @@
       "Cloud",
       "Software Architecture"
     ],
-    "cardRole": "Senior Software Engineer",
+    "cardRole": "Senior Backend Engineer",
     "cardTagline": "Dakar · West Africa · Remote Worldwide",
     "statYearsValue": "4+",
     "statYears": "Production Years",
@@ -1408,8 +1446,8 @@
   },
   "aboutTeaser": {
     "title": "About",
-    "heading": "Senior Software Engineer — backend, systems, architecture",
-    "excerpt": "I build software that solves real-world problems. Backend, distributed systems, and architecture — shaped by banking and FinTech delivery from Dakar to remote teams worldwide.",
+    "heading": "Senior Backend Engineer — banking, payments, systems",
+    "excerpt": "Banking and payment backends that stay correct under load — Java, Spring Boot, distributed systems. Delivery from Dakar to remote teams worldwide.",
     "readMore": "See full profile",
     "stat1Value": "4+",
     "stat1Label": "Production years",
@@ -1420,9 +1458,9 @@
   },
   "certifications": {
     "title": "Credentials",
-    "subtitle": "Certification roadmap backed by production delivery",
-    "teaserHeading": "Credentials in progress — skills already proven in production",
-    "intro": "Day-to-day depth comes from shipping Spring, Kafka, cloud, and production systems in regulated environments. Formal certifications below are the roadmap — obtained credentials appear here with verify links as they land.",
+    "subtitle": "Verified credentials appear here when obtained — delivery proof stays on Experience and Systems",
+    "teaserHeading": "Verified credentials only — skills are proven in production delivery",
+    "intro": "This page lists only obtained, verifiable certifications. Day-to-day depth is shown through Experience, case studies, and the production stack — not a planned-cert roadmap.",
     "formalLabel": "Industry certifications",
     "expertiseLabel": "Professional expertise",
     "viewAll": "View all credentials",
@@ -1473,13 +1511,6 @@
         "group": "formal",
         "featured": false
       },
-      "azureAiEngineer": {
-        "name": "Microsoft Certified: Azure AI Engineer Associate (AI-102)",
-        "issuer": "Microsoft",
-        "description": "Designing and deploying Azure AI solutions — cognitive services, Azure OpenAI integration, and production-ready ML pipelines for enterprise backends.",
-        "group": "formal",
-        "featured": false
-      },
       "confluentKafkaDeveloper": {
         "name": "Confluent Certified Developer for Apache Kafka",
         "issuer": "Confluent",
@@ -1508,13 +1539,6 @@
         "group": "expertise",
         "featured": false
       },
-      "aiIntegration": {
-        "name": "AI Integration",
-        "issuer": "Applied engineering",
-        "description": "Embedding LLM and automation capabilities into products — guarded APIs, observability, and pragmatic integration with existing backends.",
-        "group": "expertise",
-        "featured": false
-      },
       "paymentSystems": {
         "name": "Payment Systems Expertise",
         "issuer": "Domain specialization",
@@ -1525,18 +1549,18 @@
     }
   },
   "certificationsPage": {
-    "metaTitle": "Credentials & Certifications | Senior Software Engineer | SAIFCORE",
-    "metaDescription": "Certification roadmap for cloud, security, streaming, and domain depth — backed by production delivery on Spring, Kafka, and payment systems in regulated environments.",
+    "metaTitle": "Credentials & Certifications | Senior Backend Engineer | SAIFCORE",
+    "metaDescription": "Verified cloud, security, and streaming credentials — obtained only. Delivery proof lives on Experience and Systems.",
     "title": "Credentials",
-    "subtitle": "Planned and in-progress cloud, security, and streaming credentials — alongside hands-on Spring and production-systems expertise proven in delivery.",
+    "subtitle": "Verified certifications with issuer links. Until a credential is obtained, this page stays unpublished.",
     "backToHome": "Back to home",
     "endCtaTitle": "Need engineering depth on your initiative?",
     "endCtaSubtitle": "Production delivery on banking, FinTech, and platform work — share your context and timeline.",
     "endCtaButton": "Start a conversation"
   },
   "aboutPage": {
-    "metaTitle": "About | Senior Software Engineer | SAIFCORE",
-    "metaDescription": "Saïfoulaye Diallo (SAIFCORE) — Senior Software Engineer focused on backend, distributed systems, APIs, and architecture. Banking & FinTech. Dakar · remote worldwide.",
+    "metaTitle": "About | Senior Backend Engineer | SAIFCORE",
+    "metaDescription": "Saïfoulaye Diallo (SAIFCORE) — Senior Backend Engineer focused on backend, distributed systems, APIs, and architecture. Banking & FinTech. Dakar · remote worldwide.",
     "title": "About",
     "subtitle": "I build software that solves real-world problems — backend engineering, distributed systems, and architecture with banking and FinTech depth.",
     "backToHome": "Back to home",
@@ -1694,9 +1718,9 @@
   },
   "systemsPage": {
     "metaTitle": "Case Studies | Systems & Architecture | SAIFCORE",
-    "metaDescription": "Case studies: APIs, ledgers, integrations, and platforms — Senegal to multi-country banking. Problem, architecture, and impact.",
+    "metaDescription": "Case studies: live products, open labs, and confidential banking/FinTech patterns — Senegal to multi-country delivery.",
     "title": "Case studies",
-    "subtitle": "From a live West Africa product to multi-country banking systems — problem, architecture, and impact.",
+    "subtitle": "Live products, open labs, and production patterns — confidential banking/FinTech work described at pattern level only.",
     "backToHome": "Back to home",
     "midCtaTitle": "Need similar depth on your next system?",
     "midCtaSubtitle": "Book a discovery call, or review ways to work.",
@@ -2007,7 +2031,7 @@
     "endCtaButton": "Discuss the problem"
   },
   "experiencePage": {
-    "metaTitle": "Experience | Senior Software Engineer | SAIFCORE",
+    "metaTitle": "Experience | Senior Backend Engineer | SAIFCORE",
     "metaDescription": "Professional experience across enterprise platforms, banking, and FinTech — Synapse, ENG Technologie, and more. Dakar · remote worldwide.",
     "title": "Experience",
     "subtitle": "Roles and delivery across enterprise platforms, banking, and FinTech.",
