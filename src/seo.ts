@@ -464,6 +464,8 @@ export type OfferPackageInput = {
   name: string;
   description: string;
   category?: string;
+  /** Soft EUR band shown on the site, e.g. `€2.5k–€4.5k` or `€450–€600 / day`. */
+  investment?: string;
 };
 
 type OfferCatalogInput = {
@@ -474,6 +476,37 @@ type OfferCatalogInput = {
   areaServed: string;
   availability: string;
 };
+
+/**
+ * Parse soft EUR investment copy into schema.org price bounds when possible.
+ * Returns null when the string is not a parseable band (keeps JSON-LD honest).
+ */
+export function parseEurInvestmentBounds(
+  investment: string,
+): { minPrice: number; maxPrice?: number; unitText?: string } | null {
+  const normalized = investment
+    .replace(/\u00a0/g, " ")
+    .replace(/,/g, ".")
+    .trim();
+  const unitText = /\/\s*(day|jour)/i.test(normalized) ? "DAY" : undefined;
+  const matches = [...normalized.matchAll(/€\s*([\d]+(?:\.\d+)?)\s*k?/gi)];
+  if (matches.length === 0) return null;
+
+  const toEuros = (raw: string, full: string) => {
+    const n = Number.parseFloat(raw);
+    if (!Number.isFinite(n)) return null;
+    return /k/i.test(full) ? Math.round(n * 1000) : Math.round(n);
+  };
+
+  const amounts = matches
+    .map((m) => toEuros(m[1]!, m[0]!))
+    .filter((n): n is number => n != null);
+
+  if (amounts.length === 0) return null;
+  const minPrice = Math.min(...amounts);
+  const maxPrice = amounts.length > 1 ? Math.max(...amounts) : undefined;
+  return { minPrice, ...(maxPrice != null ? { maxPrice } : {}), unitText };
+}
 
 /** OfferCatalog + Offer nodes for ways-to-work engagements on the home page. */
 export function buildOfferCatalogNodes({
@@ -494,7 +527,10 @@ export function buildOfferCatalogNodes({
 
   const offers = packages.map((pkg, index) => {
     const slug = caseStudySlug(pkg.name);
-    return {
+    const bounds = pkg.investment
+      ? parseEurInvestmentBounds(pkg.investment)
+      : null;
+    const offer: Record<string, unknown> = {
       "@type": "Offer",
       "@id": `${homeUrl}#offer-${slug || index}`,
       name: pkg.name,
@@ -502,6 +538,7 @@ export function buildOfferCatalogNodes({
       url: offersUrl,
       category: pkg.category,
       areaServed,
+      priceCurrency: "EUR",
       availableAtOrFrom: {
         "@type": "Place",
         name: availability,
@@ -515,6 +552,23 @@ export function buildOfferCatalogNodes({
         areaServed,
       },
     };
+
+    if (pkg.investment) {
+      offer.priceSpecification = {
+        "@type": "PriceSpecification",
+        priceCurrency: "EUR",
+        description: pkg.investment,
+        ...(bounds
+          ? {
+              minPrice: bounds.minPrice,
+              ...(bounds.maxPrice != null ? { maxPrice: bounds.maxPrice } : {}),
+              ...(bounds.unitText ? { unitText: bounds.unitText } : {}),
+            }
+          : {}),
+      };
+    }
+
+    return offer;
   });
 
   return {

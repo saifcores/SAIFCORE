@@ -14,6 +14,7 @@ import { FaqSection } from "@/components/portfolio/FaqSection";
 import { Hero } from "@/components/portfolio/Hero";
 import { Navbar } from "@/components/portfolio/Navbar";
 import { FreelanceOffers } from "@/components/portfolio/FreelanceOffers";
+import { CollaborationStrip } from "@/components/portfolio/CollaborationStrip";
 import { Testimonials } from "@/components/portfolio/Testimonials";
 import { Trust } from "@/components/portfolio/Trust";
 import { fetchRecentArticles } from "@/blog/recent-articles";
@@ -29,6 +30,7 @@ import {
 import {
   getCaseStudyHref,
   ECOM_360_CASE_STUDY_PATH,
+  PAYMENT_DISASTER_LAB_CASE_STUDY_PATH,
 } from "@/data/case-studies";
 import {
   getContactEmail,
@@ -76,6 +78,7 @@ export default async function Home({ params }: Props) {
       name: pkg.title,
       description: pkg.description,
       category: track.label,
+      investment: pkg.investment,
     })),
   );
 
@@ -122,6 +125,7 @@ export default async function Home({ params }: Props) {
     },
     worksFor: {
       "@type": "Organization",
+      "@id": `${homeUrl}#organization`,
       name: "SAIFCORE",
       url: siteUrl,
     },
@@ -130,6 +134,31 @@ export default async function Home({ params }: Props) {
       "@id": offer["@id"] as string,
     })),
   };
+
+  const jsonLdOrganization: Record<string, unknown> = {
+    "@type": "ProfessionalService",
+    "@id": `${homeUrl}#organization`,
+    name: "SAIFCORE",
+    url: siteUrl,
+    description: t("jsonLdServiceDescription"),
+    areaServed: t("jsonLdAreaServed"),
+    founder: { "@id": personId },
+    employee: { "@id": personId },
+    knowsAbout: [...messages.meta.knowsAbout],
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: loc.city,
+      addressCountry: loc.countryCode,
+    },
+  };
+
+  if (sameAs.length > 0) {
+    jsonLdOrganization.sameAs = sameAs;
+  }
+
+  if (contactEmail) {
+    jsonLdOrganization.email = contactEmail;
+  }
 
   if (sameAs.length > 0) {
     jsonLdPerson.sameAs = sameAs;
@@ -177,6 +206,7 @@ export default async function Home({ params }: Props) {
 
   const graphNodes: Record<string, unknown>[] = [
     jsonLdPerson,
+    jsonLdOrganization,
     jsonLdWebPage,
     offerCatalogNode,
     ...catalogOffers,
@@ -247,10 +277,15 @@ export default async function Home({ params }: Props) {
           linkedinCta={messages.testimonials.linkedinCta}
           namedLabel={messages.testimonials.namedLabel}
           anonymizedLabel={messages.testimonials.anonymizedLabel}
+          emptyNamedTitle={messages.testimonials.emptyNamedTitle}
+          emptyNamedBody={messages.testimonials.emptyNamedBody}
+          emptyNamedPrimary={messages.testimonials.emptyNamedPrimary}
+          emptyNamedSecondary={messages.testimonials.emptyNamedSecondary}
           namedItems={[...messages.testimonials.namedItems]}
           items={[...messages.testimonials.items]}
           linkedinUrl={getLinkedinUrl()}
         />
+        <CollaborationStrip />
         <FreelanceOffers
           title={fo.title}
           subtitle={fo.subtitle}
@@ -268,7 +303,13 @@ export default async function Home({ params }: Props) {
                   proofLabel: fo.productProofLabel,
                   proofHref: ECOM_360_CASE_STUDY_PATH,
                 }
-              : track,
+              : index === 1
+                ? {
+                    ...track,
+                    proofLabel: fo.bankingProofLabel,
+                    proofHref: PAYMENT_DISASTER_LAB_CASE_STUDY_PATH,
+                  }
+                : track,
           )}
         />
         <Insights teaser />

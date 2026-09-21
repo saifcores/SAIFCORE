@@ -1,19 +1,19 @@
 {
   "meta": {
     "title": "Senior Backend Engineer | Java · Distributed Systems · Architecture | SAIFCORE",
-    "description": "Senior Backend Engineer for banking & payment systems — Java, Spring Boot, distributed APIs. Dakar · remote worldwide. SAIFCORE.",
-    "ogTitle": "Banking & payment backends that stay correct under load",
-    "ogDescription": "Senior Backend Engineer for banking & payments — Java, Spring Boot, distributed systems. Dakar · West Africa · remote worldwide.",
-    "twitterDescription": "Senior Backend Engineer · backend, distributed systems, APIs, architecture. Java · Spring Boot · banking & FinTech · Dakar · remote worldwide.",
+    "description": "Senior Backend Engineer — Java, Spring Boot, APIs, distributed systems. Open to roles and client collaborations. Dakar · remote worldwide. SAIFCORE.",
+    "ogTitle": "Production backends that stay correct under load",
+    "ogDescription": "Senior Backend Engineer for products and platforms — Java, Spring Boot, distributed systems. Hire or collaborate. Dakar · West Africa · remote worldwide.",
+    "twitterDescription": "Senior Backend Engineer · Java · Spring Boot · APIs · architecture. Roles & client work. Banking/FinTech depth when stakes are high. Dakar · remote worldwide.",
     "jsonLdJobTitle": "Senior Backend Engineer",
-    "jsonLdDescription": "Senior Backend Engineer specializing in banking and payment backends — Java, Spring Boot, APIs, distributed systems. Experience across Bank of Africa Group platforms (via Synapse), FinTech, and enterprise delivery. Based in Dakar; remote worldwide.",
+    "jsonLdDescription": "Senior Backend Engineer — Java, Spring Boot, APIs, and distributed systems for products and platforms. Open to full-time roles and scoped collaborations. Proven on Bank of Africa Group platforms (via Synapse), FinTech, commerce, and enterprise delivery. Based in Dakar; remote worldwide.",
     "jsonLdServiceName": "Backend engineering & software architecture",
-    "jsonLdServiceDescription": "Backend systems, APIs, distributed architectures, and software for enterprise and fintech platforms — including payment infrastructure and regulated banking integrations when the problem requires it.",
+    "jsonLdServiceDescription": "Backend systems, APIs, distributed architectures, and delivery ownership for product teams and enterprises — including high-stakes banking and payment work when the problem requires it.",
     "jsonLdAvailability": "Remote worldwide",
     "jsonLdAreaServed": "Senegal, West Africa, Worldwide",
-    "keywords": "senior backend engineer, banking backend, payment systems, Java, Spring Boot, distributed systems, APIs, fintech, mobile money, Bank of Africa, Senegal, Dakar, remote engineer, SAIFCORE",
+    "keywords": "senior backend engineer, Java, Spring Boot, distributed systems, APIs, software architecture, freelance backend, remote engineer, fintech, banking backend, SaaS, Senegal, Dakar, SAIFCORE",
     "manifestName": "SAIFCORE — Senior Backend Engineer",
-    "manifestDescription": "Portfolio — backend engineering, distributed systems, APIs, and software architecture for banking, FinTech, and enterprise platforms.",
+    "manifestDescription": "Portfolio — senior backend engineering for products, platforms, and high-stakes systems. Roles and collaborations.",
     "knowsAbout": [
       "Java",
       "Spring Boot",
@@ -23,6 +23,7 @@
       "APIs",
       "Cloud-native architectures",
       "Enterprise platforms",
+      "Product backends",
       "Banking systems",
       "Payment infrastructure",
       "FinTech",
@@ -98,16 +99,16 @@
   },
   "audiencePaths": {
     "title": "Start here",
-    "subtitle": "Hiring this profile, or starting a project.",
+    "subtitle": "Two doors — same senior backend partner.",
     "recruiterTitle": "Hiring & recruiting",
-    "recruiterDescription": "Experience, case studies, and About — then the CV.",
+    "recruiterDescription": "Senior Java/Spring backend for product and platform teams — CV, experience, and high-stakes delivery proof (incl. Bank of Africa Group via Synapse).",
     "recruiterLinkExperience": "Experience",
     "recruiterLinkSystems": "Case studies",
     "recruiterLinkAbout": "About",
     "recruiterCta": "Download CV",
     "recruiterSecondaryCta": "View experience",
-    "clientTitle": "Project & freelance work",
-    "clientDescription": "See shipped systems, ways to work, then book a short call.",
+    "clientTitle": "Project & collaboration",
+    "clientDescription": "Scoped builds, architecture, or an embed — EUR bands, written proposal after a short call. Built to ship with you, not just for you.",
     "clientLinkServices": "Case studies",
     "clientLinkOffers": "Ways to work",
     "clientLinkStart": "How it starts",
@@ -117,24 +118,24 @@
     "clientSecondaryCta": "Ways to work"
   },
   "hero": {
-    "badge": "Dakar · Banking & payments · FR/EN · Remote",
-    "titleLine1": "Banking & payment",
-    "titleLine2": "backends that stay",
-    "titleLine3": "correct under load.",
-    "subtitle": "Senior Backend Engineer — Java / Spring Boot for banks, fintechs, and payment rails. I start from the problem, make trade-offs explicit, and ship systems that stay reliable.",
+    "badge": "Dakar · Roles & collaborations · FR/EN · Remote",
+    "titleLine1": "Production backends",
+    "titleLine2": "that stay correct",
+    "titleLine3": "under load.",
+    "subtitle": "Senior Backend Engineer — Java / Spring Boot for product teams, platforms, and high-stakes systems. Hire me into your squad, or collaborate on a scoped engagement.",
     "hubNodes": [
-      "Payments",
-      "Ledger",
       "APIs",
+      "Architecture",
+      "Payments",
       "Kafka",
-      "Gateway"
+      "Product"
     ],
     "ctaPrimary": "Download CV",
     "ctaExperience": "Ways to work",
     "ctaBookCall": "Book a call",
     "ctaResume": "Download CV",
-    "proofLine": "Senior backend for banking & payment platforms — Bank of Africa Group (via Synapse), ENG Technologie, and production FinTech rails.",
-    "availability": "Open to new work",
+    "proofLine": "Proven where correctness matters — Bank of Africa Group (via Synapse), ENG Technologie, live commerce (Ecom 360), and FinTech rails. Open beyond banking: the same senior ownership on your product.",
+    "availability": "Open to roles & collaborations",
     "jumpToContact": "Hiring? Recruiter path"
   },
   "trustedExpertise": {
@@ -301,16 +302,16 @@
   },
   "freelanceOffers": {
     "title": "Ways to work",
-    "subtitle": "Match the engagement to the decision — clarify the problem, ship the system, or embed senior capacity.",
-    "note": "Every path starts the same: a short discovery call, then a written proposal with scope, milestones, and ownership.",
-    "pricingNote": "Indicative investment in EUR (remote from Dakar). Final quote after discovery — fixed scope or day-rate depending on the path.",
+    "subtitle": "Match the collaboration to the decision — clarify the problem, ship the system, or embed senior capacity.",
+    "note": "Every path starts the same: a short discovery call, then a written proposal with scope, milestones, and ownership. Designed for lasting partnerships — not one-off throwaway work.",
+    "pricingNote": "Indicative investment in EUR (remote from Dakar). Final quote after discovery — fixed scope or day-rate depending on the path. Clear commercial terms support sustainable collaboration.",
     "investmentLabel": "From",
     "cta": "Book a discovery call",
     "fitLabel": "Best when",
     "tracks": [
       {
         "label": "Product & startup delivery",
-        "audience": "Founders and product teams that need a reliable backend without hiring a full platform squad yet.",
+        "audience": "Founders and product teams that need a reliable backend partner without hiring a full platform squad yet.",
         "promise": "From fuzzy idea to a system you can demo, operate, and hand off — with explicit trade-offs along the way.",
         "packages": [
           {
@@ -353,8 +354,8 @@
       },
       {
         "label": "Enterprise & platform work",
-        "audience": "Banks, fintechs, and platform teams modernizing under constraints — or adding senior backend depth.",
-        "promise": "Ownership where correctness and reliability are non-negotiable — regulated contexts, clear governance, lasting architecture.",
+        "audience": "Product companies, banks, fintechs, and platform teams that need senior backend depth — modernization, integrations, or an embed.",
+        "promise": "Ownership where correctness and reliability matter — clear governance, lasting architecture, delivery you can keep running.",
         "packages": [
           {
             "title": "Architecture review",
@@ -396,24 +397,29 @@
       }
     ],
     "ctaSecondary": "Send a brief",
-    "closer": "Not sure which fits? Start with discovery — I will recommend the right engagement and a firm quote.",
-    "productProofLabel": "See Ecom 360 case study"
+    "closer": "Not sure which fits? Start with discovery — written proposal before any build, firm EUR quote, named senior partner through production.",
+    "productProofLabel": "See Ecom 360 case study",
+    "bankingProofLabel": "See payment resilience patterns"
   },
   "faq": {
     "title": "FAQ",
     "subtitle": "Hiring managers and project leads — straight answers.",
     "items": [
       {
-        "question": "How do engagements start?",
-        "answer": "With a short discovery call. You get a written proposal covering scope, milestones, effort range, and a recommended way of working — no vague retainers."
+        "question": "How do collaborations start?",
+        "answer": "With a short discovery call. For client work you get a written proposal covering scope, milestones, effort range, and a recommended way of working — no vague retainers. For hiring, you get a clear fit assessment."
       },
       {
         "question": "Do you work fully remote?",
         "answer": "Yes. Delivery is remote worldwide from Dakar, with async-friendly rituals and overlap that fits your timezone for critical workshops."
       },
       {
+        "question": "Do you only work on banking and payments?",
+        "answer": "No. I am a Senior Backend Engineer for products and platforms. Banking and FinTech are strong proof where stakes are high — not a closed niche. I collaborate with product teams, SaaS, enterprise, and regulated environments when the problem fits."
+      },
+      {
         "question": "How do we shape the engagement?",
-        "answer": "Product teams usually start with an Architecture sprint, Scoped build, or MVP acceleration. Banks and platform teams lean toward Architecture review, Platform modernization, or a Contract embed."
+        "answer": "Product teams usually start with an Architecture sprint, Scoped build, or MVP acceleration. Platform and enterprise teams lean toward Architecture review, Platform modernization, or a Contract embed — including banking when needed."
       },
       {
         "question": "Can you work inside regulated banking or payment environments?",
@@ -424,7 +430,7 @@
         "answer": "I do. You work with a named Senior Backend Engineer — not a rotating bench. Scope, architecture, and delivery stay with me through production-ready ownership."
       },
       {
-        "question": "What does an engagement cost?",
+        "question": "What does a collaboration cost?",
         "answer": "Indicative ranges are on Ways to work (sprints from ~€2.5k, scoped builds from ~€8k, embeds €450–€600/day). Every proposal after discovery locks scope, milestones, and a firm quote — EUR, remote from Dakar."
       },
       {
@@ -435,7 +441,7 @@
   },
   "techStack": {
     "title": "Production stack",
-    "subtitle": "Tools used on live banking and fintech backends — chosen for reliability, operability, and systems your team can run.",
+    "subtitle": "Tools used on live product and platform backends — chosen for reliability, operability, and systems your team can run.",
     "categories": [
       {
         "label": "Backend",
@@ -584,24 +590,24 @@
     ]
   },
   "collaboration": {
-    "title": "How an engagement starts",
-    "subtitle": "Named senior engineer. Written proposal. No vague retainer.",
+    "title": "How a collaboration starts",
+    "subtitle": "Named senior engineer. Written proposal. Clear path for hire or project.",
     "facts": [
       {
         "title": "30-minute intro",
-        "body": "No retainer. I scope the work with you, then you decide."
+        "body": "No retainer. We scope the work together — role fit or project fit — then you decide."
       },
       {
         "title": "Written proposal",
-        "body": "Scope, milestones, and effort range before any build starts."
+        "body": "For client work: scope, milestones, and effort range before any build starts."
       },
       {
-        "title": "Named owner",
-        "body": "I stay on the work through production — tests, runbooks, and docs."
+        "title": "Named partner",
+        "body": "I stay on the work through production — tests, runbooks, and docs. Built for mutual growth."
       }
     ],
     "ctaTitle": "Book a 30-minute intro call",
-    "ctaSubtitle": "Written proposal for project work — or a clear hiring path if you are recruiting.",
+    "ctaSubtitle": "Hiring path or project collaboration — straight answer after one call.",
     "ctaPrimary": "Book a call",
     "ctaSecondary": "Ways to work",
     "slaLine": "I reply within two business days — or book a 30-minute call."
@@ -664,12 +670,16 @@
   },
   "testimonials": {
     "title": "What delivery partners noticed",
-    "subtitle": "Named references when available — otherwise anonymized outcomes from banking, FinTech, and platform work. Full intros on request after a short call.",
-    "cta": "Match an outcome to an engagement",
+    "subtitle": "Named references when available — otherwise anonymized outcomes from product, platform, banking, and FinTech work. Full intros on request after a short call.",
+    "cta": "Match an outcome to a collaboration",
     "referenceCta": "Request a reference intro",
     "linkedinCta": "LinkedIn recommendations",
     "namedLabel": "Named reference",
     "anonymizedLabel": "Anonymized outcome",
+    "emptyNamedTitle": "Named references on request",
+    "emptyNamedBody": "Intros after a short call. Public LinkedIn recommendations are available now — I do not invent named quotes on this site.",
+    "emptyNamedPrimary": "Open LinkedIn recommendations",
+    "emptyNamedSecondary": "Request a reference intro",
     "namedItems": [],
     "items": [
       {
@@ -696,13 +706,13 @@
     "heading": "Trusted where reliability matters",
     "industriesLabel": "Industries",
     "industries": [
+      "Product & SaaS",
       "Banking",
       "Fintech",
-      "Credit Systems",
-      "Enterprise SaaS"
+      "Enterprise"
     ],
     "companiesLabel": "Employers",
-    "deliveryNote": "Delivery for Bank of Africa Group platforms via Synapse — not a commercial partnership.",
+    "deliveryNote": "High-stakes delivery includes Bank of Africa Group platforms via Synapse — not a commercial partnership. Also product and FinTech work.",
     "facts": [
       {
         "value": "4+",
@@ -721,7 +731,13 @@
         "label": "Remote worldwide"
       }
     ],
-    "specialtyLine": "Niche: production backends for banking, payments, and mobile-money corridors."
+    "specialtyLine": "Senior backend for products and platforms — proven on commerce, FinTech, and banking when stakes are high.",
+    "verifyHeading": "Verify independently",
+    "verifyLinkedin": "LinkedIn profile",
+    "verifyGithub": "GitHub",
+    "verifyLive": "Live product — Ecom 360",
+    "verifyResume": "Download CV",
+    "verifyNote": "Employers, public product, and profile links — not paid badges or invented endorsements."
   },
   "whatISolve": {
     "title": "Problems I take on",
@@ -776,8 +792,9 @@
   },
   "featuredProjects": {
     "title": "Selected work",
-    "heading": "Banking, payments, and systems that shipped",
-    "subtitle": "Live product first, then production banking/payment patterns — confidential client code stays out; reusable decisions stay in.",
+    "heading": "Systems that shipped",
+    "subtitle": "Live product first, then production patterns from platforms and high-stakes rails — confidential client code stays out; reusable decisions stay in.",
+    "competitiveLine": "Senior ownership you can hire or collaborate with — clear EUR ways to work, proven under real production constraints.",
     "impactLabel": "Impact",
     "marketLabel": "Market",
     "problemLabel": "Problem",
@@ -1564,11 +1581,11 @@
   },
   "aboutPage": {
     "metaTitle": "About | Senior Backend Engineer | SAIFCORE",
-    "metaDescription": "Saïfoulaye Diallo (SAIFCORE) — Senior Backend Engineer focused on backend, distributed systems, APIs, and architecture. Banking & FinTech. Dakar · remote worldwide.",
+    "metaDescription": "Saïfoulaye Diallo (SAIFCORE) — Senior Backend Engineer for products and platforms. Java, Spring Boot, APIs, architecture. Open to roles and collaborations. Dakar · remote worldwide.",
     "title": "About",
-    "subtitle": "Banking and payment backends that stay correct under load — Java, Spring Boot, distributed systems. Dakar · remote worldwide.",
+    "subtitle": "Production backends that stay correct under load — Java, Spring Boot, distributed systems. Hire or collaborate. Dakar · remote worldwide.",
     "backToHome": "Back to home",
-    "endCtaTitle": "Ready to hire this profile — or start a project?",
+    "endCtaTitle": "Ready to hire this profile — or start a collaboration?",
     "endCtaSubtitle": "Share team, stack, and constraints. I reply with a clear path: written proposal, contract embed, or next hiring steps.",
     "endCtaButton": "Get in touch"
   },

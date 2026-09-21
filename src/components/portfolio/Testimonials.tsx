@@ -20,6 +20,10 @@ type Props = {
   linkedinCta: string;
   namedLabel: string;
   anonymizedLabel: string;
+  emptyNamedTitle: string;
+  emptyNamedBody: string;
+  emptyNamedPrimary: string;
+  emptyNamedSecondary: string;
   namedItems: readonly Testimonial[];
   items: readonly Testimonial[];
   linkedinUrl: string | null;
@@ -42,22 +46,22 @@ function QuoteCard({
     <MotionReveal delay={delay}>
       <motion.article
         whileHover={reduce ? undefined : { y: -2 }}
-        className={`flex h-full flex-col rounded-[16px] border p-4 transition hover:border-[var(--border-hover)] sm:p-5 ${
+        className={`flex h-full flex-col border-l-2 py-1 pl-4 transition sm:pl-5 ${
           emphasized
-            ? "border-[var(--border-hover)] bg-[var(--bg-elevated)]/40"
-            : "border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20"
+            ? "border-[var(--accent-strong)]"
+            : "border-[var(--border-strong)]"
         }`}
       >
         <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--text-muted)]">
           {label}
         </p>
-        <p className="mt-2 text-sm font-semibold text-[var(--text-primary)]">
+        <p className="mt-3 flex-1 text-sm leading-relaxed text-[var(--text-secondary)] sm:text-[0.9375rem]">
+          “{item.quote}”
+        </p>
+        <p className="mt-4 text-sm font-semibold text-[var(--text-primary)]">
           {item.name}
         </p>
-        <p className="mt-3 flex-1 text-sm leading-relaxed text-[var(--text-secondary)]">
-          {item.quote}
-        </p>
-        <p className="mt-4 border-t border-[var(--border-subtle)] pt-3 text-xs text-[var(--text-muted)]">
+        <p className="mt-0.5 text-xs text-[var(--text-muted)]">
           {item.role}
           <span className="text-[var(--text-secondary)]">
             {" "}
@@ -77,6 +81,10 @@ export function Testimonials({
   linkedinCta,
   namedLabel,
   anonymizedLabel,
+  emptyNamedTitle,
+  emptyNamedBody,
+  emptyNamedPrimary,
+  emptyNamedSecondary,
   namedItems,
   items,
   linkedinUrl,
@@ -96,8 +104,39 @@ export function Testimonials({
           </p>
         </MotionReveal>
 
-        {hasNamed ? (
-          <div className="mt-8 grid gap-3 sm:mt-10 sm:grid-cols-2 lg:grid-cols-3">
+        {!hasNamed ? (
+          <MotionReveal delay={40}>
+            <div className="mt-8 overflow-hidden rounded-[16px] border border-[var(--border-subtle)] bg-[linear-gradient(135deg,var(--glow-primary),transparent_55%),var(--bg-elevated)]/35 p-5 sm:mt-10 sm:p-7 lg:p-8">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--text-muted)]">
+                {emptyNamedTitle}
+              </p>
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[var(--text-secondary)] sm:text-base">
+                {emptyNamedBody}
+              </p>
+              <div className="mt-5 flex flex-col gap-2 min-[480px]:flex-row min-[480px]:flex-wrap">
+                {linkedinUrl ? (
+                  <a
+                    href={linkedinUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary inline-flex min-h-11 items-center justify-center gap-2 px-5 text-sm"
+                  >
+                    {emptyNamedPrimary}
+                    <ArrowUpRight className="h-4 w-4" aria-hidden />
+                  </a>
+                ) : null}
+                <Link
+                  href="/#contact"
+                  className="btn-outline inline-flex min-h-11 items-center justify-center gap-2 px-5 text-sm font-medium"
+                >
+                  {emptyNamedSecondary}
+                  <ArrowUpRight className="h-4 w-4" aria-hidden />
+                </Link>
+              </div>
+            </div>
+          </MotionReveal>
+        ) : (
+          <div className="mt-8 grid gap-6 sm:mt-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
             {namedItems.map((item, i) => (
               <QuoteCard
                 key={`named-${item.name}-${item.company}`}
@@ -109,11 +148,11 @@ export function Testimonials({
               />
             ))}
           </div>
-        ) : null}
+        )}
 
         <div
-          className={`grid gap-3 sm:grid-cols-2 lg:grid-cols-3 ${
-            hasNamed ? "mt-3" : "mt-8 sm:mt-10"
+          className={`grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 ${
+            hasNamed ? "mt-6" : "mt-8 sm:mt-10"
           }`}
         >
           {items.map((item, i) => (
@@ -143,7 +182,7 @@ export function Testimonials({
               {referenceCta}
               <ArrowUpRight className="h-4 w-4" aria-hidden />
             </Link>
-            {linkedinUrl ? (
+            {linkedinUrl && hasNamed ? (
               <a
                 href={linkedinUrl}
                 target="_blank"

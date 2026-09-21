@@ -43,6 +43,9 @@ export async function FeaturedProjectsTeaser() {
               <p className="mt-3 max-w-xl text-pretty text-sm text-[var(--text-secondary)] sm:text-base">
                 {t("subtitle")}
               </p>
+              <p className="mt-2 max-w-xl text-pretty text-xs leading-relaxed text-[var(--text-muted)] sm:text-sm">
+                {t("competitiveLine")}
+              </p>
             </div>
             <Link
               href="/systems"
@@ -118,6 +121,11 @@ export async function FeaturedProjectsTeaser() {
                               {item.status}
                             </p>
                           ) : null}
+                          {isConfidential ? (
+                            <p className="text-[11px] font-medium text-[var(--text-muted)]">
+                              {t("disclosureLabel")}
+                            </p>
+                          ) : null}
                           {primaryMetric ? (
                             <p className="text-[11px] text-[var(--text-muted)]">
                               <span className="font-semibold text-[var(--text-secondary)]">
@@ -173,6 +181,26 @@ export async function FeaturedProjectsTeaser() {
             );
           })}
         </ul>
+
+        <Reveal delay={180}>
+          <div className="mt-8 flex flex-col gap-4 border-t border-[var(--border-subtle)] pt-8 sm:mt-10 sm:flex-row sm:items-center sm:justify-between">
+            <div className="min-w-0 max-w-xl">
+              <p className="text-sm font-semibold text-[var(--text-primary)]">
+                {t("bridgeTitle")}
+              </p>
+              <p className="mt-1 text-sm leading-relaxed text-[var(--text-secondary)]">
+                {t("bridgeSubtitle")}
+              </p>
+            </div>
+            <Link
+              href="/#contact"
+              className="btn-primary inline-flex min-h-11 shrink-0 items-center justify-center gap-2 px-5 text-sm"
+            >
+              {t("bridgeCta")}
+              <ArrowUpRight className="h-4 w-4" aria-hidden />
+            </Link>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

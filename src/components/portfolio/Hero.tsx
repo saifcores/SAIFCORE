@@ -50,12 +50,16 @@ export async function Hero() {
   return (
     <section className="relative overflow-x-clip border-b border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8 lg:py-28">
       <div
-        className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden"
+        className="pointer-events-none absolute inset-0 overflow-hidden"
         aria-hidden
       >
-        <span className="select-none font-display text-[22vw] font-medium leading-none tracking-tight text-[var(--text-primary)] opacity-[0.025] sm:text-[15vw] sm:opacity-[0.03]">
-          SAIFCORE
+        <span className="absolute inset-0 flex items-center justify-center">
+          <span className="select-none font-display text-[22vw] font-medium leading-none tracking-tight text-[var(--text-primary)] opacity-[0.025] sm:text-[15vw] sm:opacity-[0.03]">
+            SAIFCORE
+          </span>
         </span>
+        <span className="absolute -left-24 top-1/4 h-72 w-72 rounded-full bg-[radial-gradient(circle,var(--glow-primary),transparent_70%)] opacity-80 blur-2xl" />
+        <span className="absolute -right-16 bottom-0 h-64 w-64 rounded-full bg-[radial-gradient(circle,var(--glow-secondary),transparent_70%)] opacity-70 blur-2xl" />
       </div>
 
       <div className="relative mx-auto max-w-7xl">
