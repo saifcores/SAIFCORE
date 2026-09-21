@@ -23,9 +23,15 @@ type Props = {
   ns: Namespace;
   /** Show a link to freelance packages (client-oriented pages). */
   showPackages?: boolean;
+  /** Client pages close on the architecture sprint; hiring pages stay on contact. */
+  primaryHref?: "/#contact" | "/#architecture-sprint";
 };
 
-export async function ContactBridgeStrip({ ns, showPackages = false }: Props) {
+export async function ContactBridgeStrip({
+  ns,
+  showPackages = false,
+  primaryHref = "/#contact",
+}: Props) {
   const t = await getTranslations(ns);
   const tNav = await getTranslations("nav");
   const tHeader = await getTranslations("pageHeader");
@@ -56,7 +62,7 @@ export async function ContactBridgeStrip({ ns, showPackages = false }: Props) {
           </p>
           <div className="mt-6 flex flex-col items-stretch gap-2.5 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-3">
             <Link
-              href="/#contact"
+              href={primaryHref}
               className="btn-primary btn-primary-lg inline-flex h-12 w-full items-center justify-center px-8 text-sm sm:min-w-[200px] sm:w-auto"
             >
               {t("endCtaButton")}

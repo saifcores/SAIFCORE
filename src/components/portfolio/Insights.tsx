@@ -131,6 +131,27 @@ export async function Insights({ teaser = false }: Props) {
           </div>
         ) : null}
 
+        {teaser && preview.length > 0 ? (
+          <Reveal delay={160}>
+            <div className="mt-8 flex flex-col gap-4 border-t border-[var(--border-subtle)] pt-8 sm:mt-10 sm:flex-row sm:items-center sm:justify-between">
+              <div className="min-w-0 max-w-xl">
+                <p className="text-sm font-semibold text-[var(--text-primary)]">
+                  {t("bridgeTitle")}
+                </p>
+                <p className="mt-1 text-sm leading-relaxed text-[var(--text-secondary)]">
+                  {t("bridgeSubtitle")}
+                </p>
+              </div>
+              <Link
+                href="/#architecture-sprint"
+                className="btn-primary inline-flex min-h-11 shrink-0 items-center justify-center px-5 text-sm"
+              >
+                {t("bridgeCta")}
+              </Link>
+            </div>
+          </Reveal>
+        ) : null}
+
         {!teaser ? (
           <Reveal delay={200}>
             <div className="mt-10 flex items-center justify-between border-t border-[var(--border-subtle)] pt-8">
@@ -160,7 +181,11 @@ export async function Insights({ teaser = false }: Props) {
 
         {!teaser ? (
           <div className="mt-16">
-            <ContactBridgeStrip ns="insights" showPackages />
+            <ContactBridgeStrip
+              ns="insights"
+              showPackages
+              primaryHref="/#architecture-sprint"
+            />
           </div>
         ) : null}
       </div>

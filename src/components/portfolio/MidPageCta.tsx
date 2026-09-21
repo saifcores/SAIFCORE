@@ -49,6 +49,13 @@ export async function MidPageCta({ namespace }: Props) {
                 >
                   {tNav("resume")}
                 </a>
+              ) : namespace === "systemsPage" ? (
+                <Link
+                  href="/#architecture-sprint"
+                  className="btn-primary inline-flex min-h-11 items-center justify-center px-5 text-sm"
+                >
+                  {t("midCtaPrimary")}
+                </Link>
               ) : (
                 <BookCallLink className="btn-primary inline-flex min-h-11 items-center justify-center px-5 text-sm">
                   {tNav("bookCall")}

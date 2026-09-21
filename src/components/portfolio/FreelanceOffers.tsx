@@ -2,7 +2,6 @@
 
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { BookCallLink } from "@/components/portfolio/BookCallLink";
 import { MotionReveal } from "@/components/portfolio/motion/MotionReveal";
 
 type Package = {
@@ -33,6 +32,7 @@ type Props = {
   cta: string;
   ctaSecondary: string;
   fitLabel: string;
+  startHereLabel: string;
   tracks: readonly Track[];
 };
 
@@ -46,6 +46,7 @@ export function FreelanceOffers({
   cta,
   ctaSecondary,
   fitLabel,
+  startHereLabel,
   tracks,
 }: Props) {
   return (
@@ -98,8 +99,23 @@ export function FreelanceOffers({
                 </div>
 
                 <ol className="mt-2 flex flex-1 list-none flex-col divide-y divide-[var(--border-subtle)] p-0">
-                  {track.packages.map((pkg, pkgIndex) => (
-                    <li key={pkg.title} className="py-5 sm:py-6">
+                  {track.packages.map((pkg, pkgIndex) => {
+                    const isStartHere = trackIndex === 0 && pkgIndex === 0;
+                    return (
+                      <li
+                        key={pkg.title}
+                        id={isStartHere ? "architecture-sprint" : undefined}
+                        className={`scroll-mt-28 py-5 sm:py-6 ${
+                          isStartHere
+                            ? "border-l-2 border-[var(--accent-strong)] pl-4"
+                            : ""
+                        }`}
+                      >
+                        {isStartHere ? (
+                          <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--accent-strong)]">
+                            {startHereLabel}
+                          </p>
+                        ) : null}
                       <div className="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-baseline sm:justify-between sm:gap-x-3">
                         <div className="flex min-w-0 items-baseline gap-3">
                           <span className="font-mono text-[11px] tabular-nums text-[var(--text-muted)]">
@@ -150,8 +166,9 @@ export function FreelanceOffers({
                           </li>
                         ))}
                       </ul>
-                    </li>
-                  ))}
+                      </li>
+                    );
+                  })}
                 </ol>
               </div>
             </MotionReveal>
@@ -164,10 +181,13 @@ export function FreelanceOffers({
               {closer}
             </p>
             <div className="flex w-full flex-col gap-2 min-[420px]:flex-row min-[420px]:flex-wrap sm:w-auto">
-              <BookCallLink className="btn-primary inline-flex min-h-12 w-full items-center justify-center gap-2 px-6 text-sm min-[420px]:w-auto">
+              <Link
+                href="/#architecture-sprint"
+                className="btn-primary inline-flex min-h-12 w-full items-center justify-center gap-2 px-6 text-sm min-[420px]:w-auto"
+              >
                 {cta}
                 <ArrowUpRight className="h-4 w-4" aria-hidden />
-              </BookCallLink>
+              </Link>
               <Link
                 href="/#contact"
                 className="btn-outline inline-flex min-h-12 w-full items-center justify-center px-6 text-sm font-medium min-[420px]:w-auto"

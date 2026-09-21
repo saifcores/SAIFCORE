@@ -1,7 +1,6 @@
 import { getLocale, getMessages, getTranslations } from "next-intl/server";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { BookCallLink } from "@/components/portfolio/BookCallLink";
 import { HeroContent } from "@/components/portfolio/HeroContent";
 import { HeroVisual } from "@/components/portfolio/HeroVisual";
 import {
@@ -24,10 +23,13 @@ export async function Hero() {
 
   const ctas = (
     <>
-      <BookCallLink className="btn-primary btn-primary-lg inline-flex min-h-12 w-full items-center justify-center gap-2 px-5 text-base min-[400px]:px-6 sm:w-auto sm:px-8">
-        {t("ctaBookCall")}
+      <Link
+        href="/#architecture-sprint"
+        className="btn-primary btn-primary-lg inline-flex min-h-12 w-full items-center justify-center gap-2 px-5 text-base min-[400px]:px-6 sm:w-auto sm:px-8"
+      >
+        {t("sprintCta")}
         <ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden />
-      </BookCallLink>
+      </Link>
       {resumeUrl && resumeProps ? (
         <a
           href={resumeUrl}
@@ -66,6 +68,8 @@ export async function Hero() {
         <div className="grid items-center gap-8 md:gap-12 lg:grid-cols-2 lg:gap-16">
           <HeroContent
             badge={t("badge")}
+            identityName={t("identityName")}
+            identityRole={t("identityRole")}
             titleLine1={t("titleLine1")}
             titleLine2={t("titleLine2")}
             titleLine3={t("titleLine3")}
@@ -73,6 +77,7 @@ export async function Hero() {
             proofLine={t("proofLine")}
             availability={t("availability")}
             jumpToContact={t("jumpToContact")}
+            bookCall={t("ctaBookCall")}
             waysToWork={t("ctaExperience")}
             ctas={ctas}
           />

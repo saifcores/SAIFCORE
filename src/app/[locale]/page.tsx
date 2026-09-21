@@ -296,6 +296,7 @@ export default async function Home({ params }: Props) {
           cta={fo.cta}
           ctaSecondary={fo.ctaSecondary}
           fitLabel={fo.fitLabel}
+          startHereLabel={fo.startHereLabel}
           tracks={fo.tracks.map((track, index) =>
             index === 0
               ? {

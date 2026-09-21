@@ -21,13 +21,13 @@ export async function AudiencePaths() {
       title: t("recruiterTitle"),
       description: t("recruiterDescription"),
       links: [
-        { href: "/experience", label: t("recruiterLinkExperience") },
+        { href: "/#experience", label: t("recruiterLinkExperience") },
         { href: "/systems", label: t("recruiterLinkSystems") },
         { href: "/about", label: t("recruiterLinkAbout") },
       ],
       primaryHref: "/experience" as const,
       primaryLabel: t("recruiterCta"),
-      secondaryHref: "/experience" as const,
+      secondaryHref: "/#experience" as const,
       secondaryLabel: t("recruiterSecondaryCta"),
       resume: true as const,
     },
@@ -40,9 +40,9 @@ export async function AudiencePaths() {
         { href: "/#offers", label: t("clientLinkOffers") },
         { href: "/#contact", label: t("clientLinkContact") },
       ],
-      primaryHref: "/#contact" as const,
+      primaryHref: "/#architecture-sprint" as const,
       primaryLabel: t("clientCta"),
-      secondaryHref: "/#offers" as const,
+      secondaryHref: "/#contact" as const,
       secondaryLabel: t("clientSecondaryCta"),
       resume: false as const,
     },
@@ -121,17 +121,26 @@ export async function AudiencePaths() {
                       <ArrowUpRight className="h-4 w-4" aria-hidden />
                     </Link>
                   ) : (
-                    <BookCallLink className="btn-primary inline-flex min-h-11 w-full items-center justify-center gap-2 px-5 text-sm min-[420px]:w-auto">
+                    <Link
+                      href={path.primaryHref}
+                      className="btn-primary inline-flex min-h-11 w-full items-center justify-center gap-2 px-5 text-sm min-[420px]:w-auto"
+                    >
                       {path.primaryLabel}
                       <ArrowUpRight className="h-4 w-4" aria-hidden />
-                    </BookCallLink>
+                    </Link>
                   )}
-                  <Link
-                    href={path.secondaryHref}
-                    className="btn-outline inline-flex min-h-11 w-full items-center justify-center px-5 text-sm font-medium min-[420px]:w-auto"
-                  >
-                    {path.secondaryLabel}
-                  </Link>
+                  {path.key === "client" ? (
+                    <BookCallLink className="btn-outline inline-flex min-h-11 w-full items-center justify-center px-5 text-sm font-medium min-[420px]:w-auto">
+                      {path.secondaryLabel}
+                    </BookCallLink>
+                  ) : (
+                    <Link
+                      href={path.secondaryHref}
+                      className="btn-outline inline-flex min-h-11 w-full items-center justify-center px-5 text-sm font-medium min-[420px]:w-auto"
+                    >
+                      {path.secondaryLabel}
+                    </Link>
+                  )}
                 </div>
               </div>
             </MotionReveal>

@@ -81,7 +81,11 @@ export default async function DoubleEntryLedgerCaseStudyPage({
         <CaseStudyDoubleEntryLedger />
         <div className="px-4 pb-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
-            <ContactBridgeStrip ns="caseStudyDoubleEntryLedger" showPackages />
+            <ContactBridgeStrip
+              ns="caseStudyDoubleEntryLedger"
+              showPackages
+              primaryHref="/#architecture-sprint"
+            />
           </div>
         </div>
       </main>

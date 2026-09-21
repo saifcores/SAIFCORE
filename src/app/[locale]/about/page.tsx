@@ -127,7 +127,11 @@ export default async function AboutPage({ params }: Props) {
 
         <div className="px-4 pb-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
-            <ContactBridgeStrip ns="aboutPage" showPackages />
+            <ContactBridgeStrip
+              ns="aboutPage"
+              showPackages
+              primaryHref="/#architecture-sprint"
+            />
           </div>
         </div>
       </main>

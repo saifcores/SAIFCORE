@@ -114,7 +114,11 @@ export default async function SystemsPage({ params }: Props) {
         <div className="px-4 pb-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl space-y-8">
             <ProfileExploreLinks excludePath="/systems" />
-            <ContactBridgeStrip ns="systemsPage" showPackages />
+            <ContactBridgeStrip
+              ns="systemsPage"
+              showPackages
+              primaryHref="/#architecture-sprint"
+            />
           </div>
         </div>
       </main>

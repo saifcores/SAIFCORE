@@ -2,10 +2,13 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { Link } from "@/i18n/navigation";
+import { BookCallLink } from "@/components/portfolio/BookCallLink";
 import type { ReactNode } from "react";
 
 type Props = {
   badge: string;
+  identityName: string;
+  identityRole: string;
   titleLine1: string;
   titleLine2: string;
   titleLine3: string;
@@ -13,12 +16,15 @@ type Props = {
   proofLine: string;
   availability: string;
   jumpToContact: string;
+  bookCall: string;
   waysToWork: string;
   ctas: ReactNode;
 };
 
 export function HeroContent({
   badge,
+  identityName,
+  identityRole,
   titleLine1,
   titleLine2,
   titleLine3,
@@ -26,6 +32,7 @@ export function HeroContent({
   proofLine,
   availability,
   jumpToContact,
+  bookCall,
   waysToWork,
   ctas,
 }: Props) {
@@ -53,6 +60,19 @@ export function HeroContent({
           {badge}
         </span>
       </motion.div>
+
+      <motion.p
+        initial={reduce ? false : { opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.45, delay: 0.04, ease }}
+        className="mb-4 text-sm font-medium text-[var(--text-secondary)] sm:text-base"
+      >
+        <span className="text-[var(--text-primary)]">{identityName}</span>
+        <span className="mx-2 text-[var(--text-muted)]" aria-hidden>
+          ·
+        </span>
+        <span>{identityRole}</span>
+      </motion.p>
 
       <motion.h1
         initial={reduce ? false : { opacity: 0, y: 24 }}
@@ -104,6 +124,15 @@ export function HeroContent({
         >
           {jumpToContact}
         </Link>
+        <span
+          className="hidden text-[var(--border-strong)] sm:inline"
+          aria-hidden
+        >
+          ·
+        </span>
+        <BookCallLink className="inline-flex min-h-11 items-center font-medium text-[var(--text-secondary)] underline decoration-[var(--border-subtle)] underline-offset-4 transition hover:text-[var(--text-primary)] hover:decoration-[var(--border-hover)]">
+          {bookCall}
+        </BookCallLink>
         <span
           className="hidden text-[var(--border-strong)] sm:inline"
           aria-hidden

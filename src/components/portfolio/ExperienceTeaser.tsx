@@ -47,6 +47,9 @@ export async function ExperienceTeaser() {
               <h2 className="max-w-2xl font-display text-pretty text-2xl font-medium tracking-tight text-[var(--text-primary)] sm:text-3xl">
                 {t("subtitle")}
               </h2>
+              <p className="mt-2 max-w-xl text-pretty text-sm leading-relaxed text-[var(--text-secondary)]">
+                {t("hiringLine")}
+              </p>
             </div>
             <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-4">
               {resumeUrl && resumeProps ? (

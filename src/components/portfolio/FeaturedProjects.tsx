@@ -408,7 +408,7 @@ export async function FeaturedProjects({ showDetail = false }: Props) {
                 </p>
               </div>
               <Link
-                href="/#contact"
+                href="/#architecture-sprint"
                 className="btn-primary inline-flex min-h-12 w-full shrink-0 items-center justify-center px-8 py-3 text-sm sm:w-auto"
               >
                 {t("bridgeCta")}

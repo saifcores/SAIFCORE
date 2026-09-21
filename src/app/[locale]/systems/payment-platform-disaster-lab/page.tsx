@@ -81,7 +81,11 @@ export default async function PaymentDisasterLabCaseStudyPage({
         <CaseStudyPaymentDisasterLab />
         <div className="px-4 pb-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
-            <ContactBridgeStrip ns="caseStudyPaymentDisasterLab" showPackages />
+            <ContactBridgeStrip
+              ns="caseStudyPaymentDisasterLab"
+              showPackages
+              primaryHref="/#architecture-sprint"
+            />
           </div>
         </div>
       </main>

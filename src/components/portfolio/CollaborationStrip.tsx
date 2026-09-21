@@ -36,16 +36,16 @@ export async function CollaborationStrip() {
                 </p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-                <BookCallLink className="btn-primary btn-primary-lg inline-flex min-h-12 items-center justify-center px-8 text-base">
+                <Link
+                  href="/#architecture-sprint"
+                  className="btn-primary btn-primary-lg inline-flex min-h-12 items-center justify-center gap-2 px-8 text-base"
+                >
                   {t("ctaPrimary")}
                   <ArrowUpRight className="h-4 w-4" aria-hidden />
-                </BookCallLink>
-                <Link
-                  href="/#offers"
-                  className="btn-outline inline-flex min-h-12 items-center justify-center px-6 text-sm font-medium"
-                >
-                  {t("ctaSecondary")}
                 </Link>
+                <BookCallLink className="btn-outline inline-flex min-h-12 items-center justify-center px-6 text-sm font-medium">
+                  {t("ctaSecondary")}
+                </BookCallLink>
               </div>
             </div>
 

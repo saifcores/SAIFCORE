@@ -79,7 +79,11 @@ export default async function Ecom360CaseStudyPage({ params }: Props) {
         <CaseStudyEcom360 />
         <div className="px-4 pb-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
-            <ContactBridgeStrip ns="caseStudyEcom360" showPackages />
+            <ContactBridgeStrip
+              ns="caseStudyEcom360"
+              showPackages
+              primaryHref="/#architecture-sprint"
+            />
           </div>
         </div>
       </main>

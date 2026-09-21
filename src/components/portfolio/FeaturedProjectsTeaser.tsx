@@ -193,7 +193,7 @@ export async function FeaturedProjectsTeaser() {
               </p>
             </div>
             <Link
-              href="/#contact"
+              href="/#architecture-sprint"
               className="btn-primary inline-flex min-h-11 shrink-0 items-center justify-center gap-2 px-5 text-sm"
             >
               {t("bridgeCta")}
