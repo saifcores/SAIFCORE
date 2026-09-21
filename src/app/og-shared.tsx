@@ -9,18 +9,18 @@ const OG_COPY: Record<
   { alt: string; badge: string; line1: string; line2: string; line3: string }
 > = {
   en: {
-    alt: "SAIFCORE — Senior Backend Engineer | Roles & Collaborations",
-    badge: "Senior Backend Engineer · Roles & Collaborations",
+    alt: "SAIFCORE — Senior Backend Engineer | Production backends",
+    badge: "Senior Backend Engineer · Products & Platforms",
     line1: "Production backends",
-    line2: "that stay correct",
-    line3: "under load",
+    line2: "that stay",
+    line3: "correct under load",
   },
   fr: {
-    alt: "SAIFCORE — Ingénieur Backend Senior | Postes & Collaborations",
-    badge: "Ingénieur Backend Senior · Postes & Collaborations",
+    alt: "SAIFCORE — Ingénieur Backend Senior | Backends de production",
+    badge: "Ingénieur Backend Senior · Produits & Plateformes",
     line1: "Backends de production",
-    line2: "qui restent corrects",
-    line3: "sous charge",
+    line2: "qui restent",
+    line3: "corrects sous charge",
   },
 };
 

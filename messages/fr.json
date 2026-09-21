@@ -1,19 +1,19 @@
 {
   "meta": {
     "title": "Ingénieur Backend Senior | Java · Systèmes distribués · Architecture | SAIFCORE",
-    "description": "Ingénieur Backend Senior — Java, Spring Boot, APIs, systèmes distribués. Ouvert aux postes et collaborations client. Dakar · remote mondial. SAIFCORE.",
+    "description": "Ingénieur Backend Senior — Java, Spring Boot, APIs distribuées pour produits, plateformes et domaines à enjeux élevés. Preuve la plus forte en banque & FinTech. Dakar · remote mondial. SAIFCORE.",
     "ogTitle": "Backends de production qui restent corrects sous charge",
-    "ogDescription": "Ingénieur Backend Senior pour produits et plateformes — Java, Spring Boot, systèmes distribués. Recrutement ou collaboration. Dakar · Afrique de l'Ouest · remote mondial.",
-    "twitterDescription": "Ingénieur backend senior · Java · Spring Boot · APIs · architecture. Postes & collaborations. Profondeur banque/FinTech quand les enjeux sont élevés. Dakar · remote mondial.",
+    "ogDescription": "Ingénieur Backend Senior — Java, Spring Boot, systèmes distribués pour produits et plateformes. Banque & paiements comme preuve la plus forte. Dakar · Afrique de l'Ouest · remote mondial.",
+    "twitterDescription": "Ingénieur backend senior · backend, systèmes distribués, APIs, architecture. Java · Spring Boot · produits, plateformes, preuve banque & FinTech · Dakar · remote mondial.",
     "jsonLdJobTitle": "Ingénieur Backend Senior",
-    "jsonLdDescription": "Ingénieur Backend Senior — Java, Spring Boot, APIs et systèmes distribués pour produits et plateformes. Ouvert aux postes CDI/contrat et collaborations cadrées. Expérience plateformes Groupe Bank of Africa (via Synapse), FinTech, commerce et delivery enterprise. Basé à Dakar ; remote mondial.",
+    "jsonLdDescription": "Ingénieur Backend Senior qui construit des backends de production — Java, Spring Boot, APIs, systèmes distribués. Preuve la plus forte sur les plateformes du Groupe Bank of Africa (via Synapse), FinTech et delivery enterprise ; ouvert aux produits, plateformes et SaaS. Basé à Dakar ; remote mondial.",
     "jsonLdServiceName": "Ingénierie backend & architecture logicielle",
-    "jsonLdServiceDescription": "Systèmes backend, APIs, architectures distribuées et ownership de livraison pour équipes produit et entreprises — y compris banque et paiements à enjeux élevés quand le problème l'exige.",
+    "jsonLdServiceDescription": "Systèmes backend, APIs, architectures distribuées et logiciels pour produits, plateformes et enterprise — dont infrastructure de paiement et intégrations bancaires régulées quand le problème l'exige.",
     "jsonLdAvailability": "Remote mondial",
     "jsonLdAreaServed": "Sénégal, Afrique de l'Ouest, Monde entier",
-    "keywords": "ingénieur backend senior, Java, Spring Boot, systèmes distribués, APIs, architecture logicielle, freelance backend, ingénieur remote, fintech, backend bancaire, SaaS, Sénégal, Dakar, SAIFCORE",
+    "keywords": "ingénieur backend senior, Java, Spring Boot, systèmes distribués, APIs, architecture logicielle, plateformes enterprise, backend SaaS, backend bancaire, systèmes de paiement, fintech, mobile money, Bank of Africa, Sénégal, Dakar, ingénieur remote, SAIFCORE",
     "manifestName": "SAIFCORE — Ingénieur Backend Senior",
-    "manifestDescription": "Portfolio — ingénierie backend senior pour produits, plateformes et systèmes à enjeux élevés. Postes et collaborations.",
+    "manifestDescription": "Portfolio — ingénierie backend, systèmes distribués, APIs et architecture logicielle pour produits, plateformes, enterprise, banque et FinTech.",
     "knowsAbout": [
       "Java",
       "Spring Boot",
@@ -23,7 +23,6 @@
       "APIs",
       "Architectures cloud-native",
       "Plateformes enterprise",
-      "Backends produit",
       "Systèmes bancaires",
       "Infrastructure de paiement",
       "FinTech",
@@ -99,16 +98,16 @@
   },
   "audiencePaths": {
     "title": "Par où commencer",
-    "subtitle": "Deux portes — le même partenaire backend senior.",
+    "subtitle": "Deux portes — le même owner backend senior.",
     "recruiterTitle": "Recrutement",
-    "recruiterDescription": "Backend senior Java/Spring pour équipes produit et plateforme — CV, expérience, et preuves à enjeux élevés (dont Groupe Bank of Africa via Synapse).",
+    "recruiterDescription": "Profil Backend Senior recrutable — profondeur Java / Spring, preuve Synapse → Groupe Bank of Africa, puis le CV.",
     "recruiterLinkExperience": "Expérience",
     "recruiterLinkSystems": "Études de cas",
     "recruiterLinkAbout": "À propos",
     "recruiterCta": "Télécharger le CV",
     "recruiterSecondaryCta": "Voir l'expérience",
     "clientTitle": "Projet & collaboration",
-    "clientDescription": "Build cadré, architecture, ou embed — fourchettes EUR, proposition écrite après un court appel. Livrer avec vous, pas seulement pour vous.",
+    "clientDescription": "Systèmes livrés, fourchettes EUR, proposition écrite après un court appel — produits, plateformes ou embeds.",
     "clientLinkServices": "Études de cas",
     "clientLinkOffers": "Modes de collaboration",
     "clientLinkStart": "Comment ça démarre",
@@ -118,24 +117,24 @@
     "clientSecondaryCta": "Modes de collaboration"
   },
   "hero": {
-    "badge": "Dakar · Postes & collaborations · FR/EN · Remote",
+    "badge": "Dakar · Backend Senior · FR/EN · Remote",
     "titleLine1": "Backends de production",
-    "titleLine2": "qui restent corrects",
-    "titleLine3": "sous charge.",
-    "subtitle": "Ingénieur Backend Senior — Java / Spring Boot pour équipes produit, plateformes et systèmes à enjeux élevés. Recrutez-moi dans votre équipe, ou collaborons sur un engagement cadré.",
+    "titleLine2": "qui restent",
+    "titleLine3": "corrects sous charge.",
+    "subtitle": "Ingénieur Backend Senior — Java / Spring Boot pour produits, plateformes et domaines à enjeux élevés. Preuve la plus forte en banque, paiements et FinTech. Je pars du problème, je rends les compromis explicites, et je livre des systèmes qui restent fiables.",
     "hubNodes": [
       "APIs",
-      "Architecture",
-      "Paiements",
       "Kafka",
-      "Produit"
+      "Gateway",
+      "Paiements",
+      "Ledger"
     ],
     "ctaPrimary": "Télécharger le CV",
     "ctaExperience": "Modes de collaboration",
     "ctaBookCall": "Réserver un appel",
     "ctaResume": "Télécharger le CV",
-    "proofLine": "Prouvé là où la correction compte — Groupe Bank of Africa (via Synapse), ENG Technologie, commerce live (Ecom 360), et rails FinTech. Ouvert au-delà de la banque : la même ownership senior sur votre produit.",
-    "availability": "Ouvert aux postes & collaborations",
+    "proofLine": "La preuve en production inclut les plateformes du Groupe Bank of Africa (via Synapse), ENG Technologie et des rails FinTech — ouvert aux backends sérieux au-delà des paiements.",
+    "availability": "Ouvert au recrutement & aux collaborations",
     "jumpToContact": "Vous recrutez ? Parcours recruteur"
   },
   "trustedExpertise": {
@@ -302,16 +301,16 @@
   },
   "freelanceOffers": {
     "title": "Modes de collaboration",
-    "subtitle": "Alignez la collaboration sur la décision — clarifier le problème, livrer le système, ou intégrer une capacité senior.",
-    "note": "Chaque chemin commence de la même façon : un court appel de découverte, puis une proposition écrite avec périmètre, jalons et ownership. Conçu pour des partenariats durables — pas du jetable.",
-    "pricingNote": "Investissement indicatif en EUR (remote depuis Dakar). Devis ferme après discovery — forfait ou TJM selon le chemin. Des termes clairs soutiennent une collaboration durable.",
+    "subtitle": "Alignez l’engagement sur la décision — clarifier le problème, livrer le système, ou intégrer une capacité senior.",
+    "note": "Ouvert aux backends sérieux sur produits, plateformes et SaaS — banque et paiements restent la preuve phare. Chaque chemin commence de la même façon : un court appel de découverte, puis une proposition écrite avec périmètre, jalons et ownership.",
+    "pricingNote": "Investissement indicatif en EUR (remote depuis Dakar). Devis ferme après discovery — forfait ou TJM selon le chemin.",
     "investmentLabel": "À partir de",
     "cta": "Réserver un appel découverte",
     "fitLabel": "Idéal quand",
     "tracks": [
       {
         "label": "Livraison produit & startup",
-        "audience": "Fondateurs et équipes produit qui ont besoin d'un partenaire backend fiable sans recruter toute une équipe plateforme.",
+        "audience": "Fondateurs et équipes produit qui ont besoin d'un backend fiable sans recruter toute une équipe plateforme.",
         "promise": "De l'idée floue à un système que vous pouvez démontrer, opérer et transmettre — avec des compromis explicites.",
         "packages": [
           {
@@ -354,8 +353,8 @@
       },
       {
         "label": "Entreprise & plateforme",
-        "audience": "Équipes produit, banques, fintechs et plateformes qui ont besoin de profondeur backend senior — modernisation, intégrations, ou embed.",
-        "promise": "Ownership là où la correction et la fiabilité comptent — gouvernance claire, architecture durable, livraison que vous pouvez garder en marche.",
+        "audience": "Banques, fintechs et équipes plateforme qui modernisent sous contrainte — ou renforcent la profondeur backend senior.",
+        "promise": "Ownership là où la correction et la fiabilité sont non négociables — contextes régulés, gouvernance claire, architecture durable.",
         "packages": [
           {
             "title": "Revue d'architecture",
@@ -397,7 +396,7 @@
       }
     ],
     "ctaSecondary": "Envoyer un brief",
-    "closer": "Pas sûr du bon format ? Commencez par la découverte — proposition écrite avant tout build, devis EUR ferme, partenaire senior nommé jusqu’en production.",
+    "closer": "Pas sûr du bon format ? Commencez par la découverte — proposition écrite avant tout build, devis EUR ferme, owner senior nommé jusqu’en production. Les backends produit et plateforme sérieux sont bienvenus ; la profondeur banque est une preuve, pas une porte fermée.",
     "productProofLabel": "Voir l'étude de cas Ecom 360",
     "bankingProofLabel": "Voir les patterns de résilience paiement"
   },
@@ -406,20 +405,16 @@
     "subtitle": "Recruteurs et responsables de projet — réponses directes.",
     "items": [
       {
-        "question": "Comment démarrent les collaborations ?",
-        "answer": "Par un court appel discovery. Pour un projet client : proposition écrite (scope, jalons, fourchette d'effort, mode de travail) — pas de retainer flou. Pour un recrutement : une lecture claire du fit."
+        "question": "Comment démarrent les engagements ?",
+        "answer": "Par un court appel discovery. Vous recevez une proposition écrite : scope, jalons, fourchette d'effort et mode de collaboration recommandé — pas de retainer flou."
       },
       {
         "question": "Travaillez-vous 100 % remote ?",
         "answer": "Oui. Livraison remote mondiale depuis Dakar, avec rituels async-friendly et chevauchement horaire adapté pour les ateliers critiques."
       },
       {
-        "question": "Travaillez-vous uniquement sur la banque et les paiements ?",
-        "answer": "Non. Je suis ingénieur backend senior pour produits et plateformes. Banque et FinTech sont une preuve forte quand les enjeux sont élevés — pas une niche fermée. Je collabore avec des équipes produit, SaaS, enterprise, et des contextes régulés quand le problème s’y prête."
-      },
-      {
         "question": "Comment façonner l'engagement ?",
-        "answer": "Les équipes produit démarrent souvent par un Sprint architecture, un Build cadré ou une Accélération MVP. Plateformes et enterprise s’orientent vers Revue d’architecture, Modernisation de plateforme, ou Embed en contrat — y compris banque si besoin."
+        "answer": "Les équipes produit démarrent souvent par un Sprint architecture, un Build cadré ou une Accélération MVP. Banques et équipes plateforme s’orientent vers Revue d’architecture, Modernisation de plateforme, ou Embed en contrat."
       },
       {
         "question": "Pouvez-vous intervenir en contexte bancaire ou paiement régulé ?",
@@ -430,7 +425,7 @@
         "answer": "Moi. Vous travaillez avec un ingénieur backend senior nommé — pas un banc tournant. Scope, architecture et livraison restent avec moi jusqu'à une ownership prête pour la production."
       },
       {
-        "question": "Combien coûte une collaboration ?",
+        "question": "Combien coûte un engagement ?",
         "answer": "Les fourchettes indicatives sont sur Modes de collaboration (sprints dès ~€2,5k, builds dès ~€8k, embeds €450–€600/jour). Après discovery, la proposition fixe périmètre, jalons et devis ferme — EUR, remote depuis Dakar."
       },
       {
@@ -441,7 +436,7 @@
   },
   "techStack": {
     "title": "Stack production",
-    "subtitle": "Outils utilisés sur des backends produit et plateforme live — choisis pour la fiabilité, l'opérabilité et des systèmes que votre équipe peut exploiter.",
+    "subtitle": "Outils utilisés sur des backends banque et fintech live — choisis pour la fiabilité, l'opérabilité et des systèmes que votre équipe peut exploiter.",
     "categories": [
       {
         "label": "Backend",
@@ -590,24 +585,24 @@
     ]
   },
   "collaboration": {
-    "title": "Comment une collaboration démarre",
-    "subtitle": "Ingénieur senior nommé. Proposition écrite. Chemin clair pour recrutement ou projet.",
+    "title": "Comment un engagement démarre",
+    "subtitle": "Ingénieur senior nommé. Proposition écrite. Pas de contrat flou. Du travail de production qui compose l’expérience — et des collaborations payées qui soutiennent une pratique indépendante.",
     "facts": [
       {
         "title": "Intro de 30 minutes",
-        "body": "Pas de contrat flou. On cadre ensemble — fit poste ou fit projet — puis vous décidez."
+        "body": "Pas de contrat flou. Je cadre le travail avec vous, puis vous décidez."
       },
       {
         "title": "Proposition écrite",
-        "body": "Pour le travail client : périmètre, jalons et fourchette d'effort avant tout build."
+        "body": "Périmètre, jalons et fourchette d'effort avant tout build."
       },
       {
-        "title": "Partenaire nommé",
-        "body": "Je reste sur le travail jusqu'à la production — tests, runbooks et docs. Conçu pour une croissance mutuelle."
+        "title": "Responsable nommé",
+        "body": "Je reste sur le travail jusqu'à la production — tests, runbooks et docs."
       }
     ],
     "ctaTitle": "Réserver un appel intro de 30 minutes",
-    "ctaSubtitle": "Parcours recrutement ou collaboration projet — réponse claire après un appel.",
+    "ctaSubtitle": "Proposition écrite pour un projet — ou un parcours recrutement clair si vous embauchez.",
     "ctaPrimary": "Réserver un appel",
     "ctaSecondary": "Modes de collaboration",
     "slaLine": "Je réponds sous deux jours ouvrés — ou réservez un appel de 30 minutes."
@@ -670,14 +665,14 @@
   },
   "testimonials": {
     "title": "Ce que les partenaires de delivery ont noté",
-    "subtitle": "Références nominatives quand disponibles — sinon résultats anonymisés (produit, plateforme, banque, FinTech). Intros complètes sur demande après un court appel.",
-    "cta": "Associer un résultat à une collaboration",
+    "subtitle": "Références nominatives quand disponibles — sinon résultats anonymisés (banque, FinTech, plateformes). Intros complètes sur demande après un court appel.",
+    "cta": "Associer un résultat à un engagement",
     "referenceCta": "Demander une intro référence",
     "linkedinCta": "Recommandations LinkedIn",
     "namedLabel": "Référence nominative",
     "anonymizedLabel": "Résultat anonymisé",
     "emptyNamedTitle": "Références nominatives sur demande",
-    "emptyNamedBody": "Intros après un court appel. Les recommandations LinkedIn publiques sont disponibles maintenant — je n’invente pas de citations nominatives sur ce site.",
+    "emptyNamedBody": "Intros banque et FinTech après un court appel. Les recommandations LinkedIn publiques sont disponibles maintenant — je n’invente pas de citations nominatives sur ce site.",
     "emptyNamedPrimary": "Ouvrir les recommandations LinkedIn",
     "emptyNamedSecondary": "Demander une intro référence",
     "namedItems": [],
@@ -706,13 +701,13 @@
     "heading": "La confiance là où la fiabilité compte",
     "industriesLabel": "Secteurs",
     "industries": [
-      "Produit & SaaS",
       "Banque",
       "Fintech",
-      "Entreprise"
+      "Systèmes de crédit",
+      "SaaS Entreprise"
     ],
     "companiesLabel": "Employeurs",
-    "deliveryNote": "La livraison à enjeux élevés inclut les plateformes du Groupe Bank of Africa via Synapse — pas un partenariat commercial. Aussi produit et FinTech.",
+    "deliveryNote": "Livraison pour les plateformes du Groupe Bank of Africa via Synapse — pas un partenariat commercial.",
     "facts": [
       {
         "value": "4+",
@@ -731,7 +726,7 @@
         "label": "Remote mondial"
       }
     ],
-    "specialtyLine": "Backend senior pour produits et plateformes — prouvé sur commerce, FinTech et banque quand les enjeux sont élevés.",
+    "specialtyLine": "Backend senior pour systèmes de production — profondeur la plus forte en banque, paiements et corridors mobile money.",
     "verifyHeading": "Vérifier indépendamment",
     "verifyLinkedin": "Profil LinkedIn",
     "verifyGithub": "GitHub",
@@ -792,9 +787,9 @@
   },
   "featuredProjects": {
     "title": "Travaux sélectionnés",
-    "heading": "Systèmes livrés",
-    "subtitle": "Produit live d’abord, puis patterns de production issus de plateformes et de rails à enjeux élevés — le code client confidentiel reste dehors ; les décisions réutilisables restent.",
-    "competitiveLine": "Ownership senior que vous pouvez recruter ou avec qui collaborer — modes de travail EUR clairs, prouvé sous vraies contraintes de production.",
+    "heading": "Systèmes livrés — et patterns réutilisables",
+    "subtitle": "Produit live d’abord, puis patterns de production issus de banque, paiements et plateformes — le code client confidentiel reste dehors ; les décisions réutilisables restent.",
+    "competitiveLine": "Contrairement aux portfolios fullstack génériques : ownership backend senior nommé, preuve de livraison régulée, et modes d’engagement cadrés en EUR — ouverts au-delà des paiements.",
     "impactLabel": "Impact",
     "marketLabel": "Marché",
     "problemLabel": "Problème",
@@ -1418,15 +1413,15 @@
         "level": "Professionnel (écrit)"
       }
     ],
-    "p1": "Bonjour — je suis Saïfoulaye. Je construis des backends banque et paiement qui restent corrects sous charge.",
+    "p1": "Bonjour — je suis Saïfoulaye. Je construis des backends de production qui restent corrects sous charge.",
     "p2a": "Je suis ingénieur backend senior, axé sur l'ingénierie backend, les systèmes distribués, les APIs et l'architecture logicielle. Je travaille surtout avec",
     "p2b": "Java et Spring Boot",
     "p2c": ", mais je privilégie la compréhension du problème, les bons compromis, et des systèmes qui restent fiables en évoluant.",
-    "p3": "Mon expérience couvre plateformes enterprise, banque, FinTech et intégrations de paiement — transformer des exigences complexes en backends simples, maintenables et prêts pour la production.",
+    "p3": "Mon expérience couvre produits, plateformes enterprise, banque, FinTech et intégrations de paiement — transformer des exigences complexes en backends simples, maintenables et prêts pour la production.",
     "p4": "Un bon logiciel, ce sont les bonnes décisions : simplicité plutôt que complexité inutile, fiabilité plutôt que rustines, impact métier plutôt que vanité technique.",
-    "p5": "Spécialité : backends bancaires et paiement — corridors mobile money, mouvements d'argent sûrs pour le ledger, et gouvernance API pour équipes régulées en Afrique de l'Ouest et en remote mondial.",
+    "p5": "Preuve la plus forte : backends bancaires et paiement — corridors mobile money, mouvements d'argent sûrs pour le ledger, et gouvernance API pour équipes régulées. Ouvert aux produits, plateformes et SaaS qui exigent la même rigueur.",
     "p6": "En dehors de la delivery, je construis des systèmes annexes et j'écris sur des décisions d'architecture tirées de contraintes de production réelles.",
-    "collaboration": "J'aime travailler avec des personnes qui pensent de façon critique, tiennent à la qualité, et veulent construire des choses qui durent.",
+    "collaboration": "J'aime travailler avec des personnes qui pensent de façon critique, tiennent à la qualité, et veulent construire des choses qui durent — recrutement, projet ou collaboration durable.",
     "focusTagsTitle": "Focus",
     "focusTags": [
       "Java",
@@ -1467,8 +1462,8 @@
   },
   "aboutTeaser": {
     "title": "À propos",
-    "heading": "Ingénieur Backend Senior — banque, paiements, systèmes",
-    "excerpt": "Backends bancaires et paiement qui restent corrects sous charge — Java, Spring Boot, systèmes distribués. Livraison de Dakar aux équipes remote mondiales.",
+    "heading": "Ingénieur Backend Senior — produits, plateformes, preuve",
+    "excerpt": "Backends de production qui restent corrects sous charge — Java, Spring Boot, systèmes distribués. Preuve la plus forte en banque & FinTech. Livraison de Dakar aux équipes remote mondiales.",
     "readMore": "Voir le profil complet",
     "stat1Value": "4+",
     "stat1Label": "Années en production",
@@ -1581,9 +1576,9 @@
   },
   "aboutPage": {
     "metaTitle": "À propos | Ingénieur Backend Senior | SAIFCORE",
-    "metaDescription": "Saïfoulaye Diallo (SAIFCORE) — ingénieur backend senior pour produits et plateformes. Java, Spring Boot, APIs, architecture. Ouvert aux postes et collaborations. Dakar · remote mondial.",
+    "metaDescription": "Saïfoulaye Diallo (SAIFCORE) — ingénieur backend senior axé sur backend, systèmes distribués, APIs et architecture. Preuve la plus forte en banque & FinTech ; ouvert aux produits et plateformes. Dakar · remote mondial.",
     "title": "À propos",
-    "subtitle": "Des backends de production qui restent corrects sous charge — Java, Spring Boot, systèmes distribués. Recrutement ou collaboration. Dakar · remote mondial.",
+    "subtitle": "Des backends de production qui restent corrects sous charge — Java, Spring Boot, systèmes distribués. Banque & FinTech comme preuve la plus forte. Dakar · remote mondial.",
     "backToHome": "Retour à l'accueil",
     "endCtaTitle": "Prêt à recruter ce profil — ou à démarrer une collaboration ?",
     "endCtaSubtitle": "Partagez équipe, stack et contraintes. Je réponds avec un chemin clair : proposition écrite, embed contrat, ou prochaines étapes recrutement.",
@@ -1690,7 +1685,7 @@
     "rights": "© {year} {owner}. Contenus et marque réservés.",
     "rightsOwner": "{name} · SAIFCORE",
     "license": "Code source du site (MIT)",
-    "tagline": "Des backends banque et paiement qui restent corrects sous charge — de Dakar au remote mondial.",
+    "tagline": "Des backends de production qui restent corrects sous charge — de Dakar au remote mondial.",
     "linkedin": "Se connecter sur LinkedIn",
     "github": "Voir GitHub",
     "blog": "Blog SAIFCORE",
@@ -1739,7 +1734,7 @@
   },
   "systemsPage": {
     "metaTitle": "Études de cas | Systèmes & Architecture | SAIFCORE",
-    "metaDescription": "Études de cas : produits live, labs ouverts et patterns banque/FinTech confidentiels — du Sénégal à la delivery multi-pays.",
+    "metaDescription": "Études de cas : produits live, labs ouverts et patterns de production — banque/FinTech comme preuve la plus forte, décrits au niveau des patterns si confidentiel.",
     "title": "Études de cas",
     "subtitle": "Produits live, labs ouverts et patterns de production — travail banque/FinTech confidentiel décrit uniquement au niveau des patterns.",
     "backToHome": "Retour à l'accueil",
