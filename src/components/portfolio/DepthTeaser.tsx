@@ -18,9 +18,9 @@ export async function DepthTeaser({ withAnchor = false }: Props) {
   return (
     <section
       id={withAnchor ? "expertise" : undefined}
-      className="border-b border-[var(--border-subtle)] px-4 py-10 sm:px-6 sm:py-12 lg:px-8"
+      className="border-b border-[var(--border-subtle)] py-10 sm:py-12"
     >
-      <div className="mx-auto max-w-7xl">
+      <div className="page-container">
         <MotionReveal>
           <div className="flex flex-col gap-4 rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 px-5 py-6 sm:flex-row sm:items-center sm:justify-between sm:px-8 sm:py-7">
             <div className="min-w-0">
@@ -35,7 +35,7 @@ export async function DepthTeaser({ withAnchor = false }: Props) {
               </p>
             </div>
             <Link
-              href="/about#expertise"
+              href="/expertise"
               className="btn-outline inline-flex min-h-11 shrink-0 items-center justify-center gap-2 px-5 text-sm font-medium"
             >
               {t("cta")}

@@ -41,6 +41,8 @@ type Props = {
   linkedinLabel: string;
   githubLabel: string;
   emailLabel: string;
+  initialIntent?: string;
+  showAside?: boolean;
 };
 
 type Status = "idle" | "sending" | "success" | "error";
@@ -75,6 +77,8 @@ export function ContactForm({
   linkedinLabel,
   githubLabel,
   emailLabel,
+  initialIntent = "",
+  showAside = true,
 }: Props) {
   const locale = useLocale();
   const formDomId = useId();
@@ -88,7 +92,9 @@ export function ContactForm({
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
-  const [intent, setIntent] = useState("");
+  const [intent, setIntent] = useState(
+    isContactIntent(initialIntent) ? initialIntent : "",
+  );
   const [message, setMessage] = useState("");
   const [website, setWebsite] = useState("");
   const [status, setStatus] = useState<Status>("idle");
@@ -165,7 +171,13 @@ export function ContactForm({
     status === "error" ? formError : formEnabled ? formNote : formUnavailable;
 
   return (
-    <div className="grid gap-6 md:grid-cols-[1fr_minmax(220px,280px)] md:gap-10 lg:gap-12">
+    <div
+      className={
+        showAside
+          ? "grid gap-6 md:grid-cols-[1fr_minmax(220px,280px)] md:gap-10 lg:gap-12"
+          : undefined
+      }
+    >
       {isSuccess ? (
         <div
           className="surface-panel rounded-[16px] p-5 text-left sm:p-8"
@@ -278,28 +290,55 @@ export function ContactForm({
                 className="input-field min-h-11 px-4 py-2.5 disabled:cursor-not-allowed disabled:opacity-60"
               />
             </label>
-            <label className="block sm:col-span-1" htmlFor={intentId}>
-              <span className="mb-1.5 block text-xs font-medium text-[var(--text-muted)]">
+            <fieldset className="sm:col-span-2">
+              <legend className="mb-2 block text-xs font-medium text-[var(--text-muted)]">
                 {formIntent}
-              </span>
-              <select
-                id={intentId}
-                required
-                name="intent"
-                value={intent}
-                onChange={(e) => {
-                  clearStatusIfNeeded();
-                  setIntent(e.target.value);
-                }}
-                disabled={!formEnabled || isSending}
-                className="input-field min-h-11 px-4 py-2.5 disabled:cursor-not-allowed disabled:opacity-60"
+              </legend>
+              <div
+                className="flex flex-wrap gap-2"
+                role="radiogroup"
+                aria-required="true"
+                aria-label={formIntent}
               >
-                <option value="">{formIntentPlaceholder}</option>
-                <option value="hiring">{formIntentHiring}</option>
-                <option value="freelance">{formIntentFreelance}</option>
-                <option value="other">{formIntentOther}</option>
-              </select>
-            </label>
+                {(
+                  [
+                    ["hiring", formIntentHiring],
+                    ["freelance", formIntentFreelance],
+                    ["other", formIntentOther],
+                  ] as const
+                ).map(([value, label]) => {
+                  const selected = intent === value;
+                  return (
+                    <label
+                      key={value}
+                      className={`chip cursor-pointer ${selected ? "chip-active" : ""} ${
+                        !formEnabled || isSending
+                          ? "pointer-events-none opacity-60"
+                          : ""
+                      }`}
+                    >
+                      <input
+                        type="radio"
+                        name="intent"
+                        value={value}
+                        checked={selected}
+                        required
+                        disabled={!formEnabled || isSending}
+                        onChange={() => {
+                          clearStatusIfNeeded();
+                          setIntent(value);
+                        }}
+                        className="sr-only"
+                      />
+                      {label}
+                    </label>
+                  );
+                })}
+              </div>
+              <p className="sr-only" id={intentId}>
+                {intent ? undefined : formIntentPlaceholder}
+              </p>
+            </fieldset>
             <label className="block sm:col-span-2" htmlFor={messageId}>
               <span className="mb-1.5 block text-xs font-medium text-[var(--text-muted)]">
                 {formMessage}
@@ -345,57 +384,59 @@ export function ContactForm({
         </form>
       )}
 
-      <aside className="grid gap-4 min-[480px]:grid-cols-2 md:flex md:flex-col md:gap-6">
-        <div className="surface-panel rounded-[16px] p-5 sm:p-6">
-          <BookCallLink className={bookCallClass}>{bookCall}</BookCallLink>
-          <p className="mt-3 text-center text-xs leading-relaxed text-[var(--text-muted)]">
-            {hasCalendly ? calendlyHint : calendlyFallbackHint}
-          </p>
-        </div>
-        {linkedinUrl || githubUrl || directMail ? (
-          <div className="surface-panel rounded-[16px] p-5 sm:p-6 min-[480px]:col-span-2 md:col-span-1">
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--text-muted)]">
-              {socialTitle}
+      {showAside ? (
+        <aside className="grid gap-4 min-[480px]:grid-cols-2 md:flex md:flex-col md:gap-6">
+          <div className="surface-panel rounded-[16px] p-5 sm:p-6">
+            <BookCallLink className={bookCallClass}>{bookCall}</BookCallLink>
+            <p className="mt-3 text-center text-xs leading-relaxed text-[var(--text-muted)]">
+              {hasCalendly ? calendlyHint : calendlyFallbackHint}
             </p>
-            <ul className="mt-4 space-y-1">
-              {linkedinUrl ? (
-                <li>
-                  <a
-                    href={linkedinUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex min-h-11 w-full items-center text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
-                  >
-                    {linkedinLabel}
-                  </a>
-                </li>
-              ) : null}
-              {githubUrl ? (
-                <li>
-                  <a
-                    href={githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex min-h-11 w-full items-center text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
-                  >
-                    {githubLabel}
-                  </a>
-                </li>
-              ) : null}
-              {directMail ? (
-                <li>
-                  <a
-                    href={directMail}
-                    className="inline-flex min-h-11 w-full items-center text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
-                  >
-                    {emailLabel}
-                  </a>
-                </li>
-              ) : null}
-            </ul>
           </div>
-        ) : null}
-      </aside>
+          {linkedinUrl || githubUrl || directMail ? (
+            <div className="surface-panel rounded-[16px] p-5 sm:p-6 min-[480px]:col-span-2 md:col-span-1">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--text-muted)]">
+                {socialTitle}
+              </p>
+              <ul className="mt-4 space-y-1">
+                {linkedinUrl ? (
+                  <li>
+                    <a
+                      href={linkedinUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex min-h-11 w-full items-center text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
+                    >
+                      {linkedinLabel}
+                    </a>
+                  </li>
+                ) : null}
+                {githubUrl ? (
+                  <li>
+                    <a
+                      href={githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex min-h-11 w-full items-center text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
+                    >
+                      {githubLabel}
+                    </a>
+                  </li>
+                ) : null}
+                {directMail ? (
+                  <li>
+                    <a
+                      href={directMail}
+                      className="inline-flex min-h-11 w-full items-center text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
+                    >
+                      {emailLabel}
+                    </a>
+                  </li>
+                ) : null}
+              </ul>
+            </div>
+          ) : null}
+        </aside>
+      ) : null}
     </div>
   );
 }

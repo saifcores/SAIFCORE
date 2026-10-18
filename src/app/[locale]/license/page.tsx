@@ -89,6 +89,7 @@ export default async function LicensePage({ params }: Props) {
           title={t("title")}
           subtitle={t("intro")}
           backLabel={t("backToHome")}
+          actionVariant="none"
         />
 
         <section className="px-4 py-10 sm:px-6 sm:py-12 lg:px-8">

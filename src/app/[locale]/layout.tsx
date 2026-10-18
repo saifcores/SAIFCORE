@@ -1,6 +1,6 @@
 import "@/global";
 import type { Metadata, Viewport } from "next";
-import { Geist_Mono, Instrument_Sans } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { hasLocale, type Locale } from "next-intl";
 import {
@@ -17,8 +17,8 @@ import { routing } from "@/i18n/routing";
 import { buildWebSiteJsonLd } from "@/seo";
 import { getBlogIndexUrl, getSiteUrl } from "@/site";
 
-const instrumentSans = Instrument_Sans({
-  variable: "--font-instrument-sans",
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
   display: "swap",
 });
@@ -35,8 +35,8 @@ export const viewport: Viewport = {
   initialScale: 1,
   viewportFit: "cover",
   themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#070e18" },
-    { media: "(prefers-color-scheme: light)", color: "#f4f7fb" },
+    { media: "(prefers-color-scheme: dark)", color: "#0B0F19" },
+    { media: "(prefers-color-scheme: light)", color: "#F5F7FA" },
   ],
 };
 
@@ -128,8 +128,10 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${instrumentSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       data-scroll-behavior="smooth"
+      data-theme="dark"
+      data-theme-preference="dark"
       suppressHydrationWarning
     >
       <body
@@ -138,24 +140,31 @@ export default async function LocaleLayout({
       >
         {/*
          * FOUT prevention — runs synchronously before React hydrates.
-         * Reads localStorage (or falls back to prefers-color-scheme) and
-         * sets data-theme on <html> so the correct CSS variables are active
-         * before any content paints.
+         * Reads localStorage (or falls back to dark) and sets data-theme
+         * on <html> so the correct CSS variables are active before paint.
          */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var p=localStorage.getItem("theme");if(p!=="light"&&p!=="dark"&&p!=="system")p="system";var r=p;if(p==="system")r=matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.dataset.theme=r;document.documentElement.dataset.themePreference=p;}catch(e){}})();`,
+            __html: `(function(){try{var p=localStorage.getItem("theme");if(p!=="light"&&p!=="dark"&&p!=="system")p="dark";var r=p;if(p==="system")r=matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.dataset.theme=r;document.documentElement.dataset.themePreference=p;}catch(e){document.documentElement.dataset.theme="dark";document.documentElement.dataset.themePreference="dark";}})();`,
           }}
         />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider
+          messages={{
+            nav: messages.nav,
+            common: messages.common,
+            actionBar: messages.actionBar,
+            theme: messages.theme,
+            error: messages.error,
+          }}
+        >
           <ThemeProvider>
             <a
               href="#main-content"
-              className="fixed left-4 top-[max(1rem,env(safe-area-inset-top))] z-100 -translate-y-16 rounded-[12px] bg-[var(--btn-primary-bg)] px-4 py-2.5 text-sm font-medium text-[var(--btn-primary-fg)] opacity-0 transition focus:translate-y-0 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-[var(--focus-ring)]"
+              className="fixed left-4 top-[max(1rem,env(safe-area-inset-top))] z-[100] -translate-y-16 rounded-[12px] bg-[var(--btn-primary-bg)] px-4 py-2.5 text-sm font-medium text-[var(--btn-primary-fg)] opacity-0 transition focus:translate-y-0 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-[var(--focus-ring)]"
             >
               {tCommon("skipToContent")}
             </a>

@@ -266,9 +266,9 @@ export async function Experience() {
     <section
       id="experience"
       aria-label={t("title")}
-      className="relative overflow-hidden border-b border-[var(--border-subtle)] px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16"
+      className="relative overflow-hidden border-b border-[var(--border-subtle)] py-10 sm:py-12 lg:py-16"
     >
-      <div className="relative mx-auto max-w-7xl">
+      <div className="page-container relative">
         <Reveal>
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between sm:gap-8">
             <div className="max-w-2xl">

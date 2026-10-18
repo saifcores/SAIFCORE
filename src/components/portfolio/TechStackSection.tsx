@@ -15,7 +15,10 @@ export function TechStackSection({ title, subtitle, categories }: Props) {
   const reduce = useReducedMotion();
 
   return (
-    <section className="border-b border-[var(--border-subtle)] px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+    <section
+      id="expertise"
+      className="scroll-mt-24 border-b border-[var(--border-subtle)] px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20 xl:scroll-mt-28"
+    >
       <div className="mx-auto max-w-7xl">
         <MotionReveal>
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">

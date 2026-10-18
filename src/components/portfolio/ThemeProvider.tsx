@@ -35,7 +35,7 @@ function readStoredPreference(): ThemePreference {
   } catch {
     // localStorage unavailable
   }
-  return "system";
+  return "dark";
 }
 
 function resolveTheme(preference: ThemePreference): ResolvedTheme {
@@ -81,7 +81,7 @@ function getInitialThemeState(): {
 } {
   if (typeof document === "undefined") {
     return {
-      preference: "system",
+      preference: "dark",
       theme: "dark",
     };
   }

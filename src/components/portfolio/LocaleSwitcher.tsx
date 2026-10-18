@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { useLocale } from "next-intl";
-import { Link, usePathname } from "@/i18n/navigation";
+import { getPathname, usePathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 
 type Props = {
@@ -10,54 +9,44 @@ type Props = {
   navLabel: string;
 };
 
-/**
- * Locale toggle that keeps the current path, query, and hash
- * (e.g. /#offers → /fr#offers).
- */
 export function LocaleSwitcher({ labels, navLabel }: Props) {
   const pathname = usePathname();
   const locale = useLocale();
-  const [suffix, setSuffix] = useState("");
-
-  useEffect(() => {
-    const sync = () => {
-      setSuffix(`${window.location.search}${window.location.hash}`);
-    };
-    sync();
-    window.addEventListener("hashchange", sync);
-    window.addEventListener("popstate", sync);
-    return () => {
-      window.removeEventListener("hashchange", sync);
-      window.removeEventListener("popstate", sync);
-    };
-  }, [pathname]);
 
   return (
     <div
-      className="flex shrink-0 items-center gap-0.5 rounded-[12px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/50 p-0.5 text-[10px] font-medium sm:gap-1 sm:text-xs"
-      role="navigation"
+      className="flex h-8 overflow-hidden rounded-md border border-[var(--border-subtle)] font-mono text-xs"
+      role="group"
       aria-label={navLabel}
     >
       {routing.locales.map((loc) => {
         const active = loc === locale;
-        const href = `${pathname}${suffix}`;
+        const href = getPathname({
+          locale: loc,
+          href: pathname,
+          forcePrefix: true,
+        });
         return (
-          <Link
+          <a
             key={loc}
-            // Hash/query are appended for in-page anchors across locales.
-            href={href as typeof pathname}
-            locale={loc}
-            className={`inline-flex min-h-10 items-center rounded-lg px-1.5 py-1.5 transition min-[380px]:min-h-11 min-[380px]:px-2 min-[380px]:py-2 sm:px-2.5 sm:py-1.5 ${
-              active
-                ? "bg-[var(--bg-elevated)] text-[var(--text-primary)] shadow-[var(--shadow-card)] ring-1 ring-[var(--border-subtle)]"
-                : "text-[var(--text-muted)] hover:bg-[var(--bg-elevated)]/60 hover:text-[var(--text-primary)]"
-            }`}
-            hrefLang={loc}
-            aria-current={active ? "page" : undefined}
+            href={href}
             lang={loc}
+            aria-pressed={active}
+            aria-current={active ? "page" : undefined}
+            className={`inline-flex h-full items-center px-2.5 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--focus-ring)] ${
+              active
+                ? "bg-[var(--bg-card)] text-[var(--text-primary)]"
+                : "bg-transparent text-[var(--text-muted)] hover:text-[var(--text-primary)]"
+            }`}
+            onClick={(event) => {
+              const suffix = `${window.location.search}${window.location.hash}`;
+              if (!suffix) return;
+              event.preventDefault();
+              window.location.assign(`${href}${suffix}`);
+            }}
           >
             {loc === "en" ? labels.en : labels.fr}
-          </Link>
+          </a>
         );
       })}
     </div>

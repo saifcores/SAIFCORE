@@ -9,16 +9,12 @@ export async function HowIThink() {
   return (
     <section
       id="how-i-think"
-      className="border-b border-[var(--border-subtle)] px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
+      className="border-b border-[var(--border-subtle)] py-14 sm:py-16 lg:py-20"
     >
-      <div className="mx-auto max-w-7xl">
+      <div className="page-container">
         <Reveal>
-          <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
-            {t("title")}
-          </p>
-          <h2 className="max-w-2xl font-display text-pretty text-2xl font-medium tracking-tight text-[var(--text-primary)] sm:text-3xl">
-            {t("subtitle")}
-          </h2>
+          <p className="site-kicker mb-3">{t("title")}</p>
+          <h2 className="section-heading max-w-2xl">{t("subtitle")}</h2>
         </Reveal>
 
         <div className="mt-8 grid gap-4 md:mt-10 md:grid-cols-2 md:gap-6">

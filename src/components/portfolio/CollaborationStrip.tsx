@@ -37,7 +37,7 @@ export async function CollaborationStrip() {
               </div>
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
                 <Link
-                  href="/#architecture-sprint"
+                  href="/collaborate#architecture-sprint"
                   className="btn-primary btn-primary-lg inline-flex min-h-12 items-center justify-center gap-2 px-8 text-base"
                 >
                   {t("ctaPrimary")}

@@ -1,195 +1,127 @@
-import { getMessages, getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
-import { Link } from "@/i18n/navigation";
-import { getProfileDisplayName } from "@/site";
-import { ProfileExploreLinks } from "./ProfileExploreLinks";
-import { Reveal } from "./Reveal";
+import { getGithubUrl, getLinkedinUrl, getProfileDisplayName } from "@/site";
+import {
+  getResumeDownloadFilename,
+  getResumeUrl,
+  isLocalResume,
+} from "@/server/resume";
 
-type Props = {
-  /** Full about page: languages + engagements + explore links */
-  extended?: boolean;
-};
-
-export async function About({ extended = false }: Props) {
+export async function About() {
   const t = await getTranslations("about");
-  const messages = await getMessages();
+  const tSpec = await getTranslations("aboutSpec");
+  const tCommon = await getTranslations("common");
+  const locale = await getLocale();
   const displayName = getProfileDisplayName();
-  const engagements = extended ? messages.about.engagements : null;
+  const linkedinUrl = getLinkedinUrl();
+  const githubUrl = getGithubUrl();
+  const resumeUrl = getResumeUrl(locale);
+  const resumeDownload = getResumeDownloadFilename(locale);
+  const opensInNewTab = tCommon("opensInNewTab");
+
+  const spec = [
+    { k: tSpec("role"), v: tSpec("roleValue") },
+    { k: tSpec("focus"), v: tSpec("focusValue") },
+    { k: tSpec("stack"), v: tSpec("stackValue") },
+    { k: tSpec("location"), v: tSpec("locationValue") },
+    { k: tSpec("languages"), v: tSpec("languagesValue") },
+  ];
 
   return (
-    <section
-      id="about"
-      className={`px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20 ${extended ? "" : "border-b border-[var(--border-subtle)]"}`}
-    >
-      <div className="mx-auto max-w-7xl">
-        <div className="grid gap-10 md:grid-cols-2 md:items-center md:gap-16 lg:gap-20">
-          <Reveal>
-            {!extended ? (
-              <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
-                {t("title")}
-              </p>
-            ) : null}
-            {extended ? (
-              <p className="mb-4 text-sm font-medium text-[var(--text-secondary)]">
-                {t("legalName")}
-              </p>
-            ) : null}
-            <p className="text-pretty text-sm leading-relaxed text-[var(--text-secondary)] sm:text-base">
-              {t("p1")}
-            </p>
-            <p className="mt-3 text-pretty text-sm leading-relaxed text-[var(--text-secondary)] sm:mt-4 sm:text-base">
-              {t("p2a")}{" "}
-              <strong className="font-semibold text-[var(--text-primary)]">
-                {t("p2b")}
-              </strong>
-              {t("p2c")}
-            </p>
-            <p className="mt-3 text-pretty text-sm leading-relaxed text-[var(--text-secondary)] sm:mt-4 sm:text-base">
-              {t("p3")}
-            </p>
-            <p className="mt-3 text-pretty text-sm leading-relaxed text-[var(--text-secondary)] sm:mt-4 sm:text-base">
-              {t("p4")}
-            </p>
-            <p className="mt-3 text-pretty text-sm leading-relaxed text-[var(--text-secondary)] sm:mt-4 sm:text-base">
-              {t("p5")}
-            </p>
-            <p className="mt-3 text-pretty text-sm leading-relaxed text-[var(--text-secondary)] sm:mt-4 sm:text-base">
-              {t("p6")}
-            </p>
-            <p className="mt-3 text-pretty text-sm leading-relaxed text-[var(--text-secondary)] sm:mt-4 sm:text-base">
-              {t("collaboration")}
-            </p>
-            <div className="mt-5 flex flex-wrap gap-2">
-              <span className="sr-only">{t("focusTagsTitle")}</span>
-              {messages.about.focusTags.map((tag) => (
-                <span
-                  key={tag}
-                  className="inline-flex items-center rounded-full border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/40 px-2.5 py-1 text-[11px] font-medium text-[var(--text-secondary)]"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </Reveal>
-
-          <Reveal delay={120}>
-            <div className="relative mx-auto max-w-md lg:max-w-none">
-              <div className="relative overflow-hidden rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/50 p-5 text-center sm:p-8 md:p-10">
-                <div
-                  className="mx-auto flex h-24 w-24 items-center justify-center overflow-hidden rounded-[12px] border border-[var(--border-subtle)] bg-[var(--bg-base)] sm:h-28 sm:w-28"
-                  aria-hidden
-                >
-                  <Image
-                    src="/profile.png"
-                    alt={displayName}
-                    className="h-full w-full object-cover"
-                    loading="lazy"
-                    width={112}
-                    height={112}
-                  />
-                </div>
-
-                <p className="mt-6 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
-                  {t("cardRole")}
-                </p>
-                <p className="mt-2 text-base font-semibold text-[var(--text-primary)]">
-                  {t("cardTagline")}
-                </p>
-
-                <div className="mt-8 grid grid-cols-3 gap-2 border-t border-[var(--border-subtle)] pt-8 text-center sm:gap-4">
-                  <div>
-                    <p className="font-display text-xl font-light tracking-tight text-[var(--text-primary)] sm:text-2xl">
-                      {t("statYearsValue")}
-                    </p>
-                    <p className="mt-1 text-[10px] text-[var(--text-muted)] sm:text-xs">
-                      {t("statYears")}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="font-display text-xl font-light tracking-tight text-[var(--text-primary)] sm:text-2xl">
-                      {t("statSystemsValue")}
-                    </p>
-                    <p className="mt-1 text-[10px] text-[var(--text-muted)] sm:text-xs">
-                      {t("statSystems")}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="font-display text-xl font-light tracking-tight text-[var(--text-primary)] sm:text-2xl">
-                      {t("statCuriosityValue")}
-                    </p>
-                    <p className="mt-1 text-[10px] text-[var(--text-muted)] sm:text-xs">
-                      {t("statCuriosity")}
-                    </p>
-                  </div>
-                </div>
+    <section className="py-12 sm:py-16 lg:py-24">
+      <div className="page-container grid gap-10 lg:grid-cols-[minmax(0,380px)_minmax(0,1fr)] lg:gap-20">
+        <div className="flex max-w-[380px] flex-col gap-4">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[14px] border border-[var(--border-subtle)]">
+            <Image
+              src="/profile.png"
+              alt={displayName}
+              fill
+              sizes="380px"
+              className="object-cover"
+              priority
+            />
+          </div>
+          <dl className="grid grid-cols-[auto_minmax(0,1fr)] gap-x-4 gap-y-1.5 text-sm">
+            {spec.map((row) => (
+              <div key={row.k} className="contents">
+                <dt className="font-mono text-xs text-[var(--text-muted)]">
+                  {row.k}
+                </dt>
+                <dd className="m-0 text-[var(--text-primary)]">{row.v}</dd>
               </div>
-            </div>
-          </Reveal>
+            ))}
+          </dl>
         </div>
 
-        {extended ? (
-          <div className="mt-10 border-t border-[var(--border-subtle)] pt-8 sm:mt-12 sm:pt-10">
-            <ProfileExploreLinks excludePath="/about" />
-          </div>
-        ) : null}
-
-        {extended ? (
-          <div className="mt-10 border-t border-[var(--border-subtle)] pt-8 sm:mt-12 sm:pt-10">
-            <Reveal delay={80}>
-              <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
-                {t("languagesTitle")}
-              </p>
-              <ul className="grid gap-3 sm:grid-cols-2">
-                {messages.about.languages.map((lang) => (
-                  <li
-                    key={lang.name}
-                    className="rounded-[12px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 px-4 py-3"
-                  >
-                    <p className="font-semibold text-[var(--text-primary)]">
-                      {lang.name}
-                    </p>
-                    <p className="mt-1 text-sm text-[var(--text-secondary)]">
-                      {lang.level}
-                    </p>
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-          </div>
-        ) : null}
-
-        {extended && engagements ? (
-          <Reveal delay={120}>
-            <div className="mt-10 border-t border-[var(--border-subtle)] pt-8 sm:mt-12 sm:pt-10">
-              <h2 className="mb-3 text-lg font-semibold tracking-tight text-[var(--text-primary)] sm:text-xl">
-                {t("engagementsTitle")}
-              </h2>
-              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                {engagements.map((item) => (
-                  <article
-                    key={item.title}
-                    className="rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 p-4 sm:p-5"
-                  >
-                    <h3 className="text-sm font-semibold text-[var(--text-primary)]">
-                      {item.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">
-                      {item.description}
-                    </p>
-                  </article>
-                ))}
+        <div className="flex max-w-[720px] flex-col gap-6">
+          <p className="site-kicker">{t("title")}</p>
+          <h1 className="text-pretty font-display text-[clamp(2rem,4.4vw,3.25rem)] font-semibold leading-[1.06] tracking-tight text-[var(--text-primary)]">
+            {t("p1")}
+          </h1>
+          <p className="text-pretty text-lg text-[var(--text-muted)]">
+            {t("p2a")}{" "}
+            <strong className="font-semibold text-[var(--text-primary)]">
+              {t("p2b")}
+            </strong>
+            {t("p2c")}
+          </p>
+          <p className="text-pretty text-lg text-[var(--text-muted)]">
+            {t("p3")}
+          </p>
+          <div className="grid gap-4 rounded-xl border border-[var(--border-subtle)] p-5 sm:grid-cols-2">
+            <div>
+              <div className="mb-1 font-semibold text-[var(--text-primary)]">
+                {tSpec("saifcoreTitle")}
               </div>
-              <p className="mt-4 text-sm text-[var(--text-muted)]">
-                <Link
-                  href="/#offers"
-                  className="font-semibold text-[var(--text-primary)] underline decoration-[var(--border-subtle)] underline-offset-4 transition hover:decoration-[var(--border-hover)]"
-                >
-                  {t("offersLink")}
-                </Link>
-              </p>
+              <div className="text-sm text-[var(--text-muted)]">
+                {tSpec("saifcoreBody")}
+              </div>
             </div>
-          </Reveal>
-        ) : null}
+            <div>
+              <div className="mb-1 font-semibold text-[var(--text-primary)]">
+                {tSpec("manarixTitle")}
+              </div>
+              <div className="text-sm text-[var(--text-muted)]">
+                {tSpec("manarixBody")}
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            {linkedinUrl ? (
+              <a
+                href={linkedinUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`LinkedIn (${opensInNewTab})`}
+                className="btn-outline inline-flex min-h-11 items-center px-4 text-sm"
+              >
+                LinkedIn ↗
+              </a>
+            ) : null}
+            {githubUrl ? (
+              <a
+                href={githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`GitHub (${opensInNewTab})`}
+                className="btn-outline inline-flex min-h-11 items-center px-4 text-sm"
+              >
+                GitHub ↗
+              </a>
+            ) : null}
+            {resumeUrl ? (
+              <a
+                href={resumeUrl}
+                className="btn-outline inline-flex min-h-11 items-center px-4 text-sm"
+                {...(isLocalResume(resumeUrl)
+                  ? { download: resumeDownload }
+                  : { target: "_blank", rel: "noopener noreferrer" })}
+              >
+                CV (PDF) ↓
+              </a>
+            ) : null}
+          </div>
+        </div>
       </div>
     </section>
   );

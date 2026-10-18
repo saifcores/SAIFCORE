@@ -122,6 +122,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     });
 
+    for (const path of ["/expertise", "/lab", "/contact"] as const) {
+      entries.push({
+        url: `${base}${prefix}${path}`,
+        lastModified: new Date(),
+        changeFrequency: "monthly",
+        priority: 0.8,
+        alternates: {
+          languages: localeAlternates(base, path),
+        },
+      });
+    }
+
     const licenseUrl = `${base}${prefix}/license`;
     entries.push({
       url: licenseUrl,

@@ -126,7 +126,7 @@ export function Testimonials({
                   </a>
                 ) : null}
                 <Link
-                  href="/#contact"
+                  href="/contact"
                   className="btn-outline inline-flex min-h-11 items-center justify-center gap-2 px-5 text-sm font-medium"
                 >
                   {emptyNamedSecondary}
@@ -169,14 +169,14 @@ export function Testimonials({
         <MotionReveal delay={200}>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap sm:gap-6">
             <Link
-              href="/#offers"
+              href="/collaborate"
               className="inline-flex min-h-11 items-center justify-center gap-2 text-sm font-medium text-[var(--text-primary)] underline-offset-4 transition hover:underline"
             >
               {cta}
               <ArrowUpRight className="h-4 w-4" aria-hidden />
             </Link>
             <Link
-              href="/#contact"
+              href="/contact"
               className="inline-flex min-h-11 items-center justify-center gap-2 text-sm font-medium text-[var(--text-secondary)] underline-offset-4 transition hover:text-[var(--text-primary)] hover:underline"
             >
               {referenceCta}

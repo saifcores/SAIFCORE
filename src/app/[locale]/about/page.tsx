@@ -7,12 +7,9 @@ import {
 import type { Metadata } from "next";
 import { About } from "@/components/portfolio/About";
 import { ContactBridgeStrip } from "@/components/portfolio/ContactBridgeStrip";
-import { EngineeringPrinciples } from "@/components/portfolio/EngineeringPrinciples";
+import { IdentityLevels } from "@/components/portfolio/IdentityLevels";
 import { Footer } from "@/components/portfolio/Footer";
 import { Navbar } from "@/components/portfolio/Navbar";
-import { PageHeader } from "@/components/portfolio/PageHeader";
-import { TechStackSection } from "@/components/portfolio/TechStackSection";
-import { TrustedExpertise } from "@/components/portfolio/TrustedExpertise";
 import { routing } from "@/i18n/routing";
 import { buildPageMetadata, buildProfilePageGraph } from "@/seo";
 
@@ -49,9 +46,6 @@ export default async function AboutPage({ params }: Props) {
   const tCommon = await getTranslations("common");
   const tMeta = await getTranslations("meta");
   const messages = await getMessages();
-  const te = messages.trustedExpertise;
-  const ts = messages.techStack;
-  const ep = messages.engineeringPrinciples;
 
   const pageJsonLd = buildProfilePageGraph({
     locale,
@@ -97,42 +91,11 @@ export default async function AboutPage({ params }: Props) {
         className="flex-1 pb-28 outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base xl:pb-0"
         tabIndex={-1}
       >
-        <PageHeader
-          title={t("title")}
-          subtitle={t("subtitle")}
-          backLabel={t("backToHome")}
-          showFacts
-          actionVariant="balanced"
-        />
+        <About />
+        <IdentityLevels />
 
-        <About extended />
-
-        <TrustedExpertise
-          title={te.title}
-          subtitle={te.subtitle}
-          techLabel={te.techLabel}
-          conceptsLabel={te.conceptsLabel}
-          items={[...te.items]}
-        />
-        <TechStackSection
-          title={ts.title}
-          subtitle={ts.subtitle}
-          categories={[...ts.categories]}
-        />
-        <EngineeringPrinciples
-          title={ep.title}
-          subtitle={ep.subtitle}
-          items={[...ep.items]}
-        />
-
-        <div className="px-4 pb-16 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-7xl">
-            <ContactBridgeStrip
-              ns="aboutPage"
-              showPackages
-              primaryHref="/#architecture-sprint"
-            />
-          </div>
+        <div className="page-container pb-16">
+          <ContactBridgeStrip ns="aboutPage" />
         </div>
       </main>
       <Footer />

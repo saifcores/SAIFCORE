@@ -30,7 +30,7 @@ export async function NotFoundContent({ locale }: Props) {
           {t("backHome")}
         </Link>
         <Link
-          href="/#contact"
+          href="/contact"
           className="btn-outline inline-flex h-12 items-center justify-center rounded-[12px] px-8 text-sm font-medium"
         >
           {t("contact")}
@@ -50,7 +50,7 @@ export async function NotFoundContent({ locale }: Props) {
           href="/systems"
           className="inline-flex min-h-11 items-center font-medium text-[var(--text-muted)] transition hover:text-[var(--text-primary)]"
         >
-          {tNav("systems")}
+          {tNav("work")}
         </Link>
         <Link
           href="/about"

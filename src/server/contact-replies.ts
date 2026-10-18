@@ -67,9 +67,9 @@ Merci pour votre brief. Pour le cadrer rapidement et vous proposer le bon procha
 1) Objectif business prioritaire (API, modernisation, MVP, plateforme, paiement…) ?
 2) Deadline / go-live souhaité ?
 3) Stack actuelle et contraintes (sécu, compliance, volumes) ?
-4) Cadre : forfait, TJM, ou embed dans l’équipe ?
+4) Équipe, localisation et date de démarrage visée ?
 
-Sur cette base, je vous propose soit un appel de 30 min, soit un mode de collaboration adapté.
+Sur cette base, je vous propose soit un appel de 30 min, soit une prochaine étape sur le poste.
 ${cal}
 ${signoff("fr")}`,
     };
@@ -84,9 +84,9 @@ Thanks for the brief. To scope this quickly and suggest the right next step:
 1) Primary business outcome (API, modernization, MVP, platform, payments…)?
 2) Target timeline / go-live?
 3) Current stack and constraints (security, compliance, scale)?
-4) Engagement model: fixed scope, day rate, or team embed?
+4) Team, location, and target start date?
 
-From there I can recommend either a 30-min discovery call or the right way to work together.
+From there I can recommend a 30-min call or a next step on the role.
 ${cal}
 ${signoff("en")}`,
   };
@@ -134,33 +134,32 @@ ${signoff("en")}`,
 
 function packageReply(input: ReplyInput): ReplyDraft {
   const n = firstName(input.name);
-  const site = getSiteUrl();
   const cal = calendlyLine(input.locale);
 
   if (input.locale === "fr") {
     return {
-      subject: `SAIFCORE — mode de collaboration adapté, ${n}`,
+      subject: `SAIFCORE — votre message, ${n}`,
       body: `Bonjour ${n},
 
-Merci pour le contexte. Au vu de votre besoin, je recommande de partir d’un engagement cadré (plutôt qu’un échange ouvert sans cadrage) — pour un scope, un délai et un livrable explicites.
+Merci pour le contexte.
 
-Modes de collaboration : ${site}/#offers
+Disponible à partir de février 2027. En attendant, je réponds aux discussions recrutement.
 ${cal}
-Dites-moi lequel se rapproche le plus de votre contexte (discovery, build, MVP, embed, modernisation, advisory), ou on en choisit un ensemble en appel.
+Dites-moi le rôle, l’équipe et le calendrier, ou on en parle en appel.
 
 ${signoff("fr")}`,
     };
   }
 
   return {
-    subject: `SAIFCORE — recommended way of working, ${n}`,
-    body: `Hi ${n},
+      subject: `SAIFCORE — your message, ${n}`,
+      body: `Hi ${n},
 
-Thanks for the context. Given your need, I’d start from a scoped engagement (rather than an open-ended chat) — clear outcome, timeline, and deliverable.
+Thanks for the context.
 
-Ways to work: ${site}/#offers
+Available from February 2027. Until then, I reply to hiring conversations.
 ${cal}
-Tell me which track is closest (discovery, build, MVP, embed, modernization, advisory), or we can pick one together on a call.
+Tell me about the role, team, and timeline, or we can talk it through on a call.
 
 ${signoff("en")}`,
   };

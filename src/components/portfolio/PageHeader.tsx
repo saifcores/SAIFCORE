@@ -11,7 +11,7 @@ type Props = {
   subtitle: string;
   backLabel: string;
   showFacts?: boolean;
-  actionVariant?: ActionBarVariant;
+  actionVariant?: ActionBarVariant | "none";
 };
 
 export async function PageHeader({
@@ -22,16 +22,16 @@ export async function PageHeader({
   actionVariant = "balanced",
 }: Props) {
   return (
-    <section className="border-b border-[var(--border-subtle)] px-4 py-10 sm:px-6 sm:py-12 md:py-14 lg:px-8">
-      <div className="mx-auto max-w-7xl">
+    <section className="border-b border-[var(--border-subtle)] py-10 sm:py-12 md:py-16">
+      <div className="page-container">
         <Reveal>
           <Link
             href="/"
-            className="inline-flex min-h-11 items-center text-sm font-medium text-[var(--text-muted)] transition hover:text-[var(--text-primary)]"
+            className="link-more min-h-11"
           >
             ← {backLabel}
           </Link>
-          <h1 className="mt-5 font-display text-pretty text-2xl font-medium tracking-tight text-[var(--text-primary)] sm:mt-6 sm:text-3xl md:text-4xl">
+          <h1 className="mt-5 max-w-[20ch] font-display text-pretty text-[clamp(1.85rem,4.2vw,3.25rem)] font-semibold leading-[1.08] tracking-tight text-[var(--text-primary)] sm:mt-6">
             {title}
           </h1>
           <p className="mt-3 max-w-2xl text-pretty text-base leading-relaxed text-[var(--text-secondary)] sm:text-lg">
@@ -40,10 +40,12 @@ export async function PageHeader({
 
           {showFacts ? <ProfileFactChips className="mt-5 sm:mt-6" /> : null}
 
-          <RecruiterActionBar
-            className="mt-6 sm:mt-8"
-            variant={actionVariant}
-          />
+          {actionVariant === "none" ? null : (
+            <RecruiterActionBar
+              className="mt-6 sm:mt-8"
+              variant={actionVariant}
+            />
+          )}
         </Reveal>
       </div>
     </section>

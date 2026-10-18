@@ -21,6 +21,29 @@ const dedicatedCaseStudyPaths: Record<string, SitePath> = {
   [DOUBLE_ENTRY_LEDGER_CASE_STUDY_ID]: DOUBLE_ENTRY_LEDGER_CASE_STUDY_PATH,
 };
 
+const DEDICATED_CASE_STUDY_ORDER = [
+  ECOM_360_CASE_STUDY_ID,
+  PAYMENT_DISASTER_LAB_CASE_STUDY_ID,
+  DOUBLE_ENTRY_LEDGER_CASE_STUDY_ID,
+] as const;
+
+export function getNextDedicatedCaseStudy(currentId: string): {
+  id: string;
+  href: SitePath;
+} | null {
+  const index = DEDICATED_CASE_STUDY_ORDER.indexOf(
+    currentId as (typeof DEDICATED_CASE_STUDY_ORDER)[number],
+  );
+  if (index < 0) return null;
+  const nextId =
+    DEDICATED_CASE_STUDY_ORDER[
+      (index + 1) % DEDICATED_CASE_STUDY_ORDER.length
+    ]!;
+  const href = dedicatedCaseStudyPaths[nextId];
+  if (!href) return null;
+  return { id: nextId, href };
+}
+
 /** Maps local article slugs → related case-study ids (dormant while blog is external). */
 const articleCaseStudySlugs: Record<string, string[]> = {
   "banking-middleware-multi-subsidiary": ["unified-api-gateway"],
@@ -87,6 +110,22 @@ export function getCaseStudyHref(
   return `/systems#case-${id}`;
 }
 
+export type ProjectKind = "live" | "lab" | "confidential";
+
+export function projectKind(
+  item: Pick<FeaturedProjectItem, "status" | "disclosure">,
+): ProjectKind {
+  if (item.disclosure?.trim()) return "confidential";
+  if (projectStatusRank(item.status) === 0) return "live";
+  return "lab";
+}
+
+export function projectKindDot(kind: ProjectKind): string {
+  if (kind === "live") return "var(--ok)";
+  if (kind === "lab") return "var(--accent)";
+  return "var(--text-muted)";
+}
+
 /** Lower rank ships first on teasers and /systems. */
 export function projectStatusRank(status: string | undefined): number {
   const normalized = (status ?? "").toLowerCase();
@@ -129,13 +168,12 @@ export function sortProjectsLiveFirst<
 }
 
 /**
- * Home Work teaser order: live product + banking/payment niche patterns
- * above labs — niche proof above the fold.
+ * Home teaser order: live product, then public lab, then banking patterns.
  */
 const HOME_TEASER_IDS = [
   ECOM_360_CASE_STUDY_ID,
+  PAYMENT_DISASTER_LAB_CASE_STUDY_ID,
   "unified-api-gateway",
-  "pan-african-payment-sdk",
 ] as const;
 
 export function sortProjectsForHomeTeaser(

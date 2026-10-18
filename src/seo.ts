@@ -475,6 +475,7 @@ type OfferCatalogInput = {
   packages: OfferPackageInput[];
   areaServed: string;
   availability: string;
+  catalogPath?: SitePath;
 };
 
 /**
@@ -508,7 +509,7 @@ export function parseEurInvestmentBounds(
   return { minPrice, ...(maxPrice != null ? { maxPrice } : {}), unitText };
 }
 
-/** OfferCatalog + Offer nodes for ways-to-work engagements on the home page. */
+/** OfferCatalog + Offer nodes for ways-to-work engagements. */
 export function buildOfferCatalogNodes({
   locale,
   catalogName,
@@ -516,14 +517,15 @@ export function buildOfferCatalogNodes({
   packages,
   areaServed,
   availability,
+  catalogPath = "/collaborate",
 }: OfferCatalogInput): {
   catalog: Record<string, unknown>;
   offers: Record<string, unknown>[];
 } {
-  const homeUrl = getLocaleHomeUrl(locale);
+  const pageUrl = getLocalePageUrl(locale, catalogPath);
   const personId = personIdForLocale(locale);
-  const catalogId = `${homeUrl}#offer-catalog`;
-  const offersUrl = `${homeUrl}#offers`;
+  const catalogId = `${pageUrl}#offer-catalog`;
+  const offersUrl = `${pageUrl}#offers`;
 
   const offers = packages.map((pkg, index) => {
     const slug = caseStudySlug(pkg.name);
@@ -532,7 +534,7 @@ export function buildOfferCatalogNodes({
       : null;
     const offer: Record<string, unknown> = {
       "@type": "Offer",
-      "@id": `${homeUrl}#offer-${slug || index}`,
+      "@id": `${pageUrl}#offer-${slug || index}`,
       name: pkg.name,
       description: pkg.description,
       url: offersUrl,
@@ -598,13 +600,14 @@ export type FaqItemInput = {
 export function buildFaqPageJsonLd(
   locale: string,
   items: FaqItemInput[],
+  path: SitePath = "/collaborate",
 ): Record<string, unknown> {
-  const homeUrl = getLocaleHomeUrl(locale);
+  const pageUrl = getLocalePageUrl(locale, path);
 
   return {
     "@type": "FAQPage",
-    "@id": `${homeUrl}#faq`,
-    url: `${homeUrl}#faq`,
+    "@id": `${pageUrl}#faq`,
+    url: `${pageUrl}#faq`,
     inLanguage: pageLanguage(locale),
     mainEntity: items.map((item) => ({
       "@type": "Question",

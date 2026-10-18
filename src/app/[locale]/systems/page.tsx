@@ -6,11 +6,8 @@ import {
 } from "next-intl/server";
 import type { Metadata } from "next";
 import { ContactBridgeStrip } from "@/components/portfolio/ContactBridgeStrip";
-import { MidPageCta } from "@/components/portfolio/MidPageCta";
 import { PageHeader } from "@/components/portfolio/PageHeader";
 import { ProfileExploreLinks } from "@/components/portfolio/ProfileExploreLinks";
-import { ArchitectureSection } from "@/components/portfolio/ArchitectureSection";
-import { BankingLeadership } from "@/components/portfolio/BankingLeadership";
 import { FeaturedProjects } from "@/components/portfolio/FeaturedProjects";
 import { Footer } from "@/components/portfolio/Footer";
 import { Navbar } from "@/components/portfolio/Navbar";
@@ -101,25 +98,14 @@ export default async function SystemsPage({ params }: Props) {
           title={t("title")}
           subtitle={t("subtitle")}
           backLabel={t("backToHome")}
-          showFacts
-          actionVariant="client"
+          actionVariant="none"
         />
 
-        {/* Proof first, then architecture context */}
         <FeaturedProjects showDetail />
-        <MidPageCta namespace="systemsPage" />
-        <ArchitectureSection />
-        <BankingLeadership />
 
-        <div className="px-4 pb-16 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-7xl space-y-8">
-            <ProfileExploreLinks excludePath="/systems" />
-            <ContactBridgeStrip
-              ns="systemsPage"
-              showPackages
-              primaryHref="/#architecture-sprint"
-            />
-          </div>
+        <div className="page-container space-y-8 pb-16">
+          <ProfileExploreLinks excludePath="/systems" />
+          <ContactBridgeStrip ns="systemsPage" />
         </div>
       </main>
       <Footer />

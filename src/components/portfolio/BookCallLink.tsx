@@ -12,7 +12,7 @@ type Props = {
 
 /**
  * Primary booking action: opens Calendly in a new tab when configured,
- * otherwise navigates to the home contact section (locale-aware).
+ * otherwise navigates to the contact page (locale-aware).
  */
 export function BookCallLink({ className, children, onClick }: Props) {
   const calendly = getCalendlyUrl();
@@ -32,7 +32,7 @@ export function BookCallLink({ className, children, onClick }: Props) {
   }
 
   return (
-    <Link href="/#contact" className={className} onClick={onClick}>
+    <Link href="/contact" className={className} onClick={onClick}>
       {children}
     </Link>
   );

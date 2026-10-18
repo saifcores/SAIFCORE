@@ -6,35 +6,27 @@ import {
 import type { Locale } from "next-intl";
 import { AudiencePaths } from "@/components/portfolio/AudiencePaths";
 import { ExperienceTeaser } from "@/components/portfolio/ExperienceTeaser";
-import { Insights } from "@/components/portfolio/Insights";
-import { CtaSection } from "@/components/portfolio/CtaSection";
+import { ExpertiseTeaser } from "@/components/portfolio/ExpertiseTeaser";
 import { FeaturedProjectsTeaser } from "@/components/portfolio/FeaturedProjectsTeaser";
 import { Footer } from "@/components/portfolio/Footer";
-import { FaqSection } from "@/components/portfolio/FaqSection";
 import { Hero } from "@/components/portfolio/Hero";
+import { HomeContact } from "@/components/portfolio/HomeContact";
+import { HomeLabWriting } from "@/components/portfolio/HomeLabWriting";
 import { Navbar } from "@/components/portfolio/Navbar";
-import { FreelanceOffers } from "@/components/portfolio/FreelanceOffers";
-import { CollaborationStrip } from "@/components/portfolio/CollaborationStrip";
-import { Testimonials } from "@/components/portfolio/Testimonials";
-import { Trust } from "@/components/portfolio/Trust";
+import { OffersHome } from "@/components/portfolio/OffersHome";
+import { Principles } from "@/components/portfolio/Principles";
+import { Proofs } from "@/components/portfolio/Proofs";
 import { fetchRecentArticles } from "@/blog/recent-articles";
 import {
   buildArticleItemListJsonLd,
   buildExternalItemListJsonLd,
-  buildFaqPageJsonLd,
   buildJsonLdGraph,
-  buildOfferCatalogNodes,
   getLocaleHomeUrl,
   getLocalePageUrl,
 } from "@/seo";
-import {
-  getCaseStudyHref,
-  ECOM_360_CASE_STUDY_PATH,
-  PAYMENT_DISASTER_LAB_CASE_STUDY_PATH,
-} from "@/data/case-studies";
+import { getCaseStudyHref } from "@/data/case-studies";
 import {
   getContactEmail,
-  getLinkedinUrl,
   getProfileDisplayName,
   getProfileLocation,
   getSiteUrl,
@@ -55,15 +47,9 @@ export default async function Home({ params }: Props) {
   });
   const tInsights = await getTranslations("insights");
   const tFeatured = await getTranslations("featuredProjects");
-  const tFaq = await getTranslations("faq");
   const contentLoc = locale === "fr" ? "fr" : "en";
 
   const messages = await getMessages();
-  const fo = messages.freelanceOffers;
-  const faqItems = tFaq.raw("items") as readonly {
-    question: string;
-    answer: string;
-  }[];
 
   const siteUrl = getSiteUrl();
   const sameAs = getSocialLinks();
@@ -71,26 +57,6 @@ export default async function Home({ params }: Props) {
   const contactEmail = getContactEmail();
   const homeUrl = getLocaleHomeUrl(locale);
   const personId = `${homeUrl}#person`;
-  const catalogId = `${homeUrl}#offer-catalog`;
-
-  const packageInputs = fo.tracks.flatMap((track) =>
-    track.packages.map((pkg) => ({
-      name: pkg.title,
-      description: pkg.description,
-      category: track.label,
-      investment: pkg.investment,
-    })),
-  );
-
-  const { catalog: offerCatalogNode, offers: catalogOffers } =
-    buildOfferCatalogNodes({
-      locale,
-      catalogName: fo.title,
-      catalogDescription: fo.subtitle,
-      packages: packageInputs,
-      areaServed: t("jsonLdAreaServed"),
-      availability: t("jsonLdAvailability"),
-    });
 
   const jsonLdPerson: Record<string, unknown> = {
     "@type": "Person",
@@ -125,48 +91,9 @@ export default async function Home({ params }: Props) {
     },
     worksFor: {
       "@type": "Organization",
-      "@id": `${homeUrl}#organization`,
-      name: "SAIFCORE",
-      url: siteUrl,
-    },
-    hasOfferCatalog: { "@id": catalogId },
-    makesOffer: catalogOffers.map((offer) => ({
-      "@id": offer["@id"] as string,
-    })),
-  };
-
-  const jsonLdOrganization: Record<string, unknown> = {
-    "@type": "ProfessionalService",
-    "@id": `${homeUrl}#organization`,
-    name: "SAIFCORE",
-    url: siteUrl,
-    description: t("jsonLdServiceDescription"),
-    areaServed: t("jsonLdAreaServed"),
-    founder: { "@id": personId },
-    employee: { "@id": personId },
-    knowsAbout: [...messages.meta.knowsAbout],
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: loc.city,
-      addressCountry: loc.countryCode,
+      name: "Synapse Groupe",
     },
   };
-
-  if (sameAs.length > 0) {
-    jsonLdOrganization.sameAs = sameAs;
-  }
-
-  if (contactEmail) {
-    jsonLdOrganization.email = contactEmail;
-  }
-
-  if (sameAs.length > 0) {
-    jsonLdPerson.sameAs = sameAs;
-  }
-
-  if (contactEmail) {
-    jsonLdPerson.email = contactEmail;
-  }
 
   const jsonLdWebPage = {
     "@type": "WebPage",
@@ -182,8 +109,15 @@ export default async function Home({ params }: Props) {
     },
     about: { "@id": personId },
     mainEntity: { "@id": personId },
-    hasPart: [{ "@id": catalogId }, { "@id": `${homeUrl}#faq` }],
   };
+
+  if (sameAs.length > 0) {
+    jsonLdPerson.sameAs = sameAs;
+  }
+
+  if (contactEmail) {
+    jsonLdPerson.email = contactEmail;
+  }
 
   const latestArticles = await fetchRecentArticles(contentLoc, 3);
   const insightsItemListJsonLd = latestArticles.some(
@@ -206,11 +140,7 @@ export default async function Home({ params }: Props) {
 
   const graphNodes: Record<string, unknown>[] = [
     jsonLdPerson,
-    jsonLdOrganization,
     jsonLdWebPage,
-    offerCatalogNode,
-    ...catalogOffers,
-    buildFaqPageJsonLd(locale, [...faqItems]),
   ];
 
   if (
@@ -260,62 +190,16 @@ export default async function Home({ params }: Props) {
         className="flex-1 pb-28 outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base xl:pb-0"
         tabIndex={-1}
       >
-        {/*
-          Home: Trust → Path → Proof → History → Outcomes → Ways to work →
-          Insights → FAQ → Contact. Depth on /about & /systems.
-        */}
         <Hero />
-        <Trust />
+        <Proofs />
         <AudiencePaths />
         <FeaturedProjectsTeaser />
         <ExperienceTeaser />
-        <Testimonials
-          title={messages.testimonials.title}
-          subtitle={messages.testimonials.subtitle}
-          cta={messages.testimonials.cta}
-          referenceCta={messages.testimonials.referenceCta}
-          linkedinCta={messages.testimonials.linkedinCta}
-          namedLabel={messages.testimonials.namedLabel}
-          anonymizedLabel={messages.testimonials.anonymizedLabel}
-          emptyNamedTitle={messages.testimonials.emptyNamedTitle}
-          emptyNamedBody={messages.testimonials.emptyNamedBody}
-          emptyNamedPrimary={messages.testimonials.emptyNamedPrimary}
-          emptyNamedSecondary={messages.testimonials.emptyNamedSecondary}
-          namedItems={[...messages.testimonials.namedItems]}
-          items={[...messages.testimonials.items]}
-          linkedinUrl={getLinkedinUrl()}
-        />
-        <CollaborationStrip />
-        <FreelanceOffers
-          title={fo.title}
-          subtitle={fo.subtitle}
-          note={fo.note}
-          pricingNote={fo.pricingNote}
-          investmentLabel={fo.investmentLabel}
-          closer={fo.closer}
-          cta={fo.cta}
-          ctaSecondary={fo.ctaSecondary}
-          fitLabel={fo.fitLabel}
-          startHereLabel={fo.startHereLabel}
-          tracks={fo.tracks.map((track, index) =>
-            index === 0
-              ? {
-                  ...track,
-                  proofLabel: fo.productProofLabel,
-                  proofHref: ECOM_360_CASE_STUDY_PATH,
-                }
-              : index === 1
-                ? {
-                    ...track,
-                    proofLabel: fo.bankingProofLabel,
-                    proofHref: PAYMENT_DISASTER_LAB_CASE_STUDY_PATH,
-                  }
-                : track,
-          )}
-        />
-        <Insights teaser />
-        <FaqSection />
-        <CtaSection />
+        <ExpertiseTeaser />
+        <Principles />
+        <HomeLabWriting />
+        <OffersHome />
+        <HomeContact />
       </main>
       <Footer />
     </div>

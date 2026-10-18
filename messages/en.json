@@ -1,15 +1,15 @@
 {
   "meta": {
     "title": "Senior Backend Engineer | Java · Distributed Systems · Architecture | SAIFCORE",
-    "description": "Senior Backend Engineer — Java, Spring Boot, distributed APIs for products, platforms, and high-stakes domains. Strongest proof in banking & FinTech. Dakar · remote worldwide. SAIFCORE.",
-    "ogTitle": "Production backends that stay correct under load",
-    "ogDescription": "Senior Backend Engineer — Java, Spring Boot, distributed systems for products and platforms. Banking & payments as strongest proof. Dakar · West Africa · remote worldwide.",
-    "twitterDescription": "Senior Backend Engineer · backend, distributed systems, APIs, architecture. Java · Spring Boot · products, platforms, banking & FinTech proof · Dakar · remote worldwide.",
+    "description": "Senior Backend Engineer — Java, Spring Boot, payment systems. Bank of Africa platforms via Synapse, mobile money, Ecom 360 in production. Dakar · remote · available from February 2027.",
+    "ogTitle": "Building reliable financial and enterprise systems",
+    "ogDescription": "Production backends that stay correct under load. Senior Backend Engineer — Java, Spring Boot, distributed systems, payment infrastructure. Dakar · remote worldwide.",
+    "twitterDescription": "Senior Backend Engineer · Java · Spring Boot · distributed systems · payment infrastructure. Production backends that stay correct under load. Dakar · remote worldwide.",
     "jsonLdJobTitle": "Senior Backend Engineer",
-    "jsonLdDescription": "Senior Backend Engineer building production backends — Java, Spring Boot, APIs, distributed systems. Strongest proof across Bank of Africa Group platforms (via Synapse), FinTech, and enterprise delivery; open to products, platforms, and SaaS. Based in Dakar; remote worldwide.",
+    "jsonLdDescription": "Senior Backend Engineer — Java, Spring Boot, payment systems. Designs services that stay correct under retries, callbacks, and load. Proof: Bank of Africa Group platforms (via Synapse), mobile money integrations, Ecom 360 in production. Dakar · available from February 2027.",
     "jsonLdServiceName": "Backend engineering & software architecture",
     "jsonLdServiceDescription": "Backend systems, APIs, distributed architectures, and software for products, platforms, and enterprise — including payment infrastructure and regulated banking integrations when the problem requires it.",
-    "jsonLdAvailability": "Remote worldwide",
+    "jsonLdAvailability": "Available from February 2027 · Remote worldwide",
     "jsonLdAreaServed": "Senegal, West Africa, Worldwide",
     "keywords": "senior backend engineer, Java, Spring Boot, distributed systems, APIs, software architecture, enterprise platforms, SaaS backend, banking backend, payment systems, fintech, mobile money, Bank of Africa, Senegal, Dakar, remote engineer, SAIFCORE",
     "manifestName": "SAIFCORE — Senior Backend Engineer",
@@ -44,16 +44,17 @@
   },
   "actionBar": {
     "bookCall": "Book a call",
-    "sprint": "Architecture sprint",
+    "sprint": "Articles",
     "contact": "Contact",
-    "packages": "Ways to work",
+    "packages": "Profile",
     "resume": "CV"
   },
   "nav": {
     "primary": "Primary",
     "brandRole": "Senior Backend Engineer",
     "brandHomeLabel": "SAIFCORE — home",
-    "work": "Projects",
+    "work": "Work",
+    "lab": "Lab",
     "services": "Services",
     "offers": "Ways to work",
     "expertise": "Expertise",
@@ -61,12 +62,12 @@
     "process": "Process",
     "faq": "FAQ",
     "about": "About",
-    "insights": "Insights",
+    "insights": "Writing",
     "blog": "Blog",
     "credentials": "Credentials",
-    "systems": "Case studies",
+    "systems": "Projects",
     "contact": "Contact",
-    "resume": "CV",
+    "resume": "CV ↓",
     "sprint": "Architecture sprint",
     "linkedin": "LinkedIn",
     "bookCall": "Book a call",
@@ -90,7 +91,7 @@
   },
   "pageHeader": {
     "factsLabel": "Profile highlights",
-    "factYears": "4+ years in production",
+    "factYears": "4+ years shipping backends",
     "factBanking": "Bank of Africa Group delivery via Synapse",
     "factRemote": "West Africa · Remote worldwide",
     "factBilingual": "Bilingual FR / EN",
@@ -99,48 +100,364 @@
     "downloadCv": "Download CV"
   },
   "audiencePaths": {
-    "title": "Start here",
-    "subtitle": "Two doors — same senior backend owner.",
+    "title": "Where to start",
+    "subtitle": "Three starting points, depending on why you are here.",
     "recruiterTitle": "Hiring & recruiting",
     "recruiterDescription": "Three roles on this page — Synapse → Bank of Africa first — then the CV. Java / Spring, named senior owner.",
     "recruiterLinkExperience": "Experience",
-    "recruiterLinkSystems": "Case studies",
+    "recruiterLinkSystems": "Projects",
     "recruiterLinkAbout": "About",
-    "recruiterCta": "Download CV",
+    "recruiterCta": "See experience",
     "recruiterSecondaryCta": "View experience",
     "clientTitle": "Project & collaboration",
-    "clientDescription": "One case, then an architecture sprint (€2.5k–€4.5k, 1–2 weeks), then a written proposal. Products, platforms, or embeds.",
-    "clientLinkServices": "Case studies",
+    "clientDescription": "One case, then the CV. Available from February 2027.",
+    "clientLinkServices": "Projects",
     "clientLinkOffers": "Ways to work",
     "clientLinkStart": "How it starts",
     "clientLinkProcess": "How I work",
     "clientLinkContact": "Contact",
-    "clientCta": "Start with the sprint",
-    "clientSecondaryCta": "Book a call"
+    "clientCta": "Send a brief",
+    "clientSecondaryCta": "Book a call",
+    "items": [
+      {
+        "who": "Recruiter",
+        "title": "Verify the track record",
+        "path": "Experience → CV → LinkedIn",
+        "cta": "See experience",
+        "href": "/experience"
+      },
+      {
+        "who": "Tech lead / CTO",
+        "title": "Judge the depth",
+        "path": "Case studies → Lab → writing",
+        "cta": "Read a case study",
+        "href": "/systems"
+      },
+      {
+        "who": "Founder / client",
+        "title": "Start a project",
+        "path": "Architecture sprint → written proposal",
+        "cta": "Send a brief",
+        "href": "/contact"
+      }
+    ]
   },
   "hero": {
-    "badge": "Dakar · Senior Backend · FR/EN · Remote",
+    "badge": "Dakar · Remote",
     "identityName": "Saïfoulaye Diallo",
     "identityRole": "Senior Backend Engineer",
-    "sprintCta": "Start with an architecture sprint",
-    "titleLine1": "Production backends",
-    "titleLine2": "that stay",
-    "titleLine3": "correct under load.",
-    "subtitle": "Senior Backend Engineer — Java / Spring Boot for products, platforms, and high-stakes domains. Strongest proof in banking, payments, and FinTech. I start from the problem, make trade-offs explicit, and ship systems that stay reliable.",
-    "hubNodes": [
-      "APIs",
-      "Kafka",
-      "Gateway",
-      "Payments",
-      "Ledger"
+    "statusLine": "Saïfoulaye Diallo · Senior Backend Engineer · Dakar · remote",
+    "title": "I design reliable backend systems for complex products.",
+    "subtitle": "I turn complex business needs into APIs, integrations, and distributed systems that stay correct — especially financial infrastructure.",
+    "proofLine": "Bank of Africa Group platforms (via Synapse) · Wave, Orange Money, Free Money integrations · Ecom 360 in production.",
+    "ctaPrimary": "Explore my work",
+    "ctaSecondary": "Writing",
+    "ctaResume": "Download my CV",
+    "availability": "Available from February 2027",
+    "flowLabel": "typical payment flow",
+    "flowCaption": "Illustrative diagram, not a client system.",
+    "portraitAlt": "Portrait of Saïfoulaye Diallo",
+    "flow": [
+      { "name": "Client", "spec": "POST /payments" },
+      { "name": "API Gateway", "spec": "JWT · RBAC" },
+      { "name": "Payment service", "spec": "Idempotency-Key" },
+      { "name": "PSP adapter", "spec": "Wave · OM · Free" },
+      { "name": "Ledger", "spec": "double-entry · outbox" }
+    ]
+  },
+  "proofs": {
+    "label": "Verifiable facts",
+    "items": [
+      { "value": "4+ years", "label": "Production backends" },
+      {
+        "value": "11+ subsidiaries",
+        "label": "Bank of Africa Group, via Synapse"
+      },
+      { "value": "Wave · OM · Free", "label": "Mobile money integrations" },
+      { "value": "10+ merchants", "label": "Live on Ecom 360 PME" }
+    ]
+  },
+  "identity": {
+    "label": "How to read this profile",
+    "title": "One engineer, three layers.",
+    "levels": [
+      {
+        "kicker": "Identity",
+        "title": "Senior Backend Engineer",
+        "body": "Java, Spring Boot, and distributed systems — the role a recruiter can place immediately."
+      },
+      {
+        "kicker": "Depth",
+        "title": "Financial infrastructure & payment systems",
+        "body": "Banking integrations, mobile money, transactional reliability, and the architecture around them."
+      },
+      {
+        "kicker": "Direction",
+        "title": "Software architecture & AI-enabled systems",
+        "body": "Technical leadership and applied intelligence. A direction I am building — not a title I already hold."
+      }
+    ]
+  },
+  "architectureLab": {
+    "label": "Architecture lab",
+    "title": "Public reference systems you can read.",
+    "subtitle": "Open repositories for payment orchestration, resilience, and recovery. No client code and no confidential data.",
+    "primaryLabel": "Flagship reference",
+    "secondaryLabel": "Related reference",
+    "direction": "AI-assisted payment operations — anomaly investigation on controlled data, with an audit trail — is a direction I am exploring. It is not a shipped client product.",
+    "caseCta": "Read the case study",
+    "repoCta": "View on GitHub"
+  },
+  "expertise": {
+    "label": "Expertise",
+    "title": "Four domains, one requirement: the system stays correct.",
+    "viewAll": "Expertise in detail →",
+    "problemsLabel": "Typical problems",
+    "stackLabel": "Stack in context",
+    "evidenceLabel": "Proof",
+    "items": [
+      {
+        "num": "01",
+        "title": "Backend engineering",
+        "short": "Maintainable Java / Spring Boot services — multi-tenant, clean architecture.",
+        "long": "Backend services that stay readable and testable as scope grows: multi-tenancy, modularity, explicit contracts.",
+        "problems": [
+          "Core services that are hard to evolve",
+          "Multi-tenancy bolted on after the fact",
+          "Integration debt between teams"
+        ],
+        "stack": "Java · Spring Boot · PostgreSQL · JPA/Flyway",
+        "evidence": "Ecom 360 PME",
+        "caseId": "ecom-360-pme"
+      },
+      {
+        "num": "02",
+        "title": "Payments & FinTech",
+        "short": "Mobile money, idempotency, settlement and ledger — where a bug costs money.",
+        "long": "Payment flows where every state matters: accepted, confirmed, settled. Idempotency, reconciliation, and audit trails.",
+        "problems": [
+          "Duplicate payments on retries",
+          "SUCCESS callbacks that are not settled",
+          "Gaps between ledger and statements"
+        ],
+        "stack": "Redis (idempotency) · Kafka (settlement) · double-entry ledger",
+        "evidence": "Pan-African Payment SDK",
+        "caseId": "pan-african-payment-sdk"
+      },
+      {
+        "num": "03",
+        "title": "API integration",
+        "short": "Gateways, versioned contracts, and edge security for partners and subsidiaries.",
+        "long": "Single entry points to fragile systems: authentication at the edge, versioning, stable partner contracts.",
+        "problems": [
+          "Core systems exposed publicly",
+          "Inconsistent partner integrations",
+          "Contract breaks in production"
+        ],
+        "stack": "API gateway · JWT/RBAC · OpenAPI",
+        "evidence": "Unified API Gateway",
+        "caseId": "unified-api-gateway"
+      },
+      {
+        "num": "04",
+        "title": "Distributed systems & reliability",
+        "short": "Outbox, state machines, reconciliation, and end-to-end observability.",
+        "long": "Design for partial failure: what happens when a provider times out, a consumer replays, or a service goes down.",
+        "problems": [
+          "Lost or duplicated events",
+          "Outages without diagnosis",
+          "Unsafe failover"
+        ],
+        "stack": "Kafka · outbox · OpenTelemetry · Prometheus/Grafana",
+        "evidence": "Payment Platform Disaster Lab",
+        "caseId": "payment-platform-disaster-lab"
+      }
+    ]
+  },
+  "expertisePage": {
+    "metaTitle": "Expertise | Backend, payments, APIs | SAIFCORE",
+    "metaDescription": "The problems I solve — backend engineering, payments, API integration, and reliability — each tied to real work.",
+    "title": "The problems I solve, and the proof behind them.",
+    "subtitle": "Each domain links a class of problem to real work. Technologies are listed in their usage context, not as badges.",
+    "backToHome": "Back to home",
+    "endCtaTitle": "Need this depth on your system?",
+    "endCtaSubtitle": "Share the problem and constraints — I’ll reply with fit and a clear next step.",
+    "endCtaButton": "Get in touch"
+  },
+  "principles": {
+    "label": "Approach",
+    "title": "Start from the problem. Make the trade-offs explicit.",
+    "items": [
+      {
+        "code": "invariant()",
+        "title": "Write the invariants first",
+        "body": "No payment lost, none processed twice. Design follows from that."
+      },
+      {
+        "code": "trade_off",
+        "title": "Explicit trade-offs",
+        "body": "Every decision documented with what it costs, in an ADR."
+      },
+      {
+        "code": "failure_mode",
+        "title": "Design for failure",
+        "body": "Timeouts, retries, failover: treated as the happy path."
+      },
+      {
+        "code": "handover",
+        "title": "Ship operable",
+        "body": "Tests, runbooks, observability. Your team can run it without me."
+      }
+    ]
+  },
+  "offersHome": {
+    "label": "Working with me",
+    "title": "A named engineer, a written scope, a firm quote.",
+    "subtitle": "Indicative ranges in EUR, remote from Dakar. The architecture sprint is the usual first step.",
+    "cta": "Discuss this offer",
+    "note": "Full team, engineering services, or digital transformation: that is Manarix Solutions, a distinct entity from SAIFCORE.",
+    "items": [
+      {
+        "duration": "1–2 weeks",
+        "title": "Architecture sprint",
+        "description": "Problem, risks, target architecture, and a phased plan before a larger build.",
+        "price": "€2.5k–€4.5k"
+      },
+      {
+        "duration": "1–3 weeks",
+        "title": "Architecture review",
+        "description": "An independent look: ranked findings, reference designs, ADRs.",
+        "price": "€2.5k–€5k"
+      },
+      {
+        "duration": "4–12 weeks",
+        "title": "Scoped build",
+        "description": "APIs, workflows, or integrations delivered to production, tests and runbooks included.",
+        "price": "€8k–€25k"
+      },
+      {
+        "duration": "1–6 months",
+        "title": "Contract embed",
+        "description": "A senior backend engineer inside your rituals and your stack.",
+        "price": "€450–€600 / day"
+      }
+    ]
+  },
+  "homeContact": {
+    "title": "Tell me about the work.",
+    "subtitle": "A reply within two business days, with questions or a written proposal.",
+    "sendBrief": "Send a brief",
+    "bookCall": "Book 30 min ↗"
+  },
+  "labPage": {
+    "metaTitle": "Architecture Lab | Reference designs & ADRs | SAIFCORE",
+    "metaDescription": "Reference designs, architecture decisions, and playbooks. Illustrative material and personal labs — nothing here describes a client production system.",
+    "label": "Architecture Lab",
+    "title": "Reference designs, architecture decisions, and playbooks.",
+    "subtitle": "Illustrative material and personal labs. Nothing here describes a client production system.",
+    "all": "All",
+    "viewAll": "Open the lab →",
+    "filterLabel": "Categories",
+    "emptyFilter": "Nothing in this category yet.",
+    "backToHome": "Back to home",
+    "endCtaTitle": "Want the thinking behind the systems?",
+    "endCtaSubtitle": "Read a case study, or send a brief if you have a reliability or architecture problem.",
+    "endCtaButton": "Get in touch",
+    "cats": [
+      "System Design",
+      "Payment Flows",
+      "Reliability Engineering",
+      "Architecture Decisions",
+      "Engineering Playbooks"
     ],
-    "ctaPrimary": "Download CV",
-    "ctaExperience": "Ways to work",
-    "ctaBookCall": "Book a call",
-    "ctaResume": "Download CV",
-    "proofLine": "Production proof includes Bank of Africa Group platforms (via Synapse), ENG Technologie, and FinTech rails — open to serious backend work beyond payments.",
-    "availability": "Open to hire & collaborations",
-    "jumpToContact": "Hiring? Recruiter path"
+    "items": [
+      {
+        "cat": "System Design",
+        "type": "Article",
+        "title": "Multi-subsidiary banking middleware",
+        "description": "An integration boundary for several regulated entities.",
+        "href": "https://blog.saifcore.tech/en",
+        "cta": "Read"
+      },
+      {
+        "cat": "Payment Flows",
+        "type": "Article",
+        "title": "Mobile money integration patterns",
+        "description": "Adapters, idempotency, and unreliable callbacks.",
+        "href": "https://blog.saifcore.tech/en",
+        "cta": "Read"
+      },
+      {
+        "cat": "Payment Flows",
+        "type": "Repo",
+        "title": "Double-Entry Ledger Platform",
+        "description": "Reference platform for wallets and ledger.",
+        "href": "https://github.com/saifcores/double-entry-ledger-platform",
+        "cta": "View repository"
+      },
+      {
+        "cat": "Reliability Engineering",
+        "type": "Repo",
+        "title": "Payment Platform Disaster Lab",
+        "description": "Ten failure scenarios, one rule: nothing lost, nothing twice.",
+        "href": "https://github.com/saifcores/payment-platform-disaster-lab",
+        "cta": "View repository"
+      },
+      {
+        "cat": "Reliability Engineering",
+        "type": "Article",
+        "title": "The retry storm that almost paid twice",
+        "description": "Ninety seconds and three payouts.",
+        "href": "https://blog.saifcore.tech/en/articles/retry-storm-double-payout",
+        "cta": "Read"
+      },
+      {
+        "cat": "Architecture Decisions",
+        "type": "ADR",
+        "title": "ADR: double-entry ledger for payments",
+        "description": "Why the ledger, and what it costs.",
+        "href": "https://blog.saifcore.tech/en",
+        "cta": "Read the ADR"
+      },
+      {
+        "cat": "Engineering Playbooks",
+        "type": "Playbook",
+        "title": "Architecture reviews that help",
+        "description": "Ranked findings, reference designs, action plan.",
+        "href": "https://blog.saifcore.tech/en",
+        "cta": "Read"
+      }
+    ]
+  },
+  "contactPage": {
+    "metaTitle": "Contact | Send a brief | SAIFCORE",
+    "metaDescription": "A reply within two business days. Hiring: a call. Project: a scope, milestones, and a firm EUR quote.",
+    "label": "Contact",
+    "title": "Tell me about the work.",
+    "subtitle": "A reply within two business days. Hiring: a call. Project: a scope, milestones, and a firm EUR quote.",
+    "bookCall": "Book a 30-minute call",
+    "bookCallHint": "Calendly ↗",
+    "email": "Direct email",
+    "emailHint": "mailto",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "resume": "CV (PDF)"
+  },
+  "aboutSpec": {
+    "role": "role",
+    "roleValue": "Senior Backend Engineer",
+    "focus": "focus",
+    "focusValue": "Payments · APIs · distributed systems",
+    "stack": "stack",
+    "stackValue": "Java · Spring Boot · Kafka",
+    "location": "location",
+    "locationValue": "Dakar · remote worldwide",
+    "languages": "languages",
+    "languagesValue": "French · English",
+    "saifcoreTitle": "SAIFCORE",
+    "saifcoreBody": "My personal professional brand: my work, my writing, my individual engagements.",
+    "manarixTitle": "Manarix Solutions",
+    "manarixBody": "A distinct entity for consulting, engineering services, and digital transformation."
   },
   "trustedExpertise": {
     "title": "Core capabilities",
@@ -187,12 +504,7 @@
       {
         "title": "Distributed Systems Engineering",
         "description": "Build event-driven systems that stay correct under retries and partial failures — outbox, idempotent consumers, and circuit breaking on real payment and platform flows.",
-        "technologies": [
-          "Apache Kafka",
-          "Docker",
-          "Kubernetes",
-          "AWS"
-        ],
+        "technologies": ["Apache Kafka", "Docker", "Kubernetes", "AWS"],
         "concepts": [
           "Transactional outbox",
           "Idempotent consumers",
@@ -220,12 +532,7 @@
       {
         "title": "Cloud & DevOps for Regulated Delivery",
         "description": "Ship production backends in containers — Docker and Kubernetes on the banking work, AWS and GitLab CI on the FinTech platform.",
-        "technologies": [
-          "Docker",
-          "Kubernetes",
-          "AWS",
-          "GitLab CI/CD"
-        ],
+        "technologies": ["Docker", "Kubernetes", "AWS", "GitLab CI/CD"],
         "concepts": [
           "CI pipelines tied to delivery",
           "Containerized services",
@@ -236,12 +543,7 @@
       {
         "title": "Unified Mobile Money Integrations",
         "description": "One API over Orange Money, Wave, and Free Money — shared error handling, reconciliation, and a stable contract when another corridor is added.",
-        "technologies": [
-          "Java",
-          "Spring Boot",
-          "Redis",
-          "Apache Kafka"
-        ],
+        "technologies": ["Java", "Spring Boot", "Redis", "Apache Kafka"],
         "concepts": [
           "Provider adapters",
           "Webhook normalization",
@@ -292,6 +594,7 @@
     "pricingNote": "Indicative investment in EUR (remote from Dakar). The sprint locks the plan; the written proposal locks the firm quote.",
     "investmentLabel": "From",
     "cta": "Start with the sprint",
+    "viewAll": "See all engagements",
     "fitLabel": "Best when",
     "tracks": [
       {
@@ -302,7 +605,7 @@
           {
             "title": "Architecture sprint",
             "duration": "1–2 weeks",
-            "investment": "€2.5k–€4.5k",
+            "investment": "On request",
             "fit": "Scope is unclear, stakes are rising, and you need the shortest path to a launchable design.",
             "description": "Lock goals, risks, integrations, and architecture before you burn budget on the wrong build.",
             "includes": [
@@ -314,7 +617,7 @@
           {
             "title": "Scoped build",
             "duration": "4–12 weeks",
-            "investment": "€8k–€25k",
+            "investment": "On request",
             "fit": "You know what to ship and need a named senior engineer to own delivery through production.",
             "description": "End-to-end delivery of APIs, workflows, or integrations — milestones, tests, and runbooks included.",
             "includes": [
@@ -326,7 +629,7 @@
           {
             "title": "MVP acceleration",
             "duration": "6–10 weeks",
-            "investment": "€12k–€28k",
+            "investment": "On request",
             "fit": "You need a fundable, demo-ready product on real integrations — built to extend, not throw away.",
             "description": "Core domain APIs and critical flows shaped for launch, security baseline, and the next iteration.",
             "includes": [
@@ -345,7 +648,7 @@
           {
             "title": "Architecture review",
             "duration": "1–3 weeks",
-            "investment": "€2.5k–€5k",
+            "investment": "On request",
             "fit": "Before a big bet — you want ranked risks, reference designs, and a plan your team can execute.",
             "description": "Independent look at a backend, API, or integration surface before you commit to build or migrate.",
             "includes": [
@@ -357,7 +660,7 @@
           {
             "title": "Platform modernization",
             "duration": "8–16 weeks+",
-            "investment": "from €20k",
+            "investment": "On request",
             "fit": "Legacy or fragmented systems need a phased move to something operable, observable, and partner-ready.",
             "description": "Migration waves, partner API contracts, and resilience work with enterprise-grade delivery discipline.",
             "includes": [
@@ -369,7 +672,7 @@
           {
             "title": "Contract embed",
             "duration": "1–6 months",
-            "investment": "€450–€600 / day",
+            "investment": "On request",
             "fit": "Your squad needs senior capacity inside the team — roadmap delivery, quality bar, production ownership.",
             "description": "A named Senior Backend Engineer embedded in your ceremonies and tools through release and stabilization.",
             "includes": [
@@ -392,7 +695,7 @@
     "items": [
       {
         "question": "How do engagements start?",
-        "answer": "Most projects start with an architecture sprint (1–2 weeks, €2.5k–€4.5k), then a written proposal with scope and a firm quote. Hiring starts with Experience and the CV."
+        "answer": "Hiring starts with Experience and the CV. Available from February 2027."
       },
       {
         "question": "Do you work fully remote?",
@@ -412,7 +715,7 @@
       },
       {
         "question": "What does an engagement cost?",
-        "answer": "Indicative ranges are on Ways to work (sprints from ~€2.5k, scoped builds from ~€8k, embeds €450–€600/day). Every proposal after discovery locks scope, milestones, and a firm quote — EUR, remote from Dakar."
+        "answer": "No public rate card while on a CDD. Available from February 2027."
       },
       {
         "question": "How do I start if I am hiring?",
@@ -437,22 +740,11 @@
       },
       {
         "label": "Data & messaging",
-        "items": [
-          "PostgreSQL",
-          "MySQL",
-          "Redis",
-          "Apache Kafka"
-        ]
+        "items": ["PostgreSQL", "MySQL", "Redis", "Apache Kafka"]
       },
       {
         "label": "Delivery",
-        "items": [
-          "Docker",
-          "Kubernetes",
-          "AWS",
-          "GitLab CI/CD",
-          "OpenAPI"
-        ]
+        "items": ["Docker", "Kubernetes", "AWS", "GitLab CI/CD", "OpenAPI"]
       },
       {
         "label": "Domains",
@@ -469,11 +761,7 @@
       },
       {
         "label": "Product UI",
-        "items": [
-          "Angular",
-          "TypeScript",
-          "React"
-        ]
+        "items": ["Angular", "TypeScript", "React"]
       }
     ]
   },
@@ -544,7 +832,7 @@
     "facts": [
       {
         "title": "Architecture sprint",
-        "body": "1–2 weeks, €2.5k–€4.5k. Problem, risks, and a plan before a larger build."
+        "body": "1–2 weeks. Problem, risks, and a plan before a larger build."
       },
       {
         "title": "Written proposal",
@@ -630,50 +918,26 @@
     "emptyNamedPrimary": "Open LinkedIn recommendations",
     "emptyNamedSecondary": "Request a reference intro",
     "namedItems": [],
-    "items": [
-      {
-        "quote": "Credit and mobile-money rails shipped with regulated rigor — partner integration cycles shortened, and post-launch ops stayed calm under real wallet traffic.",
-        "name": "Engineering lead",
-        "role": "Digital lending & wallets",
-        "company": "FinTech · West Africa · anonymized"
-      },
-      {
-        "quote": "API and event boundaries locked before build — multi-entity and partner scope grew without the usual contract rework spiral.",
-        "name": "Program manager",
-        "role": "Enterprise API / middleware",
-        "company": "Banking · anonymized"
-      },
-      {
-        "quote": "Clear ownership with product, integration, and compliance — an embed that shipped milestones without a rotating bench.",
-        "name": "Product counterpart",
-        "role": "Backend contract embed",
-        "company": "SaaS / platform · anonymized"
-      }
-    ]
+    "items": []
   },
   "trust": {
     "heading": "Trusted where reliability matters",
     "industriesLabel": "Industries",
-    "industries": [
-      "Banking",
-      "Fintech",
-      "Credit Systems",
-      "Enterprise SaaS"
-    ],
+    "industries": ["Banking", "Fintech", "Credit Systems", "Enterprise SaaS"],
     "companiesLabel": "Employers",
     "deliveryNote": "Delivery for Bank of Africa Group platforms via Synapse — not a commercial partnership.",
     "facts": [
       {
         "value": "4+",
-        "label": "Years in production"
+        "label": "Years shipping backends"
       },
       {
         "value": "11+",
-        "label": "Bank of Africa subsidiaries"
+        "label": "BOA subsidiaries via Synapse"
       },
       {
-        "value": "Wave + OM",
-        "label": "Payment corridors"
+        "value": "Wave · OM · FM",
+        "label": "Mobile money wallets (SN)"
       },
       {
         "value": "FR / EN",
@@ -740,10 +1004,22 @@
     ]
   },
   "featuredProjects": {
-    "title": "Selected work",
-    "heading": "Systems that shipped — and patterns you can reuse",
-    "subtitle": "Live product first, then production patterns from banking, payments, and platform work — confidential client code stays out; reusable decisions stay in.",
-    "competitiveLine": "Unlike generic fullstack portfolios: named senior backend ownership, regulated delivery proof, and EUR-scoped ways to engage — open beyond payments.",
+    "title": "Case studies",
+    "heading": "What shipped, and what is lab work.",
+    "subtitle": "Each project states its nature: production, confidential professional patterns, or a personal lab.",
+    "kindLive": "Live product",
+    "kindConfidential": "Professional patterns · confidential",
+    "kindLab": "Personal lab · open source",
+    "proofLabel": "Proof",
+    "legendLive": "in service, publicly verifiable",
+    "legendConfidential": "from employment, generalized, confidential",
+    "legendLab": "personal project, open source, not deployed",
+    "competitiveLine": "No client code on this page. The labs are the repositories you can open today.",
+    "homeKickers": {
+      "ecom-360-pme": "01 · Live product · commerce ops",
+      "payment-platform-disaster-lab": "02 · Public lab · payment architecture",
+      "unified-api-gateway": "03 · Production patterns · banking integrations"
+    },
     "impactLabel": "Impact",
     "marketLabel": "Market",
     "problemLabel": "Problem",
@@ -757,12 +1033,13 @@
     "tradeoffsLabel": "Trade-offs",
     "bankingOutcomeLabel": "Signal",
     "viewAll": "View all case studies",
+    "nextCase": "Next case",
     "readCaseStudy": "Read case study",
     "readPatterns": "View production patterns",
     "viewProduct": "View live product",
     "bridgeTitle": "Want this depth on your system?",
-    "bridgeSubtitle": "The usual first step is an architecture sprint — 1–2 weeks, €2.5k–€4.5k — then a written proposal.",
-    "bridgeCta": "Start with the sprint",
+    "bridgeSubtitle": "Available from February 2027. Read a case study, then send a role brief.",
+    "bridgeCta": "Get in touch",
     "detailsSummary": "Architecture, security & delivery details",
     "items": [
       {
@@ -800,7 +1077,7 @@
         ],
         "tradeoffs": "Operational robustness first — reliable checkout, tenant isolation, and reconciliable exports — over advanced analytics in v1.",
         "bankingOutcome": "Financial flows, local reconciliation, and multi-site ops with a minimum audit trail — patterns that transfer to FinTech delivery.",
-        "impact": "10+ merchants live across Senegal and West Africa; hours saved weekly on closing; Wave & Orange Money on every sale with accountant-ready exports.",
+        "impact": "10+ merchants live across Senegal and West Africa; Wave and Orange Money on every sale, with accountant-ready exports.",
         "href": "https://ecom360pme.com/",
         "linkLabel": "View live product",
         "stacks": [
@@ -818,8 +1095,8 @@
             "label": "Merchants live"
           },
           {
-            "value": "Hours/wk",
-            "label": "Saved on closing"
+            "value": "Wave + OM",
+            "label": "On every sale"
           },
           {
             "value": "Live",
@@ -895,9 +1172,9 @@
       },
       {
         "id": "pan-african-payment-sdk",
-        "title": "Pan-African Payment SDK",
-        "market": "West Africa corridors",
-        "scope": "regional",
+        "title": "Unified Mobile Money SDK (Senegal)",
+        "market": "Senegal",
+        "scope": "national",
         "problem": "Products needed separate integrations for Orange Money, Wave, and Free Money — slow launches and inconsistent error handling across providers.",
         "solution": "One API for initiate, confirm, and reconcile — provider adapters behind a stable contract.",
         "architecture": "Adapter pattern with Spring Boot services, Redis idempotency keys, and Kafka events for async settlement notifications.",
@@ -939,13 +1216,7 @@
         "impact": "Wave, Orange Money, and Free Money behind one contract — adapters, Redis idempotency, and Kafka settlement events proven on ENG FinTech delivery. Packaged SDK surface stays internal.",
         "href": "",
         "linkLabel": "",
-        "stacks": [
-          "Java",
-          "Spring Boot",
-          "Redis",
-          "Kafka",
-          "PostgreSQL"
-        ],
+        "stacks": ["Java", "Spring Boot", "Redis", "Kafka", "PostgreSQL"],
         "status": "Production patterns · ENG · confidential",
         "metrics": [
           {
@@ -1069,13 +1340,7 @@
         "impact": "Patterns from Synapse delivery for 11+ Bank of Africa Group subsidiaries: gateway as the boundary, versioned partner contracts, JWT/RBAC at the edge, core systems kept off the public internet.",
         "href": "",
         "linkLabel": "",
-        "stacks": [
-          "Spring Cloud",
-          "Kafka",
-          "PostgreSQL",
-          "Docker",
-          "AWS"
-        ],
+        "stacks": ["Spring Cloud", "Kafka", "PostgreSQL", "Docker", "AWS"],
         "status": "Production patterns · Synapse · confidential",
         "metrics": [
           {
@@ -1095,10 +1360,10 @@
   },
   "experience": {
     "title": "Experience",
-    "subtitle": "Where the work happened — and what had to be correct.",
+    "subtitle": "Where the work happened.",
     "viewAll": "Full experience",
     "downloadCv": "Download CV",
-    "hiringLine": "Hiring path: these roles, with Bank of Africa via Synapse up front, then the CV.",
+    "hiringLine": "Everything is independently verifiable. No paid badges, no invented quotes.",
     "valueTitle": "What you get",
     "valueBody": "Hands-on delivery across enterprise platforms — APIs, distributed systems, and production pipelines in banking and FinTech. Outcomes you can check: multi-subsidiary banking delivery, Wave / Orange Money rails, and production ownership.",
     "stackLabel": "Stack",
@@ -1114,7 +1379,7 @@
         "logo": "synapse.jpeg",
         "period": "Feb 2025 — Present",
         "location": "Ngor, Dakar, Senegal",
-        "bullet0": "Drove backend modernization (Java / Spring Boot, multi-tenancy, clean architecture) serving 11+ Bank of Africa Group subsidiaries — standardizing integration patterns and raising maintainability of core services.",
+        "bullet0": "Contributed to backend modernization (Java / Spring Boot, multi-tenancy, clean architecture) serving 11+ Bank of Africa Group subsidiaries — standardizing integration patterns and raising maintainability of core services.",
         "bullet1": "Designed secured REST APIs and gateway-style boundaries (versioned contracts, JWT / RBAC, audit logging) plus append-only reconciliation so money movement stays explainable for finance and compliance. Ownership with product, QA, and engineering on high-availability delivery (Docker, Kubernetes, CI/CD).",
         "bullet2": "Java, Spring Boot, Docker, Kubernetes, CI/CD, JasperReports"
       },
@@ -1126,7 +1391,7 @@
         "period": "Jul 2023 — Feb 2025",
         "location": "Dakar-Plateau, Senegal",
         "bullet0": "Owned backend microservices for digital lending, customer onboarding, and payment workflows on a FinTech platform in production.",
-        "bullet1": "Integrated Wave and Orange Money; designed Kafka event flows with explicit idempotency so retries cannot double-debit. Hardened APIs with Spring Security and improved payment operations reliability on AWS (Docker, GitLab CI/CD).",
+        "bullet1": "Integrated Wave, Orange Money, and Free Money; designed Kafka event flows with explicit idempotency so retries cannot double-debit. Hardened APIs with Spring Security and improved payment operations reliability on AWS (Docker, GitLab CI/CD).",
         "bullet2": "Java, Spring Boot, AWS, PostgreSQL, Apache Kafka, Docker, GitLab CI/CD"
       },
       {
@@ -1229,12 +1494,7 @@
       {
         "label": "Data",
         "sublabel": "Store of record and cache",
-        "nodes": [
-          "PostgreSQL",
-          "MySQL",
-          "Redis",
-          "Append-only journal"
-        ]
+        "nodes": ["PostgreSQL", "MySQL", "Redis", "Append-only journal"]
       }
     ],
     "techTitle": "Core Technologies",
@@ -1264,15 +1524,15 @@
     "stats": [
       {
         "value": "4+",
-        "label": "Production years"
+        "label": "Years shipping backends"
       },
       {
         "value": "11+",
-        "label": "Bank of Africa subsidiaries"
+        "label": "BOA subsidiaries via Synapse"
       },
       {
-        "value": "Wave + OM",
-        "label": "Payment corridors"
+        "value": "Wave · OM · FM",
+        "label": "Mobile money wallets (SN)"
       }
     ],
     "dividerText": "Dakar · West Africa · Remote worldwide"
@@ -1288,18 +1548,18 @@
     "metrics": [
       {
         "value": "4+",
-        "label": "Production years",
+        "label": "Years shipping backends",
         "description": "Backend delivery in banking, fintech, and SaaS"
       },
       {
         "value": "11+",
-        "label": "Banking subsidiaries",
+        "label": "BOA subsidiaries via Synapse",
         "description": "Synapse delivery for Bank of Africa Group platforms"
       },
       {
-        "value": "Wave + OM",
+        "value": "Wave · OM · FM",
         "label": "Wallet integrations",
-        "description": "Wave and Orange Money integrations on ENG FinTech delivery"
+        "description": "Wave, Orange Money, and Free Money integrations on ENG FinTech delivery"
       },
       {
         "value": "FR/EN",
@@ -1355,7 +1615,7 @@
         "level": "Professional working (written)"
       }
     ],
-    "p1": "Hi — I’m Saïfoulaye. I build production backends that stay correct under load.",
+    "p1": "Backend engineer, on the path to software architecture.",
     "p2a": "I’m a Senior Backend Engineer focused on backend engineering, distributed systems, APIs, and software architecture. I work mainly with",
     "p2b": "Java and Spring Boot",
     "p2c": ", but I care more about understanding the problem, making the right trade-offs, and building systems that remain reliable as they evolve.",
@@ -1363,7 +1623,7 @@
     "p4": "Good software is the right decisions: simplicity over unnecessary complexity, reliability over short-term fixes, and business impact over technical vanity.",
     "p5": "Strongest proof: banking and payment backends — mobile money corridors, ledger-safe money movement, and API governance for regulated teams. Open to products, platforms, and SaaS that need the same rigor.",
     "p6": "Outside delivery, I ship side systems and write about architecture decisions drawn from real production constraints.",
-    "collaboration": "I enjoy working with people who think critically, care about quality, and want to build things that last — hire, project, or long-term collaboration.",
+    "collaboration": "I enjoy working with people who think critically, care about quality, and want to build things that last — recruiters, product teams, peers.",
     "focusTagsTitle": "Focus",
     "focusTags": [
       "Java",
@@ -1377,9 +1637,9 @@
     "cardRole": "Senior Backend Engineer",
     "cardTagline": "Dakar · West Africa · Remote Worldwide",
     "statYearsValue": "4+",
-    "statYears": "Production Years",
+    "statYears": "Years shipping backends",
     "statSystemsValue": "11+",
-    "statSystems": "Banking subsidiaries",
+    "statSystems": "BOA subsidiaries via Synapse",
     "statCuriosityValue": "FR/EN",
     "statCuriosity": "Bilingual delivery",
     "engagementsTitle": "Ways I can help",
@@ -1408,9 +1668,9 @@
     "excerpt": "Production backends that stay correct under load — Java, Spring Boot, distributed systems. Strongest proof in banking & FinTech. Delivery from Dakar to remote teams worldwide.",
     "readMore": "See full profile",
     "stat1Value": "4+",
-    "stat1Label": "Production years",
+    "stat1Label": "Years shipping backends",
     "stat2Value": "11+",
-    "stat2Label": "Banking subsidiaries",
+    "stat2Label": "BOA subsidiaries via Synapse",
     "stat3Value": "FR/EN",
     "stat3Label": "Remote worldwide"
   },
@@ -1522,22 +1782,32 @@
     "title": "About",
     "subtitle": "Production backends that stay correct under load — Java, Spring Boot, distributed systems. Banking & FinTech as strongest proof. Dakar · remote worldwide.",
     "backToHome": "Back to home",
-    "endCtaTitle": "Hiring this profile — or starting a project?",
-    "endCtaSubtitle": "Hiring: Experience on this page, then the CV. A project: an architecture sprint (1–2 weeks, €2.5k–€4.5k), then a written proposal.",
-    "endCtaButton": "Start with the sprint"
+    "endCtaTitle": "Want to work together?",
+    "endCtaSubtitle": "Available from February 2027. Send a role brief — I’ll reply with fit and a clear next step.",
+    "endCtaButton": "Get in touch"
+  },
+  "collaboratePage": {
+    "metaTitle": "Ways to work | Architecture sprint | SAIFCORE",
+    "metaDescription": "Independent consulting after February 2027. This site is an engineering profile — not a rate card.",
+    "title": "Ways to work",
+    "subtitle": "Most collaborations start with an architecture sprint — one to two weeks to lock the problem, risks, and a plan. Then a written proposal.",
+    "backToHome": "Back to home",
+    "endCtaTitle": "Ready to start?",
+    "endCtaSubtitle": "The sprint locks the plan. The written proposal locks the firm quote.",
+    "endCtaButton": "Send a brief"
   },
   "insights": {
-    "title": "Insights",
+    "title": "Articles",
     "subtitle": "Production notes on payments and platforms — written so a product or SaaS team can reuse the decisions. Banking is the depth behind them.",
     "viewAll": "Browse all insights",
     "blogPromoTitle": "SAIFCORE Blog",
     "blogPromoBody": "Long-form notes from production backends — products, platforms, and the payment problems that prove the depth.",
     "endCtaTitle": "Want this depth on your system?",
-    "endCtaSubtitle": "The usual first step is an architecture sprint — 1–2 weeks, €2.5k–€4.5k — then a written proposal.",
-    "endCtaButton": "Start with the sprint",
+    "endCtaSubtitle": "Available from February 2027. Read a case study or an article, then send a role brief.",
+    "endCtaButton": "Get in touch",
     "bridgeTitle": "Want this depth on your system?",
-    "bridgeSubtitle": "The usual first step is an architecture sprint — 1–2 weeks, €2.5k–€4.5k — then a written proposal.",
-    "bridgeCta": "Start with the sprint",
+    "bridgeSubtitle": "Available from February 2027. Read a case study, then send a role brief.",
+    "bridgeCta": "Get in touch",
     "heading": "Notes from the work"
   },
   "articlesPage": {
@@ -1582,11 +1852,11 @@
   "cta": {
     "label": "Contact",
     "title": "Tell me about the work",
-    "subtitle": "Hiring: the roles on this page, then the CV. A project: an architecture sprint, then a written proposal.",
+    "subtitle": "Hiring: read the experience, the CV, then a role brief. Available from February 2027.",
     "processTitle": "How it starts",
-    "processStep1": "Hiring → Experience and the CV. A project → the architecture sprint (€2.5k–€4.5k, 1–2 weeks).",
-    "processStep2": "I reply within two business days with questions — or a written proposal.",
-    "processStep3": "Hiring ends on a call. A project ends with scope, milestones, and a firm EUR quote.",
+    "processStep1": "Read the experience and CV — Bank of Africa via Synapse first.",
+    "processStep2": "Send a role brief: team, stack, location, timeline.",
+    "processStep3": "I reply within two business days. A 30-minute call if it’s a fit.",
     "responseHint": "Expect a response within two business days.",
     "bookCall": "Book a discovery call",
     "startProject": "Email directly",
@@ -1600,13 +1870,13 @@
     "formIntent": "I am…",
     "formIntentPlaceholder": "Select one",
     "formIntentHiring": "Hiring / recruiting",
-    "formIntentFreelance": "Looking for freelance delivery",
+    "formIntentFreelance": "Technical discussion",
     "formIntentOther": "Something else",
-    "formMessage": "Project brief",
-    "formMessagePlaceholder": "Goals, timeline, stack, constraints (reliability, compliance, scale)…",
+    "formMessage": "Message",
+    "formMessagePlaceholder": "Context, role, or technical question…",
     "formMessagePlaceholderHiring": "Role, team, stack, location, and timeline…",
-    "formMessagePlaceholderFreelance": "What you want to ship, timeline, and whether an architecture sprint is the right first step…",
-    "formSubmit": "Send your brief",
+    "formMessagePlaceholderFreelance": "The technical problem, the system, and what you want to verify…",
+    "formSubmit": "Send",
     "formSending": "Sending…",
     "formSuccess": "Brief received — check your inbox for confirmation.",
     "formSuccessHint": "I’ll reply within two business days with focused questions or a concrete next step. Prefer to talk sooner? Book a discovery call.",
@@ -1642,14 +1912,14 @@
     "about": "About SAIFCORE",
     "credentials": "Certifications & Credentials",
     "homeSectionsLabel": "Homepage",
-    "paths": "Start here",
-    "work": "Featured Projects",
+    "lab": "Architecture lab",
+    "work": "Work",
     "start": "How an engagement starts",
     "services": "Services",
     "offers": "Ways to work",
     "expertise": "Expertise",
     "process": "How I Work",
-    "insights": "Insights preview",
+    "insights": "Articles",
     "faq": "FAQ",
     "pagesLabel": "Explore",
     "connectLabel": "Get in Touch",
@@ -1675,22 +1945,27 @@
     "light": "Light mode",
     "dark": "Dark mode",
     "system": "System theme",
-    "toLight": "Switch to light mode",
-    "toDark": "Switch to dark mode"
+    "toLight": "◐ Light",
+    "toDark": "◑ Dark"
   },
   "systemsPage": {
     "metaTitle": "Case Studies | Systems & Architecture | SAIFCORE",
     "metaDescription": "Case studies: live products, open labs, and production patterns — banking/FinTech as strongest proof, described at pattern level when confidential.",
-    "title": "Case studies",
-    "subtitle": "Live products and production patterns for product and platform teams. Confidential banking and FinTech work stays at pattern level.",
+    "title": "Shipped systems and reusable patterns.",
+    "subtitle": "Client-confidential code stays out. Reusable decisions stay in.",
     "backToHome": "Back to home",
-    "midCtaTitle": "Want this depth on your system?",
-    "midCtaSubtitle": "The usual first step is an architecture sprint — 1–2 weeks, €2.5k–€4.5k — then a written proposal.",
-    "midCtaPrimary": "Start with the sprint",
-    "midCtaSecondary": "Ways to work",
+    "midCtaTitle": "Want this depth on your team?",
+    "midCtaSubtitle": "Available from February 2027. Read a case study, then send a role brief.",
+    "midCtaPrimary": "Get in touch",
+    "midCtaSecondary": "Download CV",
     "endCtaTitle": "Want this depth on your system?",
-    "endCtaSubtitle": "The usual first step is an architecture sprint — 1–2 weeks, €2.5k–€4.5k — then a written proposal.",
-    "endCtaButton": "Start with the sprint"
+    "endCtaSubtitle": "Available from February 2027. Read a case study or an article, then send a role brief.",
+    "endCtaButton": "Get in touch",
+    "filterLabel": "Filter case studies",
+    "filterAll": "All",
+    "filterLive": "Live",
+    "filterLab": "Lab",
+    "filterConfidential": "Confidential"
   },
   "caseStudyEcom360": {
     "metaTitle": "Ecom 360 PME — Case Study | Product Delivery | SAIFCORE",
@@ -1712,9 +1987,9 @@
         "description": "Day-to-day ops on the platform across Senegal and the region."
       },
       {
-        "value": "Hours/wk",
-        "label": "Saved on closing",
-        "description": "End-of-day totals and reconciliation that used to be rebuilt by hand."
+        "value": "Wave + OM",
+        "label": "On every sale",
+        "description": "Mobile money collected at the till, with exports an accountant can reconcile."
       },
       {
         "value": "Live",
@@ -1766,8 +2041,8 @@
       "REST APIs"
     ],
     "endCtaTitle": "Want this depth on your product?",
-    "endCtaSubtitle": "The usual first step is an architecture sprint — 1–2 weeks, €2.5k–€4.5k — then a written proposal.",
-    "endCtaButton": "Start with the sprint"
+    "endCtaSubtitle": "Available from February 2027. Read a case study or an article, then send a role brief.",
+    "endCtaButton": "Get in touch"
   },
   "caseStudyPaymentDisasterLab": {
     "metaTitle": "Payment Platform Disaster Lab — Case Study | Resilience Engineering | SAIFCORE",
@@ -1882,8 +2157,8 @@
       "P7 — Documented chaos: fill D1–D10 (hypothesis → observed → recovery); wire FE to real backend."
     ],
     "endCtaTitle": "Want this depth on a payment or resilience problem?",
-    "endCtaSubtitle": "The usual first step is an architecture sprint — 1–2 weeks, €2.5k–€4.5k — then a written proposal.",
-    "endCtaButton": "Start with the sprint"
+    "endCtaSubtitle": "Available from February 2027. Read a case study or an article, then send a role brief.",
+    "endCtaButton": "Get in touch"
   },
   "caseStudyDoubleEntryLedger": {
     "metaTitle": "Double-Entry Ledger Platform — Case Study | Fintech Ledger | SAIFCORE",
@@ -1990,8 +2265,8 @@
       "Tests: mvn test across modules; Testcontainers ITs when Docker is available."
     ],
     "endCtaTitle": "Want this depth on a ledger or wallet problem?",
-    "endCtaSubtitle": "The usual first step is an architecture sprint — 1–2 weeks, €2.5k–€4.5k — then a written proposal.",
-    "endCtaButton": "Start with the sprint"
+    "endCtaSubtitle": "Available from February 2027. Read a case study or an article, then send a role brief.",
+    "endCtaButton": "Get in touch"
   },
   "experiencePage": {
     "metaTitle": "Experience | Senior Backend Engineer | SAIFCORE",
@@ -2002,17 +2277,14 @@
     "skillsTitle": "Production Technology Stack",
     "skillsSubtitle": "Tools and patterns from live backends — not a buzzword list.",
     "midCtaTitle": "Ready for the next step?",
-    "midCtaSubtitle": "Download the CV for hiring, or review ways to work for freelance and contract.",
-    "midCtaSecondary": "Ways to work",
-    "endCtaTitle": "Hiring this profile — or starting a project?",
-    "endCtaSubtitle": "Hiring: these roles, then the CV. A project: an architecture sprint (1–2 weeks, €2.5k–€4.5k), then a written proposal.",
-    "endCtaButton": "Send a brief"
+    "midCtaSubtitle": "Download the CV, or send a role brief. Available from February 2027.",
+    "midCtaSecondary": "Contact",
+    "endCtaTitle": "Hiring this profile?",
+    "endCtaSubtitle": "These roles are the document. Download the CV from the header, or send a role brief.",
+    "endCtaButton": "Get in touch"
   },
   "skillsMatrix": {
-    "languages": [
-      "Java (8–21)",
-      "SQL (PostgreSQL, MySQL)"
-    ],
+    "languages": ["Java (8–21)", "SQL (PostgreSQL, MySQL)"],
     "languagesLabel": "Languages",
     "frameworks": [
       "Spring Boot",

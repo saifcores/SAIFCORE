@@ -4,7 +4,13 @@ import { hasObtainedCertifications } from "@/data/certifications";
 import { Reveal } from "./Reveal";
 
 type SitePath =
-  "/about" | "/experience" | "/systems" | "/certifications" | "/#contact";
+  | "/about"
+  | "/experience"
+  | "/systems"
+  | "/expertise"
+  | "/lab"
+  | "/contact"
+  | "/certifications";
 
 type Props = {
   className?: string;
@@ -21,13 +27,15 @@ export async function ProfileExploreLinks({
   const tNav = await getTranslations("nav");
 
   const links = [
-    { href: "/about" as const, label: tNav("about") },
-    { href: "/experience" as const, label: tNav("experience") },
     { href: "/systems" as const, label: tNav("systems") },
+    { href: "/expertise" as const, label: tNav("expertise") },
+    { href: "/experience" as const, label: tNav("experience") },
+    { href: "/lab" as const, label: tNav("lab") },
+    { href: "/about" as const, label: tNav("about") },
     ...(hasObtainedCertifications()
       ? [{ href: "/certifications" as const, label: tNav("credentials") }]
       : []),
-    { href: "/#contact" as const, label: tNav("contact") },
+    { href: "/contact" as const, label: tNav("contact") },
   ].filter((link) => link.href !== excludePath);
 
   if (links.length === 0) return null;

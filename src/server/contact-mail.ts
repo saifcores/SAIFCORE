@@ -129,7 +129,7 @@ function autoReplyText(payload: ContactPayload): string {
 
 Merci pour votre message via SAIFCORE.
 
-Votre brief est bien reçu. Je le lis avec attention et vous réponds sous deux jours ouvrables — avec des questions précises et, si le besoin est clair, un prochain pas concret (appel discovery, atelier, ou mode de collaboration).
+Votre message est bien reçu. Je le lis avec attention et vous réponds sous deux jours ouvrables — avec des questions précises et, si le fit est clair, une prochaine étape (un appel, ou une lecture du CV et des études de cas).
 
 Pour avancer plus vite, vous pouvez :
 • préciser objectifs, contraintes, timeline et stack ;
@@ -147,7 +147,7 @@ ${site}${linkedin ? `\n${linkedin}` : ""}`;
 
 Thanks for reaching out via SAIFCORE.
 
-I’ve received your brief and will reply within two business days — with focused questions and, when the fit is clear, a concrete next step (discovery call, workshop, or way of working).
+I’ve received your message and will reply within two business days — with focused questions and, when the fit is clear, a next step (a call, or a read of the CV and case studies).
 
 To move faster, you can:
 • share goals, constraints, timeline, and stack;

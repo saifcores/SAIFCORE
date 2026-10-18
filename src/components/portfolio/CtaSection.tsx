@@ -1,5 +1,4 @@
 import { getLocale, getTranslations } from "next-intl/server";
-import { Link } from "@/i18n/navigation";
 import { ContactForm } from "@/components/portfolio/ContactForm";
 import {
   getResumeUrl,
@@ -102,8 +101,8 @@ export async function CtaSection() {
                 />
               </div>
 
-              <p className="mt-8 flex flex-col items-center justify-center gap-3 text-center sm:mt-10 sm:flex-row sm:gap-6">
-                {resumeUrl ? (
+              {resumeUrl ? (
+                <p className="mt-8 flex flex-col items-center justify-center gap-3 text-center sm:mt-10 sm:flex-row sm:gap-6">
                   <a
                     href={resumeUrl}
                     className="inline-flex min-h-11 items-center justify-center text-sm font-semibold text-[var(--text-muted)] underline decoration-white/15 underline-offset-4 transition hover:text-[var(--text-primary)]"
@@ -113,14 +112,8 @@ export async function CtaSection() {
                   >
                     {t("downloadResume")}
                   </a>
-                ) : null}
-                <Link
-                  href="/#architecture-sprint"
-                  className="inline-flex min-h-11 items-center justify-center text-sm font-semibold text-[var(--text-muted)] underline decoration-white/15 underline-offset-4 transition hover:text-[var(--text-primary)]"
-                >
-                  {t("sprintLink")}
-                </Link>
-              </p>
+                </p>
+              ) : null}
             </div>
           </div>
         </MotionReveal>

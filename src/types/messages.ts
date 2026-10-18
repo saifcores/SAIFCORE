@@ -14,6 +14,7 @@ export type NavLinkKey = keyof NavMessages;
 export type NavPrimaryLinkKey = Extract<
   NavLinkKey,
   | "work"
+  | "lab"
   | "services"
   | "offers"
   | "expertise"

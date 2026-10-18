@@ -7,7 +7,6 @@ import {
 import type { Metadata } from "next";
 import { ContactBridgeStrip } from "@/components/portfolio/ContactBridgeStrip";
 import { DepthTeaser } from "@/components/portfolio/DepthTeaser";
-import { MidPageCta } from "@/components/portfolio/MidPageCta";
 import { PageHeader } from "@/components/portfolio/PageHeader";
 import { ProfileExploreLinks } from "@/components/portfolio/ProfileExploreLinks";
 import { Experience } from "@/components/portfolio/Experience";
@@ -94,16 +93,13 @@ export default async function ExperiencePage({ params }: Props) {
         />
 
         <Experience />
-        <MidPageCta namespace="experiencePage" />
         <EducationSection />
         <HowIThink />
         <DepthTeaser />
 
-        <div className="px-4 pb-16 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-7xl space-y-8">
-            <ProfileExploreLinks excludePath="/experience" />
-            <ContactBridgeStrip ns="experiencePage" showPackages />
-          </div>
+        <div className="page-container space-y-8 pb-16">
+          <ProfileExploreLinks excludePath="/experience" />
+          <ContactBridgeStrip ns="experiencePage" />
         </div>
       </main>
       <Footer />

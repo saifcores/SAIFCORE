@@ -1,8 +1,7 @@
-import { getLocale, getMessages, getTranslations } from "next-intl/server";
-import { ArrowUpRight } from "lucide-react";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { HeroContent } from "@/components/portfolio/HeroContent";
-import { HeroVisual } from "@/components/portfolio/HeroVisual";
+import type { AppMessages } from "@/types/messages";
 import {
   getResumeDownloadFilename,
   getResumeUrl,
@@ -10,85 +9,62 @@ import {
 } from "@/server/resume";
 
 export async function Hero() {
-  const t = await getTranslations("hero");
-  const messages = await getMessages();
-  const locale = await getLocale();
+  const [t, tCommon, locale] = await Promise.all([
+    getTranslations("hero"),
+    getTranslations("common"),
+    getLocale(),
+  ]);
   const resumeUrl = getResumeUrl(locale);
   const resumeDownload = getResumeDownloadFilename(locale);
-  const resumeProps = resumeUrl
-    ? isLocalResume(resumeUrl)
-      ? { download: resumeDownload }
-      : ({ target: "_blank" as const, rel: "noopener noreferrer" } as const)
-    : null;
+  const flow = t.raw("flow") as AppMessages["hero"]["flow"];
+  const localResume = Boolean(resumeUrl && isLocalResume(resumeUrl));
 
   const ctas = (
     <>
       <Link
-        href="/#architecture-sprint"
-        className="btn-primary btn-primary-lg inline-flex min-h-12 w-full items-center justify-center gap-2 px-5 text-base min-[400px]:px-6 sm:w-auto sm:px-8"
+        href="/systems"
+        className="btn-primary inline-flex min-h-12 w-full items-center justify-center px-5 text-[15px] sm:w-auto"
       >
-        {t("sprintCta")}
-        <ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden />
+        {t("ctaPrimary")}
       </Link>
-      {resumeUrl && resumeProps ? (
+      {resumeUrl ? (
         <a
           href={resumeUrl}
-          className="btn-outline inline-flex min-h-12 w-full items-center justify-center px-5 text-sm font-medium min-[400px]:px-6 sm:w-auto sm:px-8"
-          {...resumeProps}
+          className="btn-outline inline-flex min-h-12 w-full items-center justify-center px-5 text-[15px] font-medium sm:w-auto"
+          {...(localResume
+            ? { download: resumeDownload }
+            : {
+                target: "_blank",
+                rel: "noopener noreferrer",
+                "aria-label": `${t("ctaResume")} (${tCommon("opensInNewTab")})`,
+              })}
         >
-          {t("ctaPrimary")}
+          {t("ctaResume")}
         </a>
-      ) : (
-        <Link
-          href="/experience"
-          className="btn-outline inline-flex min-h-12 w-full items-center justify-center px-5 text-sm font-medium min-[400px]:px-6 sm:w-auto sm:px-8"
-        >
-          {t("ctaPrimary")}
-        </Link>
-      )}
+      ) : null}
     </>
   );
 
   return (
-    <section className="relative overflow-x-clip border-b border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8 lg:py-28">
-      <div
-        className="pointer-events-none absolute inset-0 overflow-hidden"
-        aria-hidden
-      >
-        <span className="absolute inset-0 flex items-center justify-center">
-          <span className="select-none font-display text-[22vw] font-medium leading-none tracking-tight text-[var(--text-primary)] opacity-[0.025] sm:text-[15vw] sm:opacity-[0.03]">
-            SAIFCORE
-          </span>
-        </span>
-        <span className="absolute -left-24 top-1/4 h-72 w-72 rounded-full bg-[radial-gradient(circle,var(--glow-primary),transparent_70%)] opacity-80 blur-2xl" />
-        <span className="absolute -right-16 bottom-0 h-64 w-64 rounded-full bg-[radial-gradient(circle,var(--glow-secondary),transparent_70%)] opacity-70 blur-2xl" />
-      </div>
-
-      <div className="relative mx-auto max-w-7xl">
-        <div className="grid items-center gap-8 md:gap-12 lg:grid-cols-2 lg:gap-16">
-          <HeroContent
-            badge={t("badge")}
-            identityName={t("identityName")}
-            identityRole={t("identityRole")}
-            titleLine1={t("titleLine1")}
-            titleLine2={t("titleLine2")}
-            titleLine3={t("titleLine3")}
-            subtitle={t("subtitle")}
-            proofLine={t("proofLine")}
-            availability={t("availability")}
-            jumpToContact={t("jumpToContact")}
-            bookCall={t("ctaBookCall")}
-            waysToWork={t("ctaExperience")}
-            ctas={ctas}
-          />
-          {/* Content-first on phones; orbit from tablet up */}
-          <div className="mx-auto hidden w-full max-w-[340px] md:block md:max-w-[380px] lg:max-w-none">
-            <HeroVisual
-              nodes={[...messages.hero.hubNodes]}
-              hubLabel="SAIFCORE"
-            />
-          </div>
-        </div>
+    <section
+      aria-labelledby="hero-heading"
+      className="relative overflow-hidden py-8 sm:py-12 lg:py-16"
+    >
+      <div className="page-container">
+        <HeroContent
+          identityName={t("identityName")}
+          identityRole={t("identityRole")}
+          badge={t("badge")}
+          title={t("title")}
+          subtitle={t("subtitle")}
+          proofLine={t("proofLine")}
+          availability={t("availability")}
+          flowLabel={t("flowLabel")}
+          flowCaption={t("flowCaption")}
+          portraitAlt={t("portraitAlt")}
+          flow={flow}
+          ctas={ctas}
+        />
       </div>
     </section>
   );

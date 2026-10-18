@@ -6,25 +6,21 @@ import {
   getResumeUrl,
   isLocalResume,
 } from "@/server/resume";
-import { BookCallLink } from "./BookCallLink";
 
 export type ActionBarVariant = "recruiter" | "client" | "balanced";
 
 type Props = {
   className?: string;
-  /** Hide the text contact link (e.g. on article reading pages). */
-  hideContactLink?: boolean;
   /**
-   * recruiter — CV primary (experience / certs)
-   * client — architecture sprint primary + packages link (systems)
-   * balanced — architecture sprint primary + CV (about / general)
+   * recruiter — CV + LinkedIn (experience / certs)
+   * client — Contact + CV (consulting is not offered on this site)
+   * balanced — Contact + CV (about)
    */
   variant?: ActionBarVariant;
 };
 
 export async function RecruiterActionBar({
   className = "",
-  hideContactLink = false,
   variant = "balanced",
 }: Props) {
   const t = await getTranslations("pageHeader");
@@ -40,52 +36,21 @@ export async function RecruiterActionBar({
       : ({ target: "_blank" as const, rel: "noopener noreferrer" } as const)
     : null;
 
-  const resumePrimary = variant === "recruiter";
-  const bookPrimary = variant !== "recruiter";
-  const resumeLabel = resumePrimary ? t("downloadCv") : tNav("resume");
-
-  const resumeClass = resumePrimary
-    ? "btn-primary inline-flex min-h-11 w-full items-center justify-center px-5 text-sm xs:w-auto"
-    : "btn-outline inline-flex min-h-11 w-full items-center justify-center rounded-xl px-5 text-sm font-semibold xs:w-auto";
-
-  const bookClass = bookPrimary
-    ? "btn-primary inline-flex min-h-11 w-full items-center justify-center px-5 text-sm xs:w-auto"
-    : "btn-outline inline-flex min-h-11 w-full items-center justify-center rounded-xl px-5 text-sm font-semibold xs:w-auto";
-
   return (
     <div
       className={`grid grid-cols-1 gap-2.5 xs:grid-cols-2 sm:flex sm:flex-wrap sm:items-center sm:gap-3 ${className}`}
     >
-      {resumePrimary && resumeUrl && resumeProps ? (
-        <a href={resumeUrl} className={resumeClass} {...resumeProps}>
-          {resumeLabel}
-        </a>
-      ) : null}
-
-      {resumePrimary ? (
-        <BookCallLink className={bookClass}>{tNav("bookCall")}</BookCallLink>
-      ) : (
-        <Link href="/#architecture-sprint" className={bookClass}>
-          {tNav("sprint")}
-        </Link>
-      )}
-
-      {!resumePrimary && resumeUrl && resumeProps ? (
-        <a href={resumeUrl} className={resumeClass} {...resumeProps}>
-          {resumeLabel}
-        </a>
-      ) : null}
-
-      {variant === "client" ? (
-        <Link
-          href="/#offers"
-          className="btn-outline inline-flex min-h-11 w-full items-center justify-center rounded-xl px-5 text-sm font-semibold xs:w-auto"
+      {variant === "recruiter" && resumeUrl && resumeProps ? (
+        <a
+          href={resumeUrl}
+          className="btn-primary inline-flex min-h-11 w-full items-center justify-center px-5 text-sm xs:w-auto"
+          {...resumeProps}
         >
-          {t("seePackages")}
-        </Link>
+          {t("downloadCv")}
+        </a>
       ) : null}
 
-      {linkedinUrl ? (
+      {variant === "recruiter" && linkedinUrl ? (
         <a
           href={linkedinUrl}
           target="_blank"
@@ -96,14 +61,45 @@ export async function RecruiterActionBar({
         </a>
       ) : null}
 
-      {hideContactLink ? null : (
-        <Link
-          href="/#contact"
-          className="inline-flex min-h-11 w-full items-center justify-center px-2 text-sm font-semibold text-[var(--text-secondary)] underline decoration-white/15 underline-offset-4 transition hover:text-[var(--text-primary)] hover:decoration-white/35 xs:col-span-2 xs:w-auto sm:col-span-1"
-        >
-          {tNav("contact")}
-        </Link>
-      )}
+      {variant === "client" ? (
+        <>
+          <Link
+            href="/contact"
+            className="btn-primary inline-flex min-h-11 w-full items-center justify-center px-5 text-sm xs:w-auto"
+          >
+            {tNav("contact")}
+          </Link>
+          {resumeUrl && resumeProps ? (
+            <a
+              href={resumeUrl}
+              className="btn-outline inline-flex min-h-11 w-full items-center justify-center rounded-xl px-5 text-sm font-semibold xs:w-auto"
+              {...resumeProps}
+            >
+              {tNav("resume")}
+            </a>
+          ) : null}
+        </>
+      ) : null}
+
+      {variant === "balanced" ? (
+        <>
+          <Link
+            href="/contact"
+            className="btn-primary inline-flex min-h-11 w-full items-center justify-center px-5 text-sm xs:w-auto"
+          >
+            {tNav("contact")}
+          </Link>
+          {resumeUrl && resumeProps ? (
+            <a
+              href={resumeUrl}
+              className="btn-outline inline-flex min-h-11 w-full items-center justify-center rounded-xl px-5 text-sm font-semibold xs:w-auto"
+              {...resumeProps}
+            >
+              {tNav("resume")}
+            </a>
+          ) : null}
+        </>
+      ) : null}
     </div>
   );
 }

@@ -79,14 +79,8 @@ export default async function PaymentDisasterLabCaseStudyPage({
         tabIndex={-1}
       >
         <CaseStudyPaymentDisasterLab />
-        <div className="px-4 pb-16 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-7xl">
-            <ContactBridgeStrip
-              ns="caseStudyPaymentDisasterLab"
-              showPackages
-              primaryHref="/#architecture-sprint"
-            />
-          </div>
+        <div className="page-container pb-16">
+          <ContactBridgeStrip ns="caseStudyPaymentDisasterLab" />
         </div>
       </main>
       <Footer />

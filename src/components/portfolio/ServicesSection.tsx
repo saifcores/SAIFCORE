@@ -88,7 +88,7 @@ export function ServicesSection({
         <MotionReveal delay={280}>
           <div className="mt-8 flex justify-center">
             <Link
-              href="/#offers"
+              href="/collaborate"
               className="inline-flex min-h-11 items-center justify-center gap-2 text-sm font-medium text-[var(--text-primary)] underline-offset-4 transition hover:underline"
             >
               {cta}

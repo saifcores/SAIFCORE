@@ -1,151 +1,150 @@
-"use client";
-
-import { motion, useReducedMotion } from "framer-motion";
-import { Link } from "@/i18n/navigation";
-import { BookCallLink } from "@/components/portfolio/BookCallLink";
 import type { ReactNode } from "react";
+import Image from "next/image";
+import type { AppMessages } from "@/types/messages";
+
+type FlowStep = AppMessages["hero"]["flow"][number];
 
 type Props = {
-  badge: string;
   identityName: string;
   identityRole: string;
-  titleLine1: string;
-  titleLine2: string;
-  titleLine3: string;
+  badge: string;
+  title: string;
   subtitle: string;
   proofLine: string;
   availability: string;
-  jumpToContact: string;
-  bookCall: string;
-  waysToWork: string;
+  flowLabel: string;
+  flowCaption: string;
+  portraitAlt: string;
+  flow: readonly FlowStep[];
   ctas: ReactNode;
 };
 
 export function HeroContent({
-  badge,
   identityName,
   identityRole,
-  titleLine1,
-  titleLine2,
-  titleLine3,
+  badge,
+  title,
   subtitle,
   proofLine,
   availability,
-  jumpToContact,
-  bookCall,
-  waysToWork,
+  flowLabel,
+  flowCaption,
+  portraitAlt,
+  flow,
   ctas,
 }: Props) {
-  const reduce = useReducedMotion();
-  const ease = [0.22, 1, 0.36, 1] as const;
-
   return (
-    <div className="relative z-10">
-      <motion.div
-        initial={reduce ? false : { opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.45, ease }}
-        className="mb-5 flex flex-col items-start gap-2.5 min-[480px]:flex-row min-[480px]:flex-wrap min-[480px]:items-center min-[480px]:gap-3"
-      >
-        <span className="inline-flex items-center gap-2 rounded-full border border-[var(--border-strong)] bg-[var(--bg-elevated)] px-3 py-1.5">
-          <span className="relative flex h-2 w-2" aria-hidden>
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--accent-strong)] opacity-60" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--accent-strong)]" />
-          </span>
-          <span className="text-xs font-medium text-[var(--text-primary)]">
-            {availability}
-          </span>
-        </span>
-        <span className="text-xs font-medium uppercase tracking-[0.16em] text-[var(--text-muted)]">
-          {badge}
-        </span>
-      </motion.div>
+    <div className="relative">
+      <div className="hero-ambient" aria-hidden />
+      <div className="relative grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(300px,380px)] lg:gap-16">
+        <div className="flex flex-col gap-6">
+          <div className="flex items-center gap-3.5">
+            <Image
+              src="/profile.png"
+              alt={portraitAlt}
+              width={56}
+              height={56}
+              priority
+              className="h-14 w-14 shrink-0 rounded-full border border-[var(--border-subtle)] object-cover object-[center_18%] ring-2 ring-[color-mix(in_srgb,var(--accent)_28%,transparent)]"
+            />
+            <div className="min-w-0">
+              <p className="font-medium tracking-tight text-[var(--text-primary)]">
+                {identityName}
+              </p>
+              <p className="text-[13px] leading-snug text-[var(--text-muted)]">
+                {identityRole}
+                {" · "}
+                {badge}
+              </p>
+            </div>
+          </div>
 
-      <motion.p
-        initial={reduce ? false : { opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.45, delay: 0.04, ease }}
-        className="mb-4 text-sm font-medium text-[var(--text-secondary)] sm:text-base"
-      >
-        <span className="text-[var(--text-primary)]">{identityName}</span>
-        <span className="mx-2 text-[var(--text-muted)]" aria-hidden>
-          ·
-        </span>
-        <span>{identityRole}</span>
-      </motion.p>
+          <div className="flex flex-col gap-3.5">
+            <h1
+              id="hero-heading"
+              className="text-pretty font-display text-display-md text-[var(--text-primary)]"
+            >
+              {title}
+            </h1>
+            <p className="max-w-[52ch] text-pretty text-[1.0625rem] leading-relaxed text-[var(--text-secondary)] sm:text-lg">
+              {subtitle}
+            </p>
+            <p className="max-w-[54ch] text-pretty text-sm leading-relaxed text-[var(--text-muted)]">
+              {proofLine}
+            </p>
+          </div>
 
-      <motion.h1
-        initial={reduce ? false : { opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.55, delay: 0.08, ease }}
-        className="max-w-2xl font-display text-display-md text-[var(--text-primary)]"
-      >
-        <span className="block">{titleLine1}</span>
-        <span className="block">{titleLine2}</span>
-        <span className="block text-accent-strong">{titleLine3}</span>
-      </motion.h1>
+          <div className="flex flex-col gap-3.5">
+            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/70 px-3 py-1 font-mono text-xs text-[var(--text-muted)]">
+              <span
+                aria-hidden
+                className="status-live h-1.5 w-1.5 rounded-full bg-[var(--ok)]"
+              />
+              {availability}
+            </p>
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              {ctas}
+            </div>
+          </div>
+        </div>
 
-      <motion.p
-        initial={reduce ? false : { opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.16, ease }}
-        className="mt-5 max-w-xl text-pretty text-[0.9375rem] leading-relaxed text-[var(--text-secondary)] sm:mt-6 sm:text-lg"
-      >
-        {subtitle}
-      </motion.p>
-
-      <motion.p
-        initial={reduce ? false : { opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.45, delay: 0.22 }}
-        className="mt-4 max-w-xl text-pretty text-sm leading-relaxed text-[var(--text-muted)]"
-      >
-        {proofLine}
-      </motion.p>
-
-      <motion.div
-        initial={reduce ? false : { opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.45, delay: 0.28, ease }}
-        className="mt-7 flex w-full flex-col gap-2.5 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center sm:gap-3"
-      >
-        {ctas}
-      </motion.div>
-
-      <motion.p
-        initial={reduce ? false : { opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.45, delay: 0.34 }}
-        className="mt-6 flex flex-col gap-1 text-sm sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-4 sm:gap-y-2"
-      >
-        <Link
-          href="/#paths"
-          className="inline-flex min-h-11 items-center font-medium text-[var(--text-secondary)] underline decoration-[var(--border-subtle)] underline-offset-4 transition hover:text-[var(--text-primary)] hover:decoration-[var(--border-hover)]"
+        <aside
+          aria-label={flowLabel}
+          className="overflow-hidden rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)] shadow-[var(--shadow-card)]"
         >
-          {jumpToContact}
-        </Link>
-        <span
-          className="hidden text-[var(--border-strong)] sm:inline"
-          aria-hidden
-        >
-          ·
-        </span>
-        <BookCallLink className="inline-flex min-h-11 items-center font-medium text-[var(--text-secondary)] underline decoration-[var(--border-subtle)] underline-offset-4 transition hover:text-[var(--text-primary)] hover:decoration-[var(--border-hover)]">
-          {bookCall}
-        </BookCallLink>
-        <span
-          className="hidden text-[var(--border-strong)] sm:inline"
-          aria-hidden
-        >
-          ·
-        </span>
-        <Link
-          href="/#offers"
-          className="inline-flex min-h-11 items-center font-medium text-[var(--text-secondary)] underline decoration-[var(--border-subtle)] underline-offset-4 transition hover:text-[var(--text-primary)] hover:decoration-[var(--border-hover)]"
-        >
-          {waysToWork}
-        </Link>
-      </motion.p>
+          <p className="flex items-center justify-between border-b border-[var(--border-subtle)] px-5 py-3 font-mono text-[11px] uppercase tracking-[0.06em] text-[var(--text-muted)] sm:px-6">
+            <span>{flowLabel}</span>
+            <span
+              className="h-1.5 w-1.5 rounded-full bg-[var(--ok)]"
+              aria-hidden
+            />
+          </p>
+          <ol className="m-0 flex list-none flex-col px-5 py-3.5 sm:px-6">
+            {flow.map((step, index) => {
+              const isLast = index === flow.length - 1;
+              return (
+                <li key={step.name} className="flex gap-3">
+                  <div className="flex w-7 shrink-0 flex-col items-center">
+                    <span
+                      aria-hidden
+                      className={`font-mono text-[11px] leading-6 tabular-nums ${
+                        isLast
+                          ? "text-[var(--accent)]"
+                          : "text-[var(--text-muted)]"
+                      }`}
+                    >
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    {isLast ? null : (
+                      <span
+                        aria-hidden
+                        className="my-1 w-px flex-1 bg-[var(--border-subtle)]"
+                      />
+                    )}
+                  </div>
+                  <div className={`min-w-0 flex-1 ${isLast ? "" : "pb-3"}`}>
+                    <div className="text-[13px] font-semibold leading-6 text-[var(--text-primary)]">
+                      {step.name}
+                    </div>
+                    <div
+                      className={`font-mono text-[11px] leading-5 ${
+                        isLast
+                          ? "text-[var(--accent)]"
+                          : "text-[var(--text-muted)]"
+                      }`}
+                    >
+                      {step.spec}
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
+          </ol>
+          <p className="border-t border-[var(--border-subtle)] px-5 py-3 text-[11px] text-[var(--text-muted)] sm:px-6">
+            {flowCaption}
+          </p>
+        </aside>
+      </div>
     </div>
   );
 }

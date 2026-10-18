@@ -1,7 +1,7 @@
 "use client";
 
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
-import { useEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 
 type RevealProps = {
   children: React.ReactNode;
@@ -9,24 +9,49 @@ type RevealProps = {
   delay?: number;
 };
 
+function isInViewport(el: HTMLElement) {
+  const rect = el.getBoundingClientRect();
+  return rect.height > 0 && rect.top < window.innerHeight - 16 && rect.bottom > 16;
+}
+
 export function Reveal({ children, className = "", delay = 0 }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [revealed, setRevealed] = useState(false);
   const prefersReducedMotion = usePrefersReducedMotion();
   const visible = prefersReducedMotion || revealed;
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (prefersReducedMotion) return;
     const el = ref.current;
     if (!el) return;
-    const obs = new IntersectionObserver(
+
+    const show = () => setRevealed(true);
+    if (isInViewport(el)) {
+      show();
+      return;
+    }
+
+    const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) setRevealed(true);
+        if (!entry.isIntersecting) return;
+        show();
+        observer.disconnect();
       },
-      { threshold: 0.12, rootMargin: "0px 0px -32px 0px" },
+      { threshold: 0, rootMargin: "64px 0px 0px 0px" },
     );
-    obs.observe(el);
-    return () => obs.disconnect();
+    observer.observe(el);
+
+    const frame = window.requestAnimationFrame(() => {
+      if (isInViewport(el)) {
+        show();
+        observer.disconnect();
+      }
+    });
+
+    return () => {
+      observer.disconnect();
+      window.cancelAnimationFrame(frame);
+    };
   }, [prefersReducedMotion]);
 
   return (

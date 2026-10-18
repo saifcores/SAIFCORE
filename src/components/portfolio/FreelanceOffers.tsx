@@ -182,14 +182,14 @@ export function FreelanceOffers({
             </p>
             <div className="flex w-full flex-col gap-2 min-[420px]:flex-row min-[420px]:flex-wrap sm:w-auto">
               <Link
-                href="/#architecture-sprint"
+                href="/collaborate#architecture-sprint"
                 className="btn-primary inline-flex min-h-12 w-full items-center justify-center gap-2 px-6 text-sm min-[420px]:w-auto"
               >
                 {cta}
                 <ArrowUpRight className="h-4 w-4" aria-hidden />
               </Link>
               <Link
-                href="/#contact"
+                href="/contact"
                 className="btn-outline inline-flex min-h-12 w-full items-center justify-center px-6 text-sm font-medium min-[420px]:w-auto"
               >
                 {ctaSecondary}

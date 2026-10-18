@@ -1,7 +1,9 @@
 import { ArrowUpRight } from "lucide-react";
 import { getMessages, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import { ECOM_360_CASE_STUDY_ID } from "@/data/case-studies";
 import { DetailLabel } from "./DetailLabel";
+import { NextCaseStudyLink } from "./NextCaseStudyLink";
 import { Reveal } from "./Reveal";
 
 const LIVE_URL = "https://ecom360pme.com/";
@@ -15,12 +17,12 @@ export async function CaseStudyEcom360() {
 
   return (
     <>
-      <section className="border-b border-[var(--border-subtle)] px-4 py-10 sm:px-6 sm:py-12 md:py-16 lg:px-8">
-        <div className="mx-auto max-w-7xl">
+      <section className="border-b border-[var(--border-subtle)] py-10 sm:py-12 md:py-16">
+        <div className="page-container">
           <Reveal>
             <Link
               href="/systems"
-              className="inline-flex min-h-11 items-center text-sm font-medium text-[var(--text-muted)] transition hover:text-[var(--text-primary)]"
+              className="link-more min-h-11"
             >
               ← {t("backToSystems")}
             </Link>
@@ -59,12 +61,7 @@ export async function CaseStudyEcom360() {
                     {t("liveCta")}
                     <ArrowUpRight className="h-4 w-4" aria-hidden />
                   </a>
-                  <Link
-                    href="/#offers"
-                    className="btn-outline inline-flex min-h-12 w-full items-center justify-center px-6 text-sm font-medium min-[420px]:w-auto"
-                  >
-                    {t("offersCta")}
-                  </Link>
+                  <NextCaseStudyLink currentId={ECOM_360_CASE_STUDY_ID} />
                 </div>
               </div>
 
@@ -78,8 +75,8 @@ export async function CaseStudyEcom360() {
         </div>
       </section>
 
-      <section className="border-b border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
-        <div className="mx-auto max-w-7xl">
+      <section className="border-b border-[var(--border-subtle)] py-12 sm:py-14">
+        <div className="page-container">
           <Reveal>
             <DetailLabel>{t("metricsLabel")}</DetailLabel>
             <div className="mt-4 grid gap-3 sm:grid-cols-3 sm:gap-4">
@@ -141,8 +138,8 @@ export async function CaseStudyEcom360() {
         </div>
       </section>
 
-      <section className="border-b border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
-        <div className="mx-auto max-w-7xl">
+      <section className="border-b border-[var(--border-subtle)] py-12 sm:py-14">
+        <div className="page-container">
           <Reveal>
             <DetailLabel>{t("architectureFlowLabel")}</DetailLabel>
             <ol className="mt-4 grid list-none grid-cols-2 gap-2 p-0 sm:grid-cols-5 sm:gap-0">

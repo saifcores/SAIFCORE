@@ -1,7 +1,3 @@
-"use client";
-
-import { useTranslations } from "next-intl";
-
 function Skeleton({ className }: { className?: string }) {
   return (
     <div
@@ -12,13 +8,11 @@ function Skeleton({ className }: { className?: string }) {
 }
 
 export default function Loading() {
-  const t = useTranslations("common");
-
   return (
     <div
       className="relative flex min-h-[60vh] flex-col px-4 py-24 sm:px-6 lg:px-8"
       role="status"
-      aria-label={t("loading")}
+      aria-busy="true"
     >
       <div className="bg-grid pointer-events-none absolute inset-0 opacity-40" />
       <div className="relative mx-auto w-full max-w-7xl space-y-8">
@@ -36,9 +30,6 @@ export default function Loading() {
           <Skeleton className="hidden h-48 rounded-[16px] lg:block" />
         </div>
       </div>
-      <p className="relative mt-10 text-center text-sm text-[var(--text-muted)]">
-        {t("loading")}
-      </p>
     </div>
   );
 }
