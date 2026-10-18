@@ -11,16 +11,21 @@
     "jsonLdServiceDescription": "Systèmes backend, APIs, architectures distribuées et logiciels pour produits, plateformes et enterprise — dont infrastructure de paiement et intégrations bancaires régulées quand le problème l'exige.",
     "jsonLdAvailability": "Disponible à partir de février 2027 · Remote mondial",
     "jsonLdAreaServed": "Sénégal, Afrique de l'Ouest, Monde entier",
-    "keywords": "ingénieur backend senior, Java, Spring Boot, systèmes distribués, APIs, architecture logicielle, plateformes enterprise, backend SaaS, backend bancaire, systèmes de paiement, fintech, mobile money, Bank of Africa, Sénégal, Dakar, ingénieur remote, SAIFCORE",
+    "keywords": "ingénieur backend senior, Java, Spring Boot, NestJS, PostgreSQL, Kubernetes, OAuth2, MongoDB, systèmes distribués, APIs, architecture logicielle, plateformes enterprise, backend SaaS, backend bancaire, systèmes de paiement, fintech, mobile money, Bank of Africa, Sénégal, Dakar, ingénieur remote, SAIFCORE",
     "manifestName": "SAIFCORE — Ingénieur Backend Senior",
     "manifestDescription": "Portfolio — ingénierie backend, systèmes distribués, APIs et architecture logicielle pour produits, plateformes, enterprise, banque et FinTech.",
     "knowsAbout": [
       "Java",
       "Spring Boot",
+      "NestJS",
       "Ingénierie backend",
       "Architecture logicielle",
       "Systèmes distribués",
       "APIs",
+      "PostgreSQL",
+      "Kubernetes",
+      "OAuth2",
+      "MongoDB",
       "Architectures cloud-native",
       "Plateformes enterprise",
       "Systèmes bancaires",
@@ -449,7 +454,7 @@
     "focus": "focus",
     "focusValue": "Paiements · APIs · systèmes distribués",
     "stack": "stack",
-    "stackValue": "Java · Spring Boot · Kafka",
+    "stackValue": "Java · Spring Boot · NestJS · Kafka",
     "location": "lieu",
     "locationValue": "Dakar · remote mondial",
     "languages": "langues",
@@ -734,24 +739,51 @@
           "Spring Boot",
           "Spring Security",
           "Spring Cloud",
-          "Spring Batch",
-          "Spring Data"
+          "Spring Data JPA",
+          "Node.js / NestJS"
         ]
       },
       {
         "label": "Données & messagerie",
-        "items": ["PostgreSQL", "MySQL", "Redis", "Apache Kafka"]
+        "items": [
+          "PostgreSQL",
+          "Oracle",
+          "MySQL",
+          "MongoDB",
+          "Redis",
+          "Apache Kafka",
+          "RabbitMQ"
+        ]
       },
       {
         "label": "Livraison",
-        "items": ["Docker", "Kubernetes", "AWS", "GitLab CI/CD", "OpenAPI"]
+        "items": [
+          "Docker",
+          "Kubernetes",
+          "AWS",
+          "Terraform",
+          "GitLab CI/CD",
+          "GitHub Actions",
+          "Jenkins",
+          "OpenAPI"
+        ]
+      },
+      {
+        "label": "Sécurité & APIs",
+        "items": [
+          "REST",
+          "JWT",
+          "OAuth2",
+          "HMAC",
+          "RBAC",
+          "OWASP",
+          "OpenTelemetry",
+          "Prometheus/Grafana"
+        ]
       },
       {
         "label": "Domaines",
         "items": [
-          "APIs REST",
-          "Webhooks",
-          "JWT",
           "Idempotence",
           "Réconciliation",
           "Wave",
@@ -761,7 +793,7 @@
       },
       {
         "label": "UI produit",
-        "items": ["Angular", "TypeScript", "React"]
+        "items": ["TypeScript", "Angular", "React", "Next.js"]
       }
     ]
   },
@@ -1373,53 +1405,120 @@
     "valueBody": "Livraison terrain sur plateformes enterprise — APIs, systèmes distribués et pipelines de production en banque et FinTech. Résultats vérifiables : delivery multi-filiales bancaires, rails Wave / Orange Money, ownership en production.",
     "stackLabel": "Stack",
     "clientLabel": "Client",
+    "contributionsLabel": "Contributions clés",
     "currentRole": "Actuel",
+    "presentLabel": "Présent",
+    "rolesMeta": "{count} rôles",
+    "rolesNav": "Aller à une entreprise",
+    "durationYr": "{count} an",
+    "durationYrs": "{count} ans",
+    "durationMo": "{count} mois",
+    "durationMos": "{count} mois",
     "showMore": "Afficher {count} rôles de plus",
     "showLess": "Afficher moins",
     "items": [
       {
-        "role": "Ingénieur Backend Senior — Plateformes bancaires (Consultant)",
+        "role": "Consultant Ingénieur Backend — Systèmes bancaires & paiements",
         "company": "Synapse Groupe",
         "client": "Bank of Africa — Groupe Bank of Africa",
         "logo": "synapse.jpeg",
         "period": "Fév 2025 — Présent",
-        "location": "Ngor, Dakar, Sénégal",
-        "bullet0": "Contribuer à la modernisation backend (Java / Spring Boot, multi-tenancy, clean architecture) au service de plus de 11 filiales du Groupe Bank of Africa — standardisation des patterns d'intégration et meilleure maintenabilité des services cœur.",
-        "bullet1": "Concevoir des APIs REST sécurisées et des frontières type gateway (contrats versionnés, JWT / RBAC, audit) plus une réconciliation append-only pour que chaque mouvement d'argent reste explicable pour la finance et la conformité. Ownership avec produit, QA et ingénierie en haute disponibilité (Docker, Kubernetes, CI/CD).",
-        "bullet2": "Java, Spring Boot, Docker, Kubernetes, CI/CD, JasperReports"
+        "location": "Ngor / Almadies, région de Dakar, Sénégal",
+        "employment": "Temps plein",
+        "workplace": "Sur site",
+        "summary": "Détaché dans les équipes d'ingénierie du Groupe Bank of Africa via Synapse Groupe — plateformes bancaires enterprise pour paiements, virements et traitement de transactions, au service de plus de 11 filiales.",
+        "highlights": [
+          "Concevoir et faire évoluer les services backend des opérations bancaires critiques — paiements, virements et traitement de transactions — dans un environnement haute disponibilité (~50K transactions/jour).",
+          "Construire des APIs enterprise reliant applications bancaires cœur, middleware et systèmes tiers, avec un focus sécurité et des contrats d'intégration stables.",
+          "Moderniser des services backend legacy vers une approche microservices / clean architecture, pour la maintenabilité et la résilience opérationnelle.",
+          "Livrer des fonctionnalités déployées dans plus de 11 filiales Bank of Africa, en coordination avec les équipes IT filiales sur l'intégration et les mises en production.",
+          "Produire des rapports bancaires réglementaires et opérationnels avec JasperReports.",
+          "Faire monter la qualité via revues de code, résolution d'incidents et amélioration des pratiques d'ingénierie."
+        ],
+        "stack": [
+          "Java",
+          "Spring Boot",
+          "Spring Data",
+          "Microservices",
+          "REST APIs",
+          "Docker",
+          "Kubernetes",
+          "CI/CD",
+          "JasperReports",
+          "Clean Architecture"
+        ]
       },
       {
-        "role": "Ingénieur Backend — FinTech & Paiements",
-        "company": "ENG Technologie Group",
+        "role": "Ingénieur Logiciel — FinTech, crédit digital & mobile money",
+        "company": "ENG Technologie Groupe",
         "client": "",
         "logo": "eng.jpeg",
         "period": "Juil 2023 — Fév 2025",
-        "location": "Dakar-Plateau, Sénégal",
-        "bullet0": "Porter des microservices backend pour le crédit digital, l'onboarding client et les workflows de paiement sur une plateforme FinTech en production.",
-        "bullet1": "Intégrer Wave, Orange Money et Free Money ; concevoir des flux Kafka avec une idempotence explicite pour que les retries ne créent pas de double débit. Sécuriser les APIs avec Spring Security et fiabiliser les opérations de paiement sur AWS (Docker, GitLab CI/CD).",
-        "bullet2": "Java, Spring Boot, AWS, PostgreSQL, Apache Kafka, Docker, GitLab CI/CD"
+        "location": "Dakar-Plateau, région de Dakar, Sénégal",
+        "employment": "Temps plein",
+        "workplace": "Hybride",
+        "summary": "Microservices backend pour une plateforme FinTech couvrant crédit digital, traitement des paiements et intégrations mobile money.",
+        "highlights": [
+          "Intégrer les APIs Wave et Orange Money pour automatiser encaissement et décaissement, en fiabilisant ~10K transactions/mois.",
+          "Concevoir des microservices pour l'onboarding client, les opérations de crédit et les workflows de paiement.",
+          "Introduire un traitement asynchrone event-driven avec Apache Kafka pour absorber la montée des volumes.",
+          "Sécuriser les APIs avec Spring Security et les mécanismes d'authentification / autorisation OAuth2 / JWT.",
+          "Optimiser les pipelines GitLab CI/CD pour raccourcir les cycles de release."
+        ],
+        "stack": [
+          "Java",
+          "Spring Boot",
+          "Apache Kafka",
+          "PostgreSQL",
+          "AWS",
+          "Docker",
+          "GitLab CI/CD",
+          "REST APIs",
+          "OAuth2",
+          "JWT"
+        ]
       },
       {
-        "role": "Ingénieur Logiciel — Plateforme SaaS",
+        "role": "Ingénieur Logiciel (Freelance) — SaaS pour PME & commerce informel",
         "company": "Mafalia — Applications Ecom & Fintech",
         "client": "",
         "logo": "mafalia.jpeg",
         "period": "Juin 2022 — Nov 2023 · en parallèle d'ENG dès juil. 2023",
         "location": "Région de Dakar, Sénégal",
-        "bullet0": "Construire des services backend multi-tenant et APIs REST pour stocks, commandes, ventes et workflows financiers aidant les PME à piloter leurs opérations.",
-        "bullet1": "Améliorer les performances (requêtes, cache, asynchrone) en tenant le reporting hors du chemin d'encaissement pour garder le checkout réactif.",
-        "bullet2": "Java, Spring Boot, MySQL, Angular, TypeScript"
+        "employment": "Freelance",
+        "workplace": "À distance",
+        "summary": "Développement backend d'une plateforme SaaS aidant PME et commerçants informels à piloter ventes, stocks, commandes et finances.",
+        "highlights": [
+          "Réduire les temps de réponse API d'environ 30% via l'optimisation des requêtes et le refactoring de la logique métier.",
+          "Construire des APIs REST pour stocks, commandes, ventes et workflows financiers.",
+          "Mettre en place cache et traitement asynchrone pour tenir ~50 commerçants.",
+          "Améliorer la maintenabilité via documentation technique et pratiques qualité (SonarQube)."
+        ],
+        "stack": [
+          "Java",
+          "Spring Boot",
+          "MySQL",
+          "Angular",
+          "TypeScript",
+          "REST APIs"
+        ]
       },
       {
-        "role": "Ingénieur Logiciel",
+        "role": "Ingénieur Logiciel — Plateforme HealthTech",
         "company": "SarayaTech Sénégal",
         "client": "",
         "logo": "saraya.jpeg",
         "period": "Déc 2021 — Mai 2022",
         "location": "Sénégal",
-        "bullet0": "Développement de services backend et fonctionnalités métier pour la gestion des patients, consultations, prescriptions et workflows de santé sur une plateforme clinique.",
-        "bullet1": "Conception d'APIs REST sécurisées et scalables à travers plusieurs modules métier. Amélioration des performances via cache et traitement asynchrone ; participation aux revues de code et aux tests.",
-        "bullet2": "Java, Spring Boot, Angular"
+        "employment": "Contrat",
+        "workplace": "Sur site",
+        "summary": "Développement full-stack d'une plateforme de santé couvrant les opérations cliniques, pharmacie et laboratoire.",
+        "highlights": [
+          "Développer les services backend et fonctionnalités pour la gestion des patients, consultations et prescriptions.",
+          "Concevoir les APIs REST reliant les modules clinique, pharmacie et laboratoire.",
+          "Améliorer les performances via cache et traitement asynchrone."
+        ],
+        "stack": ["Java", "Spring Boot", "Angular", "REST APIs"]
       }
     ]
   },
@@ -1633,9 +1732,12 @@
     "focusTags": [
       "Java",
       "Spring Boot",
+      "NestJS",
       "Backend",
       "Systèmes distribués",
       "APIs",
+      "Kafka",
+      "AWS",
       "Cloud",
       "Architecture logicielle"
     ],
@@ -2289,38 +2391,49 @@
     "endCtaButton": "Prendre contact"
   },
   "skillsMatrix": {
-    "languages": ["Java (8–21)", "SQL (PostgreSQL, MySQL)"],
+    "languages": ["Java (8–21)", "SQL (PostgreSQL, MySQL)", "TypeScript"],
     "languagesLabel": "Langages",
     "frameworks": [
       "Spring Boot",
       "Spring Security",
       "Spring Cloud",
-      "Spring Batch",
-      "Spring Data"
+      "Spring Data JPA",
+      "Node.js / NestJS"
     ],
     "frameworksLabel": "Backend",
     "infrastructure": [
       "PostgreSQL",
+      "Oracle",
       "MySQL",
+      "MongoDB",
       "Redis",
       "Apache Kafka",
+      "RabbitMQ",
       "Docker",
       "Kubernetes",
       "AWS",
-      "GitLab CI/CD"
+      "Terraform",
+      "GitLab CI/CD",
+      "GitHub Actions",
+      "Jenkins"
     ],
     "infrastructureLabel": "Données, messagerie & livraison",
     "tools": [
       "OpenAPI",
       "REST",
-      "Webhooks",
       "JWT",
+      "OAuth2",
+      "HMAC",
+      "RBAC",
+      "OWASP",
+      "OpenTelemetry",
+      "Prometheus/Grafana",
       "Wave",
       "Orange Money",
       "Free Money",
       "Angular",
-      "TypeScript",
-      "React"
+      "React",
+      "Next.js"
     ],
     "toolsLabel": "APIs, paiements & UI produit"
   }

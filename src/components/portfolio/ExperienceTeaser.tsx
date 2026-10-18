@@ -1,10 +1,7 @@
 import { getLocale, getMessages, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import type { ExperienceEntry } from "@/types/messages";
-import {
-  getGithubUrl,
-  getLinkedinUrl,
-} from "@/site";
+import { getGithubUrl, getLinkedinUrl } from "@/site";
 import {
   getResumeDownloadFilename,
   getResumeUrl,
@@ -16,7 +13,7 @@ import { Reveal } from "./Reveal";
 const TEASER_COUNT = 3;
 
 function firstBullet(entry: ExperienceEntry): string {
-  return entry.bullet0.trim();
+  return entry.summary.trim() || entry.highlights[0]?.trim() || "";
 }
 
 export async function ExperienceTeaser() {
@@ -45,7 +42,11 @@ export async function ExperienceTeaser() {
       : null,
     ecomLiveHref
       ? { href: ecomLiveHref, label: tTrust("verifyLive"), external: true }
-      : { href: ECOM_360_CASE_STUDY_PATH, label: tTrust("verifyLive"), external: false },
+      : {
+          href: ECOM_360_CASE_STUDY_PATH,
+          label: tTrust("verifyLive"),
+          external: false,
+        },
     resumeUrl
       ? {
           href: resumeUrl,
@@ -65,9 +66,7 @@ export async function ExperienceTeaser() {
         <Reveal>
           <div className="flex flex-col gap-4">
             <p className="site-kicker">{t("title")}</p>
-            <h2 className="section-heading">
-              {t("subtitle")}
-            </h2>
+            <h2 className="section-heading">{t("subtitle")}</h2>
             <p className="max-w-[44ch] text-[15px] text-[var(--text-muted)]">
               {t("hiringLine")}
             </p>
@@ -130,7 +129,9 @@ export async function ExperienceTeaser() {
                       {item.period}
                     </span>
                   </div>
-                  <div className="text-sm text-[var(--accent)]">{item.role}</div>
+                  <div className="text-sm text-[var(--accent)]">
+                    {item.role}
+                  </div>
                   {bullet ? (
                     <div className="text-pretty text-sm text-[var(--text-muted)]">
                       {bullet}

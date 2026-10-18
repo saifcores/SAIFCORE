@@ -7,11 +7,14 @@ import {
 import type { Metadata } from "next";
 import { About } from "@/components/portfolio/About";
 import { ContactBridgeStrip } from "@/components/portfolio/ContactBridgeStrip";
+import { Experience } from "@/components/portfolio/Experience";
 import { IdentityLevels } from "@/components/portfolio/IdentityLevels";
+import { TechStackSection } from "@/components/portfolio/TechStackSection";
 import { Footer } from "@/components/portfolio/Footer";
 import { Navbar } from "@/components/portfolio/Navbar";
 import { routing } from "@/i18n/routing";
 import { buildPageMetadata, buildProfilePageGraph } from "@/seo";
+import type { AppMessages } from "@/types/messages";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -45,7 +48,11 @@ export default async function AboutPage({ params }: Props) {
   const t = await getTranslations("aboutPage");
   const tCommon = await getTranslations("common");
   const tMeta = await getTranslations("meta");
+  const tStack = await getTranslations("techStack");
   const messages = await getMessages();
+  const stackCategories = tStack.raw(
+    "categories",
+  ) as AppMessages["techStack"]["categories"];
 
   const pageJsonLd = buildProfilePageGraph({
     locale,
@@ -76,6 +83,12 @@ export default async function AboutPage({ params }: Props) {
         },
       ],
       knowsAbout: [...messages.meta.knowsAbout],
+      hasOccupation: messages.experience.items.map((item) => ({
+        "@type": "Occupation",
+        name: item.role,
+        occupationalCategory: item.client || item.company,
+        description: item.summary,
+      })),
     },
   });
 
@@ -93,6 +106,12 @@ export default async function AboutPage({ params }: Props) {
       >
         <About />
         <IdentityLevels />
+        <Experience />
+        <TechStackSection
+          title={tStack("title")}
+          subtitle={tStack("subtitle")}
+          categories={[...stackCategories]}
+        />
 
         <div className="page-container pb-16">
           <ContactBridgeStrip ns="aboutPage" />

@@ -67,7 +67,7 @@ export default async function ExperiencePage({ params }: Props) {
         "@type": "Occupation",
         name: item.role,
         occupationalCategory: item.client || item.company,
-        description: item.bullet0,
+        description: item.summary,
       })),
     },
   });
@@ -92,7 +92,7 @@ export default async function ExperiencePage({ params }: Props) {
           actionVariant="recruiter"
         />
 
-        <Experience />
+        <Experience showHeading={false} />
         <EducationSection />
         <HowIThink />
         <DepthTeaser />

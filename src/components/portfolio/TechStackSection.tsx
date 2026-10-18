@@ -16,7 +16,8 @@ export function TechStackSection({ title, subtitle, categories }: Props) {
 
   return (
     <section
-      id="expertise"
+      id="stack"
+      aria-labelledby="stack-heading"
       className="scroll-mt-24 border-b border-[var(--border-subtle)] px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20 xl:scroll-mt-28"
     >
       <div className="mx-auto max-w-7xl">
@@ -24,7 +25,10 @@ export function TechStackSection({ title, subtitle, categories }: Props) {
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
             {title}
           </p>
-          <h2 className="max-w-2xl font-display text-pretty text-2xl font-medium tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl">
+          <h2
+            id="stack-heading"
+            className="max-w-2xl font-display text-pretty text-2xl font-medium tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl"
+          >
             {subtitle}
           </h2>
         </MotionReveal>
