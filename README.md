@@ -33,7 +33,7 @@ Bilingual portfolio and lead-generation site for **SAIFCORE** — senior backend
 | **Home**      | Long-scroll landing: hero, trust, experience, expertise, metrics, work teaser, services, stack, certifications, principles, process, engagement patterns, insights, about teaser, contact |
 | **Sub-pages** | About (+ vision, leadership), Experience (+ education, skills, architecture), Systems (architecture + case studies), Articles, License, Certifications                                    |
 | **Articles**  | Structured content blocks (prose, code, ADR, design notes, lists); internal routes + optional external URLs                                                                               |
-| **Contact**   | Mailto form, Calendly “Book a call”, LinkedIn / GitHub / resume links                                                                                                                     |
+| **Contact**   | Contact form, LinkedIn / GitHub / resume links                                                                                                                                            |
 | **Mobile**    | Responsive layouts; sticky bottom CTA bar on small screens                                                                                                                                |
 | **SEO**       | Per-page metadata, hreflang, sitemap, robots, JSON-LD (Person, breadcrumbs, ProfilePage)                                                                                                  |
 | **Analytics** | Vercel Analytics (`@vercel/analytics`)                                                                                                                                                    |
@@ -110,7 +110,6 @@ Copy [`.env.example`](.env.example) to `.env.local`. All public vars use the `NE
 | ---------------------------------- | --------------- | ---------------------------------------------------------------- |
 | `NEXT_PUBLIC_SITE_URL`             | Recommended     | Canonical origin (no trailing slash). Metadata, sitemap, JSON-LD |
 | `NEXT_PUBLIC_CONTACT_EMAIL`        | For contact CTA | Enables mailto submit in contact section                         |
-| `NEXT_PUBLIC_CALENDLY_URL`         | Optional        | “Book a call” links (`https://calendly.com/...` only)            |
 | `NEXT_PUBLIC_LINKEDIN_URL`         | Optional        | Footer + Person schema `sameAs`                                  |
 | `NEXT_PUBLIC_GITHUB_URL`           | Optional        | Footer + Person schema `sameAs`                                  |
 | `NEXT_PUBLIC_RESUME_URL`           | Optional        | External CV override; else `public/resume-{en,fr}.pdf` by locale |
@@ -273,7 +272,7 @@ Optimized for [Vercel](https://vercel.com/). Any Node host that runs `next build
 **Production checklist**
 
 1. Set `NEXT_PUBLIC_SITE_URL` to your production domain
-2. Set `NEXT_PUBLIC_CONTACT_EMAIL` and optional Calendly / social URLs
+2. Set `NEXT_PUBLIC_CONTACT_EMAIL` and optional social URLs
 3. Add `public/resume-en.pdf` + `public/resume-fr.pdf` (see [`cv/README.md`](cv/README.md)) or `NEXT_PUBLIC_RESUME_URL`
 4. Run `npm run build` in CI before deploy
 5. Mark certifications as `obtained` when ready (unlocks `/certifications`)

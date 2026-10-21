@@ -1,7 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { BookCallLink } from "./BookCallLink";
 import { Reveal } from "./Reveal";
 
 export async function CollaborationStrip() {
@@ -43,9 +42,12 @@ export async function CollaborationStrip() {
                   {t("ctaPrimary")}
                   <ArrowUpRight className="h-4 w-4" aria-hidden />
                 </Link>
-                <BookCallLink className="btn-outline inline-flex min-h-12 items-center justify-center px-6 text-sm font-medium">
+                <Link
+                  href="/contact"
+                  className="btn-outline inline-flex min-h-12 items-center justify-center px-6 text-sm font-medium"
+                >
                   {t("ctaSecondary")}
-                </BookCallLink>
+                </Link>
               </div>
             </div>
 

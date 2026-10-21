@@ -1,6 +1,5 @@
 import {
   Body,
-  Button,
   Container,
   Head,
   Heading,
@@ -8,14 +7,12 @@ import {
   Html,
   Link,
   Preview,
-  Section,
   Text,
 } from "react-email";
 
 export type ContactAutoReplyEmailProps = {
   name: string;
   locale: "en" | "fr";
-  calendlyUrl: string | null;
   linkedinUrl: string | null;
   siteUrl: string;
 };
@@ -64,16 +61,6 @@ const styles = {
     margin: "0 0 18px",
     paddingLeft: "18px",
   },
-  button: {
-    backgroundColor: "#1d4ed8",
-    borderRadius: "8px",
-    color: "#ffffff",
-    display: "inline-block",
-    fontSize: "14px",
-    fontWeight: "600" as const,
-    padding: "12px 20px",
-    textDecoration: "none",
-  },
   hr: {
     borderColor: "#e5e7eb",
     borderTop: "1px solid #e5e7eb",
@@ -106,9 +93,7 @@ const copy = {
     p2: "I’ve received your message and will reply within two business days — with focused questions and, when the fit is clear, a next step (a call, or a read of the CV and case studies).",
     faster: "To move faster, you can:",
     bulletGoals: "share goals, constraints, timeline, and stack;",
-    bulletCall: "or book a 30-minute discovery call:",
     bulletReply: "or reply directly to this message.",
-    cta: "Book a discovery call",
     positioning:
       "Senior Backend Engineer — I build software that solves real-world problems: backends, distributed systems, APIs, and architecture (Java / Spring Boot), with banking & FinTech depth — remote, EN/FR.",
     regards: "Best regards,",
@@ -121,9 +106,7 @@ const copy = {
     p2: "Votre message est bien reçu. Je le lis avec attention et vous réponds sous deux jours ouvrables — avec des questions précises et, si le fit est clair, une prochaine étape (un appel, ou une lecture du CV et des études de cas).",
     faster: "Pour avancer plus vite, vous pouvez :",
     bulletGoals: "préciser objectifs, contraintes, timeline et stack ;",
-    bulletCall: "ou réserver un appel discovery de 30 min :",
     bulletReply: "ou me répondre directement à ce message.",
-    cta: "Réserver un appel discovery",
     positioning:
       "Ingénieur backend senior — je construis des logiciels qui résolvent des problèmes réels : backends, systèmes distribués, APIs et architecture (Java / Spring Boot), avec une profondeur banque & FinTech — remote, EN/FR.",
     regards: "Bien cordialement,",
@@ -133,7 +116,6 @@ const copy = {
 export function ContactAutoReplyEmail({
   name,
   locale,
-  calendlyUrl,
   linkedinUrl,
   siteUrl,
 }: ContactAutoReplyEmailProps) {
@@ -155,16 +137,8 @@ export function ContactAutoReplyEmail({
           <Text style={styles.text}>{t.faster}</Text>
           <Text style={styles.list}>
             • {t.bulletGoals}
-            <br />• {calendlyUrl ? t.bulletCall : t.bulletReply}
+            <br />• {t.bulletReply}
           </Text>
-
-          {calendlyUrl ? (
-            <Section style={{ marginBottom: "18px" }}>
-              <Button href={calendlyUrl} style={styles.button}>
-                {t.cta}
-              </Button>
-            </Section>
-          ) : null}
 
           <Text style={styles.text}>{t.positioning}</Text>
 

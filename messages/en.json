@@ -48,7 +48,6 @@
     "backToTop": "Back to top"
   },
   "actionBar": {
-    "bookCall": "Book a call",
     "sprint": "Articles",
     "contact": "Contact",
     "packages": "Profile",
@@ -75,7 +74,6 @@
     "resume": "CV ↓",
     "sprint": "Architecture sprint",
     "linkedin": "LinkedIn",
-    "bookCall": "Book a call",
     "github": "GitHub",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
@@ -122,7 +120,7 @@
     "clientLinkProcess": "How I work",
     "clientLinkContact": "Contact",
     "clientCta": "Send a brief",
-    "clientSecondaryCta": "Book a call",
+    "clientSecondaryCta": "Send a brief",
     "items": [
       {
         "who": "Recruiter",
@@ -320,7 +318,6 @@
     "title": "A named engineer, a written scope, a firm quote.",
     "subtitle": "Indicative ranges in EUR, remote from Dakar. The architecture sprint is the usual first step.",
     "cta": "Discuss this offer",
-    "note": "Full team, engineering services, or digital transformation: that is Manarix Solutions, a distinct entity from SAIFCORE.",
     "items": [
       {
         "duration": "1–2 weeks",
@@ -351,8 +348,7 @@
   "homeContact": {
     "title": "Tell me about the work.",
     "subtitle": "A reply within two business days, with questions or a written proposal.",
-    "sendBrief": "Send a brief",
-    "bookCall": "Book 30 min ↗"
+    "sendBrief": "Send a brief"
   },
   "labPage": {
     "metaTitle": "Architecture Lab | Reference designs & ADRs | SAIFCORE",
@@ -436,12 +432,10 @@
   },
   "contactPage": {
     "metaTitle": "Contact | Send a brief | SAIFCORE",
-    "metaDescription": "A reply within two business days. Hiring: a call. Project: a scope, milestones, and a firm EUR quote.",
+    "metaDescription": "A reply within two business days. Hiring: a role brief. Project: a scope, milestones, and a firm EUR quote.",
     "label": "Contact",
     "title": "Tell me about the work.",
-    "subtitle": "A reply within two business days. Hiring: a call. Project: a scope, milestones, and a firm EUR quote.",
-    "bookCall": "Book a 30-minute call",
-    "bookCallHint": "Calendly ↗",
+    "subtitle": "A reply within two business days. Hiring: a role brief. Project: a scope, milestones, and a firm EUR quote.",
     "email": "Direct email",
     "emailHint": "mailto",
     "linkedin": "LinkedIn",
@@ -460,9 +454,7 @@
     "languages": "languages",
     "languagesValue": "French · English",
     "saifcoreTitle": "SAIFCORE",
-    "saifcoreBody": "My personal professional brand: my work, my writing, my individual engagements.",
-    "manarixTitle": "Manarix Solutions",
-    "manarixBody": "A distinct entity for consulting, engineering services, and digital transformation."
+    "saifcoreBody": "My personal professional brand: my work, my writing, my individual engagements."
   },
   "trustedExpertise": {
     "title": "Core capabilities",
@@ -724,7 +716,7 @@
       },
       {
         "question": "How do I start if I am hiring?",
-        "answer": "Open Experience on this page (Synapse → Bank of Africa first), download the CV, then send a brief or book a call. I reply within two business days."
+        "answer": "Open Experience on this page (Synapse → Bank of Africa first), download the CV, then send a brief. I reply within two business days."
       }
     ]
   },
@@ -830,7 +822,7 @@
   "workProcess": {
     "title": "How delivery works",
     "subtitle": "Clear stages, visible progress, delivery your team can run.",
-    "cta": "Book a 30-minute intro",
+    "cta": "Send a brief",
     "steps": [
       {
         "title": "Discovery",
@@ -878,8 +870,8 @@
     "ctaTitle": "Start with the architecture sprint",
     "ctaSubtitle": "Hiring: Experience on this page, then the CV. A project: the sprint, then a written proposal.",
     "ctaPrimary": "Start with the sprint",
-    "ctaSecondary": "Book a call",
-    "slaLine": "I reply within two business days — or book a 30-minute call."
+    "ctaSecondary": "Send a brief",
+    "slaLine": "I reply within two business days."
   },
   "bankingLeadership": {
     "eyebrow": "Technical leadership",
@@ -1958,9 +1950,8 @@
     "processTitle": "How it starts",
     "processStep1": "Read the experience and CV — Bank of Africa via Synapse first.",
     "processStep2": "Send a role brief: team, stack, location, timeline.",
-    "processStep3": "I reply within two business days. A 30-minute call if it’s a fit.",
+    "processStep3": "I reply within two business days with a clear next step.",
     "responseHint": "Expect a response within two business days.",
-    "bookCall": "Book a discovery call",
     "startProject": "Email directly",
     "emailSubject": "[SAIFCORE Lead] Collaboration inquiry",
     "seePackages": "See ways to work",
@@ -1981,14 +1972,12 @@
     "formSubmit": "Send",
     "formSending": "Sending…",
     "formSuccess": "Brief received — check your inbox for confirmation.",
-    "formSuccessHint": "I’ll reply within two business days with focused questions or a concrete next step. Prefer to talk sooner? Book a discovery call.",
+    "formSuccessHint": "I’ll reply within two business days with focused questions or a concrete next step.",
     "formSendAnother": "Send another brief",
-    "formError": "Couldn’t send your message. Try again, or book a call / reach out on LinkedIn.",
-    "formNote": "You get a confirmation email in this language. I reply within two business days — or book a call.",
-    "formUnavailable": "Form temporarily unavailable — book a call or reach out on LinkedIn.",
-    "socialTitle": "Let’s connect",
-    "calendlyHint": "Free 30-minute discovery call — pick a slot that works for you",
-    "calendlyFallbackHint": "Use the form, or connect on LinkedIn"
+    "formError": "Couldn’t send your message. Try again, or reach out on LinkedIn.",
+    "formNote": "You get a confirmation email in this language. I reply within two business days.",
+    "formUnavailable": "Form temporarily unavailable — reach out on LinkedIn.",
+    "socialTitle": "Let’s connect"
   },
   "licensePage": {
     "metaTitle": "License",

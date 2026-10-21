@@ -6,12 +6,7 @@ import {
   isContactIntent,
   type ContactIntent,
 } from "@/contact-intent";
-import {
-  getCalendlyUrl,
-  getContactEmail,
-  getLinkedinUrl,
-  getSiteUrl,
-} from "@/site";
+import { getContactEmail, getLinkedinUrl, getSiteUrl } from "@/site";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MAX_NAME = 100;
@@ -84,7 +79,6 @@ function autoReplySubject(payload: ContactPayload): string {
 
 function ownerText(payload: ContactPayload): string {
   const company = payload.company || "—";
-  const calendly = getCalendlyUrl();
   const intent = contactIntentLabel(payload.intent, payload.locale);
 
   return `Nouveau brief — saifcore.tech
@@ -111,7 +105,7 @@ QUALIF (reply)
 NEXT
 ────
 1. Reply ce thread
-2. Si fit clair → discovery${calendly ? `\n   ${calendly}` : ""}
+2. Si fit clair → discovery
 3. Sinon → 3–5 questions ciblées + mode de collaboration
 
 —
@@ -120,7 +114,6 @@ ${getSiteUrl()}`;
 }
 
 function autoReplyText(payload: ContactPayload): string {
-  const calendly = getCalendlyUrl();
   const linkedin = getLinkedinUrl();
   const site = getSiteUrl();
 
@@ -133,7 +126,7 @@ Votre message est bien reçu. Je le lis avec attention et vous réponds sous deu
 
 Pour avancer plus vite, vous pouvez :
 • préciser objectifs, contraintes, timeline et stack ;
-${calendly ? `• ou réserver 30 min :\n  ${calendly}` : "• ou me répondre directement à ce message."}
+• ou me répondre directement à ce message.
 
 Je collabore principalement en tant qu’ingénieur backend senior — backends, systèmes distribués, APIs et architecture (Java / Spring Boot), avec une profondeur banque & FinTech — en remote, EN/FR.
 
@@ -151,7 +144,7 @@ I’ve received your message and will reply within two business days — with fo
 
 To move faster, you can:
 • share goals, constraints, timeline, and stack;
-${calendly ? `• or book 30 minutes:\n  ${calendly}` : "• or reply directly to this message."}
+• or reply directly to this message.
 
 Senior Backend Engineer — I build software that solves real-world problems: backends, distributed systems, APIs, and architecture (Java / Spring Boot), with banking & FinTech depth — remote, EN/FR.
 
@@ -174,7 +167,6 @@ export async function sendContactEmails(
   }
 
   const resend = new Resend(apiKey);
-  const calendlyUrl = getCalendlyUrl();
   const linkedinUrl = getLinkedinUrl();
   const siteUrl = getSiteUrl();
 
@@ -192,7 +184,6 @@ export async function sendContactEmails(
       subject: payload.subject,
       message: payload.message,
       locale: payload.locale,
-      calendlyUrl,
       siteUrl,
     }),
     tags: [
@@ -216,7 +207,6 @@ export async function sendContactEmails(
     react: ContactAutoReplyEmail({
       name: payload.name,
       locale: payload.locale,
-      calendlyUrl,
       linkedinUrl,
       siteUrl,
     }),

@@ -1,7 +1,6 @@
 import { getLocale, getTranslations } from "next-intl/server";
 import { ContactForm } from "@/components/portfolio/ContactForm";
 import {
-  getCalendlyUrl,
   getContactMailto,
   getGithubUrl,
   getLinkedinUrl,
@@ -26,15 +25,11 @@ export async function ContactPage({ initialIntent = "" }: Props) {
   const resumeUrl = getResumeUrl(locale);
   const resumeDownload = getResumeDownloadFilename(locale);
   const formEnabled = isContactFormConfigured();
-  const calendlyUrl = getCalendlyUrl();
   const mailto = getContactMailto("[SAIFCORE] Contact");
   const linkedinUrl = getLinkedinUrl();
   const githubUrl = getGithubUrl();
 
   const links = [
-    calendlyUrl
-      ? { href: calendlyUrl, label: t("bookCall"), hint: t("bookCallHint") }
-      : null,
     mailto ? { href: mailto, label: t("email"), hint: t("emailHint") } : null,
     linkedinUrl ? { href: linkedinUrl, label: t("linkedin"), hint: "↗" } : null,
     githubUrl ? { href: githubUrl, label: t("github"), hint: "↗" } : null,
@@ -121,9 +116,6 @@ export async function ContactPage({ initialIntent = "" }: Props) {
           formError={tCta("formError")}
           formNote={tCta("formNote")}
           formUnavailable={tCta("formUnavailable")}
-          bookCall={tCta("bookCall")}
-          calendlyHint={tCta("calendlyHint")}
-          calendlyFallbackHint={tCta("calendlyFallbackHint")}
           socialTitle={tCta("socialTitle")}
           linkedinLabel={tFooter("linkedin")}
           githubLabel={tFooter("github")}

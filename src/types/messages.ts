@@ -10,7 +10,7 @@ export type NavMessages = AppMessages["nav"];
 /** Keys for `useTranslations("nav")` / navbar labels */
 export type NavLinkKey = keyof NavMessages;
 
-/** Primary site nav (excludes `primary`, `bookCall`, menu toggles, etc.) */
+/** Primary site nav (excludes `primary`, menu toggles, etc.) */
 export type NavPrimaryLinkKey = Extract<
   NavLinkKey,
   | "work"

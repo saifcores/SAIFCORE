@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import { BookCallLink } from "./BookCallLink";
+import { Link } from "@/i18n/navigation";
 import { MotionReveal } from "@/components/portfolio/motion/MotionReveal";
 
 type Step = { title: string; body: string };
@@ -60,10 +60,13 @@ export function WorkProcess({ title, subtitle, cta, steps }: Props) {
 
         <MotionReveal delay={280}>
           <div className="mt-10 flex justify-center">
-            <BookCallLink className="inline-flex min-h-11 items-center justify-center gap-2 text-sm font-medium text-[var(--text-primary)] underline decoration-[var(--border-subtle)] underline-offset-4 transition hover:decoration-[var(--border-hover)]">
+            <Link
+              href="/contact"
+              className="inline-flex min-h-11 items-center justify-center gap-2 text-sm font-medium text-[var(--text-primary)] underline decoration-[var(--border-subtle)] underline-offset-4 transition hover:decoration-[var(--border-hover)]"
+            >
               {cta}
               <ArrowUpRight className="h-4 w-4" aria-hidden />
-            </BookCallLink>
+            </Link>
           </div>
         </MotionReveal>
       </div>

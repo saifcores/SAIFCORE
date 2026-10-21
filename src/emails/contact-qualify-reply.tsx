@@ -1,6 +1,5 @@
 import {
   Body,
-  Button,
   Container,
   Head,
   Heading,
@@ -8,14 +7,12 @@ import {
   Html,
   Link,
   Preview,
-  Section,
   Text,
 } from "react-email";
 
 export type ContactQualifyReplyEmailProps = {
   name: string;
   locale: "en" | "fr";
-  calendlyUrl: string | null;
   linkedinUrl: string | null;
   siteUrl: string;
 };
@@ -63,16 +60,6 @@ const styles = {
     lineHeight: "1.75",
     margin: "0 0 18px",
   },
-  button: {
-    backgroundColor: "#1d4ed8",
-    borderRadius: "8px",
-    color: "#ffffff",
-    display: "inline-block",
-    fontSize: "14px",
-    fontWeight: "600" as const,
-    padding: "12px 20px",
-    textDecoration: "none",
-  },
   hr: {
     borderColor: "#e5e7eb",
     borderTop: "1px solid #e5e7eb",
@@ -107,8 +94,7 @@ const copy = {
     q3: "Current stack and constraints (security, compliance, scale)?",
     q4: "Engagement model: fixed scope, day rate, or team embed?",
     closer:
-      "From there I can recommend either a 30-min discovery call or the right way to work together.",
-    cta: "Book a discovery call",
+      "From there I can recommend the right next step.",
     regards: "Best regards,",
   },
   fr: {
@@ -121,8 +107,7 @@ const copy = {
     q3: "Stack actuelle et contraintes (sécu, compliance, volumes) ?",
     q4: "Cadre : forfait, TJM, ou embed dans l’équipe ?",
     closer:
-      "Sur cette base, je vous propose soit un appel de 30 min, soit un mode de collaboration adapté.",
-    cta: "Réserver un appel discovery",
+      "Sur cette base, je vous propose le prochain pas adapté.",
     regards: "Bien cordialement,",
   },
 } as const;
@@ -131,7 +116,6 @@ const copy = {
 export function ContactQualifyReplyEmail({
   name,
   locale,
-  calendlyUrl,
   linkedinUrl,
   siteUrl,
 }: ContactQualifyReplyEmailProps) {
@@ -161,14 +145,6 @@ export function ContactQualifyReplyEmail({
           </Text>
 
           <Text style={styles.text}>{t.closer}</Text>
-
-          {calendlyUrl ? (
-            <Section style={{ marginBottom: "18px" }}>
-              <Button href={calendlyUrl} style={styles.button}>
-                {t.cta}
-              </Button>
-            </Section>
-          ) : null}
 
           <Hr style={styles.hr} />
 

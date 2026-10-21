@@ -34,24 +34,6 @@ export function getGithubUrl(): string | null {
   return u && /^https?:\/\//i.test(u) ? u : null;
 }
 
-/**
- * Calendly scheduling URL (event or user page).
- * Set `NEXT_PUBLIC_CALENDLY_URL` (e.g. https://calendly.com/your-handle/30min).
- */
-export function getCalendlyUrl(): string | null {
-  const u = process.env.NEXT_PUBLIC_CALENDLY_URL?.trim();
-  if (!u) return null;
-  try {
-    const parsed = new URL(u);
-    if (parsed.protocol !== "https:") return null;
-    const host = parsed.hostname.replace(/^www\./, "");
-    if (host !== "calendly.com") return null;
-    return u.replace(/\/$/, "");
-  } catch {
-    return null;
-  }
-}
-
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 /** Public contact email (mailto, footer, Resend To). Set `NEXT_PUBLIC_CONTACT_EMAIL`. */

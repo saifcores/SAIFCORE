@@ -20,10 +20,7 @@ export async function OffersHome() {
       <div className="page-container">
         <Reveal>
           <p className="site-kicker mb-3">{t("label")}</p>
-          <h2
-            id="offers-heading"
-            className="section-heading mb-3 max-w-[22ch]"
-          >
+          <h2 id="offers-heading" className="section-heading mb-3 max-w-[22ch]">
             {t("title")}
           </h2>
           <p className="mb-6 max-w-[62ch] text-[15px] text-[var(--text-muted)]">
@@ -62,7 +59,6 @@ export async function OffersHome() {
             </Reveal>
           ))}
         </div>
-        <p className="mt-4 text-[13px] text-[var(--text-muted)]">{t("note")}</p>
       </div>
     </section>
   );

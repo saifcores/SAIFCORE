@@ -1,11 +1,9 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { getCalendlyUrl } from "@/site";
 import { Reveal } from "./Reveal";
 
 export async function HomeContact() {
   const t = await getTranslations("homeContact");
-  const calendlyUrl = getCalendlyUrl();
 
   return (
     <section
@@ -39,16 +37,6 @@ export async function HomeContact() {
                 >
                   {t("sendBrief")}
                 </Link>
-                {calendlyUrl ? (
-                  <a
-                    href={calendlyUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-outline inline-flex min-h-12 items-center justify-center px-5 text-[15px] font-medium"
-                  >
-                    {t("bookCall")}
-                  </a>
-                ) : null}
               </div>
             </div>
           </div>

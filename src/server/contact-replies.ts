@@ -7,7 +7,7 @@
  *   const { subject, body } = buildReply("qualify", { name: "Alex", locale: "fr" });
  */
 
-import { getCalendlyUrl, getLinkedinUrl, getSiteUrl } from "@/site";
+import { getLinkedinUrl, getSiteUrl } from "@/site";
 
 export type ReplyLocale = "en" | "fr";
 export type ReplyKind =
@@ -40,14 +40,6 @@ SAIFCORE
 ${site}${linkedin ? `\n${linkedin}` : ""}`;
 }
 
-function calendlyLine(locale: ReplyLocale): string {
-  const url = getCalendlyUrl();
-  if (!url) return "";
-  return locale === "fr"
-    ? `\nCréneau discovery (30 min) : ${url}\n`
-    : `\nDiscovery slot (30 min): ${url}\n`;
-}
-
 function firstName(name: string): string {
   const part = name.trim().split(/\s+/)[0];
   return part || name.trim();
@@ -55,7 +47,6 @@ function firstName(name: string): string {
 
 function qualify(input: ReplyInput): ReplyDraft {
   const n = firstName(input.name);
-  const cal = calendlyLine(input.locale);
 
   if (input.locale === "fr") {
     return {
@@ -69,8 +60,8 @@ Merci pour votre brief. Pour le cadrer rapidement et vous proposer le bon procha
 3) Stack actuelle et contraintes (sécu, compliance, volumes) ?
 4) Équipe, localisation et date de démarrage visée ?
 
-Sur cette base, je vous propose soit un appel de 30 min, soit une prochaine étape sur le poste.
-${cal}
+Sur cette base, je vous propose une prochaine étape sur le poste.
+
 ${signoff("fr")}`,
     };
   }
@@ -86,47 +77,35 @@ Thanks for the brief. To scope this quickly and suggest the right next step:
 3) Current stack and constraints (security, compliance, scale)?
 4) Team, location, and target start date?
 
-From there I can recommend a 30-min call or a next step on the role.
-${cal}
+From there I can recommend a next step on the role.
+
 ${signoff("en")}`,
   };
 }
 
 function bookCall(input: ReplyInput): ReplyDraft {
   const n = firstName(input.name);
-  const url = getCalendlyUrl();
-  const cal =
-    url ??
-    (input.locale === "fr"
-      ? "(lien Calendly à ajouter)"
-      : "(add Calendly link)");
 
   if (input.locale === "fr") {
     return {
-      subject: `SAIFCORE — proposons un appel discovery, ${n}`,
+      subject: `SAIFCORE — prochaine étape, ${n}`,
       body: `Bonjour ${n},
 
 Merci — le brief est clair et le fit semble bon pour une collaboration SAIFCORE.
 
-Proposons un appel discovery de 30 min pour aligner objectifs, contraintes et prochain livrable :
-${cal}
-
-En amont, si utile : stack, environnement (prod / réglementé), et fenêtre de démarrage souhaitée.
+Répondez à ce message avec le contexte utile : stack, environnement (prod / réglementé), et fenêtre de démarrage souhaitée. Je reviens avec la prochaine étape.
 
 ${signoff("fr")}`,
     };
   }
 
   return {
-    subject: `SAIFCORE — let’s book a discovery call, ${n}`,
+    subject: `SAIFCORE — next step, ${n}`,
     body: `Hi ${n},
 
 Thanks — the brief is clear and this looks like a strong fit for a SAIFCORE engagement.
 
-Let’s book a 30-min discovery call to align on outcomes, constraints, and the first deliverable:
-${cal}
-
-Beforehand, if helpful: stack, environment (prod / regulated), and preferred start window.
+Reply to this message with anything useful: stack, environment (prod / regulated), and preferred start window. I’ll come back with the next step.
 
 ${signoff("en")}`,
   };
@@ -134,7 +113,6 @@ ${signoff("en")}`,
 
 function packageReply(input: ReplyInput): ReplyDraft {
   const n = firstName(input.name);
-  const cal = calendlyLine(input.locale);
 
   if (input.locale === "fr") {
     return {
@@ -144,8 +122,8 @@ function packageReply(input: ReplyInput): ReplyDraft {
 Merci pour le contexte.
 
 Disponible à partir de février 2027. En attendant, je réponds aux discussions recrutement.
-${cal}
-Dites-moi le rôle, l’équipe et le calendrier, ou on en parle en appel.
+
+Dites-moi le rôle, l’équipe et le calendrier.
 
 ${signoff("fr")}`,
     };
@@ -158,8 +136,8 @@ ${signoff("fr")}`,
 Thanks for the context.
 
 Available from February 2027. Until then, I reply to hiring conversations.
-${cal}
-Tell me about the role, team, and timeline, or we can talk it through on a call.
+
+Tell me about the role, team, and timeline.
 
 ${signoff("en")}`,
   };
@@ -270,8 +248,8 @@ export const REPLY_KINDS: {
   },
   {
     kind: "bookCall",
-    labelFr: "Fit clair — proposer un appel",
-    labelEn: "Clear fit — propose a call",
+    labelFr: "Fit clair — prochaine étape",
+    labelEn: "Clear fit — next step",
   },
   {
     kind: "package",

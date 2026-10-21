@@ -68,22 +68,12 @@ export async function About() {
           <p className="text-pretty text-lg text-[var(--text-muted)]">
             {t("p3")}
           </p>
-          <div className="grid gap-4 rounded-xl border border-[var(--border-subtle)] p-5 sm:grid-cols-2">
-            <div>
-              <div className="mb-1 font-semibold text-[var(--text-primary)]">
-                {tSpec("saifcoreTitle")}
-              </div>
-              <div className="text-sm text-[var(--text-muted)]">
-                {tSpec("saifcoreBody")}
-              </div>
+          <div className="rounded-xl border border-[var(--border-subtle)] p-5">
+            <div className="mb-1 font-semibold text-[var(--text-primary)]">
+              {tSpec("saifcoreTitle")}
             </div>
-            <div>
-              <div className="mb-1 font-semibold text-[var(--text-primary)]">
-                {tSpec("manarixTitle")}
-              </div>
-              <div className="text-sm text-[var(--text-muted)]">
-                {tSpec("manarixBody")}
-              </div>
+            <div className="text-sm text-[var(--text-muted)]">
+              {tSpec("saifcoreBody")}
             </div>
           </div>
           <div className="flex flex-wrap gap-3">

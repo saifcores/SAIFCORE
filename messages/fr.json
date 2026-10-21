@@ -48,7 +48,6 @@
     "backToTop": "Retour en haut"
   },
   "actionBar": {
-    "bookCall": "Appel",
     "sprint": "Articles",
     "contact": "Contact",
     "packages": "Profil",
@@ -75,7 +74,6 @@
     "resume": "CV ↓",
     "sprint": "Sprint architecture",
     "linkedin": "LinkedIn",
-    "bookCall": "Réserver un appel",
     "github": "GitHub",
     "openMenu": "Ouvrir le menu",
     "closeMenu": "Fermer le menu",
@@ -122,7 +120,7 @@
     "clientLinkProcess": "Comment je travaille",
     "clientLinkContact": "Contact",
     "clientCta": "Envoyer un brief",
-    "clientSecondaryCta": "Réserver un appel",
+    "clientSecondaryCta": "Envoyer un brief",
     "items": [
       {
         "who": "Recruteur",
@@ -320,7 +318,6 @@
     "title": "Un ingénieur nommé, un périmètre écrit, un devis ferme.",
     "subtitle": "Fourchettes indicatives en EUR, remote depuis Dakar. Le sprint architecture est le premier pas habituel.",
     "cta": "Parler de cette offre",
-    "note": "Équipe complète, services d’ingénierie ou transformation digitale : c’est le rôle de Manarix Solutions, une entité distincte de SAIFCORE.",
     "items": [
       {
         "duration": "1–2 semaines",
@@ -351,8 +348,7 @@
   "homeContact": {
     "title": "Parlez-moi du travail.",
     "subtitle": "Réponse sous deux jours ouvrés, avec des questions ou une proposition écrite.",
-    "sendBrief": "Envoyer un brief",
-    "bookCall": "Réserver 30 min ↗"
+    "sendBrief": "Envoyer un brief"
   },
   "labPage": {
     "metaTitle": "Architecture Lab | Designs de référence & ADRs | SAIFCORE",
@@ -436,12 +432,10 @@
   },
   "contactPage": {
     "metaTitle": "Contact | Envoyer un brief | SAIFCORE",
-    "metaDescription": "Réponse sous deux jours ouvrés. Recrutement : un appel. Projet : un périmètre, des jalons et un devis EUR ferme.",
+    "metaDescription": "Réponse sous deux jours ouvrés. Recrutement : un brief de poste. Projet : un périmètre, des jalons et un devis EUR ferme.",
     "label": "Contact",
     "title": "Parlez-moi du travail.",
-    "subtitle": "Réponse sous deux jours ouvrés. Recrutement : un appel. Projet : un périmètre, des jalons et un devis EUR ferme.",
-    "bookCall": "Réserver un appel de 30 min",
-    "bookCallHint": "Calendly ↗",
+    "subtitle": "Réponse sous deux jours ouvrés. Recrutement : un brief de poste. Projet : un périmètre, des jalons et un devis EUR ferme.",
     "email": "Email direct",
     "emailHint": "mailto",
     "linkedin": "LinkedIn",
@@ -460,9 +454,7 @@
     "languages": "langues",
     "languagesValue": "Français · English",
     "saifcoreTitle": "SAIFCORE",
-    "saifcoreBody": "Ma marque professionnelle personnelle : mon travail, mes écrits, mes engagements individuels.",
-    "manarixTitle": "Manarix Solutions",
-    "manarixBody": "Entité distincte pour le conseil, les services d’ingénierie et la transformation digitale."
+    "saifcoreBody": "Ma marque professionnelle personnelle : mon travail, mes écrits, mes engagements individuels."
   },
   "trustedExpertise": {
     "title": "Compétences clés",
@@ -724,7 +716,7 @@
       },
       {
         "question": "Comment démarrer si je recrute ?",
-        "answer": "Ouvrez Expérience sur cette page (Synapse → Bank of Africa d’abord), téléchargez le CV, puis envoyez un brief ou réservez un appel. Je réponds sous deux jours ouvrés."
+        "answer": "Ouvrez Expérience sur cette page (Synapse → Bank of Africa d’abord), téléchargez le CV, puis envoyez un brief. Je réponds sous deux jours ouvrés."
       }
     ]
   },
@@ -830,7 +822,7 @@
   "workProcess": {
     "title": "Comment la livraison se déroule",
     "subtitle": "Étapes claires, progrès visible, livraison que votre équipe peut opérer.",
-    "cta": "Réserver un appel de 30 minutes",
+    "cta": "Envoyer un brief",
     "steps": [
       {
         "title": "Discovery",
@@ -878,8 +870,8 @@
     "ctaTitle": "Commencer par le sprint architecture",
     "ctaSubtitle": "Recrutement : Expérience sur cette page, puis le CV. Un projet : le sprint, puis une proposition écrite.",
     "ctaPrimary": "Commencer par le sprint",
-    "ctaSecondary": "Réserver un appel",
-    "slaLine": "Je réponds sous deux jours ouvrés — ou réservez un appel de 30 minutes."
+    "ctaSecondary": "Envoyer un brief",
+    "slaLine": "Je réponds sous deux jours ouvrés."
   },
   "bankingLeadership": {
     "eyebrow": "Leadership technique",
@@ -1963,9 +1955,8 @@
     "processTitle": "Comment ça démarre",
     "processStep1": "Lisez l’expérience et le CV — Bank of Africa via Synapse en tête.",
     "processStep2": "Envoyez un brief de poste : équipe, stack, localisation, calendrier.",
-    "processStep3": "Je réponds sous deux jours ouvrés. Un appel de 30 minutes si le fit est là.",
+    "processStep3": "Je réponds sous deux jours ouvrés avec une prochaine étape claire.",
     "responseHint": "Réponse attendue sous deux jours ouvrables.",
-    "bookCall": "Réserver un appel discovery",
     "startProject": "Email direct",
     "emailSubject": "[SAIFCORE Lead] Demande de collaboration",
     "seePackages": "Voir les modes de collaboration",
@@ -1986,14 +1977,12 @@
     "formSubmit": "Envoyer",
     "formSending": "Envoi…",
     "formSuccess": "Brief reçu — vérifiez votre boîte mail pour la confirmation.",
-    "formSuccessHint": "Je réponds sous deux jours ouvrables avec des questions ciblées ou un prochain pas concret. Préférez échanger plus tôt ? Réservez un appel discovery.",
+    "formSuccessHint": "Je réponds sous deux jours ouvrables avec des questions ciblées ou un prochain pas concret.",
     "formSendAnother": "Envoyer un autre brief",
-    "formError": "Impossible d'envoyer le message. Réessayez, ou réservez un appel / contactez-moi sur LinkedIn.",
-    "formNote": "Vous recevez une confirmation dans cette langue. Réponse sous deux jours ouvrables — ou réservez un appel.",
-    "formUnavailable": "Formulaire temporairement indisponible — réservez un appel ou contactez-moi sur LinkedIn.",
-    "socialTitle": "Restons en contact",
-    "calendlyHint": "Appel discovery gratuit de 30 minutes — choisissez un créneau",
-    "calendlyFallbackHint": "Utilisez le formulaire, ou connectez-vous sur LinkedIn"
+    "formError": "Impossible d'envoyer le message. Réessayez, ou contactez-moi sur LinkedIn.",
+    "formNote": "Vous recevez une confirmation dans cette langue. Réponse sous deux jours ouvrables.",
+    "formUnavailable": "Formulaire temporairement indisponible — contactez-moi sur LinkedIn.",
+    "socialTitle": "Restons en contact"
   },
   "licensePage": {
     "metaTitle": "Licence",

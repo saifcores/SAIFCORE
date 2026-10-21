@@ -2,14 +2,8 @@
 
 import { useId, useState } from "react";
 import { useLocale } from "next-intl";
-import { BookCallLink } from "@/components/portfolio/BookCallLink";
 import { isContactIntent } from "@/contact-intent";
-import {
-  getCalendlyUrl,
-  getContactMailto,
-  getGithubUrl,
-  getLinkedinUrl,
-} from "@/site";
+import { getContactMailto, getGithubUrl, getLinkedinUrl } from "@/site";
 
 type Props = {
   subject: string;
@@ -34,9 +28,6 @@ type Props = {
   formError: string;
   formNote: string;
   formUnavailable: string;
-  bookCall: string;
-  calendlyHint: string;
-  calendlyFallbackHint: string;
   socialTitle: string;
   linkedinLabel: string;
   githubLabel: string;
@@ -70,9 +61,6 @@ export function ContactForm({
   formError,
   formNote,
   formUnavailable,
-  bookCall,
-  calendlyHint,
-  calendlyFallbackHint,
   socialTitle,
   linkedinLabel,
   githubLabel,
@@ -162,10 +150,6 @@ export function ContactForm({
   const directMail = getContactMailto(mailtoSubject);
   const linkedinUrl = getLinkedinUrl();
   const githubUrl = getGithubUrl();
-  const hasCalendly = getCalendlyUrl() != null;
-  const bookCallClass = formEnabled
-    ? "btn-outline inline-flex min-h-12 w-full items-center justify-center rounded-xl px-4 text-sm font-semibold sm:px-6"
-    : `${hasCalendly ? "btn-primary" : "btn-outline"} inline-flex min-h-12 w-full items-center justify-center rounded-xl px-4 text-sm font-semibold sm:px-6`;
 
   const statusMessage =
     status === "error" ? formError : formEnabled ? formNote : formUnavailable;
@@ -194,11 +178,6 @@ export function ContactForm({
             {formSuccessHint}
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-            {hasCalendly ? (
-              <BookCallLink className="btn-primary inline-flex min-h-12 items-center justify-center px-6 text-sm">
-                {bookCall}
-              </BookCallLink>
-            ) : null}
             <button
               type="button"
               onClick={resetForm}
@@ -384,20 +363,13 @@ export function ContactForm({
         </form>
       )}
 
-      {showAside ? (
-        <aside className="grid gap-4 min-[480px]:grid-cols-2 md:flex md:flex-col md:gap-6">
+      {showAside && (linkedinUrl || githubUrl || directMail) ? (
+        <aside>
           <div className="surface-panel rounded-[16px] p-5 sm:p-6">
-            <BookCallLink className={bookCallClass}>{bookCall}</BookCallLink>
-            <p className="mt-3 text-center text-xs leading-relaxed text-[var(--text-muted)]">
-              {hasCalendly ? calendlyHint : calendlyFallbackHint}
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--text-muted)]">
+              {socialTitle}
             </p>
-          </div>
-          {linkedinUrl || githubUrl || directMail ? (
-            <div className="surface-panel rounded-[16px] p-5 sm:p-6 min-[480px]:col-span-2 md:col-span-1">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--text-muted)]">
-                {socialTitle}
-              </p>
-              <ul className="mt-4 space-y-1">
+            <ul className="mt-4 space-y-1">
                 {linkedinUrl ? (
                   <li>
                     <a
@@ -432,9 +404,8 @@ export function ContactForm({
                     </a>
                   </li>
                 ) : null}
-              </ul>
-            </div>
-          ) : null}
+            </ul>
+          </div>
         </aside>
       ) : null}
     </div>

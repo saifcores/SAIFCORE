@@ -5,7 +5,6 @@ import {
   getResumeUrl,
   isLocalResume,
 } from "@/server/resume";
-import { BookCallLink } from "./BookCallLink";
 import { Reveal } from "./Reveal";
 
 type Props = {
@@ -57,9 +56,12 @@ export async function MidPageCta({ namespace }: Props) {
                   {t("midCtaPrimary")}
                 </Link>
               ) : (
-                <BookCallLink className="btn-primary inline-flex min-h-11 items-center justify-center px-5 text-sm">
-                  {tNav("bookCall")}
-                </BookCallLink>
+                <Link
+                  href="/contact"
+                  className="btn-primary inline-flex min-h-11 items-center justify-center px-5 text-sm"
+                >
+                  {tNav("contact")}
+                </Link>
               )}
               <Link
                 href="/collaborate"

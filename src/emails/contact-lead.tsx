@@ -19,7 +19,6 @@ export type ContactLeadEmailProps = {
   subject: string;
   message: string;
   locale: "en" | "fr";
-  calendlyUrl: string | null;
   siteUrl: string;
 };
 
@@ -119,7 +118,6 @@ export function ContactLeadEmail({
   subject,
   message,
   locale,
-  calendlyUrl,
   siteUrl,
 }: ContactLeadEmailProps) {
   const companyLabel = company || "—";
@@ -190,14 +188,6 @@ export function ContactLeadEmail({
               1. Reply ce thread
               <br />
               2. Si fit clair → discovery
-              {calendlyUrl ? (
-                <>
-                  <br />
-                  <Link href={calendlyUrl} style={styles.link}>
-                    {calendlyUrl}
-                  </Link>
-                </>
-              ) : null}
               <br />
               3. Sinon → 3–5 questions ciblées + mode de collaboration
             </Text>

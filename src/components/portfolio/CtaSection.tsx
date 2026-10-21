@@ -91,9 +91,6 @@ export async function CtaSection() {
                   formError={t("formError")}
                   formNote={t("formNote")}
                   formUnavailable={t("formUnavailable")}
-                  bookCall={t("bookCall")}
-                  calendlyHint={t("calendlyHint")}
-                  calendlyFallbackHint={t("calendlyFallbackHint")}
                   socialTitle={t("socialTitle")}
                   linkedinLabel={tFooter("linkedin")}
                   githubLabel={tFooter("github")}
