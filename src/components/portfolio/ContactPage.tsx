@@ -1,10 +1,6 @@
 import { getLocale, getTranslations } from "next-intl/server";
 import { ContactForm } from "@/components/portfolio/ContactForm";
-import {
-  getContactMailto,
-  getGithubUrl,
-  getLinkedinUrl,
-} from "@/site";
+import { getContactMailto, getGithubUrl, getLinkedinUrl } from "@/site";
 import {
   getResumeDownloadFilename,
   getResumeUrl,
@@ -18,7 +14,6 @@ type Props = {
 
 export async function ContactPage({ initialIntent = "" }: Props) {
   const t = await getTranslations("contactPage");
-  const tHero = await getTranslations("hero");
   const tCta = await getTranslations("cta");
   const tFooter = await getTranslations("footer");
   const locale = await getLocale();
@@ -53,13 +48,6 @@ export async function ContactPage({ initialIntent = "" }: Props) {
           </h1>
           <p className="max-w-[44ch] text-lg text-[var(--text-muted)]">
             {t("subtitle")}
-          </p>
-          <p className="inline-flex w-fit items-center gap-2 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/70 px-3 py-1.5 font-mono text-xs text-[var(--text-muted)]">
-            <span
-              aria-hidden
-              className="h-1.5 w-1.5 rounded-full bg-[var(--text-muted)]"
-            />
-            {tHero("availability")}
           </p>
           <div className="flex flex-col border-t border-[var(--border-subtle)]">
             {links.map((link) => {

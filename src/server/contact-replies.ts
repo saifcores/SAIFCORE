@@ -121,8 +121,6 @@ function packageReply(input: ReplyInput): ReplyDraft {
 
 Merci pour le contexte.
 
-Disponible à partir de février 2027. En attendant, je réponds aux discussions recrutement.
-
 Dites-moi le rôle, l’équipe et le calendrier.
 
 ${signoff("fr")}`,
@@ -130,12 +128,10 @@ ${signoff("fr")}`,
   }
 
   return {
-      subject: `SAIFCORE — your message, ${n}`,
-      body: `Hi ${n},
+    subject: `SAIFCORE — your message, ${n}`,
+    body: `Hi ${n},
 
 Thanks for the context.
-
-Available from February 2027. Until then, I reply to hiring conversations.
 
 Tell me about the role, team, and timeline.
 

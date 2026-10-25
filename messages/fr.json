@@ -1,19 +1,19 @@
 {
   "meta": {
     "title": "Ingénieur Backend Senior | Java · Systèmes distribués · Architecture | SAIFCORE",
-    "description": "Ingénieur Backend Senior — Java, Spring Boot, systèmes de paiement. Plateformes Bank of Africa via Synapse, mobile money, Ecom 360 en production. Dakar · remote · disponible à partir de février 2027.",
+    "description": "Ingénieur Backend Senior — Java, Spring Boot, paiements et PSP. Plateformes Bank of Africa via Synapse, mobile money, Ecom 360 en production. Dakar · remote.",
     "ogTitle": "Des systèmes financiers et d'entreprise fiables",
-    "ogDescription": "Des backends de production qui restent corrects sous charge. Ingénieur Backend Senior — Java, Spring Boot, systèmes distribués, infrastructure de paiement. Dakar · remote mondial.",
-    "twitterDescription": "Ingénieur Backend Senior · Java · Spring Boot · systèmes distribués · infrastructure de paiement. Des backends de production qui restent corrects sous charge. Dakar · remote mondial.",
+    "ogDescription": "Des backends de production qui restent corrects sous charge. Ingénieur Backend Senior — Java, Spring Boot, paiements et corridors PSP. Dakar · remote mondial.",
+    "twitterDescription": "Ingénieur Backend Senior · Java · Spring Boot · paiements · corridors PSP. Des backends de production qui restent corrects sous charge. Dakar · remote mondial.",
     "jsonLdJobTitle": "Ingénieur Backend Senior",
-    "jsonLdDescription": "Ingénieur Backend Senior — Java, Spring Boot, systèmes de paiement. Conçoit des services qui restent justes sous retries, callbacks et charge. Preuve : plateformes du Groupe Bank of Africa (via Synapse), intégrations mobile money, Ecom 360 en production. Dakar · disponible à partir de février 2027.",
+    "jsonLdDescription": "Ingénieur Backend Senior — Java, Spring Boot, systèmes de paiement et corridors PSP. Conçoit des services qui restent justes sous retries, callbacks et charge. Preuve : plateformes du Groupe Bank of Africa (via Synapse), intégrations mobile money, Ecom 360 en production. Dakar · remote mondial.",
     "jsonLdServiceName": "Ingénierie backend & architecture logicielle",
-    "jsonLdServiceDescription": "Systèmes backend, APIs, architectures distribuées et logiciels pour produits, plateformes et enterprise — dont infrastructure de paiement et intégrations bancaires régulées quand le problème l'exige.",
-    "jsonLdAvailability": "Disponible à partir de février 2027 · Remote mondial",
+    "jsonLdServiceDescription": "Systèmes backend, APIs, architectures distribuées et logiciels pour produits, plateformes et enterprise — dont infrastructure de paiement, corridors PSP et intégrations bancaires régulées quand le problème l'exige.",
+    "jsonLdAvailability": "Remote mondial",
     "jsonLdAreaServed": "Sénégal, Afrique de l'Ouest, Monde entier",
-    "keywords": "ingénieur backend senior, Java, Spring Boot, NestJS, PostgreSQL, Kubernetes, OAuth2, MongoDB, systèmes distribués, APIs, architecture logicielle, plateformes enterprise, backend SaaS, backend bancaire, systèmes de paiement, fintech, mobile money, Bank of Africa, Sénégal, Dakar, ingénieur remote, SAIFCORE",
+    "keywords": "ingénieur backend senior, Java, Spring Boot, NestJS, PostgreSQL, Kubernetes, OAuth2, MongoDB, systèmes distribués, APIs, architecture logicielle, plateformes enterprise, backend SaaS, backend bancaire, systèmes de paiement, fintech, PSP, mobile money, ledger, IA appliquée, Bank of Africa, Sénégal, Dakar, ingénieur remote, SAIFCORE",
     "manifestName": "SAIFCORE — Ingénieur Backend Senior",
-    "manifestDescription": "Portfolio — ingénierie backend, systèmes distribués, APIs et architecture logicielle pour produits, plateformes, enterprise, banque et FinTech.",
+    "manifestDescription": "Portfolio — ingénierie backend, systèmes distribués, APIs, paiements et PSP pour produits, plateformes, enterprise, banque et FinTech.",
     "knowsAbout": [
       "Java",
       "Spring Boot",
@@ -34,7 +34,11 @@
       "Apache Kafka",
       "Microservices",
       "AWS",
-      "Mobile money"
+      "Mobile money",
+      "PSP",
+      "Ledger en partie double",
+      "Réconciliation de paiement",
+      "IA appliquée aux opérations de paiement"
     ],
     "langFrench": "Français",
     "langEnglish": "Anglais"
@@ -113,7 +117,7 @@
     "recruiterCta": "Voir l’expérience",
     "recruiterSecondaryCta": "Voir l'expérience",
     "clientTitle": "Projet & collaboration",
-    "clientDescription": "Une étude de cas, puis le CV. Disponible à partir de février 2027.",
+    "clientDescription": "Une étude de cas, puis le CV.",
     "clientLinkServices": "Projets",
     "clientLinkOffers": "Modes de collaboration",
     "clientLinkStart": "Comment ça démarre",
@@ -121,42 +125,52 @@
     "clientLinkContact": "Contact",
     "clientCta": "Envoyer un brief",
     "clientSecondaryCta": "Envoyer un brief",
+    "previewNote": "Le recrutement et la profondeur d’architecture sont plus bas. Les modes de collaboration sont juste au-dessus.",
+    "showAll": "Afficher toutes les sections",
+    "showOne": "N’afficher qu’un parcours",
     "items": [
       {
         "who": "Recruteur",
         "title": "Vérifier le parcours",
-        "path": "Expérience → CV → LinkedIn",
+        "path": "Expérience → stack → CV",
         "cta": "Voir l’expérience",
         "href": "/experience"
       },
       {
         "who": "Lead technique / CTO",
         "title": "Juger la profondeur",
-        "path": "Études de cas → Lab → écrits",
+        "path": "Études de cas → paiements & PSP → lab",
         "cta": "Lire une étude de cas",
         "href": "/systems"
       },
       {
         "who": "Fondateur / client",
         "title": "Démarrer un projet",
-        "path": "Sprint architecture → proposition écrite",
-        "cta": "Envoyer un brief",
+        "path": "Modes de collaboration → brief écrit",
+        "cta": "Voir comment une collaboration démarre",
         "href": "/contact"
       }
     ]
   },
   "hero": {
-    "badge": "Dakar · Remote",
+    "badge": "Disponible pour de nouveaux engagements",
     "identityName": "Saïfoulaye Diallo",
     "identityRole": "Ingénieur Backend Senior",
     "statusLine": "Saïfoulaye Diallo · Ingénieur Backend Senior · Dakar · remote",
-    "title": "Je conçois des systèmes backend fiables pour des produits complexes.",
-    "subtitle": "Je transforme des besoins métier complexes en APIs, intégrations et systèmes distribués qui restent justes — surtout les infrastructures financières.",
+    "title": "Je conçois des systèmes backend",
+    "titleAccent": "fiables",
+    "titleRest": "pour des produits complexes.",
+    "rail": "Backend · Paiements · PSP",
+    "hub": "SAIFCORE",
+    "scroll": "Défiler",
+    "orbit": ["Backend", "Paiements", "PSP", "APIs", "IA"],
+    "subtitle": "Les paiements échouent rarement sur le happy path. Ils échouent quand un callback arrive deux fois, qu’un fournisseur timeout en plein transfert, ou qu’une transaction reste bloquée entre deux états.",
     "proofLine": "Plateformes du Groupe Bank of Africa (via Synapse) · Intégrations Wave, Orange Money, Free Money · Ecom 360 en production.",
+    "availability": "Un travail cadré commence par un brief écrit. Je réponds sous deux jours ouvrés : adéquation et date de démarrage. Le poste actuel chez Synapse, pour Bank of Africa, est à temps plein et sur site. Appels en français ; anglais à l’écrit.",
+    "ctaProject": "Envoyer un brief de projet",
     "ctaPrimary": "Explorer mes réalisations",
     "ctaSecondary": "Écrits",
     "ctaResume": "Télécharger mon CV",
-    "availability": "Disponible à partir de février 2027",
     "flowLabel": "flux de paiement typique",
     "flowCaption": "Schéma illustratif, pas un système client.",
     "portraitAlt": "Portrait de Saïfoulaye Diallo",
@@ -171,13 +185,19 @@
   "proofs": {
     "label": "Faits vérifiables",
     "items": [
-      { "value": "4+ ans", "label": "Backends en production" },
+      { "value": "11+", "label": "Filiales Bank of Africa, via Synapse" },
       {
-        "value": "11+ filiales",
-        "label": "Groupe Bank of Africa, via Synapse"
+        "value": "Wave · Orange Money",
+        "label": "Free Money aussi, en production"
       },
-      { "value": "Wave · OM · Free", "label": "Intégrations mobile money" },
-      { "value": "10+ commerces", "label": "Live sur Ecom 360 PME" }
+      {
+        "value": "Double callback",
+        "label": "Timeout en transfert, état bloqué"
+      },
+      {
+        "value": "Lab ouvert",
+        "label": "Pannes injectées, pas un système client"
+      }
     ]
   },
   "identity": {
@@ -192,7 +212,7 @@
       {
         "kicker": "Profondeur",
         "title": "Infrastructure financière et systèmes de paiement",
-        "body": "Intégrations bancaires, mobile money, fiabilité transactionnelle, et l'architecture qui les tient."
+        "body": "Intégrations bancaires, corridors PSP, mobile money, fiabilité transactionnelle, et l'architecture qui les tient."
       },
       {
         "kicker": "Direction",
@@ -213,7 +233,10 @@
   },
   "expertise": {
     "label": "Expertise",
-    "title": "Quatre domaines, une même exigence : que le système reste correct.",
+    "title": "Backend, paiements, PSP, IA. Une exigence : que le système reste correct.",
+    "lead": "Un ingénieur, six domaines. Cinq sont liés à des systèmes livrés ou publiés. L’IA appliquée reste une direction, avec une piste d’audit — pas un produit client.",
+    "proofBadge": "Preuve",
+    "directionBadge": "Direction",
     "viewAll": "Détail de l’expertise →",
     "problemsLabel": "Problèmes typiques",
     "stackLabel": "Stack en contexte",
@@ -236,7 +259,7 @@
       {
         "num": "02",
         "title": "Paiements & FinTech",
-        "short": "Mobile money, idempotence, settlement et ledger : là où un bug coûte de l’argent.",
+        "short": "Idempotence, settlement et ledger : là où un bug coûte de l’argent.",
         "long": "Flux de paiement où chaque état compte : accepté, confirmé, réglé. Idempotence, réconciliation et pistes d’audit.",
         "problems": [
           "Doubles paiements sur retries",
@@ -244,11 +267,25 @@
           "Écarts entre ledger et relevés"
         ],
         "stack": "Redis (idempotence) · Kafka (settlement) · ledger double-entry",
-        "evidence": "SDK Paiement Pan-Africain",
-        "caseId": "pan-african-payment-sdk"
+        "evidence": "Double-Entry Ledger Platform",
+        "caseId": "double-entry-ledger-platform"
       },
       {
         "num": "03",
+        "title": "PSP & corridors",
+        "short": "Wave, Orange Money, Free Money — un contrat, et un failover qui ne débite pas deux fois.",
+        "long": "Brancher un PSP, c’est traiter le timeout comme une incertitude : callbacks signés, fenêtres de replay, et un second provider seulement quand le premier est vraiment down. Preuve corridor sur la delivery FinTech ; le labo dual PSP couvre le failover.",
+        "problems": [
+          "Timeout PSP traité comme un échec",
+          "Failover qui capture deux fois",
+          "Webhooks rejoués sans contrôle"
+        ],
+        "stack": "Wave · Orange Money · Free Money · dual PSP",
+        "evidence": "SDK Mobile Money unifié (Sénégal)",
+        "caseId": "pan-african-payment-sdk"
+      },
+      {
+        "num": "04",
         "title": "Intégration d’APIs",
         "short": "Gateways, contrats versionnés et sécurité au bord pour partenaires et filiales.",
         "long": "Points d’entrée uniques vers des systèmes fragiles : authentification au bord, versionnement, contrats partenaires stables.",
@@ -262,7 +299,7 @@
         "caseId": "unified-api-gateway"
       },
       {
-        "num": "04",
+        "num": "05",
         "title": "Systèmes distribués & fiabilité",
         "short": "Outbox, machines à états, réconciliation et observabilité de bout en bout.",
         "long": "Concevoir pour la panne partielle : ce qui se passe quand un fournisseur timeout, qu’un consumer rejoue, qu’un service tombe.",
@@ -274,18 +311,33 @@
         "stack": "Kafka · outbox · OpenTelemetry · Prometheus/Grafana",
         "evidence": "Payment Platform Disaster Lab",
         "caseId": "payment-platform-disaster-lab"
+      },
+      {
+        "num": "06",
+        "title": "IA appliquée",
+        "short": "Investigation d’anomalies sur données contrôlées, avec piste d’audit. Une direction — pas un produit client livré.",
+        "long": "J’explore des opérations de paiement assistées par l’IA : expliquer un écart, garder la décision traçable, rester sur des données que je contrôle. Ce n’est pas une offre d’agent livrée en production.",
+        "problems": [
+          "Écarts de réconciliation sans explication",
+          "Investigations entièrement manuelles",
+          "Décisions d’ops impossibles à auditer"
+        ],
+        "stack": "Données contrôlées · piste d’audit · ops de paiement",
+        "evidence": "Labo d’architecture",
+        "caseId": "payment-platform-disaster-lab",
+        "evidenceHref": "/lab"
       }
     ]
   },
   "expertisePage": {
-    "metaTitle": "Expertise | Backend, paiements, APIs | SAIFCORE",
-    "metaDescription": "Les problèmes que je résous — ingénierie backend, paiements, intégration d’APIs et fiabilité — chacun relié à du travail réel.",
+    "metaTitle": "Expertise | Backend, paiements, PSP | SAIFCORE",
+    "metaDescription": "Les problèmes que je résous — backend, paiements, PSP, APIs et fiabilité — plus une direction IA assumée. Chacun relié à du travail réel.",
     "title": "Les problèmes que je résous, et la preuve derrière.",
-    "subtitle": "Chaque domaine relie un type de problème à du travail réel. Les technologies sont listées dans leur contexte d’usage, pas en badges.",
+    "subtitle": "Chaque domaine relie un type de problème à du travail réel. L’IA est une direction assumée, pas un produit livré. Les technologies sont listées dans leur contexte d’usage, pas en badges.",
     "backToHome": "Retour à l’accueil",
     "endCtaTitle": "Besoin de cette profondeur sur votre système ?",
     "endCtaSubtitle": "Partagez le problème et les contraintes — je réponds avec le fit et une prochaine étape claire.",
-    "endCtaButton": "Prendre contact"
+    "endCtaButton": "Envoyer un brief de projet"
   },
   "principles": {
     "label": "Approche",
@@ -316,46 +368,58 @@
   "offersHome": {
     "label": "Travailler avec moi",
     "title": "Un ingénieur nommé, un périmètre écrit, un devis ferme.",
-    "subtitle": "Fourchettes indicatives en EUR pour un démarrage en février 2027, remote depuis Dakar. Le sprint architecture est le premier pas habituel.",
+    "subtitle": "Pour une fintech, une banque ou une équipe produit avec un problème de backend, de paiement ou de PSP. Vous travaillez avec moi, pas avec un bench qui tourne. Remote depuis Dakar.",
+    "note": "Fourchettes indicatives, en EUR. Le code client confidentiel reste hors de ce site. La preuve publique est nommée au-dessus.",
+    "usual": "Premier pas habituel",
     "cta": "Parler de cette offre",
     "items": [
       {
         "duration": "1–2 semaines",
         "title": "Sprint architecture",
-        "description": "Problème, risques, architecture cible et plan phasé avant un build plus large.",
+        "description": "Problème, risques et architecture cible — backend, paiements ou PSP — avant un build plus large.",
+        "outcome": "Vous repartez avec une cible écrite et un go / no-go.",
         "price": "€2,5k–€4,5k"
       },
       {
         "duration": "1–3 semaines",
         "title": "Revue d’architecture",
-        "description": "Regard indépendant : constats classés, designs de référence, ADRs.",
+        "description": "Regard indépendant sur un backend, une API ou un corridor PSP : constats classés, designs de référence, ADRs.",
+        "outcome": "Des constats actionnables, par écrit, pour votre équipe.",
         "price": "€2,5k–€5k"
       },
       {
         "duration": "4–12 semaines",
         "title": "Build cadré",
-        "description": "APIs, workflows ou intégrations livrés jusqu’en production, tests et runbooks inclus.",
+        "description": "APIs, flux de paiement ou adaptateurs PSP livrés jusqu’en production, tests et runbooks inclus.",
+        "outcome": "En production, avec un runbook que votre équipe peut opérer.",
         "price": "€8k–€25k"
       },
       {
         "duration": "1–6 mois",
         "title": "Embed en contrat",
-        "description": "Ingénieur backend senior intégré à vos rituels et votre stack.",
+        "description": "Ingénieur backend senior dans vos rituels — y compris paiements et PSP.",
+        "outcome": "Un senior nommé, sur une fenêtre fixe.",
         "price": "€450–€600 / jour"
       }
     ]
   },
   "homeContact": {
-    "title": "Parlez-moi du travail.",
-    "subtitle": "Réponse sous deux jours ouvrés, avec des questions ou une proposition écrite.",
-    "sendBrief": "Envoyer un brief"
+    "title": "Envoyez le problème, pas un pitch.",
+    "subtitle": "Deux jours ouvrés. Je réponds avec l’adéquation et une date — ou je dis que ce n’est pas le bon cadre.",
+    "points": [
+      "Le système, et la panne qui compte",
+      "Contraintes : régulation, délai, qui l’opère ensuite",
+      "Sprint, revue, build, ou un embed"
+    ],
+    "sendBrief": "Envoyer un brief de projet",
+    "sendRoleBrief": "Envoyer un brief de poste"
   },
   "labPage": {
     "metaTitle": "Architecture Lab | Designs de référence & ADRs | SAIFCORE",
-    "metaDescription": "Designs de référence, décisions d’architecture et playbooks. Matériel illustratif et labs personnels — rien ici ne décrit un système client en production.",
+    "metaDescription": "Labs ouverts sur l’orchestration de paiements, le dual PSP et le ledger. Matériel illustratif — rien ici ne décrit un système client en production. L’IA appliquée est une direction, pas un produit livré.",
     "label": "Architecture Lab",
     "title": "Designs de référence, décisions d’architecture et playbooks.",
-    "subtitle": "Matériel illustratif et labs personnels. Rien ici ne décrit un système client en production.",
+    "subtitle": "Labs ouverts sur l’orchestration de paiements, le dual PSP et le ledger. Rien ici ne décrit un système client en production.",
     "all": "Tout",
     "viewAll": "Ouvrir le lab →",
     "filterLabel": "Catégories",
@@ -363,7 +427,7 @@
     "backToHome": "Retour à l’accueil",
     "endCtaTitle": "Vous voulez la pensée derrière les systèmes ?",
     "endCtaSubtitle": "Lisez une étude de cas, ou envoyez un brief si vous avez un problème de fiabilité ou d’architecture.",
-    "endCtaButton": "Prendre contact",
+    "endCtaButton": "Envoyer un brief de projet",
     "cats": [
       "System Design",
       "Payment Flows",
@@ -432,10 +496,10 @@
   },
   "contactPage": {
     "metaTitle": "Contact | Envoyer un brief | SAIFCORE",
-    "metaDescription": "Réponse sous deux jours ouvrés. Recrutement : un brief de poste. Projet : un périmètre, des jalons et un devis EUR ferme.",
+    "metaDescription": "Réponse sous deux jours ouvrés, avec une date de démarrage. Recrutement : un brief de poste. Projet : un périmètre, des jalons et un devis EUR ferme. Poste actuel : temps plein, sur site, chez Synapse.",
     "label": "Contact",
     "title": "Parlez-moi du travail.",
-    "subtitle": "Réponse sous deux jours ouvrés. Recrutement : un brief de poste. Projet : un périmètre, des jalons et un devis EUR ferme.",
+    "subtitle": "Réponse sous deux jours ouvrés, avec une date de démarrage. Recrutement : un brief de poste. Projet : périmètre, jalons et devis EUR ferme. Poste actuel : temps plein, sur site, chez Synapse.",
     "email": "Email direct",
     "emailHint": "mailto",
     "linkedin": "LinkedIn",
@@ -446,7 +510,7 @@
     "role": "rôle",
     "roleValue": "Ingénieur Backend Senior",
     "focus": "focus",
-    "focusValue": "Paiements · APIs · systèmes distribués",
+    "focusValue": "Paiements · PSP · APIs · systèmes distribués",
     "stack": "stack",
     "stackValue": "Java · Spring Boot · NestJS · Kafka",
     "location": "lieu",
@@ -692,11 +756,11 @@
     "items": [
       {
         "question": "Comment démarrent les engagements ?",
-        "answer": "Le recrutement commence par Expérience et le CV. Disponible à partir de février 2027."
+        "answer": "Le recrutement commence par Expérience, le CV et un brief de poste. Un projet commence par un brief de périmètre. La plupart des builds suivent ensuite un sprint architecture."
       },
       {
-        "question": "Travaillez-vous 100 % remote ?",
-        "answer": "Oui. Livraison remote mondiale depuis Dakar, avec rituels async-friendly et chevauchement horaire adapté pour les ateliers critiques."
+        "question": "Êtes-vous disponible, et la livraison est-elle remote ?",
+        "answer": "Le poste actuel chez Synapse est à temps plein et sur site, à Dakar. Le travail client écrit est remote depuis Dakar, avec un chevauchement pour les ateliers critiques. La date de démarrage d’un rôle ou d’un projet est dans la réponse. Appels en français ; anglais professionnel à l’écrit."
       },
       {
         "question": "Comment façonner l'engagement ?",
@@ -704,7 +768,7 @@
       },
       {
         "question": "Pouvez-vous intervenir en contexte bancaire ou paiement régulé ?",
-        "answer": "Oui. Delivery Synapse pour les plateformes du Groupe Bank of Africa, intégrations paiement, pistes d'audit et ownership production là où conformité et fiabilité comptent."
+        "answer": "Oui. Delivery Synapse pour les plateformes du Groupe Bank of Africa, intégrations paiement et PSP (Wave, Orange Money, Free Money), pistes d'audit et ownership production là où conformité et fiabilité comptent. L’IA appliquée aux opérations de paiement est une direction, pas une offre livrée en environnement régulé."
       },
       {
         "question": "Qui fait réellement le travail ?",
@@ -712,7 +776,7 @@
       },
       {
         "question": "Combien coûte un engagement ?",
-        "answer": "Les fourchettes indicatives en EUR sont sur l’accueil, pour un démarrage en février 2027. Pas d’engagement avant."
+        "answer": "Les fourchettes indicatives en EUR sont sur l’accueil, via la carte client."
       },
       {
         "question": "Comment démarrer si je recrute ?",
@@ -722,7 +786,7 @@
   },
   "techStack": {
     "title": "Stack production",
-    "subtitle": "La stack derrière les rôles et les études de cas — Java et Spring en production. Banque et paiements sont la preuve la plus profonde.",
+    "subtitle": "Backend, paiements, PSP et une direction IA — Java et Spring en production. Banque et paiements restent la preuve la plus profonde.",
     "categories": [
       {
         "label": "Backend",
@@ -732,7 +796,42 @@
           "Spring Security",
           "Spring Cloud",
           "Spring Data JPA",
+          "Flyway",
           "Node.js / NestJS"
+        ]
+      },
+      {
+        "label": "Paiements & FinTech",
+        "items": [
+          "Idempotence",
+          "Réconciliation",
+          "Ledger double-entry",
+          "Settlement",
+          "Machines à états",
+          "Outbox",
+          "Maker/checker"
+        ]
+      },
+      {
+        "label": "PSP",
+        "items": [
+          "Wave",
+          "Orange Money",
+          "Free Money",
+          "Adaptateurs",
+          "Webhooks HMAC",
+          "Dual PSP",
+          "Failover sûr",
+          "Resilience4j"
+        ]
+      },
+      {
+        "label": "IA (direction)",
+        "items": [
+          "Investigation d’anomalies",
+          "Données contrôlées",
+          "Piste d’audit",
+          "Ops de paiement assistées"
         ]
       },
       {
@@ -771,16 +870,6 @@
           "OWASP",
           "OpenTelemetry",
           "Prometheus/Grafana"
-        ]
-      },
-      {
-        "label": "Domaines",
-        "items": [
-          "Idempotence",
-          "Réconciliation",
-          "Wave",
-          "Orange Money",
-          "Free Money"
         ]
       },
       {
@@ -962,7 +1051,7 @@
       },
       {
         "value": "11+",
-        "label": "Filiales BOA via Synapse"
+        "label": "Déploiements filiales via Synapse"
       },
       {
         "value": "Wave · OM · FM",
@@ -976,6 +1065,7 @@
     "specialtyLine": "Backend senior pour systèmes de production — profondeur la plus forte en banque, paiements et corridors mobile money.",
     "verifyHeading": "Vérifier indépendamment",
     "verifyLinkedin": "Profil LinkedIn",
+    "verifyRecommendations": "Recommandations LinkedIn",
     "verifyGithub": "GitHub",
     "verifyLive": "Produit live — Ecom 360",
     "verifyResume": "Télécharger le CV",
@@ -1067,7 +1157,7 @@
     "readPatterns": "Voir les patterns de production",
     "viewProduct": "Voir le produit live",
     "bridgeTitle": "Vous voulez cette profondeur sur votre système ?",
-    "bridgeSubtitle": "Disponible à partir de février 2027. Lisez une étude de cas, puis envoyez un brief de poste.",
+    "bridgeSubtitle": "Lisez une étude de cas, puis envoyez un brief de projet.",
     "bridgeCta": "Prendre contact",
     "detailsSummary": "Architecture, sécurité & détails de delivery",
     "items": [
@@ -1106,7 +1196,7 @@
         ],
         "tradeoffs": "Robustesse opérationnelle d'abord — caisse fiable, isolation des tenants et exports rapprochables — plutôt que des analytics avancées en v1.",
         "bankingOutcome": "Flux financiers, rapprochement local et opérations multi-sites avec audit minimal — des patterns transférables à la livraison FinTech.",
-        "impact": "10+ commerces live au Sénégal et en Afrique de l'Ouest ; Wave et Orange Money à chaque vente, avec des exports comptables.",
+        "impact": "10+ commerces live aujourd’hui au Sénégal et en Afrique de l’Ouest ; Wave et Orange Money à chaque vente, avec des exports comptables. Les ~50 commerçants du rôle Mafalia sont l’usage 2022–2023, un autre chiffre.",
         "href": "https://ecom360pme.com/",
         "linkLabel": "Voir le produit live",
         "stacks": [
@@ -1392,7 +1482,7 @@
     "subtitle": "Là où le travail s’est fait.",
     "viewAll": "Expérience complète",
     "downloadCv": "Télécharger le CV",
-    "hiringLine": "Tout est vérifiable indépendamment. Pas de badges payants, pas de citations inventées.",
+    "hiringLine": "Tout est vérifiable indépendamment. Pas de badges payants, pas de citations inventées. Les recommandations nommées sont sur LinkedIn. L’intitulé du contrat Synapse est Consultant Ingénieur Backend. Senior décrit le niveau du travail.",
     "valueTitle": "Ce que vous obtenez",
     "valueBody": "Livraison terrain sur plateformes enterprise — APIs, systèmes distribués et pipelines de production en banque et FinTech. Résultats vérifiables : delivery multi-filiales bancaires, rails Wave / Orange Money, ownership en production.",
     "stackLabel": "Stack",
@@ -1420,7 +1510,7 @@
         "workplace": "Sur site",
         "summary": "Détaché dans les équipes d'ingénierie du Groupe Bank of Africa via Synapse Groupe — plateformes bancaires enterprise pour paiements, virements et traitement de transactions, au service de plus de 11 filiales.",
         "highlights": [
-          "Concevoir et faire évoluer les services backend des opérations bancaires critiques — paiements, virements et traitement de transactions — dans un environnement haute disponibilité (~50K transactions/jour).",
+          "Concevoir et faire évoluer les services backend des opérations bancaires critiques — paiements, virements et traitement de transactions — dans un environnement d’environ 50K transactions/jour. Ce chiffre est le volume de la plateforme, pas un débit personnel.",
           "Construire des APIs enterprise reliant applications bancaires cœur, middleware et systèmes tiers, avec un focus sécurité et des contrats d'intégration stables.",
           "Moderniser des services backend legacy vers une approche microservices / clean architecture, pour la maintenabilité et la résilience opérationnelle.",
           "Livrer des fonctionnalités déployées dans plus de 11 filiales Bank of Africa, en coordination avec les équipes IT filiales sur l'intégration et les mises en production.",
@@ -1483,7 +1573,7 @@
         "highlights": [
           "Réduire les temps de réponse API d'environ 30% via l'optimisation des requêtes et le refactoring de la logique métier.",
           "Construire des APIs REST pour stocks, commandes, ventes et workflows financiers.",
-          "Mettre en place cache et traitement asynchrone pour tenir ~50 commerçants.",
+          "Mettre en place cache et traitement asynchrone pendant que ce SaaS montait à environ 50 commerçants (2022–2023). Ce n’est pas le chiffre live d’Ecom 360 PME (10+ aujourd’hui).",
           "Améliorer la maintenabilité via documentation technique et pratiques qualité (SonarQube)."
         ],
         "stack": [
@@ -1624,7 +1714,7 @@
       },
       {
         "value": "11+",
-        "label": "Filiales BOA via Synapse"
+        "label": "Déploiements filiales via Synapse"
       },
       {
         "value": "Wave · OM · FM",
@@ -1649,7 +1739,7 @@
       },
       {
         "value": "11+",
-        "label": "Filiales BOA via Synapse",
+        "label": "Déploiements filiales via Synapse",
         "description": "Delivery Synapse pour les plateformes du Groupe Bank of Africa"
       },
       {
@@ -1690,7 +1780,13 @@
         "label": "OpenAPI, REST & webhooks"
       },
       {
-        "label": "Wave, Orange Money & Free Money"
+        "label": "PSP : Wave, Orange Money & Free Money"
+      },
+      {
+        "label": "Ledger double-entry & réconciliation"
+      },
+      {
+        "label": "IA appliquée — direction, pas un produit livré"
       },
       {
         "label": "JasperReports sur le rôle banque"
@@ -1715,10 +1811,10 @@
     "p2a": "Je suis ingénieur backend senior, axé sur l'ingénierie backend, les systèmes distribués, les APIs et l'architecture logicielle. Je travaille surtout avec",
     "p2b": "Java et Spring Boot",
     "p2c": ", mais je privilégie la compréhension du problème, les bons compromis, et des systèmes qui restent fiables en évoluant.",
-    "p3": "Mon expérience couvre produits, plateformes enterprise, banque, FinTech et intégrations de paiement — transformer des exigences complexes en backends simples, maintenables et prêts pour la production.",
+    "p3": "Mon expérience couvre produits, plateformes enterprise, banque, FinTech, PSP et intégrations de paiement — transformer des exigences complexes en backends simples, maintenables et prêts pour la production.",
     "p4": "Un bon logiciel, ce sont les bonnes décisions : simplicité plutôt que complexité inutile, fiabilité plutôt que rustines, impact métier plutôt que vanité technique.",
     "p5": "Preuve la plus forte : backends bancaires et paiement — corridors mobile money, mouvements d'argent sûrs pour le ledger, et gouvernance API pour équipes régulées. Ouvert aux produits, plateformes et SaaS qui exigent la même rigueur.",
-    "p6": "En dehors de la delivery, je construis des systèmes annexes et j'écris sur des décisions d'architecture tirées de contraintes de production réelles.",
+    "p6": "En dehors de la delivery, je construis des systèmes annexes et j'écris sur des décisions d'architecture tirées de contraintes de production réelles. L’IA appliquée aux opérations de paiement est une direction que je construis — pas un produit client.",
     "collaboration": "J'aime travailler avec des personnes qui pensent de façon critique, tiennent à la qualité, et veulent construire des choses qui durent — recruteurs, équipes produit, pairs.",
     "focusTagsTitle": "Focus",
     "focusTags": [
@@ -1726,6 +1822,9 @@
       "Spring Boot",
       "NestJS",
       "Backend",
+      "FinTech",
+      "PSP",
+      "IA",
       "Systèmes distribués",
       "APIs",
       "Kafka",
@@ -1738,7 +1837,7 @@
     "statYearsValue": "4+",
     "statYears": "Années de delivery backend",
     "statSystemsValue": "11+",
-    "statSystems": "Filiales BOA via Synapse",
+    "statSystems": "Déploiements filiales via Synapse",
     "statCuriosityValue": "FR/EN",
     "statCuriosity": "Livraison bilingue",
     "engagementsTitle": "Comment je peux aider",
@@ -1769,7 +1868,7 @@
     "stat1Value": "4+",
     "stat1Label": "Années de delivery backend",
     "stat2Value": "11+",
-    "stat2Label": "Filiales BOA via Synapse",
+    "stat2Label": "Déploiements filiales via Synapse",
     "stat3Value": "FR/EN",
     "stat3Label": "Remote mondial"
   },
@@ -1882,12 +1981,12 @@
     "subtitle": "Des backends de production qui restent corrects sous charge — Java, Spring Boot, systèmes distribués. Banque & FinTech comme preuve la plus forte. Dakar · remote mondial.",
     "backToHome": "Retour à l'accueil",
     "endCtaTitle": "Envie de travailler ensemble ?",
-    "endCtaSubtitle": "Disponible à partir de février 2027. Envoyez un brief de poste — je réponds avec le fit et une prochaine étape claire.",
+    "endCtaSubtitle": "Un brief de poste ou un brief de projet — je réponds avec le fit et une prochaine étape claire.",
     "endCtaButton": "Prendre contact"
   },
   "collaboratePage": {
     "metaTitle": "Modes de collaboration | Sprint architecture | SAIFCORE",
-    "metaDescription": "Consulting indépendant après février 2027. Ce site est un profil ingénieur — pas une grille tarifaire.",
+    "metaDescription": "Ce site est un profil ingénieur — pas une grille tarifaire.",
     "title": "Modes de collaboration",
     "subtitle": "La plupart des collaborations commencent par un sprint architecture — une à deux semaines pour verrouiller le problème, les risques et un plan. Puis une proposition écrite.",
     "backToHome": "Retour à l'accueil",
@@ -1902,10 +2001,10 @@
     "blogPromoTitle": "Blog SAIFCORE",
     "blogPromoBody": "Notes longues issues de backends de production — produits, plateformes, et les problèmes de paiement qui prouvent la profondeur.",
     "endCtaTitle": "Vous voulez cette profondeur sur votre système ?",
-    "endCtaSubtitle": "Disponible à partir de février 2027. Lisez une étude de cas ou un article, puis envoyez un brief de poste.",
-    "endCtaButton": "Prendre contact",
+    "endCtaSubtitle": "Lisez une étude de cas ou un article, puis envoyez un brief de projet.",
+    "endCtaButton": "Envoyer un brief de projet",
     "bridgeTitle": "Vous voulez cette profondeur sur votre système ?",
-    "bridgeSubtitle": "Disponible à partir de février 2027. Lisez une étude de cas, puis envoyez un brief de poste.",
+    "bridgeSubtitle": "Lisez une étude de cas, puis envoyez un brief de projet.",
     "bridgeCta": "Prendre contact",
     "heading": "Notes tirées du travail"
   },
@@ -1934,7 +2033,7 @@
     "adrLabelConsequences": "Arbitrages & conséquences",
     "endCtaTitle": "Vous voulez obtenir ces résultats sur votre plateforme ?",
     "endCtaSubtitle": "Décrivez votre paysage technique et vos contraintes — je vous donnerai un avis direct s'il y a un fit technique.",
-    "endCtaButton": "Prendre contact",
+    "endCtaButton": "Envoyer un brief de projet",
     "breadcrumbLabel": "Fil d'Ariane",
     "relatedTitle": "Lectures associées",
     "relatedSubtitle": "Plus sur backends, architecture et plateformes financières.",
@@ -1943,15 +2042,15 @@
     "viewAllArticles": "Voir tous les articles"
   },
   "depthTeaser": {
-    "title": "Profondeur technique",
-    "heading": "Capacités, stack production et principes d'ingénierie",
-    "body": "Pour hiring managers et reviewers techniques — carte de capacités complète, outils, et comment je construis des systèmes fiables qui durent.",
-    "cta": "Ouvrir le profil complet"
+    "title": "Domaines d'intervention",
+    "heading": "Backend, paiements, PSP, et une direction IA.",
+    "body": "Chaque domaine est relié à une preuve. L’IA est une direction assumée, pas un produit client livré.",
+    "cta": "Voir les domaines"
   },
   "cta": {
     "label": "Contact",
     "title": "Parlez-moi du travail",
-    "subtitle": "Recrutement : lisez l’expérience, le CV, puis un brief de poste. Disponible à partir de février 2027.",
+    "subtitle": "Recrutement : lisez l’expérience, le CV, puis un brief de poste.",
     "processTitle": "Comment ça démarre",
     "processStep1": "Lisez l’expérience et le CV — Bank of Africa via Synapse en tête.",
     "processStep2": "Envoyez un brief de poste : équipe, stack, localisation, calendrier.",
@@ -1968,12 +2067,12 @@
     "formIntent": "Vous êtes…",
     "formIntentPlaceholder": "Choisir",
     "formIntentHiring": "Recrutement",
-    "formIntentFreelance": "Discussion technique",
+    "formIntentFreelance": "Un projet",
     "formIntentOther": "Autre",
     "formMessage": "Message",
     "formMessagePlaceholder": "Contexte, rôle ou question technique…",
     "formMessagePlaceholderHiring": "Poste, équipe, stack, localisation et délai…",
-    "formMessagePlaceholderFreelance": "Le problème technique, le système, et ce que vous voulez vérifier…",
+    "formMessagePlaceholderFreelance": "Périmètre, contraintes, et la date de démarrage souhaitée…",
     "formSubmit": "Envoyer",
     "formSending": "Envoi…",
     "formSuccess": "Brief reçu — vérifiez votre boîte mail pour la confirmation.",
@@ -2018,7 +2117,7 @@
     "insights": "Articles",
     "faq": "FAQ",
     "pagesLabel": "Explorer",
-    "connectLabel": "Nous contacter",
+    "connectLabel": "Contact",
     "contact": "Me contacter"
   },
   "error": {
@@ -2046,17 +2145,17 @@
   },
   "systemsPage": {
     "metaTitle": "Études de cas | Systèmes & Architecture | SAIFCORE",
-    "metaDescription": "Études de cas : produits live, labs ouverts et patterns de production — banque/FinTech comme preuve la plus forte, décrits au niveau des patterns si confidentiel.",
+    "metaDescription": "Études de cas : produits live, labs ouverts et patterns de production — paiements, corridors PSP et FinTech comme preuve la plus forte, décrits au niveau des patterns si confidentiel.",
     "title": "Systèmes livrés et patterns réutilisables.",
-    "subtitle": "Le code client confidentiel reste dehors. Les décisions réutilisables restent.",
+    "subtitle": "Paiements, corridors PSP, ledger et backends. Le code client confidentiel reste dehors. Les décisions réutilisables restent.",
     "backToHome": "Retour à l'accueil",
     "midCtaTitle": "Vous voulez cette profondeur dans votre équipe ?",
-    "midCtaSubtitle": "Disponible à partir de février 2027. Lisez une étude de cas, puis envoyez un brief de poste.",
+    "midCtaSubtitle": "Lisez une étude de cas, puis envoyez un brief de projet.",
     "midCtaPrimary": "Prendre contact",
     "midCtaSecondary": "Télécharger le CV",
     "endCtaTitle": "Vous voulez cette profondeur sur votre système ?",
-    "endCtaSubtitle": "Disponible à partir de février 2027. Lisez une étude de cas ou un article, puis envoyez un brief de poste.",
-    "endCtaButton": "Prendre contact",
+    "endCtaSubtitle": "Lisez une étude de cas ou un article, puis envoyez un brief de projet.",
+    "endCtaButton": "Envoyer un brief de projet",
     "filterLabel": "Filtrer les études de cas",
     "filterAll": "Tout",
     "filterLive": "Live",
@@ -2074,7 +2173,7 @@
     "status": "En production",
     "liveCta": "Voir le produit live",
     "offersCta": "Livraison produit & startup",
-    "proofLine": "Livré et opéré en production en Afrique de l'Ouest — pas une démo, pas un deck.",
+    "proofLine": "Livré et opéré en production en Afrique de l'Ouest — pas une démo, pas un deck. 10+ commerces live aujourd’hui. Les ~50 du rôle Mafalia sont l’usage 2022–2023, un autre chiffre.",
     "metricsLabel": "Signaux",
     "metrics": [
       {
@@ -2137,8 +2236,8 @@
       "REST APIs"
     ],
     "endCtaTitle": "Vous voulez cette profondeur sur votre produit ?",
-    "endCtaSubtitle": "Disponible à partir de février 2027. Lisez une étude de cas ou un article, puis envoyez un brief de poste.",
-    "endCtaButton": "Prendre contact"
+    "endCtaSubtitle": "Lisez une étude de cas ou un article, puis envoyez un brief de projet.",
+    "endCtaButton": "Envoyer un brief de projet"
   },
   "caseStudyPaymentDisasterLab": {
     "metaTitle": "Payment Platform Disaster Lab — Étude de cas | Ingénierie de la résilience | SAIFCORE",
@@ -2253,8 +2352,8 @@
       "P7 — Chaos documenté : remplir D1–D10 (hypothèse → observé → recovery) ; brancher le FE sur le vrai backend."
     ],
     "endCtaTitle": "Vous voulez cette profondeur sur un problème paiement ou résilience ?",
-    "endCtaSubtitle": "Disponible à partir de février 2027. Lisez une étude de cas ou un article, puis envoyez un brief de poste.",
-    "endCtaButton": "Prendre contact"
+    "endCtaSubtitle": "Lisez une étude de cas ou un article, puis envoyez un brief de projet.",
+    "endCtaButton": "Envoyer un brief de projet"
   },
   "caseStudyDoubleEntryLedger": {
     "metaTitle": "Double-Entry Ledger Platform — Étude de cas | Ledger Fintech | SAIFCORE",
@@ -2361,69 +2460,114 @@
       "Tests : mvn test sur tous les modules ; ITs Testcontainers quand Docker est dispo."
     ],
     "endCtaTitle": "Vous voulez cette profondeur sur un problème ledger ou wallet ?",
-    "endCtaSubtitle": "Disponible à partir de février 2027. Lisez une étude de cas ou un article, puis envoyez un brief de poste.",
-    "endCtaButton": "Prendre contact"
+    "endCtaSubtitle": "Lisez une étude de cas ou un article, puis envoyez un brief de projet.",
+    "endCtaButton": "Envoyer un brief de projet"
   },
   "experiencePage": {
     "metaTitle": "Expérience | Ingénieur backend senior | SAIFCORE",
-    "metaDescription": "Expérience professionnelle sur plateformes enterprise, banque et FinTech — Synapse, ENG Technologie, et plus. Dakar · remote mondial.",
+    "metaDescription": "Expérience professionnelle sur plateformes enterprise, banque, FinTech et PSP — Synapse, ENG Technologie, et plus. Dakar · remote mondial.",
     "title": "Expérience",
-    "subtitle": "Rôles et livraisons sur plateformes enterprise, banque et FinTech.",
+    "subtitle": "Rôles et livraisons sur plateformes enterprise, banque, FinTech et PSP.",
     "backToHome": "Retour à l'accueil",
     "skillsTitle": "Stack technologique production",
-    "skillsSubtitle": "Outils et modèles issus de backends en production — pas une liste de buzzwords.",
+    "skillsSubtitle": "Backend, paiements, PSP, livraison — et une direction IA assumée, pas une liste de buzzwords.",
     "midCtaTitle": "Prêt pour la prochaine étape ?",
-    "midCtaSubtitle": "Téléchargez le CV, ou envoyez un brief de poste. Disponible à partir de février 2027.",
+    "midCtaSubtitle": "Téléchargez le CV, ou envoyez un brief de poste.",
     "midCtaSecondary": "Contact",
     "endCtaTitle": "Recruter ce profil ?",
     "endCtaSubtitle": "Ces rôles sont le document. Téléchargez le CV depuis l’en-tête, ou envoyez un brief de poste.",
-    "endCtaButton": "Prendre contact"
+    "endCtaButton": "Envoyer un brief de poste"
   },
   "skillsMatrix": {
-    "languages": ["Java (8–21)", "SQL (PostgreSQL, MySQL)", "TypeScript"],
-    "languagesLabel": "Langages",
-    "frameworks": [
-      "Spring Boot",
-      "Spring Security",
-      "Spring Cloud",
-      "Spring Data JPA",
-      "Node.js / NestJS"
-    ],
-    "frameworksLabel": "Backend",
-    "infrastructure": [
-      "PostgreSQL",
-      "Oracle",
-      "MySQL",
-      "MongoDB",
-      "Redis",
-      "Apache Kafka",
-      "RabbitMQ",
-      "Docker",
-      "Kubernetes",
-      "AWS",
-      "Terraform",
-      "GitLab CI/CD",
-      "GitHub Actions",
-      "Jenkins"
-    ],
-    "infrastructureLabel": "Données, messagerie & livraison",
-    "tools": [
-      "OpenAPI",
-      "REST",
-      "JWT",
-      "OAuth2",
-      "HMAC",
-      "RBAC",
-      "OWASP",
-      "OpenTelemetry",
-      "Prometheus/Grafana",
-      "Wave",
-      "Orange Money",
-      "Free Money",
-      "Angular",
-      "React",
-      "Next.js"
-    ],
-    "toolsLabel": "APIs, paiements & UI produit"
+    "groups": [
+      {
+        "label": "Backend",
+        "items": [
+          "Java (8–21)",
+          "Spring Boot",
+          "Spring Security",
+          "Spring Cloud",
+          "Spring Data JPA",
+          "Flyway",
+          "Node.js / NestJS"
+        ]
+      },
+      {
+        "label": "Paiements & FinTech",
+        "items": [
+          "Idempotence",
+          "Réconciliation",
+          "Ledger double-entry",
+          "Settlement",
+          "Machines à états",
+          "Outbox",
+          "Maker/checker"
+        ]
+      },
+      {
+        "label": "PSP",
+        "items": [
+          "Wave",
+          "Orange Money",
+          "Free Money",
+          "Adaptateurs",
+          "Webhooks HMAC",
+          "Dual PSP",
+          "Failover sûr",
+          "Resilience4j"
+        ]
+      },
+      {
+        "label": "IA (direction)",
+        "items": [
+          "Investigation d’anomalies",
+          "Données contrôlées",
+          "Piste d’audit",
+          "Ops de paiement assistées"
+        ]
+      },
+      {
+        "label": "Données & messagerie",
+        "items": [
+          "PostgreSQL",
+          "Oracle",
+          "MySQL",
+          "MongoDB",
+          "Redis",
+          "Apache Kafka",
+          "RabbitMQ"
+        ]
+      },
+      {
+        "label": "Livraison",
+        "items": [
+          "Docker",
+          "Kubernetes",
+          "AWS",
+          "Terraform",
+          "GitLab CI/CD",
+          "GitHub Actions",
+          "Jenkins"
+        ]
+      },
+      {
+        "label": "Sécurité & APIs",
+        "items": [
+          "OpenAPI",
+          "REST",
+          "JWT",
+          "OAuth2",
+          "HMAC",
+          "RBAC",
+          "OWASP",
+          "OpenTelemetry",
+          "Prometheus/Grafana"
+        ]
+      },
+      {
+        "label": "UI produit",
+        "items": ["TypeScript", "Angular", "React", "Next.js"]
+      }
+    ]
   }
 }

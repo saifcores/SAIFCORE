@@ -4,38 +4,33 @@ import { Reveal } from "./Reveal";
 export async function SkillsMatrix() {
   const t = await getTranslations("experiencePage");
   const messages = await getMessages();
-  const sm = messages.skillsMatrix;
-
-  const groups = [
-    { labelKey: sm.languagesLabel, items: sm.languages },
-    { labelKey: sm.frameworksLabel, items: sm.frameworks },
-    { labelKey: sm.infrastructureLabel, items: sm.infrastructure },
-    { labelKey: sm.toolsLabel, items: sm.tools },
-  ] as const;
+  const groups = messages.skillsMatrix.groups;
 
   return (
-    <section className="border-t border-[var(--border-subtle)] px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-      <div className="mx-auto max-w-7xl">
+    <section
+      id="stack"
+      aria-labelledby="skills-heading"
+      className="scroll-mt-24 border-t border-[var(--border-subtle)] py-14 sm:py-16 lg:py-20 xl:scroll-mt-28"
+    >
+      <div className="page-container">
         <Reveal>
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
-            {t("skillsTitle")}
-          </p>
-          <h2 className="max-w-xl font-display text-pretty text-2xl font-medium tracking-tight text-[var(--text-primary)] sm:text-3xl md:text-4xl">
+          <p className="site-kicker mb-3">{t("skillsTitle")}</p>
+          <h2 id="skills-heading" className="section-heading max-w-2xl">
             {t("skillsSubtitle")}
           </h2>
         </Reveal>
 
-        <div className="mt-10 grid gap-4 sm:mt-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
+        <div className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
           {groups.map((group, gi) => (
-            <Reveal key={group.labelKey} delay={gi * 80}>
+            <Reveal key={group.label} delay={gi * 40}>
               <div className="h-full rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 p-5">
                 <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
-                  {group.labelKey}
+                  {group.label}
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {(group.items as readonly string[]).map((skill, si) => (
+                  {group.items.map((skill, si) => (
                     <span
-                      key={`${group.labelKey}-${skill}-${si}`}
+                      key={`${group.label}-${skill}-${si}`}
                       className="rounded-full border border-[var(--border-subtle)] bg-[var(--bg-base)]/50 px-3 py-1 text-xs font-medium text-[var(--text-secondary)] transition hover:border-[var(--border-hover)] hover:text-[var(--text-primary)]"
                     >
                       {skill}

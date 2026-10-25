@@ -15,7 +15,6 @@ import { HomeLabWriting } from "@/components/portfolio/HomeLabWriting";
 import { Navbar } from "@/components/portfolio/Navbar";
 import { OffersHome } from "@/components/portfolio/OffersHome";
 import { Principles } from "@/components/portfolio/Principles";
-import { Proofs } from "@/components/portfolio/Proofs";
 import { fetchRecentArticles } from "@/blog/recent-articles";
 import {
   buildArticleItemListJsonLd,
@@ -138,10 +137,7 @@ export default async function Home({ params }: Props) {
         })),
       });
 
-  const graphNodes: Record<string, unknown>[] = [
-    jsonLdPerson,
-    jsonLdWebPage,
-  ];
+  const graphNodes: Record<string, unknown>[] = [jsonLdPerson, jsonLdWebPage];
 
   if (
     insightsItemListJsonLd.itemListElement &&
@@ -191,14 +187,19 @@ export default async function Home({ params }: Props) {
         tabIndex={-1}
       >
         <Hero />
-        <Proofs />
-        <AudiencePaths />
-        <FeaturedProjectsTeaser />
-        <ExperienceTeaser />
         <ExpertiseTeaser />
-        <Principles />
-        <HomeLabWriting />
         <OffersHome />
+        <AudiencePaths
+          recruiter={<ExperienceTeaser />}
+          depth={
+            <>
+              <FeaturedProjectsTeaser />
+              <Principles />
+              <HomeLabWriting />
+            </>
+          }
+          client={null}
+        />
         <HomeContact />
       </main>
       <Footer />

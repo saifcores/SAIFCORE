@@ -12,6 +12,12 @@ import { Reveal } from "./Reveal";
 
 const TEASER_COUNT = 3;
 
+function linkedinRecommendationsUrl(profile: string): string {
+  const base = profile.replace(/\/+$/, "");
+  if (base.includes("/details/recommendations")) return base;
+  return `${base}/details/recommendations/`;
+}
+
 function firstBullet(entry: ExperienceEntry): string {
   return entry.summary.trim() || entry.highlights[0]?.trim() || "";
 }
@@ -35,7 +41,11 @@ export async function ExperienceTeaser() {
 
   const verifyLinks = [
     linkedinUrl
-      ? { href: linkedinUrl, label: tTrust("verifyLinkedin"), external: true }
+      ? {
+          href: linkedinRecommendationsUrl(linkedinUrl),
+          label: tTrust("verifyRecommendations"),
+          external: true,
+        }
       : null,
     githubUrl
       ? { href: githubUrl, label: tTrust("verifyGithub"), external: true }
@@ -103,7 +113,7 @@ export async function ExperienceTeaser() {
                       className="font-mono text-[var(--text-muted)]"
                       aria-hidden
                     >
-                      ↗
+                      {"download" in link && link.download ? "↓" : "↗"}
                     </span>
                   </a>
                 ),

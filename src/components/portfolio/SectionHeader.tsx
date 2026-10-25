@@ -16,7 +16,7 @@ export function SectionHeader({
   action,
 }: Props) {
   return (
-    <div className="mb-9 flex flex-wrap items-end justify-between gap-5 sm:gap-6">
+    <div className="mb-9 flex flex-col items-start gap-4 lg:flex-row lg:items-end lg:justify-between lg:gap-8">
       <div className="flex max-w-xl flex-col gap-3">
         <p className="site-kicker">{kicker}</p>
         <h2 id={titleId} className="section-heading">

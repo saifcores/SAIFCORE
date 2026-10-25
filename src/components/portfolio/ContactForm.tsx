@@ -288,8 +288,8 @@ export function ContactForm({
               >
                 {(
                   [
-                    ["hiring", formIntentHiring],
                     ["freelance", formIntentFreelance],
+                    ["hiring", formIntentHiring],
                     ["other", formIntentOther],
                   ] as const
                 ).map(([value, label]) => {

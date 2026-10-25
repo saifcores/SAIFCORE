@@ -23,11 +23,14 @@ export async function OffersHome() {
           <h2 id="offers-heading" className="section-heading mb-3 max-w-[22ch]">
             {t("title")}
           </h2>
-          <p className="mb-6 max-w-[62ch] text-[15px] text-[var(--text-muted)]">
+          <p className="max-w-[62ch] text-[15px] leading-relaxed text-[var(--text-secondary)]">
             {t("subtitle")}
           </p>
+          <p className="mb-6 mt-3 max-w-[62ch] text-sm leading-relaxed text-[var(--text-muted)]">
+            {t("note")}
+          </p>
         </Reveal>
-        <div className="grid overflow-hidden rounded-xl border border-[var(--border-subtle)] bg-[var(--border-subtle)] sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid overflow-hidden rounded-xl border border-[var(--border-subtle)] bg-[var(--border-subtle)] sm:grid-cols-2 xl:grid-cols-4">
           {messages.offersHome.items.map((item, index) => (
             <Reveal key={item.title} delay={index * 40} className="h-full">
               <a
@@ -38,8 +41,15 @@ export async function OffersHome() {
                     : ""
                 }`}
               >
-                <div className="font-mono text-xs text-[var(--text-muted)]">
-                  {item.duration}
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <div className="font-mono text-xs text-[var(--text-muted)]">
+                    {item.duration}
+                  </div>
+                  {index === 0 ? (
+                    <span className="rounded-full bg-[var(--text-primary)] px-2 py-0.5 text-[10px] font-semibold uppercase leading-tight tracking-[0.04em] text-[var(--bg-base)]">
+                      {t("usual")}
+                    </span>
+                  ) : null}
                 </div>
                 <div className="text-lg font-semibold text-[var(--text-primary)]">
                   {item.title}
@@ -47,7 +57,10 @@ export async function OffersHome() {
                 <div className="text-pretty text-sm text-[var(--text-muted)]">
                   {item.description}
                 </div>
-                <div className="mt-auto flex items-end justify-between gap-3 pt-3">
+                <p className="text-pretty text-sm font-medium text-[var(--text-secondary)]">
+                  {item.outcome}
+                </p>
+                <div className="mt-auto flex flex-wrap items-end justify-between gap-x-3 gap-y-1 pt-3">
                   <span className="font-mono text-sm text-[var(--text-primary)]">
                     {item.price}
                   </span>

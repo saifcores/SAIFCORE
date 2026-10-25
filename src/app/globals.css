@@ -197,6 +197,65 @@ body {
   box-shadow: 0 8px 24px rgba(11, 15, 25, 0.06);
 }
 
+/* Home expertise domains — 2 columns, then 3. */
+.expertise-grid {
+  display: grid;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.expertise-grid-cell {
+  display: flex;
+  height: 100%;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.expertise-grid-cell > a {
+  flex: 1;
+}
+
+@media (min-width: 640px) {
+  .expertise-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .expertise-grid-cell:nth-child(odd) {
+    border-right: 1px solid var(--border-subtle);
+    padding-right: 1.5rem;
+  }
+
+  .expertise-grid-cell:nth-child(even) {
+    padding-left: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .expertise-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .expertise-grid-cell {
+    border-right: 1px solid var(--border-subtle);
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .expertise-grid-cell:nth-child(odd),
+  .expertise-grid-cell:nth-child(even) {
+    border-right: 1px solid var(--border-subtle);
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .expertise-grid-cell:nth-child(3n + 1) {
+    padding-left: 0;
+  }
+
+  .expertise-grid-cell:nth-child(3n) {
+    border-right: 0;
+    padding-right: 0;
+  }
+}
+
 .section-home {
   padding-top: 3.25rem;
 }
@@ -297,6 +356,37 @@ body {
 .chip:focus-within {
   outline: none;
   box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+.hero-accent {
+  color: var(--accent-blue);
+}
+
+[data-theme="dark"] .hero-accent {
+  color: color-mix(in srgb, var(--accent-blue) 58%, var(--text-secondary));
+}
+
+.hero-rail {
+  display: none;
+}
+
+@media (min-width: 1440px) {
+  .hero-rail {
+    display: block;
+    position: absolute;
+    top: 8.5rem;
+    left: 1.25rem;
+    z-index: 1;
+    margin: 0;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    pointer-events: none;
+  }
 }
 
 .hero-ambient {
@@ -417,6 +507,11 @@ nav {
     var(--shadow-card),
     0 0 0 1px color-mix(in srgb, var(--accent) 10%, transparent);
   transform: translateY(-3px);
+}
+
+.card-interactive[data-selected="true"] {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 6%, var(--bg-base));
 }
 
 @media (prefers-reduced-motion: reduce) {

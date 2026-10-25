@@ -12,6 +12,7 @@ import { ProfileExploreLinks } from "@/components/portfolio/ProfileExploreLinks"
 import { Experience } from "@/components/portfolio/Experience";
 import { EducationSection } from "@/components/portfolio/EducationSection";
 import { HowIThink } from "@/components/portfolio/HowIThink";
+import { SkillsMatrix } from "@/components/portfolio/SkillsMatrix";
 import { Footer } from "@/components/portfolio/Footer";
 import { Navbar } from "@/components/portfolio/Navbar";
 import { routing } from "@/i18n/routing";
@@ -93,6 +94,7 @@ export default async function ExperiencePage({ params }: Props) {
         />
 
         <Experience showHeading={false} />
+        <SkillsMatrix />
         <EducationSection />
         <HowIThink />
         <DepthTeaser />

@@ -5,37 +5,27 @@ export async function Proofs() {
   const messages = await getMessages();
 
   return (
-    <section
+    <div
       aria-label={t("label")}
-      className="border-y border-[var(--border-subtle)] bg-[var(--bg-elevated)]"
+      role="region"
+      className="mt-10 grid grid-cols-2 gap-x-5 gap-y-8 border-t border-[var(--border-subtle)] pt-8 sm:mt-12 sm:gap-x-6 lg:grid-cols-4 lg:pt-10"
     >
-      <div className="page-container grid grid-cols-2 sm:grid-cols-4">
-        {messages.proofs.items.map((item, index) => (
+      {messages.proofs.items.map((item) => (
+        <div key={item.value} className="min-w-0">
           <div
-            key={item.value}
-            className={`py-6 pr-5 sm:py-7 ${
-              index > 0
-                ? "sm:border-l sm:border-[var(--border-subtle)] sm:pl-6"
-                : ""
-            } ${
-              index % 2 === 1
-                ? "border-l border-[var(--border-subtle)] pl-5 sm:pl-6"
-                : ""
-            } ${
-              index >= 2
-                ? "border-t border-[var(--border-subtle)] sm:border-t-0"
-                : ""
+            className={`font-display font-semibold leading-tight tracking-tight text-balance text-[var(--text-primary)] ${
+              item.value.length > 8
+                ? "text-[clamp(1.05rem,2.2vw,1.45rem)]"
+                : "text-[clamp(1.35rem,4vw,2.15rem)]"
             }`}
           >
-            <div className="text-[1.5rem] font-semibold tracking-tight text-[var(--text-primary)] sm:text-[1.625rem]">
-              {item.value}
-            </div>
-            <div className="mt-1 text-[13px] leading-snug text-[var(--text-muted)]">
-              {item.label}
-            </div>
+            {item.value}
           </div>
-        ))}
-      </div>
-    </section>
+          <div className="mt-2 text-pretty text-[13px] leading-snug text-[var(--text-muted)]">
+            {item.label}
+          </div>
+        </div>
+      ))}
+    </div>
   );
 }

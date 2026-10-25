@@ -1,150 +1,86 @@
 import type { ReactNode } from "react";
-import Image from "next/image";
-import type { AppMessages } from "@/types/messages";
-
-type FlowStep = AppMessages["hero"]["flow"][number];
+import { HeroVisual } from "@/components/portfolio/HeroVisual";
 
 type Props = {
-  identityName: string;
-  identityRole: string;
+  year: string;
   badge: string;
   title: string;
+  titleAccent: string;
+  titleRest: string;
   subtitle: string;
   proofLine: string;
   availability: string;
-  flowLabel: string;
-  flowCaption: string;
-  portraitAlt: string;
-  flow: readonly FlowStep[];
+  hub: string;
+  orbit: readonly string[];
+  scroll: string;
   ctas: ReactNode;
 };
 
 export function HeroContent({
-  identityName,
-  identityRole,
+  year,
   badge,
   title,
+  titleAccent,
+  titleRest,
   subtitle,
   proofLine,
   availability,
-  flowLabel,
-  flowCaption,
-  portraitAlt,
-  flow,
+  hub,
+  orbit,
+  scroll,
   ctas,
 }: Props) {
   return (
-    <div className="relative">
-      <div className="hero-ambient" aria-hidden />
-      <div className="relative grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(300px,380px)] lg:gap-16">
-        <div className="flex flex-col gap-6">
-          <div className="flex items-center gap-3.5">
-            <Image
-              src="/profile.png"
-              alt={portraitAlt}
-              width={56}
-              height={56}
-              priority
-              className="h-14 w-14 shrink-0 rounded-full border border-[var(--border-subtle)] object-cover object-[center_18%] ring-2 ring-[color-mix(in_srgb,var(--accent)_28%,transparent)]"
-            />
-            <div className="min-w-0">
-              <p className="font-medium tracking-tight text-[var(--text-primary)]">
-                {identityName}
-              </p>
-              <p className="text-[13px] leading-snug text-[var(--text-muted)]">
-                {identityRole}
-                {" · "}
-                {badge}
-              </p>
-            </div>
-          </div>
+    <div>
+      <p className="mb-8 font-mono text-xs tracking-[0.14em] text-[var(--text-muted)] sm:mb-10">
+        {year}
+      </p>
 
-          <div className="flex flex-col gap-3.5">
-            <h1
-              id="hero-heading"
-              className="text-pretty font-display text-display-md text-[var(--text-primary)]"
-            >
-              {title}
-            </h1>
-            <p className="max-w-[52ch] text-pretty text-[1.0625rem] leading-relaxed text-[var(--text-secondary)] sm:text-lg">
-              {subtitle}
-            </p>
-            <p className="max-w-[54ch] text-pretty text-sm leading-relaxed text-[var(--text-muted)]">
-              {proofLine}
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-3.5">
-            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/70 px-3 py-1 font-mono text-xs text-[var(--text-muted)]">
-              <span
-                aria-hidden
-                className="h-1.5 w-1.5 rounded-full bg-[var(--text-muted)]"
-              />
-              {availability}
-            </p>
-            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              {ctas}
-            </div>
-          </div>
-        </div>
-
-        <aside
-          aria-label={flowLabel}
-          className="overflow-hidden rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)] shadow-[var(--shadow-card)]"
-        >
-          <p className="flex items-center justify-between border-b border-[var(--border-subtle)] px-5 py-3 font-mono text-[11px] uppercase tracking-[0.06em] text-[var(--text-muted)] sm:px-6">
-            <span>{flowLabel}</span>
+      <div className="grid items-start gap-10 md:grid-cols-[minmax(0,1.15fr)_minmax(240px,320px)] md:items-center md:gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(300px,0.92fr)] lg:items-start lg:gap-14">
+        <div className="flex max-w-[38rem] flex-col">
+          <p className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-elevated)] px-3 py-1 text-[13px] text-[var(--text-secondary)]">
             <span
               className="h-1.5 w-1.5 rounded-full bg-[var(--ok)]"
               aria-hidden
             />
+            {badge}
           </p>
-          <ol className="m-0 flex list-none flex-col px-5 py-3.5 sm:px-6">
-            {flow.map((step, index) => {
-              const isLast = index === flow.length - 1;
-              return (
-                <li key={step.name} className="flex gap-3">
-                  <div className="flex w-7 shrink-0 flex-col items-center">
-                    <span
-                      aria-hidden
-                      className={`font-mono text-[11px] leading-6 tabular-nums ${
-                        isLast
-                          ? "text-[var(--accent)]"
-                          : "text-[var(--text-muted)]"
-                      }`}
-                    >
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    {isLast ? null : (
-                      <span
-                        aria-hidden
-                        className="my-1 w-px flex-1 bg-[var(--border-subtle)]"
-                      />
-                    )}
-                  </div>
-                  <div className={`min-w-0 flex-1 ${isLast ? "" : "pb-3"}`}>
-                    <div className="text-[13px] font-semibold leading-6 text-[var(--text-primary)]">
-                      {step.name}
-                    </div>
-                    <div
-                      className={`font-mono text-[11px] leading-5 ${
-                        isLast
-                          ? "text-[var(--accent)]"
-                          : "text-[var(--text-muted)]"
-                      }`}
-                    >
-                      {step.spec}
-                    </div>
-                  </div>
-                </li>
-              );
-            })}
-          </ol>
-          <p className="border-t border-[var(--border-subtle)] px-5 py-3 text-[11px] text-[var(--text-muted)] sm:px-6">
-            {flowCaption}
+
+          <h1
+            id="hero-heading"
+            className="text-balance font-display text-[clamp(1.8rem,4.8vw,4.15rem)] font-semibold leading-[1.05] tracking-[-0.035em] text-[var(--text-primary)]"
+          >
+            {title} <span className="hero-accent">{titleAccent}</span>{" "}
+            {titleRest}
+          </h1>
+
+          <p className="mt-6 max-w-[46ch] text-pretty text-base leading-relaxed text-[var(--text-secondary)] sm:text-[1.0625rem]">
+            {subtitle}
           </p>
-        </aside>
+          <p className="mt-3 max-w-[50ch] text-pretty text-sm leading-relaxed text-[var(--text-muted)]">
+            {proofLine}
+          </p>
+
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+            {ctas}
+          </div>
+          <p className="mt-4 max-w-[52ch] text-pretty text-sm leading-relaxed text-[var(--text-secondary)]">
+            {availability}
+          </p>
+        </div>
+
+        <div className="mx-auto w-full max-w-[18.75rem] md:mx-0 md:max-w-none md:pt-0 lg:pt-8">
+          <HeroVisual nodes={[...orbit]} hubLabel={hub} />
+        </div>
       </div>
+
+      <a
+        href="#expertise"
+        className="mt-10 inline-flex items-center gap-2 text-sm text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"
+      >
+        {scroll}
+        <span aria-hidden>↓</span>
+      </a>
     </div>
   );
 }

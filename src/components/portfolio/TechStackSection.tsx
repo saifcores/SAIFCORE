@@ -33,7 +33,7 @@ export function TechStackSection({ title, subtitle, categories }: Props) {
           </h2>
         </MotionReveal>
 
-        <div className="mt-8 grid gap-3 sm:mt-10 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
+        <div className="mt-8 grid gap-3 sm:mt-10 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
           {categories.map((cat, ci) => (
             <MotionReveal key={cat.label} delay={ci * 80}>
               <motion.div

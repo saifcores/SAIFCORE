@@ -75,25 +75,17 @@ function readClientState(): {
   return { preference, theme };
 }
 
-function getInitialThemeState(): {
+const INITIAL_THEME_STATE: {
   preference: ThemePreference;
   theme: ResolvedTheme;
-} {
-  if (typeof document === "undefined") {
-    return {
-      preference: "dark",
-      theme: "dark",
-    };
-  }
-  return readClientState();
-}
+} = {
+  preference: "dark",
+  theme: "dark",
+};
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  /** SSR-safe default — synced from inline script + storage after mount. */
-  const [state, setState] = useState<{
-    preference: ThemePreference;
-    theme: ResolvedTheme;
-  }>(getInitialThemeState);
+  /** Same on server and first client render. The inline script paints the real theme; this state catches up after mount. */
+  const [state, setState] = useState(INITIAL_THEME_STATE);
 
   const setPreference = useCallback((next: ThemePreference) => {
     applyTheme(next);
@@ -101,6 +93,10 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       preference: next,
       theme: resolveTheme(next),
     });
+  }, []);
+
+  useEffect(() => {
+    setState(readClientState());
   }, []);
 
   useEffect(() => {

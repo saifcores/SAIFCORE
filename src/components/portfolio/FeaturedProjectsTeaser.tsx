@@ -21,10 +21,7 @@ export async function FeaturedProjectsTeaser() {
   } as const;
 
   return (
-    <section
-      id="work"
-      className="section-home scroll-mt-24 xl:scroll-mt-28"
-    >
+    <section id="work" className="section-home scroll-mt-24 xl:scroll-mt-28">
       <div className="page-container">
         <Reveal>
           <SectionHeader
@@ -39,7 +36,7 @@ export async function FeaturedProjectsTeaser() {
           />
         </Reveal>
 
-        <ul className="grid list-none grid-cols-1 gap-4 p-0 md:grid-cols-3">
+        <ul className="grid list-none grid-cols-1 gap-4 p-0 md:grid-cols-2 xl:grid-cols-3">
           {items.map((item, i) => {
             const kind = projectKind(item);
             const proof =

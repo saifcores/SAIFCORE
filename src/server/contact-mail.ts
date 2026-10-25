@@ -128,7 +128,7 @@ Pour avancer plus vite, vous pouvez :
 • préciser objectifs, contraintes, timeline et stack ;
 • ou me répondre directement à ce message.
 
-Je collabore principalement en tant qu’ingénieur backend senior — backends, systèmes distribués, APIs et architecture (Java / Spring Boot), avec une profondeur banque & FinTech — en remote, EN/FR.
+Je collabore en tant qu’ingénieur backend senior — backends, systèmes distribués, APIs et architecture (Java / Spring Boot), avec une profondeur banque & FinTech. Le travail client écrit est remote depuis Dakar. Le poste actuel chez Synapse est temps plein, sur site. La date de démarrage est dans ma réponse.
 
 Bien cordialement,
 Saïfoulaye Diallo
@@ -146,7 +146,7 @@ To move faster, you can:
 • share goals, constraints, timeline, and stack;
 • or reply directly to this message.
 
-Senior Backend Engineer — I build software that solves real-world problems: backends, distributed systems, APIs, and architecture (Java / Spring Boot), with banking & FinTech depth — remote, EN/FR.
+Senior Backend Engineer — backends, distributed systems, APIs, and architecture (Java / Spring Boot), with banking and FinTech depth. Written client work is remote from Dakar. The current Synapse role is full-time and on-site. The start date is in my reply.
 
 Best regards,
 Saïfoulaye Diallo

@@ -1,5 +1,5 @@
-import { getTranslations } from "next-intl/server";
-import { Link } from "@/i18n/navigation";
+import { getLocale, getTranslations } from "next-intl/server";
+import { getPathname } from "@/i18n/navigation";
 import { Reveal } from "./Reveal";
 
 type Namespace =
@@ -20,8 +20,31 @@ type Props = {
   ns: Namespace;
 };
 
+const PROJECT_NAMESPACES = new Set<Namespace>([
+  "systemsPage",
+  "collaboratePage",
+  "expertisePage",
+  "labPage",
+  "insights",
+  "articlesPage",
+  "caseStudyEcom360",
+  "caseStudyPaymentDisasterLab",
+  "caseStudyDoubleEntryLedger",
+]);
+
 export async function ContactBridgeStrip({ ns }: Props) {
   const t = await getTranslations(ns);
+  const locale = await getLocale();
+  const contactPath = getPathname({
+    href: "/contact",
+    locale: locale === "fr" ? "fr" : "en",
+  });
+  const intent = PROJECT_NAMESPACES.has(ns)
+    ? "freelance"
+    : ns === "experiencePage"
+      ? "hiring"
+      : null;
+  const href = intent ? `${contactPath}?intent=${intent}` : contactPath;
 
   return (
     <section
@@ -45,12 +68,12 @@ export async function ContactBridgeStrip({ ns }: Props) {
               {t("endCtaSubtitle")}
             </p>
           </div>
-          <Link
-            href="/contact"
+          <a
+            href={href}
             className="btn-primary inline-flex h-12 w-full shrink-0 items-center justify-center px-8 text-sm sm:min-w-[200px] sm:w-auto"
           >
             {t("endCtaButton")}
-          </Link>
+          </a>
         </div>
       </Reveal>
     </section>

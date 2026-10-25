@@ -43,6 +43,7 @@ export default async function LabPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale as Locale);
   const t = await getTranslations("labPage");
+  const tDirection = await getTranslations("architectureLab");
   const tCommon = await getTranslations("common");
   const messages = await getMessages();
 
@@ -63,8 +64,11 @@ export default async function LabPage({ params }: Props) {
             <h1 className="mb-4 max-w-[20ch] text-pretty font-display text-[clamp(1.85rem,4.2vw,3.25rem)] font-semibold leading-[1.08] tracking-tight text-[var(--text-primary)]">
               {t("title")}
             </h1>
-            <p className="mb-8 max-w-[62ch] text-lg text-[var(--text-muted)]">
+            <p className="mb-3 max-w-[62ch] text-lg text-[var(--text-muted)]">
               {t("subtitle")}
+            </p>
+            <p className="mb-8 max-w-[62ch] text-sm leading-relaxed text-[var(--text-secondary)]">
+              {tDirection("direction")}
             </p>
             <LabCatalog
               allLabel={t("all")}

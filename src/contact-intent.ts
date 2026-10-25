@@ -12,10 +12,10 @@ export function contactIntentLabel(
 ): string {
   if (locale === "fr") {
     if (intent === "hiring") return "Recrutement";
-    if (intent === "freelance") return "Discussion technique";
+    if (intent === "freelance") return "Projet";
     return "Autre";
   }
   if (intent === "hiring") return "Hiring";
-  if (intent === "freelance") return "Technical discussion";
+  if (intent === "freelance") return "Project";
   return "Other";
 }

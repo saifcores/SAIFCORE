@@ -63,7 +63,11 @@ export async function ExpertiseList() {
                       {t("evidenceLabel")}
                     </div>
                     <Link
-                      href={getCaseStudyHref(item.caseId)}
+                      href={
+                        "evidenceHref" in item && item.evidenceHref
+                          ? item.evidenceHref
+                          : getCaseStudyHref(item.caseId)
+                      }
                       className="link-more text-[var(--accent)]"
                       data-arrow
                     >

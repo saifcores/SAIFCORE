@@ -9,6 +9,7 @@ import { Reveal } from "./Reveal";
 
 export async function HomeLabWriting() {
   const tLab = await getTranslations("labPage");
+  const tDirection = await getTranslations("architectureLab");
   const tInsights = await getTranslations("insights");
   const tCommon = await getTranslations("common");
   const locale = await getLocale();
@@ -26,6 +27,9 @@ export async function HomeLabWriting() {
             <h2 className="section-heading">{tLab("title")}</h2>
             <p className="max-w-[46ch] text-[15px] text-[var(--text-muted)]">
               {tLab("subtitle")}
+            </p>
+            <p className="max-w-[46ch] text-sm text-[var(--text-secondary)]">
+              {tDirection("direction")}
             </p>
             <Link href="/lab" className="link-more pt-1">
               {tLab("viewAll")}
