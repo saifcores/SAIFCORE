@@ -12,9 +12,9 @@ export async function FaqSection() {
     <section
       id="faq"
       aria-labelledby="faq-heading"
-      className="scroll-mt-24 border-b border-[var(--border-subtle)] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20 xl:scroll-mt-28"
+      className="scroll-mt-24 border-t border-[var(--border-subtle)] py-12 sm:py-16 lg:py-20 xl:scroll-mt-28"
     >
-      <div className="mx-auto max-w-7xl">
+      <div className="page-container">
         <MotionReveal>
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
             {t("title")}
@@ -31,7 +31,7 @@ export async function FaqSection() {
           {items.map((item, index) => (
             <MotionReveal key={item.question} delay={index * 40}>
               <details className="group py-1 sm:py-1.5">
-                <summary className="cursor-pointer list-none py-3 text-sm font-semibold text-[var(--text-primary)] marker:content-none sm:py-4 [&::-webkit-details-marker]:hidden">
+                <summary className="cursor-pointer list-none rounded-lg py-3 text-sm font-semibold text-[var(--text-primary)] marker:content-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] sm:py-4 [&::-webkit-details-marker]:hidden">
                   <span className="flex items-start justify-between gap-3">
                     <span className="text-pretty pr-1">{item.question}</span>
                     <span

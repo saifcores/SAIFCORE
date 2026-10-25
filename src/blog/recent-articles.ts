@@ -1,6 +1,20 @@
 import type { ArticleKind } from "@/data/article-content";
 import { getBlogUrl } from "@/site";
 
+/** Calendar date, not UTC midnight, so the day does not shift west of UTC. */
+export function formatPublishedDate(iso: string, locale: "en" | "fr"): string {
+  const match = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso);
+  const date = match
+    ? new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3]))
+    : new Date(iso);
+
+  return new Intl.DateTimeFormat(locale === "fr" ? "fr-FR" : "en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  }).format(date);
+}
+
 const ARTICLE_KINDS = new Set<ArticleKind>([
   "writing",
   "code",

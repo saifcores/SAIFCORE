@@ -78,7 +78,7 @@ export function HeroContent({
             <p className="inline-flex w-fit items-center gap-2 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/70 px-3 py-1 font-mono text-xs text-[var(--text-muted)]">
               <span
                 aria-hidden
-                className="status-live h-1.5 w-1.5 rounded-full bg-[var(--ok)]"
+                className="h-1.5 w-1.5 rounded-full bg-[var(--text-muted)]"
               />
               {availability}
             </p>

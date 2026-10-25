@@ -499,36 +499,7 @@ nav {
   transform: translateX(2px);
 }
 
-.status-live {
-  position: relative;
-}
-
-.status-live::after {
-  content: "";
-  position: absolute;
-  inset: -3px;
-  border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
-  animation: status-live-ring 2.4s ease-in-out infinite;
-}
-
-@keyframes status-live-ring {
-  0%,
-  100% {
-    opacity: 0.35;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0;
-    transform: scale(1.7);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .status-live::after {
-    animation: none;
-  }
-
   .link-more[data-arrow]:hover::after {
     transform: none;
   }

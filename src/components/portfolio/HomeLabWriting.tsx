@@ -1,6 +1,9 @@
 import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { fetchRecentArticles } from "@/blog/recent-articles";
+import {
+  fetchRecentArticles,
+  formatPublishedDate,
+} from "@/blog/recent-articles";
 import { getBlogIndexUrl } from "@/site";
 import { Reveal } from "./Reveal";
 
@@ -15,10 +18,7 @@ export async function HomeLabWriting() {
   const opensInNewTab = tCommon("opensInNewTab");
 
   return (
-    <section
-      id="lab"
-      className="section-home scroll-mt-24 xl:scroll-mt-28"
-    >
+    <section id="lab" className="section-home scroll-mt-24 xl:scroll-mt-28">
       <div className="page-container grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
         <Reveal>
           <div className="flex flex-col gap-3">
@@ -60,14 +60,17 @@ export async function HomeLabWriting() {
                 href={article.href}
                 target={article.external ? "_blank" : undefined}
                 rel={article.external ? "noopener noreferrer" : undefined}
+                aria-label={
+                  article.external
+                    ? `${formatPublishedDate(article.publishedAt, loc)}, ${
+                        article.title
+                      } (${opensInNewTab})`
+                    : undefined
+                }
                 className="flex flex-col gap-1 border-b border-[var(--border-subtle)] py-4 transition-colors hover:text-[var(--text-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
               >
                 <span className="font-mono text-xs text-[var(--text-muted)]">
-                  {new Intl.DateTimeFormat(locale, {
-                    day: "numeric",
-                    month: "short",
-                    year: "numeric",
-                  }).format(new Date(article.publishedAt))}
+                  {formatPublishedDate(article.publishedAt, loc)}
                 </span>
                 <span className="text-[17px] font-semibold text-[var(--text-primary)]">
                   {article.title}

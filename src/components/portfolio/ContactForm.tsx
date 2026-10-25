@@ -1,7 +1,7 @@
 "use client";
 
 import { useId, useState } from "react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { isContactIntent } from "@/contact-intent";
 import { getContactMailto, getGithubUrl, getLinkedinUrl } from "@/site";
 
@@ -69,6 +69,8 @@ export function ContactForm({
   showAside = true,
 }: Props) {
   const locale = useLocale();
+  const tCommon = useTranslations("common");
+  const opensInNewTab = tCommon("opensInNewTab");
   const formDomId = useId();
   const nameId = `${formDomId}-name`;
   const emailId = `${formDomId}-email`;
@@ -200,17 +202,22 @@ export function ContactForm({
             disabled={!formEnabled || isSending}
           >
             <legend className="sr-only">{formSubmit}</legend>
-            <label className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden">
-              <span>Website</span>
-              <input
-                type="text"
-                name="website"
-                tabIndex={-1}
-                autoComplete="off"
-                value={website}
-                onChange={(e) => setWebsite(e.target.value)}
-              />
-            </label>
+            <div
+              className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden"
+              aria-hidden="true"
+            >
+              <label>
+                <span>Website</span>
+                <input
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={website}
+                  onChange={(e) => setWebsite(e.target.value)}
+                />
+              </label>
+            </div>
             <label className="block sm:col-span-1" htmlFor={nameId}>
               <span className="mb-1.5 block text-xs font-medium text-[var(--text-muted)]">
                 {formName}
@@ -370,40 +377,42 @@ export function ContactForm({
               {socialTitle}
             </p>
             <ul className="mt-4 space-y-1">
-                {linkedinUrl ? (
-                  <li>
-                    <a
-                      href={linkedinUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex min-h-11 w-full items-center text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
-                    >
-                      {linkedinLabel}
-                    </a>
-                  </li>
-                ) : null}
-                {githubUrl ? (
-                  <li>
-                    <a
-                      href={githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex min-h-11 w-full items-center text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
-                    >
-                      {githubLabel}
-                    </a>
-                  </li>
-                ) : null}
-                {directMail ? (
-                  <li>
-                    <a
-                      href={directMail}
-                      className="inline-flex min-h-11 w-full items-center text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
-                    >
-                      {emailLabel}
-                    </a>
-                  </li>
-                ) : null}
+              {linkedinUrl ? (
+                <li>
+                  <a
+                    href={linkedinUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${linkedinLabel} (${opensInNewTab})`}
+                    className="inline-flex min-h-11 w-full items-center text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
+                  >
+                    {linkedinLabel}
+                  </a>
+                </li>
+              ) : null}
+              {githubUrl ? (
+                <li>
+                  <a
+                    href={githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${githubLabel} (${opensInNewTab})`}
+                    className="inline-flex min-h-11 w-full items-center text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
+                  >
+                    {githubLabel}
+                  </a>
+                </li>
+              ) : null}
+              {directMail ? (
+                <li>
+                  <a
+                    href={directMail}
+                    className="inline-flex min-h-11 w-full items-center text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
+                  >
+                    {emailLabel}
+                  </a>
+                </li>
+              ) : null}
             </ul>
           </div>
         </aside>

@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import { isContactIntent } from "@/contact-intent";
 import { ContactPage } from "@/components/portfolio/ContactPage";
+import { FaqSection } from "@/components/portfolio/FaqSection";
 import { Footer } from "@/components/portfolio/Footer";
 import { Navbar } from "@/components/portfolio/Navbar";
 import { routing } from "@/i18n/routing";
@@ -54,6 +55,7 @@ export default async function ContactRoute({ params, searchParams }: Props) {
         tabIndex={-1}
       >
         <ContactPage initialIntent={initialIntent} />
+        <FaqSection />
       </main>
       <Footer />
     </div>

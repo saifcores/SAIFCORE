@@ -123,9 +123,46 @@ export function Navbar() {
 
   useEffect(() => {
     if (!open) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") close(true);
+
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        close(true);
+        return;
+      }
+      if (event.key !== "Tab") return;
+
+      const panel = panelRef.current;
+      if (!panel) return;
+
+      const panelItems = [
+        ...panel.querySelectorAll<HTMLElement>(
+          "a[href], button:not([disabled])",
+        ),
+      ].filter((el) => el.tabIndex !== -1);
+      const items = [
+        ...(menuButtonRef.current ? [menuButtonRef.current] : []),
+        ...panelItems,
+      ];
+      if (items.length === 0) return;
+
+      const index = items.indexOf(document.activeElement as HTMLElement);
+      const first = items[0];
+      const last = items[items.length - 1];
+
+      if (event.shiftKey) {
+        if (index <= 0) {
+          event.preventDefault();
+          last.focus();
+        }
+        return;
+      }
+
+      if (index === -1 || index === items.length - 1) {
+        event.preventDefault();
+        first.focus();
+      }
     };
+
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [open, close]);

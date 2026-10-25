@@ -57,7 +57,7 @@ export async function ContactPage({ initialIntent = "" }: Props) {
           <p className="inline-flex w-fit items-center gap-2 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/70 px-3 py-1.5 font-mono text-xs text-[var(--text-muted)]">
             <span
               aria-hidden
-              className="status-live h-1.5 w-1.5 rounded-full bg-[var(--ok)]"
+              className="h-1.5 w-1.5 rounded-full bg-[var(--text-muted)]"
             />
             {tHero("availability")}
           </p>

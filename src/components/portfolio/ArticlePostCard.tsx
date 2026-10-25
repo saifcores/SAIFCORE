@@ -1,5 +1,8 @@
 import Image from "next/image";
-import type { ArticleCardData } from "@/blog/recent-articles";
+import {
+  formatPublishedDate,
+  type ArticleCardData,
+} from "@/blog/recent-articles";
 import { Link } from "@/i18n/navigation";
 
 type Props = {
@@ -66,30 +69,12 @@ export function ArticlePostCard({
 }: Props) {
   const loc = locale;
   const { href, external, coverImage, title, excerpt, publishedAt } = article;
-  const externalTitleLabel = external
-    ? `${title} (${opensInNewTabLabel})`
-    : undefined;
-  const externalReadMoreLabel = external
-    ? `${readMoreLabel} (${opensInNewTabLabel})`
-    : undefined;
-
-  const formatDate = (iso: string) =>
-    new Intl.DateTimeFormat(loc === "fr" ? "fr-FR" : "en-US", {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    }).format(new Date(iso));
+  const linkLabel = external ? `${title} (${opensInNewTabLabel})` : title;
 
   return (
-    <article className="post-card group flex h-full flex-col">
+    <article className="post-card group relative flex h-full flex-col focus-within:rounded-xl focus-within:ring-2 focus-within:ring-[var(--focus-ring)]">
       {coverImage ? (
-        <CardAnchor
-          href={href}
-          external={external}
-          className="post-card-image-link relative block aspect-[16/10] overflow-hidden rounded-xl bg-[var(--bg-code)]"
-          tabIndex={-1}
-          ariaHidden
-        >
+        <div className="post-card-image-link relative block aspect-[16/10] overflow-hidden rounded-xl bg-[var(--bg-code)]">
           <Image
             src={coverImage}
             alt=""
@@ -98,7 +83,7 @@ export function ArticlePostCard({
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             className="post-card-image object-cover"
           />
-        </CardAnchor>
+        </div>
       ) : null}
 
       <div
@@ -106,20 +91,16 @@ export function ArticlePostCard({
           coverImage ? "mt-5 flex flex-1 flex-col" : "flex flex-1 flex-col"
         }
       >
-        <CardAnchor
-          href={href}
-          external={external}
-          className="inline-flex w-fit text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--text-muted)] transition hover:text-[var(--text-primary)]"
-        >
+        <p className="inline-flex w-fit text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--text-muted)]">
           {tagLabel}
-        </CardAnchor>
+        </p>
 
         <h3 className="post-card-title mt-3 font-display text-lg font-medium leading-snug tracking-tight text-[var(--text-primary)] sm:text-xl md:text-[1.35rem]">
           <CardAnchor
             href={href}
             external={external}
-            className="transition group-hover:underline group-hover:underline-offset-4"
-            ariaLabel={externalTitleLabel}
+            className="after:absolute after:inset-0 focus-visible:outline-none group-hover:underline group-hover:underline-offset-4"
+            ariaLabel={linkLabel}
           >
             {title}
           </CardAnchor>
@@ -138,17 +119,12 @@ export function ArticlePostCard({
               dateTime={publishedAt}
               className="text-xs text-[var(--text-muted)]"
             >
-              {formatDate(publishedAt)}
+              {formatPublishedDate(publishedAt, loc)}
             </time>
           </div>
-          <CardAnchor
-            href={href}
-            external={external}
-            className="inline-flex min-h-11 shrink-0 items-center text-sm font-medium text-[var(--text-primary)] underline-offset-4 transition hover:underline min-[420px]:min-h-0"
-            ariaLabel={externalReadMoreLabel}
-          >
+          <span className="inline-flex min-h-11 shrink-0 items-center text-sm font-medium text-[var(--text-primary)] min-[420px]:min-h-0">
             {readMoreLabel}
-          </CardAnchor>
+          </span>
         </footer>
       </div>
     </article>

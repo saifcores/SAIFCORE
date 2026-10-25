@@ -316,7 +316,7 @@
   "offersHome": {
     "label": "Travailler avec moi",
     "title": "Un ingénieur nommé, un périmètre écrit, un devis ferme.",
-    "subtitle": "Fourchettes indicatives en EUR, remote depuis Dakar. Le sprint architecture est le premier pas habituel.",
+    "subtitle": "Fourchettes indicatives en EUR pour un démarrage en février 2027, remote depuis Dakar. Le sprint architecture est le premier pas habituel.",
     "cta": "Parler de cette offre",
     "items": [
       {
@@ -712,7 +712,7 @@
       },
       {
         "question": "Combien coûte un engagement ?",
-        "answer": "Pas de grille tarifaire publique pendant le CDD. Disponible à partir de février 2027."
+        "answer": "Les fourchettes indicatives en EUR sont sur l’accueil, pour un démarrage en février 2027. Pas d’engagement avant."
       },
       {
         "question": "Comment démarrer si je recrute ?",
