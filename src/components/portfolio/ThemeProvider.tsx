@@ -4,13 +4,17 @@ import {
   createContext,
   useCallback,
   useContext,
-  useEffect,
   useMemo,
-  useState,
+  useSyncExternalStore,
 } from "react";
 
 export type ThemePreference = "light" | "dark" | "system";
 export type ResolvedTheme = "light" | "dark";
+
+type ThemeState = {
+  preference: ThemePreference;
+  theme: ResolvedTheme;
+};
 
 const STORAGE_KEY = "theme";
 
@@ -19,6 +23,14 @@ const ThemeContext = createContext<{
   theme: ResolvedTheme;
   setPreference: (next: ThemePreference) => void;
 } | null>(null);
+
+const SERVER_THEME_STATE: ThemeState = {
+  preference: "dark",
+  theme: "dark",
+};
+
+let cachedSnapshot: ThemeState = SERVER_THEME_STATE;
+const listeners = new Set<() => void>();
 
 function getSystemTheme(): ResolvedTheme {
   return window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -62,10 +74,7 @@ function readPreferenceFromDocument(): ThemePreference | null {
   return null;
 }
 
-function readClientState(): {
-  preference: ThemePreference;
-  theme: ResolvedTheme;
-} {
+function readClientState(): ThemeState {
   const preference = readPreferenceFromDocument() ?? readStoredPreference();
   const applied = document.documentElement.dataset.theme;
   const theme: ResolvedTheme =
@@ -75,41 +84,55 @@ function readClientState(): {
   return { preference, theme };
 }
 
-const INITIAL_THEME_STATE: {
-  preference: ThemePreference;
-  theme: ResolvedTheme;
-} = {
-  preference: "dark",
-  theme: "dark",
-};
+function emitChange() {
+  for (const listener of listeners) {
+    listener();
+  }
+}
+
+function getClientSnapshot(): ThemeState {
+  const next = readClientState();
+  if (
+    next.preference === cachedSnapshot.preference &&
+    next.theme === cachedSnapshot.theme
+  ) {
+    return cachedSnapshot;
+  }
+  cachedSnapshot = next;
+  return cachedSnapshot;
+}
+
+function getServerSnapshot(): ThemeState {
+  return SERVER_THEME_STATE;
+}
+
+function subscribe(onStoreChange: () => void) {
+  listeners.add(onStoreChange);
+
+  const media = window.matchMedia("(prefers-color-scheme: dark)");
+  const onMediaChange = () => {
+    if (readStoredPreference() !== "system") return;
+    document.documentElement.dataset.theme = getSystemTheme();
+    emitChange();
+  };
+  media.addEventListener("change", onMediaChange);
+
+  return () => {
+    listeners.delete(onStoreChange);
+    media.removeEventListener("change", onMediaChange);
+  };
+}
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  /** Same on server and first client render. The inline script paints the real theme; this state catches up after mount. */
-  const [state, setState] = useState(INITIAL_THEME_STATE);
+  const state = useSyncExternalStore(
+    subscribe,
+    getClientSnapshot,
+    getServerSnapshot,
+  );
 
   const setPreference = useCallback((next: ThemePreference) => {
     applyTheme(next);
-    setState({
-      preference: next,
-      theme: resolveTheme(next),
-    });
-  }, []);
-
-  useEffect(() => {
-    setState(readClientState());
-  }, []);
-
-  useEffect(() => {
-    const media = window.matchMedia("(prefers-color-scheme: dark)");
-    const onChange = () => {
-      const preference = readStoredPreference();
-      if (preference !== "system") return;
-      const resolved = getSystemTheme();
-      document.documentElement.dataset.theme = resolved;
-      setState({ preference: "system", theme: resolved });
-    };
-    media.addEventListener("change", onChange);
-    return () => media.removeEventListener("change", onChange);
+    emitChange();
   }, []);
 
   const value = useMemo(

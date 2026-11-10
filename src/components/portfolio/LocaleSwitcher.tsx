@@ -31,7 +31,6 @@ export function LocaleSwitcher({ labels, navLabel }: Props) {
             key={loc}
             href={href}
             lang={loc}
-            aria-pressed={active}
             aria-current={active ? "page" : undefined}
             className={`inline-flex h-full items-center px-2.5 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--focus-ring)] ${
               active

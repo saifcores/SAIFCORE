@@ -428,9 +428,8 @@ export function buildArticlePageGraph({
   publishedAt,
 }: ArticlePageGraphInput): Record<string, unknown> {
   const pageUrl = getLocalePageUrl(locale, `/articles/${slug}`);
-  const { "@context": _articleContext, ...blogPosting } = buildArticleJsonLd(
-    locale,
-    { title, description, slug, publishedAt },
+  const blogPosting = stripJsonLdContext(
+    buildArticleJsonLd(locale, { title, description, slug, publishedAt }),
   );
 
   const webPageNode = {
@@ -450,13 +449,23 @@ export function buildArticlePageGraph({
   );
 }
 
+/** Drop nested `@context` before embedding a node in `@graph`. */
+function stripJsonLdContext(
+  node: Record<string, unknown>,
+): Record<string, unknown> {
+  if (!Object.hasOwn(node, "@context")) return node;
+  const next = { ...node };
+  delete next["@context"];
+  return next;
+}
+
 /** Merge nodes into a single JSON-LD `@graph` document. */
 export function buildJsonLdGraph(
   ...nodes: Record<string, unknown>[]
 ): Record<string, unknown> {
   return {
     "@context": "https://schema.org",
-    "@graph": nodes.map(({ "@context": _context, ...node }) => node),
+    "@graph": nodes.map(stripJsonLdContext),
   };
 }
 

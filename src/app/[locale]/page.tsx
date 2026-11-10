@@ -144,8 +144,7 @@ export default async function Home({ params }: Props) {
     Array.isArray(insightsItemListJsonLd.itemListElement) &&
     insightsItemListJsonLd.itemListElement.length > 0
   ) {
-    const { "@context": _context, ...itemListNode } = insightsItemListJsonLd;
-    graphNodes.push(itemListNode);
+    graphNodes.push(insightsItemListJsonLd);
   }
 
   const systemsUrl = getLocalePageUrl(locale, "/systems");
@@ -167,9 +166,7 @@ export default async function Home({ params }: Props) {
     Array.isArray(caseStudiesItemListJsonLd.itemListElement) &&
     caseStudiesItemListJsonLd.itemListElement.length > 0
   ) {
-    const { "@context": _caseContext, ...caseListNode } =
-      caseStudiesItemListJsonLd;
-    graphNodes.push(caseListNode);
+    graphNodes.push(caseStudiesItemListJsonLd);
   }
 
   const homeJsonLd = buildJsonLdGraph(...graphNodes);

@@ -78,18 +78,24 @@ export function Navbar() {
   const desktopNav = useMemo(() => buildDesktopNav(), []);
   const mobileNav = useMemo(() => buildMobileNav(loc), [loc]);
 
-  const [open, setOpen] = useState(false);
+  // Open only while pathname matches the route when the menu was opened —
+  // navigation closes the drawer without setState-in-effect.
+  const [menuPath, setMenuPath] = useState<string | null>(null);
+  const open = menuPath === pathname;
   const [scrolled, setScrolled] = useState(false);
   const panelId = useId();
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
 
-  const close = useCallback((restoreFocus = false) => {
-    setOpen(false);
-    if (restoreFocus) {
-      menuButtonRef.current?.focus();
-    }
-  }, []);
+  const close = useCallback(
+    (restoreFocus = false) => {
+      setMenuPath(null);
+      if (restoreFocus) {
+        menuButtonRef.current?.focus();
+      }
+    },
+    [setMenuPath],
+  );
 
   useEffect(() => {
     if (!open) return;
@@ -100,10 +106,6 @@ export function Navbar() {
     });
     return () => cancelAnimationFrame(frame);
   }, [open]);
-
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -253,7 +255,9 @@ export function Navbar() {
             ref={menuButtonRef}
             type="button"
             className="inline-flex h-10 w-10 items-center justify-center rounded-[12px] text-[var(--text-secondary)] transition-all duration-300 hover:bg-[var(--bg-elevated)] hover:text-[var(--text-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] lg:hidden"
-            onClick={() => setOpen((o) => !o)}
+            onClick={() =>
+              setMenuPath((current) => (current === pathname ? null : pathname))
+            }
             aria-expanded={open}
             aria-controls={panelId}
             aria-label={open ? t("closeMenu") : t("openMenu")}
