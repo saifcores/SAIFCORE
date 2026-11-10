@@ -7,6 +7,7 @@ import { MotionReveal } from "@/components/portfolio/motion/MotionReveal";
 const LAB_IDS = [
   "payment-platform-disaster-lab",
   "double-entry-ledger-platform",
+  "senwallet",
 ] as const;
 
 export async function ArchitectureLab() {
@@ -45,7 +46,7 @@ export async function ArchitectureLab() {
           </p>
         </MotionReveal>
 
-        <div className="mt-8 grid gap-4 sm:mt-10 lg:grid-cols-5 lg:gap-5">
+        <div className="mt-8 grid gap-4 sm:mt-10 lg:grid-cols-3 lg:gap-5">
           {projects.map((item, index) => {
             const href = item.href?.trim() ?? "";
             const caseHref = getCaseStudyHref(item);
@@ -55,7 +56,7 @@ export async function ArchitectureLab() {
               <MotionReveal
                 key={item.id}
                 delay={index * 60}
-                className={isPrimary ? "lg:col-span-3" : "lg:col-span-2"}
+                className="lg:col-span-1"
               >
                 <article className="flex h-full flex-col rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/20 p-5 sm:p-7">
                   <p className="text-[11px] font-medium uppercase tracking-[0.14em] text-[var(--text-muted)]">
@@ -89,7 +90,10 @@ export async function ArchitectureLab() {
                         className="inline-flex min-h-10 items-center text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
                       >
                         {t("repoCta")}
-                        <ArrowUpRight className="ml-1 h-3.5 w-3.5" aria-hidden />
+                        <ArrowUpRight
+                          className="ml-1 h-3.5 w-3.5"
+                          aria-hidden
+                        />
                       </a>
                     ) : null}
                   </div>

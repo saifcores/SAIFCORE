@@ -3,6 +3,7 @@ import { getMessages, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "./Reveal";
 
+/** Icons keyed by expertise item `num` (01 payments · 02 APIs · 03 reliability · 04 backend · 05 AI). */
 const ICONS: Record<string, ReactNode> = {
   "01": (
     <path
@@ -15,7 +16,7 @@ const ICONS: Record<string, ReactNode> = {
   ),
   "02": (
     <path
-      d="M5 8h14v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V8Zm2-3h10v3H7V5Zm3 7h4"
+      d="M9 8H6v8h3M15 8h3v8h-3M10 12h4"
       stroke="currentColor"
       strokeWidth="1.6"
       strokeLinecap="round"
@@ -24,16 +25,15 @@ const ICONS: Record<string, ReactNode> = {
   ),
   "03": (
     <path
-      d="M7 16V8l5-3 5 3v8M7 12h10"
+      d="M12 5v3m0 8v3M5 12h3m8 0h3M7.5 7.5l2 2m5 5 2 2m0-9-2 2m-5 5-2 2"
       stroke="currentColor"
       strokeWidth="1.6"
       strokeLinecap="round"
-      strokeLinejoin="round"
     />
   ),
   "04": (
     <path
-      d="M9 8H6v8h3M15 8h3v8h-3M10 12h4"
+      d="M5 8h14v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V8Zm2-3h10v3H7V5Zm3 7h4"
       stroke="currentColor"
       strokeWidth="1.6"
       strokeLinecap="round"
@@ -41,14 +41,6 @@ const ICONS: Record<string, ReactNode> = {
     />
   ),
   "05": (
-    <path
-      d="M12 5v3m0 8v3M5 12h3m8 0h3M7.5 7.5l2 2m5 5 2 2m0-9-2 2m-5 5-2 2"
-      stroke="currentColor"
-      strokeWidth="1.6"
-      strokeLinecap="round"
-    />
-  ),
-  "06": (
     <path
       d="M12 6.5a3 3 0 0 1 3 3c0 2-3 3.2-3 5.5M12 18h.01M8.2 8.2a5.5 5.5 0 0 0 0 7.6M15.8 8.2a5.5 5.5 0 0 1 0 7.6"
       stroke="currentColor"
@@ -106,6 +98,12 @@ export async function ExpertiseTeaser() {
         <div className="grid gap-4 sm:grid-cols-2">
           {messages.expertise.items.map((item, index) => {
             const isDirection = "evidenceHref" in item && item.evidenceHref;
+            const isFoundation = item.num === "04";
+            const badge = isDirection
+              ? t("directionBadge")
+              : isFoundation
+                ? t("foundationBadge")
+                : t("proofBadge");
             return (
               <Reveal key={item.num} delay={index * 40}>
                 <Link
@@ -116,12 +114,12 @@ export async function ExpertiseTeaser() {
                     <DomainIcon num={item.num} />
                     <span
                       className={
-                        isDirection
+                        isDirection || isFoundation
                           ? "rounded-full border border-[var(--border-subtle)] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-[var(--text-muted)]"
                           : "rounded-full bg-[var(--text-primary)] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-[var(--bg-base)]"
                       }
                     >
-                      {isDirection ? t("directionBadge") : t("proofBadge")}
+                      {badge}
                     </span>
                   </div>
                   <h3 className="mt-4 text-[15px] font-semibold text-[var(--text-primary)]">

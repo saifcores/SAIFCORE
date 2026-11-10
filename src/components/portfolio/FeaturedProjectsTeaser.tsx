@@ -40,7 +40,8 @@ export async function FeaturedProjectsTeaser() {
           {items.map((item, i) => {
             const kind = projectKind(item);
             const proof =
-              item.metrics?.[0]?.value ?? item.impact.split(/[.;]/)[0];
+              ("homeProof" in item && item.homeProof?.trim()) ||
+              item.impact.split(/[.;]/)[0];
             const caseCta = item.disclosure.trim()
               ? t("readPatterns")
               : t("readCaseStudy");

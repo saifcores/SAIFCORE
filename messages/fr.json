@@ -1,19 +1,19 @@
 {
   "meta": {
-    "title": "Ingénieur Backend Senior | Java · Systèmes distribués · Architecture | SAIFCORE",
-    "description": "Ingénieur Backend Senior — Java, Spring Boot, paiements et PSP. Plateformes Bank of Africa via Synapse, mobile money, Ecom 360 en production. Dakar · remote.",
-    "ogTitle": "Des systèmes financiers et d'entreprise fiables",
-    "ogDescription": "Des backends de production qui restent corrects sous charge. Ingénieur Backend Senior — Java, Spring Boot, paiements et corridors PSP. Dakar · remote mondial.",
-    "twitterDescription": "Ingénieur Backend Senior · Java · Spring Boot · paiements · corridors PSP. Des backends de production qui restent corrects sous charge. Dakar · remote mondial.",
-    "jsonLdJobTitle": "Ingénieur Backend Senior",
-    "jsonLdDescription": "Ingénieur Backend Senior — Java, Spring Boot, systèmes de paiement et corridors PSP. Conçoit des services qui restent justes sous retries, callbacks et charge. Preuve : plateformes du Groupe Bank of Africa (via Synapse), intégrations mobile money, Ecom 360 en production. Dakar · remote mondial.",
-    "jsonLdServiceName": "Ingénierie backend & architecture logicielle",
-    "jsonLdServiceDescription": "Systèmes backend, APIs, architectures distribuées et logiciels pour produits, plateformes et enterprise — dont infrastructure de paiement, corridors PSP et intégrations bancaires régulées quand le problème l'exige.",
+    "title": "Justesse des paiements · APIs & rails UEMOA | SAIFCORE",
+    "description": "Justesse des paiements et gestion d’APIs sur les rails UEMOA — Wave, Orange Money, Free Money. Patterns Bank of Africa via Synapse, Ecom 360 en production. Dakar · remote.",
+    "ogTitle": "Justesse des paiements · APIs & rails UEMOA · SAIFCORE",
+    "ogDescription": "Des flux d’argent justes quand les rails cassent — callbacks rejoués, timeouts PSP, réconciliation. APIs multi-filiales et mobile money. Dakar · remote mondial.",
+    "twitterDescription": "Justesse des paiements · APIs & rails UEMOA. Wave, Orange Money, Free Money · patterns Bank of Africa via Synapse · Ecom 360 en production. Dakar · remote.",
+    "jsonLdJobTitle": "Ingénieur paiements & APIs",
+    "jsonLdDescription": "Ingénieur de la justesse des flux de paiement et des APIs — Wave, Orange Money, Free Money, et patterns multi-filiales Bank of Africa via Synapse. Conçoit des services qui restent justes sous retries, callbacks et timeouts. Preuve publique : Ecom 360 en production ; patterns confidentiels issus de Synapse ; labs open source. Dakar · remote mondial.",
+    "jsonLdServiceName": "Justesse des paiements & gestion d’APIs",
+    "jsonLdServiceDescription": "Audit et conception de flux d’argent, gateways API, et fiabilité distribuée sur les rails d’Afrique de l’Ouest — dont corridors PSP et intégrations bancaires multi-entités quand le problème l’exige.",
     "jsonLdAvailability": "Remote mondial",
     "jsonLdAreaServed": "Sénégal, Afrique de l'Ouest, Monde entier",
-    "keywords": "ingénieur backend senior, Java, Spring Boot, NestJS, PostgreSQL, Kubernetes, OAuth2, MongoDB, systèmes distribués, APIs, architecture logicielle, plateformes enterprise, backend SaaS, backend bancaire, systèmes de paiement, fintech, PSP, mobile money, ledger, IA appliquée, Bank of Africa, Sénégal, Dakar, ingénieur remote, SAIFCORE",
-    "manifestName": "SAIFCORE — Ingénieur Backend Senior",
-    "manifestDescription": "Portfolio — ingénierie backend, systèmes distribués, APIs, paiements et PSP pour produits, plateformes, enterprise, banque et FinTech.",
+    "keywords": "justesse des paiements, ingénieur paiements, gestion d’APIs, rails UEMOA, Java, Spring Boot, NestJS, PostgreSQL, Kubernetes, OAuth2, MongoDB, systèmes distribués, APIs, architecture logicielle, backend bancaire, systèmes de paiement, fintech, PSP, mobile money, Wave, Orange Money, Free Money, ledger, IA appliquée, Bank of Africa, Sénégal, Dakar, SAIFCORE",
+    "manifestName": "SAIFCORE — Justesse des paiements · APIs",
+    "manifestDescription": "Portfolio — justesse des paiements, gestion d’APIs et rails UEMOA pour fintech, banque et produits.",
     "knowsAbout": [
       "Java",
       "Spring Boot",
@@ -59,7 +59,7 @@
   },
   "nav": {
     "primary": "Principal",
-    "brandRole": "Ingénieur Backend Senior",
+    "brandRole": "Paiements & APIs",
     "brandHomeLabel": "SAIFCORE — accueil",
     "work": "Projets",
     "lab": "Lab",
@@ -155,15 +155,21 @@
   "hero": {
     "badge": "Disponible pour de nouveaux engagements",
     "identityName": "Saïfoulaye Diallo",
-    "identityRole": "Ingénieur Backend Senior",
-    "statusLine": "Saïfoulaye Diallo · Ingénieur Backend Senior · Dakar · remote",
-    "title": "Je conçois des systèmes backend",
-    "titleAccent": "fiables",
-    "titleRest": "pour des produits complexes.",
-    "rail": "Backend · Paiements · PSP",
+    "identityRole": "Ingénieur paiements & APIs",
+    "statusLine": "Saïfoulaye Diallo · Justesse des paiements · APIs · Dakar · remote",
+    "title": "Des flux d’argent",
+    "titleAccent": "justes",
+    "titleRest": "quand les rails cassent.",
+    "rail": "Paiements · APIs · rails UEMOA",
     "hub": "SAIFCORE",
     "scroll": "Défiler",
-    "orbit": ["Backend", "Paiements", "PSP", "APIs", "IA"],
+    "orbit": [
+      "Paiements",
+      "APIs",
+      "PSP",
+      "Backend",
+      "IA"
+    ],
     "subtitle": "Les paiements échouent rarement sur le happy path. Ils échouent quand un callback arrive deux fois, qu’un fournisseur timeout en plein transfert, ou qu’une transaction reste bloquée entre deux états.",
     "proofLine": "Plateformes du Groupe Bank of Africa (via Synapse) · Intégrations Wave, Orange Money, Free Money · Ecom 360 en production.",
     "availability": "Un travail cadré commence par un brief écrit. Je réponds sous deux jours ouvrés : adéquation et date de démarrage. Le poste actuel chez Synapse, pour Bank of Africa, est à temps plein et sur site. Appels en français ; anglais à l’écrit.",
@@ -175,17 +181,35 @@
     "flowCaption": "Schéma illustratif, pas un système client.",
     "portraitAlt": "Portrait de Saïfoulaye Diallo",
     "flow": [
-      { "name": "Client", "spec": "POST /payments" },
-      { "name": "API Gateway", "spec": "JWT · RBAC" },
-      { "name": "Payment service", "spec": "Idempotency-Key" },
-      { "name": "PSP adapter", "spec": "Wave · OM · Free" },
-      { "name": "Ledger", "spec": "double-entry · outbox" }
+      {
+        "name": "Client",
+        "spec": "POST /payments"
+      },
+      {
+        "name": "API Gateway",
+        "spec": "JWT · RBAC"
+      },
+      {
+        "name": "Payment service",
+        "spec": "Idempotency-Key"
+      },
+      {
+        "name": "PSP adapter",
+        "spec": "Wave · OM · Free"
+      },
+      {
+        "name": "Ledger",
+        "spec": "double-entry · outbox"
+      }
     ]
   },
   "proofs": {
     "label": "Faits vérifiables",
     "items": [
-      { "value": "11+", "label": "Filiales Bank of Africa, via Synapse" },
+      {
+        "value": "11+",
+        "label": "Filiales Bank of Africa, via Synapse"
+      },
       {
         "value": "Wave · Orange Money",
         "label": "Free Money aussi, en production"
@@ -233,9 +257,10 @@
   },
   "expertise": {
     "label": "Expertise",
-    "title": "Backend, paiements, PSP, IA. Une exigence : que le système reste correct.",
-    "lead": "Un ingénieur, six domaines. Cinq sont liés à des systèmes livrés ou publiés. L’IA appliquée reste une direction, avec une piste d’audit — pas un produit client.",
+    "title": "Trois piliers — paiements, APIs, fiabilité.",
+    "lead": "Trois piliers — justesse des paiements, gestion d’APIs, fiabilité distribuée — sur une fondation backend. L’IA reste une direction, pas un produit livré.",
     "proofBadge": "Preuve",
+    "foundationBadge": "Fondation",
     "directionBadge": "Direction",
     "viewAll": "Détail de l’expertise →",
     "problemsLabel": "Problèmes typiques",
@@ -244,51 +269,24 @@
     "items": [
       {
         "num": "01",
-        "title": "Backend engineering",
-        "short": "Services Java / Spring Boot maintenables, multi-tenant, en clean architecture.",
-        "long": "Services backend qui restent lisibles et testables quand le périmètre grandit : multi-tenancy, modularité, contrats explicites.",
-        "problems": [
-          "Services cœur difficiles à faire évoluer",
-          "Multi-tenancy ajoutée après coup",
-          "Dette d’intégration entre équipes"
-        ],
-        "stack": "Java · Spring Boot · PostgreSQL · JPA/Flyway",
-        "evidence": "Ecom 360 PME",
-        "caseId": "ecom-360-pme"
-      },
-      {
-        "num": "02",
-        "title": "Paiements & FinTech",
-        "short": "Idempotence, settlement et ledger : là où un bug coûte de l’argent.",
-        "long": "Flux de paiement où chaque état compte : accepté, confirmé, réglé. Idempotence, réconciliation et pistes d’audit.",
+        "title": "Justesse des paiements",
+        "short": "Idempotence, settlement, ledger et corridors Wave / Orange Money / Free Money — là où un bug coûte de l’argent.",
+        "long": "Flux de paiement où chaque état compte : accepté, confirmé, réglé. Idempotence, réconciliation, pistes d’audit, et corridors PSP (Wave, Orange Money, Free Money) avec failover qui ne débite pas deux fois.",
         "problems": [
           "Doubles paiements sur retries",
           "Callbacks « SUCCESS » non réglés",
+          "Timeout PSP traité comme un échec",
           "Écarts entre ledger et relevés"
         ],
-        "stack": "Redis (idempotence) · Kafka (settlement) · ledger double-entry",
+        "stack": "Redis (idempotence) · Kafka (settlement) · ledger double-entry · Wave · OM · Free Money",
         "evidence": "Double-Entry Ledger Platform",
         "caseId": "double-entry-ledger-platform"
       },
       {
-        "num": "03",
-        "title": "PSP & corridors",
-        "short": "Wave, Orange Money, Free Money — un contrat, et un failover qui ne débite pas deux fois.",
-        "long": "Brancher un PSP, c’est traiter le timeout comme une incertitude : callbacks signés, fenêtres de replay, et un second provider seulement quand le premier est vraiment down. Preuve corridor sur la delivery FinTech ; le labo dual PSP couvre le failover.",
-        "problems": [
-          "Timeout PSP traité comme un échec",
-          "Failover qui capture deux fois",
-          "Webhooks rejoués sans contrôle"
-        ],
-        "stack": "Wave · Orange Money · Free Money · dual PSP",
-        "evidence": "SDK Mobile Money unifié (Sénégal)",
-        "caseId": "pan-african-payment-sdk"
-      },
-      {
-        "num": "04",
-        "title": "Intégration d’APIs",
+        "num": "02",
+        "title": "Gestion d’APIs",
         "short": "Gateways, contrats versionnés et sécurité au bord pour partenaires et filiales.",
-        "long": "Points d’entrée uniques vers des systèmes fragiles : authentification au bord, versionnement, contrats partenaires stables.",
+        "long": "Points d’entrée uniques vers des systèmes fragiles : authentification au bord, versionnement, rate limits, contrats partenaires stables — sans exposer le core.",
         "problems": [
           "Systèmes core exposés",
           "Intégrations partenaires incohérentes",
@@ -299,8 +297,8 @@
         "caseId": "unified-api-gateway"
       },
       {
-        "num": "05",
-        "title": "Systèmes distribués & fiabilité",
+        "num": "03",
+        "title": "Fiabilité distribuée",
         "short": "Outbox, machines à états, réconciliation et observabilité de bout en bout.",
         "long": "Concevoir pour la panne partielle : ce qui se passe quand un fournisseur timeout, qu’un consumer rejoue, qu’un service tombe.",
         "problems": [
@@ -313,7 +311,21 @@
         "caseId": "payment-platform-disaster-lab"
       },
       {
-        "num": "06",
+        "num": "04",
+        "title": "Backend engineering",
+        "short": "Fondation — services Java / Spring Boot maintenables, multi-tenant, en clean architecture.",
+        "long": "Services backend qui restent lisibles et testables quand le périmètre grandit : multi-tenancy, modularité, contrats explicites. La fondation sous les trois piliers.",
+        "problems": [
+          "Services cœur difficiles à faire évoluer",
+          "Multi-tenancy ajoutée après coup",
+          "Dette d’intégration entre équipes"
+        ],
+        "stack": "Java · Spring Boot · PostgreSQL · JPA/Flyway",
+        "evidence": "Ecom 360 PME",
+        "caseId": "ecom-360-pme"
+      },
+      {
+        "num": "05",
         "title": "IA appliquée",
         "short": "Investigation d’anomalies sur données contrôlées, avec piste d’audit. Une direction — pas un produit client livré.",
         "long": "J’explore des opérations de paiement assistées par l’IA : expliquer un écart, garder la décision traçable, rester sur des données que je contrôle. Ce n’est pas une offre d’agent livrée en production.",
@@ -330,10 +342,10 @@
     ]
   },
   "expertisePage": {
-    "metaTitle": "Expertise | Backend, paiements, PSP | SAIFCORE",
-    "metaDescription": "Les problèmes que je résous — backend, paiements, PSP, APIs et fiabilité — plus une direction IA assumée. Chacun relié à du travail réel.",
+    "metaTitle": "Expertise | Paiements, APIs, fiabilité | SAIFCORE",
+    "metaDescription": "Trois piliers — justesse des paiements, gestion d’APIs, fiabilité distribuée — sur une fondation backend, plus une direction IA assumée. Chacun relié à du travail réel.",
     "title": "Les problèmes que je résous, et la preuve derrière.",
-    "subtitle": "Chaque domaine relie un type de problème à du travail réel. L’IA est une direction assumée, pas un produit livré. Les technologies sont listées dans leur contexte d’usage, pas en badges.",
+    "subtitle": "Trois piliers commerciaux, une fondation backend, et l’IA comme direction — pas un produit livré. Chaque domaine relie un type de problème à du travail réel.",
     "backToHome": "Retour à l’accueil",
     "endCtaTitle": "Besoin de cette profondeur sur votre système ?",
     "endCtaSubtitle": "Partagez le problème et les contraintes — je réponds avec le fit et une prochaine étape claire.",
@@ -461,6 +473,14 @@
         "cta": "Voir le dépôt"
       },
       {
+        "cat": "Payment Flows",
+        "type": "Repo",
+        "title": "SenWallet",
+        "description": "Simulateur de wallet UEMOA sur ledger en partie double XOF — rails simulés.",
+        "href": "https://github.com/saifcores/SenWallet",
+        "cta": "Voir le dépôt"
+      },
+      {
         "cat": "Reliability Engineering",
         "type": "Repo",
         "title": "Payment Platform Disaster Lab",
@@ -565,7 +585,12 @@
       {
         "title": "Ingénierie de systèmes distribués",
         "description": "Construire des systèmes event-driven qui restent corrects sous retries et pannes partielles — outbox, consommateurs idempotents et circuit breaking sur de vrais flux paiement et plateforme.",
-        "technologies": ["Apache Kafka", "Docker", "Kubernetes", "AWS"],
+        "technologies": [
+          "Apache Kafka",
+          "Docker",
+          "Kubernetes",
+          "AWS"
+        ],
         "concepts": [
           "Outbox transactionnel",
           "Consommateurs idempotents",
@@ -593,7 +618,12 @@
       {
         "title": "Cloud & DevOps pour livraison régulée",
         "description": "Livrer des backends de production en conteneurs — Docker et Kubernetes sur le travail banque, AWS et GitLab CI sur la plateforme FinTech.",
-        "technologies": ["Docker", "Kubernetes", "AWS", "GitLab CI/CD"],
+        "technologies": [
+          "Docker",
+          "Kubernetes",
+          "AWS",
+          "GitLab CI/CD"
+        ],
         "concepts": [
           "Pipelines CI liés à la livraison",
           "Services conteneurisés",
@@ -604,7 +634,12 @@
       {
         "title": "Intégrations mobile money unifiées",
         "description": "Une seule API pour Orange Money, Wave et Free Money — erreurs partagées, réconciliation et un contrat stable quand un autre corridor s'ajoute.",
-        "technologies": ["Java", "Spring Boot", "Redis", "Apache Kafka"],
+        "technologies": [
+          "Java",
+          "Spring Boot",
+          "Redis",
+          "Apache Kafka"
+        ],
         "concepts": [
           "Adaptateurs fournisseurs",
           "Normalisation des webhooks",
@@ -874,7 +909,12 @@
       },
       {
         "label": "UI produit",
-        "items": ["TypeScript", "Angular", "React", "Next.js"]
+        "items": [
+          "TypeScript",
+          "Angular",
+          "React",
+          "Next.js"
+        ]
       }
     ]
   },
@@ -1135,9 +1175,9 @@
     "legendLab": "projet personnel, open source, non déployé",
     "competitiveLine": "Pas de code client ici. Les labos sont les dépôts que vous pouvez ouvrir aujourd'hui.",
     "homeKickers": {
-      "ecom-360-pme": "01 · Produit live · commerce",
-      "payment-platform-disaster-lab": "02 · Labo public · architecture de paiement",
-      "unified-api-gateway": "03 · Patterns de production · intégrations bancaires"
+      "unified-api-gateway": "01 · Patterns de production · intégrations bancaires",
+      "ecom-360-pme": "02 · Produit live · commerce",
+      "payment-platform-disaster-lab": "03 · Labo public · architecture de paiement"
     },
     "impactLabel": "Impact",
     "marketLabel": "Marché",
@@ -1222,7 +1262,8 @@
             "label": "Afrique de l'Ouest"
           }
         ],
-        "disclosure": ""
+        "disclosure": "",
+        "homeProof": "10+ commerçants en production"
       },
       {
         "id": "payment-platform-disaster-lab",
@@ -1287,7 +1328,8 @@
             "label": "Livré aujourd’hui"
           }
         ],
-        "disclosure": ""
+        "disclosure": "",
+        "homeProof": "0 paiement échoué sous scénarios de panne (lab)"
       },
       {
         "id": "pan-african-payment-sdk",
@@ -1335,7 +1377,13 @@
         "impact": "Wave, Orange Money et Free Money derrière un contrat — adaptateurs, idempotence Redis et événements Kafka de settlement prouvés sur la delivery FinTech ENG. La surface SDK packagée reste interne.",
         "href": "",
         "linkLabel": "",
-        "stacks": ["Java", "Spring Boot", "Redis", "Kafka", "PostgreSQL"],
+        "stacks": [
+          "Java",
+          "Spring Boot",
+          "Redis",
+          "Kafka",
+          "PostgreSQL"
+        ],
         "status": "Patterns production · ENG · confidentiel",
         "metrics": [
           {
@@ -1414,6 +1462,79 @@
         "disclosure": ""
       },
       {
+        "id": "senwallet",
+        "title": "SenWallet",
+        "market": "UEMOA · XOF · Portefeuille digital",
+        "scope": "regional",
+        "problem": "Un wallet ressemble à un solde et un bouton Envoyer. En dessous, chaque top-up en vol, cash-out expiré et débit concurrent doit rester juste — surtout sous contraintes UEMOA / BCEAO — sans float réel ni rails de paiement live.",
+        "solution": "Étude de cas ouverte : simulateur de portefeuille numérique UEMOA sur un ledger en partie double en XOF. Le ledger est la seule source de vérité ; PI-SPI, mobile money et banques sont simulés, avec injection de pannes.",
+        "architecture": "Monorepo Gradle en bounded contexts DDD (ledger, wallet, payments, reconciliation). Java 25 / Spring Boot ; PostgreSQL par service + Flyway ; outbox transactionnelle RabbitMQ ; Traefik + Keycloak prévus ; frontières de modules vérifiées par ArchUnit.",
+        "security": "Keycloak / OAuth2 resource server sur la feuille de route (M5) ; jetons de service à la passerelle ; journal d’audit et ajustements maker-checker dans le back-office cible.",
+        "scale": "Database-per-service ; ledger isolé comme seul writer des soldes ; tests de propriétés sur débits concurrents et rejeux idempotents ; API d’injection de pannes sur les simulateurs.",
+        "architectureFlow": [
+          "Passerelle / Keycloak",
+          "Wallet",
+          "Paiements / sagas",
+          "Ledger",
+          "Rapprochement"
+        ],
+        "constraints": [
+          "Émetteur de monnaie électronique fictif — aucun fonds réel, aucun rail PI-SPI / MNO / banque live.",
+          "Montants entiers en XOF ; aucun flottant.",
+          "Ledger append-only ; une correction est une transaction inverse.",
+          "Un timeout devient INCONNU, jamais un échec automatique qui double-poste."
+        ],
+        "decisions": [
+          {
+            "title": "Ledger seule vérité",
+            "body": "Seul le service ledger écrit les soldes, dans la même transaction DB que les écritures."
+          },
+          {
+            "title": "Trois soldes par wallet",
+            "body": "Comptable, en attente et disponible — pour que l’argent en mouvement ne soit jamais dépensable."
+          },
+          {
+            "title": "Rails simulés + injection de pannes",
+            "body": "PI-SPI, MNO type Wave/OM et banques exposent des APIs de contrôle (timeout, callback dupliqué, float épuisé)."
+          },
+          {
+            "title": "Plafonds BCEAO datés en config",
+            "body": "Plafonds et règles de couverture du cantonnement restent une configuration datée — jamais des constantes en dur."
+          }
+        ],
+        "tradeoffs": "Un simulateur public prouve la justesse wallet/ledger sous panne sans confidentialité client — au prix de ne jamais revendiquer un float de production, des SLA PSP live, ni un EMI agréé.",
+        "bankingOutcome": "Signal direct pour wallets et paiements UEMOA : justesse en partie double, frais P2P, niveaux KYC, couverture de rapprochement, et timeout-as-incertitude — sur des rails qui restent simulés tant qu’il n’y a pas de mandat réel.",
+        "impact": "Jalons M0–M4 livrés : monorepo + CI, domaine ledger Java pur avec tests de propriétés, API de posting PostgreSQL, outbox RabbitMQ, et contexte wallet (KYC, plafonds, frais, P2P). M5–M10 (passerelle, simulateurs, sagas paiements, recon, back-office, charge) restent sur la feuille de route publique.",
+        "href": "https://github.com/saifcores/SenWallet",
+        "linkLabel": "Voir sur GitHub",
+        "stacks": [
+          "Java 25",
+          "Spring Boot",
+          "PostgreSQL",
+          "RabbitMQ",
+          "Flyway",
+          "Gradle",
+          "ArchUnit",
+          "Testcontainers"
+        ],
+        "status": "Lab · M0–M4 livrés",
+        "metrics": [
+          {
+            "value": "M0–M4",
+            "label": "Jalons livrés"
+          },
+          {
+            "value": "XOF",
+            "label": "Ledger entier"
+          },
+          {
+            "value": "Simulé",
+            "label": "PI-SPI · MNO · banques"
+          }
+        ],
+        "disclosure": ""
+      },
+      {
         "id": "unified-api-gateway",
         "title": "Passerelle API Unifiée",
         "market": "Banque multi-pays",
@@ -1459,19 +1580,26 @@
         "impact": "Patterns issus de la delivery Synapse pour 11+ filiales du Groupe Bank of Africa : gateway comme frontière, contrats partenaires versionnés, JWT/RBAC au bord, core hors Internet public.",
         "href": "",
         "linkLabel": "",
-        "stacks": ["Spring Cloud", "Kafka", "PostgreSQL", "Docker", "AWS"],
+        "stacks": [
+          "Spring Cloud",
+          "Kafka",
+          "PostgreSQL",
+          "Docker",
+          "AWS"
+        ],
         "status": "Patterns production · Synapse · confidentiel",
         "metrics": [
           {
-            "value": "Gateway",
-            "label": "Comme frontière"
+            "value": "Multi-filiales",
+            "label": "Frontière API (confidentiel)"
           },
           {
             "value": "Versionnés",
             "label": "Contrats API"
           }
         ],
-        "disclosure": "Les systèmes clients bancaires restent confidentiels. Ci-dessous : patterns réutilisables de gateway et de gouvernance API issus de la delivery Synapse pour les filiales du Groupe Bank of Africa — pas le code core banking propriétaire."
+        "disclosure": "Les systèmes clients bancaires restent confidentiels. Ci-dessous : patterns réutilisables de gateway et de gouvernance API issus de la delivery Synapse pour les filiales du Groupe Bank of Africa — pas le code core banking propriétaire.",
+        "homeProof": "Patterns gateway multi-filiales (confidentiel)"
       }
     ],
     "outcomeLabel": "Résultat —",
@@ -1600,7 +1728,12 @@
           "Concevoir les APIs REST reliant les modules clinique, pharmacie et laboratoire.",
           "Améliorer les performances via cache et traitement asynchrone."
         ],
-        "stack": ["Java", "Spring Boot", "Angular", "REST APIs"]
+        "stack": [
+          "Java",
+          "Spring Boot",
+          "Angular",
+          "REST APIs"
+        ]
       }
     ]
   },
@@ -1680,7 +1813,12 @@
       {
         "label": "Données",
         "sublabel": "Référentiel et cache",
-        "nodes": ["PostgreSQL", "MySQL", "Redis", "Journal append-only"]
+        "nodes": [
+          "PostgreSQL",
+          "MySQL",
+          "Redis",
+          "Journal append-only"
+        ]
       }
     ],
     "techTitle": "Technologies principales",
@@ -2566,7 +2704,12 @@
       },
       {
         "label": "UI produit",
-        "items": ["TypeScript", "Angular", "React", "Next.js"]
+        "items": [
+          "TypeScript",
+          "Angular",
+          "React",
+          "Next.js"
+        ]
       }
     ]
   }

@@ -49,15 +49,18 @@ const articleCaseStudySlugs: Record<string, string[]> = {
   "banking-middleware-multi-subsidiary": ["unified-api-gateway"],
   "adr-double-entry-ledger-payments": [
     "double-entry-ledger-platform",
+    "senwallet",
     "payment-platform-disaster-lab",
   ],
   "mobile-money-integration-patterns": [
     "pan-african-payment-sdk",
+    "senwallet",
     "payment-platform-disaster-lab",
   ],
   "scalable-fintech-systems": [
     "payment-platform-disaster-lab",
     "double-entry-ledger-platform",
+    "senwallet",
   ],
   "why-saas-fail-africa": ["ecom-360-pme"],
   "architecture-reviews-that-help": [
@@ -168,12 +171,13 @@ export function sortProjectsLiveFirst<
 }
 
 /**
- * Home teaser order: live product, then public lab, then banking patterns.
+ * Home teaser order: API/platform proof first, then live product, then public lab.
+ * TODO(owner): replace gateway homeProof with a verified metric when provided.
  */
 const HOME_TEASER_IDS = [
+  "unified-api-gateway",
   ECOM_360_CASE_STUDY_ID,
   PAYMENT_DISASTER_LAB_CASE_STUDY_ID,
-  "unified-api-gateway",
 ] as const;
 
 export function sortProjectsForHomeTeaser(
