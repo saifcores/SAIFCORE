@@ -202,6 +202,10 @@ Middleware: [`src/proxy.ts`](src/proxy.ts) (next-intl). Matcher skips static ass
 
 ## Content & copy
 
+### LinkedIn (owner paste) → [`linkedin-copy.md`](linkedin-copy.md)
+
+Opportunity playbook aligned to site `meta.ogTitle` / payment-correctness positioning: Headline, About (EN/FR), Experience bullets, Featured captions, expertise posts, inbound reply templates, Open-to titles, 30-day cadence. Paste manually; do not invent metrics.
+
 ### UI strings → `messages/*.json`
 
 Namespaces include `meta`, `nav`, `hero`, `trustedExpertise`, `services`, `techStack`, `featuredProjects`, `experience`, `about`, `certifications`, `articlesPage`, `cta`, `footer`, plus page namespaces (`aboutPage`, `experiencePage`, `licensePage`, …).
