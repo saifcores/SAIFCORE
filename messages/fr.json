@@ -125,7 +125,7 @@
     "clientLinkContact": "Contact",
     "clientCta": "Envoyer un brief",
     "clientSecondaryCta": "Envoyer un brief",
-    "previewNote": "Le recrutement et la profondeur d’architecture sont plus bas. Les modes de collaboration sont juste au-dessus.",
+    "previewNote": "Recrutement et profondeur d’architecture se déplient en dessous. Modes de collaboration et contact suivent.",
     "showAll": "Afficher toutes les sections",
     "showOne": "N’afficher qu’un parcours",
     "items": [
@@ -163,7 +163,13 @@
     "rail": "Paiements · APIs · rails UEMOA",
     "hub": "SAIFCORE",
     "scroll": "Défiler",
-    "orbit": ["Paiements", "APIs", "PSP", "Backend", "IA"],
+    "orbit": [
+      "Paiements",
+      "APIs",
+      "PSP",
+      "Backend",
+      "IA"
+    ],
     "subtitle": "Les paiements échouent rarement sur le happy path. Ils échouent quand un callback arrive deux fois, qu’un fournisseur timeout en plein transfert, ou qu’une transaction reste bloquée entre deux états.",
     "proofLine": "Plateformes du Groupe Bank of Africa (via Synapse) · Intégrations Wave, Orange Money, Free Money · Ecom 360 en production.",
     "availability": "Un travail cadré commence par un brief écrit. Je réponds sous deux jours ouvrés : adéquation et date de démarrage. Le poste actuel chez Synapse, pour Bank of Africa, est à temps plein et sur site. Appels en français ; anglais à l’écrit.",
@@ -534,236 +540,6 @@
     "saifcoreTitle": "SAIFCORE",
     "saifcoreBody": "Ma marque professionnelle personnelle : mon travail, mes écrits, mes engagements individuels."
   },
-  "trustedExpertise": {
-    "title": "Compétences clés",
-    "subtitle": "Là où les systèmes de production se jouent — profondeur backend, des APIs et architectures distribuées aux intégrations métier quand le problème l’exige.",
-    "techLabel": "Stack",
-    "conceptsLabel": "Modèles",
-    "items": [
-      {
-        "title": "Ingénierie backend enterprise",
-        "description": "Conception de backends pensés pour évoluer sans réécriture — architecture propre, modules découplés et logique métier qui reste auditable à mesure que le système et l'équipe grandissent. La même approche appliquée sur 11+ filiales Bank of Africa.",
-        "technologies": [
-          "Java",
-          "Spring Boot",
-          "Spring Security",
-          "PostgreSQL",
-          "Apache Kafka"
-        ],
-        "concepts": [
-          "Domain-Driven Design (DDD)",
-          "Contextes bornés",
-          "ACID et cohérence éventuelle",
-          "Pattern outbox",
-          "Isolation par tenant"
-        ]
-      },
-      {
-        "title": "Architecture & gouvernance API",
-        "description": "Conception d'APIs comme une surface produit gouvernée : contract-first, versionnée et observable — pensée pour des intégrations partenaires qui doivent évoluer sans casser les consommateurs existants.",
-        "technologies": [
-          "OpenAPI",
-          "Spring Cloud Gateway",
-          "JWT",
-          "Webhooks",
-          "HMAC"
-        ],
-        "concepts": [
-          "APIs rétrocompatibles",
-          "Conception contract-first",
-          "Rate limiting",
-          "Contrats partenaires versionnés",
-          "Endpoints observables"
-        ]
-      },
-      {
-        "title": "Ingénierie de systèmes distribués",
-        "description": "Construire des systèmes event-driven qui restent corrects sous retries et pannes partielles — outbox, consommateurs idempotents et circuit breaking sur de vrais flux paiement et plateforme.",
-        "technologies": ["Apache Kafka", "Docker", "Kubernetes", "AWS"],
-        "concepts": [
-          "Outbox transactionnel",
-          "Consommateurs idempotents",
-          "Circuit breaking",
-          "Retries qui ne s'appliquent pas deux fois"
-        ]
-      },
-      {
-        "title": "Plateformes de paiement",
-        "description": "Conception de rails de paiement qui tiennent sous audit et à l'échelle : idempotents par défaut, réconciliés automatiquement avec les relevés fournisseurs, et routés entre providers sans enfermer l'activité chez un seul d'entre eux.",
-        "technologies": [
-          "Java (8/11/17/21)",
-          "Spring Boot",
-          "PostgreSQL",
-          "Redis",
-          "Apache Kafka"
-        ],
-        "concepts": [
-          "Idempotence sur chaque écriture",
-          "Réconciliation avec les relevés fournisseurs",
-          "Routage multi-fournisseurs",
-          "Mouvements d'argent auditables"
-        ]
-      },
-      {
-        "title": "Cloud & DevOps pour livraison régulée",
-        "description": "Livrer des backends de production en conteneurs — Docker et Kubernetes sur le travail banque, AWS et GitLab CI sur la plateforme FinTech.",
-        "technologies": ["Docker", "Kubernetes", "AWS", "GitLab CI/CD"],
-        "concepts": [
-          "Pipelines CI liés à la livraison",
-          "Services conteneurisés",
-          "Ownership haute disponibilité",
-          "Handoff opérable"
-        ]
-      },
-      {
-        "title": "Intégrations mobile money unifiées",
-        "description": "Une seule API pour Orange Money, Wave et Free Money — erreurs partagées, réconciliation et un contrat stable quand un autre corridor s'ajoute.",
-        "technologies": ["Java", "Spring Boot", "Redis", "Apache Kafka"],
-        "concepts": [
-          "Adaptateurs fournisseurs",
-          "Normalisation des webhooks",
-          "Idempotence",
-          "Réconciliation",
-          "Un contrat pour plusieurs wallets"
-        ]
-      }
-    ]
-  },
-  "services": {
-    "title": "Ce que je livre",
-    "audience": "Banques, fintechs et équipes produit — rails UEMOA au remote mondial",
-    "subtitle": "Justesse des paiements, plateformes API et livraison backend — calibrés sur le mode de panne, pas un catalogue générique.",
-    "items": [
-      {
-        "title": "Flux de paiement & corridors PSP",
-        "description": "Idempotence, settlement, réconciliation et comportement Wave / Orange Money / Free Money sous retries, timeouts et états bloqués."
-      },
-      {
-        "title": "Plateformes API & contrats partenaires",
-        "description": "Gateways, versioning, OAuth2/JWT, rate limits et docs d’onboarding exploitables — sans exposer le cœur."
-      },
-      {
-        "title": "Architecture backend & modernisation",
-        "description": "Frontières de services, multi-tenancy et backends cloud-native avec observabilité et pistes d’audit dès qu’il y a de l’argent."
-      },
-      {
-        "title": "Backends produit & MVP cadrés",
-        "description": "Un système lançable sur de vraies intégrations — démontrable, extensible et pensé pour les opérateurs en production."
-      },
-      {
-        "title": "Fiabilité & opérabilité",
-        "description": "Outbox, machines d’états, mindset d’injection de pannes, runbooks et CI pour que le système reste juste après le handoff."
-      },
-      {
-        "title": "Revue d’architecture & sprint",
-        "description": "Risques classés, designs de référence et plan écrit avant de engager le budget sur le mauvais build."
-      }
-    ],
-    "cta": "Voir les modes de collaboration"
-  },
-  "freelanceOffers": {
-    "title": "Modes de collaboration",
-    "subtitle": "Alignez l’engagement sur la décision — clarifier le problème, livrer le système, ou intégrer une capacité senior.",
-    "note": "La plupart des collaborations commencent par un sprint architecture — une à deux semaines pour verrouiller le problème, les risques et un plan avant un build plus large. Ouvert aux produits, plateformes et SaaS ; banque et paiements restent la preuve phare.",
-    "startHereLabel": "Premier pas recommandé",
-    "pricingNote": "Investissement indicatif en EUR (remote depuis Dakar). Le sprint fige le plan ; la proposition écrite fige le devis.",
-    "investmentLabel": "À partir de",
-    "cta": "Commencer par le sprint",
-    "viewAll": "Voir tous les engagements",
-    "fitLabel": "Idéal quand",
-    "tracks": [
-      {
-        "label": "Livraison produit & startup",
-        "audience": "Fondateurs et équipes produit qui ont besoin d'un backend fiable sans recruter toute une équipe plateforme.",
-        "promise": "De l'idée floue à un système que vous pouvez démontrer, opérer et transmettre — avec des compromis explicites.",
-        "packages": [
-          {
-            "title": "Sprint architecture",
-            "duration": "1–2 semaines",
-            "investment": "Sur demande",
-            "fit": "Le périmètre est flou, les enjeux montent, et vous voulez le chemin le plus court vers un design livrable.",
-            "description": "Verrouiller objectifs, risques, intégrations et architecture avant de brûler du budget sur le mauvais build.",
-            "includes": [
-              "Cadrage du problème et carte d'intégrations",
-              "Architecture cible avec ADRs brouillon",
-              "Plan phasé et fourchettes d'effort"
-            ]
-          },
-          {
-            "title": "Build cadré",
-            "duration": "4–12 semaines",
-            "investment": "Sur demande",
-            "fit": "Vous savez quoi livrer et avez besoin d'un ingénieur senior nommé pour porter la livraison jusqu'à la production.",
-            "description": "Livraison de bout en bout d'APIs, de workflows ou d'intégrations — jalons, tests et runbooks inclus.",
-            "includes": [
-              "Démos par jalons avec critères d'acceptation",
-              "Tests, observabilité et documentation",
-              "Transfert que votre équipe peut opérer"
-            ]
-          },
-          {
-            "title": "Accélération MVP",
-            "duration": "6–10 semaines",
-            "investment": "Sur demande",
-            "fit": "Vous avez besoin d'un produit démontrable et finançable sur de vraies intégrations — conçu pour évoluer, pas pour être jeté.",
-            "description": "APIs métier centrales et flux critiques prêts pour le lancement, socle sécurité, et itération suivante.",
-            "includes": [
-              "Flux critiques sur de vraies intégrations",
-              "Socle sécurité et pistes d'audit",
-              "Checklist de lancement + feuille de route"
-            ]
-          }
-        ]
-      },
-      {
-        "label": "Entreprise & plateforme",
-        "audience": "Banques, fintechs et équipes plateforme qui modernisent sous contrainte — ou renforcent la profondeur backend senior.",
-        "promise": "Ownership là où la correction et la fiabilité sont non négociables — contextes régulés, gouvernance claire, architecture durable.",
-        "packages": [
-          {
-            "title": "Revue d'architecture",
-            "duration": "1–3 semaines",
-            "investment": "Sur demande",
-            "fit": "Avant un gros pari — vous voulez des risques classés, des designs de référence et un plan exécutable.",
-            "description": "Regard indépendant sur un backend, une API ou une surface d'intégration avant de vous engager à construire ou migrer.",
-            "includes": [
-              "Constats classés par risque et effort",
-              "Designs de référence et ADRs",
-              "Plan d'action pour votre équipe"
-            ]
-          },
-          {
-            "title": "Modernisation de plateforme",
-            "duration": "8–16 semaines+",
-            "investment": "Sur demande",
-            "fit": "Des systèmes legacy ou fragmentés doivent évoluer vers quelque chose d'opérable, d'observable et prêt pour les partenaires.",
-            "description": "Vagues de migration, contrats d'API partenaires et résilience avec une discipline de livraison enterprise.",
-            "includes": [
-              "Architecture et vagues de migration",
-              "Contrats d'API partenaires versionnés",
-              "Observabilité, SLO et runbooks"
-            ]
-          },
-          {
-            "title": "Embed en contrat",
-            "duration": "1–6 mois",
-            "investment": "Sur demande",
-            "fit": "Votre équipe a besoin de capacité senior intégrée — livraison roadmap, exigence qualité, ownership en production.",
-            "description": "Un ingénieur backend senior nommé, intégré à vos rituels et outils jusqu'à la stabilisation post-release.",
-            "includes": [
-              "Livraison dans vos rituels et votre stack",
-              "Revues de code, barre qualité, mentorat",
-              "Posture ops stable après release"
-            ]
-          }
-        ]
-      }
-    ],
-    "ctaSecondary": "Envoyer un brief",
-    "closer": "Pas sûr du bon format ? Commencez par le sprint architecture — puis une proposition écrite, un devis EUR ferme, et un owner senior nommé jusqu’en production. Meilleur fit : problèmes paiements, PSP ou API partenaire où la justesse sous panne est non négociable. La profondeur banque est une preuve, pas une porte fermée.",
-    "productProofLabel": "Voir l'étude de cas Ecom 360",
-    "bankingProofLabel": "Voir les patterns de résilience paiement"
-  },
   "faq": {
     "title": "FAQ",
     "subtitle": "Recruteurs et responsables de projet — réponses directes.",
@@ -888,164 +664,14 @@
       },
       {
         "label": "UI produit",
-        "items": ["TypeScript", "Angular", "React", "Next.js"]
+        "items": [
+          "TypeScript",
+          "Angular",
+          "React",
+          "Next.js"
+        ]
       }
     ]
-  },
-  "engineeringPrinciples": {
-    "title": "Principes d'ingénierie",
-    "subtitle": "Un bon logiciel ne repose pas sur la techno la plus sophistiquée — il repose sur les bonnes décisions.",
-    "items": [
-      {
-        "title": "Simplicité",
-        "description": "Préférer le design le plus simple qui résout le vrai problème. La complexité inutile est une taxe sur chaque évolution future."
-      },
-      {
-        "title": "Fiabilité",
-        "description": "Choisir des solutions durables plutôt que des rustines — idempotence, modes de panne clairs, et systèmes qui restent corrects en évoluant."
-      },
-      {
-        "title": "Impact métier",
-        "description": "Optimiser pour les résultats qui comptent pour le métier et ses utilisateurs — pas pour la vanité technique ou la nouveauté pour elle-même."
-      },
-      {
-        "title": "Sécurité",
-        "description": "Zero-trust aux frontières, moindre privilège et auditabilité tissés dans les flux — surtout là où l'argent et les données régulées circulent."
-      },
-      {
-        "title": "Maintenabilité",
-        "description": "Frontières précises, contrats clairs et codebases que les équipes peuvent faire évoluer avec confiance, mois et années plus tard."
-      },
-      {
-        "title": "Clean Architecture",
-        "description": "La logique métier au cœur. L'infrastructure en périphérie — pour que la plateforme s'adapte au changement, et non l'inverse."
-      }
-    ]
-  },
-  "workProcess": {
-    "title": "Comment la livraison se déroule",
-    "subtitle": "Étapes claires, progrès visible, livraison que votre équipe peut opérer.",
-    "cta": "Envoyer un brief",
-    "steps": [
-      {
-        "title": "Discovery",
-        "body": "Objectifs, contraintes, parties prenantes et métriques de succès — alignés avant architecture ou estimations."
-      },
-      {
-        "title": "Architecture",
-        "body": "Design système, contrats de données, modèle de sécurité et roadmap par phases avec arbitrages explicites."
-      },
-      {
-        "title": "Build",
-        "body": "Livraison incrémentale avec revues, CI/CD et démos alignées sur les jalons métier."
-      },
-      {
-        "title": "Vérifier",
-        "body": "Couverture unitaire, intégration et régression — plus injection de fautes là où l'argent circule."
-      },
-      {
-        "title": "Ship",
-        "body": "Mise en production, runbooks, monitoring et handoff opérable par votre équipe."
-      },
-      {
-        "title": "Affiner",
-        "body": "Améliorations post-lancement — latence, coût et fiabilité à partir du trafic réel."
-      }
-    ]
-  },
-  "collaboration": {
-    "title": "Comment un engagement démarre",
-    "subtitle": "Ownership senior nommée. Périmètre écrit. Pas de contrat flou. Pensé pour les problèmes paiements, APIs et fiabilité où un mauvais départ coûte de l’argent.",
-    "facts": [
-      {
-        "title": "Sprint architecture",
-        "body": "1–2 semaines. Mode de panne, risques et un plan avant un build plus large."
-      },
-      {
-        "title": "Proposition écrite",
-        "body": "Périmètre, jalons et devis ferme en EUR. Vous décidez avant tout build."
-      },
-      {
-        "title": "Responsable nommé",
-        "body": "Je reste sur le travail jusqu'à la production — tests, runbooks et docs."
-      }
-    ],
-    "ctaTitle": "Commencer par le sprint architecture",
-    "ctaSubtitle": "Recrutement : Expérience, puis le CV et un brief de poste avec périmètre paiements/APIs. Projet : corridor + PSP + mode de panne, puis le sprint.",
-    "ctaPrimary": "Commencer par le sprint",
-    "ctaSecondary": "Envoyer un brief",
-    "slaLine": "Je réponds sous deux jours ouvrés."
-  },
-  "bankingLeadership": {
-    "eyebrow": "Leadership technique",
-    "title": "Comment je mène des systèmes à enjeux élevés",
-    "subtitle": "Au-delà du code : cadrage, décisions, gouvernance API et rituels de livraison qui réduisent le risque dans les environnements régulés — appliqués sur des missions conseil comme la delivery Synapse pour le Groupe Bank of Africa.",
-    "leadershipLabel": "Conduite projet",
-    "playbookLabel": "Playbook d'architecture",
-    "adrLabel": "ADR & gouvernance",
-    "items": [
-      {
-        "title": "Analyse du besoin",
-        "body": "Clarifier objectifs métier, contraintes réglementaires, dépendances core banking et critères d'acceptation avant l'estimation."
-      },
-      {
-        "title": "Gouvernance API",
-        "body": "Définir contrats OpenAPI, versioning, règles d'erreur, idempotence et politiques d'accès avant l'exposition partenaire."
-      },
-      {
-        "title": "Évaluation des risques",
-        "body": "Identifier les risques transactionnels : double débit, callback perdu, dérive de rapprochement, dette d'audit ou indisponibilité fournisseur."
-      },
-      {
-        "title": "Contrôle de la livraison",
-        "body": "Découper en incréments vérifiables avec revues d'architecture, revues de code, CI/CD, observabilité et transfert opérable."
-      }
-    ],
-    "playbook": [
-      {
-        "title": "Idempotence",
-        "body": "Traiter les retries comme un cas normal, pas comme une exception réseau."
-      },
-      {
-        "title": "Auditabilité",
-        "body": "Tracer chaque commande sensible avec correlation ID, acteur, état avant/après et source de vérité."
-      },
-      {
-        "title": "Mouvement d'argent",
-        "body": "Séparer initiation, confirmation, settlement, remboursement et rapprochement."
-      },
-      {
-        "title": "Réconciliation",
-        "body": "Automatiser les contrôles entre événements internes, ledger et relevés fournisseur."
-      },
-      {
-        "title": "Sécurité",
-        "body": "Appliquer moindre privilège, signatures webhook, validation stricte et journaux d'audit."
-      },
-      {
-        "title": "Observabilité",
-        "body": "Rendre les états ambigus visibles avec métriques, traces, alertes et runbooks."
-      }
-    ],
-    "adr": {
-      "title": "Décisions traçables",
-      "body": "Chaque choix structurant doit être défendu par une ADR courte : contexte, décision, conséquences et condition de révision. C'est ce qui permet à une équipe banque de comprendre pourquoi un système existe dans cet état, même six mois plus tard."
-    }
-  },
-  "testimonials": {
-    "title": "Ce que les partenaires de delivery ont noté",
-    "subtitle": "Références nominatives quand disponibles — sinon résultats anonymisés (banque, FinTech, plateformes). Intros complètes sur demande après un court appel.",
-    "cta": "Associer un résultat à un engagement",
-    "referenceCta": "Demander une intro référence",
-    "linkedinCta": "Recommandations LinkedIn",
-    "namedLabel": "Référence nominative",
-    "anonymizedLabel": "Résultat anonymisé",
-    "emptyNamedTitle": "Références nominatives sur demande",
-    "emptyNamedBody": "Intros banque et FinTech après un court appel. Les recommandations LinkedIn publiques sont disponibles maintenant — je n’invente pas de citations nominatives sur ce site.",
-    "emptyNamedPrimary": "Ouvrir les recommandations LinkedIn",
-    "emptyNamedSecondary": "Demander une intro référence",
-    "namedItems": [],
-    "items": []
   },
   "trust": {
     "heading": "La confiance là où la fiabilité compte",
@@ -1084,28 +710,6 @@
     "verifyLive": "Produit live — Ecom 360",
     "verifyResume": "Télécharger le CV",
     "verifyNote": "Employeurs, produit public et liens de profil — pas de badges payants ni d’endorsements inventés."
-  },
-  "whatISolve": {
-    "title": "Problèmes que je prends en charge",
-    "subtitle": "Quand l’argent bouge, un bug est une perte. Je conçois pour les modes de panne que les opérateurs rencontrent vraiment — pas la démo happy path.",
-    "items": [
-      {
-        "title": "Justesse des paiements sous panne",
-        "description": "Double callback, timeout PSP en plein transfert, états bloqués et dérive de réconciliation — mouvements d’argent idempotents et auditables."
-      },
-      {
-        "title": "APIs partenaires & multi-filiales",
-        "description": "Gateways, contrats versionnés et sécurité au bord pour que filiales et tiers s’intègrent sans exposer le cœur."
-      },
-      {
-        "title": "Crédit, encaissement & décaissement",
-        "description": "Workflows de prêt et wallets sur de vrais corridors — de l’origination au remboursement, avec conformité et cycles de retard/défaut dans le design."
-      },
-      {
-        "title": "Fiabilité distribuée",
-        "description": "Outbox, machines d’états, observabilité et chemins de récupération pour qu’une panne partielle ne débite pas deux fois ni ne perde un settlement."
-      }
-    ]
   },
   "howIThink": {
     "title": "Comment j'ingénie",
@@ -1351,7 +955,13 @@
         "impact": "Wave, Orange Money et Free Money derrière un contrat — adaptateurs, idempotence Redis et événements Kafka de settlement prouvés sur la delivery FinTech ENG. La surface SDK packagée reste interne.",
         "href": "",
         "linkLabel": "",
-        "stacks": ["Java", "Spring Boot", "Redis", "Kafka", "PostgreSQL"],
+        "stacks": [
+          "Java",
+          "Spring Boot",
+          "Redis",
+          "Kafka",
+          "PostgreSQL"
+        ],
         "status": "Patterns production · ENG · confidentiel",
         "metrics": [
           {
@@ -1548,7 +1158,13 @@
         "impact": "Patterns issus de la delivery Synapse pour 11+ filiales du Groupe Bank of Africa : gateway comme frontière, contrats partenaires versionnés, JWT/RBAC au bord, core hors Internet public.",
         "href": "",
         "linkLabel": "",
-        "stacks": ["Spring Cloud", "Kafka", "PostgreSQL", "Docker", "AWS"],
+        "stacks": [
+          "Spring Cloud",
+          "Kafka",
+          "PostgreSQL",
+          "Docker",
+          "AWS"
+        ],
         "status": "Patterns production · Synapse · confidentiel",
         "metrics": [
           {
@@ -1690,7 +1306,12 @@
           "Concevoir les APIs REST reliant les modules clinique, pharmacie et laboratoire.",
           "Améliorer les performances via cache et traitement asynchrone."
         ],
-        "stack": ["Java", "Spring Boot", "Angular", "REST APIs"]
+        "stack": [
+          "Java",
+          "Spring Boot",
+          "Angular",
+          "REST APIs"
+        ]
       }
     ]
   },
@@ -1712,174 +1333,6 @@
         "degree": "BootCamp Java & Angular",
         "institution": "SarayaTech Senegal",
         "period": "Jan 2022 — Oct 2022"
-      }
-    ]
-  },
-  "architectureSection": {
-    "title": "Architecture plateforme",
-    "subtitle": "La forme des systèmes dans les études de cas — passerelle, paiements, événements et référentiel.",
-    "principlesTitle": "Principes architecturaux",
-    "principles": [
-      "Idempotence d'abord — chaque opération est sûre à retenter et sans effets de bord involontaires.",
-      "Événements métier — un outbox et une piste immuable pour que les mouvements d'argent et les appels partenaires restent explicables.",
-      "Cohérence contextuelle — choisir entre cohérence éventuelle ou forte là où cela compte le plus.",
-      "Défense en profondeur — appliquer la sécurité à chaque couche plutôt que de s'appuyer sur une seule frontière.",
-      "Observabilité bout en bout — monitoring et traçabilité continus entre services pour diagnostic rapide et insight."
-    ],
-    "layers": [
-      {
-        "label": "Partenaires & produits",
-        "sublabel": "Qui appelle le backend",
-        "nodes": [
-          "APIs partenaires",
-          "POS & UI produit",
-          "Webhooks fournisseurs",
-          "Outils admin"
-        ]
-      },
-      {
-        "label": "Passerelle API",
-        "sublabel": "Frontière avant tout système cœur",
-        "nodes": [
-          "JWT & RBAC",
-          "Rate limiting",
-          "Contrats versionnés",
-          "Routage par tenant"
-        ]
-      },
-      {
-        "label": "Services métier",
-        "sublabel": "Ce que les études de cas possèdent",
-        "nodes": [
-          "Flux de paiement",
-          "Adaptateurs wallets",
-          "Ledger & réconciliation",
-          "Reporting hors chemin chaud"
-        ]
-      },
-      {
-        "label": "Événements",
-        "sublabel": "Chemin async qui ne s'applique pas deux fois",
-        "nodes": [
-          "Apache Kafka",
-          "Outbox transactionnel",
-          "Événements d'audit",
-          "Consommateurs idempotents"
-        ]
-      },
-      {
-        "label": "Données",
-        "sublabel": "Référentiel et cache",
-        "nodes": ["PostgreSQL", "MySQL", "Redis", "Journal append-only"]
-      }
-    ],
-    "techTitle": "Technologies principales",
-    "technologies": [
-      "Java 17+",
-      "Spring Boot & Spring Cloud",
-      "Apache Kafka",
-      "PostgreSQL",
-      "Redis",
-      "Docker",
-      "Kubernetes",
-      "Amazon Web Services (AWS)",
-      "Spring Security",
-      "GitLab CI/CD",
-      "OpenAPI & Swagger"
-    ]
-  },
-  "visionSection": {
-    "label": "Vision",
-    "title": "Ingénierie, architecture et réalité métier — transformées en logiciels qui durent.",
-    "body": "J'aime travailler à cette intersection : des exigences complexes deviennent des systèmes simples, maintenables et prêts pour la production — avec un impact réel en Afrique et au-delà.",
-    "positioning": [
-      "Ingénieur Backend Senior",
-      "Backend & Systèmes distribués",
-      "Architecture qui dure"
-    ],
-    "stats": [
-      {
-        "value": "4+",
-        "label": "Années de delivery backend"
-      },
-      {
-        "value": "11+",
-        "label": "Déploiements filiales via Synapse"
-      },
-      {
-        "value": "Wave · OM · FM",
-        "label": "Wallets mobile money (SN)"
-      }
-    ],
-    "dividerText": "Dakar · Afrique de l'Ouest · Remote mondial"
-  },
-  "metricsSection": {
-    "label": "Résultats de delivery",
-    "title": "Des résultats vérifiables sur le profil.",
-    "subtitle": "Livraison banque, fintech et SaaS depuis Dakar — Afrique de l'Ouest et remote mondial.",
-    "uptimeChartLabel": "Standard de fiabilité",
-    "uptimeStatus": "Prêt pour la production",
-    "uptimeSummary": "Posture cible pour backends mission-critical",
-    "principlesTitle": "Principes d'infrastructure",
-    "metrics": [
-      {
-        "value": "4+",
-        "label": "Années de delivery backend",
-        "description": "Delivery backend en banque, fintech et SaaS"
-      },
-      {
-        "value": "11+",
-        "label": "Déploiements filiales via Synapse",
-        "description": "Delivery Synapse pour les plateformes du Groupe Bank of Africa"
-      },
-      {
-        "value": "Wave · OM · FM",
-        "label": "Intégrations wallet",
-        "description": "Intégrations Wave, Orange Money et Free Money sur la delivery FinTech ENG"
-      },
-      {
-        "value": "FR/EN",
-        "label": "Livraison bilingue",
-        "description": "Docs, ateliers et handoffs en français et en anglais"
-      }
-    ],
-    "principles": [
-      "Idempotence par défaut — toute écriture est sûre à retenter",
-      "L’état durable reste auditable — append, ne pas effacer",
-      "Zero-trust aux frontières — vérifier chaque appel",
-      "Observabilité d'abord — pas ajoutée après coup"
-    ]
-  },
-  "architectureExpertise": {
-    "title": "Expertise technique",
-    "subtitle": "Patterns et pratiques pour construire des systèmes de production résilients et opérables.",
-    "tags": [
-      {
-        "label": "Java & Spring Boot"
-      },
-      {
-        "label": "Kafka, outbox & idempotence"
-      },
-      {
-        "label": "PostgreSQL, MySQL & Redis"
-      },
-      {
-        "label": "Docker, Kubernetes, AWS & GitLab CI"
-      },
-      {
-        "label": "OpenAPI, REST & webhooks"
-      },
-      {
-        "label": "PSP : Wave, Orange Money & Free Money"
-      },
-      {
-        "label": "Ledger double-entry & réconciliation"
-      },
-      {
-        "label": "IA appliquée — direction, pas un produit livré"
-      },
-      {
-        "label": "JasperReports sur le rôle banque"
       }
     ]
   },
@@ -1949,18 +1402,6 @@
     "endCtaTitle": "Recrutement ou durcissement d’une surface paiements / APIs ?",
     "endCtaSubtitle": "Envoyez rôle + stack + périmètre, ou corridor + PSP + mode de panne — réponse de fit sous deux jours ouvrés.",
     "endCtaButton": "Envoyer un brief"
-  },
-  "aboutTeaser": {
-    "title": "À propos",
-    "heading": "Ingénieur paiements & APIs — justesse quand les rails cassent",
-    "excerpt": "Plateformes Bank of Africa Group via Synapse · Wave, Orange Money, Free Money · Ecom 360 en production. Ouvert aux postes remote senior / lead et aux missions paiements cadrées.",
-    "readMore": "Voir le profil complet",
-    "stat1Value": "4+",
-    "stat1Label": "Années de delivery backend",
-    "stat2Value": "11+",
-    "stat2Label": "Déploiements filiales via Synapse",
-    "stat3Value": "FR/EN",
-    "stat3Label": "Remote mondial"
   },
   "certifications": {
     "title": "Certifications",
@@ -2072,17 +1513,11 @@
     "backToHome": "Retour à l'accueil",
     "endCtaTitle": "Envie de travailler ensemble ?",
     "endCtaSubtitle": "Un brief de poste ou un brief de projet — je réponds avec le fit et une prochaine étape claire.",
-    "endCtaButton": "Prendre contact"
-  },
-  "collaboratePage": {
-    "metaTitle": "Modes de collaboration | Sprint architecture | SAIFCORE",
-    "metaDescription": "Sprint architecture, revue, build cadré ou embed pour justesse des paiements et plateformes API. Périmètre écrit, devis EUR ferme, owner senior nommé.",
-    "title": "Modes de collaboration",
-    "subtitle": "La plupart des collaborations commencent par un sprint architecture — une à deux semaines pour verrouiller le mode de panne, les risques et un plan. Puis une proposition écrite et un devis EUR ferme.",
-    "backToHome": "Retour à l'accueil",
-    "endCtaTitle": "Un corridor, un PSP ou une API partenaire à durcir ?",
-    "endCtaSubtitle": "Envoyez le mode de panne. Le sprint verrouille le plan ; la proposition verrouille le devis.",
-    "endCtaButton": "Envoyer un brief"
+    "endCtaButton": "Prendre contact",
+    "experienceBridgeTitle": "Timeline complète",
+    "experienceBridgeHeading": "Rôles, contexte de livraison et preuves sont sur Expérience.",
+    "experienceBridgeBody": "Synapse → Bank of Africa Group, produits antérieurs, et le CV pour les screens recrutement.",
+    "experienceBridgeCta": "Voir l’expérience"
   },
   "insights": {
     "title": "Articles",
@@ -2656,7 +2091,12 @@
       },
       {
         "label": "UI produit",
-        "items": ["TypeScript", "Angular", "React", "Next.js"]
+        "items": [
+          "TypeScript",
+          "Angular",
+          "React",
+          "Next.js"
+        ]
       }
     ]
   }

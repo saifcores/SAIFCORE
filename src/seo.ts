@@ -526,7 +526,7 @@ export function buildOfferCatalogNodes({
   packages,
   areaServed,
   availability,
-  catalogPath = "/collaborate",
+  catalogPath = "/contact",
 }: OfferCatalogInput): {
   catalog: Record<string, unknown>;
   offers: Record<string, unknown>[];
@@ -609,7 +609,7 @@ export type FaqItemInput = {
 export function buildFaqPageJsonLd(
   locale: string,
   items: FaqItemInput[],
-  path: SitePath = "/collaborate",
+  path: SitePath = "/contact",
 ): Record<string, unknown> {
   const pageUrl = getLocalePageUrl(locale, path);
 

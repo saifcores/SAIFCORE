@@ -1,8 +1,10 @@
 # SAIFCORE
 
-Bilingual portfolio and lead-generation site for **SAIFCORE** — senior backend and fintech engineering (payments, APIs, distributed systems, mobile money). Built with **Next.js 16**, **React 19**, and **next-intl** (English / French).
+Bilingual portfolio and lead-generation site for **SAIFCORE** — payment correctness, APIs, and West Africa rails (Wave, Orange Money, Free Money, multi-entity banking APIs). Built with **Next.js 16**, **React 19**, and **next-intl** (English / French).
 
-**Positioning:** Freelance and consulting for teams that need production-grade payment rails, partner integrations, and handoff-ready backends — not generic dev-shop output.
+**Positioning:** Senior backend / payments / tech-lead seats and freelance briefs where money flows must stay correct under failure — not generic Java CV output.
+
+**Copy guardrails:** [`saifcore-alignment-prompt.md`](saifcore-alignment-prompt.md) · LinkedIn paste kit: [`linkedin-copy.md`](linkedin-copy.md) (owner only).
 
 ---
 
@@ -26,34 +28,35 @@ Bilingual portfolio and lead-generation site for **SAIFCORE** — senior backend
 
 ## Features
 
-| Area          | Details                                                                                                                                                                                   |
-| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Locales**   | English (default) and French; locale prefix `as-needed` (`/` vs `/fr`)                                                                                                                    |
-| **Theme**     | Light / dark / system; persisted in `localStorage`; no flash on load                                                                                                                      |
-| **Home**      | Long-scroll landing: hero, trust, experience, expertise, metrics, work teaser, services, stack, certifications, principles, process, engagement patterns, insights, about teaser, contact |
-| **Sub-pages** | About (+ vision, leadership), Experience (+ education, skills, architecture), Systems (architecture + case studies), Articles, License, Certifications                                    |
-| **Articles**  | Structured content blocks (prose, code, ADR, design notes, lists); internal routes + optional external URLs                                                                               |
-| **Contact**   | Contact form, LinkedIn / GitHub / resume links                                                                                                                                            |
-| **Mobile**    | Responsive layouts; sticky bottom CTA bar on small screens                                                                                                                                |
-| **SEO**       | Per-page metadata, hreflang, sitemap, robots, JSON-LD (Person, breadcrumbs, ProfilePage)                                                                                                  |
-| **Analytics** | Vercel Analytics (`@vercel/analytics`)                                                                                                                                                    |
+| Area          | Details                                                                                       |
+| ------------- | --------------------------------------------------------------------------------------------- |
+| **Locales**   | English (default) and French; locale prefix `as-needed` (`/` vs `/fr`)                        |
+| **Theme**     | Light / dark / system; persisted in `localStorage`; no flash on load                          |
+| **Home**      | Hero → expertise teaser → audience paths (recruiter / depth / client) → offers → contact      |
+| **Sub-pages** | About, Experience, Expertise, Systems (+ case studies), Lab, Contact, Certifications, License |
+| **Writing**   | Full articles on [SAIFCORE Blog](https://blog.saifcore.tech); `/articles` redirects there     |
+| **Contact**   | Intent-aware form via Resend (lead + auto-reply); honeypot + light rate limit                 |
+| **Mobile**    | Responsive layouts; sticky bottom CTA bar on small screens                                    |
+| **SEO**       | Per-page metadata, hreflang, sitemap, robots, JSON-LD                                         |
+| **Analytics** | Vercel Analytics (`@vercel/analytics`)                                                        |
 
-There is **no database** and **no CMS** — UI copy lives in JSON message files; structured content lives in TypeScript data modules.
+No database and no CMS — UI copy lives in `messages/*.json`; structured content in TypeScript modules under `src/data/`.
 
 ---
 
 ## Tech stack
 
-| Layer     | Choice                                                          |
-| --------- | --------------------------------------------------------------- |
-| Framework | [Next.js 16](https://nextjs.org/) (App Router)                  |
-| UI        | React 19, [Tailwind CSS v4](https://tailwindcss.com/)           |
-| i18n      | [next-intl 4](https://next-intl.dev/)                           |
-| Motion    | [Framer Motion](https://www.framer.com/motion/) + CSS keyframes |
-| Icons     | [Lucide React](https://lucide.dev/)                             |
-| Fonts     | Geist Sans / Geist Mono (`next/font`)                           |
-| Analytics | Vercel Analytics                                                |
-| Language  | TypeScript (strict)                                             |
+| Layer     | Choice                                                              |
+| --------- | ------------------------------------------------------------------- |
+| Framework | [Next.js 16](https://nextjs.org/) (App Router)                      |
+| UI        | React 19, [Tailwind CSS v4](https://tailwindcss.com/)               |
+| i18n      | [next-intl 4](https://next-intl.dev/)                               |
+| Motion    | [Framer Motion](https://www.framer.com/motion/) + CSS keyframes     |
+| Email     | [Resend](https://resend.com/) + [React Email](https://react.email/) |
+| Icons     | [Lucide React](https://lucide.dev/)                                 |
+| Fonts     | Geist Sans / Geist Mono (`next/font`)                               |
+| Analytics | Vercel Analytics                                                    |
+| Language  | TypeScript (strict)                                                 |
 
 ---
 
@@ -62,7 +65,7 @@ There is **no database** and **no CMS** — UI copy lives in JSON message files;
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/) LTS (20+ recommended)
-- npm (bundled with Node)
+- npm
 
 ### Install & run
 
@@ -74,10 +77,10 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-| Locale            | Examples                                          |
-| ----------------- | ------------------------------------------------- |
-| English (default) | `/`, `/about`, `/articles`, `/license`            |
-| French            | `/fr`, `/fr/about`, `/fr/articles`, `/fr/license` |
+| Locale            | Examples                                         |
+| ----------------- | ------------------------------------------------ |
+| English (default) | `/`, `/about`, `/systems`, `/contact`            |
+| French            | `/fr`, `/fr/about`, `/fr/systems`, `/fr/contact` |
 
 ### Production build locally
 
@@ -93,32 +96,33 @@ npm run start
 | Command              | Description                                                       |
 | -------------------- | ----------------------------------------------------------------- |
 | `npm run dev`        | Development server (Turbopack)                                    |
-| `npm run build`      | Production build + static generation                              |
+| `npm run build`      | Production build                                                  |
 | `npm run start`      | Serve production build                                            |
 | `npm run lint`       | ESLint (Next.js config)                                           |
-| `npm run sync:icons` | Copy `public/profile.png` → `src/app/icon.png` & `apple-icon.png` |
+| `npm run sync:icons` | Copy `public/profile.png` → app icons                             |
 | `npm run cv:build`   | Compile `cv/*.tex` → `public/resume-{en,fr}.pdf` (needs tectonic) |
-| `npm run cv:watch`   | Rebuild CV PDFs whenever a `cv/*.tex` file changes                |
+| `npm run cv:watch`   | Rebuild CV PDFs on `cv/*.tex` changes                             |
 
 ---
 
 ## Environment variables
 
-Copy [`.env.example`](.env.example) to `.env.local`. All public vars use the `NEXT_PUBLIC_` prefix.
+Copy [`.env.example`](.env.example) to `.env.local`.
 
-| Variable                           | Required        | Purpose                                                          |
-| ---------------------------------- | --------------- | ---------------------------------------------------------------- |
-| `NEXT_PUBLIC_SITE_URL`             | Recommended     | Canonical origin (no trailing slash). Metadata, sitemap, JSON-LD |
-| `NEXT_PUBLIC_CONTACT_EMAIL`        | For contact CTA | Enables mailto submit in contact section                         |
-| `NEXT_PUBLIC_LINKEDIN_URL`         | Optional        | Footer + Person schema `sameAs`                                  |
-| `NEXT_PUBLIC_GITHUB_URL`           | Optional        | Footer + Person schema `sameAs`                                  |
-| `NEXT_PUBLIC_RESUME_URL`           | Optional        | External CV override; else `public/resume-{en,fr}.pdf` by locale |
-| `NEXT_PUBLIC_PROFILE_NAME`         | Optional        | Display name (default: `SAIFCORE`)                               |
-| `NEXT_PUBLIC_PROFILE_CITY`         | Optional        | Schema location (default: `Dakar`)                               |
-| `NEXT_PUBLIC_PROFILE_COUNTRY`      | Optional        | Schema location (default: `Senegal`)                             |
-| `NEXT_PUBLIC_PROFILE_COUNTRY_CODE` | Optional        | ISO country code (default: `SN`)                                 |
+| Variable                    | Required            | Purpose                                         |
+| --------------------------- | ------------------- | ----------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL`      | Recommended         | Canonical origin (no trailing slash)            |
+| `NEXT_PUBLIC_CONTACT_EMAIL` | For contact         | Form recipient + mailto CTAs                    |
+| `NEXT_PUBLIC_LINKEDIN_URL`  | Optional            | Footer + Person `sameAs`                        |
+| `NEXT_PUBLIC_GITHUB_URL`    | Optional            | Footer + Person `sameAs`                        |
+| `NEXT_PUBLIC_X_URL`         | Optional            | Footer / social                                 |
+| `NEXT_PUBLIC_RESUME_URL`    | Optional            | External CV override                            |
+| `NEXT_PUBLIC_PROFILE_*`     | Optional            | Name / city / country for schema                |
+| `NEXT_PUBLIC_BLOG_URL`      | For writing teasers | Blog origin (e.g. `https://blog.saifcore.tech`) |
+| `RESEND_API_KEY`            | For form            | Server-only Resend key                          |
+| `RESEND_FROM_EMAIL`         | For form            | Verified sender (`Name <email@domain>`)         |
 
-Helpers: [`src/site.ts`](src/site.ts) (client-safe env) and [`src/server/resume.ts`](src/server/resume.ts) (locale CV URLs; PDFs in `public/`).
+Helpers: [`src/site.ts`](src/site.ts) (client-safe env) and [`src/server/resume.ts`](src/server/resume.ts) / [`src/server/contact-mail.ts`](src/server/contact-mail.ts).
 
 ---
 
@@ -126,165 +130,127 @@ Helpers: [`src/site.ts`](src/site.ts) (client-safe env) and [`src/server/resume.
 
 ```
 manarix/
-├── LICENSE                  # MIT (source code)
-├── messages/
-│   ├── en.json              # English UI (source of truth for types)
-│   └── fr.json              # French UI (same keys as en.json)
-├── cv/
-│   ├── cv-en.tex            # English CV source (LaTeX)
-│   ├── cv-fr.tex            # French CV source (LaTeX)
-│   └── README.md            # How to rebuild PDFs with tectonic
-├── public/
-│   ├── profile.png          # Avatar / favicon source
-│   ├── resume-en.pdf        # English CV (served to EN visitors)
-│   ├── resume-fr.pdf        # French CV (served to FR visitors)
-│   └── trust/               # Company logos (experience / trust)
-├── src/
-│   ├── app/
-│   │   ├── globals.css      # Design tokens, Tailwind, utilities
-│   │   ├── layout.tsx       # Root shell
-│   │   ├── sitemap.ts       # Locale-aware sitemap
-│   │   ├── robots.ts
-│   │   ├── manifest.ts
-│   │   └── [locale]/        # All user-facing routes
-│   ├── components/portfolio/
-│   ├── data/
-│   │   ├── articles.ts
-│   │   ├── article-content.ts
-│   │   ├── certifications.ts
-│   │   └── trust-brands.ts
-│   ├── hooks/
-│   ├── i18n/                # Routing, navigation, request config
-│   ├── server/resume.ts
-│   ├── site.ts
-│   ├── seo.ts
-│   ├── types/messages.ts    # AppMessages from en.json
-│   └── proxy.ts             # next-intl middleware
-├── next.config.ts
-├── postcss.config.mjs
-└── tsconfig.json            # @/* → src/*
+├── messages/                 # en.json + fr.json (UI copy)
+├── cv/                       # LaTeX CV sources
+├── public/                   # profile, resumes, trust logos
+├── linkedin-copy.md          # Owner LinkedIn paste kit
+├── saifcore-alignment-prompt.md
+└── src/
+    ├── app/
+    │   ├── api/contact/      # Resend lead + auto-reply
+    │   ├── [locale]/         # All user-facing routes
+    │   ├── sitemap.ts
+    │   └── robots.ts
+    ├── blog/                 # Recent articles from blog API
+    ├── components/portfolio/
+    ├── data/                 # case studies, certifications, …
+    ├── emails/               # React Email templates
+    ├── i18n/
+    ├── server/               # contact + resume helpers
+    ├── seo.ts
+    ├── site.ts
+    └── proxy.ts              # next-intl middleware
 ```
 
 ---
 
 ## Routing & pages
 
-Middleware: [`src/proxy.ts`](src/proxy.ts) (next-intl). Matcher skips static assets, `_next`, and API routes.
+Middleware: [`src/proxy.ts`](src/proxy.ts) (next-intl).
 
-| Route              | File                                | Description                          |
-| ------------------ | ----------------------------------- | ------------------------------------ |
-| `/`                | `[locale]/page.tsx`                 | Home (long-scroll landing)           |
-| `/about`           | `[locale]/about/page.tsx`           | Extended about + engagements         |
-| `/experience`      | `[locale]/experience/page.tsx`      | Timeline + skills matrix             |
-| `/systems`         | `[locale]/systems/page.tsx`         | Full case studies                    |
-| `/articles`        | `[locale]/articles/page.tsx`        | Insights index                       |
-| `/articles/[slug]` | `[locale]/articles/[slug]/page.tsx` | Article detail                       |
-| `/license`         | `[locale]/license/page.tsx`         | MIT license (EN / FR)                |
-| `/certifications`  | `[locale]/certifications/page.tsx`  | Credentials (404 if none `obtained`) |
+| Route                           | Description                                                  |
+| ------------------------------- | ------------------------------------------------------------ |
+| `/`                             | Home (paths → offers → contact)                              |
+| `/about`                        | Identity + stack; experience timeline links to `/experience` |
+| `/experience`                   | Full timeline, education, skills                             |
+| `/expertise`                    | Capability pillars                                           |
+| `/systems`                      | Case-study index                                             |
+| `/systems/[slug]`               | Case-study detail                                            |
+| `/lab`                          | Open labs / experiments                                      |
+| `/contact`                      | Intent-aware contact form + FAQ                              |
+| `/certifications`               | Credentials (gated until obtained)                           |
+| `/license`                      | MIT license (EN / FR)                                        |
+| `/articles`, `/articles/[slug]` | Permanent redirect → SAIFCORE Blog                           |
+| `/collaborate`                  | Permanent redirect → home (legacy)                           |
 
-**Home anchors:** `#work`, `#services`, `#expertise`, `#certifications`, `#process`, `#contact`, `#insights`, `#about`.
-
-**Certifications gating:** [`hasObtainedCertifications()`](src/data/certifications.ts) hides nav links, sitemap entries, and `/certifications` until at least one entry in `certificationsMeta` has `status: "obtained"`.
+**Home anchors:** `#paths`, `#offers`, `#experience`, `#work`, `#lab`, `#contact`.
 
 ---
 
 ## Internationalization
 
 - **Config:** [`src/i18n/routing.ts`](src/i18n/routing.ts) — `en` \| `fr`, default `en`, prefix `as-needed`
-- **Messages:** [`messages/en.json`](messages/en.json), [`messages/fr.json`](messages/fr.json)
-- **Types:** [`src/types/messages.ts`](src/types/messages.ts) — `AppMessages` from `en.json`; `fr.json` must keep the same keys
-- **Navigation:** [`src/i18n/navigation.ts`](src/i18n/navigation.ts) — locale-aware `Link`, `redirect`, `usePathname`
-- **Server:** `setRequestLocale(locale)` on each page; `getTranslations` / `getMessages` for copy
+- **Messages:** [`messages/en.json`](messages/en.json), [`messages/fr.json`](messages/fr.json) — same keys
+- **Types:** [`src/types/messages.ts`](src/types/messages.ts) — `AppMessages` from `en.json`
+- **Navigation:** [`src/i18n/navigation.ts`](src/i18n/navigation.ts)
 
-**Add a string:** update both JSON files under the same key path, then `getTranslations("namespace")` or pass slices into components.
+**Add a string:** update both JSON files, then `getTranslations("namespace")`.
 
 ---
 
 ## Content & copy
 
-### LinkedIn (owner paste) → [`linkedin-copy.md`](linkedin-copy.md)
+### Positioning
 
-Opportunity playbook aligned to site `meta.ogTitle` / payment-correctness positioning: Headline, About (EN/FR), Experience bullets, Featured captions, expertise posts, inbound reply templates, Open-to titles, 30-day cadence. Paste manually; do not invent metrics.
+Do **not** invent metrics or lead H1 / `<title>` / OG as generic “Senior Backend Engineer”. Prefer payment-correctness claims. See [`saifcore-alignment-prompt.md`](saifcore-alignment-prompt.md).
 
-### UI strings → `messages/*.json`
+### LinkedIn (owner paste)
 
-Namespaces include `meta`, `nav`, `hero`, `trustedExpertise`, `services`, `techStack`, `featuredProjects`, `experience`, `about`, `certifications`, `articlesPage`, `cta`, `footer`, plus page namespaces (`aboutPage`, `experiencePage`, `licensePage`, …).
+[`linkedin-copy.md`](linkedin-copy.md) — headline, About, experience bullets, posts, reply templates. Agents do not edit LinkedIn.
 
-**Trusted expertise** (`trustedExpertise.items`): six capability cards on the home page — `title`, `description`, `technologies[]`, `concepts[]`. Component: [`TrustedExpertise.tsx`](src/components/portfolio/TrustedExpertise.tsx).
+### Case studies
 
-### Articles → `src/data/articles.ts`
+[`src/data/case-studies.ts`](src/data/case-studies.ts) — `HOME_TEASER_IDS` order + honesty kinds. Copy in `featuredProjects` / case-study namespaces.
 
-| Field                 | Notes                                                                   |
-| --------------------- | ----------------------------------------------------------------------- |
-| `slug`, `publishedAt` | Routing and sitemap dates                                               |
-| `kind`                | `writing` \| `code` \| `design` \| `adr` \| `document`                  |
-| `title`, `excerpt`    | EN + FR                                                                 |
-| `blocks[]`            | Preferred; types in [`article-content.ts`](src/data/article-content.ts) |
-| `body[]`              | Legacy fallback                                                         |
-| `externalUrl`         | Optional off-site link                                                  |
+### Certifications
 
-Rendering: [`ArticleBody.tsx`](src/components/portfolio/ArticleBody.tsx).
+[`src/data/certifications.ts`](src/data/certifications.ts) + `certifications.items.*` in messages. Status: `obtained` \| `inProgress` \| `notStarted`.
 
-### Certifications → `src/data/certifications.ts` + `messages/*.json`
+### Blog
 
-- **Meta** (status, verify URL, icon): `certificationsMeta` in TypeScript
-- **Copy** (name, issuer, description): `certifications.items.<id>` in JSON
-- **Status:** `obtained` \| `inProgress` \| `notStarted`
-
-### Featured projects / experience
-
-- **Projects:** `featuredProjects.items` in JSON — home teaser and `/systems`
-- **Roles:** `experience.items` in JSON — home section and `/experience`
-
-### Trust logos
-
-- **Registry:** [`src/data/trust-brands.ts`](src/data/trust-brands.ts)
-- **Assets:** `public/trust/<filename>` (referenced from experience entries)
+Set `NEXT_PUBLIC_BLOG_URL`. Home lab/writing teasers fetch `GET {blog}/api/articles?locale=&limit=`.
 
 ---
 
 ## SEO & metadata
 
-| Mechanism                  | Location                                                         |
-| -------------------------- | ---------------------------------------------------------------- |
-| Page titles & descriptions | [`buildPageMetadata()`](src/seo.ts) in `src/seo.ts`              |
-| Layout defaults            | `[locale]/layout.tsx` → `generateMetadata`                       |
-| Sitemap                    | [`src/app/sitemap.ts`](src/app/sitemap.ts) — hreflang alternates |
-| Robots                     | [`src/app/robots.ts`](src/app/robots.ts)                         |
-| Open Graph / Twitter       | Image routes under `app/` and `[locale]/`                        |
-| JSON-LD                    | Inline scripts on home, about, certifications, and other pages   |
+| Mechanism                  | Location                                       |
+| -------------------------- | ---------------------------------------------- |
+| Page titles & descriptions | [`buildPageMetadata()`](src/seo.ts)            |
+| Layout defaults            | `[locale]/layout.tsx`                          |
+| Sitemap                    | [`src/app/sitemap.ts`](src/app/sitemap.ts)     |
+| Robots                     | [`src/app/robots.ts`](src/app/robots.ts)       |
+| Open Graph / Twitter       | Image routes under `app/` and `[locale]/`      |
+| JSON-LD                    | Inline scripts on home, about, and other pages |
 
-Set `NEXT_PUBLIC_SITE_URL` in production so canonical URLs and schema resolve correctly.
+Set `NEXT_PUBLIC_SITE_URL` in production.
 
 ---
 
 ## Theming & UI
 
-- **Tokens:** CSS variables in [`src/app/globals.css`](src/app/globals.css) — `data-theme="light"` \| `"dark"`
-- **Provider:** [`ThemeProvider.tsx`](src/components/portfolio/ThemeProvider.tsx) — `localStorage` + `prefers-color-scheme`
-- **Toggle:** [`ThemeToggle.tsx`](src/components/portfolio/ThemeToggle.tsx) in the navbar
-- **Primitives:** `.btn-primary`, `.btn-outline`, `.surface-panel`, `.input-field`, `.bg-grid`, …
-- **Motion:** Framer Motion where needed; `prefers-reduced-motion` honored in CSS and hooks
-- **Layout:** `max-w-[1280px]` content rail; articles capped at `720px`
+- **Tokens:** [`src/app/globals.css`](src/app/globals.css) — `data-theme="light"` \| `"dark"`
+- **Provider:** [`ThemeProvider.tsx`](src/components/portfolio/ThemeProvider.tsx)
+- **Primitives:** `.btn-primary`, `.btn-outline`, `.surface-panel`, `.input-field`, …
+- **Motion:** Framer Motion where needed; `prefers-reduced-motion` honored
 
 ---
 
 ## Deployment
 
-Optimized for [Vercel](https://vercel.com/). Any Node host that runs `next build` + `next start` works.
+Optimized for [Vercel](https://vercel.com/).
 
-**Production checklist**
-
-1. Set `NEXT_PUBLIC_SITE_URL` to your production domain
-2. Set `NEXT_PUBLIC_CONTACT_EMAIL` and optional social URLs
+1. Set `NEXT_PUBLIC_SITE_URL` to the production domain
+2. Set contact email, Resend keys, blog URL, and optional social URLs
 3. Add `public/resume-en.pdf` + `public/resume-fr.pdf` (see [`cv/README.md`](cv/README.md)) or `NEXT_PUBLIC_RESUME_URL`
 4. Run `npm run build` in CI before deploy
-5. Mark certifications as `obtained` when ready (unlocks `/certifications`)
+5. Mark certifications as `obtained` when ready
 6. Run `npm run sync:icons` after updating `public/profile.png`
+7. Owner: paste LinkedIn from [`linkedin-copy.md`](linkedin-copy.md)
 
 ---
 
 ## License
 
-- **Source code:** [MIT](LICENSE) — see [`LICENSE`](LICENSE) and the public [`/license`](src/app/[locale]/license/page.tsx) page (linked from the footer).
+- **Source code:** [MIT](LICENSE) — public [`/license`](src/app/[locale]/license/page.tsx) page.
 - **Site content:** Written copy, case studies, and branding remain © SAIFCORE unless stated otherwise.

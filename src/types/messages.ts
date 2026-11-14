@@ -47,9 +47,3 @@ export type CertificationItem =
   AppMessages["certifications"]["items"][CertificationId];
 
 export type HowIThinkStep = AppMessages["howIThink"]["steps"][number];
-
-export type ArchitectureTag =
-  AppMessages["architectureExpertise"]["tags"][number];
-
-/** First N tags use highlight styling in `ArchitectureExpertise` */
-export const ARCHITECTURE_TAG_HIGHLIGHT_COUNT = 4;

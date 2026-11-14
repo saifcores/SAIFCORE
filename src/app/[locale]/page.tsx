@@ -185,7 +185,6 @@ export default async function Home({ params }: Props) {
       >
         <Hero />
         <ExpertiseTeaser />
-        <OffersHome />
         <AudiencePaths
           recruiter={<ExperienceTeaser />}
           depth={
@@ -197,6 +196,7 @@ export default async function Home({ params }: Props) {
           }
           client={null}
         />
+        <OffersHome />
         <HomeContact />
       </main>
       <Footer />

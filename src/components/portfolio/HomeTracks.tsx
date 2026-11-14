@@ -32,6 +32,8 @@ type Props = {
   showAllLabel: string;
   items: readonly HomeTrackItem[];
   panels: Record<HomeTrackId, ReactNode>;
+  /** Locale-aware contact URL with freelance intent (client track). */
+  clientContactHref: string;
 };
 
 function trackFromHash(hash: string): HomeTrackId | null {
@@ -53,6 +55,7 @@ export function HomeTracks({
   showAllLabel,
   items,
   panels,
+  clientContactHref,
 }: Props) {
   const baseId = useId();
   const [filter, setFilter] = useState<Filter>("both");
@@ -146,7 +149,7 @@ export function HomeTracks({
                 </button>
                 {item.id === "client" ? (
                   <a
-                    href="#offers"
+                    href={clientContactHref}
                     className="link-more mt-auto pt-3 text-[var(--text-primary)]"
                     data-arrow
                   >
@@ -180,11 +183,11 @@ export function HomeTracks({
         const panel = panels[item.id];
         if (!panel || !isContentTrack(item.id)) return null;
         const open = filter === "both" || filter === item.id;
+        if (!open) return null;
         return (
           <div
             key={item.id}
             id={`${baseId}-panel-${item.id}`}
-            hidden={!open}
             className="home-track-panel"
           >
             {panel}

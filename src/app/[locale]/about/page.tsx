@@ -7,14 +7,15 @@ import {
 import type { Metadata } from "next";
 import { About } from "@/components/portfolio/About";
 import { ContactBridgeStrip } from "@/components/portfolio/ContactBridgeStrip";
-import { Experience } from "@/components/portfolio/Experience";
 import { IdentityLevels } from "@/components/portfolio/IdentityLevels";
 import { TechStackSection } from "@/components/portfolio/TechStackSection";
 import { Footer } from "@/components/portfolio/Footer";
 import { Navbar } from "@/components/portfolio/Navbar";
+import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { buildPageMetadata, buildProfilePageGraph } from "@/seo";
 import type { AppMessages } from "@/types/messages";
+import { ArrowUpRight } from "lucide-react";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -106,7 +107,30 @@ export default async function AboutPage({ params }: Props) {
       >
         <About />
         <IdentityLevels />
-        <Experience />
+        <section className="border-b border-[var(--border-subtle)] py-10 sm:py-12">
+          <div className="page-container">
+            <div className="flex flex-col gap-4 rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/25 px-5 py-6 sm:flex-row sm:items-center sm:justify-between sm:px-8 sm:py-7">
+              <div className="min-w-0">
+                <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
+                  {t("experienceBridgeTitle")}
+                </p>
+                <h2 className="mt-2 max-w-xl font-display text-pretty text-lg font-medium tracking-tight text-[var(--text-primary)] sm:text-xl">
+                  {t("experienceBridgeHeading")}
+                </h2>
+                <p className="mt-1.5 max-w-lg text-sm leading-relaxed text-[var(--text-secondary)]">
+                  {t("experienceBridgeBody")}
+                </p>
+              </div>
+              <Link
+                href="/experience"
+                className="btn-outline inline-flex min-h-11 shrink-0 items-center justify-center gap-2 px-5 text-sm font-medium"
+              >
+                {t("experienceBridgeCta")}
+                <ArrowUpRight className="h-4 w-4" aria-hidden />
+              </Link>
+            </div>
+          </div>
+        </section>
         <TechStackSection
           title={tStack("title")}
           subtitle={tStack("subtitle")}

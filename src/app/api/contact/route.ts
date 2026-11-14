@@ -6,11 +6,46 @@ import {
 
 export const runtime = "nodejs";
 
+const RATE_LIMIT = 5;
+const RATE_WINDOW_MS = 60_000;
+
+type Bucket = { count: number; resetAt: number };
+
+const rateBuckets = new Map<string, Bucket>();
+
+function clientIp(request: Request): string {
+  const forwarded = request.headers.get("x-forwarded-for");
+  if (forwarded) {
+    const first = forwarded.split(",")[0]?.trim();
+    if (first) return first;
+  }
+  return request.headers.get("x-real-ip")?.trim() || "unknown";
+}
+
+function allowRequest(ip: string): boolean {
+  const now = Date.now();
+  const bucket = rateBuckets.get(ip);
+  if (!bucket || now >= bucket.resetAt) {
+    rateBuckets.set(ip, { count: 1, resetAt: now + RATE_WINDOW_MS });
+    return true;
+  }
+  if (bucket.count >= RATE_LIMIT) return false;
+  bucket.count += 1;
+  return true;
+}
+
 export async function POST(request: Request) {
   if (!isContactFormConfigured()) {
     return Response.json(
       { error: "Contact form is temporarily unavailable." },
       { status: 503 },
+    );
+  }
+
+  if (!allowRequest(clientIp(request))) {
+    return Response.json(
+      { error: "Too many requests. Please try again shortly." },
+      { status: 429 },
     );
   }
 

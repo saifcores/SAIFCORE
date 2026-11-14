@@ -8,7 +8,6 @@ type Namespace =
   | "systemsPage"
   | "experiencePage"
   | "aboutPage"
-  | "collaboratePage"
   | "certificationsPage"
   | "expertisePage"
   | "labPage"
@@ -22,7 +21,6 @@ type Props = {
 
 const PROJECT_NAMESPACES = new Set<Namespace>([
   "systemsPage",
-  "collaboratePage",
   "expertisePage",
   "labPage",
   "insights",
