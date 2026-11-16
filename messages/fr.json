@@ -163,13 +163,7 @@
     "rail": "Paiements · APIs · rails UEMOA",
     "hub": "SAIFCORE",
     "scroll": "Défiler",
-    "orbit": [
-      "Paiements",
-      "APIs",
-      "PSP",
-      "Backend",
-      "IA"
-    ],
+    "orbit": ["Paiements", "APIs", "PSP", "Backend", "IA"],
     "subtitle": "Les paiements échouent rarement sur le happy path. Ils échouent quand un callback arrive deux fois, qu’un fournisseur timeout en plein transfert, ou qu’une transaction reste bloquée entre deux états.",
     "proofLine": "Plateformes du Groupe Bank of Africa (via Synapse) · Intégrations Wave, Orange Money, Free Money · Ecom 360 en production.",
     "availability": "Un travail cadré commence par un brief écrit. Je réponds sous deux jours ouvrés : adéquation et date de démarrage. Le poste actuel chez Synapse, pour Bank of Africa, est à temps plein et sur site. Appels en français ; anglais à l’écrit.",
@@ -457,6 +451,14 @@
         "cta": "Lire"
       },
       {
+        "cat": "System Design",
+        "type": "Repo",
+        "title": "BRVM Intelligence",
+        "description": "Labo d’apprentissage et d’analyse BRVM (UEMOA) — éducation, données datées, portefeuille virtuel seulement.",
+        "href": "https://github.com/saifcores/brvm-intelligence",
+        "cta": "Voir le dépôt"
+      },
+      {
         "cat": "Payment Flows",
         "type": "Article",
         "title": "Patterns d’intégration mobile money",
@@ -664,12 +666,7 @@
       },
       {
         "label": "UI produit",
-        "items": [
-          "TypeScript",
-          "Angular",
-          "React",
-          "Next.js"
-        ]
+        "items": ["TypeScript", "Angular", "React", "Next.js"]
       }
     ]
   },
@@ -955,13 +952,7 @@
         "impact": "Wave, Orange Money et Free Money derrière un contrat — adaptateurs, idempotence Redis et événements Kafka de settlement prouvés sur la delivery FinTech ENG. La surface SDK packagée reste interne.",
         "href": "",
         "linkLabel": "",
-        "stacks": [
-          "Java",
-          "Spring Boot",
-          "Redis",
-          "Kafka",
-          "PostgreSQL"
-        ],
+        "stacks": ["Java", "Spring Boot", "Redis", "Kafka", "PostgreSQL"],
         "status": "Patterns production · ENG · confidentiel",
         "metrics": [
           {
@@ -1113,6 +1104,79 @@
         "disclosure": ""
       },
       {
+        "id": "brvm-intelligence",
+        "title": "BRVM Intelligence",
+        "market": "UEMOA · BRVM · Apprentissage / analyse",
+        "scope": "regional",
+        "problem": "Les investisseurs particuliers en Afrique de l'Ouest font face à un marché BRVM difficile à lire en débutant : sociétés cotées, cours datés, états financiers et décisions de portefeuille sont dispersés — sans lieu sûr pour apprendre et simuler avant d'engager du capital réel.",
+        "solution": "Labo ouvert personnel : plateforme d'apprentissage et d'analyse BRVM pour l'UEMOA. Académie education-first, market watch, explorateur de sociétés et simulateur de portefeuille virtuel — sur données datées et sourcées. Aucun ordre de Bourse réel, aucun conseil d'investissement personnalisé.",
+        "architecture": "Monolithe modulaire cible : frontend Next.js / React / TypeScript ; API Java 21 / Spring Boot 3+ avec domaines Spring Modulith (identity, academy, market, company, analytics, portfolio, dividend, journal) ; PostgreSQL ; imports Spring Batch ; Docker Compose pour un stack local reproductible.",
+        "security": "Spring Security pour l'authentification et l'autorisation ; périmètre personal-first avant toute exposition multi-utilisateurs publique ; pas de conservation de fonds pour des tiers.",
+        "scale": "Un déploiement modulaire unique garde le MVP simple ; Redis seulement si le cache s'avère nécessaire ; Spring Batch pour les imports et traitements ; CI via GitHub Actions.",
+        "architectureFlow": [
+          "Sources officielles / autorisées",
+          "Import & validation",
+          "Modules market / company",
+          "PostgreSQL",
+          "API Spring Boot → Next.js"
+        ],
+        "constraints": [
+          "Aucun ordre de Bourse réel ni connexion transactionnelle à une SGI.",
+          "Aucune recommandation personnalisée d'achat ou de vente.",
+          "Ne jamais présenter une donnée ancienne comme une cotation en temps réel.",
+          "Chaque chiffre affiche source, période et date d'observation."
+        ],
+        "decisions": [
+          {
+            "title": "Éducation avant indicateurs",
+            "body": "Leçons d'académie et glossaire avant des tableaux de ratios que les débutants ne savent pas lire."
+          },
+          {
+            "title": "Transparence des données",
+            "body": "Source, période et date accompagnent chaque cours et figure financière — sans claim de fraîcheur silencieux."
+          },
+          {
+            "title": "Portefeuille virtuel seulement",
+            "body": "Simuler achats et ventes sans argent réel pour apprendre en sécurité tant qu'il n'y a pas de mandat réel."
+          },
+          {
+            "title": "Monolithe modulaire d'abord",
+            "body": "Les domaines Spring Modulith gardent une app déployable en un bloc tout en préservant des bounded contexts clairs."
+          }
+        ],
+        "tradeoffs": "Un MVP personnel prouve l'UX d'éducation et d'analyse BRVM sans claim de licence market-data ni rails de courtage live — au prix de rester en cadrage/MVP tant que les imports, le contenu d'académie et les règles du simulateur ne sont pas livrés et validés en usage personnel.",
+        "bankingOutcome": "Signal pour le produit marchés de capitaux UEMOA : données de marché transparentes, éducation débutant et mécanique de portefeuille simulé — sans prétendre être un courtier agréé ou un service de conseil.",
+        "impact": "Cadrage public et feuille de route MVP livrés : docs PRD/roadmap, bornes d'honnêteté et architecture modulaire cible. L'implémentation (académie, market watch, explorateur sociétés, portefeuille virtuel) reste en cours sur le dépôt ouvert.",
+        "href": "https://github.com/saifcores/brvm-intelligence",
+        "linkLabel": "Voir sur GitHub",
+        "stacks": [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Java 21",
+          "Spring Boot",
+          "Spring Modulith",
+          "PostgreSQL",
+          "Docker"
+        ],
+        "status": "Labo · Cadrage MVP",
+        "metrics": [
+          {
+            "value": "MVP",
+            "label": "Cadrage en cours"
+          },
+          {
+            "value": "BRVM",
+            "label": "Focus marché UEMOA"
+          },
+          {
+            "value": "Simulé",
+            "label": "Portefeuille virtuel seulement"
+          }
+        ],
+        "disclosure": ""
+      },
+      {
         "id": "unified-api-gateway",
         "title": "Passerelle API Unifiée",
         "market": "Banque multi-pays",
@@ -1158,13 +1222,7 @@
         "impact": "Patterns issus de la delivery Synapse pour 11+ filiales du Groupe Bank of Africa : gateway comme frontière, contrats partenaires versionnés, JWT/RBAC au bord, core hors Internet public.",
         "href": "",
         "linkLabel": "",
-        "stacks": [
-          "Spring Cloud",
-          "Kafka",
-          "PostgreSQL",
-          "Docker",
-          "AWS"
-        ],
+        "stacks": ["Spring Cloud", "Kafka", "PostgreSQL", "Docker", "AWS"],
         "status": "Patterns production · Synapse · confidentiel",
         "metrics": [
           {
@@ -1306,12 +1364,7 @@
           "Concevoir les APIs REST reliant les modules clinique, pharmacie et laboratoire.",
           "Améliorer les performances via cache et traitement asynchrone."
         ],
-        "stack": [
-          "Java",
-          "Spring Boot",
-          "Angular",
-          "REST APIs"
-        ]
+        "stack": ["Java", "Spring Boot", "Angular", "REST APIs"]
       }
     ]
   },
@@ -2091,12 +2144,7 @@
       },
       {
         "label": "UI produit",
-        "items": [
-          "TypeScript",
-          "Angular",
-          "React",
-          "Next.js"
-        ]
+        "items": ["TypeScript", "Angular", "React", "Next.js"]
       }
     ]
   }
